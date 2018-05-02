@@ -380,16 +380,16 @@ sistema informativo unitario della PA ed è caratterizzato da:
 1.  Gli strumenti per la generazione e diffusione dei servizi digitali,
     indicati come **accesso ai servizi**, che:
 
-    i.  definiscono regole comuni per la progettazione di interfacce,
+    1.  definiscono regole comuni per la progettazione di interfacce,
         servizi e contenuti, migliorando e rendendo coerente la
         navigazione e l'esperienza del cittadino e delle imprese,
 
-    ii. facilitano il design, la realizzazione e la diffusione di
+    2. facilitano il design, la realizzazione e la diffusione di
         servizi digitali,
 
-    iii. definiscono linee guida e kit di sviluppo,
+    3. definiscono linee guida e kit di sviluppo,
 
-    iv. provvedono alla creazione di community di sviluppatori, di
+    4. provvedono alla creazione di community di sviluppatori, di
         designer e di chiunque voglia scambiare informazioni,
         collaborare e partecipare.
 
@@ -400,11 +400,11 @@ sistema informativo unitario della PA ed è caratterizzato da:
     all'interno dell'ecosistema stesso. I soggetti interessati
     interagiscono per il raggiungimento di obiettivi comuni attraverso
 
-    v.  la condivisione delle esigenze e delle modalità operative,
+    1.  la condivisione delle esigenze e delle modalità operative,
 
-    vi. la condivisione delle differenti competenze,
+    2. la condivisione delle differenti competenze,
 
-    vii. la pianificazione e la realizzazione di progetti ICT.
+    3. la pianificazione e la realizzazione di progetti ICT.
 
 3.  Il **modello di interoperabilità,** definisce i meccanismi che
     facilitano e garantiscono la corretta interazione tra gli attori del
@@ -419,27 +419,26 @@ sistema informativo unitario della PA ed è caratterizzato da:
 4.  Le **Infrastrutture immateriali** e il **Data & Analytics
     Framework** (DAF) della PA, che incentivano la centralizzazione e la
     razionalizzazione dei sistemi per la gestione dei processi e dei
-    dati, riducendo la frammentazione degli interventi.
-
-> In particolare, le *Infrastrutture immateriali* facilitano,
-> standardizzano e razionalizzano la creazione di servizi ICT e sono
-> composte dalle Piattaforme abilitanti e dai Dati della PA:
-
--   nelle *piattaforme abilitanti* ricadono tutti quei servizi
+    dati, riducendo la frammentazione degli interventi. In particolare, 
+	le *Infrastrutture immateriali* facilitano, standardizzano e 
+	razionalizzano la creazione di servizi ICT e sono composte dalle 
+	Piattaforme abilitanti e dai Dati della PA:
+	
+	1. nelle *piattaforme abilitanti* ricadono tutti quei servizi
     infrastrutturali (ad esempio, servizio di identificazione, servizio
     di pagamenti, ANPR) che agevolano e riducono i costi per la
     realizzazione di nuovi servizi uniformando gli strumenti utilizzati
     dagli utenti finali durante la loro interazione con la PA;
 
--   relativamente ai *dati della PA* si distinguono: le basi di dati di
+	2. relativamente ai *dati della PA* si distinguono: le basi di dati di
     interesse nazionale, gli open data, e i vocabolari controllati.
 
-> Il *Data & Analytics Framework* è un ambiente centralizzato che
-> acquisisce e rende più fruibili i dati pubblici di interesse e ha
-> l'obiettivo *(i)* di rendere più semplice e meno onerosa
-> l'interoperabilità dei dati pubblici tra PA e la distribuzione e
-> standardizzazione dei dati aperti (open data) e *(ii)* di permettere
-> lo studio dei fenomeni sottostanti ai dati pubblici.
+	Il *Data & Analytics Framework* è un ambiente centralizzato che
+	acquisisce e rende più fruibili i dati pubblici di interesse e ha
+	l'obiettivo *(i)* di rendere più semplice e meno onerosa
+	l'interoperabilità dei dati pubblici tra PA e la distribuzione e
+	standardizzazione dei dati aperti (open data) e *(ii)* di permettere
+	lo studio dei fenomeni sottostanti ai dati pubblici.
 
 -   Le **Infrastrutture** **fisiche,** che perseguono l'obiettivo di
     aumentare la sicurezza, ridurre il costo delle infrastrutture
@@ -461,6 +460,7 @@ sistema informativo unitario della PA ed è caratterizzato da:
     far fronte alle necessità di coordinamento; gestione e monitoraggio
     delle attività funzionali allo sviluppo del Piano.
 
+	
 4 Scenario pregresso dell'interoperabilità nella PA
 ===================================================
 
@@ -494,21 +494,21 @@ pubblici italiani. Tale sistema era organizzato in modo da:
 
 In sintesi, alla base di SPCoop vi erano i seguenti principi:
 
-> \(i) *cooperazione tra amministrazioni* attraverso la erogazione e
-> fruizione di servizi offerti tramite un unico elemento logico denominato
-> *Porta di Dominio;*
->
-> \(ii) *ambito di responsabilità* delle singole Amministrazioni dei
-> servizi erogati che costituiscono il *Dominio di servizi applicativi*
-> della stessa Amministrazione;
->
-> \(iii) *accordi di servizio* quale rappresentazione formale della
-> cooperazione tra erogatore/i e fruitore/i costituiti sulla base di un
-> fondamento normativo;
->
-> \(iv) *tecnologie di cooperazione:* i servizi erano erogati come web
-> service basati sugli standard che in quel momento erano consolidati ed
-> in uso (SOAP, WSDL, UDDI).
+1. 	*cooperazione tra amministrazioni* attraverso la erogazione e
+	fruizione di servizi offerti tramite un unico elemento logico denominato
+	*Porta di Dominio;*
+
+2.  *ambito di responsabilità* delle singole Amministrazioni dei
+	servizi erogati che costituiscono il *Dominio di servizi applicativi*
+	della stessa Amministrazione;
+
+3. 	*accordi di servizio* quale rappresentazione formale della
+	cooperazione tra erogatore/i e fruitore/i costituiti sulla base di un
+	fondamento normativo;
+
+4.	*tecnologie di cooperazione:* i servizi erano erogati come web
+	service basati sugli standard che in quel momento erano consolidati ed
+	in uso (SOAP, WSDL, UDDI).
 
 Con l'obiettivo di assicurare agli utenti di avere una visione integrata
 dei servizi di ogni PA, le tematiche coperte da SPCoop sono state tutte
@@ -594,7 +594,7 @@ transitare al nuovo modello di interoperabilità [8]_.
 L'esperienza maturata con SPCoop, di seguito sintetizzata, deve essere
 considerata nella definizione del ModI 2018 .
 
-> **Cosa ha funzionato **
+**Cosa ha funzionato **
 
 -   La definizione di un quadro comune per l'implementazione dei
     meccanismi di interoperabilità tra i sistemi delle Pubbliche
@@ -610,7 +610,7 @@ considerata nella definizione del ModI 2018 .
     utilizzato a livello regionale e ha consentito di disegnare su tali
     basi tecniche il futuro SPID.
 
-> **Cosa deve essere cambiato **
+**Cosa deve essere cambiato **
 
 -   Le tecnologie e gli standard utilizzati dal modello SPCoop
     richiedono un consistente aggiornamento in considerazione delle
@@ -621,7 +621,7 @@ considerata nella definizione del ModI 2018 .
     caratteristiche delle amministrazioni e dei soggetti terzi
     coinvolti.
 
-> **Cosa deve essere abbandonato **
+**Cosa deve essere abbandonato **
 
 -   L'adozione di un'unica modalità per attuare l'interoperabilità dei
     sistemi non permette di considerare la molteplicità e la specificità
@@ -633,8 +633,6 @@ considerata nella definizione del ModI 2018 .
     SICA) determina che la spesa per il loro sviluppo ed evoluzione sia
     totalmente a carico della Pubblica Amministrazione.
 
- 
-=
 
 5 Principi del nuovo modello di interoperabilità
 ================================================
@@ -735,26 +733,26 @@ interoperabilità deve tener presente:
 
 .. image:: ../media/image8.png
 
-> È importante analizzare le analogie e differenze con il caso
-> precedente: nel caso della notifica inter-PA, c'è una relazione
-> peer-to-peer tra i vari soggetti coinvolti, e si parla di
-> *coreografia* tra le applicazioni coinvolte [14]_. Nel caso invece
-> della composizione, una delle applicazioni ha un ruolo di
-> *orchestrazione* nei confronti delle altre, e quindi c'è una relazione
-> uno (l'orchestratore, che fa da *master*) a molti (le applicazioni
-> orchestrate, che sono *slave*).
->
-> In entrambe le situazioni, esiste a livello concettuale (dovuto a
-> norme, accordi, ecc.) un processo inter-organizzativo che sovraintende
-> alle varie applicazioni, e l'espletamento del quale è l'obiettivo del
-> servizio composto offerto.
->
-> La differenza tra i due casi risiede quindi nel grado di autonomia che
-> i soggetti che concorrono al processo inter-organizzativo mantengono:
-> se si sceglie un approccio completamente decentralizzato, si è nel
-> caso notifica inter-PA, se si opta per un approccio per cui uno dei
-> soggetti prende in carico la fornitura del servizio finale composto a
-> valore aggiunto, allora si è nel caso composizione inter-PA.
+È importante analizzare le analogie e differenze con il caso
+precedente: nel caso della notifica inter-PA, c'è una relazione
+peer-to-peer tra i vari soggetti coinvolti, e si parla di
+*coreografia* tra le applicazioni coinvolte [14]_. Nel caso invece
+della composizione, una delle applicazioni ha un ruolo di
+*orchestrazione* nei confronti delle altre, e quindi c'è una relazione
+uno (l'orchestratore, che fa da *master*) a molti (le applicazioni
+orchestrate, che sono *slave*).
+
+In entrambe le situazioni, esiste a livello concettuale (dovuto a
+norme, accordi, ecc.) un processo inter-organizzativo che sovraintende
+alle varie applicazioni, e l'espletamento del quale è l'obiettivo del
+servizio composto offerto.
+
+La differenza tra i due casi risiede quindi nel grado di autonomia che
+i soggetti che concorrono al processo inter-organizzativo mantengono:
+se si sceglie un approccio completamente decentralizzato, si è nel
+caso notifica inter-PA, se si opta per un approccio per cui uno dei
+soggetti prende in carico la fornitura del servizio finale composto a
+valore aggiunto, allora si è nel caso composizione inter-PA.
 
 Incrementalità del modello
 --------------------------
