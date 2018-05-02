@@ -71,8 +71,7 @@ L'obiettivo dell'EIF è:
     l'interoperabilità transfrontaliera e intersettoriale per
     l'erogazione di servizi pubblici europei.
 
-![](media/image1.png){width="6.270833333333333in"
-height="2.5416666666666665in"}
+.. image:: media/image1.png
 
 *Figura 1 - Ambito di applicazione dell'EIF*
 
