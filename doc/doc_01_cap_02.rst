@@ -113,13 +113,15 @@ Nell'EIF è raccomandato:
 
 -   adottare e riusare fonti di informazioni e servizi esterni, laddove utile e fattibile, nello sviluppo dei servizi pubblici.
 
-La sicurezza e privacy sono aspetti che devono essere definiti in pieno accordo con l'e-Government action plan 2016-2020 della Commissione EU [4]_. Per le PA è raccomandato:
+La sicurezza e privacy sono aspetti che devono essere definiti in pieno accordo con l'e-Government action plan 2016-2020 della Commissione EU [4]_.
+
+Per le PA è raccomandato:
 
 -   tenendo conto dei requisiti specifici di sicurezza e riservatezza, identificare per ogni servizio le contromisure in conformità con piani di gestione del rischio;
 
 -   utilizzare i servizi fiduciari, in base al regolamento in materia di identificazione elettronica e servizi fiduciari, come meccanismi per garantire lo scambio sicuro e protetto dei dati nei servizi pubblici (Regolamento (UE) 2014/910 [5]_).
 
-Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i seguenti obblighi per gli stati membri.
+Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i seguenti obblighi per gli stati membri:
 
 -   Le PA devono identificare, negoziare e approvare un approccio comune per i componenti di servizi integrati. Ciò è realizzato a diversi livelli amministrativi, in base all'assetto organizzativo di ogni paese, per garantire che piani nazionali e le strategie di interoperabilità siano allineati con l'EIF e, se necessario, adattati e ampliati per tenere conto del contesto e delle esigenze nazionali.
 
@@ -136,7 +138,7 @@ Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i s
 -   Utilizzare specifiche aperte, per garantire l\'interoperabilità tecnica quando si istituiscono servizi pubblici.
 
 
-.. [3] In precedenti documenti a cura di AgID e del Team Digitale, il termine inglese framework è stato sovente tradotto in italiano come modello, ed è questo il termine utilizzato nel presente documento. La dicitura *quadro* è la traduzione letterale della Commissione Europea. Nel seguito di questo documento verrà preferito il termine modello, pur considerando i termini framework, modello e quadro come sinonimi.
+.. [3] In precedenti documenti a cura di AgID e del Team Digitale, il termine inglese *framework* è stato sovente tradotto in italiano come *modello*, ed è questo il termine utilizzato nel presente documento. La dicitura *quadro* è la traduzione letterale della Commissione Europea. Nel seguito di questo documento verrà preferito il termine *modello*, pur considerando i termini *framework*, *modello* e *quadro* come sinonimi.
 
 .. [4] Cf. `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation>`__ 
 
