@@ -1,8 +1,8 @@
 Presentazione del Modello di Interoperabilità 2018
-==================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 1 Introduzione
---------------
+==============
 
 Il Modello di Interoperabilità 2018[^1] (nel seguito in breve ModI 2018)
 rappresenta il modello di supporto alla strategia di interoperabilità e
@@ -44,7 +44,7 @@ Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
     sistemi che le realizzano..
 
 2 Il contesto europeo
----------------------
+=====================
 
 Lo *European Interoperability Framework (EIF)* (in italiano Quadro
 Europeo di Interoperabilità - QEI[^3]) fornisce orientamenti alle PA
@@ -365,9 +365,10 @@ individuato i seguenti obblighi per gli stati membri.
     tecnica quando si istituiscono servizi pubblici.
 
  
+=
 
 3 Il quadro di riferimento attuale
-----------------------------------
+==================================
 
 Il Piano triennale per l'informatica nella PA[^6] costituisce il quadro
 di riferimento entro cui si colloca il ModI 2018 all'interno del
@@ -467,7 +468,7 @@ sistema informativo unitario della PA ed è caratterizzato da:
     delle attività funzionali allo sviluppo del Piano.
 
 4 Scenario pregresso dell'interoperabilità nella PA
----------------------------------------------------
+===================================================
 
 Nell'ottobre 2005 il CNIPA (oggi Agenzia per l'Italia digitale - AgID)
 ha pubblicato un insieme di documenti che costituiscono il riferimento
@@ -642,10 +643,10 @@ considerata nella definizione del ModI 2018 .
 =
 
 5 Principi del nuovo modello di interoperabilità
-------------------------------------------------
+================================================
 
 Interazioni
-~~~~~~~~~~~
+-----------
 
 L'ambito di applicazione del Modello di Interoperabilità 2018 comprende
 i tre tipi di interazioni previsti nell'EIF. Le interazioni prevedono
@@ -683,7 +684,7 @@ interazioni:
 5.  A2C in modalità *human-to-machine*.
 
 Paradigmi di cooperazione
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 In generale, nell'integrazione dei sistemi software si individuano
 principalmente le seguenti tre casistiche che il modello di
@@ -766,7 +767,7 @@ height="2.9531255468066493in"}
 > valore aggiunto, allora si è nel caso composizione inter-PA.
 
 Incrementalità del modello
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 In base alle considerazioni precedenti, il Modello di interoperabilità
 si concretizza nella definizione, lo sviluppo, il miglioramento, la resa
@@ -830,7 +831,7 @@ ed il loro utilizzo è consolidato nelle pratiche adottate nell'ambito
 dell'interoperabilità dei sistemi informativi.
 
 Profili e pattern di interoperabilità
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
 Il nuovo modello introduce i concetti di **caso d'uso**, **pattern** e
 **profilo di interoperabilità**.
@@ -886,7 +887,7 @@ Modello di interoperabilità devono applicare i principi indicati in
 esso.
 
 Catalogo delle API/servizi
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Il Modello di interoperabilità prevede la presenza del *Catalogo* quale
 componente che assicura alle parti coinvolte nel rapporto
@@ -929,7 +930,7 @@ una normalizzazione a livello nazionale, tener conto della:
     v3* per i *web service REST.*
 
 Governance del modello
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 L'Agenzia per l'Italia Digitale è responsabile delle attività di
 *governance* del ModI 2018 con l'obiettivo di definire, condividere ed
