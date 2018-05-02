@@ -2211,11 +2211,11 @@ In tutti i casi presentati, restano valide le indicazioni contenute
 nelle sezioni precedenti circa la sicurezza nell'esposizione delle
 interfacce di servizio.
 
- [1]: La trattazione si basa in parte su C. Batini, M. Castelli, M.
+ [1] La trattazione si basa in parte su C. Batini, M. Castelli, M.
     Comerio, M. Cremaschi, L. Iaquinta, A. Torsello, G. Viscusi (2015):
     The Smart methodology for the life cycle of services. Cf. `https://boa.unimib.it/retrieve/handle/10281/98632/144883/SmartBook-0315.pdf <https://boa.unimib.it/retrieve/handle/10281/98632/144883/SmartBook-0315.pdf>`_
 
- [2]: Cf. Wikipedia, `https://en.wikipedia.org/wiki/E-services] <https://en.wikipedia.org/wiki/E-services>`_
+ [2] Cf. Wikipedia, `https://en.wikipedia.org/wiki/E-services] <https://en.wikipedia.org/wiki/E-services>`_
     Rowley (Rowley J. (2006): An analysis of the e-service literature:
     towards a research agenda. Internet Research, 16 (3), 339-359)
     defines e-services as " \[\...\] deeds, efforts or performances
@@ -2235,47 +2235,47 @@ interfacce di servizio.
     it may also include non-commercial services (online), which is
     usually provided by the government".
 
- [3]: Un sistema legacy (letteralmente "ereditato", che è un lascito del
+ [3] Un sistema legacy (letteralmente "ereditato", che è un lascito del
     passato) è un sistema informatico, un'applicazione o un componente
     obsoleto, che continua ad essere usato poiché l\'utente (di solito
     un'organizzazione) non intende o non può rimpiazzarlo. Legacy
     equivale a versione "retrodatata" (rispetto ai sistemi/tecnologie
     correnti).
 
- [4]: Cf. `https://www.w3.org/TR/ws-arch/\#whatis <https://www.w3.org/TR/ws-arch/#whatis>`_
+ [4] Cf. `https://www.w3.org/TR/ws-arch/\#whatis <https://www.w3.org/TR/ws-arch/#whatis>`_
 
- [5]: Con il termine endpoint si indica l'identificativo unico da
+ [5] Con il termine endpoint si indica l'identificativo unico da
     utilizzare per richiamare un'interfaccia di servizio. Ad esempio,
     nel caso della tecnologia SOAP è l'URL del web service, nel caso di
     REST le URL (che hanno tutte un suffisso comune) delle risorse
     offerte, nel caso dei Message Broker il nome univoco della coda di
     messaggi o un topic nella stessa.
 
- [6]: In ambito cloud, si utilizzano i termini di scale-up per indicare
+ [6] In ambito cloud, si utilizzano i termini di scale-up per indicare
     la scalabilità ottenuta incrementando le risorse di singoli sistemi
     (ad es., memoria RAM), e di scale-out per indicare la scalabilità
     ottenuta mediante distribuzione.
 
- [7]: Il payload è il contenuto informativo di un messaggio di rete
+ [7] Il payload è il contenuto informativo di un messaggio di rete
     (eliminando la parte relativa al protocollo). Per compressione del
     payload si intende applicare un algoritmo di compressione (molto
     spesso gzip) al payload in modo da ridurre il traffico di rete.
 
- [8]: Per paginazione si intende la capacità di una operazione
+ [8] Per paginazione si intende la capacità di una operazione
     nell'interfaccia di servizio di fornire un risultato composto da
     molte voci per singole pagine sfruttando un qualche criterio di
     ordinamento.
 
- [9]: Cf. `https://tools.ietf.org/html/rfc7234 <https://tools.ietf.org/html/rfc7234>`_
+ [9] Cf. `https://tools.ietf.org/html/rfc7234 <https://tools.ietf.org/html/rfc7234>`_
 
- [10]: Con il termine throttling (o rate limiting) si intendono le
+ [10] Con il termine throttling (o rate limiting) si intendono le
     politiche intraprese dalle interfacce di servizio al fine di
     limitare la frequenza con cui i fruitori possono chiamare
     l'interfaccia o specifiche operazioni all'interno della stessa.
 
- [11]: Cf. `https://tools.ietf.org/html/rfc3339\#section-5.6 <https://tools.ietf.org/html/rfc3339#section-5.6>`_
+ [11] Cf. `https://tools.ietf.org/html/rfc3339\#section-5.6 <https://tools.ietf.org/html/rfc3339#section-5.6>`_
 
- [12]: L'uso del +/- nell'ultima colonna da un'indicazione qualitativa
+ [12] L'uso del +/- nell'ultima colonna da un'indicazione qualitativa
     di quanto sia agevole comporre elementi nella specifica interazione.
     Come discusso, nel caso di servizi digitali la composizione è a cura
     dell'utente finale, che agisce da *human-ware* (ovvero deve farsi
@@ -2287,7 +2287,7 @@ interfacce di servizio.
     realizzata una logica di presentazione per il servizio digitale
     composta, se si vuole offrirlo agli utenti umani.
 
- [13]: Cf.
+ [13] Cf.
 
     > Meyer, Bertrand: *Design by Contract*, Technical Report
     > TR-EI-12/CO, Interactive Software Engineering Inc., 1986
@@ -2302,7 +2302,7 @@ interfacce di servizio.
     > Meyer, Bertrand (1997). Object-Oriented Software Construction,
     > second edition. Prentice Hall. ISBN 0-13-629155-4.
 
- [14]: La granularità è il livello di dettaglio con cui i dati sono
+ [14] La granularità è il livello di dettaglio con cui i dati sono
     esposti e scambiati. *Coarse-grained* significa un livello di
     dettaglio "basso", in quanto molti dettagli possono o devono
     rimanere interni all'implementazione dell'interfaccia di servizio.
@@ -2310,91 +2310,91 @@ interfacce di servizio.
     ad un dettaglio massimo, poichè che il fruitore ha bisogno di una
     visione puntuale del dato stesso.
 
- [15]: Come anticipato nel documento 1 - Visione Generale ed
+ [15] Come anticipato nel documento 1 - Visione Generale ed
     approfondito nel documento 4 - Governance, la modellazione e
     specifica dei dati avviene nei Gruppi di Lavoro interni agli
     Ecosistemi, che indirizzano il lavoro di standardizzazione.
 
- [16]: Ad esempio, la serializzazione in JSON di un dato dovrebbe essere
+ [16] Ad esempio, la serializzazione in JSON di un dato dovrebbe essere
     la medesima sia se viene esposto esternamente tramite REST API sia
     se transita da un messaging system interno all\'amministrazione. Una
     rappresentazione opportuna permette quindi la fruizione del dato da
     sistemi diversi limitando il ricorso alle conversioni.
 
- [17]: Cf. `https://joinup.ec.europa.eu/page/core-vocabularies <https://joinup.ec.europa.eu/page/core-vocabularies>`_
+ [17] Cf. `https://joinup.ec.europa.eu/page/core-vocabularies <https://joinup.ec.europa.eu/page/core-vocabularies>`_
     e
     `http://eur-lex.europa.eu/legal-content/IT/ALL/?uri=CELEX:32007L0002 <http://eur-lex.europa.eu/legal-content/IT/ALL/?uri=CELEX:32007L0002>`_
 
- [18]: Vedi Linee Guida Patrimonio Pubblico. Architettura
+ [18] Vedi Linee Guida Patrimonio Pubblico. Architettura
     dell'Informazione del Settore Pubblico,
     `http://lg-patrimonio-pubblico.readthedocs.io/it/latest/arch.html\#formati-aperti-per-i-dati-e-documenti <http://lg-patrimonio-pubblico.readthedocs.io/it/latest/arch.html#formati-aperti-per-i-dati-e-documenti>`_
 
- [19]: Gli URI vengono utilizzati anche dal gruppo DAF-Semantic per la
+ [19] Gli URI vengono utilizzati anche dal gruppo DAF-Semantic per la
     nomenclatura delle ontologie e dei dataset
 
- [20]: Si noti che questi standard sono già usati nelle specifiche AgID
+ [20] Si noti che questi standard sono già usati nelle specifiche AgID
     sulle firme elettroniche e sul formato della fattura PA.
 
- [21]: Cf. `https://en.wikipedia.org/wiki/ISO\_3166-1\_alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
+ [21] Cf. `https://en.wikipedia.org/wiki/ISO\_3166-1\_alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
 
- [22]: Cf. `https://en.wikipedia.org/wiki/ISO\_4217 <https://en.wikipedia.org/wiki/ISO_4217>`_
+ [22] Cf. `https://en.wikipedia.org/wiki/ISO\_4217 <https://en.wikipedia.org/wiki/ISO_4217>`_
 
- [23]: Cf. `https://tools.ietf.org/html/rfc3339\#section-5.6 <https://tools.ietf.org/html/rfc3339#section-5.6>`_
+ [23] Cf. `https://tools.ietf.org/html/rfc3339\#section-5.6 <https://tools.ietf.org/html/rfc3339#section-5.6>`_
 
- [24]: Cf. `https://it.wikipedia.org/wiki/Nomenclatura\_delle\_unit%C3%A0\_territoriali\_statistiche <https://it.wikipedia.org/wiki/Nomenclatura_delle_unit%C3%A0_territoriali_statistiche>`_
+ [24] Cf. `https://it.wikipedia.org/wiki/Nomenclatura\_delle\_unit%C3%A0\_territoriali\_statistiche <https://it.wikipedia.org/wiki/Nomenclatura_delle_unit%C3%A0_territoriali_statistiche>`_
 
- [25]: Per questi si faccia riferimento alla letteratura, ad es.,
+ [25] Per questi si faccia riferimento alla letteratura, ad es.,
     William Stallings (2017): Cryptography And Network Security, 7th
     edition.
 
- [26]: Cf. `https://tools.ietf.org/html/rfc6749 <https://tools.ietf.org/html/rfc6749>`_
+ [26] Cf. `https://tools.ietf.org/html/rfc6749 <https://tools.ietf.org/html/rfc6749>`_
 
- [27]: Cf. `http://openid.net/developers/specs/ <http://openid.net/developers/specs/>`_
+ [27] Cf. `http://openid.net/developers/specs/ <http://openid.net/developers/specs/>`_
 
- [28]: Cf. `http://openid.net/connect/ <http://openid.net/connect/>`_
+ [28] Cf. `http://openid.net/connect/ <http://openid.net/connect/>`_
 
- [29]: Cf. `http://saml.xml.org/saml-specifications <http://saml.xml.org/saml-specifications>`_
+ [29] Cf. `http://saml.xml.org/saml-specifications <http://saml.xml.org/saml-specifications>`_
 
- [30]: Cf. `http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html <http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html>`_
+ [30] Cf. `http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html <http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html>`_
 
- [31]: Cf. `http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete <http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete>`_
+ [31] Cf. `http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete <http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete>`_
 
- [32]: Cf. `http://spid-regole-tecniche.readthedocs.io/en/latest/ <http://spid-regole-tecniche.readthedocs.io/en/latest/>`_
+ [32] Cf. `http://spid-regole-tecniche.readthedocs.io/en/latest/ <http://spid-regole-tecniche.readthedocs.io/en/latest/>`_
 
- [33]: Per phishing si intende il tentativo di un attaccante di fingersi
+ [33] Per phishing si intende il tentativo di un attaccante di fingersi
     qualcun altro. Nel caso di OpenId Connect, in particolare, sia per
     quanto riguarda OpenId che OAuth2, diversi attacchi sono stati
     rivelati che permettono ad una relying party di redirezionare
     l'utente verso un identity provider falso.
 
- [34]: L'XML Signature Wrapping è una vulnerabilità non legata
+ [34] L'XML Signature Wrapping è una vulnerabilità non legata
     direttamente al protocollo ma presente in alcune implementazioni ed
     in diverse forme
     (cf., `https://blog.netspi.com/attacking-sso-common-saml-vulnerabilities-ways-find/ <https://blog.netspi.com/attacking-sso-common-saml-vulnerabilities-ways-find/>`_ ).
     Il tool SAML Raider può essere utilizzato per verificare la presenza
     della vulnerabilità.
 
- [35]: Cf. `http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html <http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html>`_
+ [35] Cf. `http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html <http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html>`_
 
- [36]: Cf. `http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html <http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html>`_
+ [36] Cf. `http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html <http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html>`_
 
- [37]: Cf. `https://tools.ietf.org/html/rfc6749#section-4.4 <https://tools.ietf.org/html/rfc6749#section-4.4>`_
+ [37] Cf. `https://tools.ietf.org/html/rfc6749#section-4.4 <https://tools.ietf.org/html/rfc6749#section-4.4>`_
 
- [38]: Ai fini dell'interoperabilità su Internet, la scelta di HTTP
+ [38] Ai fini dell'interoperabilità su Internet, la scelta di HTTP
     permette integrazione senza necessitare di regole particolari di
     inoltro o di definire Virtual Private Network - VPN.
 
- [39]: Circolare AgiD 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
+ [39] Circolare AgiD 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
 
- [40]: Cf. `https://tools.ietf.org/html/rfc5280\#section-4.2.1.3 <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_
+ [40] Cf. `https://tools.ietf.org/html/rfc5280\#section-4.2.1.3 <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_
 
- [41]: Circolare AgiD 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
+ [41] Circolare AgiD 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
 
- [42]: Cf. `https://tools.ietf.org/html/rfc5280\#section-4.2.1.3 <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_
+ [42] Cf. `https://tools.ietf.org/html/rfc5280\#section-4.2.1.3 <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_
 
- [43]: Cf. `https://tools.ietf.org/html/rfc7457 <https://tools.ietf.org/html/rfc7457>`_
+ [43] Cf. `https://tools.ietf.org/html/rfc7457 <https://tools.ietf.org/html/rfc7457>`_
 
- [44]: Un esempio potrebbe essere una interfaccia di servizio di un
+ [44] Un esempio potrebbe essere una interfaccia di servizio di un
     comune che permette di avere in tempo reale la situazione dei posti
     liberi nei parcheggi comunali. Un sistema di trasporto integrato
     regionale accede al dato su tutti i parcheggi dei comuni della
@@ -2407,33 +2407,33 @@ interfacce di servizio.
     SPCoop) sono emersi in E015, sviluppato in occasione di Expo nella
     Regione Lombardia.
 
- [45]: Cf. `https://www.w3.org/TR/soap12-part1/ <https://www.w3.org/TR/soap12-part1/>`_
+ [45] Cf. `https://www.w3.org/TR/soap12-part1/ <https://www.w3.org/TR/soap12-part1/>`_
 
- [46]: Cf. `https://www.w3.org/TR/wsdl20-primer/ <https://www.w3.org/TR/wsdl20-primer/>`_
+ [46] Cf. `https://www.w3.org/TR/wsdl20-primer/ <https://www.w3.org/TR/wsdl20-primer/>`_
 
- [47]: Cf. `https://www.w3.org/TR/ws-policy/ <https://www.w3.org/TR/ws-policy/>`_
+ [47] Cf. `https://www.w3.org/TR/ws-policy/ <https://www.w3.org/TR/ws-policy/>`_
 
- [48]: Cf. `http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html <http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html>`_
+ [48] Cf. `http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html <http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html>`_
 
- [49]: Cf. `http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html <http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html>`_
+ [49] Cf. `http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html <http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html>`_
 
- [50]: HTTPS è richiesto dal modello di interoperabilità ma non da BP2.
+ [50] HTTPS è richiesto dal modello di interoperabilità ma non da BP2.
 
- [51]: Cf. `https://developers.google.com/adwords/api/docs/guides/call-structure <https://developers.google.com/adwords/api/docs/guides/call-structure>`_
+ [51] Cf. `https://developers.google.com/adwords/api/docs/guides/call-structure <https://developers.google.com/adwords/api/docs/guides/call-structure>`_
 
- [52]: Cf. `https://it.wikipedia.org/wiki/Notazione\_a\_cammello <https://it.wikipedia.org/wiki/Notazione_a_cammello>`_
+ [52] Cf. `https://it.wikipedia.org/wiki/Notazione\_a\_cammello <https://it.wikipedia.org/wiki/Notazione_a_cammello>`_
 
- [53]: Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
+ [53] Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
 
- [54]: Cf. `https://it.wikipedia.org/wiki/Kebab\_case <https://it.wikipedia.org/wiki/Kebab_case>`_
+ [54] Cf. `https://it.wikipedia.org/wiki/Kebab\_case <https://it.wikipedia.org/wiki/Kebab_case>`_
 
- [55]: Cf. `http://www.ics.uci.edu/\~fielding/pubs/dissertation/rest\_arch\_style.htm <http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm>`_
+ [55] Cf. `http://www.ics.uci.edu/\~fielding/pubs/dissertation/rest\_arch\_style.htm <http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm>`_
 
- [56]: Cf. Sam Newman (2015): Building Microservices.
+ [56] Cf. Sam Newman (2015): Building Microservices.
 
- [57]: Cf. `https://www.openapis.org/ <https://www.openapis.org/>`_
+ [57] Cf. `https://www.openapis.org/ <https://www.openapis.org/>`_
 
- [58]: Si supponga ad esempio una operazione HTTP GET
+ [58] Si supponga ad esempio una operazione HTTP GET
     http://api.domain.com/management/departments che restituisce
     informazioni circa i reparti. Il singolo reparto può contenere link
     relativi ad altre operazioni come quella per ottenere gli impiegati
@@ -2448,42 +2448,42 @@ interfacce di servizio.
     \]\
     }
 
- [59]: Cf. `https://tools.ietf.org/html/rfc7231\#section-4.3 <https://tools.ietf.org/html/rfc7231#section-4.3>`_
+ [59] Cf. `https://tools.ietf.org/html/rfc7231\#section-4.3 <https://tools.ietf.org/html/rfc7231#section-4.3>`_
 
- [60]: Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag>`_
+ [60] Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag>`_
 
- [61]: Cf. `http://www.etsi.org/deliver/etsi\_ts/118100\_118199/118103/02.04.01\_60/ts\_118103v020401p.pdf <http://www.etsi.org/deliver/etsi_ts/118100_118199/118103/02.04.01_60/ts_118103v020401p.pdf>`_
+ [61] Cf. `http://www.etsi.org/deliver/etsi\_ts/118100\_118199/118103/02.04.01\_60/ts\_118103v020401p.pdf <http://www.etsi.org/deliver/etsi_ts/118100_118199/118103/02.04.01_60/ts_118103v020401p.pdf>`_
 
- [62]: Cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro>`_
+ [62] Cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro>`_
 
- [63]: Cf. `http://www.etsi.org/deliver/etsi\_ts/133100\_133199/133180/14.02.00\_60/ts\_133180v140200p.pdf <http://www.etsi.org/deliver/etsi_ts/133100_133199/133180/14.02.00_60/ts_133180v140200p.pdf>`_
+ [63] Cf. `http://www.etsi.org/deliver/etsi\_ts/133100\_133199/133180/14.02.00\_60/ts\_133180v140200p.pdf <http://www.etsi.org/deliver/etsi_ts/133100_133199/133180/14.02.00_60/ts_133180v140200p.pdf>`_
 
- [64]: Cf. `https://tools.ietf.org/html/rfc7519 <https://tools.ietf.org/html/rfc7519>`_
+ [64] Cf. `https://tools.ietf.org/html/rfc7519 <https://tools.ietf.org/html/rfc7519>`_
 
- [65]: Cf. `https://tools.ietf.org/html/rfc7515 <https://tools.ietf.org/html/rfc7515>`_
+ [65] Cf. `https://tools.ietf.org/html/rfc7515 <https://tools.ietf.org/html/rfc7515>`_
 
- [66]: Cf. `https://tools.ietf.org/html/rfc7516 <https://tools.ietf.org/html/rfc7516>`_
+ [66] Cf. `https://tools.ietf.org/html/rfc7516 <https://tools.ietf.org/html/rfc7516>`_
 
- [67]: Lo schema Bearer, inizialmente introdotto nella specifica OAuth2
+ [67] Lo schema Bearer, inizialmente introdotto nella specifica OAuth2
     ma poi utilizzato in altri contesti, ha la forma "Authorization:
     Bearer \<token\>" dove il token JWT è codificato in base64.
 
- [68]: Cf. `https://www.owasp.org/index.php/REST\_Security\_Cheat\_Sheet <https://www.owasp.org/index.php/REST_Security_Cheat_Sheet>`_
+ [68] Cf. `https://www.owasp.org/index.php/REST\_Security\_Cheat\_Sheet <https://www.owasp.org/index.php/REST_Security_Cheat_Sheet>`_
 
- [69]: Cf. `https://www.owasp.org/index.php/OWASP\_API\_Security\_Project <https://www.owasp.org/index.php/OWASP_API_Security_Project>`_
+ [69] Cf. `https://www.owasp.org/index.php/OWASP\_API\_Security\_Project <https://www.owasp.org/index.php/OWASP_API_Security_Project>`_
 
- [70]: Cf. `https://tools.ietf.org/html/rfc7515\#section-10 <https://tools.ietf.org/html/rfc7515#section-10>`_
+ [70] Cf. `https://tools.ietf.org/html/rfc7515\#section-10 <https://tools.ietf.org/html/rfc7515#section-10>`_
 
- [71]: Cf. `https://tools.ietf.org/html/rfc3986 <https://tools.ietf.org/html/rfc3986>`_
+ [71] Cf. `https://tools.ietf.org/html/rfc3986 <https://tools.ietf.org/html/rfc3986>`_
 
- [72]: Cf. `https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo\_elementi\_obbligatori.html\#titolo-dct-title <https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo_elementi_obbligatori.html#titolo-dct-title>`_
+ [72] Cf. `https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo\_elementi\_obbligatori.html\#titolo-dct-title <https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo_elementi_obbligatori.html#titolo-dct-title>`_
     Ad esempio, (i) sono ammesse stringhe come \"id\", \"args\" o
     \"stdin\" ed abbreviazioni come \"tcp\" ed \"udp\"; (ii) stringhe
     come \"codice fiscale\" andrebbero espresse per esteso con
     \"codice\_fiscale\" o \"tax\_code\", e non con \"cod\_fiscale\",
     \"cod\_fisc\" o \"cf\".
 
- [73]: Alcune indicazioni in questo senso:
+ [73] Alcune indicazioni in questo senso:
 
     - usare parole minuscole separate da trattino "-";
 
@@ -2499,43 +2499,43 @@ interfacce di servizio.
     utilizzare la dizione US per evitare ambiguità come ad es.,
     \"color\" vs \"colour\", \"flavor\" vs \"flavour\").
 
- [74]: Cf. `https://tools.ietf.org/html/rfc7159 <https://tools.ietf.org/html/rfc7159>`_
+ [74] Cf. `https://tools.ietf.org/html/rfc7159 <https://tools.ietf.org/html/rfc7159>`_
 
- [75]: Cf. `https://tools.ietf.org/html/rfc7807 <https://tools.ietf.org/html/rfc7807>`_
+ [75] Cf. `https://tools.ietf.org/html/rfc7807 <https://tools.ietf.org/html/rfc7807>`_
 
- [76]: Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
+ [76] Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
 
- [77]: Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After>`_
+ [77] Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After>`_
 
- [78]: Cf. `http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html <http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html>`_
+ [78] Cf. `http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html <http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html>`_
 
- [79]: Cf. `https://stomp.github.io/ <https://stomp.github.io/>`_
+ [79] Cf. `https://stomp.github.io/ <https://stomp.github.io/>`_
 
- [80]: Cf. `https://xmpp.org/ <https://xmpp.org/>`_
+ [80] Cf. `https://xmpp.org/ <https://xmpp.org/>`_
 
- [81]: Cf. `http://mqtt.org/ <http://mqtt.org/>`_
+ [81] Cf. `http://mqtt.org/ <http://mqtt.org/>`_
 
- [82]: Cf. `http://activemq.apache.org/openwire.html <http://activemq.apache.org/openwire.html>`_
+ [82] Cf. `http://activemq.apache.org/openwire.html <http://activemq.apache.org/openwire.html>`_
 
- [83]: Cf. `https://www.amqp.org/ <https://www.amqp.org/>`_
+ [83] Cf. `https://www.amqp.org/ <https://www.amqp.org/>`_
 
- [84]: Cf. `https://tools.ietf.org/html/rfc7230 <https://tools.ietf.org/html/rfc7230>`_
+ [84] Cf. `https://tools.ietf.org/html/rfc7230 <https://tools.ietf.org/html/rfc7230>`_
 
- [85]: Cf. `https://tools.ietf.org/html/rfc7231 <https://tools.ietf.org/html/rfc7231>`_
+ [85] Cf. `https://tools.ietf.org/html/rfc7231 <https://tools.ietf.org/html/rfc7231>`_
 
- [86]: Cf. `https://tools.ietf.org/html/rfc7234 <https://tools.ietf.org/html/rfc7234>`_
+ [86] Cf. `https://tools.ietf.org/html/rfc7234 <https://tools.ietf.org/html/rfc7234>`_
 
- [87]: Cf. `https://tools.ietf.org/html/rfc7232 <https://tools.ietf.org/html/rfc7232>`_
+ [87] Cf. `https://tools.ietf.org/html/rfc7232 <https://tools.ietf.org/html/rfc7232>`_
 
- [88]: Come nel caso di processi amministrativi sia completamente
+ [88] Come nel caso di processi amministrativi sia completamente
     automatizzati (short-running) sia con intervento umano o comunque
     long-running.
 
- [89]: Cf. Cesare Pautasso, Olaf Zimmermann, Frank Leymann: Restful web
+ [89] Cf. Cesare Pautasso, Olaf Zimmermann, Frank Leymann: Restful web
     services vs. \"big\"\' web services: making the right architectural
     decision. WWW 2008: 805-814.
 
- [90]: Cf. `https://www.programmableweb.com/api-university/understanding-api-first-design <https://www.programmableweb.com/api-university/understanding-api-first-design>`_.
+ [90] Cf. `https://www.programmableweb.com/api-university/understanding-api-first-design <https://www.programmableweb.com/api-university/understanding-api-first-design>`_.
     In termini colloquiali, il principio può essere parafrasato in
     questi termini:
 
@@ -2545,26 +2545,26 @@ interfacce di servizio.
 
     - L'API deve essere descritta (ed addirittura essere auto-descrittiva, se possibile e fattibile)
 
- [91]: Cf. `https://www.programmableweb.com/news/why-uks-government-data-service-takes-api-first-approach-to-datagovuk/elsewhere-web/2016/09/02 <https://www.programmableweb.com/news/why-uks-government-data-service-takes-api-first-approach-to-datagovuk/elsewhere-web/2016/09/02>`_
+ [91] Cf. `https://www.programmableweb.com/news/why-uks-government-data-service-takes-api-first-approach-to-datagovuk/elsewhere-web/2016/09/02 <https://www.programmableweb.com/news/why-uks-government-data-service-takes-api-first-approach-to-datagovuk/elsewhere-web/2016/09/02>`_
 
- [92]: Cf. `https://it.wikipedia.org/wiki/Blockchain <https://it.wikipedia.org/wiki/Blockchain>`_
+ [92] Cf. `https://it.wikipedia.org/wiki/Blockchain <https://it.wikipedia.org/wiki/Blockchain>`_
 
- [93]: Una rete di calcolatori si definisce peer-to-peer, quando le
+ [93] Una rete di calcolatori si definisce peer-to-peer, quando le
     macchine componenti (i nodi) non sono organizzati gerarchicamente ma
     svolgono delle funzionalità paritarie.
 
- [94]: Cf. `https://e-estonia.com/solutions/security-and-safety/ksi-blockchain <https://e-estonia.com/solutions/security-and-safety/ksi-blockchain>`_
+ [94] Cf. `https://e-estonia.com/solutions/security-and-safety/ksi-blockchain <https://e-estonia.com/solutions/security-and-safety/ksi-blockchain>`_
 
- [95]: Cf. `https://techcrunch.com/2018/04/19/do-you-need-a-blockchain/ <https://techcrunch.com/2018/04/19/do-you-need-a-blockchain/>`_
+ [95] Cf. `https://techcrunch.com/2018/04/19/do-you-need-a-blockchain/ <https://techcrunch.com/2018/04/19/do-you-need-a-blockchain/>`_
 
- [96]: Cf. `https://www.multichain.com/blog/2017/05/blockchain-immutability-myth/ <https://www.multichain.com/blog/2017/05/blockchain-immutability-myth/>`_
+ [96] Cf. `https://www.multichain.com/blog/2017/05/blockchain-immutability-myth/ <https://www.multichain.com/blog/2017/05/blockchain-immutability-myth/>`_
 
- [97]: Cf. `https://joinup.ec.europa.eu/asset/eia/description <https://joinup.ec.europa.eu/asset/eia/description>`_
+ [97] Cf. `https://joinup.ec.europa.eu/asset/eia/description <https://joinup.ec.europa.eu/asset/eia/description>`_
 
- [98]: Cf. `http://lg-patrimonio-pubblico.readthedocs.io/it/latest/index.html <http://lg-patrimonio-pubblico.readthedocs.io/it/latest/index.html>`_
+ [98] Cf. `http://lg-patrimonio-pubblico.readthedocs.io/it/latest/index.html <http://lg-patrimonio-pubblico.readthedocs.io/it/latest/index.html>`_
 
- [99]: Cf. Massimo Mecella, Francesco Leotta (2017): Migliorare
+ [99] Cf. Massimo Mecella, Francesco Leotta (2017): Migliorare
     l'accesso agli open data pubblici: tecnologie e approcci,
     `https://www.agendadigitale.eu/cittadinanza-digitale/pa-tecnologie-e-approcci-per-migliorare-laccesso-ai-dati-aperti/ <https://www.agendadigitale.eu/cittadinanza-digitale/pa-tecnologie-e-approcci-per-migliorare-laccesso-ai-dati-aperti/>`_
 
- [100]: Cf. `https://graphql.org](https://graphql.org/ <https://graphql.org](https://graphql.org/>`_
+ [100] Cf. `https://graphql.org](https://graphql.org/ <https://graphql.org](https://graphql.org/>`_
