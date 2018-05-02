@@ -498,9 +498,9 @@ In sintesi, alla base di SPCoop vi erano i seguenti principi:
 	fruizione di servizi offerti tramite un unico elemento logico denominato
 	*Porta di Dominio;*
 
-2.  *ambito di responsabilità* delle singole Amministrazioni dei
-	servizi erogati che costituiscono il *Dominio di servizi applicativi*
-	della stessa Amministrazione;
+2.  *ambito di responsabilità* delle singole Amministrazioni dei servizi erogati 
+	che costituiscono il *Dominio di servizi applicativi* della stessa 
+	Amministrazione;
 
 3. 	*accordi di servizio* quale rappresentazione formale della
 	cooperazione tra erogatore/i e fruitore/i costituiti sulla base di un
@@ -594,7 +594,7 @@ transitare al nuovo modello di interoperabilità [8]_.
 L'esperienza maturata con SPCoop, di seguito sintetizzata, deve essere
 considerata nella definizione del ModI 2018 .
 
-**Cosa ha funzionato **
+**Cosa ha funzionato**
 
 -   La definizione di un quadro comune per l'implementazione dei
     meccanismi di interoperabilità tra i sistemi delle Pubbliche
@@ -610,7 +610,7 @@ considerata nella definizione del ModI 2018 .
     utilizzato a livello regionale e ha consentito di disegnare su tali
     basi tecniche il futuro SPID.
 
-**Cosa deve essere cambiato **
+**Cosa deve essere cambiato**
 
 -   Le tecnologie e gli standard utilizzati dal modello SPCoop
     richiedono un consistente aggiornamento in considerazione delle
@@ -621,7 +621,7 @@ considerata nella definizione del ModI 2018 .
     caratteristiche delle amministrazioni e dei soggetti terzi
     coinvolti.
 
-**Cosa deve essere abbandonato **
+**Cosa deve essere abbandonato**
 
 -   L'adozione di un'unica modalità per attuare l'interoperabilità dei
     sistemi non permette di considerare la molteplicità e la specificità
@@ -768,15 +768,15 @@ di continui aggiornamenti, si estrinsecherà concretamente in rilasci
 successivi e cadenzati nel tempo, di una serie di 5 documenti, in
 particolare:
 
-**1 - Visione Generale**, che è il documento attuale, rilasciato nella
+1. **Visione Generale**, che è il documento attuale, rilasciato nella
 prima versione a maggio 2018.
 
-**2 - Tecnologie ed approcci all'integrazione ed interoperabilità**, che
+2. **Tecnologie ed approcci all'integrazione ed interoperabilità**, che
 nella prima versione (maggio 2018) viene rilasciato contestualmente al
 presente documento. Ha come oggetto l\'individuazione delle possibili
 tecnologie ed approcci che possono essere utilizzati dalle PA.
 
-**3 - Profili di interoperabilità**, che fornirà indicazioni concrete, a
+3. **Profili di interoperabilità**, che fornirà indicazioni concrete, a
 livello tecnico, su differenti modalità operative per realizzare
 l'interoperabilità, tenendo conto delle possibili tecnologie ed approcci
 disponibili. La prima release di questo documento è prevista per
@@ -786,11 +786,11 @@ introduce anche il concetto di pattern di interoperabilità. Infine
 questo documento si occuperà di discutere anche l'aspetto della QoS -
 Quality of Service e degli SLA - Service Level Agreement.
 
-**4 - Governance del Modello**, che presenterà compiutamente la
+4. **Governance del Modello**, che presenterà compiutamente la
 governance dell'intero modello e le sue modalità di evoluzione, ed è
 previsto in una prima versione per l'estate 2018.
 
-**5 - Registri e Cataloghi**, che si occuperà di definire le linee guida
+5. **Registri e Cataloghi**, che si occuperà di definire le linee guida
 per i registri e cataloghi necessari a supportare il modello stesso.
 Anche per questo documento è prevista una prima versione per l'estate
 2018.
