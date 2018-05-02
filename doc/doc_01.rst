@@ -1034,7 +1034,7 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     modello, pur considerando i termini framework, modello e quadro come
     sinonimi.
 
-.. [4] Cf. `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation`__ 
+.. [4] Cf. `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation>`__ 
 
 .. [5] Cf. `http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN <http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN>`__
 
@@ -1068,7 +1068,7 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     e-government through a cooperative architecture. IEEE Computer 34
     (2), pp. 40-45.
 
-.. [13] La conferenza di servizi, cf. `http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/ <http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/`__ ,
+.. [13] La conferenza di servizi, cf. `http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/ <http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/>`__ ,
     è l'istituto che facilita l\'acquisizione da parte della PA di
     autorizzazioni, atti, licenze, permessi e nulla-osta o di altri
     elementi comunque denominati, finalizzati all\'emissione di un
@@ -1098,8 +1098,8 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
 .. [16] Cf. EU eGovernment Action Plan 2016-2020, `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation] <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)>`__
 
 .. [17] Cf. `Codice dell\'Amministrazione Digitale Capo 1 Sez. 2 Art.
-    3 <http://cad.readthedocs.io/it/v2017-12-13/_rst/capo1_sezione2_art3.html`__
+    3 <http://cad.readthedocs.io/it/v2017-12-13/_rst/capo1_sezione2_art3.html>`__
 
 .. [18] Cf. `http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html>`__
 
-.. [19] Cf. `http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html\#linee-di-azione <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html#linee-di-azione`__
+.. [19] Cf. `http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html\#linee-di-azione <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html#linee-di-azione>`__
