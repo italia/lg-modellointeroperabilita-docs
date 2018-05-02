@@ -27,7 +27,7 @@ Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
     parte delle PA, cittadini e imprese, di soluzioni applicative
     innovative che abilitino l'utilizzo dei servizi individuati nelle
     Infrastrutture immateriali del Piano triennale per l'informatica
-    nella PA[^2];
+    nella PA [2]_;
 
 -   promuovere, quando applicabile, l'adozione dell'approccio *API
     first*, al fine di favorire la separazione dei livelli di back end e
@@ -47,7 +47,7 @@ Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
 =====================
 
 Lo *European Interoperability Framework (EIF)* (in italiano Quadro
-Europeo di Interoperabilità - QEI[^3]) fornisce orientamenti alle PA
+Europeo di Interoperabilità - QEI [3]_) fornisce orientamenti alle PA
 Europee su come operare le iniziative relative al tema
 dell'interoperabilità; tutto questo mediante una serie di
 raccomandazioni atte a stabilire relazioni tra le varie organizzazioni,
@@ -312,7 +312,7 @@ Nell'EIF è raccomandato:
 
 La sicurezza e privacy sono aspetti che devono essere definiti in pieno
 accordo con l'e-Government action plan 2016-2020 della Commissione
-EU[^4]. Per le PA è raccomandato:
+EU [4]_. Per le PA è raccomandato:
 
 -   tenendo conto dei requisiti specifici di sicurezza e riservatezza,
     identificare per ogni servizio le contromisure in conformità con
@@ -321,7 +321,7 @@ EU[^4]. Per le PA è raccomandato:
 -   utilizzare i servizi fiduciari, in base al regolamento in materia di
     identificazione elettronica e servizi fiduciari, come meccanismi per
     garantire lo scambio sicuro e protetto dei dati nei servizi pubblici
-    (Regolamento (UE) 2014/910[^5]).
+    (Regolamento (UE) 2014/910 [5]_).
 
 Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha
 individuato i seguenti obblighi per gli stati membri.
@@ -365,7 +365,7 @@ individuato i seguenti obblighi per gli stati membri.
 3 Il quadro di riferimento attuale
 ==================================
 
-Il Piano triennale per l'informatica nella PA[^6] costituisce il quadro
+Il Piano triennale per l'informatica nella PA [6]_ costituisce il quadro
 di riferimento entro cui si colloca il ModI 2018 all'interno del
 *Modello strategico di evoluzione del sistema informativo della PA*.
 
@@ -468,7 +468,7 @@ Nell'ottobre 2005 il CNIPA (oggi Agenzia per l'Italia digitale - AgID)
 ha pubblicato un insieme di documenti che costituiscono il riferimento
 tecnico per l'interoperabilità fra le PA. Tali documenti delineano il
 quadro tecnico-implementativo del Sistema pubblico di cooperazione
-(SPCoop), framework di interoperabilità a livello applicativo[^7].
+(SPCoop), framework di interoperabilità a livello applicativo [7]_.
 
 SPCoop ha costituito il modello concettuale ed architetturale della
 cooperazione applicativa tra differenti Amministrazioni e/o soggetti
@@ -589,7 +589,7 @@ Il tempo trascorso dalla definizione del modello e il mutato quadro
 tecnico, organizzativo e normativo rende necessario l'aggiornamento del
 modello, obiettivo appunto della presente iniziativa, come anticipato
 nel 2017 attraverso la Determinazione 219/2017 - Linee guida per
-transitare al nuovo modello di interoperabilità[^8].
+transitare al nuovo modello di interoperabilità [8]_.
 
 L'esperienza maturata con SPCoop, di seguito sintetizzata, deve essere
 considerata nella definizione del ModI 2018 .
@@ -654,13 +654,13 @@ messi a disposizione da altro soggetto.
 
 *Figura 5 - Ambito di applicazione del modello di interoperabilità*
 
-I soggetti fruitori possono utilizzare le API/servizi[^9] esposti
+I soggetti fruitori possono utilizzare le API/servizi [9]_ esposti
 dall'erogatore attraverso:
 
 -   una soluzione software attivata da un attore umano (*user
     agent/human*);
 
--   un sistema applicativo *automatico*[^10] (*server/machine*), anche
+-   un sistema applicativo *automatico* [10]_ (*server/machine*), anche
     allo scopo di definire nuovi servizi a valore aggiunto .
 
 In considerazione di quanto sopra si individuano le seguenti possibili
@@ -685,7 +685,7 @@ interoperabilità deve tener presente:
 
 -   **Condivisione di dati**: l\'obiettivo è quello di tenere allineati
     i dati di uno o più sistemi; le applicazioni software che gestiscono
-    (creano, aggiornano, leggono ed eventualmente cancellano[^11]) tali
+    (creano, aggiornano, leggono ed eventualmente cancellano [11]_) tali
     dati, sono logicamente e fisicamente indipendenti. I processi che
     sovraintendono le applicazioni sono separati ed indipendenti. Il
     caso tipico è quello di un'Amministrazione, o soggetto privato, che
@@ -705,7 +705,7 @@ interoperabilità deve tener presente:
     sincronizzata con altre applicazioni di altri soggetti. Le
     applicazioni sono fisicamente indipendenti ma non logicamente, in
     quanto esiste un processo inter-organizzativo che sovraintende a
-    tutte le organizzazioni che devono cooperare[^12]. Il caso tipico è
+    tutte le organizzazioni che devono cooperare [12]_. Il caso tipico è
     quello in cui il presentarsi di un evento all'interno di
     un'Amministrazione A debba essere comunicato ad altri soggetti B e
     C, pubblici e privati, che devono dare seguito a proprie procedure
@@ -729,7 +729,7 @@ interoperabilità deve tener presente:
     all'utente voli aerei, hotel e noleggio auto, ecc, andando appunto a
     comporre servizi per la bigliettazione aerea, prenotazione
     alberghiera, noleggio auto, ecc. Nel caso della PA, un caso è una
-    conferenza di servizi telematica[^13] in cui diverse Amministrazioni
+    conferenza di servizi telematica [13]_ in cui diverse Amministrazioni
     compongono un un nuovo servizio per dare seguito ad una istanza di
     un cittadino o di un'impresa.
 
@@ -738,7 +738,7 @@ interoperabilità deve tener presente:
 > È importante analizzare le analogie e differenze con il caso
 > precedente: nel caso della notifica inter-PA, c'è una relazione
 > peer-to-peer tra i vari soggetti coinvolti, e si parla di
-> *coreografia* tra le applicazioni coinvolte[^14]. Nel caso invece
+> *coreografia* tra le applicazioni coinvolte [14]_. Nel caso invece
 > della composizione, una delle applicazioni ha un ruolo di
 > *orchestrazione* nei confronti delle altre, e quindi c'è una relazione
 > uno (l'orchestratore, che fa da *master*) a molti (le applicazioni
@@ -861,7 +861,7 @@ insieme di artefatti che lo accompagnano, in particolare:
 
 -   Software Development Kit - SDK - per l'interfacciamento e un
     ambiente di test (in analogia a quanto avviene per alcuni servizi
-    commerciali di largo utilizzo in applicazioni Web[^15]),
+    commerciali di largo utilizzo in applicazioni Web [15]_),
 
 -   dichiarazione sulla qualità del servizio che si impegna a
     rispettare. In questo secondo caso, deve anche definire le modalità
@@ -948,9 +948,9 @@ amministrazioni anche tramite la firma di convenzioni bilaterali. Questo
 non sarà più necessario nel nuovo modello, in cui l'adesione si
 estrinsicherà nell'atto di registrazione da parte della PA di
 un'API/servizio nel catalogo. In ottemperanza al principio \"once-only\"
-definito nell\'EU eGovernment Action Plan 2016-2020[^16], l\'erogatore
+definito nell\'EU eGovernment Action Plan 2016-2020 [16]_, l\'erogatore
 si impegna a fornire l\'accesso alle proprie API/servizi a qualunque
-soggetto registrato ne faccia richiesta[^17]. Gli erogatori devono
+soggetto registrato ne faccia richiesta [17]_. Gli erogatori devono
 descrivere le loro API/servizi classificando le informazioni scambiate
 ove possibile collegandole ai vocabolari controllati e a concetti
 semantici predefiniti, utili anche a determinare l'impatto rispetto ai
@@ -979,10 +979,10 @@ In prima istanza si prevede che gli enti Capofila possano essere:
 A tal fine, sul fronte delle aree tematiche il Piano Triennale 2017-2019
 introduce:
 
--   gli Ecosistemi[^18], settori o aree di intervento in cui si svolge
+-   gli Ecosistemi [18]_, settori o aree di intervento in cui si svolge
     l'azione delle PA, che raggruppano i vari enti per aree tematiche;
 
--   i Gruppi di Lavoro[^19] che, all\'interno degli Ecosistemi,
+-   i Gruppi di Lavoro [19]_ che, all\'interno degli Ecosistemi,
     indirizzano il vero e proprio lavoro di standardizzazione
     coinvolgendo sia tecnici che esperti dei rispettivi domini
     applicativi.
@@ -1019,17 +1019,15 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
 .. [1] Il ModI 2018 è concettualmente la seconda versione (aggiornamento)
     del framework di interoperabilità della PA che nella prima versione
     fu definito nel 2005 con il nome di SPCoop - Servizio Pubblico di
-    Cooperazione Applicativa,\
-    cf.
-    [[http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa]{.underline}](http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa).
+    Cooperazione Applicativa, `cf. <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__
     Il termine *modello* trova corrispettivo nel termine inglese
     framework, e pertanto nel presente documento i due termini verranno
     considerati sinonimi.
 
-[^2]: Cf.
+.. [2]: Cf.
     [[https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf]{.underline}](https://pianotriennale-ict.italia.it/assets/pdf/Piano_Triennale_per_l_informatica_nella_Pubblica_Amministrazione.pdf).
 
-[^3]: In precedenti documenti a cura di AgID e del Team Digitale, il
+.. [3]: In precedenti documenti a cura di AgID e del Team Digitale, il
     termine inglese framework è stato sovente tradotto in italiano come
     modello, ed è questo il termine utilizzato nel presente documento.
     La dicitura *quadro* è la traduzione letterale della Commissione
@@ -1037,23 +1035,23 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     modello, pur considerando i termini framework, modello e quadro come
     sinonimi.
 
-[^4]: Cf.
+.. [4]: Cf.
 
     [[https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation]{.underline}](https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)
 
-[^5]: Cf.
+.. [5]: Cf.
     [[http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN]{.underline}](http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN)
 
-[^6]: Cf.
+.. [6]: Cf.
     [[https://pianotriennale-ict.italia.it/]{.underline}](https://pianotriennale-ict.italia.it/)
 
-[^7]: Cf.
+.. [7]: Cf.
     http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa
 
-[^8]: Cf.
+.. [8]: Cf.
     http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf
 
-[^9]: Con abuso di nomenclatura, ma intuitivamente chiaro, si intende
+.. [9]: Con abuso di nomenclatura, ma intuitivamente chiaro, si intende
     nel presente documento servizio e API come sinonimo, ad indicare una
     componente software, esposta sul Web, che funge da servente e può
     essere utilizzata da client. In modo rigoroso, sia SPCoop che il
@@ -1065,18 +1063,18 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     Internet/intranet, da cui il termine Web. Tali concetti verranno
     ulteriormente approfonditi nel Modello di Interoperabilità 2018.
 
-[^10]: Quindi non attivato da un utente umano, anche impropriamente
+.. [10]: Quindi non attivato da un utente umano, anche impropriamente
     detto *enterprise* in taluni contesti.
 
-[^11]: Cf. le cosiddette operazioni CRUD - Create, Read, Update, Delete
+.. [11]: Cf. le cosiddette operazioni CRUD - Create, Read, Update, Delete
 
-[^12]: Nel caso della PA, questo processo inter-organizzativo
+.. [12]: Nel caso della PA, questo processo inter-organizzativo
     corrisponde al concetto di macro-processo o di processo
     inter-amministrazione: M Mecella, C Batini (2001), Enabling italian
     e-government through a cooperative architecture. IEEE Computer 34
     (2), pp. 40-45.
 
-[^13]: La conferenza di servizi, cf.
+.. [13]: La conferenza di servizi, cf.
     [[http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/]{.underline}](http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/),
     è l'istituto che facilita l\'acquisizione da parte della PA di
     autorizzazioni, atti, licenze, permessi e nulla-osta o di altri
@@ -1087,7 +1085,7 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     semplificata in modalità asincrona costituisce un altro caso della
     modalità precedente (notifica inter-PA).
 
-[^14]: Approfondimenti sui concetti di orchestrazione e coreografia
+.. [14]: Approfondimenti sui concetti di orchestrazione e coreografia
     possono essere trovati in:
 
     <https://stackoverflow.com/questions/4127241/orchestration-vs-choreography>
@@ -1099,19 +1097,19 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     Multi-Viewpoint Approach. Int. J. Cooperative Inf. Syst. 13(4), pp.
     337-368
 
-[^15]: Ad es., Paypal, cf. https://developer.paypal.com/, offre SDK ed
+.. [15]: Ad es., Paypal, cf. https://developer.paypal.com/, offre SDK ed
     un servizio di prova, cosiddetta sandbox, che permette agli
     sviluppatori che si vogliono integrare con Paypal di provare le
     interazioni prima di rilasciare i propri sistemi.
 
-[^16]: Cf. EU eGovernment Action Plan 2016-2020,
+.. [16]: Cf. EU eGovernment Action Plan 2016-2020,
     [[https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation]{.underline}](https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)
 
-[^17]: Cf. [[Codice dell\'Amministrazione Digitale Capo 1 Sez. 2 Art.
+.. [17]: Cf. [[Codice dell\'Amministrazione Digitale Capo 1 Sez. 2 Art.
     3]{.underline}](http://cad.readthedocs.io/it/v2017-12-13/_rst/capo1_sezione2_art3.html)
 
-[^18]: Cf.
+.. [18]: Cf.
     [[http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html]{.underline}](http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html)
 
-[^19]: Cf.
+.. [19]: Cf.
     [[http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html\#linee-di-azione]{.underline}](http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html#linee-di-azione)
