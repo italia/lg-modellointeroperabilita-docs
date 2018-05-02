@@ -24,7 +24,7 @@ paesi di tutto il mondo. Il concetto di servizio copre un ampio spettro
 di aspetti nelle relazioni moderne tra amministrazioni pubbliche,
 fornitori privati e utenti finali..
 
-Introduciamo il concetto di **servizio**[^1] così come intuitivamente
+Introduciamo il concetto di **servizio** [1]_ così come intuitivamente
 percepito nella vita quotidiana. Interagiamo ogni giorno con le persone
 e le imprese per soddisfare i nostri bisogni, facendo uso di vari tipi
 di transazioni, ad esempio di tipo economico in cui, dato un pagamento,
@@ -285,7 +285,7 @@ Un **servizio digitale** (talvolta anche indicato come *electronic
 service* o *e-service*) è un servizio che *viene erogato via Internet o
 in una rete, la fornitura è essenzialmente automatizzata o comporta solo
 un intervento umano minimo, ed è impossibile da garantire in assenza di
-tecnologia informatica*[^2]. Tutto quello precedentemente discusso per i
+tecnologia informatica* [2]_. Tutto quello precedentemente discusso per i
 servizi, vale anche per quelli digitali, essendo questi una
 specializzazione.
 
@@ -322,7 +322,7 @@ strati logici di funzionalità in comunicazione tra loro:
 -   logica applicativa (application layer o business layer);
 
 -   logica di accesso ai dati (access data layer) o back-end, interroga
-    > il database o il sistema legacy[^3].
+    > il database o il sistema legacy [3]_.
 
 Tale architettura viene poi spesso mappata a livello
 fisico-infrastrutturale in altrettanti strati fisici (*tier*)
@@ -383,7 +383,7 @@ sinonimi (dato che l'apertura è spesso associata al Web/Internet).
 
 Per il W3C un **web service** è qualsiasi software che si rende
 disponibile su Internet e standardizza la sua interfaccia tramite la
-codifica XML[^4]. Un client richiama un'operazione offerta da un web
+codifica XML [4]_. Un client richiama un'operazione offerta da un web
 service inviando una richiesta (solitamente sotto forma di un messaggio
 XML) e il web service invia una risposta XML. I web service invocano la
 comunicazione su una rete, con HTTP come protocollo più comune. I web
@@ -511,7 +511,7 @@ maggiori dettagli). La descrizione di una interfaccia di servizio di
 solito include caratteristiche funzionali e non funzionali. La
 descrizione funzionale si concentra sulle caratteristiche operative
 dell'interfaccia di servizio che descrivono il funzionamento in termini
-di operazioni offerte, i parametri richiesti da ognuna, gli endpoint[^5]
+di operazioni offerte, i parametri richiesti da ognuna, gli endpoint [5]_
 da utilizzare, il formato dei messaggi ed i protocolli di rete da
 utilizzare. La descrizione non funzionale si concentra invece sulla
 *qualità del servizio* (o qualità dell'interfaccia di servizio) in
@@ -563,7 +563,7 @@ segue:
     > tempo.
 
 -   *Scalabilità*. L'abilità di servire in maniera consistente le
-    > richieste a dispetto di variazioni nel numero delle richieste[^6].
+    > richieste a dispetto di variazioni nel numero delle richieste [6]_.
     > È strettamente connesso al concetto di accessibilità, ma qui il
     > concetto fondamentale è il mantenimento delle prestazioni.
 
@@ -581,12 +581,12 @@ iniziative necessarie a mantenere i requisiti di QoS richiesti dal caso
 d'uso. Questo include anche l'utilizzo di buone pratiche. Ad esempio,
 per assicurare prestazioni e scalabilità il risparmio della banda è una
 condizione fondamentale. Le interfacce di servizio dovrebbero quindi
-implementare meccanismi di compressione del payload[^7] e supportare la
-paginazione[^8].
+implementare meccanismi di compressione del payload [7]_ e supportare la
+paginazione [8]_.
 
 Quando si utilizzano meccanismi di caching, essi devono essere
 documentati nelle specifiche delle interfacce di servizio, ed essere
-conformi alle specifiche RFC-7234[^9].
+conformi alle specifiche RFC-7234 [9]_.
 
 Questa sezione si è concentrata sul concetto di QoS nel campo delle
 interfacce di servizio. Misure di QoS possono essere introdotte anche
@@ -646,7 +646,7 @@ Recentemente, gli SLA hanno iniziato ad includere non soltanto vincoli
 relativi all'erogatore, ma anche vincoli che impongono ai singoli
 fruitori delle interfacce di servizio dei limiti relativi al ritmo ed
 alla quantità delle richieste. A tal fine gli erogatori devono definire
-ed esporre ai fruitori politiche di throttling[^10] (anche noto come
+ed esporre ai fruitori politiche di throttling [10]_ (anche noto come
 rate limiting) segnalando eventuali limiti raggiunti. Gli erogatori
 dovrebbero far rispettare le quote anche se se il sistema non è in
 sovraccarico, incentivando i fruitori a rispettarle.
@@ -776,7 +776,7 @@ e le modalità di consultazione e reperimento delle informazioni.
 L'erogatore deve inoltre tracciare un evento per ogni richiesta,
 contenente almeno i seguenti parametri minimi:
 
--   data e ora della richiesta in formato RFC3339[^11] in UTC e con i
+-   data e ora della richiesta in formato RFC3339 [11]_ in UTC e con i
     > separatori Z e T maiuscolo. Questa specifica è fondamentale per
     > l\'interoperabilità dei sistemi di logging ed auditing, evitando i
     > problemi di transizione all\'ora legale e la complessità nella
@@ -928,7 +928,7 @@ interfaccia di servizio.
 
 La tabella seguente riassume le considerazioni presentate.
 
-  **Interazione**          **servizio digitale**   **interfaccia di servizio**   **richiede logica di presentazione**   **composizione di più servizi**[^12]
+  **Interazione**          **servizio digitale**   **interfaccia di servizio**   **richiede logica di presentazione**   **composizione di più servizi** [12]_
   ------------------------ ----------------------- ----------------------------- -------------------------------------- --------------------------------------
   A2A human-to-machine     ✓                                                     ✓                                      \-
   A2A machine-to-machine                           ✓                                                                    \+
@@ -953,7 +953,7 @@ corrispondenti alle operazioni dell'interfaccia di servizio), c'è il
 problema di definire correttamente il numero e soprattutto il tipo dei
 parametri di input ed output. Non a caso, l'aspetto metodologico
 cruciale su cui si soffermano tutte le metodologie di progettazione e
-programmazione basate sul design-by-contract[^13] è la definizione della
+programmazione basate sul design-by-contract [13]_ è la definizione della
 segnatura dei metodi, al giusto livello di granularità, e la segnatura
 comprende sia il nome del metodo che i parametri.
 
@@ -966,7 +966,7 @@ servizio. Nel documento 3 - Profili e pattern di interoperabilità, esse
 saranno utilizzate nella definizione di vari possibili pattern che
 rispondono ad esigenze specifiche.
 
-  **Tipo di interfaccia**   **Granularità**[^14]
+  **Tipo di interfaccia**   **Granularità** [14]_
   ------------------------- ----------------------
   Elementare                *fine-grained*
   Composta                  *coarse-grained*
@@ -984,33 +984,33 @@ servizio, è importante
     > dei servizi;
 
 -   facilitare la validazione automatica delle specifiche dei vari
-    > servizi[^15].
+    > servizi [15]_.
 
 Inoltre è auspicabile che la specifica del formato sia coerente, od
 addirittura la stessa, tra varie tecnologie di esposizione delle
-interfacce di servizio[^16].
+interfacce di servizio [16]_.
 
 Le indicazioni generali sono:
 
 -   per gli schemi dei dati, utilizzo di nomi basati su riferimenti
     > europei (ad es., Core Vocabularies/Dizionari Controllati,
-    > Direttiva Europea INSPIRE 2007/2/CE[^17]) e standard de facto e de
+    > Direttiva Europea INSPIRE 2007/2/CE [17]_) e standard de facto e de
     > iure eventualmente disponibili sulla specifica tematica;
 
--   UTF-8 come codifica di default[^18];
+-   UTF-8 come codifica di default [18]_;
 
--   URI come identificatore del servizio e dell'erogatore[^19];
+-   URI come identificatore del servizio e dell'erogatore [19]_;
 
 -   per i formati di serializzazione, semplicità di integrazione con
     > strumenti di validazione (ad es. parsing);
 
--   paesi, lingue e monete[^20]: ISO 3166-1-alpha2 country[^21], ISO
-    > 4217 currency codes[^22];
+-   paesi, lingue e monete [20]_: ISO 3166-1-alpha2 country [21]_, ISO
+    > 4217 currency codes [22]_;
 
--   data e ora in RFC3339[^23], un sottoinsieme dell\'ISO8601
+-   data e ora in RFC3339 [23]_, un sottoinsieme dell\'ISO8601
     > ottimizzato per il web;
 
--   aree amministrative NUTS 1 e successive: nomenclature NUTS[^24] (per
+-   aree amministrative NUTS 1 e successive: nomenclature NUTS [24]_ (per
     > il livello NUTS 0 - entità nazionali si fa riferimento ai codici
     > ISO).
 
@@ -1025,7 +1025,7 @@ distruzione delle informazioni.
 Questa sezione si concentra sui meccanismi di sicurezza che vadano oltre
 il semplice filtraggio di pacchetti basato su indirizzi IP, tipo di
 protocollo (anche detto circuit-level filtering) o contenuto del dato
-applicativo (application-level gateway o antivirus)[^25]. In particolare
+applicativo (application-level gateway o antivirus) [25]_. In particolare
 la sezione si concentra sull'utilizzo di protocolli e tecniche di
 sicurezza basate sulla manipolazione dei messaggi di rete. La sezione
 farà inoltre riferimento a come i requisiti di sicurezza possano essere
@@ -1307,17 +1307,17 @@ approcci utilizzati nello scenario human-to-machine e quelli utilizzati
 nello scenario machine-to-machine. I protocolli più comuni in ambito Web
 per autenticazione ed autorizzazione nel caso human-to-machine sono:
 
--   OAuth2[^26] è uno standard per l'autorizzazione;
+-   OAuth2 [26]_ è uno standard per l'autorizzazione;
 
--   OpenID[^27]. Uno standard pensato per la sola autenticazione.
-    > L'ultima versione, denominata OpenID Connect[^28], è costruita su
+-   OpenID [27]_. Uno standard pensato per la sola autenticazione.
+    > L'ultima versione, denominata OpenID Connect [28]_, è costruita su
     > OAuth2 in termini di scambio di messaggi;
 
--   Security Assertion Markup Language - SAML[^29] (la versione corrente
+-   Security Assertion Markup Language - SAML [29]_ (la versione corrente
     > è la 2) è il protocollo più vecchio in circolazione e copre
     > l'autenticazione e in parte l'autorizzazione;
 
--   eXtensible Access Control Markup Language - XACML[^30] complementare
+-   eXtensible Access Control Markup Language - XACML [30]_ complementare
     > a SAML per la gestione esaustiva degli aspetti di autorizzazione.
 
 Nei protocolli human-to-machine, un client riceve autorizzazioni ad
@@ -1328,9 +1328,9 @@ mobile) che funge da intermediario.
 
 Il ModI 2018 obbliga all'utilizzo di SPID per l'autenticazione
 human-to-machine o degli altri metodi indicati nell'art. 64 del Codice
-per l'Amministrazione Digitale - CAD[^31] che includono anche la Carta
+per l'Amministrazione Digitale - CAD [31]_ che includono anche la Carta
 d'Identità Elettronica - CIE e la Carta Nazionale dei Servizi - CNS.
-SPID[^32] è attualmente basato su SAML ma il supporto per OpenID Connect
+SPID [32]_ è attualmente basato su SAML ma il supporto per OpenID Connect
 è in fase di definizione al fine di supportare in maniera più semplice
 l'autenticazione da piattaforme mobili.
 
@@ -1359,14 +1359,14 @@ l'interazione human-to-machine:
   **Formato token/assertion**   JSON                 XML
   **Autorizzazione**                                 ✓
   **Autenticazione**            ✓                    ✓
-  **Rischi per la sicurezza**   Phishing[^33]        XML Signature Wrapping[^34]
+  **Rischi per la sicurezza**   Phishing [33]_        XML Signature Wrapping [34]_
 
 Uno scenario interessante nell'ambito dell'integrazione A2A e A2B è
 quello legato alla federazione di domini (ad es., due diverse
 amministrazioni) in cui alcuni utenti di un dominio devono essere
 autenticati ed autorizzati per accedere a risorse dell'altro dominio
 (una federazione può includere anche più di due domini). In ambito SOAP,
-gli standard più utilizzati sono WS-Federation[^35] & WS-Trust[^36]
+gli standard più utilizzati sono WS-Federation [35]_ & WS-Trust [36]_
 (vedi Sezione 3 per l'inquadramento nello stack WS-\*). Soluzioni su
 altre tecnologie vengono sviluppate ad-hoc.
 
@@ -1376,7 +1376,7 @@ utilizzando TLS.
 
 Per quanto riguarda l'autorizzazione machine-to-machine invece è
 possibile utilizzare il protocollo OAuth2 nello specifico del flusso
-Client Credential Grant[^37]. Tale flusso a differenza di quello
+Client Credential Grant [37]_. Tale flusso a differenza di quello
 standard non richiede la presenza di uno user-agent. Il client possiede
 invece delle proprie credenziali che vengono utilizzate per richiedere
 il token all'authorization server.
@@ -1387,7 +1387,7 @@ il token all'authorization server.
 Per ragioni storiche lo stack TCP/IP non ha di base funzionalità di
 sicurezza. I messaggi viaggiano in chiaro sulla rete. Poiché le
 tecnologie per l'integrazione che verranno introdotte utilizzano HTTP
-come principale protocollo di trasporto o applicativo[^38], è importante
+come principale protocollo di trasporto o applicativo [38]_, è importante
 che il canale di comunicazione sia protetto. La IETF definisce come
 standard per la securizzazione di TCP il protocollo Transport Layer
 Security - TLS. Con il termine HTTPS si definisce l'utilizzo di HTTP su
@@ -1430,7 +1430,7 @@ Per quanto riguarda i singoli algoritmi utilizzati:
 | -   DEVE essere cifrato tramite TLS \>= 1.2;                          |
 |                                                                       |
 | -   DEVE essere conforme alle misure minime AgID Basic Security       |
-|     > Controls[^41];                                                  |
+|     > Controls [41]_;                                                  |
 |                                                                       |
 | -   Gli erogatori di interfacce di servizio DEVONO utilizzare         |
 |     > l\'header HSTS (HTTP Strict Transport Security) per evitare     |
@@ -1445,7 +1445,7 @@ Per quanto riguarda i singoli algoritmi utilizzati:
 |     > Serial Number ed Issuer;                                        |
 |                                                                       |
 | -   DEVE avere il parametro keyUsage con i seguenti bit:              |
-|     > digitalSignature, keyEncipherment[^42];                         |
+|     > digitalSignature, keyEncipherment [42]_;                         |
 |                                                                       |
 | -   DOVREBBE contenere i riferimenti al DNS dei domini serviti;       |
 |                                                                       |
@@ -1456,7 +1456,7 @@ Per quanto riguarda i singoli algoritmi utilizzati:
 Numerose sono le minacce alla sicurezza a cui è esposto TLS (in special
 modo con vecchie versioni del protocollo accoppiate ad algoritmi per
 cifratura ed integrità vulnerabili). L'IETF nel 2015 ha rilasciato a
-riguardo una RFC informativa[^43]. Per questo motivo, in determinati
+riguardo una RFC informativa [43]_. Per questo motivo, in determinati
 scenari che richiedono elevati standard di sicurezza, si aggiunge
 talvolta un ulteriore strato di sicurezza a livello applicativo.
 
@@ -1465,7 +1465,7 @@ con autenticazione mutual-TLS (vedi Sezione 2.3). Nel tempo sono emersi
 scenari di interazione con requisiti di sicurezza inferiori (ad es.,
 solo HTTPS non-mutual-TLS), che non giustificano la complessità di un
 sistema a mutua autenticazione (ad es., accessi in sola consultazione,
-applicazioni Web o sistemi IoT[^44]) a livello di trasporto. Fermo
+applicazioni Web o sistemi IoT [44]_) a livello di trasporto. Fermo
 l'obbligo di usare HTTPS, nasce l'esigenza di venire incontro a diversi
 scenari e definire per essi modelli di autenticazione e di trust
 differenziati. Questi aspetti verranno definiti nel documento 3 del
@@ -1485,7 +1485,7 @@ interessate ed ai vincoli imposti dal punto di vista delle tecnologie di
 implementazione.
 
 La versione corrente della specifica SOAP è la 1.2 del 27 Aprile
-2007[^45]. La specifica definisce due stili di comunicazione
+2007 [45]_. La specifica definisce due stili di comunicazione
 (communication modes): quello basato su chiamata a procedura (RPC-like),
 e quello basato su scambio di documenti (document style). In
 combinazione ad entrambi questi communication modes, il protocollo
@@ -1567,10 +1567,10 @@ Tra le estensioni supportate dai framework più diffusi abbiamo:
     > WS-AtomicTransaction.
 
 La specifica delle interfacce di servizio SOAP è effettuata tramite Web
-Services Description Language - WSDL[^46]. Oltre ad indicare le
+Services Description Language - WSDL [46]_. Oltre ad indicare le
 funzionalità offerte dall'interfaccia di servizio dal punto di vista
 funzionale, esso permette anche di definire le caratteristiche non
-funzionali tramite le estensioni WS-Policy[^47] che permettono di
+funzionali tramite le estensioni WS-Policy [47]_ che permettono di
 specificare le varie componenti della QoS.
 
 3.1 Indicazioni di utilizzo
@@ -1580,7 +1580,7 @@ La specifica SOAP permette la definizione di specifici profili di
 interoperabilità, imponendo alcune restrizioni circa i tipi ed i formati
 scambiati. Il profilo di interoperabilità secondo il quale interfacce di
 servizio di tipo SOAP andranno implementati è la versione 2.0 del Basic
-Profile[^48] (nel seguito BP2) definito dal WS-I (Web Services
+Profile [48]_ (nel seguito BP2) definito dal WS-I (Web Services
 Interoperability Organization) ed ora confluito in OASIS. BP2 è basato
 su SOAP 1.2 e WS-Addressing (per il dispatching dei messaggi a livello
 applicativo, in particolare nel caso di interazioni asincrone). Tra le
@@ -1594,14 +1594,14 @@ di errori.
 -------------
 
 Per quanto riguarda la sicurezza, l'ultimo profilo standard definito da
-OASIS è il Basic Security Profile 1.1[^49]. Il profilo è datato ma le
+OASIS è il Basic Security Profile 1.1 [49]_. Il profilo è datato ma le
 considerazioni sono ancora valide. Per quanto riguarda le versioni dei
 protocolli, si devono rispettare i vincoli imposti dal Modello di
 Interoperabilità 2018 in questo documento.
 
 E' importante, nel caso si richiedessero funzionalità di autorizzazione,
 autenticazione e non ripudio, oltre che di riservatezza (coperta
-dall'utilizzo obbligatorio di HTTPS[^50]) fare affidamento alle
+dall'utilizzo obbligatorio di HTTPS [50]_) fare affidamento alle
 tecnologie di autenticazione ed autorizzazione a livello applicativo. Il
 Basic Security Profile 1.1, basato sull'estensione WS-Security,
 suggerisce l'uso di SAML 2.0. Come detto, rispetto alle tecnologie di
@@ -1610,26 +1610,26 @@ i quali OAuth2 o OpenId sono più appropriati. In questi ultimi casi,
 fermo restando l'utilizzo della XML Signature definita in WS-Security
 per quanto riguarda il non ripudio, l'utilizzo di token di
 autorizzazione ed autenticazione non SAML richiede la definizione di
-request header custom[^51].
+request header custom [51]_.
 
 3.3 Uniformità e naming
 -----------------------
 
 Non esistono standard riguardanti il naming in ambito SOAP. Le
-best-practice prevedono l'utilizzo di CamelCase[^52] (con prima lettera
+best-practice prevedono l'utilizzo di CamelCase [52]_ (con prima lettera
 maiuscola, anche noto come PascalCase) per endpoint, porte, operazioni e
 parametri.
 
 Quando le risorse contengono link e riferimenti a risorse esterne, si
 dovrebbero usare le specifiche indicate in IANA registered link
-relations[^53] trasformando il Kebab Case[^54] utilizzato con il
+relations [53]_ trasformando il Kebab Case [54]_ utilizzato con il
 CamelCase.
 
 4 REST
 ======
 
 REpresentational State Transfer (REST) è uno stile architetturale,
-proposto originariamente da Fielding[^55], che consente di accedere e
+proposto originariamente da Fielding [55]_, che consente di accedere e
 manipolare rappresentazioni testuali di risorse web usando un insieme
 predefinito di operazioni stateless. Le interfacce di servizio che
 seguono lo stile architetturale REST sono chiamate interfacce di
@@ -1666,7 +1666,7 @@ utilizzando REST è molto acceso, ma come dato di fatto numerose
 iniziative di API commerciali e non, utilizzano interfacce di servizio
 REST anche per effettuare RPC. Il concetto di REST è inoltre molto
 spesso legato, anche se non per definizione, alle architetture dette a
-microservizi[^56], caratterizzate da elevata modularità, per via della
+microservizi [56]_, caratterizzate da elevata modularità, per via della
 leggerezza del protocollo.
 
 A differenza delle interfacce di servizio SOAP, per cui una serie di
@@ -1676,7 +1676,7 @@ e best-practice. Per la specifica delle interfacce REST esistono due
 grandi iniziative: OpenAPI e RAML. Sebbene simili dal punto di vista
 dello sviluppatore di interfacce di servizio, la specifica RAML è più
 indirizzata alla creazione automatica di server e di client per API,
-mentre OpenAPI (attualmente nella versione OpenAPI v3[^57]) contiene
+mentre OpenAPI (attualmente nella versione OpenAPI v3 [57]_) contiene
 elementi più descrittivi per la documentazione e la catalogazione (che
 invece sono disponibili in RAML come estensioni ad-hoc) e si sta
 imponendo come standard de-facto. Per queste ragioni il ModI 2018 impone
@@ -1689,7 +1689,7 @@ stati utilizzati si sta optando per il passaggio ad OpenAPI v3.
 Legato al concetto di specifica nel mondo REST è quello di *Hypermedia
 As The Engine Of Application State - HATEOAS*. Secondo questo approccio,
 accedendo ad una risorsa, la risposta del server contiene hyperlink ad
-altre azioni che possono essere eseguite sulla risorsa[^58]. HATEOAS
+altre azioni che possono essere eseguite sulla risorsa [58]_. HATEOAS
 permette in questa maniera di scoprire dinamicamente le operazioni
 presenti in una interfaccia di servizio e quindi può essere utilizzato
 come approccio complementare (non sostitutivo) alla specifica.
@@ -1698,7 +1698,7 @@ come approccio complementare (non sostitutivo) alla specifica.
 ---------------------------
 
 L'interfaccia di servizio REST deve utilizzare l\'HTTP verb più adatto
-all\'operazione come indicato in RFC 7231[^59]. In particolare i metodi:
+all\'operazione come indicato in RFC 7231 [59]_. In particolare i metodi:
 
 -   GET, HEAD, DELETE: non devono avere un payload.
 
@@ -1714,7 +1714,7 @@ all\'operazione come indicato in RFC 7231[^59]. In particolare i metodi:
     > di duplicare eventuali entry.
 
 Ove necessario, specialmente ai fini del caching, occorre fare leva
-sugli ETag[^60] (degli identificatori univoci di versione delle
+sugli ETag [60]_ (degli identificatori univoci di versione delle
 risorse). Infine l'utilizzo di eventuali header HTTP non deve sostituire
 i parametri da passare in una GET.
 
@@ -1722,25 +1722,25 @@ i parametri da passare in una GET.
 -------------
 
 Lo standard di riferimento per la firma e la crittografia in ambito
-JSON/REST è Javascript Object Signing and Encryption[^61] (di seguito
-JOSE), menzionato nelle Linee Guida AgID[^62] ed in \"European
+JSON/REST è Javascript Object Signing and Encryption [61]_ (di seguito
+JOSE), menzionato nelle Linee Guida AgID [62]_ ed in \"European
 Telecommunications Standards Institute - Security of the mission
-critical service\"[^63]. JOSE è un framework per la sicurezza
+critical service\" [63]_. JOSE è un framework per la sicurezza
 comprendente diverse componenti tra cui centrale è il JSON Web
-Token[^64] (di seguito JWT). JWT è uno standard per la definizione di
-token di accesso basato su JSON Web Signature[^65] (di seguito JWS)) e
-JSON Web Encryption[^66] (si seguito JWE) di cui eredita ed estende gli
+Token [64]_ (di seguito JWT). JWT è uno standard per la definizione di
+token di accesso basato su JSON Web Signature [65]_ (di seguito JWS)) e
+JSON Web Encryption [66]_ (si seguito JWE) di cui eredita ed estende gli
 header. Il token JWT è passato in REST tramite l'header HTTP
-Authorization utilizzando lo schema Bearer[^67]. Il token in OpenID
+Authorization utilizzando lo schema Bearer [67]_. Il token in OpenID
 Connect è espresso per esempio direttamente come JWT.
 
 Per ulteriori dettagli sulla sicurezza, si vedano anche:
 
--   OWASP REST Security Cheat-Sheet [^68];
+-   OWASP REST Security Cheat-Sheet  [68]_;
 
--   OWASP API Security Project [^69];
+-   OWASP API Security Project  [69]_;
 
--   JWS - Security Considerations [^70].
+-   JWS - Security Considerations  [70]_.
 
 4.3 Uniformità e Naming 
 ------------------------
@@ -1748,7 +1748,7 @@ Per ulteriori dettagli sulla sicurezza, si vedano anche:
 In questa sezione introduciamo le best practice da utilizzare per
 interfacce di servizio REST. In prima istanza, ogni endpoint deve essere
 univocamente associato alle componenti Scheme, Authority e Path di un
-URL[^71].
+URL [71]_.
 
 La componente Authority dell'URL:
 
@@ -1760,8 +1760,8 @@ La componente Authority dell'URL:
     > delegato (ad es., una società in-house, un consorzio di comuni).
 
 Per quanto riguarda la componente Path, i nomi utilizzati non devono
-usare abbreviazioni e acronimi non universalmente riconosciuti[^72].
-Inoltre, il Path dovrebbe essere semplice, intuitivo e coerente[^73].
+usare abbreviazioni e acronimi non universalmente riconosciuti [72]_.
+Inoltre, il Path dovrebbe essere semplice, intuitivo e coerente [73]_.
 
 Per quanto riguarda il campo Query dovrebbe:
 
@@ -1773,18 +1773,18 @@ Per quanto riguarda il campo Query dovrebbe:
     > paginazione, ricerca ed embedding/resource-expansion (ad es.,
     > limit, offset, q, sort).
 
-Le response in formato JSON[^74], dovrebbero tornare sempre oggetti, non
+Le response in formato JSON [74]_, dovrebbero tornare sempre oggetti, non
 liste. Questo permette di estendere le response introducendo
 successivamente ulteriori attributi (ad es., di paginazione).
 
 In caso di errore, le response dovrebbero usare schemi standard come
 quello definito nella RFC 7807 - Problem Details for HTTP APIs - IETF
-Tools[^75] in particolare utilizzando il content type
+Tools [75]_ in particolare utilizzando il content type
 application/problem+json nella response.
 
 Quando le risorse contengono link e riferimenti a risorse esterne, si
 dovrebbero usare le specifiche indicate in IANA registered link
-relations[^76].
+relations [76]_.
 
 Tutti i riferimenti dovrebbero contenere URL comprensivi di schema.
 
@@ -1817,12 +1817,12 @@ si possono utilizzare le seguenti indicazioni:
     -   HTTP 503 (service unavailable) se l\'infrastruttura non può
         > erogare le operazioni offerte nei tempi attesi (definiti dalla
         > SLA associata all'interfaccia di servizio). In questo caso si
-        > può utilizzare l\'header Retry-After[^77] con codice HTTP 503
+        > può utilizzare l\'header Retry-After [77]_ con codice HTTP 503
         > (pratica anche detta "circuit breaker") per suggerire al
         > client dopo quanto tempo ripresentarsi, anche implementando
         > meccanismi di exponential back-off. Questo header può essere
         > utilizzato sia in forma di data che di secondi, ma l'utilizzo
-        > di questi ultimi è suggerito[^78].
+        > di questi ultimi è suggerito [78]_.
 
 I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare
 le indicazioni provenienti dagli header ed dagli status code di cui
@@ -1870,8 +1870,8 @@ l'interazione è asincrona o di tipo publish/subscribe (ad es.,
 Internet-of-Things - IoT, aggregatori di dati pubblici).
 
 Varie tecnologie e realizzazioni di message broker hanno storicamente
-supportato svariati protocolli quali STOMP[^79], XMPP[^80], MQTT[^81],
-OpenWire[^82] e AMPQ[^83]. Oggigiorno, sebbene in determinati contesti
+supportato svariati protocolli quali STOMP [79]_, XMPP [80]_, MQTT [81]_,
+OpenWire [82]_ e AMPQ [83]_. Oggigiorno, sebbene in determinati contesti
 essi vengano ancora utilizzati (ad es., in contesti intra-dominio o in
 casi particolari quali l'IoT in cui si preferiscono protocolli binari
 efficienti come MQTT), si preferiscono, in ambito di integrazione di
@@ -1939,10 +1939,10 @@ migliori hanno aumentato le aspettative in termini di latenza. L\'IETF
 nel tempo ha risposto a queste esigenze:
 
 -   migliorando la semantica di HTTP, facendo leva sui campi Header,
-    > Status e Method RFC7230[^84], RFC7231[^85];
+    > Status e Method RFC7230 [84]_, RFC7231 [85]_;
 
--   codificando le semantiche di caching RFC7234[^86] e controllo della
-    > concorrenza RFC7232[^87] per facilitare l\'implementazione di
+-   codificando le semantiche di caching RFC7234 [86]_ e controllo della
+    > concorrenza RFC7232 [87]_ per facilitare l\'implementazione di
     > interfacce di servizio stateless, che possano scalare senza che i
     > bilanciatori conoscano la logica applicativa;
 
@@ -1981,7 +1981,7 @@ L'utilizzo di SOAP è suggerito:
 
 -   Se la specifica applicazione richiede la creazione di interfacce di
     > servizio principalmente *stateful*, cioè l'accesso ad informazioni
-    > di contesto o la gestione dello stato della conversazione[^88].
+    > di contesto o la gestione dello stato della conversazione [88]_.
     > SOAP prevede estensioni (ad esempio relative al concetto di
     > transazione) che con altri approcci (ad es., REST) devono essere
     > costruite ad-hoc per la specifica applicazione.
@@ -2030,7 +2030,7 @@ sviluppi ad-hoc)
 +-----------------------+-----------------------+-----------------------+
 
 In letteratura, talvolta si distingue la metodologia di progetto in
-approccio *contract-first* (SOAP) e *contract-less* (REST)[^89].
+approccio *contract-first* (SOAP) e *contract-less* (REST) [89]_.
 Utilizzando SOAP, lo sviluppo di un'interfaccia di servizio origina
 dalla definizione dell'interfaccia, mentre in REST l'interfaccia è
 definita, in quanto REST di fatto offre un template di interfaccia
@@ -2091,9 +2091,9 @@ progettazione parta della definizione delle interfacce di servizio,
 indipendentemente dalla tecnologia di realizzazione. Nel modo REST, il
 principio secondo cui l'interfaccia di servizio (in questo caso l'API)
 deve essere il primo artefatto di progettazione, viene recentemente
-indicato come *API-first*[^90] ed è largamente adottato da molte
+indicato come *API-first* [90]_ ed è largamente adottato da molte
 organizzazioni private, ed anche framework di interoperabilità nazionali
-come quello inglese[^91]. Emerge pertanto che indipendentemente dalla
+come quello inglese [91]_. Emerge pertanto che indipendentemente dalla
 tecnologia, sia SOAP che REST supportano nel 2018 tale principio, anche
 se con accorgimenti tecnici differenti nella sua realizzazione.
 
@@ -2124,9 +2124,9 @@ soluzioni cloud pubbliche sia private. La sicurezza di queste soluzioni
 servizio nelle sezioni precedenti.
 
 Tra i database distribuiti, grande interesse è stato suscitato da quelli
-basati su blockchain[^92]. L'obiettivo di una blockchain è il
+basati su blockchain [92]_. L'obiettivo di una blockchain è il
 mantenimento di un *libro mastro distribuito* (distributed ledger)
-mediante una rete peer-to-peer di nodi[^93]. L'obiettivo è quello di
+mediante una rete peer-to-peer di nodi [93]_. L'obiettivo è quello di
 avere un datastore capace di certificare transazioni e vincoli
 contrattuali, in cui il meccanismo di distribuzione certifica la
 validità degli stessi. In particolare, è possibile appurare la validità
@@ -2140,9 +2140,9 @@ basati su chiave pubblica. La maggior parte dei protocolli disponibili
 per la realizzazione di blockchain sono basati su scambio di messaggi su
 TCP/TLS o HTTPS.
 
-In Estonia, il modello X Road[^94] (equivalente al ModI 2018) ha
+In Estonia, il modello X Road [94]_ (equivalente al ModI 2018) ha
 promosso l'utilizzo di un ledger distribuito nell'ambito della pubblica
-amministrazione, anche se più a scopo di marketing[^95] che per
+amministrazione, anche se più a scopo di marketing [95]_ che per
 l'utilizzo degli aspetti precipui di una blockchain. Quello che è
 interessante è l'idea di un tracciamento distribuito delle decisioni
 prese da una pubblica amministrazione.
@@ -2150,7 +2150,7 @@ prese da una pubblica amministrazione.
 La tecnologia blockchain non è esente da rischi in quanto diversi tipi
 di attacco sono stati formulati che permettono la modifica dei contenuti
 e la creazione di ramificazioni della catena di transazioni alla base
-del libro mastro[^96].
+del libro mastro [96]_.
 
 In conclusione, sebbene si tratti di una tecnologia che sta suscitando
 interesse, attualmente blockchain non sono considerate abbastanza mature
@@ -2181,7 +2181,7 @@ linee guida dovranno tenere in considerazione per queste tecnologie:
 Una modalità di integrazione, importante specialmente negli scenari A2B
 e A2C, è quella basata sull'esposizione da parte delle PA di *open
 data*. Gli open data devono essere fruibili, ed essere inseriti ove
-possibile nel contesto dei Base Register definiti nell\'EIF[^97],
+possibile nel contesto dei Base Register definiti nell\'EIF [97]_,
 standardizzando gli schemi e le modalità di fruizione.
 
 Vista la progressiva crescita dei dataset, gli open data dovrebbero
@@ -2189,7 +2189,7 @@ essere erogati in modo da ridurre gli impatti infrastrutturali
 sull\'erogatore.
 
 Come indicato nelle linee guida nazionali per la valorizzazione del
-patrimonio informativo pubblico[^98] pubblicate da AgID nel 2014,
+patrimonio informativo pubblico [98]_ pubblicate da AgID nel 2014,
 l'obiettivo è quello di mettere a disposizione i dati aperti in formato
 Linked Open Data - LOD ai fini dell'integrazione, il che prevede
 l'esposizione di dati in formato W3C RDF e SPARQL (secondo il cosiddetto
@@ -2197,12 +2197,12 @@ modello del *Semantic Web*). A tal fine gli SPARQL endpoint
 costituiscono le interfacce di servizio. Le query in formato SPARQL
 vengono inviate su endpoint HTTP. Un altro approccio possibile, sempre
 nel rispetto dei dizionari comuni, è quello di utilizzare un approccio
-ROA basato su interfacce REST[^99].
+ROA basato su interfacce REST [99]_.
 
 Un'interessante evoluzione dell'approccio REST (di cui eredita molti dei
 vantaggi, quali ad esempio la leggerezza e l'utilizzo dei verbi HTTP)
 che può risultare utile nell'esposizione di open data è quello basato su
-GraphQL[^100]. In particolare, mentre per l'estrazione di dati complessi
+GraphQL [100]_. In particolare, mentre per l'estrazione di dati complessi
 l'approccio basato su interfacce di servizio REST richiede diverse
 chiamate, GraphQL introduce un linguaggio che permette l'esecuzione di
 interrogazioni complesse sulle risorse.
@@ -2211,13 +2211,11 @@ In tutti i casi presentati, restano valide le indicazioni contenute
 nelle sezioni precedenti circa la sicurezza nell'esposizione delle
 interfacce di servizio.
 
-[^1]: La trattazione si basa in parte su C. Batini, M. Castelli, M.
+ [1]: La trattazione si basa in parte su C. Batini, M. Castelli, M.
     Comerio, M. Cremaschi, L. Iaquinta, A. Torsello, G. Viscusi (2015):
-    The Smart methodology for the life cycle of services. Cf.
-    [[https://boa.unimib.it/retrieve/handle/10281/98632/144883/SmartBook-0315.pdf]{.underline}](https://boa.unimib.it/retrieve/handle/10281/98632/144883/SmartBook-0315.pdf)
+    The Smart methodology for the life cycle of services. Cf. `https://boa.unimib.it/retrieve/handle/10281/98632/144883/SmartBook-0315.pdf <https://boa.unimib.it/retrieve/handle/10281/98632/144883/SmartBook-0315.pdf>`_
 
-[^2]: Cf. Wikipedia,
-    [[https://en.wikipedia.org/wiki/E-services]{.underline}](https://en.wikipedia.org/wiki/E-services):
+ [2]: Cf. Wikipedia, `https://en.wikipedia.org/wiki/E-services] <https://en.wikipedia.org/wiki/E-services>`_
     Rowley (Rowley J. (2006): An analysis of the e-service literature:
     towards a research agenda. Internet Research, 16 (3), 339-359)
     defines e-services as " \[\...\] deeds, efforts or performances
@@ -2237,49 +2235,47 @@ interfacce di servizio.
     it may also include non-commercial services (online), which is
     usually provided by the government".
 
-[^3]: Un sistema legacy (letteralmente "ereditato", che è un lascito del
+ [3]: Un sistema legacy (letteralmente "ereditato", che è un lascito del
     passato) è un sistema informatico, un'applicazione o un componente
     obsoleto, che continua ad essere usato poiché l\'utente (di solito
     un'organizzazione) non intende o non può rimpiazzarlo. Legacy
     equivale a versione "retrodatata" (rispetto ai sistemi/tecnologie
     correnti).
 
-[^4]: [[https://www.w3.org/TR/ws-arch/\#whatis]{.underline}](https://www.w3.org/TR/ws-arch/#whatis)
+ [4]: Cf. `https://www.w3.org/TR/ws-arch/\#whatis <https://www.w3.org/TR/ws-arch/#whatis>`_
 
-[^5]: Con il termine endpoint si indica l'identificativo unico da
+ [5]: Con il termine endpoint si indica l'identificativo unico da
     utilizzare per richiamare un'interfaccia di servizio. Ad esempio,
     nel caso della tecnologia SOAP è l'URL del web service, nel caso di
     REST le URL (che hanno tutte un suffisso comune) delle risorse
     offerte, nel caso dei Message Broker il nome univoco della coda di
     messaggi o un topic nella stessa.
 
-[^6]: In ambito cloud, si utilizzano i termini di scale-up per indicare
+ [6]: In ambito cloud, si utilizzano i termini di scale-up per indicare
     la scalabilità ottenuta incrementando le risorse di singoli sistemi
     (ad es., memoria RAM), e di scale-out per indicare la scalabilità
     ottenuta mediante distribuzione.
 
-[^7]: Il payload è il contenuto informativo di un messaggio di rete
+ [7]: Il payload è il contenuto informativo di un messaggio di rete
     (eliminando la parte relativa al protocollo). Per compressione del
     payload si intende applicare un algoritmo di compressione (molto
     spesso gzip) al payload in modo da ridurre il traffico di rete.
 
-[^8]: Per paginazione si intende la capacità di una operazione
+ [8]: Per paginazione si intende la capacità di una operazione
     nell'interfaccia di servizio di fornire un risultato composto da
     molte voci per singole pagine sfruttando un qualche criterio di
     ordinamento.
 
-[^9]: Cf.
-    [[https://tools.ietf.org/html/rfc7234]{.underline}](https://tools.ietf.org/html/rfc7234)
+ [9]: Cf. `https://tools.ietf.org/html/rfc7234 <https://tools.ietf.org/html/rfc7234>`_
 
-[^10]: Con il termine throttling (o rate limiting) si intendono le
+ [10]: Con il termine throttling (o rate limiting) si intendono le
     politiche intraprese dalle interfacce di servizio al fine di
     limitare la frequenza con cui i fruitori possono chiamare
     l'interfaccia o specifiche operazioni all'interno della stessa.
 
-[^11]: Cf.
-    [[https://tools.ietf.org/html/rfc3339\#section-5.6]{.underline}](https://tools.ietf.org/html/rfc3339#section-5.6)
+ [11]: Cf. `https://tools.ietf.org/html/rfc3339\#section-5.6 <https://tools.ietf.org/html/rfc3339#section-5.6>`_
 
-[^12]: L'uso del +/- nell'ultima colonna da un'indicazione qualitativa
+ [12]: L'uso del +/- nell'ultima colonna da un'indicazione qualitativa
     di quanto sia agevole comporre elementi nella specifica interazione.
     Come discusso, nel caso di servizi digitali la composizione è a cura
     dell'utente finale, che agisce da *human-ware* (ovvero deve farsi
@@ -2291,7 +2287,7 @@ interfacce di servizio.
     realizzata una logica di presentazione per il servizio digitale
     composta, se si vuole offrirlo agli utenti umani.
 
-[^13]: Cf.
+ [13]: Cf.
 
     > Meyer, Bertrand: *Design by Contract*, Technical Report
     > TR-EI-12/CO, Interactive Software Engineering Inc., 1986
@@ -2306,7 +2302,7 @@ interfacce di servizio.
     > Meyer, Bertrand (1997). Object-Oriented Software Construction,
     > second edition. Prentice Hall. ISBN 0-13-629155-4.
 
-[^14]: La granularità è il livello di dettaglio con cui i dati sono
+ [14]: La granularità è il livello di dettaglio con cui i dati sono
     esposti e scambiati. *Coarse-grained* significa un livello di
     dettaglio "basso", in quanto molti dettagli possono o devono
     rimanere interni all'implementazione dell'interfaccia di servizio.
@@ -2314,108 +2310,91 @@ interfacce di servizio.
     ad un dettaglio massimo, poichè che il fruitore ha bisogno di una
     visione puntuale del dato stesso.
 
-[^15]: Come anticipato nel documento 1 - Visione Generale ed
+ [15]: Come anticipato nel documento 1 - Visione Generale ed
     approfondito nel documento 4 - Governance, la modellazione e
     specifica dei dati avviene nei Gruppi di Lavoro interni agli
     Ecosistemi, che indirizzano il lavoro di standardizzazione.
 
-[^16]: Ad esempio, la serializzazione in JSON di un dato dovrebbe essere
+ [16]: Ad esempio, la serializzazione in JSON di un dato dovrebbe essere
     la medesima sia se viene esposto esternamente tramite REST API sia
     se transita da un messaging system interno all\'amministrazione. Una
     rappresentazione opportuna permette quindi la fruizione del dato da
     sistemi diversi limitando il ricorso alle conversioni.
 
-[^17]: Cf.
-    [[https://joinup.ec.europa.eu/page/core-vocabularies]{.underline}](https://joinup.ec.europa.eu/page/core-vocabularies)
+ [17]: Cf. `https://joinup.ec.europa.eu/page/core-vocabularies <https://joinup.ec.europa.eu/page/core-vocabularies>`_
     e
-    [[http://eur-lex.europa.eu/legal-content/IT/ALL/?uri=CELEX:32007L0002]{.underline}](http://eur-lex.europa.eu/legal-content/IT/ALL/?uri=CELEX:32007L0002)
+    `http://eur-lex.europa.eu/legal-content/IT/ALL/?uri=CELEX:32007L0002 <http://eur-lex.europa.eu/legal-content/IT/ALL/?uri=CELEX:32007L0002>`_
 
-[^18]: Vedi Linee Guida Patrimonio Pubblico. Architettura
+ [18]: Vedi Linee Guida Patrimonio Pubblico. Architettura
     dell'Informazione del Settore Pubblico,
-    [[http://lg-patrimonio-pubblico.readthedocs.io/it/latest/arch.html\#formati-aperti-per-i-dati-e-documenti]{.underline}](http://lg-patrimonio-pubblico.readthedocs.io/it/latest/arch.html#formati-aperti-per-i-dati-e-documenti)
+    `http://lg-patrimonio-pubblico.readthedocs.io/it/latest/arch.html\#formati-aperti-per-i-dati-e-documenti <http://lg-patrimonio-pubblico.readthedocs.io/it/latest/arch.html#formati-aperti-per-i-dati-e-documenti>`_
 
-[^19]: Gli URI vengono utilizzati anche dal gruppo DAF-Semantic per la
+ [19]: Gli URI vengono utilizzati anche dal gruppo DAF-Semantic per la
     nomenclatura delle ontologie e dei dataset
 
-[^20]: Si noti che questi standard sono già usati nelle specifiche AgID
+ [20]: Si noti che questi standard sono già usati nelle specifiche AgID
     sulle firme elettroniche e sul formato della fattura PA.
 
-[^21]: Cf.
-    [[https://en.wikipedia.org/wiki/ISO\_3166-1\_alpha-2]{.underline}](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+ [21]: Cf. `https://en.wikipedia.org/wiki/ISO\_3166-1\_alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
 
-[^22]: Cf.
-    [[https://en.wikipedia.org/wiki/ISO\_4217]{.underline}](https://en.wikipedia.org/wiki/ISO_4217)
+ [22]: Cf. `https://en.wikipedia.org/wiki/ISO\_4217 <https://en.wikipedia.org/wiki/ISO_4217>`_
 
-[^23]: Cf.
-    [[https://tools.ietf.org/html/rfc3339\#section-5.6]{.underline}](https://tools.ietf.org/html/rfc3339#section-5.6)
+ [23]: Cf. `https://tools.ietf.org/html/rfc3339\#section-5.6 <https://tools.ietf.org/html/rfc3339#section-5.6>`_
 
-[^24]: Cf.
-    [[https://it.wikipedia.org/wiki/Nomenclatura\_delle\_unit%C3%A0\_territoriali\_statistiche]{.underline}](https://it.wikipedia.org/wiki/Nomenclatura_delle_unit%C3%A0_territoriali_statistiche)
+ [24]: Cf. `https://it.wikipedia.org/wiki/Nomenclatura\_delle\_unit%C3%A0\_territoriali\_statistiche <https://it.wikipedia.org/wiki/Nomenclatura_delle_unit%C3%A0_territoriali_statistiche>`_
 
-[^25]: Per questi si faccia riferimento alla letteratura, ad es.,
+ [25]: Per questi si faccia riferimento alla letteratura, ad es.,
     William Stallings (2017): Cryptography And Network Security, 7th
     edition.
 
-[^26]: Cf.
-    [[https://tools.ietf.org/html/rfc6749]{.underline}](https://tools.ietf.org/html/rfc6749)
+ [26]: Cf. `https://tools.ietf.org/html/rfc6749 <https://tools.ietf.org/html/rfc6749>`_
 
-[^27]: Cf.
-    [[http://openid.net/developers/specs/]{.underline}](http://openid.net/developers/specs/)
+ [27]: Cf. `http://openid.net/developers/specs/ <http://openid.net/developers/specs/>`_
 
-[^28]: Cf.
-    [[http://openid.net/connect/]{.underline}](http://openid.net/connect/)
+ [28]: Cf. `http://openid.net/connect/ <http://openid.net/connect/>`_
 
-[^29]: Cf.
-    [[http://saml.xml.org/saml-specifications]{.underline}](http://saml.xml.org/saml-specifications)
+ [29]: Cf. `http://saml.xml.org/saml-specifications <http://saml.xml.org/saml-specifications>`_
 
-[^30]: Cf.
-    [[http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html]{.underline}](http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
+ [30]: Cf. `http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html <http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html>`_
 
-[^31]: Cf.
-    [[http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete]{.underline}](http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete)
+ [31]: Cf. `http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete <http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete>`_
 
-[^32]: Cf.
-    [[http://spid-regole-tecniche.readthedocs.io/en/latest/]{.underline}](http://spid-regole-tecniche.readthedocs.io/en/latest/)
+ [32]: Cf. `http://spid-regole-tecniche.readthedocs.io/en/latest/ <http://spid-regole-tecniche.readthedocs.io/en/latest/>`_
 
-[^33]: Per phishing si intende il tentativo di un attaccante di fingersi
+ [33]: Per phishing si intende il tentativo di un attaccante di fingersi
     qualcun altro. Nel caso di OpenId Connect, in particolare, sia per
     quanto riguarda OpenId che OAuth2, diversi attacchi sono stati
     rivelati che permettono ad una relying party di redirezionare
     l'utente verso un identity provider falso.
 
-[^34]: L'XML Signature Wrapping è una vulnerabilità non legata
+ [34]: L'XML Signature Wrapping è una vulnerabilità non legata
     direttamente al protocollo ma presente in alcune implementazioni ed
     in diverse forme
-    (cf.,[[https://blog.netspi.com/attacking-sso-common-saml-vulnerabilities-ways-find/]{.underline}](https://blog.netspi.com/attacking-sso-common-saml-vulnerabilities-ways-find/)).
+    (cf., `https://blog.netspi.com/attacking-sso-common-saml-vulnerabilities-ways-find/ <https://blog.netspi.com/attacking-sso-common-saml-vulnerabilities-ways-find/>`_ ).
     Il tool SAML Raider può essere utilizzato per verificare la presenza
     della vulnerabilità.
 
-[^35]: Cf.
-    [[http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html]{.underline}](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html)
+ [35]: Cf. `http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html <http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html>`_
 
-[^36]: Cf.
-    [[http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html]{.underline}](http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html)
+ [36]: Cf. `http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html <http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html>`_
 
-[^37]: Cf.
-    [[https://www.google.com/url?q=https://tools.ietf.org/html/rfc6749%23section-4.4&sa=D&ust=1524208425297000&usg=AFQjCNF\_dUf8sGej-qcHpFgwFis11lG8Kg]{.underline}](https://tools.ietf.org/html/rfc6749#section-4.4)
+ [37]: Cf. `https://tools.ietf.org/html/rfc6749#section-4.4 <https://tools.ietf.org/html/rfc6749#section-4.4>`_
 
-[^38]: Ai fini dell'interoperabilità su Internet, la scelta di HTTP
+ [38]: Ai fini dell'interoperabilità su Internet, la scelta di HTTP
     permette integrazione senza necessitare di regole particolari di
     inoltro o di definire Virtual Private Network - VPN.
 
-[^39]: Circolare AgiD 18 aprile 2017, n.2/2017
-    [[http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg]{.underline}](http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg)
+ [39]: Circolare AgiD 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
 
-[^40]: [[https://tools.ietf.org/html/rfc5280\#section-4.2.1.3]{.underline}](https://tools.ietf.org/html/rfc5280#section-4.2.1.3)
+ [40]: Cf. `https://tools.ietf.org/html/rfc5280\#section-4.2.1.3 <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_
 
-[^41]: Circolare AgiD 18 aprile 2017, n.2/2017
-    [[http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg]{.underline}](http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg)
+ [41]: Circolare AgiD 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
 
-[^42]: [[https://tools.ietf.org/html/rfc5280\#section-4.2.1.3]{.underline}](https://tools.ietf.org/html/rfc5280#section-4.2.1.3)
+ [42]: Cf. `https://tools.ietf.org/html/rfc5280\#section-4.2.1.3 <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_
 
-[^43]: [[https://tools.ietf.org/html/rfc7457]{.underline}](https://tools.ietf.org/html/rfc7457)
+ [43]: Cf. `https://tools.ietf.org/html/rfc7457 <https://tools.ietf.org/html/rfc7457>`_
 
-[^44]: Un esempio potrebbe essere una interfaccia di servizio di un
+ [44]: Un esempio potrebbe essere una interfaccia di servizio di un
     comune che permette di avere in tempo reale la situazione dei posti
     liberi nei parcheggi comunali. Un sistema di trasporto integrato
     regionale accede al dato su tutti i parcheggi dei comuni della
@@ -2428,44 +2407,33 @@ interfacce di servizio.
     SPCoop) sono emersi in E015, sviluppato in occasione di Expo nella
     Regione Lombardia.
 
-[^45]: Cf.
-    [[https://www.w3.org/TR/soap12-part1/]{.underline}](https://www.w3.org/TR/soap12-part1/)
+ [45]: Cf. `https://www.w3.org/TR/soap12-part1/ <https://www.w3.org/TR/soap12-part1/>`_
 
-[^46]: Cf.
-    [[https://www.w3.org/TR/wsdl20-primer/]{.underline}](https://www.w3.org/TR/wsdl20-primer/)
+ [46]: Cf. `https://www.w3.org/TR/wsdl20-primer/ <https://www.w3.org/TR/wsdl20-primer/>`_
 
-[^47]: Cf.
-    [[https://www.w3.org/TR/ws-policy/]{.underline}](https://www.w3.org/TR/ws-policy/)
+ [47]: Cf. `https://www.w3.org/TR/ws-policy/ <https://www.w3.org/TR/ws-policy/>`_
 
-[^48]: Cf.
-    [[http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html]{.underline}](http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html)
+ [48]: Cf. `http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html <http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html>`_
 
-[^49]: Cf.
-    [[http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html]{.underline}](http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html)
+ [49]: Cf. `http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html <http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html>`_
 
-[^50]: HTTPS è richiesto dal modello di interoperabilità ma non da BP2.
+ [50]: HTTPS è richiesto dal modello di interoperabilità ma non da BP2.
 
-[^51]: Cf.
-    [[https://developers.google.com/adwords/api/docs/guides/call-structure]{.underline}](https://developers.google.com/adwords/api/docs/guides/call-structure)
+ [51]: Cf. `https://developers.google.com/adwords/api/docs/guides/call-structure <https://developers.google.com/adwords/api/docs/guides/call-structure>`_
 
-[^52]: Cf.
-    [[https://it.wikipedia.org/wiki/Notazione\_a\_cammello]{.underline}](https://it.wikipedia.org/wiki/Notazione_a_cammello)
+ [52]: Cf. `https://it.wikipedia.org/wiki/Notazione\_a\_cammello <https://it.wikipedia.org/wiki/Notazione_a_cammello>`_
 
-[^53]: Cf.
-    [[http://www.iana.org/assignments/link-relations/link-relations.xml]{.underline}](http://www.iana.org/assignments/link-relations/link-relations.xml)
+ [53]: Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
 
-[^54]: Cf.
-    [[https://it.wikipedia.org/wiki/Kebab\_case]{.underline}](https://it.wikipedia.org/wiki/Kebab_case)
+ [54]: Cf. `https://it.wikipedia.org/wiki/Kebab\_case <https://it.wikipedia.org/wiki/Kebab_case>`_
 
-[^55]: Cf.
-    [[http://www.ics.uci.edu/\~fielding/pubs/dissertation/rest\_arch\_style.htm]{.underline}](http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
+ [55]: Cf. `http://www.ics.uci.edu/\~fielding/pubs/dissertation/rest\_arch\_style.htm <http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm>`_
 
-[^56]: Cf. Sam Newman (2015): Building Microservices.
+ [56]: Cf. Sam Newman (2015): Building Microservices.
 
-[^57]: Cf.
-    [[https://www.openapis.org/]{.underline}](https://www.openapis.org/)
+ [57]: Cf. `https://www.openapis.org/ <https://www.openapis.org/>`_
 
-[^58]: Si supponga ad esempio una operazione HTTP GET
+ [58]: Si supponga ad esempio una operazione HTTP GET
     http://api.domain.com/management/departments che restituisce
     informazioni circa i reparti. Il singolo reparto può contenere link
     relativi ad altre operazioni come quella per ottenere gli impiegati
@@ -2480,159 +2448,123 @@ interfacce di servizio.
     \]\
     }
 
-[^59]: Cf.
-    [[https://tools.ietf.org/html/rfc7231\#section-4.3]{.underline}](https://tools.ietf.org/html/rfc7231#section-4.3)
+ [59]: Cf. `https://tools.ietf.org/html/rfc7231\#section-4.3 <https://tools.ietf.org/html/rfc7231#section-4.3>`_
 
-[^60]: Cf.
-    [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag]{.underline}](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag)
+ [60]: Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag>`_
 
-[^61]: Cf.
-    [[http://www.etsi.org/deliver/etsi\_ts/118100\_118199/118103/02.04.01\_60/ts\_118103v020401p.pdf]{.underline}](http://www.etsi.org/deliver/etsi_ts/118100_118199/118103/02.04.01_60/ts_118103v020401p.pdf)
+ [61]: Cf. `http://www.etsi.org/deliver/etsi\_ts/118100\_118199/118103/02.04.01\_60/ts\_118103v020401p.pdf <http://www.etsi.org/deliver/etsi_ts/118100_118199/118103/02.04.01_60/ts_118103v020401p.pdf>`_
 
-[^62]: Cf.
-    [[http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro]{.underline}](http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro)
+ [62]: Cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro>`_
 
-[^63]: Cf.
-    [[http://www.etsi.org/deliver/etsi\_ts/133100\_133199/133180/14.02.00\_60/ts\_133180v140200p.pdf]{.underline}](http://www.etsi.org/deliver/etsi_ts/133100_133199/133180/14.02.00_60/ts_133180v140200p.pdf)
+ [63]: Cf. `http://www.etsi.org/deliver/etsi\_ts/133100\_133199/133180/14.02.00\_60/ts\_133180v140200p.pdf <http://www.etsi.org/deliver/etsi_ts/133100_133199/133180/14.02.00_60/ts_133180v140200p.pdf>`_
 
-[^64]: Cf.
-    [[https://tools.ietf.org/html/rfc7519]{.underline}](https://tools.ietf.org/html/rfc7519)
+ [64]: Cf. `https://tools.ietf.org/html/rfc7519 <https://tools.ietf.org/html/rfc7519>`_
 
-[^65]: Cf.
-    [[https://tools.ietf.org/html/rfc7515]{.underline}](https://tools.ietf.org/html/rfc7515)
+ [65]: Cf. `https://tools.ietf.org/html/rfc7515 <https://tools.ietf.org/html/rfc7515>`_
 
-[^66]: Cf.
-    [[https://tools.ietf.org/html/rfc7516]{.underline}](https://tools.ietf.org/html/rfc7516)
+ [66]: Cf. `https://tools.ietf.org/html/rfc7516 <https://tools.ietf.org/html/rfc7516>`_
 
-[^67]: Lo schema Bearer, inizialmente introdotto nella specifica OAuth2
+ [67]: Lo schema Bearer, inizialmente introdotto nella specifica OAuth2
     ma poi utilizzato in altri contesti, ha la forma "Authorization:
     Bearer \<token\>" dove il token JWT è codificato in base64.
 
-[^68]: Cf.
-    [[https://www.owasp.org/index.php/REST\_Security\_Cheat\_Sheet]{.underline}](https://www.owasp.org/index.php/REST_Security_Cheat_Sheet)
+ [68]: Cf. `https://www.owasp.org/index.php/REST\_Security\_Cheat\_Sheet <https://www.owasp.org/index.php/REST_Security_Cheat_Sheet>`_
 
-[^69]: Cf.
-    [[https://www.owasp.org/index.php/OWASP\_API\_Security\_Project]{.underline}](https://www.owasp.org/index.php/OWASP_API_Security_Project)
+ [69]: Cf. `https://www.owasp.org/index.php/OWASP\_API\_Security\_Project <https://www.owasp.org/index.php/OWASP_API_Security_Project>`_
 
-[^70]: Cf.
-    [[https://tools.ietf.org/html/rfc7515\#section-10]{.underline}](https://tools.ietf.org/html/rfc7515#section-10)
+ [70]: Cf. `https://tools.ietf.org/html/rfc7515\#section-10 <https://tools.ietf.org/html/rfc7515#section-10>`_
 
-[^71]: Cf.
-    [[https://tools.ietf.org/html/rfc3986]{.underline}](https://tools.ietf.org/html/rfc3986)
+ [71]: Cf. `https://tools.ietf.org/html/rfc3986 <https://tools.ietf.org/html/rfc3986>`_
 
-[^72]: Cf.
-    [[https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo\_elementi\_obbligatori.html\#titolo-dct-title]{.underline}](https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo_elementi_obbligatori.html#titolo-dct-title).
+ [72]: Cf. `https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo\_elementi\_obbligatori.html\#titolo-dct-title <https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo_elementi_obbligatori.html#titolo-dct-title>`_
     Ad esempio, (i) sono ammesse stringhe come \"id\", \"args\" o
     \"stdin\" ed abbreviazioni come \"tcp\" ed \"udp\"; (ii) stringhe
     come \"codice fiscale\" andrebbero espresse per esteso con
     \"codice\_fiscale\" o \"tax\_code\", e non con \"cod\_fiscale\",
     \"cod\_fisc\" o \"cf\".
 
-[^73]: Alcune indicazioni in questo senso:
+ [73]: Alcune indicazioni in questo senso:
 
-    > usare parole minuscole separate da trattino "-";
+    - usare parole minuscole separate da trattino "-";
 
-    > usare nomi al plurale per le risorse e al singolare per l\'accesso
-    > alla singola risorsa;
+    - usare nomi al plurale per le risorse e al singolare per l\'accesso alla singola risorsa;
 
-    > ispirarsi alle convenzioni utilizzate a livello europeo (ad es.,
-    > Core Vocabularies/Dizionari Controllati, Direttiva Europea INSPIRE
-    > 2007/2/CE);
+    - ispirarsi alle convenzioni utilizzate a livello europeo (ad es., Core Vocabularies/Dizionari Controllati, Direttiva Europea INSPIRE 2007/2/CE);
 
-    > non contenere verbi (ad es., api.example.com/ospedale/prenota/);
+    - non contenere verbi (ad es., api.example.com/ospedale/prenota/);
 
-    > uniformarsi a quello di altre interfacce di servizio a livello
-    > Europeo quando ciò vada nella direzione dell\'interoperabilità e
-    > della semplicità.
+    - uniformarsi a quello di altre interfacce di servizio a livello Europeo quando ciò vada nella direzione dell\'interoperabilità e della semplicità.
 
     In generale inoltre, tutte le stringhe in inglese, dovrebbero
     utilizzare la dizione US per evitare ambiguità come ad es.,
     \"color\" vs \"colour\", \"flavor\" vs \"flavour\").
 
-[^74]: Cf.
-    [[https://tools.ietf.org/html/rfc7159]{.underline}](https://tools.ietf.org/html/rfc7159)
+ [74]: Cf. `https://tools.ietf.org/html/rfc7159 <https://tools.ietf.org/html/rfc7159>`_
 
-[^75]: Cf.
-    [[https://tools.ietf.org/html/rfc7807]{.underline}](https://tools.ietf.org/html/rfc7807)
+ [75]: Cf. `https://tools.ietf.org/html/rfc7807 <https://tools.ietf.org/html/rfc7807>`_
 
-[^76]: Cf.
-    [[http://www.iana.org/assignments/link-relations/link-relations.xml]{.underline}](http://www.iana.org/assignments/link-relations/link-relations.xml)
+ [76]: Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
 
-[^77]: Cf.
-    [<https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After>]{.underline}
+ [77]: Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After>`_
 
-[^78]: Cf.
-    [[http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html]{.underline}](http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html)
+ [78]: Cf. `http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html <http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html>`_
 
-[^79]: Cf.
-    [[https://stomp.github.io/]{.underline}](https://stomp.github.io/)
+ [79]: Cf. `https://stomp.github.io/ <https://stomp.github.io/>`_
 
-[^80]: Cf. [[https://xmpp.org/]{.underline}](https://xmpp.org/)
+ [80]: Cf. `https://xmpp.org/ <https://xmpp.org/>`_
 
-[^81]: Cf. [[http://mqtt.org/]{.underline}](http://mqtt.org/)
+ [81]: Cf. `http://mqtt.org/ <http://mqtt.org/>`_
 
-[^82]: Cf.
-    [[http://activemq.apache.org/openwire.html]{.underline}](http://activemq.apache.org/openwire.html)
+ [82]: Cf. `http://activemq.apache.org/openwire.html <http://activemq.apache.org/openwire.html>`_
 
-[^83]: Cf. [[https://www.amqp.org/]{.underline}](https://www.amqp.org/)
+ [83]: Cf. `https://www.amqp.org/ <https://www.amqp.org/>`_
 
-[^84]: Cf.
-    [[https://tools.ietf.org/html/rfc7230]{.underline}](https://tools.ietf.org/html/rfc7230)
+ [84]: Cf. `https://tools.ietf.org/html/rfc7230 <https://tools.ietf.org/html/rfc7230>`_
 
-[^85]: Cf.
-    [[https://tools.ietf.org/html/rfc7231]{.underline}](https://tools.ietf.org/html/rfc7231)
+ [85]: Cf. `https://tools.ietf.org/html/rfc7231 <https://tools.ietf.org/html/rfc7231>`_
 
-[^86]: Cf.
-    [[https://tools.ietf.org/html/rfc7234]{.underline}](https://tools.ietf.org/html/rfc7234)
+ [86]: Cf. `https://tools.ietf.org/html/rfc7234 <https://tools.ietf.org/html/rfc7234>`_
 
-[^87]: Cf.
-    [[https://tools.ietf.org/html/rfc7232]{.underline}](https://tools.ietf.org/html/rfc7232)
+ [87]: Cf. `https://tools.ietf.org/html/rfc7232 <https://tools.ietf.org/html/rfc7232>`_
 
-[^88]: Come nel caso di processi amministrativi sia completamente
+ [88]: Come nel caso di processi amministrativi sia completamente
     automatizzati (short-running) sia con intervento umano o comunque
     long-running.
 
-[^89]: Cf. Cesare Pautasso, Olaf Zimmermann, Frank Leymann: Restful web
+ [89]: Cf. Cesare Pautasso, Olaf Zimmermann, Frank Leymann: Restful web
     services vs. \"big\"\' web services: making the right architectural
     decision. WWW 2008: 805-814.
 
-[^90]: Cf.
-    [[https://www.programmableweb.com/api-university/understanding-api-first-design]{.underline}](https://www.programmableweb.com/api-university/understanding-api-first-design).
+ [90]: Cf. `https://www.programmableweb.com/api-university/understanding-api-first-design <https://www.programmableweb.com/api-university/understanding-api-first-design>`_.
     In termini colloquiali, il principio può essere parafrasato in
     questi termini:
 
-    > L'API è la prima interfaccia dell'applicazione
+    - L'API è la prima interfaccia dell'applicazione
 
-    > L'API viene prima dell'implementazione
+    - L'API viene prima dell'implementazione
 
-    > L'API deve essere descritta (ed addirittura essere
-    > auto-descrittiva, se possibile e fattibile)
+    - L'API deve essere descritta (ed addirittura essere auto-descrittiva, se possibile e fattibile)
 
-[^91]: Cf.
-    [[https://www.programmableweb.com/news/why-uks-government-data-service-takes-api-first-approach-to-datagovuk/elsewhere-web/2016/09/02]{.underline}](https://www.programmableweb.com/news/why-uks-government-data-service-takes-api-first-approach-to-datagovuk/elsewhere-web/2016/09/02)
+ [91]: Cf. `https://www.programmableweb.com/news/why-uks-government-data-service-takes-api-first-approach-to-datagovuk/elsewhere-web/2016/09/02 <https://www.programmableweb.com/news/why-uks-government-data-service-takes-api-first-approach-to-datagovuk/elsewhere-web/2016/09/02>`_
 
-[^92]: Cf. <https://it.wikipedia.org/wiki/Blockchain>
+ [92]: Cf. `https://it.wikipedia.org/wiki/Blockchain <https://it.wikipedia.org/wiki/Blockchain>`_
 
-[^93]: Una rete di calcolatori si definisce peer-to-peer, quando le
+ [93]: Una rete di calcolatori si definisce peer-to-peer, quando le
     macchine componenti (i nodi) non sono organizzati gerarchicamente ma
     svolgono delle funzionalità paritarie.
 
-[^94]: Cf.
-    <https://e-estonia.com/solutions/security-and-safety/ksi-blockchain>
+ [94]: Cf. `https://e-estonia.com/solutions/security-and-safety/ksi-blockchain <https://e-estonia.com/solutions/security-and-safety/ksi-blockchain>`_
 
-[^95]: Cf. <https://techcrunch.com/2018/04/19/do-you-need-a-blockchain/>
+ [95]: Cf. `https://techcrunch.com/2018/04/19/do-you-need-a-blockchain/ <https://techcrunch.com/2018/04/19/do-you-need-a-blockchain/>`_
 
-[^96]: Cf
-    <https://www.multichain.com/blog/2017/05/blockchain-immutability-myth/>
+ [96]: Cf. `https://www.multichain.com/blog/2017/05/blockchain-immutability-myth/ <https://www.multichain.com/blog/2017/05/blockchain-immutability-myth/>`_
 
-[^97]: Cf.
-    [[https://joinup.ec.europa.eu/asset/eia/description]{.underline}](https://joinup.ec.europa.eu/asset/eia/description)
+ [97]: Cf. `https://joinup.ec.europa.eu/asset/eia/description <https://joinup.ec.europa.eu/asset/eia/description>`_
 
-[^98]: Cf.
-    [[http://lg-patrimonio-pubblico.readthedocs.io/it/latest/index.html]{.underline}](http://lg-patrimonio-pubblico.readthedocs.io/it/latest/index.html)
+ [98]: Cf. `http://lg-patrimonio-pubblico.readthedocs.io/it/latest/index.html <http://lg-patrimonio-pubblico.readthedocs.io/it/latest/index.html>`_
 
-[^99]: Cf. Massimo Mecella, Francesco Leotta (2017): Migliorare
+ [99]: Cf. Massimo Mecella, Francesco Leotta (2017): Migliorare
     l'accesso agli open data pubblici: tecnologie e approcci,
-    [[https://www.agendadigitale.eu/cittadinanza-digitale/pa-tecnologie-e-approcci-per-migliorare-laccesso-ai-dati-aperti/]{.underline}](https://www.agendadigitale.eu/cittadinanza-digitale/pa-tecnologie-e-approcci-per-migliorare-laccesso-ai-dati-aperti/)
+    `https://www.agendadigitale.eu/cittadinanza-digitale/pa-tecnologie-e-approcci-per-migliorare-laccesso-ai-dati-aperti/ <https://www.agendadigitale.eu/cittadinanza-digitale/pa-tecnologie-e-approcci-per-migliorare-laccesso-ai-dati-aperti/>`_
 
-[^100]: Cf. [https://graphql.org](https://graphql.org/)/
+ [100]: Cf. `https://graphql.org](https://graphql.org/ <https://graphql.org](https://graphql.org/>`_
