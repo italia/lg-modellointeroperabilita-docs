@@ -1019,13 +1019,12 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
 .. [1] Il ModI 2018 è concettualmente la seconda versione (aggiornamento)
     del framework di interoperabilità della PA che nella prima versione
     fu definito nel 2005 con il nome di SPCoop - Servizio Pubblico di
-    Cooperazione Applicativa, `cf. <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__
+    Cooperazione Applicativa, cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__ 
     Il termine *modello* trova corrispettivo nel termine inglese
     framework, e pertanto nel presente documento i due termini verranno
     considerati sinonimi.
 
-.. [2]: Cf.
-    [[https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf]{.underline}](https://pianotriennale-ict.italia.it/assets/pdf/Piano_Triennale_per_l_informatica_nella_Pubblica_Amministrazione.pdf).
+.. [2]: Cf. `https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf <https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf>`__ 
 
 .. [3]: In precedenti documenti a cura di AgID e del Team Digitale, il
     termine inglese framework è stato sovente tradotto in italiano come
@@ -1035,21 +1034,16 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     modello, pur considerando i termini framework, modello e quadro come
     sinonimi.
 
-.. [4]: Cf.
+.. [4]: Cf. `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation`__ 
 
-    [[https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation]{.underline}](https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)
+.. [5]: Cf. `http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN <http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN>`__
 
-.. [5]: Cf.
-    [[http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN]{.underline}](http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN)
+.. [6]: Cf. `https://pianotriennale-ict.italia.it/ <https://pianotriennale-ict.italia.it/>`__ 
 
-.. [6]: Cf.
-    [[https://pianotriennale-ict.italia.it/]{.underline}](https://pianotriennale-ict.italia.it/)
+.. [7]: Cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__
 
-.. [7]: Cf.
-    http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa
-
-.. [8]: Cf.
-    http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf
+.. [8]: Cf. `http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf <http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf>`__
+    
 
 .. [9]: Con abuso di nomenclatura, ma intuitivamente chiaro, si intende
     nel presente documento servizio e API come sinonimo, ad indicare una
@@ -1074,8 +1068,7 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     e-government through a cooperative architecture. IEEE Computer 34
     (2), pp. 40-45.
 
-.. [13]: La conferenza di servizi, cf.
-    [[http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/]{.underline}](http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/),
+.. [13]: La conferenza di servizi, cf. `http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/ <http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/`__ ,
     è l'istituto che facilita l\'acquisizione da parte della PA di
     autorizzazioni, atti, licenze, permessi e nulla-osta o di altri
     elementi comunque denominati, finalizzati all\'emissione di un
@@ -1088,7 +1081,7 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
 .. [14]: Approfondimenti sui concetti di orchestrazione e coreografia
     possono essere trovati in:
 
-    <https://stackoverflow.com/questions/4127241/orchestration-vs-choreography>
+    `https://stackoverflow.com/questions/4127241/orchestration-vs-choreography <https://stackoverflow.com/questions/4127241/orchestration-vs-choreography>`__
 
     C Peltz (2003), Web Services Orchestration and Choreography. IEEE
     Computer 36(10), pp. 46-52
@@ -1097,19 +1090,16 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     Multi-Viewpoint Approach. Int. J. Cooperative Inf. Syst. 13(4), pp.
     337-368
 
-.. [15]: Ad es., Paypal, cf. https://developer.paypal.com/, offre SDK ed
+.. [15]: Ad es., Paypal, cf. `https://developer.paypal.com/ <https://developer.paypal.com/>`__ , offre SDK ed
     un servizio di prova, cosiddetta sandbox, che permette agli
     sviluppatori che si vogliono integrare con Paypal di provare le
     interazioni prima di rilasciare i propri sistemi.
 
-.. [16]: Cf. EU eGovernment Action Plan 2016-2020,
-    [[https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation]{.underline}](https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)
+.. [16]: Cf. EU eGovernment Action Plan 2016-2020, `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation] <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)>`__
 
-.. [17]: Cf. [[Codice dell\'Amministrazione Digitale Capo 1 Sez. 2 Art.
-    3]{.underline}](http://cad.readthedocs.io/it/v2017-12-13/_rst/capo1_sezione2_art3.html)
+.. [17]: Cf. `Codice dell\'Amministrazione Digitale Capo 1 Sez. 2 Art.
+    3 <http://cad.readthedocs.io/it/v2017-12-13/_rst/capo1_sezione2_art3.html`__
 
-.. [18]: Cf.
-    [[http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html]{.underline}](http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html)
+.. [18]: Cf. `http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html>`__
 
-.. [19]: Cf.
-    [[http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html\#linee-di-azione]{.underline}](http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html#linee-di-azione)
+.. [19]: Cf. `http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html\#linee-di-azione <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html#linee-di-azione`__
