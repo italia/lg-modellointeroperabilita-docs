@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # -- PROJECT Variables ----------------------------------------------------
-settings_project_name = "Linee Guida su modello di interoperabilita"
+settings_project_name = "Linee Guida Modello di Interoperabilita"
 settings_copyright_copyleft = "Agenzia per l'Italia Digitale"
 settings_editor_name = "Agenzia per l'Italia Digitale"
 settings_doc_version = 'Bozza in consultazione'
