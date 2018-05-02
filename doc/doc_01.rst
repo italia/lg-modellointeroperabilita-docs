@@ -123,8 +123,7 @@ i servizi pubblici digitali, lo stesso include:
     aspetti garantiscano e verifichino l'interoperabilità a livello
     nazionale e di UE.
 
-![](media/image2.png){width="5.552083333333333in"
-height="4.166666666666667in"}
+.. image:: ../media/image2.png
 
 *Figura 2 - Livelli di interoperabilità*
 
@@ -230,8 +229,7 @@ varie fonti, sia all'interno che all'esterno dei confini organizzativi
 delle PA. Le informazioni e i servizi dovrebbero essere recuperabili e
 resi disponibili in formati interoperabili.
 
-![](media/image3.png){width="6.270833333333333in"
-height="3.4305555555555554in"}
+.. image:: ../media/image3.png
 
 *Figura 3 - Schema concettuale per i servizi pubblici integrati*
 
@@ -363,8 +361,6 @@ individuato i seguenti obblighi per gli stati membri.
 -   Utilizzare specifiche aperte, per garantire l\'interoperabilità
     tecnica quando si istituiscono servizi pubblici.
 
- 
-=
 
 3 Il quadro di riferimento attuale
 ==================================
@@ -373,8 +369,7 @@ Il Piano triennale per l'informatica nella PA[^6] costituisce il quadro
 di riferimento entro cui si colloca il ModI 2018 all'interno del
 *Modello strategico di evoluzione del sistema informativo della PA*.
 
-![](media/image4.png){width="3.5520833333333335in"
-height="5.770833333333333in"}
+.. image:: ../media/image4.png
 
 *Figura 4 - Piano triennale per l'informatica nella PA*
 
@@ -655,8 +650,7 @@ disposizione API o servizio utilizzati da altri, e la funzione di
 **fruitore**, nel caso invece del soggetto che utilizza le API o servizi
 messi a disposizione da altro soggetto.
 
-![](media/image5.png){width="5.333333333333333in"
-height="3.5520833333333335in"}
+.. image:: ../media/image5.png
 
 *Figura 5 - Ambito di applicazione del modello di interoperabilità*
 
@@ -704,8 +698,7 @@ interoperabilità deve tener presente:
     necessità di verificare la correttezza dei codici fiscali del
     proprio database, per poi utilizzarli in proprie elaborazioni.
 
-![](media/image6.png){width="4.5763254593175855in"
-height="2.0677088801399823in"}
+.. image:: ../media/image6.png
 
 -   **Notifica inter-PA**: in questo caso un'applicazione in un soggetto
     scatena un evento / compie un'operazione che deve essere propagata /
@@ -722,8 +715,7 @@ height="2.0677088801399823in"}
     di un nuovo codice fiscale, all'AUSL di riferimento per l'iscrizione
     al Servizio Sanitario Nazionale, ecc.
 
-![](media/image7.png){width="6.371070647419073in"
-height="1.828125546806649in"}
+.. image:: ../media/image7.png
 
 -   **Composizione inter-PA**: in questo caso un insieme di applicazioni
     comunicano, anche in maniera bidirezionale, al fine di comporre una
@@ -741,8 +733,7 @@ height="1.828125546806649in"}
     compongono un un nuovo servizio per dare seguito ad una istanza di
     un cittadino o di un'impresa.
 
-![](media/image8.png){width="5.667187226596676in"
-height="2.9531255468066493in"}
+.. image:: ../media/image8.png
 
 > È importante analizzare le analogie e differenze con il caso
 > precedente: nel caso della notifica inter-PA, c'è una relazione
