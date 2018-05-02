@@ -4,7 +4,7 @@ Presentazione del Modello di Interoperabilità 2018
 1 Introduzione
 ==============
 
-Il Modello di Interoperabilità 2018[^1] (nel seguito in breve ModI 2018)
+Il Modello di Interoperabilità 2018[1]_ (nel seguito in breve ModI 2018)
 rappresenta il modello di supporto alla strategia di interoperabilità e
 cooperazione tra le Pubbliche Amministrazioni (di seguito PA), che
 definendo i contesti di interazione e integrazione tra le PA, i
@@ -1016,7 +1016,7 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     quale condizione di accesso al catalogo, e controllare con
     continuità il rispetto dei requisiti per l'iscrizione al catalogo.
 
-[^1]: Il ModI 2018 è concettualmente la seconda versione (aggiornamento)
+.. [1] Il ModI 2018 è concettualmente la seconda versione (aggiornamento)
     del framework di interoperabilità della PA che nella prima versione
     fu definito nel 2005 con il nome di SPCoop - Servizio Pubblico di
     Cooperazione Applicativa,\
