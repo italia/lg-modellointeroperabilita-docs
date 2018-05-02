@@ -1024,9 +1024,9 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     framework, e pertanto nel presente documento i due termini verranno
     considerati sinonimi.
 
-.. [2]: Cf. `https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf <https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf>`__ 
+.. [2] Cf. `https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf <https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf>`__ 
 
-.. [3]: In precedenti documenti a cura di AgID e del Team Digitale, il
+.. [3] In precedenti documenti a cura di AgID e del Team Digitale, il
     termine inglese framework è stato sovente tradotto in italiano come
     modello, ed è questo il termine utilizzato nel presente documento.
     La dicitura *quadro* è la traduzione letterale della Commissione
@@ -1034,18 +1034,18 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     modello, pur considerando i termini framework, modello e quadro come
     sinonimi.
 
-.. [4]: Cf. `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation`__ 
+.. [4] Cf. `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation`__ 
 
-.. [5]: Cf. `http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN <http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN>`__
+.. [5] Cf. `http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN <http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN>`__
 
-.. [6]: Cf. `https://pianotriennale-ict.italia.it/ <https://pianotriennale-ict.italia.it/>`__ 
+.. [6] Cf. `https://pianotriennale-ict.italia.it/ <https://pianotriennale-ict.italia.it/>`__ 
 
-.. [7]: Cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__
+.. [7] Cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__
 
-.. [8]: Cf. `http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf <http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf>`__
+.. [8] Cf. `http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf <http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf>`__
     
 
-.. [9]: Con abuso di nomenclatura, ma intuitivamente chiaro, si intende
+.. [9] Con abuso di nomenclatura, ma intuitivamente chiaro, si intende
     nel presente documento servizio e API come sinonimo, ad indicare una
     componente software, esposta sul Web, che funge da servente e può
     essere utilizzata da client. In modo rigoroso, sia SPCoop che il
@@ -1057,18 +1057,18 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     Internet/intranet, da cui il termine Web. Tali concetti verranno
     ulteriormente approfonditi nel Modello di Interoperabilità 2018.
 
-.. [10]: Quindi non attivato da un utente umano, anche impropriamente
+.. [10] Quindi non attivato da un utente umano, anche impropriamente
     detto *enterprise* in taluni contesti.
 
-.. [11]: Cf. le cosiddette operazioni CRUD - Create, Read, Update, Delete
+.. [11] Cf. le cosiddette operazioni CRUD - Create, Read, Update, Delete
 
-.. [12]: Nel caso della PA, questo processo inter-organizzativo
+.. [12] Nel caso della PA, questo processo inter-organizzativo
     corrisponde al concetto di macro-processo o di processo
     inter-amministrazione: M Mecella, C Batini (2001), Enabling italian
     e-government through a cooperative architecture. IEEE Computer 34
     (2), pp. 40-45.
 
-.. [13]: La conferenza di servizi, cf. `http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/ <http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/`__ ,
+.. [13] La conferenza di servizi, cf. `http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/ <http://www.italiasemplice.gov.it/conferenza/guida-alle-novita-della-conferenza-di-servizi/`__ ,
     è l'istituto che facilita l\'acquisizione da parte della PA di
     autorizzazioni, atti, licenze, permessi e nulla-osta o di altri
     elementi comunque denominati, finalizzati all\'emissione di un
@@ -1078,7 +1078,7 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     semplificata in modalità asincrona costituisce un altro caso della
     modalità precedente (notifica inter-PA).
 
-.. [14]: Approfondimenti sui concetti di orchestrazione e coreografia
+.. [14] Approfondimenti sui concetti di orchestrazione e coreografia
     possono essere trovati in:
 
     `https://stackoverflow.com/questions/4127241/orchestration-vs-choreography <https://stackoverflow.com/questions/4127241/orchestration-vs-choreography>`__
@@ -1090,16 +1090,16 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
     Multi-Viewpoint Approach. Int. J. Cooperative Inf. Syst. 13(4), pp.
     337-368
 
-.. [15]: Ad es., Paypal, cf. `https://developer.paypal.com/ <https://developer.paypal.com/>`__ , offre SDK ed
+.. [15] Ad es., Paypal, cf. `https://developer.paypal.com/ <https://developer.paypal.com/>`__ , offre SDK ed
     un servizio di prova, cosiddetta sandbox, che permette agli
     sviluppatori che si vogliono integrare con Paypal di provare le
     interazioni prima di rilasciare i propri sistemi.
 
-.. [16]: Cf. EU eGovernment Action Plan 2016-2020, `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation] <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)>`__
+.. [16] Cf. EU eGovernment Action Plan 2016-2020, `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation] <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)>`__
 
-.. [17]: Cf. `Codice dell\'Amministrazione Digitale Capo 1 Sez. 2 Art.
+.. [17] Cf. `Codice dell\'Amministrazione Digitale Capo 1 Sez. 2 Art.
     3 <http://cad.readthedocs.io/it/v2017-12-13/_rst/capo1_sezione2_art3.html`__
 
-.. [18]: Cf. `http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html>`__
+.. [18] Cf. `http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html>`__
 
-.. [19]: Cf. `http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html\#linee-di-azione <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html#linee-di-azione`__
+.. [19] Cf. `http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html\#linee-di-azione <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html#linee-di-azione`__
