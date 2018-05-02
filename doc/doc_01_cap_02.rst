@@ -1,7 +1,7 @@
 Il contesto europeo
 ===================
 
-Lo *European Interoperability Framework (EIF)* (in italiano Quadro Europeo di Interoperabilità - QEI [3]_) fornisce orientamenti alle PA Europee su come operare le iniziative relative al tema dell'interoperabilità; tutto questo mediante una serie di raccomandazioni atte a stabilire relazioni tra le varie organizzazioni, razionalizzare i processi volti a sostenere i servizi digitali e assicurare che le norme esistenti e quelle nuove non pregiudichino gli sforzi di interoperabilità.
+Lo *European Interoperability Framework (EIF)* (in italiano Quadro Europeo di Interoperabilità - QEI [4]_) fornisce orientamenti alle PA Europee su come operare le iniziative relative al tema dell'interoperabilità; tutto questo mediante una serie di raccomandazioni atte a stabilire relazioni tra le varie organizzazioni, razionalizzare i processi volti a sostenere i servizi digitali e assicurare che le norme esistenti e quelle nuove non pregiudichino gli sforzi di interoperabilità.
 
 L'obiettivo dell'EIF è:
 
@@ -113,11 +113,11 @@ Nell'EIF è raccomandato:
 
 -   adottare e riusare fonti di informazioni e servizi esterni, laddove utile e fattibile, nello sviluppo dei servizi pubblici.
 
-La sicurezza e privacy sono aspetti che devono essere definiti in pieno accordo con l'e-Government action plan 2016-2020 della Commissione EU [4]_. Per le PA è raccomandato:
+La sicurezza e privacy sono aspetti che devono essere definiti in pieno accordo con l'e-Government action plan 2016-2020 della Commissione EU [5]_. Per le PA è raccomandato:
 
 -   tenendo conto dei requisiti specifici di sicurezza e riservatezza, identificare per ogni servizio le contromisure in conformità con piani di gestione del rischio;
 
--   utilizzare i servizi fiduciari, in base al regolamento in materia di identificazione elettronica e servizi fiduciari, come meccanismi per garantire lo scambio sicuro e protetto dei dati nei servizi pubblici (Regolamento (UE) 2014/910 [5]_).
+-   utilizzare i servizi fiduciari, in base al regolamento in materia di identificazione elettronica e servizi fiduciari, come meccanismi per garantire lo scambio sicuro e protetto dei dati nei servizi pubblici (Regolamento (UE) 2014/910 [6]_).
 
 Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i seguenti obblighi per gli stati membri.
 
@@ -136,9 +136,9 @@ Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i s
 -   Utilizzare specifiche aperte, per garantire l\'interoperabilità tecnica quando si istituiscono servizi pubblici.
 
 
-.. [3] In precedenti documenti a cura di AgID e del Team Digitale, il termine inglese framework è stato sovente tradotto in italiano come modello, ed è questo il termine utilizzato nel presente documento. La dicitura *quadro* è la traduzione letterale della Commissione Europea. Nel seguito di questo documento verrà preferito il termine modello, pur considerando i termini framework, modello e quadro come sinonimi.
+.. [4] In precedenti documenti a cura di AgID e del Team Digitale, il termine inglese framework è stato sovente tradotto in italiano come modello, ed è questo il termine utilizzato nel presente documento. La dicitura *quadro* è la traduzione letterale della Commissione Europea. Nel seguito di questo documento verrà preferito il termine modello, pur considerando i termini framework, modello e quadro come sinonimi.
 
-.. [4] Cf. `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation>`__ 
+.. [5] Cf. `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation>`__ 
 
-.. [5] Cf. `http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN <http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN>`__
+.. [6] Cf. `http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN <http://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX%3A32014R0910&from=EN>`__
 

@@ -3,7 +3,7 @@ Introduzione
 
 Il Modello di Interoperabilità 2018 [1]_ (nel seguito in breve ModI 2018) rappresenta il modello di supporto alla strategia di interoperabilità e cooperazione tra le Pubbliche Amministrazioni (di seguito PA), che definendo i contesti di interazione e integrazione tra le PA, i cittadini e le imprese permette di vedere la PA nella sua interezza come un unico sistema informativo (virtuale).
 
-La definizione del ModI 2018 deve essere coerente con il nuovo *European Interoperability Framework* (EIF) oggetto della Comunicazione COM (2017)134 della Commissione Europea del 23 marzo 2017 [3]_, al fine di assicurare anche l'interoperabilità nel contesto Europeo e per l'attuazione del *Digital Single Market* (Mercato Unico Digitale).
+La definizione del ModI 2018 deve essere coerente con il nuovo *European Interoperability Framework* (EIF) oggetto della Comunicazione COM (2017)134 [2]_ della Commissione Europea del 23 marzo 2017, al fine di assicurare anche l'interoperabilità nel contesto Europeo e per l'attuazione del *Digital Single Market* (Mercato Unico Digitale).
 
 Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
 
@@ -11,7 +11,7 @@ Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
 
 -   armonizzare le scelte architetturali delle PA;
 
--   individuare le scelte tecnologiche che favoriscano lo sviluppo, da parte delle PA, cittadini e imprese, di soluzioni applicative innovative che abilitino l'utilizzo dei servizi individuati nelle Infrastrutture immateriali del Piano triennale per l'informatica nella PA [3]_;
+-   individuare le scelte tecnologiche che favoriscano lo sviluppo, da parte delle PA, cittadini e imprese, di soluzioni applicative innovative che abilitino l'utilizzo dei servizi individuati nelle Infrastrutture immateriali del Piano triennale per l'informatica nella PA [2]_;
 
 -   promuovere, quando applicabile, l'adozione dell'approccio *API first*, al fine di favorire la separazione dei livelli di back end e front end, con logiche aperte e standard pubblici che garantiscano ad altri attori, pubblici e privati, accessibilità e massima interoperabilità di dati e servizi;
 
@@ -25,5 +25,5 @@ Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
     Il termine *modello* trova corrispettivo nel termine inglese framework, e pertanto nel presente documento i due termini verranno considerati sinonimi.
     
 .. [2] Cf. `https://ec.europa.eu/transparency/regdoc/rep/1/2017/IT/COM-2017-134-F1-IT-MAIN-PART-1.PDF <https://ec.europa.eu/transparency/regdoc/rep/1/2017/IT/COM-2017-134-F1-IT-MAIN-PART-1.PDF>`__
-
+	
 .. [3] Cf. `https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf <https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf>`__ 

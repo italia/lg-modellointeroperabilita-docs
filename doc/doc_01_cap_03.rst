@@ -1,7 +1,7 @@
 Il quadro di riferimento attuale
 ================================
 
-Il Piano triennale per l'informatica nella PA [6]_ costituisce il quadro di riferimento entro cui si colloca il ModI 2018 all'interno del *Modello strategico di evoluzione del sistema informativo della PA*.
+Il Piano triennale per l'informatica nella PA [7]_ costituisce il quadro di riferimento entro cui si colloca il ModI 2018 all'interno del *Modello strategico di evoluzione del sistema informativo della PA*.
 
 .. image:: ../media/image4.png
 
@@ -48,4 +48,4 @@ Il modello strategico, pensato per superare l'approccio a "silos", storicamente 
 7.  La **gestione del cambiamento** che è una componente definita per far fronte alle necessità di coordinamento; gestione e monitoraggio delle attività funzionali allo sviluppo del Piano.
 
 
-.. [6] Cf. `https://pianotriennale-ict.italia.it/ <https://pianotriennale-ict.italia.it/>`__ 
+.. [7] Cf. `https://pianotriennale-ict.italia.it/ <https://pianotriennale-ict.italia.it/>`__ 
