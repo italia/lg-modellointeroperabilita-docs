@@ -1,10 +1,10 @@
-7 Altri approcci e tecnologie di integrazione
+Altri approcci e tecnologie di integrazione
 =============================================
 
 Nelle precedenti sezioni, sono state introdotte le principali tecnologie di integrazione. Accanto a queste, stanno emergendo altre modalità di integrazione che potrebbero essere proposte in futuro in affiancamento in casi d'uso molto specifici.
 
-7.1 Datastore distribuiti
--------------------------
+Datastore distribuiti
+---------------------
 
 L'applicazione di tecnologie per datastore distribuiti è strettamente connessa, in ambito integrazione di sistemi, al mantenimento di database multi-tenant in cui, ad esempio, si richiede data locality per basi di dati di grandi dimensioni. In questo contesto, vanno considerati principalmente i file system ed i database distribuiti.
 
@@ -30,8 +30,8 @@ L\'utilizzo di datastore distribuiti potrebbe in futuro affiancare l\'integrazio
 
 -   la standardizzazione delle interfacce di accesso.
 
-7.2 Esposizione di open data
-----------------------------
+Esposizione di open data
+------------------------
 
 Una modalità di integrazione, importante specialmente negli scenari A2B e A2C, è quella basata sull'esposizione da parte delle PA di *open data*. Gli open data devono essere fruibili, ed essere inseriti ove possibile nel contesto dei Base Register definiti nell\'EIF [97]_, standardizzando gli schemi e le modalità di fruizione.
 

@@ -1,8 +1,8 @@
-1 Introduzione alle interfacce di servizio
-==========================================
+Introduzione alle interfacce di servizio
+========================================
 
-1.1 Il concetto di servizio
----------------------------
+Il concetto di servizio
+-----------------------
 
 Oggigiorno, i servizi sono sempre più rilevanti nella nostra vita e nei paesi di tutto il mondo. Il concetto di servizio copre un ampio spettro di aspetti nelle relazioni moderne tra amministrazioni pubbliche, fornitori privati e utenti finali.
 
@@ -100,8 +100,8 @@ Il costrutto *part-of*, pur essendo efficace nel relazionare servizi elementari 
 
 Concludiamo questa breve introduzione sui servizi, rimarcando che i servizi sono erogati attuando dei processi. Un processo pubblico è un processo che definisce le interazioni tra i partecipanti (nel processo) e le attività che sono visibili al pubblico per ogni partecipante. Un processo privato è un processo che, oltre alle interazioni e alle attività definite nei processi pubblici, definisce le interazioni e le attività interne ai singoli partecipanti. 
 
-1.2 Servizio digitale, API e Interfaccia di servizio
-----------------------------------------------------
+Servizio digitale, API e Interfaccia di servizio
+------------------------------------------------
 
 Un **servizio digitale** (talvolta anche indicato come *electronic service* o *e-service*) è un servizio che *viene erogato via Internet o in una rete, la fornitura è essenzialmente automatizzata o comporta solo un intervento umano minimo, ed è impossibile da garantire in assenza di tecnologia informatica* [2]_. Tutto quello precedentemente discusso per i servizi, vale anche per quelli digitali, essendo questi una specializzazione.
 
@@ -164,8 +164,8 @@ per indicare **l'esposizione delle funzionalità applicative che sono necessarie
 
 Nel prosieguo di questo documento, ci si focalizza solamente sulle interfacce di servizio, che sono il fondamento del Modello di Interoperabilità 2018.
 
-1.3 Caratteristiche delle interfacce di servizio
-------------------------------------------------
+Caratteristiche delle interfacce di servizio
+--------------------------------------------
 
 In prima istanza, le interfacce di servizio possono essere distinte in due categorie: semplici e complesse. 
 
@@ -189,8 +189,8 @@ Le classificazioni introdotte non sono strette poiché a seconda delle operazion
 
 Le interfacce di servizio devono essere accompagnate da una descrizione delle operazioni offerte il cui linguaggio dipende dalla tecnologia con cui l'interfaccia è implementata (si veda a partire dalla Sezione 3 per maggiori dettagli). La descrizione di una interfaccia di servizio di solito include caratteristiche funzionali e non funzionali. La descrizione funzionale si concentra sulle caratteristiche operative dell'interfaccia di servizio che descrivono il funzionamento in termini di operazioni offerte, i parametri richiesti da ognuna, gli endpoint [5]_ da utilizzare, il formato dei messaggi ed i protocolli di rete da utilizzare. La descrizione non funzionale si concentra invece sulla *qualità del servizio* (o qualità dell'interfaccia di servizio) in termini di limiti di utilizzo, costi e metriche di performance quali scalabilità, disponibilità, tempo di risposta, accuratezza, transazionalità, sicurezza e affidabilità.
 
-1.4 Qualità del servizio
-------------------------
+Qualità del servizio
+--------------------
 
 Il concetto di *quality of service - QoS*, fa riferimento alla descrizione non funzionale di una interfaccia servizio, cioè la capacità di una interfaccia di servizio di soddisfare le aspettative dei fruitori. Assicurare la QoS nell'ambito Internet e quindi ai fini dell'interoperabilità è una sfida critica a causa della natura dinamica ed impredicibile del contesto applicativo. Cambiamenti negli schemi di traffico, la presenza di transazioni business-critical, gli effetti dei problemi di rete, le performance dei protocolli e degli standard di rete richiedono una definizione precisa della QoS offerta da una interfaccia
 di servizio.
@@ -217,8 +217,8 @@ Quando si utilizzano meccanismi di caching, essi devono essere documentati nelle
 
 Questa sezione si è concentrata sul concetto di QoS nel campo delle interfacce di servizio. Misure di QoS possono essere introdotte anche per quanto riguarda i servizi digitali utilizzando metriche introdotte nei campi della Interazione Uomo-Macchina. Queste ultime sono fuori dagli obiettivi di questo documento.
 
-1.4.1 Service Level Agreement - SLA
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Service Level Agreement - SLA
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 L'integrazione può coinvolgere numerose organizzazioni e erogatori esterni di interfacce di servizio. Al fine di accordarsi sulla QoS, erogatori di interfacce di servizio e fruitori utilizzano quelli che vengono definiti *Service Level Agreement - SLA*, ovvero *accordi sul livello di servizio*. Uno SLA può contenere le parti seguenti:
 
@@ -268,8 +268,8 @@ Essi inoltre devono:
 
 Ove possibile, gli SLO e gli SLA dovrebbero essere in relazione diretta con i valori associati (ad es., indicare success rate anzichè l'error rate), in modo che a valori più alti corrispondano risultati positivi.
 
-1.5 Middleware
---------------
+Middleware
+----------
 
 Con il termine middleware si intende lo strato software che separa le risorse informative dai fruitori delle interfacce di servizio, di fatto permettendo la realizzazione delle interfacce stesse. In tal senso un middleware gestisce la complessità e l'eterogeneità tipica dei sistemi distribuiti. Le risorse informative di cui si parla in questo caso possono essere nel caso più semplice della basi di dati, ma più comunemente includono altre interfacce di servizio (che a loro volta possono essere implementati utilizzando dei middleware) e sistemi legacy a cui il middleware contribuisce a fornire interfacce moderne. A tale fine i middleware forniscono una serie di funzionalità:
 
@@ -287,8 +287,8 @@ Con il termine middleware si intende lo strato software che separa le risorse in
 
 Oltre a mascherare l'eterogeneità dell'hardware, i middleware mirano anche a mascherare l'eterogeneità delle piattaforme software permettendo di sviluppare i diversi componenti del sistema distribuito secondo i linguaggi e framework più adatti.
 
-1.5.1 API Management
-^^^^^^^^^^^^^^^^^^^^
+API Management
+^^^^^^^^^^^^^^
 
 Gli API Management System sono dei moderni tipi di middleware che concentrano tutte le funzionalità necessarie ad una organizzazione per gestire le loro interfacce di servizio su infrastrutture on-premises e cloud pubblici e privati. Essi si concentrano sullo sviluppo delle interfacce di servizio, la gestione del ciclo di vita delle stesse, il controllo degli accessi (tramite meccanismi di autorizzazione ed autenticazione), il throttling, il caching e le analitiche (utili al controllo degli SLA).
 
@@ -296,8 +296,8 @@ Un API management system può essere utilizzato ad esempio come strato di access
 
 Oltre alle funzionalità richieste nelle sezioni precedenti, alcuni API management system permettono di definire processi di automazione ed orchestrazione di breve durata (dette soft-orchestration). Si tratta di orchestrazioni molto semplici in cui non ci si aspetta intervento umano nel processo, la durata è brevissima e le regole definite sono molto semplici.
 
-1.5.2 Logging
-^^^^^^^^^^^^^
+Logging
+^^^^^^^
 
 Il logging riveste un ruolo fondamentale nella progettazione e sviluppo di interfacce di servizio. Le moderne piattaforme middleware, oltre ad integrare meccanismi di logging interni, possono connettersi ad interfacce di servizio esterne che permettono la raccolta (log collection), la ricerca e la produzione di analitiche a partire dai log. Queste analitiche permettono, oltre all'identificazione di problemi, il monitoraggio del sistema rispetto, per esempio, a tematiche relative alla QoS. L'utilizzo di sistemi di log collection permette, peraltro, di avere in una componente centralizzata non solo i log relativi all'utilizzo dell'interfaccia di servizio, ma anche quelli relativi ad eventuali digital service ed a componenti di rete (ad es., proxy e application-gateway). I messaggi applicativi possono, ai fini di non ripudio (vedi Sezione 2.1.4) essere memorizzati assieme alla firma
 digitale e quindi archiviati periodicamente nel rispetto delle direttive sulla privacy.
@@ -322,8 +322,8 @@ L'erogatore deve inoltre tracciare un evento per ogni richiesta, contenente alme
 
 -   ove applicabile, un identificativo univoco della richiesta, utile ad eventuali correlazioni tra chiamate diverse.
 
-1.6 Attori e Interazioni
-------------------------
+Attori e Interazioni
+--------------------
 
 Come anticipato nel documento 1 - Visione Generale del Modello di Interoperabilità 2018, l'obiettivo a tendere è quello di una PA in cui le singole amministrazioni offrono interfacce di servizio, in corrispondenza ai servizi digitali che erogano, e possono a loro volta cooperare attraverso l'invocazione di interfacce di servizio offerte da altre PA.
 
@@ -379,8 +379,8 @@ La tabella seguente riassume le considerazioni presentate.
 |  A2C                     | ✓                     |                             |  ✓                                   |  \-                                   |
 +--------------------------+-----------------------+-----------------------------+--------------------------------------+---------------------------------------+
 
-1.7 Uniformità dei dati
------------------------
+Uniformità dei dati
+-------------------
 
 Uno degli aspetti maggiormente critici quando si espongono interfacce di servizio è la modellazione dei dati. Come anticipato nella Sezione 1.1, l'information model sottostante ad un servizio (e quindi anche ad un servizio digitale e interfaccia di servizio) serve a rappresentare sia il modello dei dati relativo ai cambiamenti di stato che il servizio opera, sia i dati che "transitano" (input/output) attraverso il servizio. Nel seguito ci soffermiamo sul caso delle interfacce di servizio. Facendo un parallelo con la programmazione orientata agli oggetti (che è quella maggiormente utilizzata oggi), oltre al problema di definire i metodi offerti dalle classi del programma (nel parallelo corrispondenti alle operazioni dell'interfaccia di servizio), c'è il problema di definire correttamente il numero e soprattutto il tipo dei parametri di input ed output. Non a caso, l'aspetto metodologico cruciale su cui si soffermano tutte le metodologie di progettazione e programmazione basate sul design-by-contract [13]_ è la definizione della segnatura dei metodi, al giusto livello di granularità, e la segnatura
 comprende sia il nome del metodo che i parametri.

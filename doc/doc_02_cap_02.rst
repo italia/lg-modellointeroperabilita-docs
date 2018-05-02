@@ -1,24 +1,24 @@
-2 Concetti di Sicurezza
-=======================
+Concetti di Sicurezza
+=====================
 
 La sicurezza dei sistemi informatici è l'insieme di pratiche messe in atto al fine di impedire l'accesso non autorizzato, l'uso, la divulgazione, l'interruzione dell'accesso, la modifica, l'ispezione e la distruzione delle informazioni.
 
 Questa sezione si concentra sui meccanismi di sicurezza che vadano oltre il semplice filtraggio di pacchetti basato su indirizzi IP, tipo di protocollo (anche detto circuit-level filtering) o contenuto del dato applicativo (application-level gateway o antivirus) [25]_. In particolare la sezione si concentra sull'utilizzo di protocolli e tecniche di sicurezza basate sulla manipolazione dei messaggi di rete. La sezione farà inoltre riferimento a come i requisiti di sicurezza possano essere variabili a seconda dello scenario applicativo e del caso d'uso.
 
-2.1 Meccanismi di base
-----------------------
+Meccanismi di base
+------------------
 
 Diversi sono i concetti chiave dietro al mondo della sicurezza. In origine il termine faceva riferimento al concetto di triade CIA (Confidenzialità, Integrità e Availability - Disponibilità). Nel tempo altri concetti si sono aggiunti quali l'autenticazione e il non ripudio.
 
 Questa sezione descrive questi concetti introducendo le principali tecniche impiegate per assicurarli. 
 
-2.1.1 Disponibilità
-^^^^^^^^^^^^^^^^^^^
+Disponibilità
+^^^^^^^^^^^^^
 
 Il concetto di disponibilità è stato precedentemente introdotto nella Sezione 1.3 parlando della QoS. Il concetto di disponibilità è legato strettamente anche a quello di sicurezza, poiché la disponibilità di una interfaccia di servizio può essere legata non solo a cause di natura tecnica ma anche a specifici tipi di attacco (ad es., denial of service).
 
-2.1.2 Riservatezza
-^^^^^^^^^^^^^^^^^^
+Riservatezza
+^^^^^^^^^^^^
 
 Il termine riservatezza (privacy) è spesso utilizzato come equivalente di confidenzialità. La confidenzialità è la proprietà di un canale di comunicazione per la quale l'informazione non è rivelata se non agli utenti autorizzati. Il termine confidenzialità è comunque più generale di riservatezza, in quanto quest'ultima viene ottenuta tramite la cifratura del canale di comunicazione mentre la confidenzialità include anche meccanismi di autorizzazione (vedi Sezione 2.1.6).
 
@@ -29,8 +29,8 @@ Nei meccanismi di cifratura a chiave privata, entrambe le parti (il mittente ed 
 Nei meccanismi di cifratura a chiave pubblica, vengono utilizzate due chiavi diverse per la cifratura e la decifratura dei messaggi. In particolare si supponga che il destinatario abbia una coppia di chiavi di cui una è privata (conosciuta solo al destinatario) ed una è pubblica (conosciuta a tutti e liberamente inviata sulla rete anche in chiaro). Al fine di inviare un messaggio su di un canale sicuro, il mittente cifra il messaggio utilizzando la chiave pubblica del destinatario, ma questo potrà essere decifrato solo dal destinatario utilizzando la chiave privata. Per il destinatario infatti chiave pubblica e chiave privata sono state generate in modo da essere complementari. Il meccanismo a chiave pubblica risolve il problema della condivisione delle chiavi poiché la chiave pubblica può essere liberamente inviata su Internet senza pericolo (non può essere utilizzata per decifrare il
 messaggio). Come difetto, la crittografia a chiave pubblica soffre di basse prestazioni e per questo motivo viene utilizzata o nelle fasi preliminari necessarie a concordare una chiave privata di sessione condivisa (come nel caso di TLS) oppure per i meccanismi di firma digitale (quindi non a scopo di cifratura). L'algoritmo più diffuso per la cifratura a chiave pubblica è RSA (dai nomi degli inventori Rivest Shamir e Adleman).
 
-2.1.3 Integrità e Firma Digitale
-^^^^^^^^^^^^^^^^^^
+Integrità e Firma Digitale
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Un messaggio in transito su una rete informatica può subire delle modifiche (ad esempio tramite attacchi di tipo man-in-the-middle). I meccanismi a chiave pubblica possono essere utilizzati ai fini di produrre delle prove, dette firme digitali, che permettono di verificare che il messaggio ricevuto è uguale a quello inviato.
 
@@ -50,8 +50,8 @@ La tecnica di hashing più utilizzata per la firma digitale è Secure Hash Algor
 del mittente per decifrare la firma digitale e verificare che essa corrisponda al riassunto del messaggio. La combinazione di tecniche di hashing e di cifratura a chiave pubblica assicura che un attaccante non
 possa modificare il messaggio e generare una firma valida per lo stesso, assicurando quindi l'integrità del messaggio stesso.
 
-2.1.4 Non Ripudio e Public Key Infrastructure - PKI
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Non Ripudio e Public Key Infrastructure - PKI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Il meccanismo di firma digitale descritto in Sezione 2.1.3 assicura l'integrità del messaggio ma non ne assicura l'autenticità della fonte. In pratica, chi riceve un messaggio è sicuro che esso non ha subito modifiche durante il transito ma non è sicuro dell'identità del mittente. Il messaggio ricevuto non potrà quindi essere utilizzato ai fini del non ripudio, cioè come prova che uno specifico soggetto è il vero mittente del messaggio. Il problema principale risiede nella maniera in cui la chiave pubblica di un soggetto viene distribuita.
 Essa, come detto, viene posta pubblicamente su Internet ma niente vieta ad un attaccante di creare una coppia chiave pubblica / chiave privata e distribuire quest'ultima fingendosi un altro soggetto ed inviare per conto di questo, in maniera fraudolenta, dei messaggi. In altre parole chi riceve il messaggio non ha modo di verificare l'autenticità della chiave pubblica che sta utilizzando. A tal fine il meccanismo introdotto è quello della Public Key Infrastructure - PKI.
@@ -64,8 +64,8 @@ Il meccanismo PKI ovviamente è sicuro fino a quando un attaccante non è in gra
 
 Nel Modello di Interoperabilità 2018, le amministrazioni dovranno acquistare certificati commerciali. Negli ultimi anni alternative all'approccio PKI sono stati proposti (ad es., Web of Trust) ma il Modello attualmente ne vieta l'utilizzo.
 
-2.1.5 Autenticazione
-^^^^^^^^^^^^^^^^^^^^
+Autenticazione
+^^^^^^^^^^^^^^
 
 In un ambiente di calcolo distribuito, l'autenticazione è il meccanismo tramite il quale client e erogatore accertano le identità degli specifici utenti e sistemi per conto dei quali stanno operando. Quando la prova di autenticazione è bidirezionale si parla di mutua autenticazione.
 
@@ -87,13 +87,13 @@ Si noti come il meccanismo di non ripudio basato su PKI e firma digitale present
 
 A seconda dell'interfaccia di servizio utilizzata, l'autenticazione può essere debole o forte. Per autenticazione forte si intende una autenticazione che richiede almeno due fattori (ad es., nome utente/password e one-time password - OTP). I protocolli per autenticazione ed autorizzazione a livello applicativo più diffusi sono oggetto della Sezione 2.3.
 
-2.1.6 Autorizzazione
-^^^^^^^^^^^^^^^^^^^^
+Autorizzazione
+^^^^^^^^^^^^^^
 
 I meccanismi di autorizzazione in ambienti distribuiti definiscono quali risorse possono essere accedute da uno specifico utente. Tipiche politiche di autorizzazione permettono l'accesso a specifiche collezioni a specifici gruppi di utenti autenticati sulla base di ruoli, gruppi e privilegi. L'autenticazione degli utenti è quindi una componente fondamentale nell'autorizzazione anche se i requisiti di autenticazione (forte o debole) possono cambiare a seconda del protocollo. Le politiche di autorizzazione sono le più svariate e possono interessare ad esempio l'ora del giorno in cui specifici utenti possono accedere a specifiche risorse oppure il rate massimo di chiamate concesse ad un utente.
 
-2.2 Minacce alla sicurezza dei sistemi informatici
---------------------------------------------------
+Minacce alla sicurezza dei sistemi informatici
+----------------------------------------------
 
 Nelle sezioni precedenti alcune minacce alla sicurezza sono state accennate. In questa sezione approfondiamo le diverse tipologie di attacchi. Non ci soffermeremo sugli attacchi basati su malware, ma ci limiteremo agli attacchi basati sull'uso dei protocolli di rete. I tipi di attacchi più comuni sono i seguenti:
 
@@ -111,8 +111,8 @@ Nelle sezioni precedenti alcune minacce alla sicurezza sono state accennate. In 
 
 In alcuni casi, gli attaccanti possono sfruttare delle falle scoperte nei protocolli o nelle implementazioni degli stessi. E' quindi di fondamentale importanza tenere aggiornati i sistemi ed utilizzare quando possibile versioni aggiornate dei protocolli.
 
-2.3 Protocolli per autenticazione e autorizzazione
---------------------------------------------------
+Protocolli per autenticazione e autorizzazione
+----------------------------------------------
 
 Nel caso di autenticazione ed autorizzazione, occorre distinguere gli approcci utilizzati nello scenario human-to-machine e quelli utilizzati nello scenario machine-to-machine. I protocolli più comuni in ambito Web per autenticazione ed autorizzazione nel caso human-to-machine sono:
 
@@ -156,8 +156,8 @@ Per quanto riguarda lo scenario machine-to-machine invece, come si vedrà nella 
 
 Per quanto riguarda l'autorizzazione machine-to-machine invece è possibile utilizzare il protocollo OAuth2 nello specifico del flusso Client Credential Grant [37]_. Tale flusso a differenza di quello standard non richiede la presenza di uno user-agent. Il client possiede invece delle proprie credenziali che vengono utilizzate per richiedere il token all'authorization server.
 
-2.4 Protocolli per integrità e confidenzialità
-----------------------------------------------
+Protocolli per integrità e confidenzialità
+------------------------------------------
 
 Per ragioni storiche lo stack TCP/IP non ha di base funzionalità di sicurezza. I messaggi viaggiano in chiaro sulla rete. Poiché le tecnologie per l'integrazione che verranno introdotte utilizzano HTTP come principale protocollo di trasporto o applicativo [38]_, è importante che il canale di comunicazione sia protetto. La IETF definisce come standard per la securizzazione di TCP il protocollo Transport Layer Security - TLS. Con il termine HTTPS si definisce l'utilizzo di HTTP su canale TLS. Tutti le interfacce di servizio esposte nel ModI 2018 devono essere basate su HTTPS. Il protocollo TLS (ed il suo predecessore deprecato Secure Sockets Layer - SSL) assicurano su TCP confidenzialità (tramite cifratura) ed integrità (tramite firma digitale e PKI). Come introdotto in Sezione 2.1.5, il meccanismo di firma digitale assicura anche autenticazione ma questa è fatta machine-to-machine.
 

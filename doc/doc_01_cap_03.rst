@@ -1,5 +1,5 @@
-3 Il quadro di riferimento attuale
-==================================
+Il quadro di riferimento attuale
+================================
 
 Il Piano triennale per l'informatica nella PA [6]_ costituisce il quadro di riferimento entro cui si colloca il ModI 2018 all'interno del *Modello strategico di evoluzione del sistema informativo della PA*.
 

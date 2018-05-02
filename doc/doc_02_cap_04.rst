@@ -1,5 +1,5 @@
-4 REST
-======
+REST
+====
 
 REpresentational State Transfer (REST) è uno stile architetturale, proposto originariamente da Fielding [55]_, che consente di accedere e manipolare rappresentazioni testuali di risorse web usando un insieme predefinito di operazioni stateless. Le interfacce di servizio che seguono lo stile architetturale REST sono chiamate interfacce di servizio RESTful o semplicemente REST. Con il termine "risorsa web" si intendevano inizialmente documenti e file identificati da una URL sul World Wide Web. Oggi il termine ha un'accezione molto più generica ed astratta, andando ad indicare ogni cosa o entità che possa essere identificata tramite una URI (si noti il passaggio da URL ad URI che indica l'indipendenza dal protocollo di recupero dei dati). Nel caso dell'applicazione di questo stile architetturale ad HTTP, le operazioni stateless a cui si fa riferimento sono GET, POST, PUT, DELETE a cui
 corrispondono operazioni di tipo Create-Read-Update-Delete - CRUD sulla risorsa. Questo approccio favorisce l'uniformità delle interfacce di servizio.
@@ -16,8 +16,8 @@ Altri standard proposti in passato, quali Web Application Description Language -
 Legato al concetto di specifica nel mondo REST è quello di *Hypermedia As The Engine Of Application State - HATEOAS*. Secondo questo approccio, accedendo ad una risorsa, la risposta del server contiene hyperlink ad
 altre azioni che possono essere eseguite sulla risorsa [58]_. HATEOAS permette in questa maniera di scoprire dinamicamente le operazioni presenti in una interfaccia di servizio e quindi può essere utilizzato come approccio complementare (non sostitutivo) alla specifica.
 
-4.1 Indicazioni di utilizzo
----------------------------
+Indicazioni di utilizzo
+-----------------------
 
 L'interfaccia di servizio REST deve utilizzare l\'HTTP verb più adatto all\'operazione come indicato in RFC 7231 [59]_. In particolare i metodi:
 
@@ -31,8 +31,8 @@ L'interfaccia di servizio REST deve utilizzare l\'HTTP verb più adatto all\'ope
 
 Ove necessario, specialmente ai fini del caching, occorre fare leva sugli ETag [60]_ (degli identificatori univoci di versione delle risorse). Infine l'utilizzo di eventuali header HTTP non deve sostituire i parametri da passare in una GET.
 
-4.2 Sicurezza
--------------
+Sicurezza
+---------
 
 Lo standard di riferimento per la firma e la crittografia in ambito JSON/REST è Javascript Object Signing and Encryption [61]_ (di seguito JOSE), menzionato nelle Linee Guida AgID [62]_ ed in \"European Telecommunications Standards Institute - Security of the mission critical service\" [63]_. JOSE è un framework per la sicurezza comprendente diverse componenti tra cui centrale è il JSON Web Token [64]_ (di seguito JWT). JWT è uno standard per la definizione di token di accesso basato su JSON Web Signature [65]_ (di seguito JWS)) e JSON Web Encryption [66]_ (si seguito JWE) di cui eredita ed estende gli header. Il token JWT è passato in REST tramite l'header HTTP
 Authorization utilizzando lo schema Bearer [67]_. Il token in OpenID Connect è espresso per esempio direttamente come JWT. 
@@ -45,8 +45,8 @@ Per ulteriori dettagli sulla sicurezza, si vedano anche:
 
 -   JWS - Security Considerations  [70]_.
 
-4.3 Uniformità e Naming 
-------------------------
+Uniformità e Naming 
+-------------------
 
 In questa sezione introduciamo le best practice da utilizzare per interfacce di servizio REST. In prima istanza, ogni endpoint deve essere univocamente associato alle componenti Scheme, Authority e Path di un URL [71]_.
 
@@ -77,8 +77,8 @@ relations [76]_.
 
 Tutti i riferimenti dovrebbero contenere URL comprensivi di schema.
 
-4.4 Throttling ed indisponibilità del servizio
-----------------------------------------------
+Throttling ed indisponibilità del servizio
+------------------------------------------
 
 Di sovente, nelle API basate su REST, meccanismi di throttling vengono implementati al fine di garantire l'accessibilità delle interfacce di servizio ed evitare in alcuni casi dump dei dati. Sebbene non esistano standard a riguardo, al fine di rendere noto al fruitore dell'interfaccia di servizio lo stato del throttling ed eventuali limiti si possono utilizzare le seguenti indicazioni:
 

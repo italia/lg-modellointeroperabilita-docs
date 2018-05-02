@@ -1,5 +1,5 @@
-2 Il contesto europeo
-=====================
+Il contesto europeo
+===================
 
 Lo *European Interoperability Framework (EIF)* (in italiano Quadro Europeo di Interoperabilità - QEI [3]_) fornisce orientamenti alle PA Europee su come operare le iniziative relative al tema dell'interoperabilità; tutto questo mediante una serie di raccomandazioni atte a stabilire relazioni tra le varie organizzazioni, razionalizzare i processi volti a sostenere i servizi digitali e assicurare che le norme esistenti e quelle nuove non pregiudichino gli sforzi di interoperabilità.
 
@@ -33,7 +33,7 @@ Il modello di interoperabilità delineato nell'EIF è applicabile a tutti i serv
 
     -   semantico, per assicurare che il formato e il significato delle informazioni e dei dati scambiati siano mantenuti e compresi durante tutti gli scambi che avvengono tra le parti;
 
-    -   tecnico, in cui, attraverso l'adozione di specifiche di interfaccia, di servizi di interconnessione, di servizi di integrazione dei dati, la presentazione e lo scambio dei dati e i protocolli di comunicazione sicuri, si assicuri l'interoperabilità delle applicazioni e delle infrastrutture che collegano sistemi e servizi;
+    -   tecnico, in cui, attraverso l'adozione di specifiche di interfaccia, di servizi di interconnessione, di servizi di integrazione dei dati, la presentazione e lo scambio dei dati e i protocolli di comunicazione sicuri, si assicuri l'interoperabilità delle applicazioni e delle infrastrutture che collegano sistemi e servizi.
 
 -   una componente trasversale ai quattro livelli, denominata *governance dei servizi pubblici integrati*, per assicurare il necessario coordinamento e governance delle organizzazioni coinvolte nella erogazione di servizi pubblici in modo integrato;
 
@@ -89,7 +89,7 @@ La Commissione Europea ha individuato uno schema concettuale per i servizi pubbl
 
 -   la sicurezza e la tutela della privacy.
 
-La funzione di coordinamento garantisce l'individuazione delle esigenze e il ricorso ai servizi coordinati per fornire complessivamente un servizio pubblico. Le fonti di informazioni (*base register*, portali sui dati aperti e altre fonti autorevoli di informazioni) e i servizi, disponibili non solo all'interno del sistema amministrativo ma anche in un contesto esterno, possono essere utilizzati per creare servizi pubblici integrati. Per favorire questi processi occorre sviluppare un'infrastruttura condivisa di servizi e fonti di informazioni riutilizzabili che possa essere adottata da tutte le amministrazioni pubbliche favorendo il riutilizzo, la pubblicazione e l'aggregazione dei servizi e delle fonti di informazioni.
+La funzione di coordinamento garantisce l'individuazione delle esigenze e il ricorso ai servizi coordinati per fornire complessivamente un servizio pubblico. Le fonti di informazioni (*base register*, portali sui dati aperti e altre fonti autorevoli di informazioni) e i servizi, disponibili non solo all'interno del sistema amministrativo ma anche in un contesto esterno, possono essere utilizzati per creare servizi pubblici integrati. Per favorire questi processi occorre sviluppare un\'infrastruttura condivisa di servizi e fonti di informazioni riutilizzabili che possa essere adottata da tutte le amministrazioni pubbliche favorendo il riutilizzo, la pubblicazione e l'aggregazione dei servizi e delle fonti di informazioni.
 
 La direttiva relativa al riutilizzo dell'informazione del settore pubblico prevede un quadro giuridico comune per il riutilizzo dei dati (*open data*); in essa l'accento è posto sulla messa a disposizione di dati *machine-readable* ad uso di terzi per promuovere la trasparenza, la concorrenza leale, l'innovazione e un'economia basata sui dati.
 
@@ -113,19 +113,17 @@ Nell'EIF è raccomandato:
 
 -   adottare e riusare fonti di informazioni e servizi esterni, laddove utile e fattibile, nello sviluppo dei servizi pubblici.
 
-La sicurezza e privacy sono aspetti che devono essere definiti in pieno accordo con l'e-Government action plan 2016-2020 della Commissione EU [4]_.
-
-Per le PA è raccomandato:
+La sicurezza e privacy sono aspetti che devono essere definiti in pieno accordo con l'e-Government action plan 2016-2020 della Commissione EU [4]_. Per le PA è raccomandato:
 
 -   tenendo conto dei requisiti specifici di sicurezza e riservatezza, identificare per ogni servizio le contromisure in conformità con piani di gestione del rischio;
 
 -   utilizzare i servizi fiduciari, in base al regolamento in materia di identificazione elettronica e servizi fiduciari, come meccanismi per garantire lo scambio sicuro e protetto dei dati nei servizi pubblici (Regolamento (UE) 2014/910 [5]_).
 
-Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i seguenti obblighi per gli stati membri:
+Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i seguenti obblighi per gli stati membri.
 
 -   Le PA devono identificare, negoziare e approvare un approccio comune per i componenti di servizi integrati. Ciò è realizzato a diversi livelli amministrativi, in base all'assetto organizzativo di ogni paese, per garantire che piani nazionali e le strategie di interoperabilità siano allineati con l'EIF e, se necessario, adattati e ampliati per tenere conto del contesto e delle esigenze nazionali.
 
--   L'accesso ai servizi e alle informazioni deve essere realizzato mediante specifiche interfacce e condizioni di accesso preventivamente definite (accordi di interoperabilità). Vanno favorite le politiche di riuso dei dati e dei servizi.
+-   L' accesso ai servizi e alle informazioni deve essere realizzato mediante specifiche interfacce e condizioni di accesso preventivamente definite (accordi di interoperabilità). Vanno favorite le politiche di riuso dei dati e dei servizi.
 
 -   Concordare uno schema comune per interconnettere i componenti dei servizi, nonché predisporre e mantenere l\'infrastruttura necessaria per istituire e mantenere i servizi pubblici europei.
 
@@ -138,7 +136,7 @@ Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i s
 -   Utilizzare specifiche aperte, per garantire l\'interoperabilità tecnica quando si istituiscono servizi pubblici.
 
 
-.. [3] In precedenti documenti a cura di AgID e del Team Digitale, il termine inglese *framework* è stato sovente tradotto in italiano come *modello*, ed è questo il termine utilizzato nel presente documento. La dicitura *quadro* è la traduzione letterale della Commissione Europea. Nel seguito di questo documento verrà preferito il termine *modello*, pur considerando i termini *framework*, *modello* e *quadro* come sinonimi.
+.. [3] In precedenti documenti a cura di AgID e del Team Digitale, il termine inglese framework è stato sovente tradotto in italiano come modello, ed è questo il termine utilizzato nel presente documento. La dicitura *quadro* è la traduzione letterale della Commissione Europea. Nel seguito di questo documento verrà preferito il termine modello, pur considerando i termini framework, modello e quadro come sinonimi.
 
 .. [4] Cf. `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation>`__ 
 

@@ -1,5 +1,5 @@
-4 Scenario pregresso dell'interoperabilità nella PA
-===================================================
+Scenario pregresso dell'interoperabilità nella PA
+=================================================
 
 Nell'ottobre 2005 il CNIPA (oggi Agenzia per l'Italia digitale - AgID) ha pubblicato un insieme di documenti che costituiscono il riferimento tecnico per l'interoperabilità fra le PA. Tali documenti delineano il quadro tecnico-implementativo del Sistema pubblico di cooperazione (SPCoop), framework di interoperabilità a livello applicativo [7]_.
 

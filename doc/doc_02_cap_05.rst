@@ -1,5 +1,5 @@
-5 Message Broker
-================
+Message Broker
+==============
 
 Un message broker è un modulo software che permette l'integrazione asincrona tramite scambio di messaggi. Questo tipo di interazione è fortemente disaccoppiata perché l'invio del messaggio avviene su un canale in cui è responsabilità del message broker consegnare il messaggio ai soggetti interessati. Il compito del message broker non è però solo quello di passare dati, in quanto esso si occupa anche di aspetti legati alla sicurezza, priorità dei messaggi, inoltro ordinato.
 

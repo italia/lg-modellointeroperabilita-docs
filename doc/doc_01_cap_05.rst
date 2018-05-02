@@ -1,5 +1,5 @@
-5 Principi del nuovo modello di interoperabilità
-================================================
+Principi del nuovo modello di interoperabilità
+==============================================
 
 Interazioni
 -----------

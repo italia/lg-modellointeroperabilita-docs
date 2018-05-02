@@ -1,5 +1,5 @@
-6 Considerazioni comparative
-============================
+Considerazioni comparative
+==========================
 
 Un primo criterio per orientarsi tra le tecnologie di integrazione presentate nelle Sezioni 3, 4 e 5 è quella di distinguere le tecnologie adatte per una interazione sincrona da quelle adatte ad una interazione asincrona. Riguardo a questa distinzione si può fare riferimento alla seguente tabella:
 
