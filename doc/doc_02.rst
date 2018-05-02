@@ -98,54 +98,37 @@ concetto di servizio nella PA, il dominio considerato nel Modello di
 Interoperabilità. Delineiamo nel seguito diverse classificazioni di
 servizi.
 
-1.  Classificazione in base alla natura del fornitore di servizi. In
-    > questo caso, abbiamo:
+1.  Classificazione in base alla natura del fornitore di servizi. In questo caso, abbiamo:
 
-    a.  servizi amministrativi (o abilitanti), la cui fornitura non ha
-        > carattere discrezionale da parte della PA, in quanto derivano
-        > da procedimenti amministrativi definiti dalla legge;
+    a.  servizi amministrativi (o abilitanti), la cui fornitura non ha carattere discrezionale da parte della PA, in quanto derivano da procedimenti amministrativi definiti dalla legge;
+	
+    b.  servizi che chiamiamo orientati al mercato o facilitanti, che la PA può decidere o meno di fornire, in base alla presenza di un obbligo procedurale, e che sono più spesso erogati da fornitori privati del mercato dei servizi.
 
-    b.  servizi che chiamiamo orientati al mercato o facilitanti, che la
-        > PA può decidere o meno di fornire, in base alla presenza di un
-        > obbligo procedurale, e che sono più spesso erogati da
-        > fornitori privati del mercato dei servizi.
+I servizi amministrativi forniti dalla PA sono di primario interesse,
+ma è anche importante attirare l\'attenzione su servizi orientati al
+mercato, che sono parte delle aspettative e dei bisogni degli utenti e
+potrebbero essere forniti da soggetti pubblici o privati.
 
-> I servizi amministrativi forniti dalla PA sono di primario interesse,
-> ma è anche importante attirare l\'attenzione su servizi orientati al
-> mercato, che sono parte delle aspettative e dei bisogni degli utenti e
-> potrebbero essere forniti da soggetti pubblici o privati.
+2.  Classificazione in base alla natura finale del servizio prodotto. In questo caso, abbiamo:
 
-2.  Classificazione in base alla natura finale del servizio prodotto. In
-    > questo caso, abbiamo:
+    a.  servizi che rispondono alle esigenze degli utenti che modificano il loro stato. Verranno indicati come servizi che modificano lo stato (dell\'utente e/o del mondo) o semplicemente servizi;
 
-    a.  servizi che rispondono alle esigenze degli utenti che modificano
-        > il loro stato. Verranno indicati come servizi che modificano
-        > lo stato (dell\'utente e/o del mondo) o semplicemente servizi;
+    b.  servizi il cui scopo è quello di fornire informazioni e/o conoscenze che l\'utente non possiede e che sono utili per un\'attività operativa o un processo decisionale. Verranno indicati come servizi informativi o semplicemente informazioni.
 
-    b.  servizi il cui scopo è quello di fornire informazioni e/o
-        > conoscenze che l\'utente non possiede e che sono utili per
-        > un\'attività operativa o un processo decisionale. Verranno
-        > indicati come servizi informativi o semplicemente
-        > informazioni.
+Un esempio della prima categoria è la fornitura di una licenza
+commerciale che consente a un\'azienda di vendere la propria merce;
+questo servizio modifica lo stato dell\'azienda perché consente una
+nuova attività commerciale. Un esempio di servizio informativo è
+l\'informazione resa disponibile sugli orari di apertura di un
+laboratorio, che non cambia lo stato del soggetto che ha richiesto
+l\'informazione, ma gli dà la possibilità di intraprendere un\'azione
+o di prendere una decisione per andarci.
 
-> Un esempio della prima categoria è la fornitura di una licenza
-> commerciale che consente a un\'azienda di vendere la propria merce;
-> questo servizio modifica lo stato dell\'azienda perché consente una
-> nuova attività commerciale. Un esempio di servizio informativo è
-> l\'informazione resa disponibile sugli orari di apertura di un
-> laboratorio, che non cambia lo stato del soggetto che ha richiesto
-> l\'informazione, ma gli dà la possibilità di intraprendere un\'azione
-> o di prendere una decisione per andarci.
+3.  Classificazione in base al consumatore. In questo caso, possiamo distinguere tra:
 
-3.  Classificazione in base al consumatore. In questo caso, possiamo
-    > distinguere tra:
+    a.  servizi esterni, quando il servizio è focalizzato al di fuori della PA, verso la comunità di cittadini e imprese;
 
-    a.  servizi esterni, quando il servizio è focalizzato al di fuori
-        > della PA, verso la comunità di cittadini e imprese;
-
-    b.  servizi interni, quando il servizio è dedicato agli utenti
-        > interni all\'organizzazione erogatrice, sia essa PA che
-        > erogatore di servizi privato.
+    b.  servizi interni, quando il servizio è dedicato agli utenti interni all\'organizzazione erogatrice, sia essa PA che erogatore di servizi privato.
 
 Oltre ai servizi, sappiamo che altri tipi di oggetti coinvolti nelle
 transazioni sono beni e informazioni; abbiamo visto che l\'informazione
@@ -160,9 +143,11 @@ obiettivo immediato è ottenere un visto per l\'India; contattiamo due
 agenzie che, quando richiesto per le condizioni che applicano per
 fornire il visto, rispondono come mostrato nella tabella seguente:
 
-  **Obiettivo del servizio**                  **Agenzia 1**                                                                                                               **Agenzia 2**
-  ------------------------------------------- --------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------
-  Necessità di un visto per andare in India   *nella nostra agenzia rilasciamo il visto in 7 giorni, al costo di € 30, e la penalità per un giorno di ritardo è di € 2*   *nella nostra agenzia facciamo il possibile per rilasciare il visto in 2 settimane, il costo è di € 20*
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| **Obiettivo del servizio**                 | **Agenzia 1**                                                                                                             | **Agenzia 2**                                                                                           |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| Necessità di un visto per andare in India  | *nella nostra agenzia rilasciamo il visto in 7 giorni, al costo di € 30, e la penalità per un giorno di ritardo è di € 2* | *nella nostra agenzia facciamo il possibile per rilasciare il visto in 2 settimane, il costo è di € 20* |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Guardando le due specifiche, il nostro obiettivo ora è fornire loro una
 struttura, distinguendo le diverse parti che hanno ruoli diversi.
@@ -170,12 +155,9 @@ Possiamo identificare i tipi di proprietà:
 
 -   proprietà funzionale, che esprime "cosa" otteniamo dal servizio;
 
--   qualità del servizio, riferito a caratteristiche (ad es., tempo di
-    > consegna) che specificano vantaggi o utilità percepita, associati
-    > al servizio;
+-   qualità del servizio, riferito a caratteristiche (ad es., tempo di consegna) che specificano vantaggi o utilità percepita, associati al servizio;
 
--   proprietà non funzionali, esprimendo "come" il servizio ci viene
-    > consegnato.
+-   proprietà non funzionali, esprimendo "come" il servizio ci viene consegnato.
 
 La tabella seguente mostra la classificazione delle proprietà applicate
 all'esempio di cui sopra:
@@ -213,11 +195,9 @@ termini delle seguenti caratteristiche:
 
 a.  un nome;
 
-b.  un insieme di proprietà funzionali, le operazioni appunto discusse
-    > in precedenza;
+b.  un insieme di proprietà funzionali, le operazioni appunto discusse in precedenza;
 
-c.  un insieme di proprietà non funzionali, tra cui quelle relative alla
-    > qualità del servizio;
+c.  un insieme di proprietà non funzionali, tra cui quelle relative alla qualità del servizio;
 
 d.  uno schema di dati di servizio.
 
@@ -296,33 +276,22 @@ necessità di ridefinire i processi attraverso una riprogettazione degli
 stessi (*Business Process Reengineering*, in breve BPR). Il BPR deve,
 tra le altre, assicurare:
 
--   la formazione degli atti amministrativi direttamente in digitale,
-    > per ridurre gli oneri legati alla gestione degli originali
-    > analogici;
+-   la formazione degli atti amministrativi direttamente in digitale, per ridurre gli oneri legati alla gestione degli originali analogici;
 
--   superare una visione document-oriented favorendo una visione
-    > record-oriented, al fine di agevolare la circolarità delle
-    > informazioni in possesso della PA;
+-   superare una visione document-oriented favorendo una visione record-oriented, al fine di agevolare la circolarità delle informazioni in possesso della PA;
 
--   efficientare le azioni realizzate da parte della PA, per
-    > razionalizzare le proprie funzioni e compiti;
+-   efficientare le azioni realizzate da parte della PA, per razionalizzare le proprie funzioni e compiti;
 
--   mettere al centro dell'azione amministrativa i cittadini ed imprese,
-    > per l'attuazione della semplificazione amministrativa.
+-   mettere al centro dell'azione amministrativa i cittadini ed imprese, per l'attuazione della semplificazione amministrativa.
 
 Nella progettazione di sistemi software, tipicamente si distinguono tre
 strati logici di funzionalità in comunicazione tra loro:
 
--   logica di presentazione (presentation layer) o front-end (ad es.,
-    > un'applicazione web, una APP mobile, ecc.), ha il compito di
-    > presentare i risultati dell'elaborazione all'utente umano ed
-    > inviare le richieste di questi verso la parte centrale/elaborativa
-    > del sistema, facendo dunque da interfaccia uomo-macchina;
+-   logica di presentazione (presentation layer) o front-end (ad es., un'applicazione web, una APP mobile, ecc.), ha il compito di presentare i risultati dell'elaborazione all'utente umano ed inviare le richieste di questi verso la parte centrale/elaborativa del sistema, facendo dunque da interfaccia uomo-macchina;
 
 -   logica applicativa (application layer o business layer);
 
--   logica di accesso ai dati (access data layer) o back-end, interroga
-    > il database o il sistema legacy [3]_.
+-   logica di accesso ai dati (access data layer) o back-end, interroga il database o il sistema legacy [3]_.
 
 Tale architettura viene poi spesso mappata a livello
 fisico-infrastrutturale in altrettanti strati fisici (*tier*)
@@ -450,16 +419,11 @@ due categorie: semplici e complesse.
 Una interfaccia di servizio semplice implementa operazioni atomiche come
 ad esempio:
 
--   Fornire contenuti puri, ad esempio informazioni dettagliate riguardo
-    > una risorsa (come le informazioni fiscali riguardanti una azienda)
-    > oppure le notizie del giorno;
+-   Fornire contenuti puri, ad esempio informazioni dettagliate riguardo una risorsa (come le informazioni fiscali riguardanti una azienda) oppure le notizie del giorno;
 
--   Effettuare una aggregazione semplice di informazioni provenienti da
-    > diversi sistemi back-end;
+-   Effettuare una aggregazione semplice di informazioni provenienti da diversi sistemi back-end;
 
--   Effettuare operazioni con effetti circoscritti ad un unico sistema
-    > di back-end in maniera atomica (che non richieda supporto alle
-    > transazioni).
+-   Effettuare operazioni con effetti circoscritti ad un unico sistema di back-end in maniera atomica (che non richieda supporto alle transazioni).
 
 Le interfacce di servizio semplici eseguono unità di lavoro atomiche che
 lasciano i sistemi sottostanti in uno stato consistente. Le operazioni
@@ -536,45 +500,19 @@ di servizio.
 Gli elementi chiave a supporto della QoS possono essere riassunti come
 segue:
 
--   *Disponibilità*. La probabilità che una interfaccia di servizio sia
-    > disponibile e funzionante in un istante casuale. Associato al
-    > concetto di disponibilità è quello di Time-To-Repair (TTR), cioè
-    > il tempo necessario a ripristinare una interfaccia di servizio una
-    > volta che questa diventa indisponibile. La disponibilità di una
-    > interfaccia di servizio dovrebbe potere essere verificata tramite
-    > l'esposizione di un'altra interfaccia di servizio di monitoraggio,
-    > dedicata ed a basso impatto (e quindi ad elevata disponibilità).
+-   *Disponibilità*. La probabilità che una interfaccia di servizio sia disponibile e funzionante in un istante casuale. Associato al concetto di disponibilità è quello di Time-To-Repair (TTR), cioè il tempo necessario a ripristinare una interfaccia di servizio una volta che questa diventa indisponibile. La disponibilità di una interfaccia di servizio dovrebbe potere essere verificata tramite l'esposizione di un'altra interfaccia di servizio di monitoraggio, dedicata ed a basso impatto (e quindi ad elevata disponibilità).
 
--   *Accessibilità*. Misura la capacità di una interfaccia di servizio
-    > di essere contattabile da un elevato numero di richieste.
+-   *Accessibilità*. Misura la capacità di una interfaccia di servizio di essere contattabile da un elevato numero di richieste.
 
--   *Prestazioni*. Le prestazioni vengono misurate solitamente rispetto
-    > a due valori: il *throughput* e la *latenza*. Il throughput
-    > rappresenta il numero di richieste soddisfatte in un dato
-    > intervallo. La latenza rappresenta la quantità di tempo che passa
-    > tra l'invio di una richiesta e la ricezione di una risposta. Una
-    > interfaccia di servizio con buone prestazioni ha un elevato
-    > throughput ed una bassa latenza.
+-   *Prestazioni*. Le prestazioni vengono misurate solitamente rispetto a due valori: il *throughput* e la *latenza*. Il throughput rappresenta il numero di richieste soddisfatte in un dato intervallo. La latenza rappresenta la quantità di tempo che passa tra l'invio di una richiesta e la ricezione di una risposta. Una interfaccia di servizio con buone prestazioni ha un elevato throughput ed una bassa latenza.
 
--   *Affidabilità*. Rappresenta la capacità di una interfaccia di
-    > servizio di funzionare correttamente e consistentemente fornendo
-    > la stessa QoS a dispetto di malfunzionamenti di diversa natura. Di
-    > solito viene espressa in termini di fallimenti in un dato lasso di
-    > tempo.
+-   *Affidabilità*. Rappresenta la capacità di una interfaccia di servizio di funzionare correttamente e consistentemente fornendo la stessa QoS a dispetto di malfunzionamenti di diversa natura. Di solito viene espressa in termini di fallimenti in un dato lasso di tempo.
 
--   *Scalabilità*. L'abilità di servire in maniera consistente le
-    > richieste a dispetto di variazioni nel numero delle richieste [6]_.
-    > È strettamente connesso al concetto di accessibilità, ma qui il
-    > concetto fondamentale è il mantenimento delle prestazioni.
+-   *Scalabilità*. L'abilità di servire in maniera consistente le richieste a dispetto di variazioni nel numero delle richieste [6]_. È strettamente connesso al concetto di accessibilità, ma qui il concetto fondamentale è il mantenimento delle prestazioni.
 
--   *Sicurezza*. La sicurezza implica aspetti quali confidenzialità,
-    > integrità, autorizzazione ed autenticazione che saranno oggetto
-    > della Sezione 2.
+-   *Sicurezza*. La sicurezza implica aspetti quali confidenzialità, integrità, autorizzazione ed autenticazione che saranno oggetto della Sezione 2.
 
--   *Transazionalità*. Ci sono alcuni casi (ad es., interfacce di
-    > servizio stateful) in cui è necessario assicurare l'esecuzione
-    > transazionale di una operazione. La capacità di una operazione di
-    > rispettare questa proprietà è parte della QoS.
+-   *Transazionalità*. Ci sono alcuni casi (ad es., interfacce di servizio stateful) in cui è necessario assicurare l'esecuzione transazionale di una operazione. La capacità di una operazione di rispettare questa proprietà è parte della QoS.
 
 Gli erogatori delle interfacce di servizio devono prendere tutte le
 iniziative necessarie a mantenere i requisiti di QoS richiesti dal caso
@@ -604,31 +542,19 @@ livello di servizio*. Uno SLA può contenere le parti seguenti:
 
 -   *Scopo*. Le ragioni che hanno portato alla definizione dello SLA.
 
--   *Parti*. I soggetti interessati nello SLA con i loro rispettivi
-    > ruoli (ad es., l'erogatore dell'interfaccia di servizio e il
-    > fruitore).
+-   *Parti*. I soggetti interessati nello SLA con i loro rispettivi ruoli (ad es., l'erogatore dell'interfaccia di servizio e il fruitore).
 
--   *Periodo di validità*. L'intervallo di tempo, espresso mediante data
-    > e ora di inizio e data e ora di fine, per il quale si ritiene
-    > valido un particolare termine di accordo all'interno dello SLA.
+-   *Periodo di validità*. L'intervallo di tempo, espresso mediante data e ora di inizio e data e ora di fine, per il quale si ritiene valido un particolare termine di accordo all'interno dello SLA.
 
 -   *Perimetro*. Quali sono operazioni interessate dallo specifico SLA.
 
--   *Service Level Objectives - SLO*, ovvero *obiettivi sul livello di
-    > servizio*. I singoli termini di accordo all'interno di uno SLA. Di
-    > solito vengono definiti utilizzando dei *Service Level
-    > Indicators - SLI*, ovvero *indicatori sul livello di servizio*,
-    > che quantificano i singoli aspetti di QoS come indicato in questa
-    > sezione (ad es., disponibilità).
+-   *Service Level Objectives - SLO*, ovvero *obiettivi sul livello di servizio*. I singoli termini di accordo all'interno di uno SLA. Di solito vengono definiti utilizzando dei *Service Level Indicators - SLI*, ovvero *indicatori sul livello di servizio*, che quantificano i singoli aspetti di QoS come indicato in questa sezione (ad es., disponibilità).
 
--   *Penalità*. Le sanzioni che si applicano nel caso che l'erogatore
-    > dell'interfaccia di servizio non riesca ad assicurare gli
-    > obiettivi specificati nello SLA.
+-   *Penalità*. Le sanzioni che si applicano nel caso che l'erogatore dell'interfaccia di servizio non riesca ad assicurare gli obiettivi specificati nello SLA.
 
 -   *Esclusioni*. Gli aspetti della QoS non coperti dallo SLA.
 
--   *Amministrazione*. I processi mediante i quali le parti possono
-    > monitorare la QoS.
+-   *Amministrazione*. I processi mediante i quali le parti possono monitorare la QoS.
 
 Gli SLA possono essere statici o dinamici. Negli SLA dinamici, gli SLO
 (con associati SLI) variano nel tempo ed i periodi di validità
@@ -653,25 +579,17 @@ sovraccarico, incentivando i fruitori a rispettarle.
 
 Esempi di SLI sono i seguenti:
 
--   dimensione massima di ogni richiesta accettata. Le richieste più
-    > grandi possono essere rifiutate;
+-   dimensione massima di ogni richiesta accettata. Le richieste più grandi possono essere rifiutate;
 
 -   latenza al 90° percentile. Utilizzata per calcolare la responsività;
 
--   percentuale di minuti negli ultimi 30 gg in cui l'interfaccia di
-    > servizio è stata disponibile;
+-   percentuale di minuti negli ultimi 30 gg in cui l'interfaccia di servizio è stata disponibile;
 
--   valori a 1 giorno e 30 giorni del success rate (ad es., il numero di
-    > chiamate terminate con successo rispetto al numero totale di
-    > chiamate);
+-   valori a 1 giorno e 30 giorni del success rate (ad es., il numero di chiamate terminate con successo rispetto al numero totale di chiamate);
 
--   percentuale di minuti negli ultimi 30 gg in cui l'interfaccia di
-    > servizio è stata responsiva (ad es., il numero di chiamate con
-    > latenza inferiore ad un certo limite);
+-   percentuale di minuti negli ultimi 30 gg in cui l'interfaccia di servizio è stata responsiva (ad es., il numero di chiamate con latenza inferiore ad un certo limite);
 
--   tempo di risposta medio delle richieste totali (includendo le
-    > richieste rifiutate causa throttling) nell'ultimo giorno e negli
-    > ultimi 30 giorni;
+-   tempo di risposta medio delle richieste totali (includendo le richieste rifiutate causa throttling) nell'ultimo giorno e negli ultimi 30 giorni;
 
 -   throughput misurato in bytes/s.
 
@@ -679,12 +597,9 @@ Gli SLI calcolati devono includere la latenza aggiuntiva dovuta ad
 eventuali componenti infrastrutturali e di rete (ad es., proxy-gateway).
 Essi inoltre devono:
 
--   utilizzare unità di misura del sistema internazionale (ad es.,
-    > secondi, bytes)
+-   utilizzare unità di misura del sistema internazionale (ad es., secondi, bytes)
 
--   indicare nel nome identificativo l'eventuale periodo di aggregazione
-    > coi soli suffissi s (secondi), m (minuti), d (giorni) e y (anni)
-    > utilizzando al posto dei mesi il numero di giorni.
+-   indicare nel nome identificativo l'eventuale periodo di aggregazione coi soli suffissi s (secondi), m (minuti), d (giorni) e y (anni) utilizzando al posto dei mesi il numero di giorni.
 
 Ove possibile, gli SLO e gli SLA dovrebbero essere in relazione diretta
 con i valori associati (ad es., indicare success rate anzichè l'error
@@ -704,23 +619,15 @@ possono essere implementati utilizzando dei middleware) e sistemi legacy
 a cui il middleware contribuisce a fornire interfacce moderne. A tale
 fine i middleware forniscono una serie di funzionalità:
 
--   Il supporto a framework per l'esposizione di interfacce di servizio
-    > implementati in differenti tecnologie e secondo differenti schemi
-    > di interazione. In questo senso essi nascondono agli sviluppatori
-    > le complessità legate all'esposizione di interfacce di servizio
-    > secondo specifici protocolli di rete.
+-   Il supporto a framework per l'esposizione di interfacce di servizio implementati in differenti tecnologie e secondo differenti schemi di interazione. In questo senso essi nascondono agli sviluppatori le complessità legate all'esposizione di interfacce di servizio secondo specifici protocolli di rete.
 
 -   Facilitano il riuso di componenti software.
 
--   Forniscono una serie di funzionalità di supporto alla sicurezza dei
-    > sistemi informatici che includono autenticazione ed
-    > autorizzazione.
+-   Forniscono una serie di funzionalità di supporto alla sicurezza dei sistemi informatici che includono autenticazione ed autorizzazione.
 
--   Forniscono funzionalità di scalabilità che sfruttano la
-    > distribuzione su risorse hardware.
+-   Forniscono funzionalità di scalabilità che sfruttano la distribuzione su risorse hardware.
 
--   Aiutano in generale a soddisfare i requisiti di QoS dichiarati negli
-    > SLA.
+-   Aiutano in generale a soddisfare i requisiti di QoS dichiarati negli SLA.
 
 -   Integrano funzionalità utili quali il throttling, logging e caching.
 
@@ -776,32 +683,21 @@ e le modalità di consultazione e reperimento delle informazioni.
 L'erogatore deve inoltre tracciare un evento per ogni richiesta,
 contenente almeno i seguenti parametri minimi:
 
--   data e ora della richiesta in formato RFC3339 [11]_ in UTC e con i
-    > separatori Z e T maiuscolo. Questa specifica è fondamentale per
-    > l\'interoperabilità dei sistemi di logging ed auditing, evitando i
-    > problemi di transizione all\'ora legale e la complessità nella
-    > gestione delle timezone nell\'ottica dell\'interoperabilità con
-    > altre PA europee;
+-   data e ora della richiesta in formato RFC3339 [11]_ in UTC e con i separatori Z e T maiuscolo. Questa specifica è fondamentale per l\'interoperabilità dei sistemi di logging ed auditing, evitando i problemi di transizione all\'ora legale e la complessità nella gestione delle timezone nell\'ottica dell\'interoperabilità con altre PA europee;
 
 -   URI che identifica erogatore ed operazione richiesta;
 
--   tipologia di chiamata (ad es., HTTP method per i protocolli basati
-    > su HTTP, basic.publish per AMQP);
+-   tipologia di chiamata (ad es., HTTP method per i protocolli basati su HTTP, basic.publish per AMQP);
 
--   esito della chiamata (ad es., HTTP status per i protocolli basati su
-    > HTTP, SOAP fault nel caso di web services SOAP, OK/KO in assenza
-    > di specifici requisiti, eventuali messaggi di errore);
+-   esito della chiamata (ad es., HTTP status per i protocolli basati su HTTP, SOAP fault nel caso di web services SOAP, OK/KO in assenza di specifici requisiti, eventuali messaggi di errore);
 
 -   identificativo del fruitore;
 
--   identificativo del consumatore o altro soggetto operante la
-    > richiesta, se presente e comunicato dal fruitore - è cura del
-    > fruitore procedere a codifica e anonimizzazione ove necessario;
+-   identificativo del consumatore o altro soggetto operante la richiesta, se presente e comunicato dal fruitore - è cura del fruitore procedere a codifica e anonimizzazione ove necessario;
 
 -   ove applicabile, l'Indirizzo IP del client;
 
--   ove applicabile, un identificativo univoco della richiesta, utile ad
-    > eventuali correlazioni tra chiamate diverse.
+-   ove applicabile, un identificativo univoco della richiesta, utile ad eventuali correlazioni tra chiamate diverse.
 
 1.6 Attori e Interazioni
 ------------------------
@@ -928,13 +824,19 @@ interfaccia di servizio.
 
 La tabella seguente riassume le considerazioni presentate.
 
-  **Interazione**          **servizio digitale**   **interfaccia di servizio**   **richiede logica di presentazione**   **composizione di più servizi** [12]_
-  ------------------------ ----------------------- ----------------------------- -------------------------------------- --------------------------------------
-  A2A human-to-machine     ✓                                                     ✓                                      \-
-  A2A machine-to-machine                           ✓                                                                    \+
-  A2B human-to-machine     ✓                                                     ✓                                      \-
-  A2B machine-to-machine                           ✓                                                                    \+
-  A2C                      ✓                                                     ✓                                      \-
++--------------------------+-----------------------+-----------------------------+--------------------------------------+---------------------------------------+
+| **Interazione**          | **servizio digitale** | **interfaccia di servizio** | **richiede logica di presentazione** | **composizione di più servizi** [12]_ |
++--------------------------+-----------------------+-----------------------------+--------------------------------------+---------------------------------------+
+|  A2A human-to-machine    | ✓                     |                             |  ✓                                   |  \-                                   |
++--------------------------+-----------------------+-----------------------------+--------------------------------------+---------------------------------------+  
+|  A2A machine-to-machine  |                       |  ✓                          |                                      |  \+                                   |
++--------------------------+-----------------------+-----------------------------+--------------------------------------+---------------------------------------+  
+|  A2B human-to-machine    | ✓                     |                             |  ✓                                   |  \-                                   |
++--------------------------+-----------------------+-----------------------------+--------------------------------------+---------------------------------------+  
+|  A2B machine-to-machine  |                       |  ✓                          |                                      |  \+                                   |
++--------------------------+-----------------------+-----------------------------+--------------------------------------+---------------------------------------+  
+|  A2C                     | ✓                     |                             |  ✓                                   |  \-                                   |
++--------------------------+-----------------------+-----------------------------+--------------------------------------+---------------------------------------+
 
 1.7 Uniformità dei dati
 -----------------------
@@ -966,12 +868,17 @@ servizio. Nel documento 3 - Profili e pattern di interoperabilità, esse
 saranno utilizzate nella definizione di vari possibili pattern che
 rispondono ad esigenze specifiche.
 
-  **Tipo di interfaccia**   **Granularità** [14]_
-  ------------------------- ----------------------
-  Elementare                *fine-grained*
-  Composta                  *coarse-grained*
-  Informativa               *fine-grained*
-  Transazionale             *coarse-grained*
++--------------------------+-----------------------+
+| **Tipo di interfaccia**  | **Granularità** [14]_ |
++--------------------------+-----------------------+
+|  Elementare              | *fine-grained*        |
++--------------------------+-----------------------+
+|  Composta                |  *coarse-grained*     |
++--------------------------+-----------------------+
+|  Informativa             |  *fine-grained*       |
++--------------------------+-----------------------+
+|  Transazionale           |  *coarse-grained*     |
++--------------------------+-----------------------+
 
 Per quanto riguarda gli aspetti di formato dei dati delle interfacce di
 servizio, è importante
@@ -992,26 +899,19 @@ interfacce di servizio [16]_.
 
 Le indicazioni generali sono:
 
--   per gli schemi dei dati, utilizzo di nomi basati su riferimenti
-    > europei (ad es., Core Vocabularies/Dizionari Controllati,
-    > Direttiva Europea INSPIRE 2007/2/CE [17]_) e standard de facto e de
-    > iure eventualmente disponibili sulla specifica tematica;
+-   per gli schemi dei dati, utilizzo di nomi basati su riferimenti europei (ad es., Core Vocabularies/Dizionari Controllati, Direttiva Europea INSPIRE 2007/2/CE [17]_) e standard de facto e de iure eventualmente disponibili sulla specifica tematica;
 
 -   UTF-8 come codifica di default [18]_;
 
 -   URI come identificatore del servizio e dell'erogatore [19]_;
 
--   per i formati di serializzazione, semplicità di integrazione con
-    > strumenti di validazione (ad es. parsing);
+-   per i formati di serializzazione, semplicità di integrazione con strumenti di validazione (ad es. parsing);
 
--   paesi, lingue e monete [20]_: ISO 3166-1-alpha2 country [21]_, ISO
-    > 4217 currency codes [22]_;
+-   paesi, lingue e monete [20]_: ISO 3166-1-alpha2 country [21]_, ISO 4217 currency codes [22]_;
 
--   data e ora in RFC3339 [23]_, un sottoinsieme dell\'ISO8601
-    > ottimizzato per il web;
+-   data e ora in RFC3339 [23]_, un sottoinsieme dell\'ISO8601 ottimizzato per il web;
 
--   aree amministrative NUTS 1 e successive: nomenclature NUTS [24]_ (per
-    > il livello NUTS 0 - entità nazionali si fa riferimento ai codici
+-   aree amministrative NUTS 1 e successive: nomenclature NUTS [24]_ (per il livello NUTS 0 - entità nazionali si fa riferimento ai codici
     > ISO).
 
 2 Concetti di Sicurezza
@@ -1118,21 +1018,16 @@ che il messaggio ricevuto è uguale a quello inviato.
 Il meccanismo di firma digitale prevede di inviare assieme al messaggio,
 un secondo messaggio (detto firma digitale) ottenuto dal primo:
 
--   calcolando un riassunto (digest) del messaggio tramite tecniche
-    > cosiddette di hashing;
+-   calcolando un riassunto (digest) del messaggio tramite tecniche cosiddette di hashing;
 
 -   cifrando il riassunto utilizzando la chiave privata del mittente.
 
 Le tecniche di hashing utilizzate per la firma digitale sono progettate
 secondo diversi criteri. Tra cui:
 
--   devono essere funzioni cosiddette one-way. Deve cioè essere facile
-    > calcolare il riassunto ma difficile risalire dal riassunto al
-    > testo originale. Questo viene anche facilitato dal fatto che i
-    > riassunti hanno solitamente lunghezza fissa.
+-   devono essere funzioni cosiddette one-way. Deve cioè essere facile calcolare il riassunto ma difficile risalire dal riassunto al testo originale. Questo viene anche facilitato dal fatto che i riassunti hanno solitamente lunghezza fissa.
 
--   devono fare si che piccolissime modifiche al messaggio in input
-    > generino significative differenze nel riassunto.
+-   devono fare si che piccolissime modifiche al messaggio in input generino significative differenze nel riassunto.
 
 La tecnica di hashing più utilizzata per la firma digitale è Secure Hash
 Algorithm - SHA (disponibile in diverse versioni). Nel momento in cui un
@@ -1199,11 +1094,9 @@ autenticazione.
 
 L'autenticazione è spesso ottenuta in due fasi:
 
-1.  Si definisce un contesto di autenticazione effettuando una chiamata
-    > ad una entità di autenticazione diversa dall'erogatore;
+1.  Si definisce un contesto di autenticazione effettuando una chiamata ad una entità di autenticazione diversa dall'erogatore;
 
-2.  Il contesto di autenticazione è impiegato per autenticarsi con
-    > l'altra parte della comunicazione.
+2.  Il contesto di autenticazione è impiegato per autenticarsi con l'altra parte della comunicazione.
 
 Si noti come il meccanismo di non ripudio basato su PKI e firma digitale
 presentato in Sezione 2.1.4 sia esso stesso un metodo di autenticazione
@@ -1212,24 +1105,13 @@ ed in tal modo è usato in protocolli di strato di trasporto quali TLS
 protocolli di autenticazione a livello applicativo che forniscono dei
 vantaggi rispetto all'autenticazione basata su PKI:
 
--   L'autenticazione basata su PKI solitamente non autentica solo i
-    > soggetti ma anche le macchine coinvolte (ad es., il certificato di
-    > un sito Internet contiene anche i nomi DNS su cui il sito
-    > risponderà);
+-   L'autenticazione basata su PKI solitamente non autentica solo i soggetti ma anche le macchine coinvolte (ad es., il certificato di un sito Internet contiene anche i nomi DNS su cui il sito risponderà);
 
--   Possibilità di Single-Sign On - SSO. Il contesto di autenticazione
-    > definito con protocolli di strato applicativo può essere
-    > riutilizzato nell'interazione con diverse interfacce di servizio.
-    > Questo è dovuto al fatto che il client assume l'identità della
-    > persona o del soggetto per cui è stato creato il contesto di
-    > autenticazione;
+-   Possibilità di Single-Sign On - SSO. Il contesto di autenticazione definito con protocolli di strato applicativo può essere riutilizzato nell'interazione con diverse interfacce di servizio. Questo è dovuto al fatto che il client assume l'identità della persona o del soggetto per cui è stato creato il contesto di autenticazione;
 
--   L'utilizzo di certificati è scomodo per l'utente finale e questo
-    > rende la mutua autenticazione basata su firma digitale meno adatta
-    > ai casi in cui siano utenti umani ad autenticarsi;
+-   L'utilizzo di certificati è scomodo per l'utente finale e questo rende la mutua autenticazione basata su firma digitale meno adatta ai casi in cui siano utenti umani ad autenticarsi;
 
--   Non sempre la funzionalità di non ripudio è richiesta e l'uso di
-    > certificati lato client risulta costoso.
+-   Non sempre la funzionalità di non ripudio è richiesta e l'uso di certificati lato client risulta costoso.
 
 A seconda dell'interfaccia di servizio utilizzata, l'autenticazione può
 essere debole o forte. Per autenticazione forte si intende una
@@ -1260,39 +1142,17 @@ attacchi. Non ci soffermeremo sugli attacchi basati su malware, ma ci
 limiteremo agli attacchi basati sull'uso dei protocolli di rete. I tipi
 di attacchi più comuni sono i seguenti:
 
--   *Eavesdropping*. E' un tipo di attacco passivo (senza modifica dei
-    > dati) in cui un attaccante riesce a rubare informazioni leggendo
-    > dati da una connessione non cifrata. I protocolli che assicurano
-    > confidenzialità difendono da questo tipo di attacco.
+-   *Eavesdropping*. E' un tipo di attacco passivo (senza modifica dei dati) in cui un attaccante riesce a rubare informazioni leggendo dati da una connessione non cifrata. I protocolli che assicurano confidenzialità difendono da questo tipo di attacco.
 
--   *Modifica dei dati*. Un attaccante potrebbe riuscire a modificare i
-    > pacchetti in transito nella rete. I meccanismi di firma digitale
-    > difendono da questo tipo di attacco.
+-   *Modifica dei dati*. Un attaccante potrebbe riuscire a modificare i pacchetti in transito nella rete. I meccanismi di firma digitale difendono da questo tipo di attacco.
 
--   *Identity spoofing*. In questo tipo di attacco, l'attaccante finge
-    > di essere un altro utente. Questo tipo di attacco è risolto
-    > mediante meccanismi di autenticazione.
+-   *Identity spoofing*. In questo tipo di attacco, l'attaccante finge di essere un altro utente. Questo tipo di attacco è risolto mediante meccanismi di autenticazione.
 
--   *Attacchi su base password*. In questo caso l'attaccante cerca di
-    > ottenere delle password, utilizzate ad esempio ai fini di
-    > autenticazione ed autorizzazione. Come già anticipato, gli
-    > attacchi basati su password si basano o su forza bruta oppure su
-    > metodi di tipo dizionario. Questo tipo di attacchi si evitano
-    > impostato politiche forti riguardo alle password utilizzate e
-    > metodi di autenticazione forte (a più fattori).
+-   *Attacchi su base password*. In questo caso l'attaccante cerca di ottenere delle password, utilizzate ad esempio ai fini di autenticazione ed autorizzazione. Come già anticipato, gli attacchi basati su password si basano o su forza bruta oppure su metodi di tipo dizionario. Questo tipo di attacchi si evitano impostato politiche forti riguardo alle password utilizzate e metodi di autenticazione forte (a più fattori).
 
--   *Denial of service - DoS*. In questo tipo di attacco l'attaccante
-    > mira semplicemente a rendere non operativa una interfaccia di
-    > servizio inondandola di richieste e minando quindi l'accessibilità
-    > dell'interfaccia di servizio stessa. Difendersi da questi tipi di
-    > attacchi è in genere molto difficile (specialmente nella variante
-    > distribuita degli stessi).
+-   *Denial of service - DoS*. In questo tipo di attacco l'attaccante mira semplicemente a rendere non operativa una interfaccia di servizio inondandola di richieste e minando quindi l'accessibilità dell'interfaccia di  servizio stessa. Difendersi da questi tipi di attacchi è in genere molto difficile (specialmente nella variante distribuita degli stessi).
 
--   *Attacchi man-in-the-middle*. In questo caso un attaccante si
-    > intromette come terza parte in una conversazione tra mittente e
-    > destinatario modificando i messaggi scambiati. Gli attacchi
-    > man-in-the-middle si combattono tramite tecniche di cifratura ed
-    > integrità degli scambi.
+-   *Attacchi man-in-the-middle*. In questo caso un attaccante si intromette come terza parte in una conversazione tra mittente e destinatario modificando i messaggi scambiati. Gli attacchi man-in-the-middle si combattono tramite tecniche di cifratura ed integrità degli scambi.
 
 In alcuni casi, gli attaccanti possono sfruttare delle falle scoperte
 nei protocolli o nelle implementazioni degli stessi. E' quindi di
@@ -1309,16 +1169,11 @@ per autenticazione ed autorizzazione nel caso human-to-machine sono:
 
 -   OAuth2 [26]_ è uno standard per l'autorizzazione;
 
--   OpenID [27]_. Uno standard pensato per la sola autenticazione.
-    > L'ultima versione, denominata OpenID Connect [28]_, è costruita su
-    > OAuth2 in termini di scambio di messaggi;
+-   OpenID [27]_. Uno standard pensato per la sola autenticazione. L'ultima versione, denominata OpenID Connect [28]_, è costruita su OAuth2 in termini di scambio di messaggi;
 
--   Security Assertion Markup Language - SAML [29]_ (la versione corrente
-    > è la 2) è il protocollo più vecchio in circolazione e copre
-    > l'autenticazione e in parte l'autorizzazione;
+-   Security Assertion Markup Language - SAML [29]_ (la versione corrente è la 2) è il protocollo più vecchio in circolazione e copre l'autenticazione e in parte l'autorizzazione;
 
--   eXtensible Access Control Markup Language - XACML [30]_ complementare
-    > a SAML per la gestione esaustiva degli aspetti di autorizzazione.
+-   eXtensible Access Control Markup Language - XACML [30]_ complementare a SAML per la gestione esaustiva degli aspetti di autorizzazione.
 
 Nei protocolli human-to-machine, un client riceve autorizzazioni ad
 usare un certo tipo di risorsa per conto di un utente umano tramite le
@@ -1354,12 +1209,17 @@ stessi componenti:
 La tabella seguente riassume le caratteristiche dei protocolli per
 l'interazione human-to-machine:
 
-                                **OpenId Connect**   **SAML + XACML**
-  ----------------------------- -------------------- -----------------------------
-  **Formato token/assertion**   JSON                 XML
-  **Autorizzazione**                                 ✓
-  **Autenticazione**            ✓                    ✓
-  **Rischi per la sicurezza**   Phishing [33]_        XML Signature Wrapping [34]_
++-----------------------------+---------------------+--------------------------------+
+|                             | **OpenId Connect**  | **SAML + XACML**               |
++-----------------------------+---------------------+--------------------------------+
+| **Formato token/assertion** |  JSON               |  XML                           |
++-----------------------------+---------------------+--------------------------------+
+| **Autorizzazione**          |                     |  ✓                             |
++-----------------------------+---------------------+--------------------------------+
+| **Autenticazione**          |  ✓                  |  ✓                             |
++-----------------------------+---------------------+--------------------------------+
+| **Rischi per la sicurezza** |  Phishing [33]_     |   XML Signature Wrapping [34]_ |
++-----------------------------+---------------------+--------------------------------+
 
 Uno scenario interessante nell'ambito dell'integrazione A2A e A2B è
 quello legato alla federazione di domini (ad es., due diverse
@@ -1403,22 +1263,12 @@ Marzo 2018) si basa come detto sull'utilizzo della firma digitale per lo
 scambio di una chiave di sessione da utilizzare come chiave simmetrica.
 Per quanto riguarda i singoli algoritmi utilizzati:
 
--   Per lo scambio della chiave di sessione, TLS supporta numerose
-    > tecniche. Tra quelle proposte, si impone l'uso di tecniche che
-    > evitano attacchi man-in-the-middle e forniscono la cosiddetta
-    > forward security (cioè che la scoperta di una chiave privata usata
-    > nello scambio non permette di scoprire la chiave di sessione). Gli
-    > algoritmi di scambio delle chiavi permessi sono quindi ephemeral
-    > Diffie--Hellman - DHE ed ephemeral Elliptic Curve
-    > Diffie--Hellman - ECDHE.
+-   Per lo scambio della chiave di sessione, TLS supporta numerose tecniche. Tra quelle proposte, si impone l'uso di tecniche che evitano attacchi man-in-the-middle e forniscono la cosiddetta forward security (cioè che la scoperta di una chiave privata usata nello scambio non permette di scoprire la chiave di sessione). Gli algoritmi di scambio delle chiavi permessi sono quindi ephemeral Diffie--Hellman - DHE ed ephemeral Elliptic Curve
+Diffie--Hellman - ECDHE.
 
--   Per la cifratura TLS supporta numerosi algoritmi. Si suggeriscono i
-    > protocolli attualmente supportati nello standard TLS 1.3 e che
-    > sono considerati sicuri: Advanced Encryption Standard - AES (nella
-    > versioni GCM e CCM).
+-   Per la cifratura TLS supporta numerosi algoritmi. Si suggeriscono i protocolli attualmente supportati nello standard TLS 1.3 e che sono considerati sicuri: Advanced Encryption Standard - AES (nella versioni GCM e CCM).
 
--   Per l'integrità si suggerisce l'uso SHA almeno a 256 bit (quindi a
-    > partire dal cosiddetto SHA-2).
+-   Per l'integrità si suggerisce l'uso SHA almeno a 256 bit (quindi a partire dal cosiddetto SHA-2).
 
 +-----------------------------------------------------------------------+
 | Nel Modello di Interoperabilità 2018, a prescindere dal profilo di    |
@@ -1430,11 +1280,11 @@ Per quanto riguarda i singoli algoritmi utilizzati:
 | -   DEVE essere cifrato tramite TLS \>= 1.2;                          |
 |                                                                       |
 | -   DEVE essere conforme alle misure minime AgID Basic Security       |
-|     > Controls [41]_;                                                  |
+|     Controls [41]_;                                                   |
 |                                                                       |
 | -   Gli erogatori di interfacce di servizio DEVONO utilizzare         |
-|     > l\'header HSTS (HTTP Strict Transport Security) per evitare     |
-|     > attacchi di tipo SSL Strip (tipo di attacco Man-in-the-middle). |
+|     l\'header HSTS (HTTP Strict Transport Security) per evitare       |
+|     attacchi di tipo SSL Strip (tipo di attacco Man-in-the-middle).   |
 |                                                                       |
 | Inoltre, ogni certificato TLS utilizzato per erogare interfacce di    |
 | servizio:                                                             |
@@ -1442,15 +1292,15 @@ Per quanto riguarda i singoli algoritmi utilizzati:
 | -   NON DEVE essere self-signed (ad es., CA:true);                    |
 |                                                                       |
 | -   DEVE contenere i seguenti elementi Subject, Key Identifier,       |
-|     > Serial Number ed Issuer;                                        |
+|     Serial Number ed Issuer;                                          |
 |                                                                       |
 | -   DEVE avere il parametro keyUsage con i seguenti bit:              |
-|     > digitalSignature, keyEncipherment [42]_;                         |
+|     digitalSignature, keyEncipherment [42]_;                          |
 |                                                                       |
 | -   DOVREBBE contenere i riferimenti al DNS dei domini serviti;       |
 |                                                                       |
 | -   Un certificato usato ai fini di non ripudio DEVE avere inoltre il |
-|     > parametro keyUsage con il bit nonRepudiation settato.           |
+|     parametro keyUsage con il bit nonRepudiation settato.             |
 +-----------------------------------------------------------------------+
 
 Numerose sono le minacce alla sicurezza a cui è esposto TLS (in special
@@ -1472,7 +1322,6 @@ differenziati. Questi aspetti verranno definiti nel documento 3 del
 Modello.
 
  
-=
 
 3 SOAP
 ======
@@ -1498,11 +1347,9 @@ profili di interoperabilità standard, quindi il loro utilizzo è vietato.
 
 Il protocollo SOAP definisce tre componenti fondamentali:
 
--   una envelope (letteralmente "busta da lettere") che definisce la
-    > struttura del messaggio e come processarlo;
+-   una envelope (letteralmente "busta da lettere") che definisce la struttura del messaggio e come processarlo;
 
--   un insieme di regole di codifica per esprimere istanze di tipi di
-    > dato definiti a livello applicativo;
+-   un insieme di regole di codifica per esprimere istanze di tipi di dato definiti a livello applicativo;
 
 -   una convenzione per rappresentare lo stile di interazione RPC.
 
@@ -1525,46 +1372,25 @@ fa preferire altre soluzioni in determinati contesti.
 
 Tra le estensioni supportate dai framework più diffusi abbiamo:
 
--   WS-Addressing è un modo standard per includere informazioni circa
-    > l'instradamento dei messaggi (ad es., l'interfaccia di servizio a
-    > cui inviare la risposta o da contattare in caso di errore).
+-   WS-Addressing è un modo standard per includere informazioni circa l'instradamento dei messaggi (ad es., l'interfaccia di servizio a cui inviare la risposta o da contattare in caso di errore).
 
--   WS-Security è la specifica che descrive le politiche di sicurezza
-    > implementate a livello applicativo dalle interfacce di servizio.
-    > In particolare, WS-Security include meccanismi per autenticazione
-    > e autorizzazione, confidenzialità, integrità e firma digitale.
+-   WS-Security è la specifica che descrive le politiche di sicurezza implementate a livello applicativo dalle interfacce di servizio. In particolare, WS-Security include meccanismi per autenticazione e autorizzazione, confidenzialità, integrità e firma digitale.
 
--   WS-Trust è una estensione a WS-Security che permette di richiedere,
-    > rinnovare e validare token di sicurezza. Permette inoltre di
-    > verificare la relazione di mutua fiducia su un canale sicuro.
+-   WS-Trust è una estensione a WS-Security che permette di richiedere, rinnovare e validare token di sicurezza. Permette inoltre di verificare la relazione di mutua fiducia su un canale sicuro.
 
--   WS-Federation è una estensione che permette a differenti domini di
-    > sicurezza di scambiare informazioni circa identità, attributi di
-    > autorizzazione ed autenticazione.
+-   WS-Federation è una estensione che permette a differenti domini di sicurezza di scambiare informazioni circa identità, attributi di autorizzazione ed autenticazione.
 
--   WS-ReliableMessaging permette di consegnare in maniera affidabile
-    > (ad es., nell'ordine corretto) messaggi SOAP in presenza di
-    > problemi di rete e di inattività di componenti software e di
-    > sistema.
+-   WS-ReliableMessaging permette di consegnare in maniera affidabile (ad es., nell'ordine corretto) messaggi SOAP in presenza di problemi di rete e di inattività di componenti software e di sistema.
 
--   WS-AtomicTransaction è una estensione che permette di ottenere la
-    > proprietà tutto o niente per un gruppo di operazioni. Essa
-    > definisce tre protocolli (completamento, two-phase commit volatile
-    > e two-phase commit durevole) che sono implementati dal framework
-    > WS-Coordination.
+-   WS-AtomicTransaction è una estensione che permette di ottenere la proprietà tutto o niente per un gruppo di operazioni. Essa definisce tre protocolli (completamento, two-phase commit volatile e two-phase commit durevole) che sono implementati dal framework
 
--   WS-Choreography è la specifica per la definizione di coreografie.
-    > Una coreografia specifica i passi relativi allo scambio di
-    > messaggi tra diversi soggetti che si integrano.
+-   WS-Coordination.
+
+-   WS-Choreography è la specifica per la definizione di coreografie. Una coreografia specifica i passi relativi allo scambio di messaggi tra diversi soggetti che si integrano.
 
 -   WS-BPEL è la specifica per la definizione di orchestrazioni.
 
--   WS-Coordination è un framework estensibile per il coordinamento di
-    > web service (corrispondenti alle interfacce di servizio). In
-    > particolare esso spiega come implementare (e quindi è preso a
-    > riferimento dalle varie implementazioni dello stack WS-\*) i
-    > protocolli di coordinamento inclusi quelli descritti da
-    > WS-AtomicTransaction.
+-   WS-Coordination è un framework estensibile per il coordinamento di web service (corrispondenti alle interfacce di servizio). In particolare esso spiega come implementare (e quindi è preso a riferimento dalle varie implementazioni dello stack WS-\*) i protocolli di coordinamento inclusi quelli descritti da WS-AtomicTransaction.
 
 La specifica delle interfacce di servizio SOAP è effettuata tramite Web
 Services Description Language - WSDL [46]_. Oltre ad indicare le
@@ -1702,16 +1528,11 @@ all\'operazione come indicato in RFC 7231 [59]_. In particolare i metodi:
 
 -   GET, HEAD, DELETE: non devono avere un payload.
 
--   GET, HEAD: devono essere \"safe\", cioè devono essere essenzialmente
-    > read-only. Il client in questo caso non si aspetta e non richiede
-    > un cambiamento dello stato della risorsa.
+-   GET, HEAD: devono essere \"safe\", cioè devono essere essenzialmente read-only. Il client in questo caso non si aspetta e non richiede un cambiamento dello stato della risorsa.
 
--   GET, HEAD, PUT, DELETE: devono essere idempotenti, cioè chiamate
-    > multiple con richieste identiche si comportano come singole
-    > richieste.
+-   GET, HEAD, PUT, DELETE: devono essere idempotenti, cioè chiamate multiple con richieste identiche si comportano come singole richieste.
 
--   POST: dovrebbe implementare un meccanismo di idempotenza per evitare
-    > di duplicare eventuali entry.
+-   POST: dovrebbe implementare un meccanismo di idempotenza per evitare di duplicare eventuali entry.
 
 Ove necessario, specialmente ai fini del caching, occorre fare leva
 sugli ETag [60]_ (degli identificatori univoci di versione delle
@@ -1752,12 +1573,9 @@ URL [71]_.
 
 La componente Authority dell'URL:
 
--   dovrebbe essere associata al dominio del sito Istituzionale
-    > dell'erogatore presente su IndicePA, anche tramite il prefisso
-    > \"api\";
+-   dovrebbe essere associata al dominio del sito Istituzionale dell'erogatore presente su IndicePA, anche tramite il prefisso \"api\";
 
--   può essere associata al dominio di un ente che l\'erogatore ha
-    > delegato (ad es., una società in-house, un consorzio di comuni).
+-   può essere associata al dominio di un ente che l\'erogatore ha delegato (ad es., una società in-house, un consorzio di comuni).
 
 Per quanto riguarda la componente Path, i nomi utilizzati non devono
 usare abbreviazioni e acronimi non universalmente riconosciuti [72]_.
@@ -1769,9 +1587,7 @@ Per quanto riguarda il campo Query dovrebbe:
 
 -   non essere in camelCase;
 
--   utilizzare ove possibile dei nomi comuni per le funzionalità di
-    > paginazione, ricerca ed embedding/resource-expansion (ad es.,
-    > limit, offset, q, sort).
+-   utilizzare ove possibile dei nomi comuni per le funzionalità di paginazione, ricerca ed embedding/resource-expansion (ad es., limit, offset, q, sort).
 
 Le response in formato JSON [74]_, dovrebbero tornare sempre oggetti, non
 liste. Questo permette di estendere le response introducendo
@@ -1798,38 +1614,25 @@ standard a riguardo, al fine di rendere noto al fruitore
 dell'interfaccia di servizio lo stato del throttling ed eventuali limiti
 si possono utilizzare le seguenti indicazioni:
 
--   ritornare in ogni response valida i valori globali di throttling
-    > tramite i seguenti header HTTP:
+-   ritornare in ogni response valida i valori globali di throttling tramite i seguenti header HTTP:
 
     -   X-RateLimit-Limit: limite massimo di richieste per un endpoint;
 
-    -   X-RateLimit-Remaining: numero di richieste rimanenti fino al
-        > prossimo reset;
+    -   X-RateLimit-Remaining: numero di richieste rimanenti fino al prossimo reset;
 
-    -   X-RateLimit-Reset: il timestamp UTC che indica il momento in cui
-        > il limite verrà reimpostato o il numero di secondi mancanti.
+    -   X-RateLimit-Reset: il timestamp UTC che indica il momento in cui il limite verrà reimpostato o il numero di secondi mancanti.
 
 -   utilizzare gli HTTP status code nelle risposte:
 
-    -   HTTP 429 (too many requests), insieme ad i rate limit di cui al
-        > punto precedente, se il rate limit viene superato;
+    -   HTTP 429 (too many requests), insieme ad i rate limit di cui al punto precedente, se il rate limit viene superato;
 
-    -   HTTP 503 (service unavailable) se l\'infrastruttura non può
-        > erogare le operazioni offerte nei tempi attesi (definiti dalla
-        > SLA associata all'interfaccia di servizio). In questo caso si
-        > può utilizzare l\'header Retry-After [77]_ con codice HTTP 503
-        > (pratica anche detta "circuit breaker") per suggerire al
-        > client dopo quanto tempo ripresentarsi, anche implementando
-        > meccanismi di exponential back-off. Questo header può essere
-        > utilizzato sia in forma di data che di secondi, ma l'utilizzo
-        > di questi ultimi è suggerito [78]_.
+    -   HTTP 503 (service unavailable) se l\'infrastruttura non può erogare le operazioni offerte nei tempi attesi (definiti dalla SLA associata all'interfaccia di servizio). In questo caso si può utilizzare l\'header Retry-After [77]_ con codice HTTP 503 (pratica anche detta "circuit breaker") per suggerire al client dopo quanto tempo ripresentarsi, anche implementando meccanismi di exponential back-off. Questo header può essere utilizzato sia in forma di data che di secondi, ma l'utilizzo di questi ultimi è suggerito [78]_.
 
 I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare
 le indicazioni provenienti dagli header ed dagli status code di cui
 sopra.
 
  
-=
 
 5 Message Broker
 ================
@@ -1846,19 +1649,11 @@ vengono detti Message Oriented Middleware - MOM.
 
 Un message broker supporta solitamente diverse modalità di interazione:
 
--   Publish/Subscribe. In questo scenario un publisher invia dei
-    > messaggi sul canale ed il message broker li invia a diversi
-    > ricevitori sulla base di sottoscrizioni. Questo tipo di
-    > interazione supporta diversi scenari tra cui uno a molti o molti a
-    > molti;
+-   Publish/Subscribe. In questo scenario un publisher invia dei messaggi sul canale ed il message broker li invia a diversi ricevitori sulla base di sottoscrizioni. Questo tipo di interazione supporta diversi scenari tra cui uno a molti o molti a molti;
 
--   Queuing. In questo caso un richiedente invia una richiesta su una
-    > coda specifica (corrispondente all'erogatore) e l'erogatore invia
-    > la risposta sulla medesima coda; di fatto è una realizzazione
-    > asincrona della modalità request/reply;
+-   Queuing. In questo caso un richiedente invia una richiesta su una coda specifica (corrispondente all'erogatore) e l'erogatore invia la risposta sulla medesima coda; di fatto è una realizzazione asincrona della modalità request/reply;
 
--   Store/Forward. In questo caso il broker memorizza i messaggi e
-    > quindi inoltra agli interessati.
+-   Store/Forward. In questo caso il broker memorizza i messaggi e quindi inoltra agli interessati.
 
 Un caso particolare di message broker è costituito dagli integration
 broker. Rispetto ad un message broker, questi si occupano anche della
@@ -1889,21 +1684,15 @@ servizio REST per l'accesso a message broker differiscano per
 funzionalità offerte e modi di modellare code, topic/sottoscrizioni, si
 possono astrarre e seguenti comportamenti dei metodi HTTP:
 
--   Il metodo POST viene utilizzato per l'invio di messaggi e la
-    > creazione di topic/sottoscrizioni e code;
+-   Il metodo POST viene utilizzato per l'invio di messaggi e la creazione di topic/sottoscrizioni e code;
 
--   Il metodo GET viene utilizzato per consumare messaggi da code e
-    > topic/sottoscrizioni;
+-   Il metodo GET viene utilizzato per consumare messaggi da code e topic/sottoscrizioni;
 
--   Il metodo DELETE viene utilizzato per l'eliminazione di
-    > topic/sottoscrizioni e code ed in alcuni casi per segnalare il
-    > fatto che un messaggio è stato consumato;
+-   Il metodo DELETE viene utilizzato per l'eliminazione di topic/sottoscrizioni e code ed in alcuni casi per segnalare il fatto che un messaggio è stato consumato;
 
--   Il metodo PUT viene di solito utilizzato per modificare le proprietà
-    > di topic/sottoscrizioni e code.
+-   Il metodo PUT viene di solito utilizzato per modificare le proprietà di topic/sottoscrizioni e code.
 
  
-=
 
 6 Considerazioni comparative
 ============================
@@ -1914,10 +1703,13 @@ adatte per una interazione sincrona da quelle adatte ad una interazione
 asincrona. Riguardo a questa distinzione si può fare riferimento alla
 seguente tabella:
 
-                              **SOAP**   **REST**   **Message Broker**
-  --------------------------- ---------- ---------- --------------------
-  **Interazione Sincrona**    ✓          ✓          
-  **Interazione Asincrona**   ✓\*        ✓\*        ✓
++---------------------------+----------+----------+---------------------+
+|                           | **SOAP** | **REST** | **Message Broker**  |
++---------------------------+----------+----------+---------------------+
+| **Interazione Sincrona**  |   ✓      |    ✓     |                     |
++---------------------------+----------+----------+---------------------+  
+| **Interazione Asincrona** |  ✓\*     |   ✓\*    |    ✓                |
++---------------------------+----------+----------+---------------------+
 
 SOAP (inteso come stack WS-\*), come si evince dalla tabella, può essere
 utilizzato sia per interazioni sincrone che per interazioni asincrone.
@@ -1938,33 +1730,25 @@ alla rete ha aumentato il carico sulle infrastrutture IT, inoltre reti
 migliori hanno aumentato le aspettative in termini di latenza. L\'IETF
 nel tempo ha risposto a queste esigenze:
 
--   migliorando la semantica di HTTP, facendo leva sui campi Header,
-    > Status e Method RFC7230 [84]_, RFC7231 [85]_;
+-   migliorando la semantica di HTTP, facendo leva sui campi Header, Status e Method RFC7230 [84]_, RFC7231 [85]_;
 
--   codificando le semantiche di caching RFC7234 [86]_ e controllo della
-    > concorrenza RFC7232 [87]_ per facilitare l\'implementazione di
-    > interfacce di servizio stateless, che possano scalare senza che i
-    > bilanciatori conoscano la logica applicativa;
+-   codificando le semantiche di caching RFC7234 [86]_ e controllo della concorrenza RFC7232 [87]_ per facilitare l\'implementazione di interfacce di servizio stateless, che possano scalare senza che i bilanciatori conoscano la logica applicativa;
 
 -   orientandosi verso formati più leggeri (ad es., JSON).
 
 Queste innovazioni fanno preferire l\'approccio REST:
 
--   Quando è possibile esprimere la logica applicativa tramite la
-    > semantica HTTP, poiché si guadagna:
+-   Quando è possibile esprimere la logica applicativa tramite la semantica HTTP, poiché si guadagna:
 
-    -   espressività (ad es., il contesto d\'utilizzo è chiarito da
-        > Method e Status);
+    -   espressività (ad es., il contesto d\'utilizzo è chiarito da Method e Status);
 
     -   mobile-ready (esporre un\'API in un\'app con un http-wrapper);
 
-    -   performance e scalabilità (ad es., possibilità di ruotare le
-        > chiamate in base al Method, senza inspection applicativa).
+    -   performance e scalabilità (ad es., possibilità di ruotare le chiamate in base al Method, senza inspection applicativa).
 
 -   Quando le API devono essere fruibili anche da mobile/web;
 
--   L'accesso avviene in maniera prevalente con operazioni di tipo CRUD
-    > sui dati.
+-   L'accesso avviene in maniera prevalente con operazioni di tipo CRUD sui dati.
 
 Quindi rispetto a quanto discusso nel documento 1 sui paradigmi di
 cooperazione, questo suggerisce l'uso di REST nei casi di condivisione
@@ -1975,22 +1759,14 @@ corrispondente all'interfaccia di servizio è prevalentemente informativo
 
 L'utilizzo di SOAP è suggerito:
 
--   Quando la semantica HTTP non è sufficiente ad esprimere la logica
-    > applicativa ed è necessario usare un protocollo di messaging
+-   Quando la semantica HTTP non è sufficiente ad esprimere la logica applicativa ed è necessario usare un protocollo di messaging
     > ulteriore con dei propri header;
 
--   Se la specifica applicazione richiede la creazione di interfacce di
-    > servizio principalmente *stateful*, cioè l'accesso ad informazioni
-    > di contesto o la gestione dello stato della conversazione [88]_.
-    > SOAP prevede estensioni (ad esempio relative al concetto di
-    > transazione) che con altri approcci (ad es., REST) devono essere
-    > costruite ad-hoc per la specifica applicazione.
+-   Se la specifica applicazione richiede la creazione di interfacce di servizio principalmente *stateful*, cioè l'accesso ad informazioni di contesto o la gestione dello stato della conversazione [88]_. SOAP prevede estensioni (ad esempio relative al concetto di transazione) che con altri approcci (ad es., REST) devono essere costruite ad-hoc per la specifica applicazione. 
 
--   Nel caso si necessiti di processamento asincrono che non sia
-    > possibile implementare con semantiche HTTP;
+-   Nel caso si necessiti di processamento asincrono che non sia possibile implementare con semantiche HTTP;
 
--   Quando servono specifiche assicurazioni circa la QoS (quali quelle
-    > fornite dall'estensione WS-ReliableMessaging).
+-   Quando servono specifiche assicurazioni circa la QoS (quali quelle fornite dall'estensione WS-ReliableMessaging).
 
 Quindi rispetto a quanto discusso nel Documento 1 sui paradigmi di
 cooperazione, questo suggerisce l'uso di SOAP nei casi di processo
@@ -2072,17 +1848,13 @@ cambiamento.
 
 Nel progetto di interfacce di servizio REST invece occorre:
 
--   Identificare le risorse che l'interfaccia di servizio manipolerà.
-    > Queste risorse sono solitamente i concetti base che stanno dietro
-    > ad un processo (ad es., un ordine di acquisto).
+-   Identificare le risorse che l'interfaccia di servizio manipolerà. Queste risorse sono solitamente i concetti base che stanno dietro ad un processo (ad es., un ordine di acquisto).
 
--   Progettare gli URI seguendo i principi introdotti nella sezione
-    > relativa alla tecnologia REST.
+-   Progettare gli URI seguendo i principi introdotti nella sezione relativa alla tecnologia REST.
 
 -   Scegliere il tipo di operazione disponibile per ognuna delle URI.
 
--   Scegliere i collegamenti tra risorse da fornire nelle risposte. In
-    > quest'ottica l'approccio HATEOAS può risultare utile.
+-   Scegliere i collegamenti tra risorse da fornire nelle risposte. In quest'ottica l'approccio HATEOAS può risultare utile.
 
 -   Progettare le strutture JSON per la rappresentazione dei dati.
 
@@ -2098,7 +1870,6 @@ tecnologia, sia SOAP che REST supportano nel 2018 tale principio, anche
 se con accorgimenti tecnici differenti nella sua realizzazione.
 
  
-=
 
 7 Altri approcci e tecnologie di integrazione
 =============================================
@@ -2165,11 +1936,9 @@ L\'utilizzo di datastore distribuiti potrebbe in futuro affiancare
 l\'integrazione basata su altre tecnologie più consolidate. Le future
 linee guida dovranno tenere in considerazione per queste tecnologie:
 
--   requisiti di latenza e consistenza (ad es., eventual consistency,
-    > autoritatività);
+-   requisiti di latenza e consistenza (ad es., eventual consistency, autoritatività);
 
--   le modalità di logging e auditing associate alla trasmissione dei
-    > dati;
+-   le modalità di logging e auditing associate alla trasmissione dei dati;
 
 -   le modalità operative di manutenzione;
 
