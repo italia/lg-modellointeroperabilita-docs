@@ -60,7 +60,7 @@ In base alle considerazioni precedenti, il Modello di interoperabilità si concr
 
 1. **Presentazione del Modello di Interoperabilità 2018**, che è il documento attuale, rilasciato nella prima versione a maggio 2018.
 
-2. **Tecnologie ed approcci all'integrazione ed interoperabilità**, che nella prima versione (maggio 2018) viene rilasciato contestualmente al presente documento. Ha come oggetto l\'individuazione delle possibili tecnologie ed approcci che possono essere utilizzati dalle PA.
+2. **Tecnologie ed approcci all'Integrazione ed Interoperabilità**, che nella prima versione (maggio 2018) viene rilasciato contestualmente al presente documento. Ha come oggetto l\'individuazione delle possibili tecnologie ed approcci che possono essere utilizzati dalle PA.
 
 3. **Pattern e Profili di Interoperabilità**, che fornirà indicazioni concrete, a livello tecnico, su differenti modalità operative per realizzare l'interoperabilità, tenendo conto delle possibili tecnologie ed approcci disponibili. La prima release di questo documento è prevista per l'estate 2018. Il Modello introduce il concetto di profilo di interoperabilità e come esso possa essere evoluto nel tempo; si introduce anche il concetto di pattern di interoperabilità. Infine questo documento si occuperà di discutere anche l'aspetto della QoS - Quality of Service e degli SLA - Service Level Agreement.
 
