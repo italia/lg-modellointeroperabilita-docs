@@ -19,6 +19,9 @@ Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
 
 -   semplificare le procedure di scambio di servizi tra le PA e, ove possibile, tra PA e privati, facilitando la realizzazione dei sistemi che le realizzano.
 
+
+.. discourse::
+   :topic_identifier: 766
    
 .. [1] Il ModI 2018 è concettualmente la seconda versione (aggiornamento) del framework di interoperabilità della PA che nella prima versione fu definito nel 2005 con il nome di SPCoop - Servizio Pubblico di
     Cooperazione Applicativa, cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__ 
@@ -28,6 +31,3 @@ Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
 	
 .. [3] Cf. `https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf <https://pianotriennale-ict.italia.it/assets/pdf/Piano\_Triennale\_per\_l\_informatica\_nella\_Pubblica\_Amministrazione.pdf>`__ 
 
-
-.. discourse::
-   :topic_identifier: 77766
