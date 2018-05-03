@@ -21,7 +21,7 @@ Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
 
 .. discourse::
    :topic_identifier: 766
-
+   
 .. [1] Il ModI 2018 è concettualmente la seconda versione (aggiornamento) del framework di interoperabilità della PA che nella prima versione fu definito nel 2005 con il nome di SPCoop - Servizio Pubblico di
     Cooperazione Applicativa, cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__ 
     Il termine *modello* trova corrispettivo nel termine inglese framework, e pertanto nel presente documento i due termini verranno considerati sinonimi.
