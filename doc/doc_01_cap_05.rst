@@ -58,13 +58,13 @@ Incrementalità del modello
 
 In base alle considerazioni precedenti, il Modello di interoperabilità si concretizza nella definizione, lo sviluppo, il miglioramento, la resa operativa, il mantenimento e la promozione di servizi, strumenti, norme tecniche e specifiche per l'interoperabilità delle soluzioni ICT basata su un'architettura modulare che include componenti interconnessi con l'ausilio di infrastrutture comuni. Questo modello, al fine di evitare le problematiche di possibile obsolescenza, e fronteggiare la necessità di continui aggiornamenti, si estrinsecherà concretamente in rilasci successivi e cadenzati nel tempo, di una serie di 5 documenti, in particolare:
 
-1. **Visione Generale**, che è il documento attuale, rilasciato nella prima versione a maggio 2018.
+1. **Presentazione del Modello di Interoperabilità 2018**, che è il documento attuale, rilasciato nella prima versione a maggio 2018.
 
 2. **Tecnologie ed approcci all'integrazione ed interoperabilità**, che nella prima versione (maggio 2018) viene rilasciato contestualmente al presente documento. Ha come oggetto l\'individuazione delle possibili tecnologie ed approcci che possono essere utilizzati dalle PA.
 
-3. **Profili di interoperabilità**, che fornirà indicazioni concrete, a livello tecnico, su differenti modalità operative per realizzare l'interoperabilità, tenendo conto delle possibili tecnologie ed approcci disponibili. La prima release di questo documento è prevista per l'estate 2018. Il Modello introduce il concetto di profilo di interoperabilità e come esso possa essere evoluto nel tempo; si introduce anche il concetto di pattern di interoperabilità. Infine questo documento si occuperà di discutere anche l'aspetto della QoS - Quality of Service e degli SLA - Service Level Agreement.
+3. **Pattern e Profili di Interoperabilità**, che fornirà indicazioni concrete, a livello tecnico, su differenti modalità operative per realizzare l'interoperabilità, tenendo conto delle possibili tecnologie ed approcci disponibili. La prima release di questo documento è prevista per l'estate 2018. Il Modello introduce il concetto di profilo di interoperabilità e come esso possa essere evoluto nel tempo; si introduce anche il concetto di pattern di interoperabilità. Infine questo documento si occuperà di discutere anche l'aspetto della QoS - Quality of Service e degli SLA - Service Level Agreement.
 
-4. **Governance del Modello**, che presenterà compiutamente la governance dell'intero modello e le sue modalità di evoluzione, ed è previsto in una prima versione per l'estate 2018.
+4. **Governance del Modello di Interoperabilità**, che presenterà compiutamente la governance dell'intero modello e le sue modalità di evoluzione, ed è previsto in una prima versione per l'estate 2018.
 
 5. **Registri e Cataloghi**, che si occuperà di definire le linee guida per i registri e cataloghi necessari a supportare il modello stesso. Anche per questo documento è prevista una prima versione per l'estate
 2018.
