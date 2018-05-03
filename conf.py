@@ -9,7 +9,7 @@ settings_doc_version = 'Bozza in consultazione'
 settings_doc_release = 'Bozza in consultazione'
 settings_basename = 'lg-interoperabilita'
 settings_file_name = 'lg-interoperabilita'
-settings_discourse_url = 'https://ia.italia.it/'
+settings_discourse_url = 'https://ia.italia.it/community/'
 
 # -- No need to change below here
 
