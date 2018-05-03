@@ -11,7 +11,7 @@ Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
 
 -   armonizzare le scelte architetturali delle PA;
 
--   individuare le scelte tecnologiche che favoriscano lo sviluppo, da parte delle PA, cittadini e imprese, di soluzioni applicative innovative che abilitino l'utilizzo dei servizi individuati nelle Infrastrutture immateriali del Piano triennale per l'informatica nella PA [2]_;
+-   individuare le scelte tecnologiche che favoriscano lo sviluppo, da parte delle PA, cittadini e imprese, di soluzioni applicative innovative che abilitino l'utilizzo dei servizi individuati nelle Infrastrutture immateriali del Piano triennale per l'informatica nella PA [3]_;
 
 -   promuovere, quando applicabile, l'adozione dell'approccio *API first*, al fine di favorire la separazione dei livelli di back end e front end, con logiche aperte e standard pubblici che garantiscano ad altri attori, pubblici e privati, accessibilità e massima interoperabilità di dati e servizi;
 
