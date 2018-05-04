@@ -1,7 +1,7 @@
 Tecnologie ed Approcci all'Integrazione ed Interoperabilità
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Il secondo documento del Modello di Interoperabilità 2018, così come introdotto nella Visione generale, ha l'obiettivo, di fungere da guida delle possibili tecnologie che possono essere considerate dalle PA per l'integrazione e l'interoperabilità. Data la veloce evoluzione tecnologica, questo documento verrà continuamente aggiornato ed approfondito , e costituisce il riferimento per il documento 3 - Pattern e Profili di Interoperabilità. Allo stato attuale, questa versione si focalizza prevalentemente sugli approcci e tecnologie basati su SOAP, REST e Message Broker, ed accenna ad altre possibili scelte che in futuro potrebbero essere considerate.
+Il secondo documento del Modello di Interoperabilità 2018, così come introdotto nella Visione generale, ha l'obiettivo, di fungere da guida delle possibili tecnologie che possono essere considerate dalle PA per l'integrazione e l'interoperabilità. Data la veloce evoluzione tecnologica, questo documento verrà continuamente aggiornato ed approfondito, e costituisce il riferimento per "Pattern e Profili di Interoperabilità". Allo stato attuale, questa versione si focalizza prevalentemente sugli approcci e tecnologie basati su SOAP, REST e Message Broker, ed accenna ad altre possibili scelte che in futuro potrebbero essere considerate.
 
 .. toctree::
    :maxdepth: 2
