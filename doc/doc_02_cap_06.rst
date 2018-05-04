@@ -106,7 +106,7 @@ Nel progetto di interfacce di servizio REST invece occorre:
 
 -   Progettare le strutture JSON per la rappresentazione dei dati.
 
-Il ModI 2018, come discusso nella Sezione 1, prevede che la progettazione parta della definizione delle interfacce di servizio, indipendentemente dalla tecnologia di realizzazione sia SOAP che REST supportano nel 2018 tale principio, anche se con accorgimenti tecnici differenti nella sua realizzazione.
+Il ModI 2018, come discusso nella Sezione 1, prevede che la progettazione parta della definizione delle interfacce di servizio, indipendentemente dalla tecnologia di realizzazione sia SOAP che REST, anche se con accorgimenti tecnici differenti nella sua realizzazione.
 
 
 

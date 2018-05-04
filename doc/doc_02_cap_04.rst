@@ -10,8 +10,12 @@ Talvolta, il termine Resource Oriented Architecture - ROA è usato per denotare 
 microservizi [56]_, caratterizzate da elevata modularità, per via della leggerezza del protocollo.
 
 A differenza delle interfacce di servizio SOAP, per cui una serie di standard è definita e mantenuta da OASIS (cf. stack WS-\*), per le interfacce REST sono disponibili singoli standard e best-practice. 
-La specifica più diffusa per le interfacce REST è OpenAPI - attualmente giunta alla versione 3 [57]_ e contenente anche elementi descrittivi della catalogazione e della documentazione delle API.
-Dalle specifiche OpenAPI è possibile derivare tramite tool automatici la descrizione in altri formati (eg. RAML - orientato alla creazione automatica di server e client - e WADL, una specifica basata su XML che ha avuto scarso successo in passato). Il ModI 2018 impone l’uso di OpenAPI v3.
+
+Per la specifica delle interfacce REST esistono due grandi iniziative: OpenAPI e RAML.
+Sebbene simili dal punto di vista dello sviluppatore di interfacce di servizio, la specifica RAML è più indirizzata alla creazione automatica di server e di client per API, mentre OpenAPI (attualmente nella versione OpenAPI v3) contiene elementi più descrittivi per la documentazione e la catalogazione (che invece sono disponibili in RAML come estensioni ad-hoc) e si sta imponendo come standard de-facto.  
+Altri standard proposti in passato, quali Web Application Description Language - WADL, hanno avuto scarso successo e nei framework in cui sono stati utilizzati si sta optando per il passaggio ad OpenAPI v3 [57]_.
+
+E’ possibile assicurare la conversione tra le differenti rappresentazioni delle interfacce REST tramite tool automatici. 
 
 Legato al concetto di specifica nel mondo REST è quello di *Hypermedia As The Engine Of Application State - HATEOAS*. Secondo questo approccio, accedendo ad una risorsa, la risposta del server contiene hyperlink ad altre azioni che possono essere eseguite sulla risorsa [58]_. HATEOAS permette di scoprire dinamicamente le operazioni presenti in una interfaccia di servizio e può essere utilizzato come approccio complementare (non sostitutivo) alla specifica.
 
@@ -78,23 +82,6 @@ Throttling ed indisponibilità del servizio
 ------------------------------------------
 
 Nelle API basate su REST, meccanismi di throttling vengono implementati al fine di garantire l’accessibilità delle interfacce di servizio ed evitare in alcuni casi dump dei dati. 
-Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 429, nel Modl2018 si richiede di notificare al fruitore lo stato del throttling ed eventuali limiti come segue:
-
--   ritornare in ogni response valida i valori globali di throttling tramite i seguenti header HTTP:
-
-    -   X-RateLimit-Limit: limite massimo di richieste per un endpoint;
-
-    -   X-RateLimit-Remaining: numero di richieste rimanenti fino al prossimo reset;
-
-    -   X-RateLimit-Reset: il numero di secondi mancanti al momento in cui il limite verrà reimpostato.
-
--   utilizzare gli HTTP status code nelle risposte:
-
-    -   HTTP 429 (too many requests), insieme ad i rate limit di cui al punto precedente, se il rate limit viene superato;;
-
-    -   HTTP 503 (service unavailable) se l\'infrastruttura non può erogare le operazioni offerte nei tempi attesi (definiti dalla SLA associata all'interfaccia di servizio);
-	
-- 	nei casi 429 e 503 gli erogatori dovrebbero notificare al client dopo quanti secondi ripresentarsi tramite l\'header Retry-After [78]_ (pratica anche detta "circuit breaker"), anche implementando meccanismi di exponential back-off. L\'RFC prevede che questo header possa essere utilizzato sia in forma di data che di secondi, ma il Modl2018 vieta l’utilizzo del formato data poiché se non implementato correttamente potrebbe aggravare lo stato dei sistemi [79]_.
 
 I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indicazioni provenienti dagli header ed dagli status code di cui sopra.
 
@@ -169,7 +156,3 @@ I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indica
 .. [76] Cf. `https://tools.ietf.org/html/rfc7807 <https://tools.ietf.org/html/rfc7807>`_
 
 .. [77] Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
-
-.. [78] Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After>`_
-
-.. [79] Cf. `http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html <http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html>`_

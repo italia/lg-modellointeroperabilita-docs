@@ -17,10 +17,11 @@ Disponibilità
 
 Il concetto di disponibilità è stato introdotto nella Sezione 1.3 parlando della QoS. Il concetto di disponibilità è legato strettamente anche a quello di sicurezza, poiché la disponibilità di una interfaccia di servizio può essere legata non solo a cause di natura tecnica ma anche a specifici tipi di attacco (ad es., denial of service).
 
-Riservatezza
-^^^^^^^^^^^^
+Confidenzialità
+^^^^^^^^^^^^^^^
+Con il termine confidenzialità si intende la protezione dei dati e delle informazioni scambiate tra un mittente e un destinatario. La confidenzialità, declinata per il canale di comunicazione, è la proprietà di assicurare che l’informazione scambiata tra due entità colloquianti in rete non possa essere acceduta da soggetti terzi. 
 
-Il termine riservatezza (privacy) è spesso utilizzato come equivalente di confidenzialità. La confidenzialità è la proprietà di un canale di comunicazione per la quale l'informazione non è rivelata se non agli utenti autorizzati. Il termine confidenzialità è più generale di riservatezza, in quanto quest'ultima viene ottenuta tramite la cifratura del canale di comunicazione mentre la confidenzialità include anche meccanismi di autorizzazione (vedi Sezione 2.1.6).
+La confidenzialità è ottenuta tramite la cifratura dei dati e delle informazioni (sicurezza di messaggio) o del canale di comunicazione (sicurezza del canale).
 
 In un metodo di cifratura, un messaggio in chiaro (anche chiamato plain text) viene trasformato in un messaggio codificato e viceversa. Gli algoritmi di cifratura si distinguono in meccanismi a chiave simmetrica (o privata o condivisa) e chiave asimmetrica (o pubblica). In entrambi i casi la lunghezza delle chiavi influenza la sicurezza della comunicazioni (chiavi più lunghe sono più sicure) perché proteggono maggiormente da attacchi a forza bruta. Si suppone infatti che ogni meccanismo di cifratura possa essere rotto tramite enumerazione a patto che il tempo necessario (esponenziale nella lunghezza della chiave) non sia troppo lungo rispetto agli scopi dell'attaccante. Un'altra tipologia di attacco ai metodi di cifratura (che si applica in particolar modo ai metodi a chiave simmetrica in cui le password sono generate da umani) sono quelli di tipo dizionario, basati sull'uso di parole di uso comune.
 
