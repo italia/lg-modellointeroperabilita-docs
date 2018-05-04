@@ -22,8 +22,11 @@ Varie tecnologie e realizzazioni di message broker hanno storicamente supportato
 I vantaggi di questo approccio includono la possibilità di utilizzare le modalità di autenticazione, autorizzazione, throttling ed accounting già discussi riguardo alla tecnologia REST, e la risoluzione di possibili problematiche legate all’attraversamento di firewall e proxy.
 
 Sebbene, a seconda delle implementazioni, le diverse interfacce di servizio REST per l’accesso a message broker differiscano per funzionalità offerte e modi di modellare code, topic/sottoscrizioni, si possono astrarre e seguenti comportamenti dei metodi HTTP:
+
 - il metodo POST viene utilizzato per l’invio di messaggi e la creazione di topic/sottoscrizioni e code;
+
 - il metodo GET viene utilizzato per consumare messaggi da code e topic/sottoscrizioni;
+
 - il metodo DELETE viene utilizzato per l’eliminazione di topic/sottoscrizioni e code ed in alcuni casi per segnalare il fatto che un messaggio è stato consumato.
 
 Il metodo PUT viene di solito utilizzato per modificare le proprietà di topic/sottoscrizioni e code.
