@@ -17,7 +17,17 @@ Un caso particolare di message broker è costituito dagli integration broker. Ri
 
 L'utilizzo di message broker è consigliato in alcuni casi d'uso in cui l'interazione è asincrona o di tipo publish/subscribe (ad es., Internet-of-Things - IoT, aggregatori di dati pubblici).
 
-Varie tecnologie e realizzazioni di message broker hanno storicamente supportato svariati protocolli quali STOMP [80]_, XMPP [81]_, MQTT [82]_, OpenWire [83]_ e AMPQ [84]_. 
+Varie tecnologie e realizzazioni di message broker hanno storicamente supportato svariati protocolli quali STOMP [80]_, XMPP [81]_, MQTT [82]_, OpenWire [83]_ e AMPQ [84]_. Oggigiorno, sebbene in determinati contesti essi vengano attualmente ancora utilizzati (ad es., in contesti intra-dominio o in casi particolari quali l’IoT in cui si preferiscono protocolli binari efficienti come MQTT), si preferiscono, in ambito di integrazione di sistemi, approcci in cui l’interfacciamento con i message broker avviene tramite interfacce di servizio REST. In particolare sono disponibili sia soluzioni native che wrapper per implementazioni di altri protocolli. 
+
+I vantaggi di questo approccio includono la possibilità di utilizzare le modalità di autenticazione, autorizzazione, throttling ed accounting già discussi riguardo alla tecnologia REST, e la risoluzione di possibili problematiche legate all’attraversamento di firewall e proxy.
+
+Sebbene, a seconda delle implementazioni, le diverse interfacce di servizio REST per l’accesso a message broker differiscano per funzionalità offerte e modi di modellare code, topic/sottoscrizioni, si possono astrarre e seguenti comportamenti dei metodi HTTP:
+- il metodo POST viene utilizzato per l’invio di messaggi e la creazione di topic/sottoscrizioni e code;
+- il metodo GET viene utilizzato per consumare messaggi da code e topic/sottoscrizioni;
+- il metodo DELETE viene utilizzato per l’eliminazione di topic/sottoscrizioni e code ed in alcuni casi per segnalare il fatto che un messaggio è stato consumato.
+
+Il metodo PUT viene di solito utilizzato per modificare le proprietà di topic/sottoscrizioni e code.
+
 
 .. [80] Cf. `https://stomp.github.io/ <https://stomp.github.io/>`_
 
