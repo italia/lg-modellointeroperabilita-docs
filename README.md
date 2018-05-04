@@ -4,7 +4,7 @@ Le presenti linee guida attuano quanto stabilito al punto b) del comma 3-ter Art
 
 ## Link al documento e consultazione
 
-Link al documento Docs Italia: https://lg-interoperabilita.readthedocs.io
+Link al documento Docs Italia: https://modi2018.readthedocs.io
 
 Link per commenti Forum Italia: https://forum.italia.it/c/documenti-in-consultazione/lg-interoperabilita
 
