@@ -84,13 +84,21 @@ Throttling ed indisponibilità del servizio
 Nelle API basate su REST, meccanismi di throttling vengono implementati al fine di garantire l’accessibilità delle interfacce di servizio ed evitare in alcuni casi dump dei dati. 
 
 Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 429, nel Modl2018 si richiede di notificare al fruitore lo stato del throttling ed eventuali limiti come segue:
+
 - ritornare in ogni response valida i valori globali di throttling tramite i seguenti header HTTP:
+
 	- X-RateLimit-Limit: limite massimo di richieste per un endpoint;
+	
 	- X-RateLimit-Remaining: numero di richieste rimanenti fino al prossimo reset;
+	
 	- X-RateLimit-Reset: il numero di secondi mancanti al momento in cui il limite verrà reimpostato.
+	
 - utilizzare gli HTTP status code nelle risposte:
+
 	- HTTP 429 (too many requests), insieme ad i rate limit di cui al punto precedente, se il rate limit viene superato;
+	
 	- HTTP 503 (service unavailable) se l'infrastruttura non può erogare le operazioni offerte nei tempi attesi (definiti dalla SLA associata all’interfaccia di servizio).
+	
 - nei casi 429 e 503 gli erogatori dovrebbero notificare al client dopo quanti secondi ripresentarsi tramite l'header Retry-After [78]_ (pratica anche detta “circuit breaker”), anche implementando meccanismi di exponential back-off. L'RFC prevede che questo header possa essere utilizzato sia in forma di data che di secondi, ma il Modl2018 vieta l’utilizzo del formato data poiché se non implementato correttamente potrebbe aggravare lo stato dei sistemi [79]_.
 
 I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indicazioni provenienti dagli header ed dagli status code di cui sopra.
