@@ -44,21 +44,21 @@ La specifica delle interfacce di servizio SOAP è effettuata tramite Web Service
 Indicazioni di utilizzo
 -----------------------
 
-La specifica SOAP permette la definizione di specifici profili di interoperabilità, imponendo alcune restrizioni circa i tipi ed i formati scambiati. Il profilo di interoperabilità secondo il quale interfacce di servizio di tipo SOAP andranno implementati è la versione 2.0 del Basic Profile [48]_ (nel seguito BP2) definito dal WS-I (Web Services Interoperability Organization) ed ora confluito in OASIS. BP2 è basato su SOAP 1.2 e WS-Addressing (per il dispatching dei messaggi a livello applicativo, in particolare nel caso di interazioni asincrone). Tra le molte indicazioni, BP2 definisce anche la modalità di gestione degli errori. In particolare, oltre all'utilizzo dei codici di errore HTTP si richiede che il ricevente sia in grado di gestire le SOAP fault che quindi devono, obbligatoriamente, essere emesse dall'erogatore a fronte di errori.
+La specifica SOAP permette la definizione di specifici profili di interoperabilità, imponendo alcune restrizioni circa i tipi ed i formati scambiati. Il profilo di interoperabilità secondo il quale interfacce di servizio di tipo SOAP andranno implementati è la versione 2.0 del Basic Profile [48]_ (nel seguito BP2) definito dal WS-I (Web Services Interoperability Organization) ed ora confluito in OASIS. BP2 è basato su SOAP 1.2 e WS-Addressing (per il dispatching dei messaggi a livello applicativo, in particolare nel caso di interazioni asincrone). Tra le molte indicazioni, BP2 definisce anche la modalità di gestione degli errori. In particolare, oltre all'utilizzo dei codici di errore HTTP si richiede che il ricevente sia in grado di gestire le SOAP fault [49]_ che quindi devono, obbligatoriamente, essere emesse dall'erogatore a fronte di errori.
 
 Sicurezza
 ---------
 
-Per quanto riguarda la sicurezza, l'ultimo profilo standard definito da OASIS è il Basic Security Profile 1.1 [49]_. Il profilo è datato ma le considerazioni sono ancora valide. Per quanto riguarda le versioni dei protocolli, si devono rispettare i vincoli imposti dal Modello di Interoperabilità 2018 in questo documento.
+Per quanto riguarda la sicurezza, l'ultimo profilo standard definito da OASIS è il Basic Security Profile 1.1 [50]_. Il profilo è datato ma le considerazioni sono ancora valide. Per quanto riguarda le versioni dei protocolli, si devono rispettare i vincoli imposti dal Modello di Interoperabilità 2018 in questo documento.
 
-E' importante, nel caso si richiedessero funzionalità di autorizzazione, autenticazione e non ripudio, oltre che di riservatezza (coperta dall'utilizzo obbligatorio di HTTPS [50]_) fare affidamento alle tecnologie di autenticazione ed autorizzazione a livello applicativo. Il Basic Security Profile 1.1, basato sull'estensione WS-Security, suggerisce l'uso di SAML 2.0. Come detto, rispetto alle tecnologie di autenticazione ed autorizzazione, ci sono alcuni domini applicativi per i quali OAuth2 o OpenId sono più appropriati. In questi ultimi casi, fermo restando l'utilizzo della XML Signature definita in WS-Security per quanto riguarda il non ripudio, l'utilizzo di token di autorizzazione ed autenticazione non SAML richiede la definizione di request header custom [51]_.
+E' importante, nel caso si richiedessero funzionalità di autorizzazione, autenticazione e non ripudio, oltre che di riservatezza (coperta dall'utilizzo obbligatorio di HTTPS [51]_) fare affidamento alle tecnologie di autenticazione ed autorizzazione a livello applicativo. Il Basic Security Profile 1.1, basato sull'estensione WS-Security, suggerisce l'uso di SAML 2.0. Come detto, rispetto alle tecnologie di autenticazione ed autorizzazione, ci sono alcuni domini applicativi per i quali OAuth2 o OpenId sono più appropriati. In questi ultimi casi, fermo restando l'utilizzo della XML Signature definita in WS-Security per quanto riguarda il non ripudio, l'utilizzo di token di autorizzazione ed autenticazione non SAML richiede la definizione di request header custom [52]_.
 
 Uniformità e naming
 -------------------
 
-Non esistono standard riguardanti il naming in ambito SOAP. Le best-practice prevedono l'utilizzo di CamelCase [52]_ (con prima lettera maiuscola, anche noto come PascalCase) per endpoint, porte, operazioni e parametri.
+Non esistono standard riguardanti il naming in ambito SOAP. Le best-practice prevedono l'utilizzo di CamelCase [53]_ (con prima lettera maiuscola, anche noto come PascalCase) per endpoint, porte, operazioni e parametri.
 
-Quando le risorse contengono link e riferimenti a risorse esterne, si dovrebbero usare le specifiche indicate in IANA registered link relations [53]_ trasformando il Kebab Case [54]_ utilizzato con il CamelCase.
+Quando le risorse contengono link e riferimenti a risorse esterne, si dovrebbero usare le specifiche indicate in IANA registered link relations [54]_ trasformando il Kebab Case [55]_ utilizzato con il CamelCase.
 
 
 .. [45] Cf. `https://www.w3.org/TR/soap12-part1/ <https://www.w3.org/TR/soap12-part1/>`_
@@ -69,15 +69,17 @@ Quando le risorse contengono link e riferimenti a risorse esterne, si dovrebbero
 
 .. [48] Cf. `http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html <http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html>`_
 
-.. [49] Cf. `http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html <http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html>`_
+.. [49] Le SOAP fault devono essere accompagnate anch’esse da un appropriato codice di errore HTTP. Per SOAP fault comuni si può fare riferimento a 'https://www.w3.org/TR/2007/REC-soap12-part2-20070427/#tabresstatereccodes' <https://www.w3.org/TR/2007/REC-soap12-part2-20070427/#tabresstatereccodes>_.
 
-.. [50] HTTPS è richiesto dal modello di interoperabilità ma non da BP2.
+.. [50] Cf. `http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html <http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html>`_
 
-.. [51] Cf. `https://developers.google.com/adwords/api/docs/guides/call-structure <https://developers.google.com/adwords/api/docs/guides/call-structure>`_
+.. [51] HTTPS è richiesto dal modello di interoperabilità ma non da BP2.
 
-.. [52] Cf. `https://it.wikipedia.org/wiki/Notazione\_a\_cammello <https://it.wikipedia.org/wiki/Notazione_a_cammello>`_
+.. [52] Cf. `https://developers.google.com/adwords/api/docs/guides/call-structure <https://developers.google.com/adwords/api/docs/guides/call-structure>`_
 
-.. [53] Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
+.. [53] Cf. `https://it.wikipedia.org/wiki/Notazione\_a\_cammello <https://it.wikipedia.org/wiki/Notazione_a_cammello>`_
 
-.. [54] Cf. `https://it.wikipedia.org/wiki/Kebab\_case <https://it.wikipedia.org/wiki/Kebab_case>`_
+.. [54] Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
+
+.. [55] Cf. `https://it.wikipedia.org/wiki/Kebab\_case <https://it.wikipedia.org/wiki/Kebab_case>`_
 
