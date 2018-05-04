@@ -15,24 +15,24 @@ Questa sezione descrive questi concetti introducendo le principali tecniche impi
 Disponibilità
 ^^^^^^^^^^^^^
 
-Il concetto di disponibilità è stato precedentemente introdotto nella Sezione 1.3 parlando della QoS. Il concetto di disponibilità è legato strettamente anche a quello di sicurezza, poiché la disponibilità di una interfaccia di servizio può essere legata non solo a cause di natura tecnica ma anche a specifici tipi di attacco (ad es., denial of service).
+Il concetto di disponibilità è stato introdotto nella Sezione 1.3 parlando della QoS. Il concetto di disponibilità è legato strettamente anche a quello di sicurezza, poiché la disponibilità di una interfaccia di servizio può essere legata non solo a cause di natura tecnica ma anche a specifici tipi di attacco (ad es., denial of service).
 
 Riservatezza
 ^^^^^^^^^^^^
 
-Il termine riservatezza (privacy) è spesso utilizzato come equivalente di confidenzialità. La confidenzialità è la proprietà di un canale di comunicazione per la quale l'informazione non è rivelata se non agli utenti autorizzati. Il termine confidenzialità è comunque più generale di riservatezza, in quanto quest'ultima viene ottenuta tramite la cifratura del canale di comunicazione mentre la confidenzialità include anche meccanismi di autorizzazione (vedi Sezione 2.1.6).
+Il termine riservatezza (privacy) è spesso utilizzato come equivalente di confidenzialità. La confidenzialità è la proprietà di un canale di comunicazione per la quale l'informazione non è rivelata se non agli utenti autorizzati. Il termine confidenzialità è più generale di riservatezza, in quanto quest'ultima viene ottenuta tramite la cifratura del canale di comunicazione mentre la confidenzialità include anche meccanismi di autorizzazione (vedi Sezione 2.1.6).
 
 In un metodo di cifratura, un messaggio in chiaro (anche chiamato plain text) viene trasformato in un messaggio codificato e viceversa. Gli algoritmi di cifratura si distinguono in meccanismi a chiave simmetrica (o privata o condivisa) e chiave asimmetrica (o pubblica). In entrambi i casi la lunghezza delle chiavi influenza la sicurezza della comunicazioni (chiavi più lunghe sono più sicure) perché proteggono maggiormente da attacchi a forza bruta. Si suppone infatti che ogni meccanismo di cifratura possa essere rotto tramite enumerazione a patto che il tempo necessario (esponenziale nella lunghezza della chiave) non sia troppo lungo rispetto agli scopi dell'attaccante. Un'altra tipologia di attacco ai metodi di cifratura (che si applica in particolar modo ai metodi a chiave simmetrica in cui le password sono generate da umani) sono quelli di tipo dizionario, basati sull'uso di parole di uso comune.
 
 Nei meccanismi di cifratura a chiave privata, entrambe le parti (il mittente ed il destinatario) nel canale di comunicazione condividono la stessa chiave di cifratura che viene impiegata sia per cifrare che per decifrare il messaggio. La cifratura a chiave simmetrica è molto efficiente e viene utilizzata per la riservatezza di grandi quantità di dati (ad es., interi file). È necessario che le due parti abbiano condiviso la chiave privata con un metodo sicuro (ad es., scambiandola fisicamente di persona oppure tramite un meccanismo di cifratura a chiave pubblica, come si vedrà nella Sezione 2.4). Algoritmi noti di cifratura a chiave simmetrica sono RC4, DES, Triple DES, AES, IDEA e Camellia.
 
-Nei meccanismi di cifratura a chiave pubblica, vengono utilizzate due chiavi diverse per la cifratura e la decifratura dei messaggi. In particolare si supponga che il destinatario abbia una coppia di chiavi di cui una è privata (conosciuta solo al destinatario) ed una è pubblica (conosciuta a tutti e liberamente inviata sulla rete anche in chiaro). Al fine di inviare un messaggio su di un canale sicuro, il mittente cifra il messaggio utilizzando la chiave pubblica del destinatario, ma questo potrà essere decifrato solo dal destinatario utilizzando la chiave privata. Per il destinatario infatti chiave pubblica e chiave privata sono state generate in modo da essere complementari. Il meccanismo a chiave pubblica risolve il problema della condivisione delle chiavi poiché la chiave pubblica può essere liberamente inviata su Internet senza pericolo (non può essere utilizzata per decifrare il
+Nei meccanismi di cifratura a chiave pubblica, vengono utilizzate due chiavi diverse per la cifratura e la decifratura dei messaggi. In particolare si supponga che il destinatario abbia una coppia di chiavi di cui una è privata (conosciuta solo al destinatario) ed una è pubblica (conosciuta a tutti e liberamente inviata sulla rete anche in chiaro). Al fine di inviare un messaggio su di un canale sicuro, il mittente cifra il messaggio utilizzando la chiave pubblica del destinatario, ma questo potrà essere decifrato solo dal destinatario utilizzando la chiave privata. Per il destinatario infatti chiave pubblica e chiave privata sono state generate in modo da essere complementari. Il meccanismo a chiave pubblica risolve il problema della condivisione delle chiavi poiché la chiave pubblica può essere inviata su Internet senza pericolo (non può essere utilizzata per decifrare il
 messaggio). Come difetto, la crittografia a chiave pubblica soffre di basse prestazioni e per questo motivo viene utilizzata o nelle fasi preliminari necessarie a concordare una chiave privata di sessione condivisa (come nel caso di TLS) oppure per i meccanismi di firma digitale (quindi non a scopo di cifratura). L'algoritmo più diffuso per la cifratura a chiave pubblica è RSA (dai nomi degli inventori Rivest Shamir e Adleman).
 
 Integrità e Firma Digitale
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Un messaggio in transito su una rete informatica può subire delle modifiche (ad esempio tramite attacchi di tipo man-in-the-middle). I meccanismi a chiave pubblica possono essere utilizzati ai fini di produrre delle prove, dette firme digitali, che permettono di verificare che il messaggio ricevuto è uguale a quello inviato.
+Un messaggio in transito su una rete informatica può subire delle modifiche (ad esempio tramite attacchi di tipo man-in-the-middle). I meccanismi a chiave pubblica possono essere utilizzati ai fini di produrre delle prove, dette firme digitali, utili a di verificare che il messaggio ricevuto sia uguale a quello inviato.
 
 Il meccanismo di firma digitale prevede di inviare assieme al messaggio, un secondo messaggio (detto firma digitale) ottenuto dal primo:
 
@@ -58,9 +58,9 @@ Essa, come detto, viene posta pubblicamente su Internet ma niente vieta ad un at
 
 Nella PKI oltre al mittente ed al destinatario del messaggio, viene aggiunto una terza parte detta Certification Authority (Autorità di Certificazione) la quale emette dei certificati. Un certificato è un documento in chiaro contenenti informazioni riguardanti l'identità dell'intestatario del certificato e la sua chiave pubblica e viene firmato dalla certification authority utilizzando la propria chiave privata.
 
-La chiave pubblica relativa alla certification authority è installata nei sistemi operativi (e distribuita solitamente tramite gli aggiornamenti degli stessi), viene utilizzata per verificare che la chiave pubblica del mittente sia effettivamente autentica. Il mittente invia assieme al messaggio firmato il suo certificato che viene validato utilizzando la chiave pubblica della certification authority che ha emesso il certificato stesso.
+La chiave pubblica della certification authority è installata nei sistemi operativi (e distribuita solitamente tramite gli aggiornamenti degli stessi), viene utilizzata per verificare che la chiave pubblica del mittente sia autentica. Il mittente invia assieme al messaggio firmato il suo certificato che viene validato utilizzando la chiave pubblica della certification authority che ha emesso il certificato stesso.
 
-Il meccanismo PKI ovviamente è sicuro fino a quando un attaccante non è in grado di installare sulle macchine del destinatario una public key fasulla per le certification authority. Per ovviare a questi problemi sono necessari dei meccanismi di sicurezza a livello di macchina che sono fuori dal perimetro di questo documento. Lo standard comunemente usato per i certificati è X.509.
+Il meccanismo PKI è sicuro fino a quando un attaccante non è in grado di installare sulle macchine del destinatario una public key fasulla per le certification authority. Per ovviare a questi problemi sono necessari dei meccanismi di sicurezza a livello di macchina che sono fuori dal perimetro di questo documento. Lo standard comunemente usato per i certificati è X.509.
 
 Nel Modello di Interoperabilità 2018, le amministrazioni dovranno acquistare certificati commerciali. Negli ultimi anni alternative all'approccio PKI sono stati proposti (ad es., Web of Trust) ma il Modello attualmente ne vieta l'utilizzo.
 
@@ -75,7 +75,7 @@ L'autenticazione è spesso ottenuta in due fasi:
 
 2.  Il contesto di autenticazione è impiegato per autenticarsi con l'altra parte della comunicazione.
 
-Si noti come il meccanismo di non ripudio basato su PKI e firma digitale presentato in Sezione 2.1.4 sia esso stesso un metodo di autenticazione ed in tal modo è usato in protocolli di strato di trasporto quali TLS (vedi Sezione 2.4) al fine di garantire non ripudio. Esistono poi dei protocolli di autenticazione a livello applicativo che forniscono dei vantaggi rispetto all'autenticazione basata su PKI: 
+Si noti come il meccanismo di non ripudio basato su PKI e firma digitale presentato in Sezione 2.1.4 sia un metodo di autenticazione ed in tal modo è usato in protocolli di strato di trasporto quali TLS (vedi Sezione 2.4) al fine di garantire non ripudio. Esistono poi dei protocolli di autenticazione a livello applicativo che forniscono dei vantaggi rispetto all'autenticazione basata su PKI: 
 
 -   L'autenticazione basata su PKI solitamente non autentica solo i soggetti ma anche le macchine coinvolte (ad es., il certificato di un sito Internet contiene anche i nomi DNS su cui il sito risponderà);
 
@@ -105,11 +105,11 @@ Nelle sezioni precedenti alcune minacce alla sicurezza sono state accennate. In 
 
 -   *Attacchi su base password*. In questo caso l'attaccante cerca di ottenere delle password, utilizzate ad esempio ai fini di autenticazione ed autorizzazione. Come già anticipato, gli attacchi basati su password si basano o su forza bruta oppure su metodi di tipo dizionario. Questo tipo di attacchi si evitano impostato politiche forti riguardo alle password utilizzate e metodi di autenticazione forte (a più fattori).
 
--   *Denial of service - DoS*. In questo tipo di attacco l'attaccante mira semplicemente a rendere non operativa una interfaccia di servizio inondandola di richieste e minando quindi l'accessibilità dell'interfaccia di  servizio stessa. Difendersi da questi tipi di attacchi è in genere molto difficile (specialmente nella variante distribuita degli stessi).
+-   *Denial of service - DoS*. In questo tipo di attacco l'attaccante mira a rendere non operativa una interfaccia di servizio inondandola di richieste e minandone quindi l'accessibilità. Difendersi da questi tipi di attacchi è in genere molto difficile (specialmente nella variante distribuita DDoS).
 
 -   *Attacchi man-in-the-middle*. In questo caso un attaccante si intromette come terza parte in una conversazione tra mittente e destinatario modificando i messaggi scambiati. Gli attacchi man-in-the-middle si combattono tramite tecniche di cifratura ed integrità degli scambi.
 
-In alcuni casi, gli attaccanti possono sfruttare delle falle scoperte nei protocolli o nelle implementazioni degli stessi. E' quindi di fondamentale importanza tenere aggiornati i sistemi ed utilizzare quando possibile versioni aggiornate dei protocolli.
+In alcuni casi, gli attaccanti possono sfruttare delle falle scoperte nei protocolli o nelle implementazioni. E' quindi di fondamentale importanza tenere aggiornati i sistemi ed utilizzare quando possibile versioni aggiornate dei protocolli.
 
 Protocolli per autenticazione e autorizzazione
 ----------------------------------------------
@@ -118,7 +118,7 @@ Nel caso di autenticazione ed autorizzazione, occorre distinguere gli approcci u
 
 -   OAuth2 [26]_ è uno standard per l'autorizzazione;
 
--   OpenID [27]_. Uno standard pensato per la sola autenticazione. L'ultima versione, denominata OpenID Connect [28]_, è costruita su OAuth2 in termini di scambio di messaggi;
+-   OpenID [27]_ è uno standard pensato per la sola autenticazione. L'ultima versione, denominata OpenID Connect [28]_, è costruita su OAuth2 in termini di scambio di messaggi;
 
 -   Security Assertion Markup Language - SAML [29]_ (la versione corrente è la 2) è il protocollo più vecchio in circolazione e copre l'autenticazione e in parte l'autorizzazione;
 
@@ -126,7 +126,9 @@ Nel caso di autenticazione ed autorizzazione, occorre distinguere gli approcci u
 
 Nei protocolli human-to-machine, un client riceve autorizzazioni ad usare un certo tipo di risorsa per conto di un utente umano tramite le credenziali di quest'ultimo. La richiesta del token/assertion è effettuate per mezzo di uno user-agent (cioè un browser o una app mobile) che funge da intermediario.
 
-Il ModI 2018 obbliga all'utilizzo di SPID per l'autenticazione human-to-machine o degli altri metodi indicati nell'art. 64 del Codice per l'Amministrazione Digitale - CAD [31]_ che includono anche la Carta d'Identità Elettronica - CIE e la Carta Nazionale dei Servizi - CNS. SPID [32]_ è attualmente basato su SAML ma il supporto per OpenID Connect è in fase di definizione al fine di supportare in maniera più semplice l'autenticazione da piattaforme mobili.
+Il ModI 2018 obbliga all'utilizzo di SPID per l'autenticazione human-to-machine o degli altri metodi indicati nell'art. 64 del Codice per l'Amministrazione Digitale - CAD [31]_ che includono anche la Carta d'Identità Elettronica - CIE e la Carta Nazionale dei Servizi - CNS. 
+
+SPID [32]_ è attualmente basato su SAML ma il supporto per OpenID Connect è in fase di definizione al fine di supportare in maniera più semplice l'autenticazione da piattaforme mobili.
 
 In questo senso vale la pena esplorare le differenze principali tra SAML ed OpenID Connect (in breve Connect). Dal punto di vista della terminologia i due protocolli utilizzano termini differenti per gli stessi componenti:
 
@@ -181,6 +183,8 @@ Diffie--Hellman - ECDHE.
 |                                                                       |
 | -   DEVE essere cifrato tramite TLS \>= 1.2;                          |
 |                                                                       |
+| -   DEVE essere firmato con SHA-256 o superiore                       |
+|                                                                       |
 | -   DEVE essere conforme alle misure minime AgID Basic Security       |
 |     Controls [41]_;                                                   |
 |                                                                       |
@@ -207,7 +211,7 @@ Diffie--Hellman - ECDHE.
 
 Numerose sono le minacce alla sicurezza a cui è esposto TLS (in special modo con vecchie versioni del protocollo accoppiate ad algoritmi per cifratura ed integrità vulnerabili). L'IETF nel 2015 ha rilasciato a riguardo una RFC informativa [43]_. Per questo motivo, in determinati scenari che richiedono elevati standard di sicurezza, si aggiunge talvolta un ulteriore strato di sicurezza a livello applicativo.
 
-Nel modello SPCoop si richiedeva che in ogni caso HTTPS fosse utilizzato con autenticazione mutual-TLS (vedi Sezione 2.3). Nel tempo sono emersi scenari di interazione con requisiti di sicurezza inferiori (ad es., solo HTTPS non-mutual-TLS), che non giustificano la complessità di un sistema a mutua autenticazione (ad es., accessi in sola consultazione, applicazioni Web o sistemi IoT [44]_) a livello di trasporto. Fermo l'obbligo di usare HTTPS, nasce l'esigenza di venire incontro a diversi scenari e definire per essi modelli di autenticazione e di trust differenziati. Questi aspetti verranno definiti nel documento 3 del Modello.
+Nel modello SPCoop si richiedeva che in ogni caso HTTPS fosse utilizzato con autenticazione mutual-TLS (vedi Sezione 2.3). Nel tempo sono emersi scenari di interazione con requisiti di sicurezza inferiori (ad es., solo HTTPS non-mutual-TLS), che non giustificano la complessità di un sistema a mutua autenticazione (ad es., accessi in sola consultazione, applicazioni Web o sistemi IoT [44]_) a livello di trasporto. Fermo l'obbligo di usare HTTPS, nasce l'esigenza di venire incontro a diversi scenari e definire per essi modelli di autenticazione e di trust differenziati. Questi aspetti verranno definiti in "Pattern e Profili di Interoperabilità".
 
 
 .. [25] Per questi si faccia riferimento alla letteratura, ad es., William Stallings (2017): Cryptography And Network Security, 7th edition.
