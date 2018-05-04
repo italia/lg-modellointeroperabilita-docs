@@ -4,7 +4,7 @@ Introduzione alle interfacce di servizio
 Il concetto di servizio
 -----------------------
 
-Oggigiorno, i servizi sono sempre più rilevanti nella nostra vita e nei paesi di tutto il mondo. Il concetto di servizio copre un ampio spettro di aspetti nelle relazioni moderne tra amministrazioni pubbliche, fornitori privati e utenti finali.
+I servizi sono sempre più rilevanti nella nostra vita e nei paesi di tutto il mondo. Il concetto di servizio copre un ampio spettro di aspetti nelle relazioni moderne tra amministrazioni pubbliche, fornitori privati e utenti finali.
 
 Introduciamo il concetto di **servizio** [1]_ così come intuitivamente percepito nella vita quotidiana. Interagiamo ogni giorno con le persone e le imprese per soddisfare i nostri bisogni, facendo uso di transazioni, ad esempio di tipo economico in cui, dato un pagamento, possiamo acquisire un bene, o utilizziamo un bene che non è nostro, per raggiungere un obiettivo. Nel secondo caso stiamo parlando dell'uso di un servizio. Ad esempio, quando compriamo un biglietto ferroviario per andare da Milano a Roma, stiamo utilizzando un bene non nostro, il treno, per soddisfare la nostra necessità di trasferimento da un luogo ad un altro. Una volta arrivati a Roma, il nostro bisogno è soddisfatto e nulla ci rimane per l\'uso, in termini di possesso del bene (il treno) che ha contribuito a fornire il servizio. *Un servizio consiste quindi in un'attività, o in una serie di attività, di natura più o meno intangibile, che si svolgono in uno scambio tra un fornitore e un cliente, in cui l\'oggetto della transazione è un bene immateriale.*
 
