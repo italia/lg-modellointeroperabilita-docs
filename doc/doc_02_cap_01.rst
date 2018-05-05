@@ -103,7 +103,7 @@ Concludiamo questa breve introduzione sui servizi, rimarcando che i servizi sono
 Servizio digitale, API e Interfaccia di servizio
 ------------------------------------------------
 
-Un **servizio digitale** (talvolta anche indicato come *electronic service* o *e-service*) è un servizio che *viene erogato via Internet o in una rete, la fornitura è essenzialmente automatizzata o comporta solo un intervento umano minimo, ed è impossibile da garantire in assenza di tecnologia informatica* [2]_. QUanto detto per i servizi, vale anche per quelli digitali, essendo questi una specializzazione.
+Un **servizio digitale** (talvolta anche indicato come *electronic service* o *e-service*) è un servizio che *viene erogato via Internet o in una rete, la fornitura è essenzialmente automatizzata o comporta solo un intervento umano minimo, ed è impossibile da garantire in assenza di tecnologia informatica* [2]_. Quanto detto per i servizi, vale anche per quelli digitali, essendo questi una specializzazione.
 
 La trasposizione di un *servizio* in un *servizio digitale* non si riduce al solo utilizzo di tecnologie informatiche ma, per ottenere la totalità dei vantaggi conseguenti da tale possibilità, richiede la necessità di ridefinire i processi attraverso una riprogettazione degli stessi (*Business Process Reengineering*, in breve BPR). Il BPR deve, tra le altre, assicurare:
 
