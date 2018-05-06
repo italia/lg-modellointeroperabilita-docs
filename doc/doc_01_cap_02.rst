@@ -11,7 +11,7 @@ L'obiettivo dell'EIF è:
 
 -   contribuire all'istituzione del Digital Single Market incoraggiando l'interoperabilità transfrontaliera e intersettoriale per l'erogazione di servizi pubblici europei.
 
-.. image:: ../media/image2.png
+.. image:: ../media/image1.png
 
 *Figura 1 - Ambito di applicazione dell'EIF*
 
