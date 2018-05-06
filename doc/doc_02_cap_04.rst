@@ -69,9 +69,9 @@ Il campo Query dovrebbe:
 
 -   utilizzare ove possibile dei nomi comuni per le funzionalità di paginazione, ricerca ed embedding/resource-expansion (ad es., limit, offset, q, sort).
 
-Le response in formato JSON [75]_, devono tornare sempre oggetti, non liste. Questo permette di estendere le response introducendo successivamente ulteriori attributi (ad es., di paginazione).
+Le risposte in formato JSON [75]_, devono restituire sempre oggetti strutturati con attributi chiave-valore, non semplici liste. Questo permette di estendere facilmente le risposte introducendo in versioni successive ulteriori attributi (ad es., di paginazione).
 
-In caso di errore, le response devono usare schemi standard come quello definito nella RFC 7807 - Problem Details for HTTP APIs - IETF Tools [76]_ in particolare utilizzando il content type application/problem+json nella response.
+In caso di errore, le risposte devono usare schemi standard come quello definito nella RFC 7807 - Problem Details for HTTP APIs - IETF Tools [76]_ in particolare utilizzando il content type application/problem+json nella risposta.
 
 Quando le risorse contengono link e riferimenti a risorse esterne, si dovrebbero usare le specifiche indicate in IANA registered link
 relations [77]_.
@@ -81,11 +81,11 @@ Tutti i riferimenti dovrebbero contenere URL comprensivi di schema.
 Throttling ed indisponibilità del servizio
 ------------------------------------------
 
-Nelle API basate su REST, meccanismi di throttling vengono implementati al fine di garantire l’accessibilità delle interfacce di servizio ed evitare in alcuni casi dump dei dati. 
+Nelle API basate su REST, meccanismi di throttling vengono implementati al fine di garantire l’accessibilità delle interfacce di servizio ed evitare in alcuni casi la raccolta non autorizzata (web-harvesting_) dei dati. 
 
 Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 429, nel Modl2018 si richiede di notificare al fruitore lo stato del throttling ed eventuali limiti come segue:
 
-- ritornare in ogni response valida i valori globali di throttling tramite i seguenti header HTTP:
+- restituire in ogni risposta valida i valori globali di throttling tramite i seguenti header HTTP:
 
 	- X-RateLimit-Limit: limite massimo di richieste per un endpoint;
 	
@@ -95,7 +95,7 @@ Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 42
 	
 - utilizzare gli HTTP status code nelle risposte:
 
-	- HTTP 429 (too many requests), insieme ad i rate limit di cui al punto precedente, se il rate limit viene superato;
+	- HTTP 429 (too many requests), insieme ai rate limit di cui al punto precedente, se il rate limit viene superato;
 	
 	- HTTP 503 (service unavailable) se l'infrastruttura non può erogare le operazioni offerte nei tempi attesi (definiti dalla SLA associata all’interfaccia di servizio).
 	
@@ -178,3 +178,5 @@ I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indica
 .. [78] Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-Afte <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-Afte>`_
 
 .. [79] Cf. `http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html <http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html>`_
+
+.. web-harvesting Cf. https://it.wikipedia.org/wiki/Web_scraping
