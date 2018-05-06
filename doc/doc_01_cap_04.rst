@@ -79,7 +79,7 @@ In particolare SPCoop prevedeva:
 
     -   *Servizi di Sicurezza* assicuravano le funzionalità per la qualificazione degli elementi del sistema e garantire gli opportuni requisiti di autenticità, riservatezza, integrità, non ripudio e tracciabilità dei messaggi scambiati.
 
-Il tempo trascorso dalla definizione del modello e il mutato quadro tecnico, organizzativo e normativo rende necessario l'aggiornamento del modello, obiettivo appunto della presente iniziativa, come anticipato nel 2017 attraverso la Determinazione 219/2017 - Linee guida per transitare al nuovo modello di interoperabilità [9]_.
+Il tempo trascorso dalla definizione del modello e il mutato quadro tecnico, organizzativo e normativo rendono necessario l'aggiornamento del modello, obiettivo appunto della presente iniziativa, come anticipato nel 2017 attraverso la Determinazione 219/2017 - Linee guida per transitare al nuovo modello di interoperabilità [9]_.
 
 L'esperienza maturata con SPCoop, di seguito sintetizzata, deve essere considerata nella definizione del ModI 2018.
 
