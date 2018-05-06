@@ -24,7 +24,7 @@ Il concetto di servizio include una grande quantità di aspetti. Di conseguenza,
 	
     b.  servizi che chiamiamo orientati al mercato o facilitanti, che la PA può decidere o meno di fornire, in base alla presenza di un obbligo procedurale, e che sono più spesso erogati da fornitori privati del mercato dei servizi.
 
-I servizi amministrativi forniti dalla PA sono di primario interesse, ma è anche importante attirare l\'attenzione su servizi orientati al mercato, che sono parte delle aspettative e dei bisogni degli utenti e potrebbero essere forniti da soggetti pubblici o privati.
+    I servizi amministrativi forniti dalla PA sono di primario interesse, ma è anche importante attirare l\'attenzione su servizi orientati al mercato, che sono parte delle aspettative e dei bisogni degli utenti e potrebbero essere forniti da soggetti pubblici o privati.
 
 2.  Classificazione in base alla natura finale del servizio prodotto. In questo caso, abbiamo:
 
@@ -32,7 +32,7 @@ I servizi amministrativi forniti dalla PA sono di primario interesse, ma è anch
 
     b.  servizi il cui scopo è quello di fornire informazioni e/o conoscenze che l\'utente non possiede e che sono utili per un\'attività operativa o un processo decisionale. Verranno indicati come servizi informativi o semplicemente informazioni.
 
-Un esempio della prima categoria è la fornitura di una licenza commerciale che consente a un\'azienda di vendere la propria merce; questo servizio modifica lo stato dell\'azienda perché consente una nuova attività commerciale. Un esempio di servizio informativo è l\'informazione resa disponibile sugli orari di apertura di un laboratorio, che non cambia lo stato del soggetto che ha richiesto l\'informazione, ma gli dà la possibilità di intraprendere un\'azione o di prendere una decisione per andarci.
+    Un esempio della prima categoria è la fornitura di una licenza commerciale che consente a un\'azienda di vendere la propria merce; questo servizio modifica lo stato dell\'azienda perché consente una nuova attività commerciale. Un esempio di servizio informativo è l\'informazione resa disponibile sugli orari di apertura di un laboratorio, che non cambia lo stato del soggetto che ha richiesto l\'informazione, ma gli dà la possibilità di intraprendere un\'azione o di prendere una decisione per andarci.
 
 3.  Classificazione in base al consumatore. In questo caso, possiamo distinguere tra:
 
