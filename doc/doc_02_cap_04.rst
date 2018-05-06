@@ -13,7 +13,7 @@ A differenza delle interfacce di servizio SOAP, per cui una serie di standard è
 
 Per la specifica delle interfacce REST esistono due grandi iniziative: OpenAPI e RAML.
 Sebbene simili dal punto di vista dello sviluppatore di interfacce di servizio, la specifica RAML è più indirizzata alla creazione automatica di server e di client per API, mentre OpenAPI (attualmente nella versione OpenAPI v3) contiene elementi più descrittivi per la documentazione e la catalogazione (che invece sono disponibili in RAML come estensioni ad-hoc) e si sta imponendo come standard de-facto.  
-Altri standard proposti in passato, quali Web Application Description Language - WADL, hanno avuto scarso successo e nei framework in cui sono stati utilizzati si sta optando per il passaggio ad OpenAPI v3 [57]_.
+Altri standard proposti in passato, quali Web Application Description Language - WADL, hanno avuto scarso successo e nei framework in cui sono stati utilizzati si sta optando per il passaggio ad OpenAPI v3 [57]_. Per queste ragioni il ModI 2018 impone l’uso di OpenAPI v3.
 
 E’ possibile assicurare la conversione tra le differenti rappresentazioni delle interfacce REST tramite tool automatici. 
 
