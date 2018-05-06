@@ -55,13 +55,13 @@ In questa sezione introduciamo le best practice da utilizzare per interfacce di 
 
 La componente Authority dell'URL:
 
--   dovrebbe essere associata al dominio del sito Istituzionale dell'erogatore presente su IndicePA, anche tramite il prefisso \"api\", ad esempio se il sito istituzionale dell'erogatore fosse erogatore.gov.it allora l'authority potrebbe esssere api.erogatore.gov.it;
+-   dovrebbe essere associata al dominio del sito Istituzionale dell'erogatore presente su IndicePA, anche tramite il prefisso \"api\", ad esempio un erogatore con sito istituzionale \"erogatore.gov.it\", potrebbe usare come authority  \"api.erogatore.gov.it\";
 
 -   può essere associata al dominio di un ente che l\'erogatore ha delegato (ad es., una società in-house, un consorzio di comuni).
 
 Per quanto riguarda la componente Path, i nomi utilizzati non devono usare abbreviazioni e acronimi non universalmente riconosciuti [73]_. Inoltre, il Path dovrebbe essere semplice, intuitivo e coerente [74]_.
 
-Per quanto riguarda il campo Query, esso dovrebbe:
+Il campo Query dovrebbe:
 
 -   essere in snake\_case minuscolo;
 
