@@ -490,3 +490,8 @@ Le indicazioni generali sono:
 .. [23] Cf. `https://tools.ietf.org/html/rfc3339\#section-5.6 <https://tools.ietf.org/html/rfc3339#section-5.6>`_
 
 .. [24] Cf. `https://it.wikipedia.org/wiki/Nomenclatura\_delle\_unit%C3%A0\_territoriali\_statistiche <https://it.wikipedia.org/wiki/Nomenclatura_delle_unit%C3%A0_territoriali_statistiche>`_
+
+.. |s[i]| replace:: s\ :sub:`i`
+
+.. |s[j]| replace:: s\ :sub:`j`
+
