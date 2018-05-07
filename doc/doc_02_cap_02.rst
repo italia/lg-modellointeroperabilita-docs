@@ -202,7 +202,7 @@ Diffie--Hellman - ECDHE.
 |     Serial Number ed Issuer;                                          |
 |                                                                       |
 | -   DEVE avere il parametro keyUsage con i seguenti bit:              |
-|     `digitalSignature, keyEncipherment [42]_;                         |
+|     `digitalSignature, keyEncipherment_ [42]_;                        |
 |                                                                       |
 | -   DOVREBBE contenere i riferimenti al DNS dei domini serviti;       |
 |                                                                       |
@@ -256,3 +256,6 @@ Nel modello SPCoop si richiedeva che in ogni caso HTTPS fosse utilizzato con aut
 .. [43] Cf. `https://tools.ietf.org/html/rfc7457 <https://tools.ietf.org/html/rfc7457>`_
 
 .. [44] Un esempio potrebbe essere una interfaccia di servizio di un comune che permette di avere in tempo reale la situazione dei posti liberi nei parcheggi comunali. Un sistema di trasporto integrato regionale accede al dato su tutti i parcheggi dei comuni della regione e mostra in tempo reale la situazione aggregata dei parcheggi disponibili. In questo scenario, l'informazione scambiata (numero posti liberi) è poco sensibile e eventuali apparati installati presso i parcheggi non giustificano il costo necessario di una configurazione a prova di non ripudio ed una mutua autenticazione TLS. Esempi di tali scenari (con standard diversi da SPCoop) sono emersi in E015, sviluppato in occasione di Expo nella Regione Lombardia.
+
+
+.. _keyEncipherment: https://tools.ietf.org/html/rfc5280#section-4.2.1.3
