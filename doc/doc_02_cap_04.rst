@@ -150,8 +150,7 @@ I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indica
 
 .. [72] Cf. `https://tools.ietf.org/html/rfc3986 <https://tools.ietf.org/html/rfc3986>`_
 
-.. [73] Cf. `https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo\_elementi\_obbligatori.html\#titolo-dct-title <https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo_elementi_obbligatori.html#titolo-dct-title>`_
-    Ad esempio, 
+.. [73] Cf. `https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo\_elementi\_obbligatori.html\#titolo-dct-title <https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo_elementi_obbligatori.html#titolo-dct-title>`_ Ad esempio, 
 	(i) sono ammesse stringhe come \"id\", \"args\" o \"stdin\" ed abbreviazioni come \"tcp\" ed \"udp\"; 
 	(ii) stringhe come \"codice fiscale\" andrebbero espresse per esteso con \"codice\_fiscale\" o \"tax\_code\", e non con \"cod\_fiscale\", \"cod\_fisc\" o \"cf\".
 
