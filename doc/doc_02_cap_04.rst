@@ -151,22 +151,24 @@ I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indica
 .. [72] Cf. `https://tools.ietf.org/html/rfc3986 <https://tools.ietf.org/html/rfc3986>`_
 
 .. [73] Cf. `https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo\_elementi\_obbligatori.html\#titolo-dct-title <https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo_elementi_obbligatori.html#titolo-dct-title>`_ Ad esempio, 
-	(i) sono ammesse stringhe come \"id\", \"args\" o \"stdin\" ed abbreviazioni come \"tcp\" ed \"udp\"; 
-	(ii) stringhe come \"codice fiscale\" andrebbero espresse per esteso con \"codice\_fiscale\" o \"tax\_code\", e non con \"cod\_fiscale\", \"cod\_fisc\" o \"cf\".
+	
+	- sono ammesse stringhe come \"id\", \"args\" o \"stdin\" ed abbreviazioni come \"tcp\" ed \"udp\"; 
+	
+	- stringhe come \"codice fiscale\" andrebbero espresse per esteso con \"codice\_fiscale\" o \"tax\_code\", e non con \"cod\_fiscale\", \"cod\_fisc\" o \"cf\".
 
 .. [74] Alcune indicazioni in questo senso:
 
-    - usare parole minuscole separate da trattino "-";
+	- usare parole minuscole separate da trattino "-";
 
-    - usare nomi al plurale per le risorse e al singolare per l\'accesso alla singola risorsa;
+	- usare nomi al plurale per le risorse e al singolare per l\'accesso alla singola risorsa;
 
-    - ispirarsi alle convenzioni utilizzate a livello europeo (ad es., Core Vocabularies/Dizionari Controllati, Direttiva Europea INSPIRE 2007/2/CE);
+	- ispirarsi alle convenzioni utilizzate a livello europeo (ad es., Core Vocabularies/Dizionari Controllati, Direttiva Europea INSPIRE 2007/2/CE);
 
-    - non contenere verbi (ad es., api.example.com/ospedale/prenota/);
+	- non contenere verbi (ad es., api.example.com/ospedale/prenota/);
 
-    - uniformarsi a quello di altre interfacce di servizio a livello Europeo quando ciò vada nella direzione dell\'interoperabilità e della semplicità.
+	- uniformarsi a quello di altre interfacce di servizio a livello Europeo quando ciò vada nella direzione dell\'interoperabilità e della semplicità.
 
-    In generale inoltre, tutte le stringhe in inglese, dovrebbero utilizzare la dizione US per evitare ambiguità come ad es., \"color\" vs \"colour\", \"flavor\" vs \"flavour\").
+	- In generale inoltre, tutte le stringhe in inglese, dovrebbero utilizzare la dizione US per evitare ambiguità come ad es., \"color\" vs \"colour\", \"flavor\" vs \"flavour\").
 
 .. [75] Cf. `https://tools.ietf.org/html/rfc7159 <https://tools.ietf.org/html/rfc7159>`_
 
