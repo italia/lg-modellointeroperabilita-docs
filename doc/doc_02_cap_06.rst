@@ -45,7 +45,7 @@ L'utilizzo di SOAP è suggerito:
 
 -   Quando la semantica HTTP non è sufficiente ad esprimere la logica applicativa ed è necessario usare un protocollo di messaging ulteriore con dei propri header;
 
--   Se la specifica applicazione richiede la creazione di interfacce di servizio principalmente *stateful*, cioè l'accesso ad informazioni di contesto o la gestione dello stato della conversazione [89]_. SOAP prevede estensioni (ad esempio relative al concetto di transazione) che con altri approcci (ad es., REST) devono essere costruite ad-hoc per la specifica applicazione. 
+-   Se la specifica applicazione richiede la creazione di interfacce di servizio principalmente *stateful*, cioè l'accesso ad informazioni di contesto o la gestione dello stato della conversazione [89]_. SOAP prevede estensioni (eg. relative al concetto di transazione) che con altri approcci (ad es., REST) devono essere costruite ad-hoc per la specifica applicazione. 
 
 -   Nel caso si necessiti di processamento asincrono che non sia possibile implementare con semantiche HTTP;
 

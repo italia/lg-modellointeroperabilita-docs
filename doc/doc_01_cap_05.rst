@@ -125,7 +125,7 @@ La presenza del Catalogo è funzionale a:
 
 La realizzazione del Catalogo deve, fatti salvi i principi comuni che saranno emanati dall'Agenzia per l'Italia Digitale al fine di permettere una normalizzazione a livello nazionale, tener conto della:
 
--   specificità dei territori e dei diversi ambiti entro cui la PA opera che potrà determinare la specializzazione del catalogo, prevedendo contenuti con un livello di aggregazione territoriale (ad esempio su base regionale) e/o relativamente agli ambiti tematici entro cui opera la PA (ad esempio giustizia). Tale scelta è ulteriormente giustificata dalla opportunità di favorire momenti di aggregazione di soggetti omogenei.
+-   specificità dei territori e dei diversi ambiti entro cui la PA opera che potrà determinare la specializzazione del catalogo, prevedendo contenuti con un livello di aggregazione territoriale (eg. su base regionale) e/o relativamente agli ambiti tematici entro cui opera la PA (eg. giustizia). Tale scelta è ulteriormente giustificata dalla opportunità di favorire momenti di aggregazione di soggetti omogenei.
 
 -   esigenza di assicurare la governance del Catalogo, quale presupposto per garantire una semantica univoca e condivisa, per evitare ridondanze e/o sovrapposizioni in termini di competenze e contenuti.
 

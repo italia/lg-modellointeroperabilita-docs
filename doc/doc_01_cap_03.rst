@@ -31,7 +31,7 @@ Il modello strategico, pensato per superare l'approccio a "silos", storicamente 
 
 4.  Le **Infrastrutture immateriali** e il **Data & Analytics Framework** (DAF) della PA, che incentivano la centralizzazione e la razionalizzazione dei sistemi per la gestione dei processi e dei dati, riducendo la frammentazione degli interventi. In particolare, le *Infrastrutture immateriali* facilitano, standardizzano e razionalizzano la creazione di servizi ICT e sono composte dalle Piattaforme abilitanti e dai Dati della PA:
 	
-	1. nelle *piattaforme abilitanti* ricadono tutti quei servizi infrastrutturali (ad esempio, servizio di identificazione, servizio di pagamenti, ANPR) che agevolano e riducono i costi per la realizzazione di nuovi servizi uniformando gli strumenti utilizzati dagli utenti finali durante la loro interazione con la PA;
+	1. nelle *piattaforme abilitanti* ricadono tutti quei servizi infrastrutturali (eg. servizio di identificazione, servizio di pagamenti, ANPR) che agevolano e riducono i costi per la realizzazione di nuovi servizi uniformando gli strumenti utilizzati dagli utenti finali durante la loro interazione con la PA;
 
 	2. relativamente ai *dati della PA* si distinguono: le basi di dati di interesse nazionale, gli open data, e i vocabolari controllati.
 
