@@ -216,7 +216,7 @@ Nel modello SPCoop si richiedeva che in ogni caso HTTPS fosse utilizzato con aut
 
 
 .. discourse::
-	:topic_identifier: 0000
+   :topic_identifier: 0000
 
 	
 .. [25] Per questi si faccia riferimento alla letteratura, ad es., William Stallings (2017): Cryptography And Network Security, 7th edition.
