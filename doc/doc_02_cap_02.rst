@@ -202,7 +202,7 @@ Diffie--Hellman - ECDHE.
 |     Serial Number ed Issuer;                                          |
 |                                                                       |
 | -   DEVE avere il parametro keyUsage con i seguenti bit:              |
-|     `digitalSignature, keyEncipherment <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_ [42]_;                          |
+|     `digitalSignature, keyEncipherment [42]_;                         |
 |                                                                       |
 | -   DOVREBBE contenere i riferimenti al DNS dei domini serviti;       |
 |                                                                       |

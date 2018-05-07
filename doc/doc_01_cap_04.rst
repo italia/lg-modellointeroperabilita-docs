@@ -1,7 +1,7 @@
 Scenario pregresso dell'interoperabilità nella PA
 =================================================
 
-Nell'ottobre 2005 il CNIPA (oggi Agenzia per l'Italia digitale - AgID) ha pubblicato un insieme di documenti che costituiscono il riferimento tecnico per l'interoperabilità fra le PA. Tali documenti delineano il quadro tecnico-implementativo del Sistema pubblico di cooperazione (SPCoop), framework di interoperabilità a livello applicativo [8]_.
+Nell'ottobre 2005 il CNIPA (oggi Agenzia per l'Italia digitale - AgID) ha pubblicato un insieme di documenti che costituiscono il riferimento tecnico per l'interoperabilità fra le PA. Tali documenti delineano il quadro tecnico-implementativo del Sistema pubblico di cooperazione (SPCoop), `framework di interoperabilità a livello applicativo <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__ [8]_.
 
 SPCoop ha costituito il modello concettuale ed architetturale della cooperazione applicativa tra differenti Amministrazioni e/o soggetti pubblici italiani. Tale sistema era organizzato in modo da:
 
@@ -79,7 +79,7 @@ In particolare SPCoop prevedeva:
 
     -   *Servizi di Sicurezza* assicuravano le funzionalità per la qualificazione degli elementi del sistema e garantire gli opportuni requisiti di autenticità, riservatezza, integrità, non ripudio e tracciabilità dei messaggi scambiati.
 
-Il tempo trascorso dalla definizione del modello e il mutato quadro tecnico, organizzativo e normativo rendono necessario l'aggiornamento del modello, obiettivo appunto della presente iniziativa, come anticipato nel 2017 attraverso la Determinazione 219/2017 - Linee guida per transitare al nuovo modello di interoperabilità [9]_.
+Il tempo trascorso dalla definizione del modello e il mutato quadro tecnico, organizzativo e normativo rendono necessario l'aggiornamento del modello, obiettivo appunto della presente iniziativa, come anticipato nel 2017 attraverso la Determinazione 219/2017 - `Linee guida per transitare al nuovo modello di interoperabilità <http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf>`__ [9]_.
 
 L'esperienza maturata con SPCoop, di seguito sintetizzata, deve essere considerata nella definizione del ModI 2018.
 
