@@ -1,7 +1,7 @@
 REST
 ====
 
-REpresentational State Transfer (REST) è uno stile architetturale, proposto da Roy Fielding [55]_, che consente di accedere e manipolare rappresentazioni testuali di risorse web usando un insieme predefinito di operazioni stateless. Le interfacce di servizio che seguono lo stile architetturale REST sono dette RESTful o semplicemente REST. Con il termine "risorsa web" si intendevano inizialmente documenti e file identificati da una URL sul World Wide Web. Oggi il termine ha un'accezione molto più generica ed astratta, andando ad indicare ogni cosa o entità che possa essere identificata tramite una URI (si noti il passaggio da URL ad URI che indica l'indipendenza dal protocollo di recupero dei dati). Nel caso dell'applicazione di questo stile architetturale ad HTTP, le operazioni stateless a cui si fa riferimento sono GET, POST, PUT, DELETE a cui
+`REpresentational State Transfer (REST) è uno stile architetturale, proposto da Roy Fielding <http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm>`_ [55]_, che consente di accedere e manipolare rappresentazioni testuali di risorse web usando un insieme predefinito di operazioni stateless. Le interfacce di servizio che seguono lo stile architetturale REST sono dette RESTful o semplicemente REST. Con il termine "risorsa web" si intendevano inizialmente documenti e file identificati da una URL sul World Wide Web. Oggi il termine ha un'accezione molto più generica ed astratta, andando ad indicare ogni cosa o entità che possa essere identificata tramite una URI (si noti il passaggio da URL ad URI che indica l'indipendenza dal protocollo di recupero dei dati). Nel caso dell'applicazione di questo stile architetturale ad HTTP, le operazioni stateless a cui si fa riferimento sono GET, POST, PUT, DELETE a cui
 corrispondono operazioni di tipo Create-Read-Update-Delete - CRUD sulla risorsa. Questo approccio favorisce l'uniformità delle interfacce di servizio.
 
 Il termine "state transfer" indica che è il client a dovere riportare tutte le informazioni necessarie al soddisfacimento di una richiesta, e il server non memorizza alcun tipo di informazione circa la sessione; quindi le interfacce di servizio sono, per definizione, stateless. Questo tipo di approccio favorisce l'introduzione di meccanismi di caching. In particolare, le risposte del server devono contenere una indicazione sul fatto che le risposte possano essere messe in cache o meno. Opzionalmente, inoltre, è possibile per il server richiedere l'esecuzione di alcune funzionalità al client tramite il passaggio di codice da eseguire (ad es., codice JavaScript da eseguire nel browser).
@@ -13,7 +13,7 @@ A differenza delle interfacce di servizio SOAP, per cui una serie di standard è
 
 Per la specifica delle interfacce REST esistono due grandi iniziative: OpenAPI e RAML.
 Sebbene simili dal punto di vista dello sviluppatore di interfacce di servizio, la specifica RAML è più indirizzata alla creazione automatica di server e di client per API, mentre OpenAPI (attualmente nella versione OpenAPI v3) contiene elementi più descrittivi per la documentazione e la catalogazione (che invece sono disponibili in RAML come estensioni ad-hoc) e si sta imponendo come standard de-facto.  
-Altri standard proposti in passato, quali Web Application Description Language - WADL, hanno avuto scarso successo e nei framework in cui sono stati utilizzati si sta optando per il passaggio ad OpenAPI v3 [57]_. Per queste ragioni il ModI 2018 impone l’uso di OpenAPI v3.
+Altri standard proposti in passato, quali Web Application Description Language - WADL, hanno avuto scarso successo e nei framework in cui sono stati utilizzati si sta optando per il passaggio ad `OpenAPI v3 <https://www.openapis.org/>`_ [57]_. Per queste ragioni il ModI 2018 impone l’uso di OpenAPI v3.
 
 E’ possibile assicurare la conversione tra le differenti rappresentazioni delle interfacce REST tramite tool automatici. 
 
@@ -22,7 +22,7 @@ Legato al concetto di specifica nel mondo REST è quello di *Hypermedia As The E
 Indicazioni di utilizzo
 -----------------------
 
-L'interfaccia di servizio REST deve utilizzare l\'HTTP verb più adatto all\'operazione come indicato in RFC 7231 [59]_. In particolare i metodi:
+L'interfaccia di servizio REST deve utilizzare l\'HTTP verb più adatto all\'operazione come indicato in `RFC 7231 <https://tools.ietf.org/html/rfc7231#section-4.3>`_ [59]_. In particolare i metodi:
 
 -   GET, HEAD, DELETE: non devono avere un payload.
 
@@ -32,26 +32,26 @@ L'interfaccia di servizio REST deve utilizzare l\'HTTP verb più adatto all\'ope
 
 -   POST: dovrebbe implementare un meccanismo di idempotenza per evitare di duplicare eventuali entry.
 
-Ove necessario, specialmente ai fini del caching e l'accesso concorrente alle risorse [60]_, occorre fare leva sugli ETag [61]_ (degli identificatori univoci di versione delle risorse). Infine l'utilizzo di eventuali header HTTP non deve sostituire i parametri da passare in una GET.
+Ove necessario, specialmente ai fini del caching e l'accesso concorrente alle risorse [60]_, occorre fare leva sugli `ETag <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag>`_ [61]_ (degli identificatori univoci di versione delle risorse). Infine l'utilizzo di eventuali header HTTP non deve sostituire i parametri da passare in una GET.
 
 Sicurezza
 ---------
 
-Lo standard di riferimento per la firma e la crittografia in ambito JSON/REST è Javascript Object Signing and Encryption [62]_ (di seguito JOSE), menzionato nelle Linee Guida AgID [63]_ ed in \"European Telecommunications Standards Institute - Security of the mission critical service\" [64]_. JOSE è un framework per la sicurezza comprendente diverse componenti tra cui centrale è il JSON Web Token [65]_ (di seguito JWT). JWT è uno standard per la definizione di token di accesso basato su JSON Web Signature [66]_ (di seguito JWS)) e JSON Web Encryption [67]_ (si seguito JWE) di cui eredita ed estende gli header. Il token JWT è passato in REST tramite l'header HTTP
+Lo standard di riferimento per la firma e la crittografia in ambito JSON/REST è `Javascript Object Signing and Encryption <http://www.etsi.org/deliver/etsi_ts/118100_118199/118103/02.04.01_60/ts_118103v020401p.pdf>`_ [62]_ (di seguito JOSE), menzionato nelle `Linee Guida AgID <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro>`_ [63]_ ed in `\"European Telecommunications Standards Institute - Security of the mission critical service\" <http://www.etsi.org/deliver/etsi_ts/133100_133199/133180/14.02.00_60/ts_133180v140200p.pdf>`_ [64]_. JOSE è un framework per la sicurezza comprendente diverse componenti tra cui centrale è il `JSON Web Token <https://tools.ietf.org/html/rfc7519>`_ [65]_ (di seguito JWT). JWT è uno standard per la definizione di token di accesso basato su `JSON Web Signature <https://tools.ietf.org/html/rfc7515>`_ [66]_ (di seguito JWS)) e `JSON Web Encryption <https://tools.ietf.org/html/rfc7516>`_ [67]_ (si seguito JWE) di cui eredita ed estende gli header. Il token JWT è passato in REST tramite l'header HTTP
 Authorization utilizzando lo schema Bearer [68]_. Il token in OpenID Connect è espresso per esempio direttamente come JWT. 
 
 Per ulteriori dettagli sulla sicurezza, si vedano anche:
 
--   OWASP REST Security Cheat-Sheet  [69]_;
+-   `OWASP REST Security Cheat-Sheet <https://www.owasp.org/index.php/REST_Security_Cheat_Sheet>`_ [69]_;
 
--   OWASP API Security Project  [70]_;
+-   `OWASP API Security Project <https://www.owasp.org/index.php/OWASP_API_Security_Project>`_ [70]_;
 
--   JWS - Security Considerations  [71]_.
+-   `JWS - Security Considerations <https://tools.ietf.org/html/rfc7515#section-10>`_ [71]_.
 
 Uniformità e Naming 
 -------------------
 
-In questa sezione introduciamo le best practice da utilizzare per interfacce di servizio REST. In prima istanza, ogni endpoint deve essere univocamente associato alle componenti Scheme, Authority e Path di un URL [72]_.
+In questa sezione introduciamo le best practice da utilizzare per interfacce di servizio REST. In prima istanza, ogni endpoint deve essere univocamente associato alle componenti `Scheme, Authority e Path di un URL <https://tools.ietf.org/html/rfc3986>`_ [72]_.
 
 La componente Authority dell'URL:
 
@@ -69,12 +69,12 @@ Il campo Query dovrebbe:
 
 -   utilizzare ove possibile dei nomi comuni per le funzionalità di paginazione, ricerca ed embedding/resource-expansion (ad es., limit, offset, q, sort).
 
-Le risposte in formato JSON [75]_, devono restituire sempre oggetti strutturati con attributi chiave-valore, non semplici liste. Questo permette di estendere facilmente le risposte introducendo in versioni successive ulteriori attributi (ad es., di paginazione).
+Le risposte in formato `JSON <https://tools.ietf.org/html/rfc7159>`_ [75]_, devono restituire sempre oggetti strutturati con attributi chiave-valore, non semplici liste. Questo permette di estendere facilmente le risposte introducendo in versioni successive ulteriori attributi (ad es., di paginazione).
 
-In caso di errore, le risposte devono usare schemi standard come quello definito nella RFC 7807 - Problem Details for HTTP APIs - IETF Tools [76]_ in particolare utilizzando il content type application/problem+json nella risposta.
+In caso di errore, le risposte devono usare schemi standard come quello definito nella `RFC 7807 - Problem Details for HTTP APIs - IETF Tools <https://tools.ietf.org/html/rfc7807>`_ [76]_ in particolare utilizzando il content type application/problem+json nella risposta.
 
-Quando le risorse contengono link e riferimenti a risorse esterne, si dovrebbero usare le specifiche indicate in IANA registered link
-relations [77]_.
+Quando le risorse contengono link e riferimenti a risorse esterne, si dovrebbero usare le specifiche indicate in `IANA registered link
+relations  <http://www.iana.org/assignments/link-relations/link-relations.xml>`_ [77]_.
 
 Tutti i riferimenti dovrebbero contenere URL comprensivi di schema.
 
@@ -99,7 +99,7 @@ Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 42
 	
 	- HTTP 503 (service unavailable) se l'infrastruttura non può erogare le operazioni offerte nei tempi attesi (definiti dalla SLA associata all’interfaccia di servizio).
 	
-- nei casi 429 e 503 gli erogatori dovrebbero notificare al client dopo quanti secondi ripresentarsi tramite l'header Retry-After [78]_ (pratica anche detta “circuit breaker”), anche implementando meccanismi di exponential back-off. L'RFC prevede che questo header possa essere utilizzato sia in forma di data che di secondi, ma il Modl2018 vieta l’utilizzo del formato data poiché se non implementato correttamente potrebbe aggravare lo stato dei sistemi [79]_.
+- nei casi 429 e 503 gli erogatori dovrebbero notificare al client dopo quanti secondi ripresentarsi tramite l'header `Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-Afte>`_ [78]_ (pratica anche detta “circuit breaker”), anche implementando meccanismi di exponential back-off. L'RFC prevede che questo header possa essere utilizzato sia in forma di data che di secondi, ma il Modl2018 vieta l’utilizzo del formato data poiché se non implementato correttamente potrebbe aggravare lo stato dei sistemi.
 
 I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indicazioni provenienti dagli header ed dagli status code di cui sopra.
 
@@ -150,7 +150,7 @@ I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indica
 
 .. [72] Cf. `https://tools.ietf.org/html/rfc3986 <https://tools.ietf.org/html/rfc3986>`_
 
-.. [73] Cf. `https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo\_elementi\_obbligatori.html\#titolo-dct-title <https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo_elementi_obbligatori.html#titolo-dct-title>`_ Ad esempio, 
+.. [73] Cf. `https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo\_elementi\_obbligatori.html\#titolo-dct-title <https://linee-guida-cataloghi-dati-profilo-dcat-ap-it.readthedocs.io/it/latest/catalogo_elementi_obbligatori.html#titolo-dct-title>`_ Ad esempio,
 	
 	- sono ammesse stringhe come \"id\", \"args\" o \"stdin\" ed abbreviazioni come \"tcp\" ed \"udp\"; 
 	
@@ -176,8 +176,4 @@ I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indica
 
 .. [77] Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
 
-.. [78] Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-Afte <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-Afte>`_
-
-.. [79] Cf. `http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html <http://www.nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html>`_
-
-.. web-harvesting Cf. https://it.wikipedia.org/wiki/Web_scraping
+.. [78] Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After>`_

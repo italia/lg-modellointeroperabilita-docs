@@ -19,9 +19,9 @@ Per quanto riguarda l'interazione sincrona (stile chiamata a procedura o accesso
 
 Mentre SOAP lo utilizza come un protocollo di trasporto, REST lo utilizza come un protocollo applicativo. La diffusione dell\'accesso alla rete ha aumentato il carico sulle infrastrutture IT, inoltre reti migliori hanno aumentato le aspettative in termini di latenza. L\'IETF nel tempo ha risposto a queste esigenze:
 
--   migliorando la semantica di HTTP, facendo leva sui campi Header, Status e Method RFC7230 [85]_, RFC7231 [86]_;
+-   migliorando la semantica di HTTP, facendo leva sui campi Header, Status e Method `RFC7230 <https://tools.ietf.org/html/rfc7230>`_ [85]_, `RFC7231 <https://tools.ietf.org/html/rfc7231>`_ [86]_;
 
--   codificando le semantiche di caching RFC7234 [87]_ e controllo della concorrenza RFC7232 [88]_ per facilitare l\'implementazione di interfacce di servizio stateless, che possano scalare senza che i bilanciatori conoscano la logica applicativa;
+-   codificando le semantiche di caching `RFC7234 <https://tools.ietf.org/html/rfc7234>`_ [87]_ e controllo della concorrenza `RFC7232 <https://tools.ietf.org/html/rfc7232>`_ [88]_ per facilitare l\'implementazione di interfacce di servizio stateless, che possano scalare senza che i bilanciatori conoscano la logica applicativa;
 
 -   orientandosi verso formati più leggeri (ad es., JSON).
 
@@ -85,7 +85,7 @@ In letteratura, talvolta si indica con contract-first una metodologia di progett
 
 Talvolta si parla di REST indicandolo come contract-less (REST) [90]_, proprio ad indicare il fatto che l’interfaccia è definita dagli http verb; a rigore però vanno comunque progettate le giuste risorse da esporre su cui effettuare operazioni CRUD, e quindi più  che essere senza contratto, è il contratto che ha una forma differente.
 
-Nel modo REST, il principio secondo cui l’interfaccia di servizio (in questo caso l’API) deve essere il primo artefatto di progettazione, viene recentemente indicato come API-first [91]_ ed è largamente adottato da molte organizzazioni private, ed anche framework di interoperabilità nazionali come quello inglese [92]_.
+Nel modo REST, il principio secondo cui l’interfaccia di servizio (in questo caso l’API) deve essere il primo artefatto di progettazione, viene recentemente indicato come `API-first <https://www.programmableweb.com/api-university/understanding-api-first-design>`_ [91]_ ed è largamente adottato da molte organizzazioni private, ed anche `framework di interoperabilità nazionali come quello inglese <https://www.programmableweb.com/news/why-uks-government-data-service-takes-api-first-approach-to-datagovuk/elsewhere-web/2016/09/02>`_ [92]_.
 
 Nel caso invece di nuovi sistemi, la progettazione dell'interfaccia può essere effettuata sia in un'ottica contract-first che contract-less. In un'ottica contract-first, la specifica dell'interfaccia viene effettuata
 a tavolino a partire dalle macro-operazioni che si vogliono offerte dal sistema finale. Nel caso di accesso basato su risorsa (in ottica ROA), essendo in realtà le operazioni da effettuare già predefinite
@@ -122,7 +122,7 @@ Il ModI 2018, come discusso nella Sezione 1, prevede che la progettazione parta 
 
 .. [90] Cf. Cesare Pautasso, Olaf Zimmermann, Frank Leymann: Restful web services vs. \"big\"\' web services: making the right architectural decision. WWW 2008: 805-814.
 
-.. [91] Cf. `https://www.programmableweb.com/api-university/understanding-api-first-design <https://www.programmableweb.com/api-university/understanding-api-first-design>`_.
+.. [91] Cf. `https://www.programmableweb.com/api-university/understanding-api-first-design <https://www.programmableweb.com/api-university/understanding-api-first-design>`_
     In termini colloquiali, il principio può essere parafrasato in questi termini:
 
     - L'API è la prima interfaccia dell'applicazione
