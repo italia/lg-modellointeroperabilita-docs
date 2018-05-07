@@ -3,7 +3,7 @@ SOAP
 
 Il protocollo SOAP (Simple Object Access Protocol) è stato sviluppato per superare le limitazioni imposte dai protocolli precedenti per l'interazione distribuita basata su oggetti (CORBA, Java/RMI, DCOM) relative alla distribuzione a livello Internet delle macchine interessate ed ai vincoli imposti dal punto di vista delle tecnologie di implementazione.
 
-La versione corrente della specifica 'SOAP è la 1.2 del 27 Aprile 2007 <https://www.w3.org/TR/soap12-part1/>`_ [45]_. La specifica definisce due stili di comunicazione (communication modes): 
+La versione corrente della specifica `SOAP è la 1.2 del 27 Aprile 2007 <https://www.w3.org/TR/soap12-part1/>`_  [45]_. La specifica definisce due stili di comunicazione (communication modes): 
 
   - quello basato su chiamata a procedura (RPC-like), 
 
