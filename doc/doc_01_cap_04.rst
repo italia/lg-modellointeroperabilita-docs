@@ -105,7 +105,7 @@ L'esperienza maturata con SPCoop, di seguito sintetizzata, deve essere considera
 
 
 .. discourse::
-	:topic_identifier: 0000
+   :topic_identifier: 766
 
 	
 .. [8] Cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__
