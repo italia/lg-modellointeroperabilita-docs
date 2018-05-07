@@ -123,7 +123,7 @@ Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i s
 
 -   Le PA devono identificare, negoziare e approvare un approccio comune per i componenti di servizi integrati. Ciò è realizzato a diversi livelli amministrativi, in base all'assetto organizzativo di ogni paese, per garantire che piani nazionali e le strategie di interoperabilità siano allineati con l'EIF e, se necessario, adattati e ampliati per tenere conto del contesto e delle esigenze nazionali.
 
--   L' accesso ai servizi e alle informazioni deve essere realizzato mediante specifiche interfacce e condizioni di accesso preventivamente definite (accordi di interoperabilità). Vanno favorite le politiche di riuso dei dati e dei servizi.
+-   L'accesso ai servizi e alle informazioni deve essere realizzato mediante specifiche interfacce e condizioni di accesso preventivamente definite (accordi di interoperabilità). Vanno favorite le politiche di riuso dei dati e dei servizi.
 
 -   Concordare uno schema comune per interconnettere i componenti dei servizi, nonché predisporre e mantenere l\'infrastruttura necessaria per istituire e mantenere i servizi pubblici europei.
 

@@ -56,7 +56,7 @@ La differenza tra i due casi risiede quindi nel grado di autonomia che i soggett
 Incrementalità del modello
 --------------------------
 
-In base alle considerazioni precedenti, il Modello di interoperabilità si concretizza nella definizione, lo sviluppo, il miglioramento, la resa operativa, il mantenimento e la promozione di servizi, strumenti, norme tecniche e specifiche per l'interoperabilità delle soluzioni ICT basata su un'architettura modulare che include componenti interconnessi con l'ausilio di infrastrutture comuni. Questo modello, al fine di evitare le problematiche di possibile obsolescenza, e fronteggiare la necessità di continui aggiornamenti, si estrinsecherà concretamente in rilasci successivi e cadenzati nel tempo, di una serie di 5 documenti, in particolare:
+In base alle considerazioni precedenti, il Modello di Interoperabilità si concretizza nella definizione, lo sviluppo, il miglioramento, la resa operativa, il mantenimento e la promozione di servizi, strumenti, norme tecniche e specifiche per l'interoperabilità delle soluzioni ICT basata su un'architettura modulare che include componenti interconnessi con l'ausilio di infrastrutture comuni. Questo modello, al fine di evitare le problematiche di possibile obsolescenza, e fronteggiare la necessità di continui aggiornamenti, si estrinsecherà concretamente in rilasci successivi e cadenzati nel tempo, di una serie di 5 documenti, in particolare:
 
 1. **Presentazione del Modello di Interoperabilità 2018**, che è il documento attuale, rilasciato nella prima versione a maggio 2018.
 
@@ -108,12 +108,12 @@ Ogni PA che offre un'API/servizio deve, nel nuovo modello, offrire un insieme di
 -   dichiarazione sulla qualità del servizio che si impegna a rispettare. In questo secondo caso, deve anche definire le modalità di misurazione e deve offrire un'opportuna modalità di monitoraggio, che i fruitori possono sfruttare per la verifica.
 
 Nello scambio informativo tra PA mediante API/servizi, le soluzioni che verranno adottate devono assicurare: *(i)* autenticità, *(ii)* integrità e *(iii)* non ripudio. In questo contesto il Regolamento (UE) 2014/910
-fornisce una base normativa comune per le interazioni elettroniche sicure fra cittadini, imprese e PA; le soluzioni software conformi al Modello di interoperabilità devono applicare i principi indicati in esso.
+fornisce una base normativa comune per le interazioni elettroniche sicure fra cittadini, imprese e PA; le soluzioni software conformi al Modello di Interoperabilità devono applicare i principi indicati in esso.
 
 Catalogo delle API/servizi
 --------------------------
 
-Il Modello di interoperabilità prevede la presenza del *Catalogo* quale componente che assicura alle parti coinvolte nel rapporto erogazione/fruizione la consapevolezza sulle interfacce e i livelli di servizio dichiarati.
+Il Modello di Interoperabilità prevede la presenza del *Catalogo* quale componente che assicura alle parti coinvolte nel rapporto erogazione/fruizione la consapevolezza sulle interfacce e i livelli di servizio dichiarati.
 
 La presenza del Catalogo è funzionale a:
 
@@ -146,7 +146,7 @@ L'Agenzia per l'Italia Digitale è responsabile delle attività di *governance* 
 
 -   il *catalogo* dei servizi resi disponibili dalle PA.
 
-I progetti che realizzano gli Ecosistemi, previsti nel Piano Triennale per l'Informatica nella PA, si basano sul Modello di interoperabilità, e possono determinare l'esigenza di nuovi *casi d'uso*, *pattern* e *profili di interoperabilità* che verranno definiti con un approccio collaborativo.
+I progetti che realizzano gli Ecosistemi, previsti nel Piano Triennale per l'Informatica nella PA, si basano sul Modello di Interoperabilità, e possono determinare l'esigenza di nuovi *casi d'uso*, *pattern* e *profili di interoperabilità* che verranno definiti con un approccio collaborativo.
 
 Nel precedente SPCoop, l\'uso di servizi/API richiedeva un accordo tra amministrazioni anche tramite la firma di convenzioni bilaterali. Questo non sarà più necessario nel nuovo modello, in cui l'adesione si estrinsicherà nell'atto di registrazione da parte della PA di un'API/servizio nel catalogo. In ottemperanza al principio \"once-only\" definito nell\'`EU eGovernment Action Plan 2016-2020 <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)>`__ [17]_, l\'erogatore si impegna a fornire l\'accesso alle proprie API/servizi a qualunque soggetto registrato ne faccia richiesta [18]_. Gli erogatori devono descrivere le loro API/servizi classificando le informazioni scambiate ove possibile collegandole ai vocabolari controllati e a concetti semantici predefiniti, utili anche a determinare l'impatto rispetto ai regolamenti in tema privacy e GDPR, e applicando tag di categoria. Il Catalogo può facilitare questo processo attraverso opportune euristiche.
 
