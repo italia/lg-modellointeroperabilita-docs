@@ -168,7 +168,7 @@ I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indica
 
 	- uniformarsi a quello di altre interfacce di servizio a livello Europeo quando ciò vada nella direzione dell\'interoperabilità e della semplicità.
 
-	- In generale inoltre, tutte le stringhe in inglese, dovrebbero utilizzare la dizione US per evitare ambiguità come ad es., \"color\" vs \"colour\", \"flavor\" vs \"flavour\").
+	- In generale tutte le stringhe in inglese dovrebbero utilizzare la dizione US per evitare ambiguità come ad es., \"color\" vs \"colour\", \"flavor\" vs \"flavour\").
 
 .. [75] Cf. `https://tools.ietf.org/html/rfc7159 <https://tools.ietf.org/html/rfc7159>`_
 
