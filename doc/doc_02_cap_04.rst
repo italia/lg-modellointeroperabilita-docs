@@ -81,7 +81,7 @@ Tutti i riferimenti dovrebbero contenere URL comprensivi di schema.
 Throttling ed indisponibilità del servizio
 ------------------------------------------
 
-Nelle API basate su REST, meccanismi di throttling vengono implementati al fine di garantire l’accessibilità delle interfacce di servizio ed evitare in alcuni casi la raccolta non autorizzata (web-harvesting_) dei dati. 
+Nelle API basate su REST, meccanismi di throttling vengono implementati al fine di garantire l’accessibilità delle interfacce di servizio ed evitare in alcuni casi la raccolta non autorizzata (web-harvesting) dei dati. 
 
 Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 429, nel Modl2018 si richiede di notificare al fruitore lo stato del throttling ed eventuali limiti come segue:
 
