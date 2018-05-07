@@ -27,7 +27,7 @@ Il modello strategico, pensato per superare l'approccio a "silos", storicamente 
 
     3. la pianificazione e la realizzazione di progetti ICT.
 
-3.  Il **Modello di interoperabilità,** definisce i meccanismi che facilitano e garantiscono la corretta interazione tra gli attori del sistema (cittadini, imprese e PA), favorendo la condivisione trasparente di dati, informazioni, piattaforme e servizi. Il Modello di Interoperabilità è costituito da linee guida, standard tecnologici e profili di interoperabilità che ciascuna PA dovrà seguire al fine di garantire l'interoperabilità dei propri sistemi con quelli di altri soggetti per l'implementazione complessiva del Sistema informativo della PA.
+3.  Il **Modello di Interoperabilità,** definisce i meccanismi che facilitano e garantiscono la corretta interazione tra gli attori del sistema (cittadini, imprese e PA), favorendo la condivisione trasparente di dati, informazioni, piattaforme e servizi. Il Modello di Interoperabilità è costituito da linee guida, standard tecnologici e profili di interoperabilità che ciascuna PA dovrà seguire al fine di garantire l'interoperabilità dei propri sistemi con quelli di altri soggetti per l'implementazione complessiva del Sistema informativo della PA.
 
 4.  Le **Infrastrutture immateriali** e il **Data & Analytics Framework** (DAF) della PA, che incentivano la centralizzazione e la razionalizzazione dei sistemi per la gestione dei processi e dei dati, riducendo la frammentazione degli interventi. In particolare, le *Infrastrutture immateriali* facilitano, standardizzano e razionalizzano la creazione di servizi ICT e sono composte dalle Piattaforme abilitanti e dai Dati della PA:
 	
