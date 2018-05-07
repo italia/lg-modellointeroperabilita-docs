@@ -137,7 +137,7 @@ Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i s
 
 
 .. discourse::
-	:topic_identifier: 0000
+	:topic_identifier: 3230
 
 	
 .. [4] In precedenti documenti a cura di AgID e del Team Digitale, il termine inglese framework è stato sovente tradotto in italiano come modello, ed è questo il termine utilizzato nel presente documento. La dicitura *quadro* è la traduzione letterale della Commissione Europea. Nel seguito di questo documento verrà preferito il termine modello, pur considerando i termini framework, modello e quadro come sinonimi.

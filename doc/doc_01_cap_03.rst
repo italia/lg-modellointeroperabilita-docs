@@ -49,7 +49,7 @@ Il modello strategico, pensato per superare l'approccio a "silos", storicamente 
 
 
 .. discourse::
-	:topic_identifier: 0000
+	:topic_identifier: 3232
 
 	
 .. [7] Cf. `https://pianotriennale-ict.italia.it/ <https://pianotriennale-ict.italia.it/>`__ 

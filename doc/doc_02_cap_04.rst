@@ -104,7 +104,7 @@ Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 42
 I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indicazioni provenienti dagli header ed dagli status code di cui sopra.
 
 .. discourse::
-   :topic_identifier: 0000
+   :topic_identifier: 3238
 
 
 .. [55] Cf. `http://www.ics.uci.edu/\~fielding/pubs/dissertation/rest\_arch\_style.htm <http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm>`_
