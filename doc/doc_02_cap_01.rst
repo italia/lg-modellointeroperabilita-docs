@@ -435,7 +435,7 @@ Le indicazioni generali sono:
 
 
 .. discourse::
-	:topic_identifier: 0000
+   :topic_identifier: 0000
 
 
 .. [1] La trattazione si basa in parte su C. Batini, M. Castelli, M.
