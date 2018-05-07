@@ -148,7 +148,7 @@ L'Agenzia per l'Italia Digitale è responsabile delle attività di *governance* 
 
 I progetti che realizzano gli Ecosistemi, previsti nel Piano Triennale per l'Informatica nella PA, si basano sul Modello di interoperabilità, e possono determinare l'esigenza di nuovi *casi d'uso*, *pattern* e *profili di interoperabilità* che verranno definiti con un approccio collaborativo.
 
-Nel precedente SPCoop, l\'uso di servizi/API richiedeva un accordo tra amministrazioni anche tramite la firma di convenzioni bilaterali. Questo non sarà più necessario nel nuovo modello, in cui l'adesione si estrinsicherà nell'atto di registrazione da parte della PA di un'API/servizio nel catalogo. In ottemperanza al principio \"once-only\" definito nell\'EU eGovernment Action Plan 2016-2020 [17]_, l\'erogatore si impegna a fornire l\'accesso alle proprie API/servizi a qualunque soggetto registrato ne faccia richiesta [18]_. Gli erogatori devono descrivere le loro API/servizi classificando le informazioni scambiate ove possibile collegandole ai vocabolari controllati e a concetti semantici predefiniti, utili anche a determinare l'impatto rispetto ai regolamenti in tema privacy e GDPR, e applicando tag di categoria. Il Catalogo può facilitare questo processo attraverso opportune euristiche.
+Nel precedente SPCoop, l\'uso di servizi/API richiedeva un accordo tra amministrazioni anche tramite la firma di convenzioni bilaterali. Questo non sarà più necessario nel nuovo modello, in cui l'adesione si estrinsicherà nell'atto di registrazione da parte della PA di un'API/servizio nel catalogo. In ottemperanza al principio \"once-only\" definito nell\'`EU eGovernment Action Plan 2016-2020 <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)>`__ [17]_, l\'erogatore si impegna a fornire l\'accesso alle proprie API/servizi a qualunque soggetto registrato ne faccia richiesta [18]_. Gli erogatori devono descrivere le loro API/servizi classificando le informazioni scambiate ove possibile collegandole ai vocabolari controllati e a concetti semantici predefiniti, utili anche a determinare l'impatto rispetto ai regolamenti in tema privacy e GDPR, e applicando tag di categoria. Il Catalogo può facilitare questo processo attraverso opportune euristiche.
 
 In virtù degli articoli 12 e 14 del Codice dell\'Amministrazione Digitale, AgID è formalmente incaricata della gestione di tutto il catalogo e di garantire il rispetto delle regole suddette e per farlo si avvale della collaborazione di alcuni enti, che vengono indicati come Capofila.
 
@@ -163,9 +163,9 @@ In prima istanza si prevede che gli enti Capofila possano essere:
 
 A tal fine, sul fronte delle aree tematiche il Piano Triennale 2017-2019 introduce:
 
--   gli Ecosistemi [19]_, settori o aree di intervento in cui si svolge l'azione delle PA, che raggruppano i vari enti per aree tematiche;
+-   gli `Ecosistemi <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html>`__ [19]_, settori o aree di intervento in cui si svolge l'azione delle PA, che raggruppano i vari enti per aree tematiche;
 
--   i Gruppi di Lavoro [20]_ che, all\'interno degli Ecosistemi, indirizzano il vero e proprio lavoro di standardizzazione coinvolgendo sia tecnici che esperti dei rispettivi domini applicativi.
+-   i `Gruppi di Lavoro <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html#linee-di-azione>`__ [20]_ che, all\'interno degli Ecosistemi, indirizzano il vero e proprio lavoro di standardizzazione coinvolgendo sia tecnici che esperti dei rispettivi domini applicativi.
 
 I Gruppi di Lavoro devono formalizzare le specifiche di dettaglio, attraverso il meccanismo dei profili e dei pattern di interoperabilità, e revisionare periodicamente le specifiche rilasciate.
 
@@ -198,7 +198,7 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
 .. [17] Cf. EU eGovernment Action Plan 2016-2020, `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation] <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)>`__
 
 .. [18] Cf. `Codice dell\'Amministrazione Digitale Capo 1 Sez. 2 Art.
-    3 <http://cad.readthedocs.io/it/v2017-12-13/_rst/capo1_sezione2_art3.html>`__
+    3  http://cad.readthedocs.io/it/v2017-12-13/_rst/capo1_sezione2_art3.html <http://cad.readthedocs.io/it/v2017-12-13/_rst/capo1_sezione2_art3.html>`__
 
 .. [19] Cf. `http://pianotriennale-ict.readthedocs.io/it/latest/doc/06\_ecosistemi.html <http://pianotriennale-ict.readthedocs.io/it/latest/doc/06_ecosistemi.html>`__
 
