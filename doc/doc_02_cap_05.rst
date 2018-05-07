@@ -33,7 +33,7 @@ Il metodo PUT viene di solito utilizzato per modificare le proprietà di topic/s
 
 
 .. discourse::
-	:topic_identifier: 0000
+   :topic_identifier: 0000
 
 	
 .. [80] Cf. `https://stomp.github.io/ <https://stomp.github.io/>`_
