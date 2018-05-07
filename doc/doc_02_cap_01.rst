@@ -135,7 +135,7 @@ Con **application programming interface** (in acronimo **API**) si indica ogni *
 
 Per realizzare un servizio digitale, come detto, è necessario progettare e realizzare i tre strati; lo strato di logica applicativa offre la sua API affinchè chi sviluppa lo strato di presentazione all'utente possa utilizzarla come se la logica applicativa fosse una libreria; estendendo, se vari sistemi esportano le proprie logiche applicative come API, la logica di presentazione può utilizzarle insieme, mischiandole (*mash-up*), esattamente come nello sviluppo di software moderno si programma riutilizzando le librerie offerte nel linguaggio di programmazione, sistema operativo, ecc. Quando il servizio digitale è erogato su Internet, e prevalentemente sul Web che si basa sul protocollo HTTP,) si parla di Web API. Per le Web API l'erogatore potrebbe decidere di rendere disponibile l'API non soltanto a chi sviluppa la logica di presentazione, ma "aperta" anche ad altre organizzazioni che volessero collaborare con l'erogatore, in questo caso si parla di Open API . In molti contesti, con abuso di nomenclatura, ma intuitivamente chiaro, i due termini vengono confusi e considerati sinonimi (dato che l'apertura è spesso associata al Web/Internet).
 
-Per il W3C un **web service** è qualsiasi software che si rende disponibile su Internet e standardizza la sua interfaccia tramite la codifica XML [4]_. Un client richiama un'operazione offerta da un web service inviando una richiesta (solitamente sotto forma di un messaggio XML) e il web service invia una risposta XML. I web service invocano la comunicazione su una rete, con HTTP come protocollo più comune. I web service si basano principalmente su standard come XML-RPC e SOAP (Simple Object Access Protocol). Quindi un web service è un possibile modo di realizzare una Web API. Il termine web service (originatosi intorno ai primi anni 2000) è nato proprio per indicare la logica applicativa, esposta sul web, sottostante ad un servizio digitale. A partire dalla seconda metà degli anni 2000, creando possibili confusioni, il termine Web API è stato utilizzato come alternativa a web service per indicare altri approcci/protocolli/tecnologie (come REST) per realizzare API senza utilizzare XML-RPC e SOAP. Ma anche una Web API indica la logica applicativa, esposta sul web, sottostante ad un servizio digitale.
+Per il W3C un **web service** è `qualsiasi software che si rende disponibile su Internet e standardizza la sua interfaccia tramite la codifica XML <https://www.w3.org/TR/ws-arch/#whatis>`_  [4]_. Un client richiama un'operazione offerta da un web service inviando una richiesta (solitamente sotto forma di un messaggio XML) e il web service invia una risposta XML. I web service invocano la comunicazione su una rete, con HTTP come protocollo più comune. I web service si basano principalmente su standard come XML-RPC e SOAP (Simple Object Access Protocol). Quindi un web service è un possibile modo di realizzare una Web API. Il termine web service (originatosi intorno ai primi anni 2000) è nato proprio per indicare la logica applicativa, esposta sul web, sottostante ad un servizio digitale. A partire dalla seconda metà degli anni 2000, creando possibili confusioni, il termine Web API è stato utilizzato come alternativa a web service per indicare altri approcci/protocolli/tecnologie (come REST) per realizzare API senza utilizzare XML-RPC e SOAP. Ma anche una Web API indica la logica applicativa, esposta sul web, sottostante ad un servizio digitale.
 
 Al fine di evitare ogni possibile ambiguità, spesso dovuta semplicemente all'utilizzo di termini differenti per indicare gli stessi concetti, nel seguito del documento si utilizza il termine **interfaccia di servizio**
 per indicare **l'esposizione delle funzionalità applicative che sono necessarie per realizzare un servizio digitale**. Tutte le classificazioni e considerazioni presentate per i servizi, valgono per i servizi digitali e quindi per le interfacce di servizio. In particolare come queste classificazioni e considerazioni si calano in specifiche tecnologie/protocolli/standard è uno degli obiettivi del presente documento. Un'interfaccia di servizio si compone in generale di varie operazioni, e può essere realizzata come un web service, un'API, una Web API, ecc.
@@ -195,7 +195,7 @@ Un modo ulteriore di classificare le interfacce di servizio è quello di disting
 **Caratteristiche funzionali e non funzionali delle interfacce**
 Le classificazioni introdotte non sono strette poiché a seconda delle operazioni fornite, una interfaccia di servizio può essere catalogata in una posizione qualsiasi tra i due estremi delle stesse.
 
-Le interfacce di servizio devono essere accompagnate da una descrizione delle operazioni offerte il cui linguaggio dipende dalla tecnologia con cui l'interfaccia è implementata (si veda a partire dalla Sezione 3 per maggiori dettagli). La descrizione di una interfaccia di servizio di solito include caratteristiche funzionali e non funzionali. La descrizione funzionale si concentra sulle caratteristiche operative dell'interfaccia di servizio che descrivono il funzionamento in termini di operazioni offerte, i parametri richiesti da ognuna, gli endpoint [5]_ da utilizzare, il formato dei messaggi ed i protocolli di rete da utilizzare. La descrizione non funzionale si concentra invece sulla *qualità del servizio* (o qualità dell'interfaccia di servizio) in termini di limiti di utilizzo, costi e metriche di performance quali scalabilità, disponibilità, tempo di risposta, accuratezza, transazionalità, sicurezza e affidabilità.
+Le interfacce di servizio devono essere accompagnate da una descrizione delle operazioni offerte il cui linguaggio dipende dalla tecnologia con cui l'interfaccia è implementata (si veda a partire dalla Sezione 3 per maggiori dettagli). La descrizione di una interfaccia di servizio di solito include caratteristiche funzionali e non funzionali. La descrizione funzionale si concentra sulle caratteristiche operative dell'interfaccia di servizio che descrivono il funzionamento in termini di operazioni offerte, i parametri richiesti da ognuna, gli `endpoint [5]_ da utilizzare, il formato dei messaggi ed i protocolli di rete da utilizzare. La descrizione non funzionale si concentra invece sulla *qualità del servizio* (o qualità dell'interfaccia di servizio) in termini di limiti di utilizzo, costi e metriche di performance quali scalabilità, disponibilità, tempo di risposta, accuratezza, transazionalità, sicurezza e affidabilità.
 
 Qualità del servizio
 --------------------
@@ -221,7 +221,7 @@ Gli elementi chiave a supporto della QoS possono essere riassunti come segue:
 
 Gli erogatori devono prendere tutte le iniziative necessarie a mantenere i requisiti di QoS richiesti dal caso d'uso. Questo include anche l'utilizzo di buone pratiche. Ad esempio, per assicurare prestazioni e scalabilità il risparmio della banda è una condizione fondamentale. Le interfacce di servizio dovrebbero quindi implementare meccanismi di compressione del payload [7]_ e supportare la paginazione [8]_.
 
-Quando si utilizzano meccanismi di caching, essi devono essere documentati nelle specifiche delle interfacce di servizio, ed essere conformi alle specifiche RFC-7234 [9]_.
+Quando si utilizzano meccanismi di caching, essi devono essere documentati nelle specifiche delle interfacce di servizio, ed essere conformi alle specifiche `RFC-7234 <https://tools.ietf.org/html/rfc7234>`_ [9]_.
 
 Questa sezione si è concentrata sul concetto di QoS nel campo delle interfacce di servizio. Misure di QoS possono essere introdotte anche per quanto riguarda i servizi digitali utilizzando metriche introdotte nei campi della Interazione Uomo-Macchina. Queste ultime sono fuori dagli obiettivi di questo documento.
 
@@ -314,7 +314,7 @@ L\'erogatore deve documentare il dettaglio del formato della tracciatura e le mo
 
 L'erogatore deve inoltre tracciare un evento per ogni richiesta, contenente almeno i seguenti parametri minimi:
 
--   data e ora della richiesta in formato RFC3339 [11]_ in UTC e con i separatori Z e T maiuscolo. Questa specifica è fondamentale per l\'interoperabilità dei sistemi di logging ed auditing, evitando i problemi di transizione all\'ora legale e la complessità nella gestione delle timezone nell\'ottica dell\'interoperabilità con altre PA europee;
+-   data e ora della richiesta in formato `RFC3339 <https://tools.ietf.org/html/rfc3339#section-5.6>`_ [11]_ in UTC e con i separatori Z e T maiuscolo. Questa specifica è fondamentale per l\'interoperabilità dei sistemi di logging ed auditing, evitando i problemi di transizione all\'ora legale e la complessità nella gestione delle timezone nell\'ottica dell\'interoperabilità con altre PA europee;
 
 -   URI che identifica erogatore ed operazione richiesta;
 
@@ -419,7 +419,7 @@ Inoltre è auspicabile che la specifica del formato sia coerente, od addirittura
 
 Le indicazioni generali sono:
 
--   per gli schemi dei dati, utilizzo di nomi basati su riferimenti europei (ad es., Core Vocabularies/Dizionari Controllati, Direttiva Europea INSPIRE 2007/2/CE [17]_) e standard de facto e de iure eventualmente disponibili sulla specifica tematica;
+-   per gli schemi dei dati, utilizzo di nomi basati su riferimenti europei (ad es., Core Vocabularies/Dizionari Controllati, `Direttiva Europea INSPIRE 2007/2/CE <https://joinup.ec.europa.eu/page/core-vocabularies>`_ [17]_) e standard de facto e de iure eventualmente disponibili sulla specifica tematica;
 
 -   UTF-8 come codifica di default [18]_;
 
@@ -427,11 +427,11 @@ Le indicazioni generali sono:
 
 -   per i formati di serializzazione, semplicità di integrazione con strumenti di validazione (ad es. parsing);
 
--   paesi, lingue e monete [20]_: ISO 3166-1-alpha2 country [21]_, ISO 4217 currency codes [22]_;
+-   paesi, lingue e monete [20]_: `ISO 3166-1-alpha2 country <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ [21]_, `ISO 4217 currency codes <https://en.wikipedia.org/wiki/ISO_4217>`_ [22]_;
 
--   data e ora in RFC3339 [23]_, un sottoinsieme dell\'ISO8601 ottimizzato per il web;
+-   data e ora in `RFC3339 <https://tools.ietf.org/html/rfc3339#section-5.6>`_ [23]_, un sottoinsieme dell\'ISO8601 ottimizzato per il web;
 
--   aree amministrative NUTS 1 e successive: nomenclature NUTS [24]_ (per il livello NUTS 0 - entità nazionali si fa riferimento ai codici ISO).
+-   aree amministrative NUTS 1 e successive: nomenclature `NUTS <https://it.wikipedia.org/wiki/Nomenclatura_delle_unit%C3%A0_territoriali_statistiche>`_ [24]_ (per il livello NUTS 0 - entità nazionali si fa riferimento ai codici ISO).
 
 
 .. [1] La trattazione si basa in parte su C. Batini, M. Castelli, M.
