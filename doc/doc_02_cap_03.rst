@@ -77,6 +77,11 @@ Non esistono standard riguardanti il naming in ambito SOAP. Le best-practice pre
 Quando le risorse contengono link e riferimenti a risorse esterne, si dovrebbero usare le specifiche indicate in `IANA registered link relations <http://www.iana.org/assignments/link-relations/link-relations.xml>`_ [54]_ trasformando il `Kebab Case <https://it.wikipedia.org/wiki/Kebab_case>` [55]_ utilizzato con il CamelCase.
 
 
+.. discourse::
+	:topic_identifier: 0000
+
+	
+
 .. [45] Cf. `https://www.w3.org/TR/soap12-part1/ <https://www.w3.org/TR/soap12-part1/>`_
 
 .. [46] Cf. `https://www.w3.org/TR/wsdl20-primer/ <https://www.w3.org/TR/wsdl20-primer/>`_

@@ -109,7 +109,10 @@ Nel progetto di interfacce di servizio REST invece occorre:
 Il ModI 2018, come discusso nella Sezione 1, prevede che la progettazione parta della definizione delle interfacce di servizio, indipendentemente dalla tecnologia di realizzazione sia SOAP che REST, anche se con accorgimenti tecnici differenti nella sua realizzazione.
 
 
+.. discourse::
+	:topic_identifier: 0000
 
+	
 .. [85] Cf. `https://tools.ietf.org/html/rfc7230 <https://tools.ietf.org/html/rfc7230>`_
 
 .. [86] Cf. `https://tools.ietf.org/html/rfc7231 <https://tools.ietf.org/html/rfc7231>`_

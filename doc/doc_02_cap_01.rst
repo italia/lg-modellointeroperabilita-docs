@@ -434,6 +434,10 @@ Le indicazioni generali sono:
 -   aree amministrative NUTS 1 e successive: nomenclature `NUTS <https://it.wikipedia.org/wiki/Nomenclatura_delle_unit%C3%A0_territoriali_statistiche>`_ [24]_ (per il livello NUTS 0 - entità nazionali si fa riferimento ai codici ISO).
 
 
+.. discourse::
+	:topic_identifier: 0000
+
+
 .. [1] La trattazione si basa in parte su C. Batini, M. Castelli, M.
     Comerio, M. Cremaschi, L. Iaquinta, A. Torsello, G. Viscusi (2015):
     The Smart methodology for the life cycle of services. Cf. `https://boa.unimib.it/retrieve/handle/10281/98632/144883/SmartBook-0315.pdf <https://boa.unimib.it/retrieve/handle/10281/98632/144883/SmartBook-0315.pdf>`_

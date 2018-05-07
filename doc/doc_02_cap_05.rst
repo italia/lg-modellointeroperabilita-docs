@@ -32,6 +32,10 @@ Sebbene, a seconda delle implementazioni, le diverse interfacce di servizio REST
 Il metodo PUT viene di solito utilizzato per modificare le proprietà di topic/sottoscrizioni e code.
 
 
+.. discourse::
+	:topic_identifier: 0000
+
+	
 .. [80] Cf. `https://stomp.github.io/ <https://stomp.github.io/>`_
 
 .. [81] Cf. `https://xmpp.org/ <https://xmpp.org/>`_

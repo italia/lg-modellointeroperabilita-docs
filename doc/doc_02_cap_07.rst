@@ -46,6 +46,10 @@ interrogazioni complesse sulle risorse.
 In tutti i casi presentati, restano valide le indicazioni contenute nelle sezioni precedenti circa la sicurezza nell'esposizione delle interfacce di servizio.
 
 
+.. discourse::
+	:topic_identifier: 0000
+
+	
 .. [93] Cf. `https://it.wikipedia.org/wiki/Blockchain <https://it.wikipedia.org/wiki/Blockchain>`_
 
 .. [94] Una rete di calcolatori si definisce peer-to-peer, quando le macchine componenti (i nodi) non sono organizzati gerarchicamente ma svolgono delle funzionalità paritarie.

@@ -215,6 +215,10 @@ Numerose sono le minacce alla sicurezza a cui è esposto TLS (in special modo co
 Nel modello SPCoop si richiedeva che in ogni caso HTTPS fosse utilizzato con autenticazione mutual-TLS (vedi Sezione 2.3). Nel tempo sono emersi scenari di interazione con requisiti di sicurezza inferiori (ad es., solo HTTPS non-mutual-TLS), che non giustificano la complessità di un sistema a mutua autenticazione (ad es., accessi in sola consultazione, applicazioni Web o sistemi IoT [44]_) a livello di trasporto. Fermo l'obbligo di usare HTTPS, nasce l'esigenza di venire incontro a diversi scenari e definire per essi modelli di autenticazione e di trust differenziati. Questi aspetti verranno definiti in "Pattern e Profili di Interoperabilità".
 
 
+.. discourse::
+	:topic_identifier: 0000
+
+	
 .. [25] Per questi si faccia riferimento alla letteratura, ad es., William Stallings (2017): Cryptography And Network Security, 7th edition.
 
 .. [26] Cf. `https://tools.ietf.org/html/rfc6749 <https://tools.ietf.org/html/rfc6749>`_

@@ -104,6 +104,10 @@ L'esperienza maturata con SPCoop, di seguito sintetizzata, deve essere considera
 -   La necessità di componenti infrastrutturali disegnati per la sola Pubblica Amministrazione italiana (come Porta di Dominio e Registro SICA) determina che la spesa per il loro sviluppo ed evoluzione sia totalmente a carico della Pubblica Amministrazione.
 
 
+.. discourse::
+	:topic_identifier: 0000
+
+	
 .. [8] Cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__
 
 .. [9] Cf. `http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf <http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf>`__

@@ -48,4 +48,8 @@ Il modello strategico, pensato per superare l'approccio a "silos", storicamente 
 7.  La **gestione del cambiamento** che è una componente definita per far fronte alle necessità di coordinamento; gestione e monitoraggio delle attività funzionali allo sviluppo del Piano.
 
 
+.. discourse::
+	:topic_identifier: 0000
+
+	
 .. [7] Cf. `https://pianotriennale-ict.italia.it/ <https://pianotriennale-ict.italia.it/>`__ 

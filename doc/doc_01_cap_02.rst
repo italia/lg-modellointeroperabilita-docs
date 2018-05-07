@@ -136,6 +136,10 @@ Per perseguire gli obiettivi dell'EIF, la Commissione Europea ha individuato i s
 -   Utilizzare specifiche aperte, per garantire l\'interoperabilità tecnica quando si istituiscono servizi pubblici.
 
 
+.. discourse::
+	:topic_identifier: 0000
+
+	
 .. [4] In precedenti documenti a cura di AgID e del Team Digitale, il termine inglese framework è stato sovente tradotto in italiano come modello, ed è questo il termine utilizzato nel presente documento. La dicitura *quadro* è la traduzione letterale della Commissione Europea. Nel seguito di questo documento verrà preferito il termine modello, pur considerando i termini framework, modello e quadro come sinonimi.
 
 .. [5] Cf. `https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation>`__ 

@@ -181,6 +181,11 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
 
 -   verificare il rispetto delle regole del Modello di Interoperabilità, quale condizione di accesso al catalogo, e controllare con continuità il rispetto dei requisiti per l'iscrizione al catalogo.
 
+
+.. discourse::
+	:topic_identifier: 0000
+
+	
 .. [10] Con abuso di nomenclatura, ma intuitivamente chiaro, si intende nel presente documento servizio e API come sinonimo, ad indicare una componente software, esposta sul Web, che funge da servente e può essere utilizzata da client. In modo rigoroso, sia SPCoop che il ModI 2018 prevedono l'esposizione da parte di una PA di un'API accessibile sul Web come modalità base di interoperabilità e scambio di dati/informazioni, tale API permette la fruizione di un servizio offerto dalla PA stessa. La tecnologia web service è una particolare modalità con cui realizzare API che siano accessibili su Internet/intranet, da cui il termine Web. Tali concetti verranno     ulteriormente approfonditi nel Modello di Interoperabilità 2018.
 
 .. [11] Quindi non attivato da un utente umano, anche impropriamente detto *enterprise* in taluni contesti.
