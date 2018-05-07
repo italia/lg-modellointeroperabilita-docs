@@ -3,7 +3,23 @@ SOAP
 
 Il protocollo SOAP (Simple Object Access Protocol) è stato sviluppato per superare le limitazioni imposte dai protocolli precedenti per l'interazione distribuita basata su oggetti (CORBA, Java/RMI, DCOM) relative alla distribuzione a livello Internet delle macchine interessate ed ai vincoli imposti dal punto di vista delle tecnologie di implementazione.
 
-La versione corrente della specifica SOAP è la 1.2 del 27 Aprile 2007 [45]_. La specifica definisce due stili di comunicazione (communication modes): quello basato su chiamata a procedura (RPC-like), e quello basato su scambio di documenti (document style). In combinazione ad entrambi questi communication modes, il protocollo definisce delle modalità di scambio dell'informazione: interazioni one-way (dal client al server), interazioni request/response, invio di notifiche (interazione one-way dal server al client) e solicit/response (interazione request/response in cui la request è inviata dal server). Le ultime due modalità sono poco utilizzate in pratica e fuori dai profili di interoperabilità standard, quindi il loro utilizzo è vietato.
+La versione corrente della specifica SOAP è la 1.2 del 27 Aprile 2007 [45]_. La specifica definisce due stili di comunicazione (communication modes): 
+
+  - quello basato su chiamata a procedura (RPC-like), 
+
+  - e quello basato su scambio di documenti (document style). 
+ 
+In combinazione ad essi, il protocollo definisce delle modalità di scambio dell'informazione: 
+
+  - interazioni one-way (dal client al server), 
+  
+  - interazioni request/response, 
+  
+  - invio di notifiche (interazione one-way dal server al client) 
+  
+  - e solicit/response (interazione request/response in cui la request è inviata dal server). 
+
+  Le ultime due modalità sono poco utilizzate in pratica e fuori dai profili di interoperabilità standard, quindi il loro utilizzo è vietato.
 
 Il protocollo SOAP definisce tre componenti fondamentali:
 
@@ -13,7 +29,7 @@ Il protocollo SOAP definisce tre componenti fondamentali:
 
 -   una convenzione per rappresentare lo stile di interazione RPC.
 
-La definizione del protocollo è pensata per essere indipendente dal protocollo sottostante. In particolare, SOAP è pensato per operare (tramite i cosiddetti binding) su diversi protocolli di trasporto inclusi HTTP, SMTP, TCP, UDP o JMS. Sebbene implementazioni sono state proposte per ognuno di questi casi (in special modo JMS per interazioni asincrone), il mercato ha premiato principalmente soluzioni sincrone basate su HTTP.
+La definizione del protocollo è pensata per essere indipendente dal protocollo sottostante. In particolare, SOAP può operare (tramite i cosiddetti binding) su diversi protocolli di trasporto inclusi HTTP, SMTP, TCP, UDP o JMS. Sebbene implementazioni sono state proposte per ognuno di questi casi (in special modo JMS per interazioni asincrone), il mercato ha premiato principalmente soluzioni sincrone basate su HTTP.
 
 Una delle caratteristiche che contraddistinguono il protocollo SOAP è la sua estensibilità. In particolare si indica con WS-\* lo stack di estensioni costruite su SOAP, molte delle quali hanno avuto grande successo in termini di implementazioni disponibili. Queste estensioni permettono di avere su SOAP una serie di funzionalità che su altri protocolli devono essere costruite ad-hoc. Lo svantaggio di questa soluzione è che il protocollo introduce un overhead di processamento che fa preferire altre soluzioni in determinati contesti.
 
