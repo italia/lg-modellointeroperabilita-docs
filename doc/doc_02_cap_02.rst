@@ -117,19 +117,19 @@ Protocolli per autenticazione e autorizzazione
 
 Nel caso di autenticazione ed autorizzazione, occorre distinguere gli approcci utilizzati nello scenario human-to-machine e quelli utilizzati nello scenario machine-to-machine. I protocolli più comuni in ambito Web per autenticazione ed autorizzazione nel caso human-to-machine sono:
 
--   OAuth2 [26]_ è uno standard per l'autorizzazione;
+-   `OAuth2 <https://tools.ietf.org/html/rfc6749>`_ [26]_ è uno standard per l'autorizzazione;
 
--   OpenID [27]_ è uno standard pensato per la sola autenticazione. L'ultima versione, denominata OpenID Connect [28]_, è costruita su OAuth2 in termini di scambio di messaggi;
+-   `OpenID <http://openid.net/developers/specs/>`_ [27]_ è uno standard pensato per la sola autenticazione. L'ultima versione, denominata `OpenID Connect <http://openid.net/connect/>`_ [28]_, è costruita su OAuth2 in termini di scambio di messaggi;
 
--   Security Assertion Markup Language - SAML [29]_ (la versione corrente è la 2) è il protocollo più vecchio in circolazione e copre l'autenticazione e in parte l'autorizzazione;
+-   Security Assertion Markup Language - `SAML <http://saml.xml.org/saml-specifications>`_ [29]_ (la versione corrente è la 2) è il protocollo più vecchio in circolazione e copre l'autenticazione e in parte l'autorizzazione;
 
--   eXtensible Access Control Markup Language - XACML [30]_ complementare a SAML per la gestione esaustiva degli aspetti di autorizzazione.
+-   eXtensible Access Control Markup Language - `XACML <http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html>`_ [30]_ complementare a SAML per la gestione esaustiva degli aspetti di autorizzazione.
 
 Nei protocolli human-to-machine, un client riceve autorizzazioni ad usare un certo tipo di risorsa per conto di un utente umano tramite le credenziali di quest'ultimo. La richiesta del token/assertion è effettuate per mezzo di uno user-agent (cioè un browser o una app mobile) che funge da intermediario.
 
-Il ModI 2018 obbliga all'utilizzo di SPID per l'autenticazione human-to-machine o degli altri metodi indicati nell'art. 64 del Codice per l'Amministrazione Digitale - CAD [31]_ che includono anche la Carta d'Identità Elettronica - CIE e la Carta Nazionale dei Servizi - CNS. 
+Il ModI 2018 obbliga all'utilizzo di SPID per l'autenticazione human-to-machine o degli altri metodi indicati nell\'`art. 64 del Codice per l'Amministrazione Digitale <http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete>`_ [31]_ che includono anche la Carta d'Identità Elettronica - CIE e la Carta Nazionale dei Servizi - CNS. 
 
-SPID [32]_ è attualmente basato su SAML ma il supporto per OpenID Connect è in fase di definizione al fine di supportare in maniera più semplice l'autenticazione da piattaforme mobili.
+`SPID <http://spid-regole-tecniche.readthedocs.io/en/latest/>`_ [32]_ è attualmente basato su SAML ma il supporto per OpenID Connect è in fase di definizione al fine di supportare in maniera più semplice l'autenticazione da piattaforme mobili.
 
 In questo senso vale la pena esplorare le differenze principali tra SAML ed OpenID Connect (in breve Connect). Dal punto di vista della terminologia i due protocolli utilizzano termini differenti per gli stessi componenti:
 
@@ -153,11 +153,11 @@ La tabella seguente riassume le caratteristiche dei protocolli per l'interazione
 | **Rischi per la sicurezza** |  Phishing [33]_     |   XML Signature Wrapping [34]_ |
 +-----------------------------+---------------------+--------------------------------+
 
-Uno scenario interessante nell'ambito dell'integrazione A2A e A2B è quello legato alla federazione di domini (ad es., due diverse amministrazioni) in cui alcuni utenti di un dominio devono essere autenticati ed autorizzati per accedere a risorse dell'altro dominio (una federazione può includere anche più di due domini). In ambito SOAP, gli standard più utilizzati sono WS-Federation [35]_ & WS-Trust [36]_ (vedi Sezione 3 per l'inquadramento nello stack WS-\*). Soluzioni su altre tecnologie vengono sviluppate ad-hoc.
+Uno scenario interessante nell'ambito dell'integrazione A2A e A2B è quello legato alla federazione di domini (ad es., due diverse amministrazioni) in cui alcuni utenti di un dominio devono essere autenticati ed autorizzati per accedere a risorse dell'altro dominio (una federazione può includere anche più di due domini). In ambito SOAP, gli standard più utilizzati sono `WS-Federation <http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html>`_ [35]_ & `WS-Trust <http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html>`_ [36]_ (vedi Sezione 3 per l'inquadramento nello stack WS-\*). Soluzioni su altre tecnologie vengono sviluppate ad-hoc.
 
 Per quanto riguarda lo scenario machine-to-machine invece, come si vedrà nella sezione 2.4, l'autenticazione può avvenire a livello di trasporto utilizzando TLS.
 
-Per quanto riguarda l'autorizzazione machine-to-machine invece è possibile utilizzare il protocollo OAuth2 nello specifico del flusso Client Credential Grant [37]_. Tale flusso a differenza di quello standard non richiede la presenza di uno user-agent. Il client possiede invece delle proprie credenziali che vengono utilizzate per richiedere il token all'authorization server.
+Per quanto riguarda l'autorizzazione machine-to-machine invece è possibile utilizzare il protocollo OAuth2 nello specifico del flusso `Client Credential Grant <https://tools.ietf.org/html/rfc6749#section-4.4>`_ [37]_. Tale flusso a differenza di quello standard non richiede la presenza di uno user-agent. Il client possiede invece delle proprie credenziali che vengono utilizzate per richiedere il token all'authorization server.
 
 Protocolli per integrità e confidenzialità
 ------------------------------------------
@@ -202,7 +202,7 @@ Diffie--Hellman - ECDHE.
 |     Serial Number ed Issuer;                                          |
 |                                                                       |
 | -   DEVE avere il parametro keyUsage con i seguenti bit:              |
-|     digitalSignature, keyEncipherment [42]_;                          |
+|     `digitalSignature, keyEncipherment <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_ [42]_;                          |
 |                                                                       |
 | -   DOVREBBE contenere i riferimenti al DNS dei domini serviti;       |
 |                                                                       |
