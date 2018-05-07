@@ -74,7 +74,7 @@ Uniformità e naming
 
 Non esistono standard riguardanti il naming in ambito SOAP. Le best-practice prevedono l'utilizzo di `CamelCase <https://it.wikipedia.org/wiki/Notazione_a_cammello>`_ [53]_ (con prima lettera maiuscola, anche noto come PascalCase) per endpoint, porte, operazioni e parametri.
 
-Quando le risorse contengono link e riferimenti a risorse esterne, si dovrebbero usare le specifiche indicate in `IANA registered link relations <http://www.iana.org/assignments/link-relations/link-relations.xml>`_ [54]_ trasformando il `Kebab Case <https://it.wikipedia.org/wiki/Kebab_case>` [55]_ utilizzato con il CamelCase.
+Quando le risorse contengono link e riferimenti a risorse esterne, si dovrebbero usare le specifiche indicate in `IANA registered link relations <http://www.iana.org/assignments/link-relations/link-relations.xml>`_ [54]_ trasformando il `Kebab Case <https://it.wikipedia.org/wiki/Kebab_case>`_ [55]_ utilizzato con il CamelCase.
 
 
 .. discourse::
