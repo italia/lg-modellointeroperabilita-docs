@@ -47,7 +47,7 @@ In tutti i casi presentati, restano valide le indicazioni contenute nelle sezion
 
 
 .. discourse::
-	:topic_identifier: 0000
+   :topic_identifier: 0000
 
 	
 .. [93] Cf. `https://it.wikipedia.org/wiki/Blockchain <https://it.wikipedia.org/wiki/Blockchain>`_
