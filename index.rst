@@ -12,6 +12,7 @@ pubblica.
 `Leggi le istruzioni per la consultazione <doc/istruzioni_consultazione.html>`_
 
 
+
 Vai al testo delle linee guida:
 
 .. toctree::
