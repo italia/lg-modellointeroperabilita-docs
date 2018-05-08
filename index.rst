@@ -18,5 +18,6 @@ Vai al testo delle linee guida:
    :numbered:
    :maxdepth: 2
 
+   doc/istruzioni_consultazione
    doc/doc_01_cap_00
    doc/doc_02_cap_00
