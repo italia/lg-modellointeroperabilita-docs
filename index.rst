@@ -10,8 +10,13 @@ Questo documento raccoglie il testo della *Modello di interoperabilità 2018 per
 pubblica. 
 
 Vai al testo della Guida tecnica:
-- `Presentazione del Modello di Interoperabilità 2018 <documento-in-consultazione.html>`_
-- `Tecnologie ed Approcci all’Integrazione ed Interoperabilità <istruzioni-per-la-consultazione.html>`_
+
+- `Presentazione del Modello di Interoperabilità 2018 <doc/doc_01_cap_00>`_
+
+- `Tecnologie ed Approcci all’Integrazione ed Interoperabilità <doc/doc_02_cap_00>`_
+
+
+`Consulta le istruzioni per la consultazione <doc/istruzioni_consultazione.html>`_
 
 .. toctree::
    :numbered:
@@ -19,4 +24,4 @@ Vai al testo della Guida tecnica:
 
    doc/doc_01_cap_00
    doc/doc_02_cap_00
-   doc/istruzioni_consultazion
+   doc/istruzioni_consultazione
