@@ -11,9 +11,9 @@ pubblica.
 
 Vai al testo della Guida tecnica:
 
-- `Presentazione del Modello di Interoperabilità 2018 <doc/doc_01_cap_00>`_
+- `Presentazione del Modello di Interoperabilità 2018 <doc/doc_01_cap_00.html>`_
 
-- `Tecnologie ed Approcci all’Integrazione ed Interoperabilità <doc/doc_02_cap_00>`_
+- `Tecnologie ed Approcci all’Integrazione ed Interoperabilità <doc/doc_02_cap_00.html>`_
 
 
 `Consulta le istruzioni per la consultazione <doc/istruzioni_consultazione.html>`_
@@ -24,4 +24,3 @@ Vai al testo della Guida tecnica:
 
    doc/doc_01_cap_00
    doc/doc_02_cap_00
-   doc/istruzioni_consultazione
