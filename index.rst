@@ -11,3 +11,4 @@ Questo Modello rende possibile la collaborazione tra Pubbliche amministrazioni e
 
    doc/doc_01_cap_00
    doc/doc_02_cap_00
+   doc/istruzioni_consultazione
