@@ -15,9 +15,11 @@ Questo documento raccoglie il testo delle line guida del *Modello di interoperab
 Vai al testo delle linee guida:
 
 .. toctree::
+   doc/istruzioni_consultazione
+
+.. toctree::
    :numbered:
    :maxdepth: 2
 
-   doc/istruzioni_consultazione
    doc/doc_01_cap_00
    doc/doc_02_cap_00
