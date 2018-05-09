@@ -113,7 +113,7 @@ Nell'EIF è raccomandato:
 
 -   adottare e riusare fonti di informazioni e servizi esterni, laddove utile e fattibile, nello sviluppo dei servizi pubblici.
 
-La sicurezza e privacy sono aspetti che devono essere definiti in pieno accordo con l\'`e-Government action plan 2016-2020 della Commissione EU https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation>`__ [5]_. Per le PA è raccomandato:
+La sicurezza e privacy sono aspetti che devono essere definiti in pieno accordo con l\'`e-Government action plan 2016-2020 della Commissione EU <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation>`_ [5]_. Per le PA è raccomandato:
 
 -   tenendo conto dei requisiti specifici di sicurezza e riservatezza, identificare per ogni servizio le contromisure in conformità con piani di gestione del rischio;
 
