@@ -34,6 +34,6 @@ L’esigenza di aggiornare le precedenti linee guida nasce:
 Come partecipare
 ================
 
-Le linee guida su acquisizione e riuso di software per le PA sono pubblicate su `Docs Italia <http://lg-modellointeroperabilita.readthedocs.io>`_ ed è possibile commentarle su `Forum Italia <https://forum.italia.it/c/documenti-in-consultazione/linee-guida-modello-di-interoperabilita>`_.
+Le linee guida sul Modello di Interoperabilità per le PA sono pubblicate su `Docs Italia <http://lg-modellointeroperabilita.readthedocs.io>`_ ed è possibile commentarle su `Forum Italia <https://forum.italia.it/c/documenti-in-consultazione/linee-guida-modello-di-interoperabilita>`_.
 
 È possibile inviare i propri commenti fino all'7 giugno 2018.
