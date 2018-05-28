@@ -1,0 +1,3 @@
+# python test files
+.tox
+*.py[co]
