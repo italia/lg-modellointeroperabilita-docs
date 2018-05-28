@@ -201,8 +201,8 @@ Diffie--Hellman - ECDHE.
 | -   DEVE contenere i seguenti elementi Subject, Key Identifier,       |
 |     Serial Number ed Issuer;                                          |
 |                                                                       |
-| -   DEVE avere il parametro keyUsage_ con i seguenti bit:              |
-|     `digitalSignature, keyEncipherment [42]_;                        |
+| -   DEVE avere il parametro keyUsage_ con i seguenti bit:             |
+|     `digitalSignature, keyEncipherment` [42]_;                        |
 |                                                                       |
 | -   DOVREBBE contenere i riferimenti al DNS dei domini serviti;       |
 |                                                                       |
