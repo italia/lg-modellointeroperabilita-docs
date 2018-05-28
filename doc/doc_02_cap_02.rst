@@ -168,8 +168,7 @@ Il protocollo TLS (versione stabile corrente 1.2, draft 1.3 presentato a Marzo 2
 
 Per quanto riguarda i singoli algoritmi utilizzati:
 
--   Per lo scambio della chiave di sessione, TLS supporta numerose tecniche. Tra quelle proposte, si impone l'uso di tecniche che evitano attacchi man-in-the-middle e forniscono la cosiddetta forward security (cioè che la scoperta di una chiave privata usata nello scambio non permette di scoprire la chiave di sessione). Gli algoritmi di scambio delle chiavi permessi sono quindi ephemeral Diffie--Hellman - DHE ed ephemeral Elliptic Curve
-Diffie--Hellman - ECDHE.
+-   Per lo scambio della chiave di sessione, TLS supporta numerose tecniche. Tra quelle proposte, si impone l'uso di tecniche che evitano attacchi man-in-the-middle e forniscono la cosiddetta forward secrecy (cioè che la scoperta di una chiave privata usata nello scambio non permette di scoprire la chiave di sessione). Gli algoritmi di scambio delle chiavi permessi sono quindi ephemeral Diffie--Hellman - DHE ed ephemeral Elliptic Curve Diffie--Hellman - ECDHE.
 
 -   Per la cifratura TLS supporta numerosi algoritmi. Si suggeriscono i protocolli attualmente supportati nello standard TLS 1.3 e che sono considerati sicuri: Advanced Encryption Standard - AES (nella versioni GCM e CCM).
 
