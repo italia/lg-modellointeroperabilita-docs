@@ -51,7 +51,7 @@ Consideriamo il caso in cui dobbiamo viaggiare in India, e il nostro obiettivo i
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 | **Obiettivo del servizio**                 | **Agenzia 1**                                                                                                             | **Agenzia 2**                                                                                           |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| Necessità di un visto per andare in India  | *nella nostra agenzia rilasciamo il visto in 7 giorni, al costo di € 30, e la penalità per un giorno di ritardo è di € 2* | *nella nostra agenzia facciamo il possibile per rilasciare il visto in 2 settimane, il costo è di € 20* |
+| Necessità di un visto per andare in India  | *nella nostra agenzia rilasciamo il visto in 7 giorni, al costo di 30 €, e la penalità per un giorno di ritardo è di 2 €* | *nella nostra agenzia facciamo il possibile per rilasciare il visto in 2 settimane, il costo è di 20 €* |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Guardando le due specifiche, il nostro obiettivo ora è fornire loro una struttura, distinguendo le diverse parti che hanno ruoli diversi.
@@ -76,9 +76,9 @@ all'esempio di cui sopra:
 |                       |                       | settimane (*best      |
 |                       |                       | effort*)              |
 +-----------------------+-----------------------+-----------------------+
-| altra non funzionale  | prezzo : € 30         | prezzo : € 20         |
+| altra non funzionale  | prezzo: 30 €          | prezzo: 20 €          |
 |                       |                       |                       |
-|                       | penale : € 2 / giorno |                       |
+|                       | penale: 2 € / giorno  |                       |
 |                       | ritardo               |                       |
 +-----------------------+-----------------------+-----------------------+
 
@@ -98,7 +98,7 @@ Finora abbiamo introdotto un modello che ci consente di descrivere un singolo se
 
 I servizi interessati sono ovviamente concettualmente correlati. Ci concentriamo su due relazioni concettuali fondamentali, *part-of* e *is-a*. Una relazione *part-of* vale tra due servizi quando la specifica di uno ha come componente la specifica dell'altro. Nell'esempio, i servizi che (offrono le operazioni che) aggiornano l\'indirizzo di casa nella patente di guida, scelgono il nuovo medico e scelgono il nuovo fornitore di energia elettrica, sono tutti legati al servizio "cambio di indirizzo di casa". Diciamo che "cambio di indirizzo di casa" è un servizio composito, e i quattro servizi *part-of* con esso sono servizi elementari. Un servizio è elementare quando non siamo interessati a rappresentarlo ulteriormente in termini di componenti più atomici.
 
-Fondamentalmente, un *servizio* è *elementare* se e solo se non esiste un altro servizio con una relazione *part-of* con esso, altrimento è un *servizio composito*.
+Fondamentalmente, un *servizio* è *elementare* se e solo se non esiste un altro servizio con una relazione *part-of* con esso, altrimenti è un *servizio composito*.
 
 Il costrutto *part-of*, pur essendo efficace nel relazionare servizi elementari e compositi, non ci aiuta ad esprimere la relazione esistente tra i diversi tipi di servizi relativi al "cambio di indirizzo di casa" nei diversi contesti in cui si applicano. Abbiamo bisogno per questo scopo di un nuovo costrutto. Una relazione *is-a* vale tra un servizio |s[i]| (servizio figlio/specifico) e un servizio |s[j]| (servizio padre/generale) quando |s[i]| è una specializzazione (caso specifico) di |s[j]|. Secondo la proprietà di ereditarietà dell'*is-a*, |s[i]| eredita tutte le proprietà (funzionali e non funzionali) di |s[j]|. Inoltre, |s[i]| eredita tutte le relazioni tra |s[j]| e le sue componenti. |s[i]| può avere proprietà aggiuntive, non in |s[j]|. Ad esempio, tre servizi che cambiano indirizzo tra due comuni, cambiano indirizzo tra Italia e estero, e cambiano indirizzo tra due paesi stranieri, possono essere considerati casi specifici del servizio generico di "cambio di residenza". Le caratteristiche comuni a tutti e quattro i servizi sono la necessità di aggiornare due basi di dati, mentre i database specifici cambieranno in base ai luoghi coinvolti nel cambio di indirizzo. Inoltre, quando ci si sposta dall\'Italia all\'estero, possiamo immaginare che verranno attivate ulteriori procedure amministrative specifiche, ad es., per questioni relative alla cittadinanza.
 
@@ -121,7 +121,7 @@ La trasposizione di un *servizio* in un *servizio digitale* non si riduce al sol
 
 Nella progettazione di sistemi software, tipicamente si distinguono tre strati logici di funzionalità in comunicazione tra loro:
 
--   logica di presentazione (presentation layer) o front-end (ad es., un'applicazione web, una APP mobile, ecc.), ha il compito di presentare i risultati dell'elaborazione all'utente umano ed inviare le richieste di questi verso la parte centrale/elaborativa del sistema, facendo dunque da interfaccia uomo-macchina;
+-   logica di presentazione (presentation layer) o front-end (ad es., un'applicazione web, una app mobile, ecc.), ha il compito di presentare i risultati dell'elaborazione all'utente umano ed inviare le richieste di questi verso la parte centrale/elaborativa del sistema, facendo dunque da interfaccia uomo-macchina;
 
 -   logica applicativa (application layer o business layer);
 
@@ -133,7 +133,7 @@ Nello specifico dei servizi digitali, che appunto vengono erogati su Internet, i
 
 Con **application programming interface** (in acronimo **API**) si indica ogni *insieme di procedure/funzionalità/operazioni disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l\'espletamento di un determinato compito*. Spesso con tale termine si intendono le librerie software disponibili in un certo linguaggio di programmazione. Una buona API fornisce una "scatola nera", cioè un livello di astrazione che evita al programmatore di sapere come funziona l'implementazione dell'API ad un livello più basso. Questo permette di ri-progettare o migliorare le funzioni all\'interno dell\'API senza cambiare il codice che si affida ad essa. Una API che non richiede il pagamento di diritti per il suo accesso ed utilizzo è detta "aperta" (open). La finalità di un'API è di ottenere un\'astrazione a più alto livello, di solito tra lo strato sottostante l'API e quello che la utilizza (client).
 
-Per realizzare un servizio digitale, come detto, è necessario progettare e realizzare i tre strati; lo strato di logica applicativa offre la sua API affinchè chi sviluppa lo strato di presentazione all'utente possa utilizzarla come se la logica applicativa fosse una libreria; estendendo, se vari sistemi esportano le proprie logiche applicative come API, la logica di presentazione può utilizzarle insieme, mischiandole (*mash-up*), esattamente come nello sviluppo di software moderno si programma riutilizzando le librerie offerte nel linguaggio di programmazione, sistema operativo, ecc. Quando il servizio digitale è erogato su Internet, e prevalentemente sul Web che si basa sul protocollo HTTP,) si parla di Web API. Per le Web API l'erogatore potrebbe decidere di rendere disponibile l'API non soltanto a chi sviluppa la logica di presentazione, ma "aperta" anche ad altre organizzazioni che volessero collaborare con l'erogatore, in questo caso si parla di Open API . In molti contesti, con abuso di nomenclatura, ma intuitivamente chiaro, i due termini vengono confusi e considerati sinonimi (dato che l'apertura è spesso associata al Web/Internet).
+Per realizzare un servizio digitale, come detto, è necessario progettare e realizzare i tre strati; lo strato di logica applicativa offre la sua API affinché chi sviluppa lo strato di presentazione all'utente possa utilizzarla come se la logica applicativa fosse una libreria; estendendo, se vari sistemi esportano le proprie logiche applicative come API, la logica di presentazione può utilizzarle insieme, mischiandole (*mash-up*), esattamente come nello sviluppo di software moderno si programma riutilizzando le librerie offerte nel linguaggio di programmazione, sistema operativo, ecc. Quando il servizio digitale è erogato su Internet (e prevalentemente sul Web che si basa sul protocollo HTTP) si parla di Web API. Per le Web API l'erogatore potrebbe decidere di rendere disponibile l'API non soltanto a chi sviluppa la logica di presentazione, ma "aperta" anche ad altre organizzazioni che volessero collaborare con l'erogatore, in questo caso si parla di Open API. In molti contesti, con abuso di nomenclatura, ma intuitivamente chiaro, i due termini vengono confusi e considerati sinonimi (dato che l'apertura è spesso associata al Web/Internet).
 
 Per il W3C un **web service** è `qualsiasi software che si rende disponibile su Internet e standardizza la sua interfaccia tramite la codifica XML <https://www.w3.org/TR/ws-arch/#whatis>`_  [4]_. Un client richiama un'operazione offerta da un web service inviando una richiesta (solitamente sotto forma di un messaggio XML) e il web service invia una risposta XML. I web service invocano la comunicazione su una rete, con HTTP come protocollo più comune. I web service si basano principalmente su standard come XML-RPC e SOAP (Simple Object Access Protocol). Quindi un web service è un possibile modo di realizzare una Web API. Il termine web service (originatosi intorno ai primi anni 2000) è nato proprio per indicare la logica applicativa, esposta sul web, sottostante ad un servizio digitale. A partire dalla seconda metà degli anni 2000, creando possibili confusioni, il termine Web API è stato utilizzato come alternativa a web service per indicare altri approcci/protocolli/tecnologie (come REST) per realizzare API senza utilizzare XML-RPC e SOAP. Ma anche una Web API indica la logica applicativa, esposta sul web, sottostante ad un servizio digitale.
 
@@ -190,7 +190,7 @@ Le interfacce di servizio complesse coinvolgono l'utilizzo e la composizione di 
 Un altro modo di classificare le interfacce di servizio è lo stile di interazione richiesto dalle diverse operazioni disponibili: sincrono (eg. di tipo Remote Procedure Call - RPC, chiamata remota a procedura) o asincrono (eg. basato sullo scambio di messaggi o documenti). Nelle operazioni sincrone, un client esprime la sua richiesta nella forma di una chiamata ed attende una risposta prima di continuare l'esecuzione. Nelle operazioni asincrone, invece, il client invia un documento/messaggio ma non si aspetta nessuna risposta (se non in alcuni casi il fatto che la richiesta è stata presa in carico). La risposta da parte dell'interfaccia di servizio, nei casi in cui ci sia, può apparire ore o anche giorni più tardi.
 
 **Interfacce semplici e mission-critical**
-Un modo ulteriore di classificare le interfacce di servizio è quello di distinguere quelle sostituibili da quelle mission-critical. Una interfaccia di servizio sostituibile può essere fornita da diverse organizzazioni e la produttività è impattata in maniera limitata nel caso di disservizi. Una interfaccia di servizio mission-critical è invece di solito fornita da un'unica organizzazione e la indisponibilità della stesso può provocare dei forti disservizi.
+Un modo ulteriore di classificare le interfacce di servizio è quello di distinguere quelle sostituibili da quelle mission-critical. Una interfaccia di servizio sostituibile può essere fornita da diverse organizzazioni e la produttività è impattata in maniera limitata nel caso di disservizi. Una interfaccia di servizio mission-critical è invece di solito fornita da un'unica organizzazione e la indisponibilità della stessa può provocare dei forti disservizi.
 
 **Caratteristiche funzionali e non funzionali delle interfacce**
 Le classificazioni introdotte non sono strette poiché a seconda delle operazioni fornite, una interfaccia di servizio può essere catalogata in una posizione qualsiasi tra i due estremi delle stesse.
@@ -254,7 +254,7 @@ Esempi di SLI sono i seguenti:
 
 -   dimensione massima di ogni richiesta accettata. Le richieste più grandi possono essere rifiutate;
 
--   latenza al 90° percentile. Utilizzata per calcolare la responsività;
+-   latenza al 90º percentile. Utilizzata per calcolare la responsività;
 
 -   percentuale di minuti negli ultimi 30 gg in cui l'interfaccia di servizio è stata disponibile;
 
@@ -274,12 +274,12 @@ Essi inoltre devono:
 
 -   indicare nel nome identificativo l'eventuale periodo di aggregazione coi soli suffissi s (secondi), m (minuti), d (giorni) e y (anni) utilizzando al posto dei mesi il numero di giorni.
 
-Ove possibile, gli SLO e gli SLA dovrebbero essere in relazione diretta con i valori associati (ad es., indicare success rate anzichè l'error rate), in modo che a valori più alti corrispondano risultati positivi.
+Ove possibile, gli SLO e gli SLA dovrebbero essere in relazione diretta con i valori associati (ad es., indicare success rate anziché l'error rate), in modo che a valori più alti corrispondano risultati positivi.
 
 Middleware
 ----------
 
-Con il termine middleware si intende lo strato software che separa le risorse informative dai fruitori delle interfacce di servizio, di fatto permettendo la realizzazione delle interfacce stesse. In tal senso un middleware gestisce la complessità e l'eterogeneità tipica dei sistemi distribuiti. Le risorse informative di cui si parla in questo caso possono essere nel caso più semplice della basi di dati, ma più comunemente includono altre interfacce di servizio (che a loro volta possono essere implementati utilizzando dei middleware) e sistemi legacy a cui il middleware contribuisce a fornire interfacce moderne. A tale fine i middleware forniscono una serie di funzionalità:
+Con il termine middleware si intende lo strato software che separa le risorse informative dai fruitori delle interfacce di servizio, di fatto permettendo la realizzazione delle interfacce stesse. In tal senso un middleware gestisce la complessità e l'eterogeneità tipica dei sistemi distribuiti. Le risorse informative di cui si parla in questo caso possono essere nel caso più semplice delle basi di dati, ma più comunemente includono altre interfacce di servizio (che a loro volta possono essere implementate utilizzando dei middleware) e sistemi legacy a cui il middleware contribuisce a fornire interfacce moderne. A tale fine i middleware forniscono una serie di funzionalità:
 
 -   Il supporto a framework per l'esposizione di interfacce di servizio implementati in differenti tecnologie e secondo differenti schemi di interazione. In questo senso essi nascondono agli sviluppatori le complessità legate all'esposizione di interfacce di servizio secondo specifici protocolli di rete.
 
@@ -307,7 +307,7 @@ Oltre alle funzionalità richieste nelle sezioni precedenti, alcuni API manageme
 Logging
 ^^^^^^^
 
-Il logging riveste un ruolo fondamentale nella progettazione e sviluppo di interfacce di servizio. Le moderne piattaforme middleware, oltre ad integrare meccanismi di logging interni, possono connettersi ad interfacce di servizio esterne che permettono la raccolta (log collection), la ricerca e la produzione di analitiche utili tra l'altro all'identificazione di problemi e al monitoraggio del sistema e della QoS. L'utilizzo di log collector permette di centrallizzare non solo i log relativi all'utilizzo dell'interfaccia di servizio, ma anche quelli di eventuali digital service e componenti di rete (ad es., proxy e application-gateway). I messaggi applicativi possono, ai fini di non ripudio (vedi Sezione 2.1.4) essere memorizzati assieme alla firma
+Il logging riveste un ruolo fondamentale nella progettazione e sviluppo di interfacce di servizio. Le moderne piattaforme middleware, oltre ad integrare meccanismi di logging interni, possono connettersi ad interfacce di servizio esterne che permettono la raccolta (log collection), la ricerca e la produzione di analitiche utili tra l'altro all'identificazione di problemi e al monitoraggio del sistema e della QoS. L'utilizzo di log collector permette di centralizzare non solo i log relativi all'utilizzo dell'interfaccia di servizio, ma anche quelli di eventuali digital service e componenti di rete (ad es., proxy e application-gateway). I messaggi applicativi possono, ai fini di non ripudio (vedi Sezione 2.1.4) essere memorizzati assieme alla firma
 digitale e quindi archiviati periodicamente nel rispetto delle direttive sulla privacy.
 
 L\'erogatore deve documentare il dettaglio del formato della tracciatura e le modalità di consultazione e reperimento delle informazioni.
@@ -351,12 +351,12 @@ In base al precedente confronto tra servizio digitale e interfaccia di servizio,
 
 **A2A in modalità human-to-machine.** In questo caso c'è una interazione tra due amministrazioni, di cui una offre un servizio digitale e l'altra, per il tramite di un suo operatore umano, ne fruisce al fine di espletare le proprie procedure. Ad es., un operatore di un Comune accede ad un servizio digitale dell'Agenzia delle Entrate per verificare la correttezza del codice fiscale. In questo caso, l'interfaccia di servizio viene sollecitata dalla logica di presentazione che l'erogatore offre agli operatori delle altre amministrazioni, ma non c'è un'invocazione diretta (si ricordi che un'interfaccia di servizio viene invocata solamente da altri moduli applicativi client, non è fruibile direttamente da utenti umani)
 
-**A2A in modalità machine-to-machine.** In questo caso c'è una interazione tra due amministrazioni, in cui una offre un servizio digitale, ed espone una interfaccia di servizio, e l'altra realizza una propria applicazione/sistema/procedura digitale il cui software ha bisogno di invocare l'interfaccia offerta. Ad es., in un Comune viene realizzato un software (che utilizzano gli operatori allo sportello anagrafico) che durante la sua esecuzione invoca l'interfaccia di servizio dell'Agenzia delle Entrate per la verifica del codice fiscale. In questo caso l'interfaccia di servizio dell'erogatore è invocata direttamente dal module software del fruitore.
+**A2A in modalità machine-to-machine.** In questo caso c'è una interazione tra due amministrazioni, in cui una offre un servizio digitale, ed espone una interfaccia di servizio, e l'altra realizza una propria applicazione/sistema/procedura digitale il cui software ha bisogno di invocare l'interfaccia offerta. Ad es., in un Comune viene realizzato un software (che utilizzano gli operatori allo sportello anagrafico) che durante la sua esecuzione invoca l'interfaccia di servizio dell'Agenzia delle Entrate per la verifica del codice fiscale. In questo caso l'interfaccia di servizio dell'erogatore è invocata direttamente dal modulo software del fruitore.
 
 Va notata una differenza tra le due modalità. Nel primo caso, una esigenza operativa che richieda l'utilizzo di più servizi digitali per essere espletata, prevede l'utilizzo da parte degli operatori di più servizi digitali, e gli utenti hanno il compito di coordinare i vari servizi digitali, eventualmente muovere i dati/risultati da uno all'altro, ecc. Ovvero la composizione dei servizi digitali non può essere automatizzata, ma rimane in carico all'utente che utilizza i servizi digitali. Nel secondo caso, la composizione di servizi digitali può essere invece facilmente realizzata andando a sviluppare un nuovo servizio digitale, che compone le interfacce applicative degli erogatori e realizza la logica di coordinamento, a sua volta possibilmente offerta come interfaccia di servizio composta, al di sopra della quale offrire la logica di presentazione.
 
 **A2B in modalità human-to-machine.** In questo caso c'è una interazione tra un'impresa ed un'Amministrazione che offre un servizio digitale. L'impresa sfrutta il servizio digitale per il tramite di un suo addetto
-umano che interagisce con il servizio. Ad es., un addetto di un'azienda accede ad un servizio digitale dell'Agenzia delle Entrate per verificare la correttezza dei codici fiscale.
+umano che interagisce con il servizio. Ad es., un addetto di un'azienda accede ad un servizio digitale dell'Agenzia delle Entrate per verificare la correttezza dei codici fiscali.
 
 **A2B in modalità machine-to-machine.** In questo caso c'è una interazione tra un'impresa ed un'Amministrazione a livello applicativo, ovvero una procedura software di un'impresa richiama le funzionalità offerte da un'interfaccia di servizio erogata da un'Amministrazione.
 
@@ -462,7 +462,7 @@ Le indicazioni generali sono:
 
 .. [11] Cf. `https://tools.ietf.org/html/rfc3339\#section-5.6 <https://tools.ietf.org/html/rfc3339#section-5.6>`_
 
-.. [12] L'uso del +/- nell'ultima colonna da un'indicazione qualitativ a di quanto sia agevole comporre elementi nella specifica interazione. Come discusso, nel caso di servizi digitali la composizione è a cura dell'utente finale, che agisce da *human-ware* (ovvero deve farsi carico di realizzare, attraverso l'interazione stessa, la logica di composizione ed il passaggio di dati), mentre la composizione di interfacce di servizio è più semplice da automatizzare, e soprattutto può poi essere riusata più volte esponendo a sua volta come interfaccia di servizio composta. In quest'ultimo caso va però realizzata una logica di presentazione per il servizio digitale composta, se si vuole offrirlo agli utenti umani.
+.. [12] L'uso del +/- nell'ultima colonna dà un'indicazione qualitativa di quanto sia agevole comporre elementi nella specifica interazione. Come discusso, nel caso di servizi digitali la composizione è a cura dell'utente finale, che agisce da *human-ware* (ovvero deve farsi carico di realizzare, attraverso l'interazione stessa, la logica di composizione ed il passaggio di dati), mentre la composizione di interfacce di servizio è più semplice da automatizzare, e soprattutto può poi essere riusata più volte esponendo a sua volta come interfaccia di servizio composta. In quest'ultimo caso va però realizzata una logica di presentazione per il servizio digitale composta, se si vuole offrirlo agli utenti umani.
 
 .. [13] Cf.
 
@@ -474,7 +474,7 @@ Le indicazioni generali sono:
 
     Meyer, Bertrand (1997). Object-Oriented Software Construction, second edition. Prentice Hall. ISBN 0-13-629155-4.
 
-.. [14] La granularità è il livello di dettaglio con cui i dati sono esposti e scambiati. *Coarse-grained* significa un livello di dettaglio "basso", in quanto molti dettagli possono o devono rimanere interni all'implementazione dell'interfaccia di servizio. *Fine-grained* significa invece che il dato deve essere specificato ad un dettaglio massimo, poichè che il fruitore ha bisogno di una visione puntuale del dato stesso.
+.. [14] La granularità è il livello di dettaglio con cui i dati sono esposti e scambiati. *Coarse-grained* significa un livello di dettaglio "basso", in quanto molti dettagli possono o devono rimanere interni all'implementazione dell'interfaccia di servizio. *Fine-grained* significa invece che il dato deve essere specificato ad un dettaglio massimo, poiché il fruitore ha bisogno di una visione puntuale del dato stesso.
 
 .. [15] Come anticipato in “Presentazione del Modello di Interoperabilità 2018” ed approfondito in “Governance del Modello di Interoperabilità”, la modellazione e specifica dei dati avviene nei Gruppi di Lavoro interni agli Ecosistemi, che indirizzano il lavoro di standardizzazione.
 

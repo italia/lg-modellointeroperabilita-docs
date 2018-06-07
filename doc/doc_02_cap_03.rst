@@ -3,7 +3,7 @@ SOAP
 
 Il protocollo SOAP (Simple Object Access Protocol) è stato sviluppato per superare le limitazioni imposte dai protocolli precedenti per l'interazione distribuita basata su oggetti (CORBA, Java/RMI, DCOM) relative alla distribuzione a livello Internet delle macchine interessate ed ai vincoli imposti dal punto di vista delle tecnologie di implementazione.
 
-La versione corrente della specifica `SOAP è la 1.2 del 27 Aprile 2007 <https://www.w3.org/TR/soap12-part1/>`_  [45]_. La specifica definisce due stili di comunicazione (communication modes): 
+La versione corrente della specifica `SOAP è la 1.2 del 27 aprile 2007 <https://www.w3.org/TR/soap12-part1/>`_  [45]_. La specifica definisce due stili di comunicazione (communication modes):
 
   - quello basato su chiamata a procedura (RPC-like), 
 
@@ -31,7 +31,7 @@ Il protocollo SOAP definisce tre componenti fondamentali:
 
 La definizione del protocollo è pensata per essere indipendente dal protocollo sottostante. In particolare, SOAP può operare (tramite i cosiddetti binding) su diversi protocolli di trasporto inclusi HTTP, SMTP, TCP, UDP o JMS. Sebbene implementazioni sono state proposte per ognuno di questi casi (in special modo JMS per interazioni asincrone), il mercato ha premiato principalmente soluzioni sincrone basate su HTTP.
 
-Una delle caratteristiche che contraddistinguono il protocollo SOAP è la sua estensibilità. In particolare si indica con WS-\* lo stack di estensioni costruite su SOAP, molte delle quali hanno avuto grande successo in termini di implementazioni disponibili. Queste estensioni permettono di avere su SOAP una serie di funzionalità che su altri protocolli devono essere costruite ad-hoc. Lo svantaggio di questa soluzione è che il protocollo introduce un overhead di processamento che fa preferire altre soluzioni in determinati contesti.
+Una delle caratteristiche che contraddistinguono il protocollo SOAP è la sua estensibilità. In particolare si indica con WS-\* lo stack di estensioni costruite su SOAP, molte delle quali hanno avuto grande successo in termini di implementazioni disponibili. Queste estensioni permettono di avere su SOAP una serie di funzionalità che su altri protocolli devono essere costruite ad hoc. Lo svantaggio di questa soluzione è che il protocollo introduce un overhead di processamento che fa preferire altre soluzioni in determinati contesti.
 
 Tra le estensioni supportate dai framework più diffusi abbiamo:
 
@@ -60,14 +60,14 @@ La specifica delle interfacce di servizio SOAP è effettuata tramite `Web Servic
 Indicazioni di utilizzo
 -----------------------
 
-La specifica SOAP permette la definizione di specifici profili di interoperabilità, imponendo alcune restrizioni circa i tipi ed i formati scambiati. Il profilo di interoperabilità secondo il quale interfacce di servizio di tipo SOAP andranno implementati è la `versione 2.0 del Basic Profile <http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html>`_ [48]_ (nel seguito BP2) definito dal WS-I (Web Services Interoperability Organization) ed ora confluito in OASIS. BP2 è basato su SOAP 1.2 e WS-Addressing (per il dispatching dei messaggi a livello applicativo, in particolare nel caso di interazioni asincrone). Tra le molte indicazioni, BP2 definisce anche la modalità di gestione degli errori. In particolare, oltre all'utilizzo dei codici di errore HTTP si richiede che il ricevente sia in grado di gestire le SOAP fault [49]_ che quindi devono, obbligatoriamente, essere emesse dall'erogatore a fronte di errori.
+La specifica SOAP permette la definizione di specifici profili di interoperabilità, imponendo alcune restrizioni circa i tipi ed i formati scambiati. Il profilo di interoperabilità secondo il quale interfacce di servizio di tipo SOAP andranno implementate è la `versione 2.0 del Basic Profile <http://docs.oasis-open.org/ws-brsp/BasicProfile/v2.0/cs01/BasicProfile-v2.0-cs01.html>`_ [48]_ (nel seguito BP2) definito dal WS-I (Web Services Interoperability Organization) ed ora confluito in OASIS. BP2 è basato su SOAP 1.2 e WS-Addressing (per il dispatching dei messaggi a livello applicativo, in particolare nel caso di interazioni asincrone). Tra le molte indicazioni, BP2 definisce anche la modalità di gestione degli errori. In particolare, oltre all'utilizzo dei codici di errore HTTP si richiede che il ricevente sia in grado di gestire le SOAP fault [49]_ che quindi devono, obbligatoriamente, essere emesse dall'erogatore a fronte di errori.
 
 Sicurezza
 ---------
 
 Per quanto riguarda la sicurezza, l'ultimo profilo standard definito da OASIS è il `Basic Security Profile 1.1 <http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html>`_ [50]_. Il profilo è datato ma le considerazioni sono ancora valide. Per quanto riguarda le versioni dei protocolli, si devono rispettare i vincoli imposti dal Modello di Interoperabilità 2018 in questo documento.
 
-E' importante, nel caso si richiedessero funzionalità di autorizzazione, autenticazione e non ripudio, oltre che di riservatezza (coperta dall'utilizzo obbligatorio di HTTPS [51]_) fare affidamento alle tecnologie di autenticazione ed autorizzazione a livello applicativo. Il Basic Security Profile 1.1, basato sull'estensione WS-Security, suggerisce l'uso di SAML 2.0. Come detto, rispetto alle tecnologie di autenticazione ed autorizzazione, ci sono alcuni domini applicativi per i quali OAuth2 o OpenId sono più appropriati. In questi ultimi casi, fermo restando l'utilizzo della XML Signature definita in WS-Security per quanto riguarda il non ripudio, l'utilizzo di token di autorizzazione ed autenticazione non SAML richiede la definizione di `request header custom <https://developers.google.com/adwords/api/docs/guides/call-structure>`_ [52]_.
+È importante, nel caso si richiedessero funzionalità di autorizzazione, autenticazione e non ripudio, oltre che di riservatezza (coperta dall'utilizzo obbligatorio di HTTPS [51]_) fare affidamento alle tecnologie di autenticazione ed autorizzazione a livello applicativo. Il Basic Security Profile 1.1, basato sull'estensione WS-Security, suggerisce l'uso di SAML 2.0. Come detto, rispetto alle tecnologie di autenticazione ed autorizzazione, ci sono alcuni domini applicativi per i quali OAuth2 o OpenID sono più appropriati. In questi ultimi casi, fermo restando l'utilizzo della XML Signature definita in WS-Security per quanto riguarda il non ripudio, l'utilizzo di token di autorizzazione ed autenticazione non SAML richiede la definizione di `request header custom <https://developers.google.com/adwords/api/docs/guides/call-structure>`_ [52]_.
 
 Uniformità e naming
 -------------------

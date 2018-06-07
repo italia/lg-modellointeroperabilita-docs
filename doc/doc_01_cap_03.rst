@@ -21,7 +21,7 @@ Il modello strategico, pensato per superare l'approccio a "silos", storicamente 
 
 2.  Gli **Ecosistemi**, sono i settori o le aree omogenee in cui si svolge l'azione da parte delle PA. Ciascun ecosistema coinvolge enti e organismi pubblici, e soggetti privati che operano nella stessa  area di interesse e che a vario titolo svolgono funzioni attive all'interno dell'ecosistema stesso. I soggetti interessati interagiscono per il raggiungimento di obiettivi comuni attraverso 
 
-	1.  la condivisione delle esigenze e delle modalità operative;
+    1.  la condivisione delle esigenze e delle modalità operative;
 
     2. la condivisione delle differenti competenze;
 
@@ -45,7 +45,7 @@ Il modello strategico, pensato per superare l'approccio a "silos", storicamente 
 
     -   il CERT-PA quale strumento operativo per supportare l'adozione dei corretti livelli di sicurezza presso le PA.
 
-7.  La **Gestione del cambiamento** che è una componente definita per far fronte alle necessità di coordinamento; gestione e monitoraggio delle attività funzionali allo sviluppo del Piano.
+7.  La **Gestione del cambiamento** che è una componente definita per far fronte alle necessità di coordinamento, gestione e monitoraggio delle attività funzionali allo sviluppo del Piano.
 
 
 .. discourse::

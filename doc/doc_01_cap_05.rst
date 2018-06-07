@@ -14,7 +14,7 @@ I soggetti fruitori possono utilizzare le API/servizi [10]_ esposti dall'erogato
 
 -   una soluzione software attivata da un attore umano (*user agent/human*);
 
--   un sistema applicativo *automatico* [11]_ (*server/machine*), anche allo scopo di definire nuovi servizi a valore aggiunto .
+-   un sistema applicativo *automatico* [11]_ (*server/machine*), anche allo scopo di definire nuovi servizi a valore aggiunto.
 
 In considerazione di quanto sopra si individuano le seguenti possibili interazioni:
 
@@ -42,7 +42,7 @@ In generale, nell'integrazione dei sistemi software si individuano principalment
 
 .. image:: ../media/image7.png
 
--   **Composizione inter-PA**: in questo caso un insieme di applicazioni comunicano, anche in maniera bidirezionale, al fine di comporre una nuova logica applicativa ottenuta dalla loro interazione, ed erogare questa a sua volta come servizio a valore aggiunto. Talvolta questa nuova logica viene indicata come servizio/applicazione composito/a (o composto/a). Come nel caso precedente, esiste un processo inter-organizzativo che sovraintende a tutte le organizzazioni che vengono composte. Il caso tipico, nel mondo commerciale, è quello di un servizio che definite delle date ed una destinazione, propone all'utente voli aerei, hotel e noleggio auto, ecc, andando appunto a comporre servizi per la bigliettazione aerea, prenotazione alberghiera, noleggio auto, ecc. Nel caso della PA, un caso è una conferenza di servizi telematica [14]_ in cui diverse Amministrazioni compongono un un nuovo servizio per dare seguito ad una istanza di un cittadino o di un'impresa.
+-   **Composizione inter-PA**: in questo caso un insieme di applicazioni comunicano, anche in maniera bidirezionale, al fine di comporre una nuova logica applicativa ottenuta dalla loro interazione, ed erogare questa a sua volta come servizio a valore aggiunto. Talvolta questa nuova logica viene indicata come servizio/applicazione composito/a (o composto/a). Come nel caso precedente, esiste un processo inter-organizzativo che sovraintende a tutte le organizzazioni che vengono composte. Il caso tipico, nel mondo commerciale, è quello di un servizio che definite delle date ed una destinazione, propone all'utente voli aerei, hotel e noleggio auto, ecc, andando appunto a comporre servizi per la bigliettazione aerea, prenotazione alberghiera, noleggio auto, ecc. Nel caso della PA, un caso è una conferenza di servizi telematica [14]_ in cui diverse Amministrazioni compongono un nuovo servizio per dare seguito ad una istanza di un cittadino o di un'impresa.
 
 .. image:: ../media/image8.png
 
@@ -95,7 +95,7 @@ Ogni caso d'uso può essere risolto in vari modi, ognuno di questi schemi verrà
 
 Un profilo infine, in maniera trasversale rispetto ai casi d'uso ed ai pattern, risolve le diverse opzionalità o aspetti non adeguatamente specificati dagli standard tecnologici.
 
-L'applicazione dei casi d'uso, pattern e profili agevola l'azione nello sviluppo e nella distribuzione di API/servizi. Il nuovo Modello proporrà un catalogo *di casi d'uso*, *profili* e *pattern* *di interoperabilità* messi a disposizione delle PA, popolato maniera incrementale sulla base di esigenze individuate dall'Agenzia per l'Italia Digitale anche a fronte dell'evidenza di nuovi bisogni per le PA.
+L'applicazione dei casi d'uso, pattern e profili agevola l'azione nello sviluppo e nella distribuzione di API/servizi. Il nuovo Modello proporrà un catalogo *di casi d'uso*, *profili* e *pattern* *di interoperabilità* messi a disposizione delle PA, popolato in maniera incrementale sulla base di esigenze individuate dall'Agenzia per l'Italia Digitale anche a fronte dell'evidenza di nuovi bisogni per le PA.
 
 Ogni PA che offre un'API/servizio deve, nel nuovo modello, offrire un insieme di artefatti che lo accompagnano, in particolare:
 
@@ -129,7 +129,7 @@ La realizzazione del Catalogo deve, fatti salvi i principi comuni che saranno em
 
 -   esigenza di assicurare la governance del Catalogo, quale presupposto per garantire una semantica univoca e condivisa, per evitare ridondanze e/o sovrapposizioni in termini di competenze e contenuti.
 
--   esigenza di assicurare una descrizione formale delle API/servizi che, attraverso l'utilizzo di *interfacce description language*, permetta di descrivere le interfacce degli stessi in maniera indipendente dal linguaggio di programmazione adottato dall'erogatore e dai fruitori degli stessi. L'attuale stato di evoluzione degli standard tecnologici indicati in precedenza determina la scelta di *WSDL* per i *web service SOAP* e *OpenAPI v3* per i *web service REST.*
+-   esigenza di assicurare una descrizione formale delle API/servizi che, attraverso l'utilizzo di *interface description language*, permetta di descrivere le interfacce degli stessi in maniera indipendente dal linguaggio di programmazione adottato dall'erogatore e dai fruitori degli stessi. L'attuale stato di evoluzione degli standard tecnologici indicati in precedenza determina la scelta di *WSDL* per i *web service SOAP* e *OpenAPI v3* per i *web service REST.*
 
 Governance del modello
 ----------------------
@@ -148,7 +148,7 @@ L'Agenzia per l'Italia Digitale è responsabile delle attività di *governance* 
 
 I progetti che realizzano gli Ecosistemi, previsti nel Piano Triennale per l'Informatica nella PA, si basano sul Modello di Interoperabilità, e possono determinare l'esigenza di nuovi *casi d'uso*, *pattern* e *profili di interoperabilità* che verranno definiti con un approccio collaborativo.
 
-Nel precedente SPCoop, l\'uso di servizi/API richiedeva un accordo tra amministrazioni anche tramite la firma di convenzioni bilaterali. Questo non sarà più necessario nel nuovo modello, in cui l'adesione si estrinsicherà nell'atto di registrazione da parte della PA di un'API/servizio nel catalogo. In ottemperanza al principio \"once-only\" definito nell\'`EU eGovernment Action Plan 2016-2020 <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)>`__ [17]_, l\'erogatore si impegna a fornire l\'accesso alle proprie API/servizi a qualunque soggetto registrato ne faccia richiesta [18]_. Gli erogatori devono descrivere le loro API/servizi classificando le informazioni scambiate ove possibile collegandole ai vocabolari controllati e a concetti semantici predefiniti, utili anche a determinare l'impatto rispetto ai regolamenti in tema privacy e GDPR, e applicando tag di categoria. Il Catalogo può facilitare questo processo attraverso opportune euristiche.
+Nel precedente SPCoop, l\'uso di servizi/API richiedeva un accordo tra amministrazioni anche tramite la firma di convenzioni bilaterali. Questo non sarà più necessario nel nuovo modello, in cui l'adesione si estrinsecherà nell'atto di registrazione da parte della PA di un'API/servizio nel catalogo. In ottemperanza al principio \"once-only\" definito nell\'`EU eGovernment Action Plan 2016-2020 <https://ec.europa.eu/digital-single-market/en/news/communication-eu-egovernment-action-plan-2016-2020-accelerating-digital-transformation)>`__ [17]_, l\'erogatore si impegna a fornire l\'accesso alle proprie API/servizi a qualunque soggetto registrato ne faccia richiesta [18]_. Gli erogatori devono descrivere le loro API/servizi classificando le informazioni scambiate ove possibile collegandole ai vocabolari controllati e a concetti semantici predefiniti, utili anche a determinare l'impatto rispetto ai regolamenti in tema privacy e GDPR, e applicando tag di categoria. Il Catalogo può facilitare questo processo attraverso opportune euristiche.
 
 In virtù degli articoli 12 e 14 del Codice dell\'Amministrazione Digitale, AgID è formalmente incaricata della gestione di tutto il catalogo e di garantire il rispetto delle regole suddette e per farlo si avvale della collaborazione di alcuni enti, che vengono indicati come Capofila.
 
