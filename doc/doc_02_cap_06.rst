@@ -45,7 +45,7 @@ L'utilizzo di SOAP è suggerito:
 
 -   Quando la semantica HTTP non è sufficiente ad esprimere la logica applicativa ed è necessario usare un protocollo di messaging ulteriore con dei propri header;
 
--   Se la specifica applicazione richiede la creazione di interfacce di servizio principalmente *stateful*, cioè l'accesso ad informazioni di contesto o la gestione dello stato della conversazione [89]_. SOAP prevede estensioni (eg. relative al concetto di transazione) che con altri approcci (ad es., REST) devono essere costruite ad-hoc per la specifica applicazione. 
+-   Se la specifica applicazione richiede la creazione di interfacce di servizio principalmente *stateful*, cioè l'accesso ad informazioni di contesto o la gestione dello stato della conversazione [89]_. SOAP prevede estensioni (eg. relative al concetto di transazione) che con altri approcci (ad es., REST) devono essere costruite ad hoc per la specifica applicazione.
 
 -   Nel caso si necessiti di processamento asincrono che non sia possibile implementare con semantiche HTTP;
 
@@ -53,7 +53,7 @@ L'utilizzo di SOAP è suggerito:
 
 Quindi rispetto a quanto discusso in “Presentazione del Modello di Interoperabilità 2018” sui paradigmi di cooperazione, questo suggerisce l'uso di SOAP nei casi di processo inter-PA e di composizione applicativa quando le operazioni componenti offrono delle logiche complesse.
 
-La tabella seguente riporta alcuni aspetti tecnologici che devono essere tenuti in considerazione (le celle in cui è presente "-" indicano che l'aspetto in questione non è considerato e standardizzato, e quindi è a cura dello specifico progetto/applicazione indirizzarlo attraverso sviluppi ad-hoc)
+La tabella seguente riporta alcuni aspetti tecnologici che devono essere tenuti in considerazione (le celle in cui è presente "-" indicano che l'aspetto in questione non è considerato e standardizzato, e quindi è a cura dello specifico progetto/applicazione indirizzarlo attraverso sviluppi ad hoc)
 
 +-----------------------+-----------------------+-----------------------+
 |                       | **SOAP (WS-\*)**      | **REST**              |
@@ -81,7 +81,7 @@ La tabella seguente riporta alcuni aspetti tecnologici che devono essere tenuti 
 | servizio**            | WS-BPEL               |                       |
 +-----------------------+-----------------------+-----------------------+
 
-In letteratura, talvolta si indica con contract-first una metodologia di progetto che parte dalla specifica dell’interfaccia senza considerare possibili vincoli di implementazione, e successivamente si occupa di come realizzare tale interfaccia al di sopra di eventuali realizzazioni esistenti. In alternativa, si parta di contract-last (che potremmo anche indicare come implementation-first) quando invece eventuali vincoli di realizzazione guidano la specifica dell’interfaccia. SOAP supporta naturalmente entrambi gli approcci, in quanto lo sviluppo di un’interfaccia di servizio origina dalla definizione dell’interfaccia o dalle segnature dei metodi utilizzati nello sviluppo, mentre in REST l’interfaccia è definita dagli http verb associati alle operazioni CRUD, riportando il contratto alla definizione delle risorse. La differenza appare ininfluente nel caso di progettazione e realizzazione di sistemi nuovi, ma non in presenza di sistemi legacy. Quando l’interfaccia di servizio è vincolata dalla presenza di un sistema esistente o legacy, essa è definita a posteriori rispetto all’implementazione. In questo caso non essere limitati dai verb http (eg. usando SOAP) appare semplificare il lavoro di modellazione e realizzazione dell’interfaccia di servizio evitando di mappare risorse su procedure legacy.
+In letteratura, talvolta si indica con contract-first una metodologia di progetto che parte dalla specifica dell’interfaccia senza considerare possibili vincoli di implementazione, e successivamente si occupa di come realizzare tale interfaccia al di sopra di eventuali realizzazioni esistenti. In alternativa, si parla di contract-last (che potremmo anche indicare come implementation-first) quando invece eventuali vincoli di realizzazione guidano la specifica dell’interfaccia. SOAP supporta naturalmente entrambi gli approcci, in quanto lo sviluppo di un’interfaccia di servizio origina dalla definizione dell’interfaccia o dalle segnature dei metodi utilizzati nello sviluppo, mentre in REST l’interfaccia è definita dagli http verb associati alle operazioni CRUD, riportando il contratto alla definizione delle risorse. La differenza appare ininfluente nel caso di progettazione e realizzazione di sistemi nuovi, ma non in presenza di sistemi legacy. Quando l’interfaccia di servizio è vincolata dalla presenza di un sistema esistente o legacy, essa è definita a posteriori rispetto all’implementazione. In questo caso non essere limitati dai verb http (eg. usando SOAP) appare semplificare il lavoro di modellazione e realizzazione dell’interfaccia di servizio evitando di mappare risorse su procedure legacy.
 
 Talvolta si parla di REST indicandolo come contract-less (REST) [90]_, proprio ad indicare il fatto che l’interfaccia è definita dagli http verb; a rigore però vanno comunque progettate le giuste risorse da esporre su cui effettuare operazioni CRUD, e quindi più  che essere senza contratto, è il contratto che ha una forma differente.
 
@@ -106,7 +106,7 @@ Nel progetto di interfacce di servizio REST invece occorre:
 
 -   Progettare le strutture JSON per la rappresentazione dei dati.
 
-Il ModI 2018, come discusso nella Sezione 1, prevede che la progettazione parta della definizione delle interfacce di servizio, indipendentemente dalla tecnologia di realizzazione sia SOAP che REST, anche se con accorgimenti tecnici differenti nella sua realizzazione.
+Il ModI 2018, come discusso nella Sezione 1, prevede che la progettazione parta dalla definizione delle interfacce di servizio, indipendentemente dalla tecnologia di realizzazione sia SOAP che REST, anche se con accorgimenti tecnici differenti nella sua realizzazione.
 
 
 .. discourse::
@@ -123,7 +123,7 @@ Il ModI 2018, come discusso nella Sezione 1, prevede che la progettazione parta 
 
 .. [89] Come nel caso di processi amministrativi sia completamente automatizzati (short-running) sia con intervento umano o comunque long-running.
 
-.. [90] Cf. Cesare Pautasso, Olaf Zimmermann, Frank Leymann: Restful web services vs. \"big\"\' web services: making the right architectural decision. WWW 2008: 805-814.
+.. [90] Cf. Cesare Pautasso, Olaf Zimmermann, Frank Leymann: Restful web services vs. \"big\" web services: making the right architectural decision. WWW 2008: 805-814.
 
 .. [91] Cf. `https://www.programmableweb.com/api-university/understanding-api-first-design <https://www.programmableweb.com/api-university/understanding-api-first-design>`_
     In termini colloquiali, il principio può essere parafrasato in questi termini:
