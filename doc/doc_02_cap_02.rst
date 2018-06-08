@@ -28,12 +28,12 @@ In un metodo di cifratura, un messaggio in chiaro (anche chiamato plain text) vi
 Nei meccanismi di cifratura a chiave privata, entrambe le parti (il mittente ed il destinatario) nel canale di comunicazione condividono la stessa chiave di cifratura che viene impiegata sia per cifrare che per decifrare il messaggio. La cifratura a chiave simmetrica è molto efficiente e viene utilizzata per la riservatezza di grandi quantità di dati (ad es., interi file). È necessario che le due parti abbiano condiviso la chiave privata con un metodo sicuro (ad es., scambiandola fisicamente di persona oppure tramite un meccanismo di cifratura a chiave pubblica, come si vedrà nella Sezione 2.4). Algoritmi noti di cifratura a chiave simmetrica sono RC4, DES, Triple DES, AES, IDEA e Camellia.
 
 Nei meccanismi di cifratura a chiave pubblica, vengono utilizzate due chiavi diverse per la cifratura e la decifratura dei messaggi. In particolare si supponga che il destinatario abbia una coppia di chiavi di cui una è privata (conosciuta solo al destinatario) ed una è pubblica (conosciuta a tutti e liberamente inviata sulla rete anche in chiaro). Al fine di inviare un messaggio su di un canale sicuro, il mittente cifra il messaggio utilizzando la chiave pubblica del destinatario, ma questo potrà essere decifrato solo dal destinatario utilizzando la chiave privata. Per il destinatario infatti chiave pubblica e chiave privata sono state generate in modo da essere complementari. Il meccanismo a chiave pubblica risolve il problema della condivisione delle chiavi poiché la chiave pubblica può essere inviata su Internet senza pericolo (non può essere utilizzata per decifrare il
-messaggio). Come difetto, la crittografia a chiave pubblica soffre di basse prestazioni e per questo motivo viene utilizzata o nelle fasi preliminari necessarie a concordare una chiave privata di sessione condivisa (come nel caso di TLS) oppure per i meccanismi di firma digitale (quindi non a scopo di cifratura). L'algoritmo più diffuso per la cifratura a chiave pubblica è RSA (dai nomi degli inventori Rivest Shamir e Adleman).
+messaggio). Come difetto, la crittografia a chiave pubblica soffre di basse prestazioni e per questo motivo viene utilizzata o nelle fasi preliminari necessarie a concordare una chiave privata di sessione condivisa (come nel caso di TLS) oppure per i meccanismi di firma digitale (quindi non a scopo di cifratura). L'algoritmo più diffuso per la cifratura a chiave pubblica è RSA (dai nomi degli inventori Rivest, Shamir e Adleman).
 
 Integrità e Firma Digitale
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Un messaggio in transito su una rete informatica può subire delle modifiche (ad esempio tramite attacchi di tipo man-in-the-middle). I meccanismi a chiave pubblica possono essere utilizzati ai fini di produrre delle prove, dette firme digitali, utili a di verificare che il messaggio ricevuto sia uguale a quello inviato.
+Un messaggio in transito su una rete informatica può subire delle modifiche (ad esempio tramite attacchi di tipo man-in-the-middle). I meccanismi a chiave pubblica possono essere utilizzati ai fini di produrre delle prove, dette firme digitali, utili a verificare che il messaggio ricevuto sia uguale a quello inviato.
 
 Il meccanismo di firma digitale prevede di inviare assieme al messaggio, un secondo messaggio (detto firma digitale) ottenuto dal primo:
 
@@ -45,7 +45,7 @@ Le tecniche di hashing utilizzate per la firma digitale sono progettate secondo 
 
 -   devono essere funzioni cosiddette one-way. Deve cioè essere facile calcolare il riassunto ma difficile risalire dal riassunto al testo originale. Questo viene anche facilitato dal fatto che i riassunti hanno solitamente lunghezza fissa;
 
--   devono fare si che piccolissime modifiche al messaggio in input generino significative differenze nel riassunto.
+-   devono fare sì che piccolissime modifiche al messaggio in input generino significative differenze nel riassunto.
 
 La tecnica di hashing più utilizzata per la firma digitale è Secure Hash Algorithm - SHA (disponibile in diverse versioni). Nel momento in cui un messaggio viene ricevuto, il destinatario utilizza la chiave pubblica
 del mittente per decifrare la firma digitale e verificare che essa corrisponda al riassunto del messaggio. La combinazione di tecniche di hashing e di cifratura a chiave pubblica assicura che un attaccante non
@@ -57,13 +57,13 @@ Non Ripudio e Public Key Infrastructure - PKI
 Il meccanismo di firma digitale descritto in Sezione 2.1.3 assicura l'integrità del messaggio ma non ne assicura l'autenticità della fonte. In pratica, chi riceve un messaggio è sicuro che esso non ha subito modifiche durante il transito ma non è sicuro dell'identità del mittente. Il messaggio ricevuto non potrà quindi essere utilizzato ai fini del non ripudio, cioè come prova che uno specifico soggetto è il vero mittente del messaggio. Il problema principale risiede nella maniera in cui la chiave pubblica di un soggetto viene distribuita.
 Essa, come detto, viene posta pubblicamente su Internet ma niente vieta ad un attaccante di creare una coppia chiave pubblica / chiave privata e distribuire quest'ultima fingendosi un altro soggetto ed inviare per conto di questo, in maniera fraudolenta, dei messaggi. In altre parole chi riceve il messaggio non ha modo di verificare l'autenticità della chiave pubblica che sta utilizzando. A tal fine il meccanismo introdotto è quello della Public Key Infrastructure - PKI.
 
-Nella PKI oltre al mittente ed al destinatario del messaggio, viene aggiunto una terza parte detta Certification Authority (Autorità di Certificazione) la quale emette dei certificati. Un certificato è un documento in chiaro contenenti informazioni riguardanti l'identità dell'intestatario del certificato e la sua chiave pubblica e viene firmato dalla certification authority utilizzando la propria chiave privata.
+Nella PKI oltre al mittente ed al destinatario del messaggio, viene aggiunta una terza parte detta Certification Authority (Autorità di Certificazione) la quale emette dei certificati. Un certificato è un documento in chiaro contenente informazioni riguardanti l'identità dell'intestatario del certificato e la sua chiave pubblica e viene firmato dalla certification authority utilizzando la propria chiave privata.
 
 La chiave pubblica della certification authority è installata nei sistemi operativi (e distribuita solitamente tramite gli aggiornamenti degli stessi), viene utilizzata per verificare che la chiave pubblica del mittente sia autentica. Il mittente invia assieme al messaggio firmato il suo certificato che viene validato utilizzando la chiave pubblica della certification authority che ha emesso il certificato stesso.
 
 Il meccanismo PKI è sicuro fino a quando un attaccante non è in grado di installare sulle macchine del destinatario una public key fasulla per le certification authority. Per ovviare a questi problemi sono necessari dei meccanismi di sicurezza a livello di macchina che sono fuori dal perimetro di questo documento. Lo standard comunemente usato per i certificati è X.509.
 
-Nel Modello di Interoperabilità 2018, le amministrazioni dovranno acquistare certificati commerciali. Negli ultimi anni alternative all'approccio PKI sono stati proposti (ad es., Web of Trust) ma il Modello attualmente ne vieta l'utilizzo.
+Nel Modello di Interoperabilità 2018, le amministrazioni dovranno acquistare certificati commerciali. Negli ultimi anni alternative all'approccio PKI sono state proposte (ad es., Web of Trust) ma il Modello attualmente ne vieta l'utilizzo.
 
 Autenticazione
 ^^^^^^^^^^^^^^
@@ -98,19 +98,19 @@ Minacce alla sicurezza dei sistemi informatici
 
 Nelle sezioni precedenti alcune minacce alla sicurezza sono state accennate. In questa sezione approfondiamo le diverse tipologie di attacchi. Non ci soffermeremo sugli attacchi basati su malware, ma ci limiteremo agli attacchi basati sull'uso dei protocolli di rete. I tipi di attacchi più comuni sono i seguenti:
 
--   *Eavesdropping*. E' un tipo di attacco passivo (senza modifica dei dati) in cui un attaccante riesce a rubare informazioni leggendo dati da una connessione non cifrata. I protocolli che assicurano confidenzialità difendono da questo tipo di attacco.
+-   *Eavesdropping*. È un tipo di attacco passivo (senza modifica dei dati) in cui un attaccante riesce a rubare informazioni leggendo dati da una connessione non cifrata. I protocolli che assicurano confidenzialità difendono da questo tipo di attacco.
 
 -   *Modifica dei dati*. Un attaccante potrebbe riuscire a modificare i pacchetti in transito nella rete. I meccanismi di firma digitale difendono da questo tipo di attacco.
 
 -   *Identity spoofing*. In questo tipo di attacco, l'attaccante finge di essere un altro utente. Questo tipo di attacco è risolto mediante meccanismi di autenticazione.
 
--   *Attacchi su base password*. In questo caso l'attaccante cerca di ottenere delle password, utilizzate ad esempio ai fini di autenticazione ed autorizzazione. Come già anticipato, gli attacchi basati su password si basano o su forza bruta oppure su metodi di tipo dizionario. Questo tipo di attacchi si evitano impostato politiche forti riguardo alle password utilizzate e metodi di autenticazione forte (a più fattori).
+-   *Attacchi su base password*. In questo caso l'attaccante cerca di ottenere delle password, utilizzate ad esempio ai fini di autenticazione ed autorizzazione. Come già anticipato, gli attacchi basati su password si basano o su forza bruta oppure su metodi di tipo dizionario. Questo tipo di attacchi si evitano impostando politiche forti riguardo alle password utilizzate e metodi di autenticazione forte (a più fattori).
 
 -   *Denial of service - DoS*. In questo tipo di attacco l'attaccante mira a rendere non operativa una interfaccia di servizio inondandola di richieste e minandone quindi l'accessibilità. Difendersi da questi tipi di attacchi è in genere molto difficile (specialmente nella variante distribuita DDoS).
 
 -   *Attacchi man-in-the-middle*. In questo caso un attaccante si intromette come terza parte in una conversazione tra mittente e destinatario modificando i messaggi scambiati. Gli attacchi man-in-the-middle si combattono tramite tecniche di cifratura ed integrità degli scambi.
 
-In alcuni casi, gli attaccanti possono sfruttare delle falle scoperte nei protocolli o nelle implementazioni. E' quindi di fondamentale importanza tenere aggiornati i sistemi ed utilizzare quando possibile versioni aggiornate dei protocolli.
+In alcuni casi, gli attaccanti possono sfruttare delle falle scoperte nei protocolli o nelle implementazioni. È quindi di fondamentale importanza tenere aggiornati i sistemi ed utilizzare quando possibile versioni aggiornate dei protocolli.
 
 Protocolli per autenticazione e autorizzazione
 ----------------------------------------------
@@ -125,7 +125,7 @@ Nel caso di autenticazione ed autorizzazione, occorre distinguere gli approcci u
 
 -   eXtensible Access Control Markup Language - `XACML <http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html>`_ [30]_ complementare a SAML per la gestione esaustiva degli aspetti di autorizzazione.
 
-Nei protocolli human-to-machine, un client riceve autorizzazioni ad usare un certo tipo di risorsa per conto di un utente umano tramite le credenziali di quest'ultimo. La richiesta del token/assertion è effettuate per mezzo di uno user-agent (cioè un browser o una app mobile) che funge da intermediario.
+Nei protocolli human-to-machine, un client riceve autorizzazioni ad usare un certo tipo di risorsa per conto di un utente umano tramite le credenziali di quest'ultimo. La richiesta del token/assertion è effettuata per mezzo di uno user-agent (cioè un browser o una app mobile) che funge da intermediario.
 
 Il ModI 2018 obbliga all'utilizzo di SPID per l'autenticazione human-to-machine o degli altri metodi indicati nell\'`art. 64 del Codice per l'Amministrazione Digitale <http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete>`_ [31]_ che includono anche la Carta d'Identità Elettronica - CIE e la Carta Nazionale dei Servizi - CNS. 
 
@@ -142,7 +142,7 @@ In questo senso vale la pena esplorare le differenze principali tra SAML ed Open
 La tabella seguente riassume le caratteristiche dei protocolli per l'interazione human-to-machine:
 
 +-----------------------------+---------------------+--------------------------------+
-|                             | **OpenId Connect**  | **SAML + XACML**               |
+|                             | **OpenID Connect**  | **SAML + XACML**               |
 +-----------------------------+---------------------+--------------------------------+
 | **Formato token/assertion** |  JSON               |  XML                           |
 +-----------------------------+---------------------+--------------------------------+
@@ -153,7 +153,7 @@ La tabella seguente riassume le caratteristiche dei protocolli per l'interazione
 | **Rischi per la sicurezza** |  Phishing [33]_     |   XML Signature Wrapping [34]_ |
 +-----------------------------+---------------------+--------------------------------+
 
-Uno scenario interessante nell'ambito dell'integrazione A2A e A2B è quello legato alla federazione di domini (ad es., due diverse amministrazioni) in cui alcuni utenti di un dominio devono essere autenticati ed autorizzati per accedere a risorse dell'altro dominio (una federazione può includere anche più di due domini). In ambito SOAP, gli standard più utilizzati sono `WS-Federation <http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html>`_ [35]_ & `WS-Trust <http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html>`_ [36]_ (vedi Sezione 3 per l'inquadramento nello stack WS-\*). Soluzioni su altre tecnologie vengono sviluppate ad-hoc.
+Uno scenario interessante nell'ambito dell'integrazione A2A e A2B è quello legato alla federazione di domini (ad es., due diverse amministrazioni) in cui alcuni utenti di un dominio devono essere autenticati ed autorizzati per accedere a risorse dell'altro dominio (una federazione può includere anche più di due domini). In ambito SOAP, gli standard più utilizzati sono `WS-Federation <http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html>`_ [35]_ & `WS-Trust <http://docs.oasis-open.org/ws-sx/ws-trust/v1.4/ws-trust.html>`_ [36]_ (vedi Sezione 3 per l'inquadramento nello stack WS-\*). Soluzioni su altre tecnologie vengono sviluppate ad hoc.
 
 Per quanto riguarda lo scenario machine-to-machine invece, come si vedrà nella sezione 2.4, l'autenticazione può avvenire a livello di trasporto utilizzando TLS.
 
@@ -162,9 +162,9 @@ Per quanto riguarda l'autorizzazione machine-to-machine invece è possibile util
 Protocolli per integrità e confidenzialità
 ------------------------------------------
 
-Per ragioni storiche lo stack TCP/IP non ha di base funzionalità di sicurezza. I messaggi viaggiano in chiaro sulla rete. Poiché le tecnologie per l'integrazione che verranno introdotte utilizzano HTTP come principale protocollo di trasporto o applicativo [38]_, è importante che il canale di comunicazione sia protetto. La IETF definisce come standard per la securizzazione di TCP il protocollo Transport Layer Security - TLS. Con il termine HTTPS si definisce l'utilizzo di HTTP su canale TLS. Tutti le interfacce di servizio esposte nel ModI 2018 devono essere basate su HTTPS. Il protocollo TLS (ed il suo predecessore deprecato Secure Sockets Layer - SSL) assicurano su TCP confidenzialità (tramite cifratura) ed integrità (tramite firma digitale e PKI). Come introdotto in Sezione 2.1.5, il meccanismo di firma digitale assicura anche autenticazione ma questa è fatta machine-to-machine.
+Per ragioni storiche lo stack TCP/IP non ha di base funzionalità di sicurezza. I messaggi viaggiano in chiaro sulla rete. Poiché le tecnologie per l'integrazione che verranno introdotte utilizzano HTTP come principale protocollo di trasporto o applicativo [38]_, è importante che il canale di comunicazione sia protetto. La IETF definisce come standard per la securizzazione di TCP il protocollo Transport Layer Security - TLS. Con il termine HTTPS si definisce l'utilizzo di HTTP su canale TLS. Tutte le interfacce di servizio esposte nel ModI 2018 devono essere basate su HTTPS. Il protocollo TLS (ed il suo predecessore deprecato Secure Sockets Layer - SSL) assicurano su TCP confidenzialità (tramite cifratura) ed integrità (tramite firma digitale e PKI). Come introdotto in Sezione 2.1.5, il meccanismo di firma digitale assicura anche autenticazione ma questa è fatta machine-to-machine.
 
-Il protocollo TLS (versione stabile corrente 1.2, draft 1.3 presentato a Marzo 2018) si basa come detto sull'utilizzo della firma digitale per lo scambio di una chiave di sessione da utilizzare come chiave simmetrica.
+Il protocollo TLS (versione stabile corrente 1.2, draft 1.3 presentato a marzo 2018) si basa come detto sull'utilizzo della firma digitale per lo scambio di una chiave di sessione da utilizzare come chiave simmetrica.
 
 Per quanto riguarda i singoli algoritmi utilizzati:
 
@@ -172,7 +172,7 @@ Per quanto riguarda i singoli algoritmi utilizzati:
 
 -   Per la cifratura TLS supporta numerosi algoritmi. Si suggeriscono i protocolli attualmente supportati nello standard TLS 1.3 e che sono considerati sicuri: Advanced Encryption Standard - AES (nella versioni GCM e CCM).
 
--   Per l'integrità si suggerisce l'uso SHA almeno a 256 bit (quindi a partire dal cosiddetto SHA-2).
+-   Per l'integrità si suggerisce l'uso di SHA almeno a 256 bit (quindi a partire dal cosiddetto SHA-2).
 
 +-----------------------------------------------------------------------+
 | Nel Modello di Interoperabilità 2018, a prescindere dal profilo di    |
@@ -197,7 +197,7 @@ Per quanto riguarda i singoli algoritmi utilizzati:
 |                                                                       |
 | -   NON DEVE essere self-signed (ad es., CA:true);                    |
 |                                                                       |
-| -   DEVE contenere i seguenti elementi Subject, Key Identifier,       |
+| -   DEVE contenere i seguenti elementi: Subject, Key Identifier,      |
 |     Serial Number ed Issuer;                                          |
 |                                                                       |
 | -   DEVE avere il parametro keyUsage_ con i seguenti bit:             |
@@ -234,7 +234,7 @@ Nel modello SPCoop si richiedeva che in ogni caso HTTPS fosse utilizzato con aut
 
 .. [32] Cf. `http://spid-regole-tecniche.readthedocs.io/en/latest/ <http://spid-regole-tecniche.readthedocs.io/en/latest/>`_
 
-.. [33] Per phishing si intende il tentativo di un attaccante di fingersi qualcun altro. Nel caso di OpenId Connect, in particolare, sia per quanto riguarda OpenId che OAuth2, diversi attacchi sono stati rivelati che permettono ad una relying party di redirezionare l'utente verso un identity provider falso.
+.. [33] Per phishing si intende il tentativo di un attaccante di fingersi qualcun altro. Nel caso di OpenID Connect, in particolare, sia per quanto riguarda OpenID che OAuth2, diversi attacchi sono stati rivelati che permettono ad una relying party di redirezionare l'utente verso un identity provider falso.
 
 .. [34] L'XML Signature Wrapping è una vulnerabilità non legata direttamente al protocollo ma presente in alcune implementazioni ed in diverse forme
     (cf., `https://blog.netspi.com/attacking-sso-common-saml-vulnerabilities-ways-find/ <https://blog.netspi.com/attacking-sso-common-saml-vulnerabilities-ways-find/>`_ ).
@@ -248,11 +248,11 @@ Nel modello SPCoop si richiedeva che in ogni caso HTTPS fosse utilizzato con aut
 
 .. [38] Ai fini dell'interoperabilità su Internet, la scelta di HTTP permette integrazione senza necessitare di regole particolari di inoltro o di definire Virtual Private Network - VPN.
 
-.. [39] Circolare AgiD 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
+.. [39] Circolare AgID 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
 
 .. [40] Cf. `https://tools.ietf.org/html/rfc5280\#section-4.2.1.3 <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_
 
-.. [41] Circolare AgiD 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
+.. [41] Circolare AgID 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
 
 .. [42] Cf. `https://tools.ietf.org/html/rfc5280\#section-4.2.1.3 <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_
 
