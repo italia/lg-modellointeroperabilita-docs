@@ -47,9 +47,13 @@ Nel suo insieme il modello di interoperabilità delineato nell'EIF è stato dise
 
 1.  *Sussidiarietà e proporzionalità*. Il principio di sussidiarietà prevede che le decisioni dell'UE vengano prese al livello più vicino a quello del cittadino mentre il principio di proporzionalità limita l'azione dell'UE a quanto necessario per raggiungere gli obiettivi dei trattati.
 
-2.  *Apertura*. Il principio di apertura fa riferimento principalmente ai dati, alle specifiche e al software. Nell'ottica di questo principio occorre: pubblicare i dati che si possiedono come dati aperti, fatta salva l\'eventuale applicazione di determinate restrizioni; garantire condizioni di parità per il software open source e prenderne in considerazione l\'utilizzo in modo attivo ed equo, tenendo conto del costo totale di proprietà della soluzione; prediligere le specifiche aperte, tenendo debitamente conto delle esigenze funzionali, del livello di maturità e del sostegno e dell\'innovazione del mercato.
+2.  *Apertura*. Il principio di apertura fa riferimento principalmente ai dati, alle specifiche e al software. Nell'ottica di questo principio occorre: pubblicare i dati che si possiedono come dati aperti, fatta salva l\'eventuale applicazione di determinate restrizioni;
+    garantire condizioni di parità per il software open source e prenderne in considerazione l\'utilizzo in modo attivo ed equo, tenendo conto del costo totale di proprietà della soluzione;
+    prediligere le specifiche aperte, tenendo debitamente conto delle esigenze funzionali, del livello di maturità e del sostegno e dell\'innovazione del mercato.
 
-3.  *Trasparenza*. In ottemperanza a questo principio occorre: conferire visibilità nel contesto amministrativo di una PA; assicurare la disponibilità di interfacce con i sistemi informatici interni e  garantire il diritto alla tutela dei dati personali; garantire visibilità interna e fornire interfacce esterne per i servizi pubblici.
+3.  *Trasparenza*. In ottemperanza a questo principio occorre: conferire visibilità nel contesto amministrativo di una PA;
+    assicurare la disponibilità di interfacce con i sistemi informatici interni e  garantire il diritto alla tutela dei dati personali;
+    garantire visibilità interna e fornire interfacce esterne per i servizi pubblici.
 
 4.  *Riusabilità*. Secondo tale principio si deve trarre vantaggio dal lavoro degli altri cercando le informazioni disponibili, valutandone l'utilità o la pertinenza rispetto al problema in questione e, se del caso, decidendo di usare soluzioni che si sono rivelate efficaci in altre situazioni.
 
