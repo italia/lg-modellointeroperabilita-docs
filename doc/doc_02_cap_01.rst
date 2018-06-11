@@ -51,7 +51,7 @@ Consideriamo il caso in cui dobbiamo viaggiare in India, e il nostro obiettivo i
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 | **Obiettivo del servizio**                 | **Agenzia 1**                                                                                                             | **Agenzia 2**                                                                                           |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| Necessità di un visto per andare in India  | *nella nostra agenzia rilasciamo il visto in 7 giorni, al costo di € 30, e la penalità per un giorno di ritardo è di € 2* | *nella nostra agenzia facciamo il possibile per rilasciare il visto in 2 settimane, il costo è di € 20* |
+| Necessità di un visto per andare in India  | *nella nostra agenzia rilasciamo il visto in 7 giorni, al costo di 30 €, e la penalità per un giorno di ritardo è di 2 €* | *nella nostra agenzia facciamo il possibile per rilasciare il visto in 2 settimane, il costo è di 20 €* |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Guardando le due specifiche, il nostro obiettivo ora è fornire loro una struttura, distinguendo le diverse parti che hanno ruoli diversi.
@@ -76,9 +76,9 @@ all'esempio di cui sopra:
 |                       |                       | settimane (*best      |
 |                       |                       | effort*)              |
 +-----------------------+-----------------------+-----------------------+
-| altra non funzionale  | prezzo : € 30         | prezzo : € 20         |
+| altra non funzionale  | prezzo: 30 €          | prezzo: 20 €          |
 |                       |                       |                       |
-|                       | penale : € 2 / giorno |                       |
+|                       | penale: 2 € / giorno  |                       |
 |                       | ritardo               |                       |
 +-----------------------+-----------------------+-----------------------+
 
