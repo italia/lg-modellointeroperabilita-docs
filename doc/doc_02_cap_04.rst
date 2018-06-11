@@ -12,10 +12,10 @@ microservizi [56]_, caratterizzate da elevata modularità, per via della leggere
 A differenza delle interfacce di servizio SOAP, per cui una serie di standard è definita e mantenuta da OASIS (cf. stack WS-\*), per le interfacce REST sono disponibili singoli standard e best-practice. 
 
 Per la specifica delle interfacce REST esistono due grandi iniziative: OpenAPI e RAML.
-Sebbene simili dal punto di vista dello sviluppatore di interfacce di servizio, la specifica RAML è più indirizzata alla creazione automatica di server e di client per API, mentre OpenAPI (attualmente nella versione OpenAPI v3) contiene elementi più descrittivi per la documentazione e la catalogazione (che invece sono disponibili in RAML come estensioni ad-hoc) e si sta imponendo come standard de-facto.  
+Sebbene simili dal punto di vista dello sviluppatore di interfacce di servizio, la specifica RAML è più indirizzata alla creazione automatica di server e di client per API, mentre OpenAPI (attualmente nella versione OpenAPI v3) contiene elementi più descrittivi per la documentazione e la catalogazione (che invece sono disponibili in RAML come estensioni ad hoc) e si sta imponendo come standard de facto.
 Altri standard proposti in passato, quali Web Application Description Language - WADL, hanno avuto scarso successo e nei framework in cui sono stati utilizzati si sta optando per il passaggio ad `OpenAPI v3 <https://www.openapis.org/>`_ [57]_. Per queste ragioni il ModI 2018 impone l’uso di OpenAPI v3.
 
-E’ possibile assicurare la conversione tra le differenti rappresentazioni delle interfacce REST tramite tool automatici. 
+È possibile assicurare la conversione tra le differenti rappresentazioni delle interfacce REST tramite tool automatici.
 
 Legato al concetto di specifica nel mondo REST è quello di *Hypermedia As The Engine Of Application State - HATEOAS*. Secondo questo approccio, accedendo ad una risorsa, la risposta del server contiene hyperlink ad altre azioni che possono essere eseguite sulla risorsa [58]_. HATEOAS permette di scoprire dinamicamente le operazioni presenti in una interfaccia di servizio e può essere utilizzato come approccio complementare (non sostitutivo) alla specifica.
 
@@ -37,7 +37,7 @@ Ove necessario, specialmente ai fini del caching e l'accesso concorrente alle ri
 Sicurezza
 ---------
 
-Lo standard di riferimento per la firma e la crittografia in ambito JSON/REST è `Javascript Object Signing and Encryption <http://www.etsi.org/deliver/etsi_ts/118100_118199/118103/02.04.01_60/ts_118103v020401p.pdf>`_ [62]_ (di seguito JOSE), menzionato nelle `Linee Guida AgID <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro>`_ [63]_ ed in `\"European Telecommunications Standards Institute - Security of the mission critical service\" <http://www.etsi.org/deliver/etsi_ts/133100_133199/133180/14.02.00_60/ts_133180v140200p.pdf>`_ [64]_. JOSE è un framework per la sicurezza comprendente diverse componenti tra cui centrale è il `JSON Web Token <https://tools.ietf.org/html/rfc7519>`_ [65]_ (di seguito JWT). JWT è uno standard per la definizione di token di accesso basato su `JSON Web Signature <https://tools.ietf.org/html/rfc7515>`_ [66]_ (di seguito JWS)) e `JSON Web Encryption <https://tools.ietf.org/html/rfc7516>`_ [67]_ (si seguito JWE) di cui eredita ed estende gli header. Il token JWT è passato in REST tramite l'header HTTP
+Lo standard di riferimento per la firma e la crittografia in ambito JSON/REST è `Javascript Object Signing and Encryption <http://www.etsi.org/deliver/etsi_ts/118100_118199/118103/02.04.01_60/ts_118103v020401p.pdf>`_ [62]_ (di seguito JOSE), menzionato nelle `Linee Guida AgID <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/cert-pa/linee-guida-sviluppo-sicuro>`_ [63]_ ed in `\"European Telecommunications Standards Institute - Security of the mission critical service\" <http://www.etsi.org/deliver/etsi_ts/133100_133199/133180/14.02.00_60/ts_133180v140200p.pdf>`_ [64]_. JOSE è un framework per la sicurezza comprendente diverse componenti tra cui centrale è il `JSON Web Token <https://tools.ietf.org/html/rfc7519>`_ [65]_ (di seguito JWT). JWT è uno standard per la definizione di token di accesso basato su `JSON Web Signature <https://tools.ietf.org/html/rfc7515>`_ [66]_ (di seguito JWS) e `JSON Web Encryption <https://tools.ietf.org/html/rfc7516>`_ [67]_ (si seguito JWE) di cui eredita ed estende gli header. Il token JWT è passato in REST tramite l'header HTTP
 Authorization utilizzando lo schema Bearer [68]_. Il token in OpenID Connect è espresso per esempio direttamente come JWT. 
 
 Per ulteriori dettagli sulla sicurezza, si vedano anche:
@@ -101,7 +101,7 @@ Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 42
 	
 - nei casi 429 e 503 gli erogatori dovrebbero notificare al client dopo quanti secondi ripresentarsi tramite l'header `Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-Afte>`_ [78]_ (pratica anche detta “circuit breaker”), anche implementando meccanismi di exponential back-off. L'RFC prevede che questo header possa essere utilizzato sia in forma di data che di secondi, ma il Modl2018 vieta l’utilizzo del formato data poiché se non implementato correttamente potrebbe aggravare lo stato dei sistemi.
 
-I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indicazioni provenienti dagli header ed dagli status code di cui sopra.
+I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indicazioni provenienti dagli header e dagli status code di cui sopra.
 
 .. discourse::
    :topic_identifier: 3238
@@ -171,7 +171,7 @@ I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indica
 
 	- uniformarsi a quello di altre interfacce di servizio a livello Europeo quando ciò vada nella direzione dell\'interoperabilità e della semplicità.
 
-	- In generale tutte le stringhe in inglese dovrebbero utilizzare la dizione US per evitare ambiguità come ad es., \"color\" vs \"colour\", \"flavor\" vs \"flavour\").
+	- In generale tutte le stringhe in inglese dovrebbero utilizzare la dizione US per evitare ambiguità (come ad es., \"color\" vs \"colour\", \"flavor\" vs \"flavour\").
 
 .. [75] Cf. `https://tools.ietf.org/html/rfc7159 <https://tools.ietf.org/html/rfc7159>`_
 
