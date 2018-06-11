@@ -248,9 +248,9 @@ Nel modello SPCoop si richiedeva che in ogni caso HTTPS fosse utilizzato con aut
 
 .. [38] Ai fini dell'interoperabilità su Internet, la scelta di HTTP permette integrazione senza necessitare di regole particolari di inoltro o di definire Virtual Private Network - VPN.
 
-.. [39] Circolare AgID 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
+.. .. [39] Circolare AgiD 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
 
-.. [40] Cf. `https://tools.ietf.org/html/rfc5280\#section-4.2.1.3 <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_
+.. .. [40] Cf. `https://tools.ietf.org/html/rfc5280\#section-4.2.1.3 <https://tools.ietf.org/html/rfc5280#section-4.2.1.3>`_
 
 .. [41] Circolare AgID 18 aprile 2017, n.2/2017 `http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg <http://www.gazzettaufficiale.it/eli/id/2017/05/05/17A03060/sg>`_
 
