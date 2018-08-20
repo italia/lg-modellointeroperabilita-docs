@@ -248,7 +248,9 @@ L'integrazione può coinvolgere numerose organizzazioni e erogatori esterni di i
 
 Gli SLA possono essere statici o dinamici. Negli SLA dinamici, gli SLO (con associati SLI) variano nel tempo ed i periodi di validità definiscono gli intervalli di validità di questi ultimi (ad es., in orario lavorativo gli SLO possono essere differenti di quelli imposti durante la notte). La misurazione dei livelli di QoS all'interno di uno SLA richiedono il tracciamento delle operazioni effettuate in un contesto infrastrutturale multi-dominio (geografico, tecnologico e applicativo). In uno scenario tipico, ogni interfaccia di servizio può interagire con molteplici altre interfacce di servizio, cambiando il suo ruolo da erogatore a fruitore in alcune interazioni, ognuna governata da un differente SLA.
 
-Recentemente, gli SLA hanno iniziato ad includere non soltanto vincoli relativi all'erogatore, ma anche vincoli che impongono ai singoli fruitori delle interfacce di servizio dei limiti relativi al ritmo ed alla quantità delle richieste. A tal fine gli erogatori devono definire ed esporre ai fruitori politiche di throttling [10]_ (anche noto come rate limiting) segnalando eventuali limiti raggiunti. Gli erogatori dovrebbero far rispettare le quote anche se se il sistema non è in sovraccarico, incentivando i fruitori a rispettarle.
+Recentemente, gli SLA hanno iniziato ad includere non soltanto vincoli relativi all'erogatore, ma anche vincoli che impongono ai singoli fruitori delle interfacce di servizio dei limiti relativi al ritmo ed alla quantità delle richieste.
+A tal fine gli erogatori devono definire ed esporre ai fruitori politiche di throttling [10]_ (anche noto come rate limiting) segnalando eventuali limiti raggiunti.
+Gli erogatori dovrebbero far rispettare le quote anche se se il sistema non è in sovraccarico, incentivando i fruitori a rispettarle.
 
 Esempi di SLI sono i seguenti:
 
