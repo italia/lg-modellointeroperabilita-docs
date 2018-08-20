@@ -1,3 +1,6 @@
 # python test files
 .tox
 *.py[co]
+
+# sphinx builds
+_*
