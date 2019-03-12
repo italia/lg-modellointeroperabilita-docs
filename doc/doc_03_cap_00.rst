@@ -41,7 +41,7 @@ La sezione è organizzata nel seguente modo:
   :maxdepth: 3
   :caption: Indice dei contenuti
 
-  paradigmi-per-la-progettazione-delle-interfacce-di-servizio.rst
-  profili-di-interazione.rst
-  concetti-di-base.rst
-  riferimenti.rst
+  doc_03_cap_01.rst
+  doc_03_cap_02.rst
+  doc_03_cap_03.rst
+  doc_03_cap_04.rst
