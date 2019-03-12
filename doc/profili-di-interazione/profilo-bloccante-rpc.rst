@@ -1,8 +1,8 @@
-2.2. Profilo bloccante RPC
-==========================
+Profilo bloccante RPC
+=====================
 
-2.2.1. Scenario
----------------
+Scenario
+--------
 
 Lo sviluppo di una interfaccia bloccante di tipo RPC si richiede nei
 casi in cui:
@@ -18,8 +18,8 @@ casi in cui:
    Sezione 2.2) ed il fruitore non può farsi carico di mantenere il
    contesto necessario ad effettuare attesa attiva (vedi Sezione 2.3).
 
-2.2.2. Descrizione
-------------------
+Descrizione
+-----------
 
 Figura 1. Interazione bloccante RPC
 
@@ -27,8 +27,8 @@ In questo profilo si ha una risposta da parte dell’erogatore contestuale
 alla richiesta del fruitore. Figura 1 mostra lo schema di questa
 interazione.
 
-2.2.3. Interfaccia REST
------------------------
+Interfaccia REST
+----------------
 
 Nel caso di implementazione tramite tecnologia REST, DEVONO essere
 seguite le seguenti indicazioni:
@@ -50,8 +50,8 @@ seguite le seguenti indicazioni:
 Il corpo dei messaggi scambiati durante l’interazione deve seguire lo
 standard JSON.
 
-2.2.3.1. Regole di processamento
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Regole di processamento
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Al termine del processamento della richiesta, l’erogatore deve fare uso
 dei codici di stato HTTP rispettandone la semantica [1]_. In
@@ -73,8 +73,8 @@ l’erogatore DEVE almeno:
 -  In caso di successo restituire il codice HTTP 200 OK, riempiendo il
    body di risposta con il risultato dell’operazione.
 
-2.2.3.2. Esempio
-~~~~~~~~~~~~~~~~
+Esempio
+~~~~~~~
 
 +-----------------------------------+-----------------------------------+
 | Specifica Servizio                | https://api.amministrazioneesempi |
@@ -235,8 +235,8 @@ il contenuto informativo del messaggio venga espresso mediante XML.
 
 .. _regole-di-processamento-1:
 
-2.2.4.1. Regole di processamento
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Regole di processamento
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Nel caso di errore il WS-I Basic Profile Version 2.0 richiede l’utilizzo
 del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
@@ -258,8 +258,8 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 
 .. _esempio-1:
 
-2.2.4.2. Esempio
-~~~~~~~~~~~~~~~~
+Esempio
+~~~~~~~
 
 +-----------------------------------+-----------------------------------+
 | Specifica Servizio                | https://api.amministrazioneesempi |
