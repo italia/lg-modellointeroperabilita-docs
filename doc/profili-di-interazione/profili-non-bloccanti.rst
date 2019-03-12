@@ -1,5 +1,5 @@
-2.3. Profili non bloccanti
-==========================
+Profili non bloccanti
+=====================
 
 Nelle Sezioni 2.3.1 e 2.3.2 verranno mostrati i profili di interazione
 non bloccante, in cui un fruitore sottomette una richiesta e questa
@@ -29,13 +29,13 @@ vengono allegati degli identificativi (es. numeri di protocollo) che
 accompagnano la pratica. In questi casi, il correlation ID può essere
 sostituito da questi identificativi già previsti dal servizio.
 
-2.3.1. Profili non bloccante RPC PUSH (basato su callback)
-----------------------------------------------------------
+Profili non bloccante RPC PUSH (basato su callback)
+---------------------------------------------------
 
 .. _scenario-1:
 
-2.3.1.1. Scenario
-~~~~~~~~~~~~~~~~~
+Scenario
+~~~~~~~~
 
 Questo caso particolare, denominato RPC PUSH, è utilizzabile nel caso in
 cui il fruitore abbia a sua volta possibilità di esporre una interfaccia
@@ -43,8 +43,8 @@ di servizio per la ricezione delle risposte.
 
 .. _descrizione-1:
 
-2.3.1.2. Descrizione
-~~~~~~~~~~~~~~~~~~~~
+Descrizione
+~~~~~~~~~~~
 
 Figura 2. Interazione non bloccante tramite callback
 
@@ -70,8 +70,8 @@ l’argomento è rappresentato dallo stato di esecuzione di una richiesta.
 
 .. _interfaccia-rest-1:
 
-2.3.1.3. Interfaccia REST
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Interfaccia REST
+~~~~~~~~~~~~~~~~
 
 Nel caso in cui il profilo venga implementato con tecnologia REST,
 DEVONO essere rispettate le seguenti regole:
@@ -111,8 +111,8 @@ lo standard JSON.
 
 .. _regole-di-processamento-2:
 
-2.3.1.3.1. Regole di processamento
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Regole di processamento
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Al termine del processamento delle richieste, l’erogatore ed il fruitore
 devono fare uso dei codici di stato HTTP rispettandone la
@@ -142,8 +142,8 @@ DEVE almeno:
 
 .. _esempio-2:
 
-2.3.1.3.2. Esempio
-^^^^^^^^^^^^^^^^^^
+Esempio
+^^^^^^^
 
 +-----------------------------------+-----------------------------------+
 | Specifica Servizio Server         | https://api.amministrazioneesempi |
@@ -501,8 +501,8 @@ lo standard XML.
 
 .. _regole-di-processamento-3:
 
-2.3.1.4.1. Regole di processamento
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Regole di processamento
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Sebbene la specifica SOAP proponga l’utilizzo dei codici di stato HTTP
 al fine di indicare l’esito di una richiesta, il ModI richiede di
@@ -522,8 +522,8 @@ framework di sviluppo:
 
 .. _esempio-3:
 
-2.3.1.4.2. Esempio
-^^^^^^^^^^^^^^^^^^
+Esempio
+^^^^^^^
 
 +-----------------------------------+-----------------------------------+
 | Specifica Servizio Server         | https://api.amministrazioneesempi |
@@ -982,8 +982,8 @@ essersi preso carico della richiesta.
 
 .. _scenario-2:
 
-2.3.2.1. Scenario
-~~~~~~~~~~~~~~~~~
+Scenario
+~~~~~~~~
 
 Questo scenario è simile al precedente, di cui eredita le motivazioni,
 ma in questo caso si decide, per ragioni ad esempio dovute e limitazioni
@@ -995,8 +995,8 @@ stessa, il risultato.
 
 .. _descrizione-2:
 
-2.3.2.2. Descrizione
-~~~~~~~~~~~~~~~~~~~~
+Descrizione
+~~~~~~~~~~~
 
 Figura 3. Interazione non bloccante tramite busy waiting
 
@@ -1015,8 +1015,8 @@ Sezione 2.5. A questo punto il fruitore può richiedere il risultato
 
 .. _interfaccia-rest-2:
 
-2.3.2.3. Interfaccia REST
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Interfaccia REST
+~~~~~~~~~~~~~~~~
 
 Nel caso in cui il profilo venga implementato con tecnologia REST,
 DEVONO essere rispettate le seguenti regole (che riflettono l’esempio 2
@@ -1093,8 +1093,8 @@ l’erogatore DEVE almeno:
 
 .. _esempio-4:
 
-2.3.2.3.2. Esempio
-^^^^^^^^^^^^^^^^^^
+Esempio
+^^^^^^^
 
 +-----------------------------------+-----------------------------------+
 | Specifica Servizio Server         | https://api.amministrazioneesempi |
@@ -1400,8 +1400,8 @@ della sua richiesta.
 
 .. _interfaccia-soap-2:
 
-2.3.2.4. Interfaccia SOAP
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Interfaccia SOAP
+~~~~~~~~~~~~~~~~
 
 Nel caso in cui il profilo venga implementato con tecnologia SOAP,
 DEVONO essere rispettate le seguenti regole:
@@ -1438,8 +1438,8 @@ lo standard XML.
 
 .. _regole-di-processamento-5:
 
-2.3.2.4.1. Regole di processamento
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Regole di processamento
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Sebbene la specifica SOAP proponga l’utilizzo dei codici di stato HTTP
 al fine di indicare l’esito di una richiesta, il ModI richiede di
