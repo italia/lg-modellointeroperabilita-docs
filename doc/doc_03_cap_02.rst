@@ -28,7 +28,7 @@ L’endpoint deve indicare in modo esplicito la tecnologia utilizzata
 
 .. toctree::
   :maxdepth: 3
-  :caption: Indice dei contenuti
+  :caption: Contenuti
 
   profili-di-interazione/modalità-di-descrizione-dei-profili.rst
   profili-di-interazione/profilo-bloccante-rpc.rst
