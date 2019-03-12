@@ -121,15 +121,13 @@ nelle varie casistiche partendo da una interfaccia di servizio secondo
 ciascuno dei due paradigmi (RPC-like e resource oriented) e cercando
 di realizzarla utilizzando le due diverse tecnologie SOAP e REST.
 
-.. figure:: ./media/image1.png
-   :name: Interfaccia di servizio
-   :alt: Interfaccia di servizio usando SOAP/WSDL. Per semplicità
-   nell’esempio si suppone che il singolo item nell’Order sia
-   rappresentabile con una semplice stringa (che codifica il suo codice, ad
-   esempio) e sempre in quantità singola (per cui un Order non fa altro che
-   aggregare differenti Items)
+|image0|
 
-**Esempio 1**. Si immagini di voler realizzare un’interfaccia di
+**Figura 1.** Interfaccia di servizio usando SOAP/WSDL.
+
+Per semplicità nell’esempio si suppone che il singolo item nell’Order sia rappresentabile con una semplice stringa (che codifica il suo codice, ad esempio) e sempre in quantità singola (per cui un Order non fa altro che aggregare differenti Items)
+
+**Esempio 1.** Si immagini di voler realizzare un’interfaccia di
 servizio resource-oriented che permette di accedere ad informazioni su
 ordini e voci (oggetti acquistati, *item*) inseriti negli ordini.
 Utilizzando SOAP/WSDL, si realizza un’interfaccia di servizio che offre
@@ -145,14 +143,14 @@ esattamente sulle operazioni CRUD, come mostrato in Figura 2.
 
 |image1|
 
-Figura 2. Interfaccia di servizio usando REST
+**Figura 2.** Interfaccia di servizio usando REST
 
 Se l’interfaccia di servizio è resource-oriented (come appunto nel caso
 precedente, in cui di fatto si vuole accedere a informazioni sugli
 ordini) allora l’\ *impedance mismatch* con entrambe le tecnologie è
 minima.
 
-**Esempio 2**. Si immagini di voler realizzare un’interfaccia di
+**Esempio 2.** Si immagini di voler realizzare un’interfaccia di
 servizio che permette di avviare un task di lunga durata, ad esempio una
 complessa procedura computazionale. Utilizzando SOAP/WSDL, si realizza
 un’interfaccia di servizio TaskManagement con operazioni startTask() e
@@ -163,7 +161,7 @@ stato prodotto. Figura 3 schematizza l’interfaccia di servizio.
 
 |image2|
 
-Figura 3. Interfacce di servizio usando SOAP/WSDL
+**Figura 3.** Interfacce di servizio usando SOAP/WSDL
 
 Per realizzare una interfaccia di servizio che fornisce la stessa logica
 in tecnologia REST occorre ridefinire l'interfaccia utilizzando il
@@ -316,11 +314,17 @@ Maturity Model.
    Cf. https://www.crummy.com/writing/speaking/2008-QCon/act3.html
 
 .. |image0| image:: ./media/image1.png
+   :align: center
    :width: 3.44581in
    :height: 3.55729in
+
 .. |image1| image:: ./media/image2.png
+   :align: center
    :width: 6.27083in
    :height: 3.97222in
+
 .. |image2| image:: ./media/image3.png
+   :align: center
    :width: 3.5in
    :height: 1.60417in
+
