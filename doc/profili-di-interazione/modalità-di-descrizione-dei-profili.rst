@@ -1,4 +1,4 @@
-2.1. Modalità di descrizione dei profili
+Modalità di descrizione dei profili
 ========================================
 
 Nel seguito, per gli esempi proposti per i diversi profili si fa
