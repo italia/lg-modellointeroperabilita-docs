@@ -185,6 +185,8 @@ quindi a far partire il task.
          "ping-time": "2018-12-31T19:43:37+0100"
          }
       }
+      
+Il codice di stato **202 Accepted** indica che l’interfaccia di servizio ha verificato l'input della richiesta e lo ha accettato, ma non è possibile fornire una risposta immediata.
 
 Il client deve seguire il collegamento fornito nell'intestazione
 Location per informarsi (con GET) sullo stato della richiesta in
@@ -203,6 +205,12 @@ sospeso.
       "ping-time": "2018-12-31T19:52:45+0100"
       }
    }
+   
+I client possono inviare richieste GET in qualsiasi momento per
+tenere traccia dei progressi. Oltre allo stato, la risposta contiene
+anche un suggerimento (nell'elemento ping-time) su quando deve essere
+eseguita la successiva richiesta di polling per ridurre il traffico
+di rete e il carico di servizio a causa di un polling eccessivo.
 
 Una volta completato il lavoro, la risposta alla richiesta di polling
 reindirizza il client a un'altra risorsa da cui è possibile recuperare
@@ -246,7 +254,7 @@ caratteristiche previste da REST porta alla realizzazione di
 architetture ibride tra il paradigma RESTful Web service e quello dei
 Web service RPC-like. In merito ai modelli ibridi che si possono
 presentare, esiste una classificazione, il cosiddetto Richardson
-Maturity Model [5]_ [3] che prevede quattro livelli, da 0 a 3, in
+Maturity Model [3]_ che prevede quattro livelli, da 0 a 3, in
 accordo al grado di aderenza ai dettami REST. In particolare, si possono
 presentare i casi seguenti:
 
@@ -304,18 +312,6 @@ Maturity Model.
    OpenAPI.
 
 .. [3]
-   Il codice di stato 202 Accepted indica che l’interfaccia di servizio
-   ha verificato l'input della richiesta e lo ha accettato, ma non è
-   possibile fornire una risposta immediata.
-
-.. [4]
-   I client possono inviare richieste GET in qualsiasi momento per
-   tenere traccia dei progressi. Oltre allo stato, la risposta contiene
-   anche un suggerimento (nell'elemento ping-time) su quando deve essere
-   eseguita la successiva richiesta di polling per ridurre il traffico
-   di rete e il carico di servizio a causa di un polling eccessivo.
-
-.. [5]
    Cf. https://www.crummy.com/writing/speaking/2008-QCon/act3.html
 
 .. |image0| image:: ./media/image1.png
