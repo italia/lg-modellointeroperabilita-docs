@@ -977,8 +977,8 @@ essersi preso carico della richiesta.
 |                                   | </soap:Envelope>                  |
 +-----------------------------------+-----------------------------------+
 
-2.3.2. Profilo non bloccante RPC PULL (busy waiting)
-----------------------------------------------------
+Profilo non bloccante RPC PULL (busy waiting)
+---------------------------------------------
 
 .. _scenario-2:
 
@@ -1060,7 +1060,7 @@ lo standard JSON.
 
 .. _regole-di-processamento-4:
 
-2.3.2.3.1. Regole di processamento
+Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Al termine del processamento delle richieste, l’erogatore deve fare uso
