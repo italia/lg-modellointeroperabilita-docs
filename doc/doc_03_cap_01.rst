@@ -314,17 +314,14 @@ Maturity Model.
    Cf. https://www.crummy.com/writing/speaking/2008-QCon/act3.html
 
 .. |image0| image:: ./media/image1.png
-   :align: center
    :width: 3.44581in
    :height: 3.55729in
 
 .. |image1| image:: ./media/image2.png
-   :align: center
    :width: 6.27083in
    :height: 3.97222in
 
 .. |image2| image:: ./media/image3.png
-   :align: center
    :width: 3.5in
    :height: 1.60417in
 
