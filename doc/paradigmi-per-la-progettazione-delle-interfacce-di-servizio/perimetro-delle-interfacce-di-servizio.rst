@@ -23,7 +23,7 @@ soprattutto relativamente agli aspetti di sicurezza. Le interfacce di
 servizio vengono offerte da qualsiasi server applicativo, senza essere
 vincolate ad essere raggiungibili attraverso un unico gateway.
 
-La Figura 4 illustra schematicamente la differenza tra i due framework.
+La **Figura 4** illustra schematicamente la differenza tra i due framework.
 
 Quindi ogni server applicativo offre interfacce di servizio, tuttavia è
 comunque significativo distinguere se l’interfaccia di servizio viene
@@ -48,7 +48,7 @@ Questi aspetti verranno discussi nel successivo paragrafo.
 
 \(b) perimetro in ModI
 
-Figura 4. Perimetro delle interfacce in SPCoop e ModI
+**Figura 4.** Perimetro delle interfacce in SPCoop e ModI
 
 .. |image0| image:: ../media/image4.png
    :width: 6.27083in
