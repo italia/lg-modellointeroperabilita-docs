@@ -186,67 +186,52 @@ quindi a far partire il task.
          }
       }
 
-
-
-| ⇒ POST /task
-| [Input data payload]
-
-| ⇐ 202 Accepted [3]_
-| Location: /task/20181231
-
-| {
-| "task": {
-| "status": "pending",
-| "message": "Your task has been queued
-
-| for processing",
-| "ping-time": "2018-12-31T19:43:37+0100"
-
-| }
-| }
-
 Il client deve seguire il collegamento fornito nell'intestazione
 Location per informarsi (con GET) sullo stato della richiesta in
 sospeso.
 
-⇒ GET /task/20181231
+.. code-block:: JSON
 
-⇐ 200 OK
+   ⇒ GET /task/20181231
 
-| {
-| "task": {
-| "status": "processing",
-| "message": "Your task is being processed",
-| "ping-time": "2018-12-31T19:52:45+0100" [4]_
-
-| }
-| }
+   ⇐ 200 OK
+   
+   {
+      "task": {
+      "status": "processing",
+      "message": "Your task is being processed",
+      "ping-time": "2018-12-31T19:52:45+0100"
+      }
+   }
 
 Una volta completato il lavoro, la risposta alla richiesta di polling
 reindirizza il client a un'altra risorsa da cui è possibile recuperare
 il risultato finale.
 
-| ⇒ GET /task/20181231
-| ⇐ 303 See Other
-| Location: /task/20181231/result
+.. code-block:: JSON
 
-| {
-| "task": {
-| "status": "done",
-| "message": "Your task is completed"
+   ⇒ GET /task/20181231
+   ⇐ 303 See Other
+   Location: /task/20181231/result
 
-| }
-| }
+   {
+      "task": {
+      "status": "done",
+      "message": "Your task is completed",
+      }
+   }
 
 Il client può quindi seguire il collegamento trovato nell'intestazione
 Location per recuperare (con GET) il risultato della computazione
 completata. Il collegamento potrebbe anche essere condiviso tra diversi
 client interessati a leggere l'output della richiesta POST originale.
 
-⇒ GET /task/20181231/result
+.. code-block:: JSON
 
-| ⇐ 200 OK
-| [Output data payload]
+   ⇒ GET /task/20181231/result
+
+   ⇐ 200 OK
+   [Output data payload]
 
 Questo secondo esempio mostra invece che se l’interfaccia di servizio è
 orientata alle funzionalità (come appunto nell’esempio, in cui di fatto
