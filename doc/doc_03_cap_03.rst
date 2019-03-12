@@ -1,7 +1,6 @@
 3. Concetti di base
 ===================
 
-
 **Interazione bloccante vs non bloccante**                            
                                                                       
 Nell’interazione bloccante un fruitore effettua una chiamata al       
