@@ -1,6 +1,9 @@
 Concetti di base
 ================
 
+Concetti
+--------
+
 .. glossary::
 
    Interazione bloccante vs non bloccante
@@ -12,8 +15,6 @@ Concetti di base
       Con abuso di nomenclatura, la comunicazione bloccante talvolta viene detta sincrona, ad indicare che client e servente si sono sincronizzati (attesa di uno da parte dell’altro); quella non bloccante viene detta asincrona, proprio a significare l'asincronicità che vi è tra l'invio di un messaggio e la risposta al messaggio stesso.
       
       *Alonso, G., Casati, F., Kuno, H., Machiraju, V. (2004). Web Services. Concepts, Architectures and Applications. Springer*
-
-.. glossary::
 
    Remote Procedure Call
       Una Remote Procedure Call (chiamata a procedura remota, RPC) consiste nell'attivazione, da parte di un programma, di una procedura o subroutine attivata su un elaboratore diverso da quello sul quale il programma viene eseguito. Quindi l'RPC consente a un programma di eseguire subroutine “a distanza” su elaboratori remoti, accessibili attraverso una rete. Essenziale al concetto di RPC è l'idea di trasparenza: la chiamata di procedura remota deve essere infatti eseguita in modo il più possibile analogo a quello della chiamata di procedura locale; i dettagli della comunicazione su rete devono essere “nascosti” (resi trasparenti) all'utilizzatore del meccanismo. Se il linguaggio è orientato agli oggetti, l’invocazione della procedura remote è in realtà l’invocazione di un metodo su un oggetto remoto, e si parla di Remote Method Invocation - RMI.
@@ -31,20 +32,14 @@ Concetti di base
       Questo meccanismo permette di realizzare interazioni non bloccanti.
 
       *D'Souza, D. F., Cameron Wills, A. (1999). Objects, components, and frameworks with UML: the Catalysis approach. Addison-Wesley Longman Publishing Co.*
-
-.. glossary::
    
    Façade
 
       È uno schema di organizzazione dei moduli in cui uno, detto appunto façade, maschera l’accesso ad un insieme di moduli sottostanti, ad esempio limitando l’accesso a determinate funzionalità tramite un meccanismo di gestione degli accessi, oppure nascondendo le complessità nell’organizzazione e gestione dei moduli sottostanti.
       
-.. glossary::
-
    Itempotenza
 
       Il concetto di idempotenza in matematica è una proprietà delle funzioni per la quale applicando molteplici volte una funzione data, il risultato ottenuto è uguale a quello derivante dall'applicazione della funzione un'unica volta (es. gli operatori di intersezione o unione). Applicato alle interfacce di servizio, questo concetto indica il fatto che una operazione, se eseguita più volte non comporta un risultato diverso sul sistema erogatore. Il caso classico è quello in cui si ha una operazione di creazione. Nel caso di errore di rete, l’operazione potrebbe essere eseguita senza che il fruitore riceva un messaggio di risposta. In questo caso il fruitore può ritentare la stessa operazione, ma il risultato in questo caso non deve essere la creazione di una seconda risorsa. L’erogatore dell’interfaccia di servizio deve invece riconoscere la duplicazione della richiesta ed evitare comportamenti indesiderati. Questo comportamento è solitamente ottenuto tramite l’utilizzo di correlation ID oppure tramite il confronto dati basato su dati che fungono da chiave.                                                    
-
-.. glossary::
 
    Orchestrazione e coreografia
 
