@@ -75,61 +75,42 @@ l’erogatore DEVE almeno:
 Esempio
 ~~~~~~~
 
-.. admonition:: Esempio
-   :class: admonition-example display-page
 
-   .. role:: admonition-internal-title
-      :class: admonition-internal-title
+Di seguito un esempio di chiamata al metodo ``M``.
 
-   `Specifica Servizio`:admonition-internal-title:
-
-
-Di seguito un esempio di chiamata al metodo M.
-
-+-----------------------------------+-----------------------------------+
-| HTTP Operation                    | POST                              |
-+-----------------------------------+-----------------------------------+
-| Endpoint                          | `https://api.amministrazioneesemp |
-|                                   | io.it/rest/v1/nomeinterfacciaserv |
-|                                   | izio/resources/1234/M <https://ap |
-|                                   | i.amministrazioneesempio.it/rest/ |
-|                                   | v1/nomeinterfacciaservizio/M>`__  |
-+-----------------------------------+-----------------------------------+
-| (1) Request                       | {                                 |
-| Body                              |                                   |
-|                                   | "a": {                            |
-|                                   |                                   |
-|                                   | "a1s": [1,2],                     |
-|                                   |                                   |
-|                                   | "a2":                             |
-|                                   | "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"    |
-|                                   |                                   |
-|                                   | },                                |
-|                                   |                                   |
-|                                   | "b": "Stringa di esempio"         |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| (2) Response                      | {                                 |
-| Body (HTTP Status Code 200 OK)    |                                   |
-|                                   | "c" : "risultato"                 |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| (2) Response                      | {                                 |
-| Body (HTTP Status Code 500        |                                   |
-| Internal Server Error)            | "error_message" : "messaggio di   |
-|                                   | errore"                           |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| (2) Response                      | {                                 |
-| Body (HTTP Status Code 404 Not    |                                   |
-| Found)                            | "error_message" : "la risorsa     |
-|                                   | 1234 non esiste"                  |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Http Operation                                                 | POST                                                                                   |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Endpoint                                                       | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| (1) Request Body                                               | .. code-block:: JSON                                                                   |
+|                                                                |                                                                                        |
+|                                                                |    {                                                                                   |
+|                                                                |       "a": {                                                                           |
+|                                                                |       "a1s": [1,2],                                                                    |
+|                                                                |       "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"                                             |
+|                                                                |       },                                                                               |
+|                                                                |       "b": "Stringa di esempio"                                                        |
+|                                                                |    }                                                                                   |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| (2) Response Body (HTTP Status Code 200 OK)                    | .. code-block:: JSON                                                                   |
+|                                                                |                                                                                        |
+|                                                                |    {                                                                                   |
+|                                                                |      "c" : "risultato"                                                                 |
+|                                                                |    }                                                                                   |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| (2) Response Body (HTTP Status Code 500 Internal Server Error) | .. code-block:: JSON                                                                   |
+|                                                                |                                                                                        |
+|                                                                |    {                                                                                   |
+|                                                                |      "error_message" : "messaggio di errore"                                           |
+|                                                                |    }                                                                                   |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| (2) Response Body (HTTP Status Code 404 Not Found)             | .. code-block:: JSON                                                                   |
+|                                                                |                                                                                        |
+|                                                                |    {                                                                                   |
+|                                                                |      "error_message" : "la risorsa 1234 non esiste"                                    |
+|                                                                |    }                                                                                   |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Interfaccia SOAP
 -----------------
