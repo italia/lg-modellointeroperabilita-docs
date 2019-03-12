@@ -32,6 +32,7 @@ messaggio stesso.
 *Alonso, G., Casati, F., Kuno, H., Machiraju, V. (2004). Web          
 Services. Concepts, Architectures and Applications. Springer*         
 
+------------
 
 **Remote Procedure Call**                                             
                                                                       
@@ -79,6 +80,8 @@ Questo meccanismo permette di realizzare interazioni non bloccanti.
 frameworks with UML: the Catalysis approach. Addison-Wesley Longman   
 Publishing Co.*                                                       
 
+------------
+
 **Façade**                                                            
                                                                       
 È uno schema di organizzazione dei moduli in cui uno, detto appunto   
@@ -86,6 +89,8 @@ façade, maschera l’accesso ad un insieme di moduli sottostanti, ad
 esempio limitando l’accesso a determinate funzionalità tramite un     
 meccanismo di gestione degli accessi, oppure nascondendo le           
 complessità nell’organizzazione e gestione dei moduli sottostanti.    
+
+------------
 
 **Idempotenza**                                                       
                                                                       
@@ -106,6 +111,8 @@ della richiesta ed evitare comportamenti indesiderati. Questo
 comportamento è solitamente ottenuto tramite l’utilizzo di            
 correlation ID oppure tramite il confronto dati basato su dati che    
 fungono da chiave.                                                    
+
+------------
 
 **Orchestrazione e coreografia**                                      
                                                                       
@@ -149,6 +156,8 @@ scambiati tra due o più partecipanti.
 *Chris Peltz (2003): Web Services Orchestration and Choreography.     
 IEEE Computer 36(10):46-52*                                          
 
+------------
+
 **Classificazione delle interazioni in A2A, A2C e A2B**               
                                                                        
 A2A : Administration-to-Administration                                
@@ -184,98 +193,98 @@ che invece nel ModI è indicato come M2M (cf. voce relativa). Nel ModI
 A2A è usata sempre e solo ad indicare interazioni                     
 Administration-to-Administration.*                                    
 
+------------
 
-+-----------------------------------------------------------------------+
-| **Classificazione delle interazioni in M2M e U2M**                    |
-|                                                                       |
-| M2M : Machine-to-Machine                                              |
-|                                                                       |
-| U2M : User-to-Machine                                                 |
-|                                                                       |
-| In contesti di interoperabilità tra pubbliche amministrazioni,        |
-| cittadini ed imprese, è utile classificare le interazioni tra sistemi |
-| informativi differenti come:                                          |
-|                                                                       |
-| -  Machine-to-Machine, quando i due sistemi informativi interagiscono |
-|    (scambiando dati) a livello applicativo, e l’identificazione del   |
-|    client verso il fornitore di interfacce di servizio è demandato ad |
-|    un identity provider operante all’interno del dominio applicativo  |
-|    dal quale il client opera.                                         |
-|                                                                       |
-| -  User-to-Machine, quando i sistemi informativi interagiscono,       |
-|    sempre attraverso la mediazione di un utente umano, ad esempio il  |
-|    cittadino oppure un funzionario di una pubblica amministrazione, e |
-|    l’identificazione del client verso il fornitore è demandata ad un  |
-|    identity provider differente rispetto al dominio del client.       |
-|                                                                       |
-| A scopo esemplificativo, si considerino i seguenti casi:              |
-|                                                                       |
-| 1. cittadino che utilizza una Web/mobile app per fruire dei servizi   |
-|    di una pubblica amministrazione. Si è nel caso U2M, in quanto i    |
-|    moduli applicativi (app client ed interfaccia di servizio)         |
-|    interoperano, ma tale interazione è operata con l’utente che ha    |
-|    fornito le proprie credenziali e queste sono utilizzate da un      |
-|    identity provider differente dal suo dominio (ad es., un identity  |
-|    provider commerciale oppure la stessa pubblica amministrazione     |
-|    servente) per creare il contesto di sicurezza;                     |
-|                                                                       |
-| 2. operatore di una pubblica amministrazione A che interopera,        |
-|    attraverso un’applicazione, con un’interfaccia di servizio presso  |
-|    la pubblica amministrazione B. In questo caso, il sistema          |
-|    informativo della pubblica amministrazione A riconosce il proprio  |
-|    operatore, e quando il modulo applicativo si presenta presso la    |
-|    pubblica amministrazione B lo fa con il contesto di sicurezza      |
-|    dell’amministrazione A, in modo trasparente rispetto allo          |
-|    specifico operatore ed alla sua identità; siamo quindi nel caso    |
-|    M2M;                                                               |
-|                                                                       |
-| 3. modulo software di una amministrazione A che in modalità *batch*   |
-|    ed *unattended* utilizza un’interfaccia di servizio                |
-|    dell’amministrazione B. Di nuovo il caso è M2M.                    |
-|                                                                       |
-| La differenza U2M e M2M è significativa in termini di quale soggetto  |
-| ha il carico di riconoscere le identità del client e fornire l’AA -   |
-| authentication ed authorization. In particolare nei 3 esempi          |
-| precedente                                                            |
-|                                                                       |
-| -  caso 1, U2M - la gestione delle identità è demandata all’identity  |
-|    provider (nel caso che sia terzo/commerciale) ma la pubblica       |
-|    amministrazione servente ha il compito di censire tutte le         |
-|    identità e per ognuna fornire l’AA; oppure è la pubblica           |
-|    amministrazione stessa gestisce le identità. In ogni caso le       |
-|    spetta l’onere di gestire l’AA di ogni singola identità.           |
-|                                                                       |
-| -  casi 2 e 3, M2M - la pubblica amministrazione B servente riconosce |
-|    ed AA un solo soggetto, la pubblica amministrazione A, ed è questa |
-|    che invece ha l’onere di riconoscere le identità e dare loro l’AA  |
-|    per interoperare con B.                                            |
-|                                                                       |
-| Quindi emerge come la discriminante sia da parte dell’amministrazione |
-| fornitrice di interfacce di servizio, se è in suo carico di gestire   |
-| ed AA le identità o meno.                                             |
-+-----------------------------------------------------------------------+
+**Classificazione delle interazioni in M2M e U2M**
+                                                                     
+M2M : Machine-to-Machine                                              
+                                                                      
+U2M : User-to-Machine                                                 
+                                                                      
+In contesti di interoperabilità tra pubbliche amministrazioni,        
+cittadini ed imprese, è utile classificare le interazioni tra sistemi 
+informativi differenti come:                                          
+                                                                      
+-  Machine-to-Machine, quando i due sistemi informativi interagiscono 
+   (scambiando dati) a livello applicativo, e l’identificazione del   
+   client verso il fornitore di interfacce di servizio è demandato ad 
+   un identity provider operante all’interno del dominio applicativo  
+   dal quale il client opera.                                         
+                                                                      
+-  User-to-Machine, quando i sistemi informativi interagiscono,       
+   sempre attraverso la mediazione di un utente umano, ad esempio il  
+   cittadino oppure un funzionario di una pubblica amministrazione, e 
+   l’identificazione del client verso il fornitore è demandata ad un  
+   identity provider differente rispetto al dominio del client.       
+                                                                      
+A scopo esemplificativo, si considerino i seguenti casi:              
+                                                                      
+1. cittadino che utilizza una Web/mobile app per fruire dei servizi   
+   di una pubblica amministrazione. Si è nel caso U2M, in quanto i    
+   moduli applicativi (app client ed interfaccia di servizio)         
+   interoperano, ma tale interazione è operata con l’utente che ha    
+   fornito le proprie credenziali e queste sono utilizzate da un      
+   identity provider differente dal suo dominio (ad es., un identity  
+   provider commerciale oppure la stessa pubblica amministrazione     
+   servente) per creare il contesto di sicurezza;                     
+                                                                      
+2. operatore di una pubblica amministrazione A che interopera,        
+   attraverso un’applicazione, con un’interfaccia di servizio presso  
+   la pubblica amministrazione B. In questo caso, il sistema          
+   informativo della pubblica amministrazione A riconosce il proprio  
+   operatore, e quando il modulo applicativo si presenta presso la    
+   pubblica amministrazione B lo fa con il contesto di sicurezza      
+   dell’amministrazione A, in modo trasparente rispetto allo          
+   specifico operatore ed alla sua identità; siamo quindi nel caso    
+   M2M;                                                               
+                                                                      
+3. modulo software di una amministrazione A che in modalità *batch*   
+   ed *unattended* utilizza un’interfaccia di servizio                
+   dell’amministrazione B. Di nuovo il caso è M2M.                    
+                                                                      
+La differenza U2M e M2M è significativa in termini di quale soggetto  
+ha il carico di riconoscere le identità del client e fornire l’AA -   
+authentication ed authorization. In particolare nei 3 esempi          
+precedente                                                            
+                                                                      
+-  caso 1, U2M - la gestione delle identità è demandata all’identity  
+   provider (nel caso che sia terzo/commerciale) ma la pubblica       
+   amministrazione servente ha il compito di censire tutte le         
+   identità e per ognuna fornire l’AA; oppure è la pubblica           
+   amministrazione stessa gestisce le identità. In ogni caso le       
+   spetta l’onere di gestire l’AA di ogni singola identità.           
+                                                                      
+-  casi 2 e 3, M2M - la pubblica amministrazione B servente riconosce 
+   ed AA un solo soggetto, la pubblica amministrazione A, ed è questa 
+   che invece ha l’onere di riconoscere le identità e dare loro l’AA  
+   per interoperare con B.                                            
+                                                                      
+Quindi emerge come la discriminante sia da parte dell’amministrazione 
+fornitrice di interfacce di servizio, se è in suo carico di gestire   
+ed AA le identità o meno.                                             
 
-+-----------------------------------------------------------------------+
-| **Impedance mismatch**                                                |
-|                                                                       |
-| Derivato dall’\ *impedance mismatch* dell’elettrotecnica, si          |
-| riferisce alle difficoltà concettuali e tecniche che si incontrano    |
-| spesso quando due paradigmi differenti, spesso implicati da           |
-| altrettante tecnologie, devono coesistere e mapparsi uno sull’altro   |
-| durante la progettazione e realizzazione di un sistema.               |
-|                                                                       |
-| | Il più famoso caso di impedance mismatch è quello                   |
-|   dell’object-to-relational, noto metaforicamente anche come il       |
-|   Vietnam dell’informatica [4]_, che si verifica quando un sistema di |
-|   gestione di database relazionali (RDBMS) è servito da un programma  |
-|   applicativo (o da più programmi applicativi) scritto in un          |
-|   linguaggio di programmazione orientato agli oggetti, in particolare |
-|   perché gli oggetti o le definizioni di classe devono essere         |
-|   associati a tabelle di database definite da uno schema relazionale. |
-| | Nel ModI 2018 ci sono casi di impedance mismatch quando             |
-|   un’interfaccia di servizio progettata secondo lo stile RPC-like     |
-|   deve essere realizzata in REST.                                     |
-+-----------------------------------------------------------------------+
+------------
+
+**Impedance mismatch**                                                
+                                                                      
+Derivato dall’\ *impedance mismatch* dell’elettrotecnica, si          
+riferisce alle difficoltà concettuali e tecniche che si incontrano    
+spesso quando due paradigmi differenti, spesso implicati da           
+altrettante tecnologie, devono coesistere e mapparsi uno sull’altro   
+durante la progettazione e realizzazione di un sistema.               
+                                                                      
+| Il più famoso caso di impedance mismatch è quello                   
+  dell’object-to-relational, noto metaforicamente anche come il       
+  Vietnam dell’informatica [4]_, che si verifica quando un sistema di 
+  gestione di database relazionali (RDBMS) è servito da un programma  
+  applicativo (o da più programmi applicativi) scritto in un          
+  linguaggio di programmazione orientato agli oggetti, in particolare 
+  perché gli oggetti o le definizioni di classe devono essere         
+  associati a tabelle di database definite da uno schema relazionale. 
+| Nel ModI 2018 ci sono casi di impedance mismatch quando             
+  un’interfaccia di servizio progettata secondo lo stile RPC-like     
+  deve essere realizzata in REST.                                     
+
 
 .. [1]
    Ad es., se fruitore ed erogatore computano nell’ordine dei secondi,
