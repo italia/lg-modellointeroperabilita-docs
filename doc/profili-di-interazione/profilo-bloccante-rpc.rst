@@ -224,8 +224,8 @@ Di seguito un esempio di chiamata al metodo M.
 |                                   | }                                 |
 +-----------------------------------+-----------------------------------+
 
-2.2.4. Interfaccia SOAP
------------------------
+Interfaccia SOAP
+-----------------
 
 Se il profilo viene implementato con tecnologia SOAP, a differenza del
 caso REST, il metodo invocato non è specificato nell’endpoint chiamato,
