@@ -79,16 +79,13 @@ Esempio
 +--------------------+-----------------------------------------------------------------------------------------+
 | .. code-block:: yaml                                                                                         |
 |                                                                                                              |
-|   openapi:                                                                                                   |
-|   3.0.1                                                                                                      |
-|                                                                                                              |
+|   openapi: 3.0.1                                                                                             |                         
 |     info:                                                                                                    |
 |       title: RESTblocking                                                                                    |
 |       license:                                                                                               |
 |         name: Apache 2.0 License                                                                             |
 |         url: http://www.apache.org/licenses/LICENSE-2.0.html                                                 |
-|       version: "1.0"                                                                                         |
-|                                                                                                              |
+|       version: "1.0"                                                                                         |                         
 |     paths:                                                                                                   |
 |       /resources/{id_resource}/M:                                                                            |
 |         post:                                                                                                |
@@ -130,8 +127,7 @@ Esempio
 |               content:                                                                                       |
 |                 application/json:                                                                            |
 |                   schema:                                                                                    |
-|                     $ref: '#/components/schemas/MResponseType'                                               |
-|                                                                                                              |
+|                     $ref: '#/components/schemas/MResponseType'                                               |                         
 |     components:                                                                                              |
 |       schemas:                                                                                               |
 |         MType:                                                                                               |
