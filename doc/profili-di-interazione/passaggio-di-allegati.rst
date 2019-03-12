@@ -1,5 +1,5 @@
-2.6. Passaggio di Allegati
-==========================
+Passaggio di Allegati
+=====================
 
 Tra i parametri o i valori di ritorno di una interfaccia di servizio può
 esserci la presenza di allegati, dove per allegato si intende un
