@@ -32,81 +32,30 @@ Concetti di base
 
       *D'Souza, D. F., Cameron Wills, A. (1999). Objects, components, and frameworks with UML: the Catalysis approach. Addison-Wesley Longman Publishing Co.*
 
-+-----------------------------------------------------------------------+
-| **Façade**                                                            |
-|                                                                       |
-| È uno schema di organizzazione dei moduli in cui uno, detto appunto   |
-| façade, maschera l’accesso ad un insieme di moduli sottostanti, ad    |
-| esempio limitando l’accesso a determinate funzionalità tramite un     |
-| meccanismo di gestione degli accessi, oppure nascondendo le           |
-| complessità nell’organizzazione e gestione dei moduli sottostanti.    |
-+-----------------------------------------------------------------------+
+.. glossary::
+   
+   Façade
 
-+-----------------------------------------------------------------------+
-| **Idempotenza**                                                       |
-|                                                                       |
-| Il concetto di idempotenza in matematica è una proprietà delle        |
-| funzioni per la quale applicando molteplici volte una funzione data,  |
-| il risultato ottenuto è uguale a quello derivante dall'applicazione   |
-| della funzione un'unica volta (es. gli operatori di intersezione o    |
-| unione). Applicato alle interfacce di servizio, questo concetto       |
-| indica il fatto che una operazione, se eseguita più volte non         |
-| comporta un risultato diverso sul sistema erogatore. Il caso classico |
-| è quello in cui si ha una operazione di creazione. Nel caso di errore |
-| di rete, l’operazione potrebbe essere eseguita senza che il fruitore  |
-| riceva un messaggio di risposta. In questo caso il fruitore può       |
-| ritentare la stessa operazione, ma il risultato in questo caso non    |
-| deve essere la creazione di una seconda risorsa. L’erogatore          |
-| dell’interfaccia di servizio deve invece riconoscere la duplicazione  |
-| della richiesta ed evitare comportamenti indesiderati. Questo         |
-| comportamento è solitamente ottenuto tramite l’utilizzo di            |
-| correlation ID oppure tramite il confronto dati basato su dati che    |
-| fungono da chiave.                                                    |
-+-----------------------------------------------------------------------+
+      È uno schema di organizzazione dei moduli in cui uno, detto appunto façade, maschera l’accesso ad un insieme di moduli sottostanti, ad esempio limitando l’accesso a determinate funzionalità tramite un meccanismo di gestione degli accessi, oppure nascondendo le complessità nell’organizzazione e gestione dei moduli sottostanti.
+      
+.. glossary::
 
-+-----------------------------------------------------------------------+
-| **Orchestrazione e coreografia**                                      |
-|                                                                       |
-| Per orchestrazione si intende un flusso di esecuzione che coinvolge   |
-| diverse chiamate a servizi secondo regole prestabilite (ad es., un    |
-| workflow) al fine di ottenere un servizio composto.                   |
-|                                                                       |
-| La coreografia dei servizi è una forma di specifica della             |
-| composizione dei servizi in cui il protocollo di interazione tra i    |
-| diversi servizi componenti è definito da una prospettiva globale.     |
-| Cioè, in fase di esecuzione della coreografia, ogni partecipante      |
-| esegue la sua parte (cioè il suo *ruolo*) in base al comportamento    |
-| degli altri partecipanti. Il ruolo specifica il comportamento, in     |
-| termini di scambi di messaggi attesi dai partecipanti, che            |
-| riproducono il ruolo appunto in termini di sequenziamento e           |
-| tempistica dei messaggi che possono consumare e produrre. La          |
-| specifica dei messaggi implica anche la descrizione dei dati          |
-| scambiati tra due o più partecipanti.                                 |
-|                                                                       |
-| | La differenza tra i due approcci è meglio compresa attraverso il    |
-|   loro confronto. Da una parte, nelle coreografie, la logica delle    |
-|   interazioni basate sui messaggi tra i partecipanti è specificata da |
-|   una prospettiva globale. Nell'orchestrazione dei servizi, d'altra   |
-|   parte, la logica viene specificata dal punto di vista locale di un  |
-|   singolo partecipante, chiamato l'orchestratore. Nel linguaggio di   |
-|   orchestrazione BPEL, ad esempio, la specifica dell'orchestrazione   |
-|   del servizio (ad esempio il file del processo BPEL) può essere      |
-|   distribuita sull'infrastruttura (ad esempio un motore di esecuzione |
-|   BPEL come Apache ODE), e questo costituisce l’implementazione del   |
-|   servizio composto.                                                  |
-| | In un certo senso, le coreografie e le orchestrazioni sono due      |
-|   facce della stessa medaglia. Da un lato, i ruoli di una coreografia |
-|   possono essere estratti come orchestrazioni attraverso un processo  |
-|   chiamato *proiezione*; attraverso la proiezione, è possibile        |
-|   realizzare scheletri, ovvero orchestrazioni di servizi incomplete   |
-|   che possono essere utilizzate come linee di base per realizzare i   |
-|   servizi web che partecipano alla coreografia di servizio. D'altra   |
-|   parte, le orchestrazioni già esistenti possono essere composte in   |
-|   coreografie.                                                        |
-|                                                                       |
-| *Chris Peltz (2003): Web Services Orchestration and Choreography.     |
-| IEEE Computer 36(10):46-52*                                           |
-+-----------------------------------------------------------------------+
+   Itempotenza
+
+      Il concetto di idempotenza in matematica è una proprietà delle funzioni per la quale applicando molteplici volte una funzione data, il risultato ottenuto è uguale a quello derivante dall'applicazione della funzione un'unica volta (es. gli operatori di intersezione o unione). Applicato alle interfacce di servizio, questo concetto indica il fatto che una operazione, se eseguita più volte non comporta un risultato diverso sul sistema erogatore. Il caso classico è quello in cui si ha una operazione di creazione. Nel caso di errore di rete, l’operazione potrebbe essere eseguita senza che il fruitore riceva un messaggio di risposta. In questo caso il fruitore può ritentare la stessa operazione, ma il risultato in questo caso non deve essere la creazione di una seconda risorsa. L’erogatore dell’interfaccia di servizio deve invece riconoscere la duplicazione della richiesta ed evitare comportamenti indesiderati. Questo comportamento è solitamente ottenuto tramite l’utilizzo di correlation ID oppure tramite il confronto dati basato su dati che fungono da chiave.                                                    
+
+.. glossary::
+
+   Orchestrazione e coreografia
+
+      Per orchestrazione si intende un flusso di esecuzione che coinvolge diverse chiamate a servizi secondo regole prestabilite (ad es., un workflow) al fine di ottenere un servizio composto.
+
+      La coreografia dei servizi è una forma di specifica della composizione dei servizi in cui il protocollo di interazione tra i diversi servizi componenti è definito da una prospettiva globale. Cioè, in fase di esecuzione della coreografia, ogni partecipante esegue la sua parte (cioè il suo ruolo) in base al comportamento degli altri partecipanti. Il ruolo specifica il comportamento, in termini di scambi di messaggi attesi dai partecipanti, che riproducono il ruolo appunto in termini di sequenziamento e tempistica dei messaggi che possono consumare e produrre. La specifica dei messaggi implica anche la descrizione dei dati scambiati tra due o più partecipanti.
+
+      | La differenza tra i due approcci è meglio compresa attraverso il loro confronto. Da una parte, nelle coreografie, la logica delle interazioni basate sui messaggi tra i partecipanti è specificata da una prospettiva globale. Nell’orchestrazione dei servizi, d’altra parte, la logica viene specificata dal punto di vista locale di un singolo partecipante, chiamato l’orchestratore. Nel linguaggio di orchestrazione BPEL, ad esempio, la specifica dell’orchestrazione del servizio (ad esempio il file del processo BPEL) può essere distribuita sull’infrastruttura (ad esempio un motore di esecuzione BPEL come Apache ODE), e questo costituisce l’implementazione del servizio composto.
+      | In un certo senso, le coreografie e le orchestrazioni sono due facce della stessa medaglia. Da un lato, i ruoli di una coreografia possono essere estratti come orchestrazioni attraverso un processo chiamato proiezione; attraverso la proiezione, è possibile realizzare scheletri, ovvero orchestrazioni di servizi incomplete che possono essere utilizzate come linee di base per realizzare i servizi web che partecipano alla coreografia di servizio. D’altra parte, le orchestrazioni già esistenti possono essere composte in coreografie.
+
+      *Chris Peltz (2003): Web Services Orchestration and Choreography. IEEE Computer 36(10):46-52*
 
 +-----------------------------------------------------------------------+
 | **Classificazione delle interazioni in A2A, A2C e A2B**               |
