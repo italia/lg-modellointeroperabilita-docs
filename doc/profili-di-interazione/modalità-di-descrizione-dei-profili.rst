@@ -13,7 +13,7 @@ metodo ``M`` che accetta come parametri:
 
 -  ``b``, una stringa.
 
-e restituisce una stringa c come output. Si suppone in tutti i profili
+e restituisce una stringa ``c`` come output. Si suppone in tutti i profili
 che l’accesso alle interfacce di servizio sia subordinato all’utilizzo
 di meccanismi di autenticazione ed autorizzazione che permettano
 all’erogatore di associare una specifica richiesta ad uno specifico
