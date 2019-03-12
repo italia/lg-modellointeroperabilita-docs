@@ -1,5 +1,5 @@
-1.3. Migrazione dei servizi SPCoop nel nuovo framework di interoperabilità
-==========================================================================
+Migrazione dei servizi SPCoop nel nuovo framework di interoperabilità
+=====================================================================
 
 Il principio API-first, richiamato nel Piano Triennale per l'informatica
 nella Pubblica Amministrazione, richiede la progettazione dei sistemi
