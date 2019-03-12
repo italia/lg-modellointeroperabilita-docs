@@ -1,5 +1,5 @@
-2.5. Robustezza
-===============
+Robustezza
+==========
 
 Ai fini di garantire la responsività di una interfaccia di servizio, è
 necessario impedire a singoli fruitori di esaurire la capacità di
