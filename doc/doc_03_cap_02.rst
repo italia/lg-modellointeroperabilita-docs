@@ -1,5 +1,5 @@
-2. Profili di Interazione
-=========================
+Profili di Interazione
+=======================
 
 Il *profilo di interazione* definisce le modalità secondo le quali un
 fruitore ed un erogatore possono interagire, l’interazione avviene
