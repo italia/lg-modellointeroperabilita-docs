@@ -7,16 +7,15 @@ Scenario
 Lo sviluppo di una interfaccia bloccante di tipo RPC si richiede nei
 casi in cui:
 
--  L’esecuzione del metodo M è poco onerosa computazionalmente e può
+-  L’esecuzione del metodo ``M`` è poco onerosa computazionalmente e può
    essere portata immediatamente a termine dall’erogatore. In questi
    casi è accettabile per l’erogatore mantenere una connessione aperta
    in attesa di risposta.
 
 -  Il contesto rende complessa l’implementazione delle modalità non
    bloccanti di cui alle sezioni successive. Ad esempio, non è possibile
-   per il fruitore esporre una propria interfaccia di servizio (vedi
-   Sezione 2.2) ed il fruitore non può farsi carico di mantenere il
-   contesto necessario ad effettuare attesa attiva (vedi Sezione 2.3).
+   per il fruitore esporre una propria interfaccia di servizio ed il fruitore non può farsi carico di mantenere il
+   contesto necessario ad effettuare attesa attiva.
 
 Descrizione
 -----------
@@ -76,106 +75,14 @@ l’erogatore DEVE almeno:
 Esempio
 ~~~~~~~
 
-+-----------------------------------+-----------------------------------+
-| Specifica Servizio                | https://api.amministrazioneesempi |
-|                                   | o.it/rest/v1/nomeinterfacciaservi |
-|                                   | zio/RESTblocking.yaml             |
-+-----------------------------------+-----------------------------------+
-| openapi: 3.0.1                    |                                   |
-| info:                             |                                   |
-| title: RESTblocking               |                                   |
-| license:                          |                                   |
-| name: Apache 2.0 License          |                                   |
-| url:                              |                                   |
-| http://www.apache.org/licenses/LI |                                   |
-| CENSE-2.0.html                    |                                   |
-| version: "1.0"                    |                                   |
-| paths:                            |                                   |
-| /resources/{id_resource}/M:       |                                   |
-| post:                             |                                   |
-| description: Esegue M             |                                   |
-| operationId: M                    |                                   |
-| parameters:                       |                                   |
-| - name: id_resource               |                                   |
-| in: path                          |                                   |
-| required: true                    |                                   |
-| schema:                           |                                   |
-| type: integer                     |                                   |
-| format: int32                     |                                   |
-| requestBody:                      |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/MType'      |                                   |
-| responses:                        |                                   |
-| 500:                              |                                   |
-| description: Errore interno       |                                   |
-| avvenuto                          |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 404:                              |                                   |
-| description: Identificativo non   |                                   |
-| trovato                           |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 400:                              |                                   |
-| description: Richiesta non valida |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 200:                              |                                   |
-| description: Esecuzione di M      |                                   |
-| avvenuta con successo             |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/MResponseTy |                                   |
-| pe'                               |                                   |
-| components:                       |                                   |
-| schemas:                          |                                   |
-| MType:                            |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| a:                                |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/AComplexTyp |                                   |
-| e'                                |                                   |
-| b:                                |                                   |
-| type: string                      |                                   |
-| MResponseType:                    |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| c:                                |                                   |
-| type: string                      |                                   |
-| AComplexType:                     |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| a1s:                              |                                   |
-| type: array                       |                                   |
-| items:                            |                                   |
-| type: integer                     |                                   |
-| format: int32                     |                                   |
-| a2:                               |                                   |
-| type: string                      |                                   |
-| ErrorMessage:                     |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| error_message:                    |                                   |
-| type: string                      |                                   |
-+-----------------------------------+-----------------------------------+
+.. admonition:: Esempio
+   :class: admonition-example display-page
+
+   .. role:: admonition-internal-title
+      :class: admonition-internal-title
+
+   `Specifica Servizio`:admonition-internal-title:
+
 
 Di seguito un esempio di chiamata al metodo M.
 
