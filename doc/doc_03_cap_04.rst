@@ -1,5 +1,5 @@
-4. Riferimenti
-==============
+Riferimenti
+===========
 
 1. Mike P. Papazoglou (2013): Web Services and SOA: Principles and
    Technology (2nd edition). ISBN: 9780273732167
