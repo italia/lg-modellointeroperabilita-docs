@@ -50,9 +50,9 @@ Questi aspetti verranno discussi nel successivo paragrafo.
 
 Figura 4. Perimetro delle interfacce in SPCoop e ModI
 
-.. |image0| image:: media/image4.png
+.. |image0| image:: ../media/image4.png
    :width: 6.27083in
    :height: 3.58333in
-.. |image1| image:: media/image5.png
+.. |image1| image:: ../media/image5.png
    :width: 6.15104in
    :height: 4.64904in
