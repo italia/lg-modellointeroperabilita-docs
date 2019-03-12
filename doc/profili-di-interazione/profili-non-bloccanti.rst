@@ -462,7 +462,7 @@ fruitore.
 
 .. _interfaccia-soap-1:
 
-2.3.1.4. Interfaccia SOAP
+Interfaccia SOAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Nel caso di implementazione mediante tecnologia SOAP, l’endpoint di
