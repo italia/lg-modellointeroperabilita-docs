@@ -42,11 +42,11 @@ Questi aspetti verranno discussi nel successivo paragrafo.
 
 |image0|
 
-(a) perimetro in SPCoop
+\(a) perimetro in SPCoop
 
 |image1|
 
-(b) perimetro in ModI
+\(b) perimetro in ModI
 
 Figura 4. Perimetro delle interfacce in SPCoop e ModI
 
