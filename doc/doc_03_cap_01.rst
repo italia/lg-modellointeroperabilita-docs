@@ -82,22 +82,22 @@ service* (servizi richiamabili sul Web).
   prima istanza, necessario aggiungere nulla a quanto è già esistente
   sul Web per consentire ad applicazioni remote di interagire.
 
-I Web Service basati su SOAP prevedono lo standard WSDL, Web Service
-Description Language, per definire l’interfaccia di un servizio. Questa
-è un’ulteriore evidenza del tentativo di adattare al Web l’approccio
-all’interoperabilità basato su chiamate remote; infatti il WSDL non è
-altro che un IDL (Interface Description Language) per un componente
-software; l’esistenza di WSDL favorisce l’uso di tool per creare
-automaticamente client in un determinato linguaggio di programmazione.
-REST non prevede esplicitamente nessuna modalità per descrivere come
-interagire con una risorsa. Le operazioni sono implicite nel protocollo
-HTTP. Qualcosa di analogo a WSDL è WADL, Web Application Definition
-Language, un formato XML per definire risorse, operazioni ed eccezioni
-previste da un Web service di tipo REST. WADL è stato sottoposto al W3C
-per la standardizzazione nel 2009, ma allo stato attuale non ci sono
-piani per la sua discussione ed eventuale approvazione. In realtà esso
-non ha avuto un’accoglienza molto favorevole da parte delle comunità di
-sviluppatori REST.
+| I Web Service basati su SOAP prevedono lo standard WSDL, Web Service
+  Description Language, per definire l’interfaccia di un servizio. Questa
+  è un’ulteriore evidenza del tentativo di adattare al Web l’approccio
+  all’interoperabilità basato su chiamate remote; infatti il WSDL non è
+  altro che un IDL (Interface Description Language) per un componente
+  software; l’esistenza di WSDL favorisce l’uso di tool per creare
+  automaticamente client in un determinato linguaggio di programmazione.
+  REST non prevede esplicitamente nessuna modalità per descrivere come
+  interagire con una risorsa. Le operazioni sono implicite nel protocollo
+  HTTP. Qualcosa di analogo a WSDL è WADL, Web Application Definition
+  Language, un formato XML per definire risorse, operazioni ed eccezioni
+  previste da un Web service di tipo REST. WADL è stato sottoposto al W3C
+  per la standardizzazione nel 2009, ma allo stato attuale non ci sono
+  piani per la sua discussione ed eventuale approvazione. In realtà esso
+  non ha avuto un’accoglienza molto favorevole da parte delle comunità di
+  sviluppatori REST.
 
 | OpenAPI è un formato di descrizione per Web service REST; un file
   OpenAPI consente di descrivere l'intera interfaccia (endpoint
