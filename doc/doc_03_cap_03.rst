@@ -1,5 +1,5 @@
-3. Concetti di base
-===================
+Concetti di base
+================
 
 +-----------------------------------------------------------------------+
 | **Interazione bloccante vs non bloccante**                            |
