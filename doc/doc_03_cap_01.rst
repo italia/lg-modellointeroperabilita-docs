@@ -170,7 +170,7 @@ paradigma a risorse. Si introducono le risorse Task e Result utilizzando
 le quali è possibile implementare le stesse funzionalità. La POST serve
 quindi a far partire il task.
 
-.. code-block:: JSON
+.. example-code::
    ⇒ POST /task
    [Input data payload]
 
@@ -180,7 +180,7 @@ quindi a far partire il task.
    {
       "task": {
       "status": "pending",
-      "message": "Your task has been queued  for processing",
+      "message": "Your task has been queued for processing",
       "ping-time": "2018-12-31T19:43:37+0100"
       }
    }
