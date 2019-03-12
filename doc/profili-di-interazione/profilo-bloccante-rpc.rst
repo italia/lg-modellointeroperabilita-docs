@@ -77,7 +77,7 @@ Esempio
 +--------------------+-----------------------------------------------------------------------------------------+
 | Specifica Servizio | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTblocking.yaml |
 +--------------------+-----------------------------------------------------------------------------------------+
-| ..code-block:: yaml                                                                                          |
+| .. code-block:: yaml                                                                                         |
 |                                                                                                              |
 |   openapi:                                                                                                   |
 |   3.0.1                                                                                                      |
