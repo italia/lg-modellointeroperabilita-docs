@@ -1,5 +1,5 @@
-1.2. Considerazioni sulla natura del fruitore
-=============================================
+Considerazioni sulla natura del fruitore
+========================================
 
 Come anticipato nei paragrafi precedenti, nel ModI 2018 scompare il
 concetto di dominio e di porta di dominio, a favore di un approccio in
