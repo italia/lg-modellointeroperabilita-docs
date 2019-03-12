@@ -171,19 +171,20 @@ le quali è possibile implementare le stesse funzionalità. La POST serve
 quindi a far partire il task.
 
 .. example-code::
-   ⇒ POST /task
-   [Input data payload]
+   .. code-block:: JSON
+      ⇒ POST /task
+      [Input data payload]
 
-   ⇐ 202 Accepted [3]_
-   Location: /task/20181231
+      ⇐ 202 Accepted [3]_
+      Location: /task/20181231
 
-   {
-      "task": {
-      "status": "pending",
-      "message": "Your task has been queued for processing",
-      "ping-time": "2018-12-31T19:43:37+0100"
+      {
+         "task": {
+         "status": "pending",
+         "message": "Your task has been queued for processing",
+         "ping-time": "2018-12-31T19:43:37+0100"
+         }
       }
-   }
 
 
 | ⇒ POST /task
