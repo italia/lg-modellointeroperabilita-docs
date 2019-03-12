@@ -2,16 +2,16 @@ Modalità di descrizione dei profili
 ========================================
 
 Nel seguito, per gli esempi proposti per i diversi profili si fa
-riferimento ad un’amministrazione denominata amministrazioneesempio che
+riferimento ad un’amministrazione denominata ``amministrazioneesempio`` che
 offre un’interfaccia di servizio secondo le due diverse tecnologie REST
 o SOAP. Inoltre, per quanto riguarda i profili relativi a chiamata a
 procedura remota (bloccante e non bloccante), si farà riferimento ad un
-metodo M che accetta come parametri:
+metodo ``M`` che accetta come parametri:
 
--  a, un oggetto contenente a sua volta un array a1 di interi ed una
-   stringa a2;
+-  ``a``, un oggetto contenente a sua volta un array ``a1`` di interi ed una
+   stringa ``a2``;
 
--  b, una stringa.
+-  ``b``, una stringa.
 
 e restituisce una stringa c come output. Si suppone in tutti i profili
 che l’accesso alle interfacce di servizio sia subordinato all’utilizzo
