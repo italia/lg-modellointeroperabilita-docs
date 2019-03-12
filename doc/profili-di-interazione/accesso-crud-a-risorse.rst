@@ -1,9 +1,9 @@
-2.4. Accesso CRUD a Risorse
+Accesso CRUD a Risorse
 ===========================
 
 .. _scenario-3:
 
-2.4.1. Scenario
+Scenario
 ---------------
 
 In molti casi, le interfacce di servizio vengono utilizzate più che per
@@ -16,7 +16,7 @@ mediante una modalità bloccante come quella vista in Sezione 2.1.
 
 .. _descrizione-3:
 
-2.4.2. Descrizione
+Descrizione
 ------------------
 
 Figura 4. Interazione bloccante CRUD
@@ -42,12 +42,12 @@ CRUD, di sviluppare una interfaccia RESTful.
 
 .. _interfaccia-rest-3:
 
-2.4.3. Interfaccia REST
+Interfaccia REST
 -----------------------
 
 .. _regole-di-processamento-6:
 
-2.4.3.1. Regole di processamento
+Regole di processamento
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 L’approccio RESTful trova la sua applicazione naturale in operazioni
@@ -126,7 +126,7 @@ erogatore.
 
 .. _esempio-6:
 
-2.4.3.2. Esempio
+Esempio
 ~~~~~~~~~~~~~~~~
 
 Al fine di illustrare l’approccio RESTful al CRUD, si farà riferimento
