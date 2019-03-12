@@ -1,5 +1,5 @@
-1.1. Perimetro delle interfacce di servizio
-===========================================
+Perimetro delle interfacce di servizio
+======================================
 
 Un aspetto che si vuole qui richiamare è la relazione tra l’interno e
 l’esterno del sistema informativo di una pubblica amministrazione, e
