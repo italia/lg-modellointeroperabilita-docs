@@ -170,8 +170,8 @@ paradigma a risorse. Si introducono le risorse Task e Result utilizzando
 le quali è possibile implementare le stesse funzionalità. La POST serve
 quindi a far partire il task.
 
-.. example-code::
-   .. code-block:: JSON
+.. code-block:: JSON
+
       ⇒ POST /task
       [Input data payload]
 
@@ -185,6 +185,7 @@ quindi a far partire il task.
          "ping-time": "2018-12-31T19:43:37+0100"
          }
       }
+
 
 
 | ⇒ POST /task
