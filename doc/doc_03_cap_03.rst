@@ -12,93 +12,25 @@ Concetti di base
       Con abuso di nomenclatura, la comunicazione bloccante talvolta viene detta sincrona, ad indicare che client e servente si sono sincronizzati (attesa di uno da parte dell’altro); quella non bloccante viene detta asincrona, proprio a significare l'asincronicità che vi è tra l'invio di un messaggio e la risposta al messaggio stesso.
       
       *Alonso, G., Casati, F., Kuno, H., Machiraju, V. (2004). Web Services. Concepts, Architectures and Applications. Springer*
-      
+
+.. glossary::
+
    Remote Procedure Call
       Una Remote Procedure Call (chiamata a procedura remota, RPC) consiste nell'attivazione, da parte di un programma, di una procedura o subroutine attivata su un elaboratore diverso da quello sul quale il programma viene eseguito. Quindi l'RPC consente a un programma di eseguire subroutine “a distanza” su elaboratori remoti, accessibili attraverso una rete. Essenziale al concetto di RPC è l'idea di trasparenza: la chiamata di procedura remota deve essere infatti eseguita in modo il più possibile analogo a quello della chiamata di procedura locale; i dettagli della comunicazione su rete devono essere “nascosti” (resi trasparenti) all'utilizzatore del meccanismo. Se il linguaggio è orientato agli oggetti, l’invocazione della procedura remote è in realtà l’invocazione di un metodo su un oggetto remoto, e si parla di Remote Method Invocation - RMI.
 
       RPC/RMI è il meccanismo base con cui realizzare una interazione bloccante.
 
-+-----------------------------------------------------------------------+
-| **Interazione bloccante vs non bloccante**                            |
-|                                                                       |
-| Nell’interazione bloccante un fruitore effettua una chiamata al       |
-| servente ed attende una risposta prima di continuare l’esecuzione. La |
-| chiamata codifica in modo opportuno la richiesta di servizio, anche   |
-| attraverso il passaggio di dati (sia in input alla chiamata che in    |
-| output nella risposta).                                               |
-|                                                                       |
-| Nell’interazione non bloccante, invece, il fruitore invia un          |
-| messaggio ma non si blocca in attesa di alcuna risposta (se non una   |
-| notifica di presa in carico). Il messaggio contiene in modo opportuno |
-| la richiesta ed eventuali dati di input. Talvolta il messaggio,       |
-| proprio ad indicare il fatto che codifica la richiesta e le           |
-| informazioni necessarie a soddisfarla, viene indicato come documento. |
-| La risposta da parte del servente, nei casi in cui ci sia, può        |
-| apparire significativamente più tardi, ove significativamente va      |
-| interpretato rispetto al tempo di computazione proprio                |
-| dell’interazione [2]_. Anche la risposta del servente viene inviata   |
-| tramite un messaggio.                                                 |
-|                                                                       |
-| Con abuso di nomenclatura, la comunicazione bloccante talvolta viene  |
-| detta *sincrona*, ad indicare che client e servente si sono           |
-| sincronizzati (attesa di uno da parte dell’altro); quella non         |
-| bloccante viene detta *asincrona*, proprio a significare              |
-| l'asincronicità che vi è tra l'invio di un messaggio e la risposta al |
-| messaggio stesso.                                                     |
-|                                                                       |
-| *Alonso, G., Casati, F., Kuno, H., Machiraju, V. (2004). Web          |
-| Services. Concepts, Architectures and Applications. Springer*         |
-+-----------------------------------------------------------------------+
+.. glossary::
+   
+   Observer/observable, interfaccia listener e notifica tramite Callback
 
-+-----------------------------------------------------------------------+
-| **Remote Procedure Call**                                             |
-|                                                                       |
-| Una Remote Procedure Call (chiamata a procedura remota, RPC) consiste |
-| nell'attivazione, da parte di un programma, di una procedura o        |
-| subroutine attivata su un elaboratore diverso da quello sul quale il  |
-| programma viene eseguito. Quindi l'RPC consente a un programma di     |
-| eseguire subroutine “a distanza” su elaboratori remoti, accessibili   |
-| attraverso una rete. Essenziale al concetto di RPC è l'idea di        |
-| trasparenza: la chiamata di procedura remota deve essere infatti      |
-| eseguita in modo il più possibile analogo a quello della chiamata di  |
-| procedura locale; i dettagli della comunicazione su rete devono       |
-| essere “nascosti” (resi trasparenti) all'utilizzatore del meccanismo. |
-| Se il linguaggio è orientato agli oggetti, l’invocazione della        |
-| procedura remote è in realtà l’invocazione di un metodo su un oggetto |
-| remoto, e si parla di Remote Method Invocation - RMI.                 |
-|                                                                       |
-| RPC/RMI è il meccanismo base con cui realizzare una interazione       |
-| bloccante.                                                            |
-+-----------------------------------------------------------------------+
+      In un framework di programmazione, observer/observable è uno schema di organizzazione dei moduli in cui un modulo (l’observable) offre delle funzioni per permettere agli altri (gli observer) di registrarsi. Gli observer devono offrire un’interfaccia di callback (anche detta di listener) attraverso cui l’observable, quando vuole notificare qualcosa, invoca un’opportuna funzione di notifica. In tal modo, gli observer hanno dichiarato in fase di registrazione come essere “chiamati indietro” (appunto callback) quando succede qualcosa, e l’observable può gestire tutti gli observer registrati in modo trasparente, senza conoscere i dettagli realizzativi di ogni singola callback, in quanto tutti realizzano la stessa interfaccia, differenziandosi eventualmente nell’implementazione.
 
-+-----------------------------------------------------------------------+
-| **Observer/observable, interfaccia listener e notifica tramite        |
-| Callback**                                                            |
-|                                                                       |
-| In un framework di programmazione, *observer/observable* è uno schema |
-| di organizzazione dei moduli in cui un modulo (l’*observable*) offre  |
-| delle funzioni per permettere agli altri (gli *observer*) di          |
-| registrarsi. Gli observer devono offrire un’interfaccia di *callback* |
-| (anche detta di *listener*) attraverso cui l’observable, quando vuole |
-| notificare qualcosa, invoca un’opportuna funzione di notifica. In tal |
-| modo, gli observer hanno dichiarato in fase di registrazione come     |
-| essere “chiamati indietro” (appunto callback) quando succede          |
-| qualcosa, e l’observable può gestire tutti gli observer registrati in |
-| modo trasparente, senza conoscere i dettagli realizzativi di ogni     |
-| singola callback, in quanto tutti realizzano la stessa interfaccia,   |
-| differenziandosi eventualmente nell’implementazione.                  |
-|                                                                       |
-| In ambito distribuito, il riferimento passato dagli observer in fase  |
-| di registrazione è rappresentato da un endpoint di rete con tutte le  |
-| informazioni necessarie ad invocare su di esso l’interfaccia          |
-| listener/procedure di callback.                                       |
-|                                                                       |
-| Questo meccanismo permette di realizzare interazioni non bloccanti.   |
-|                                                                       |
-| *D'Souza, D. F., Cameron Wills, A. (1999). Objects, components, and   |
-| frameworks with UML: the Catalysis approach. Addison-Wesley Longman   |
-| Publishing Co.*                                                       |
-+-----------------------------------------------------------------------+
+      In ambito distribuito, il riferimento passato dagli observer in fase di registrazione è rappresentato da un endpoint di rete con tutte le informazioni necessarie ad invocare su di esso l’interfaccia listener/procedure di callback.
+
+      Questo meccanismo permette di realizzare interazioni non bloccanti.
+
+      *D'Souza, D. F., Cameron Wills, A. (1999). Objects, components, and frameworks with UML: the Catalysis approach. Addison-Wesley Longman Publishing Co.*
 
 +-----------------------------------------------------------------------+
 | **Façade**                                                            |
