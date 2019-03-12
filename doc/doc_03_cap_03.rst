@@ -131,26 +131,27 @@ tempistica dei messaggi che possono consumare e produrre. La
 specifica dei messaggi implica anche la descrizione dei dati          
 scambiati tra due o più partecipanti.                                 
                                                                       
-| La differenza tra i due approcci è meglio compresa attraverso il    
-  loro confronto. Da una parte, nelle coreografie, la logica delle    
-  interazioni basate sui messaggi tra i partecipanti è specificata da 
-  una prospettiva globale. Nell'orchestrazione dei servizi, d'altra   
-  parte, la logica viene specificata dal punto di vista locale di un  
-  singolo partecipante, chiamato l'orchestratore. Nel linguaggio di   
-  orchestrazione BPEL, ad esempio, la specifica dell'orchestrazione   
-  del servizio (ad esempio il file del processo BPEL) può essere      
-  distribuita sull'infrastruttura (ad esempio un motore di esecuzione 
-  BPEL come Apache ODE), e questo costituisce l’implementazione del   
-  servizio composto.                                                  
-| In un certo senso, le coreografie e le orchestrazioni sono due      
-  facce della stessa medaglia. Da un lato, i ruoli di una coreografia 
-  possono essere estratti come orchestrazioni attraverso un processo  
-  chiamato *proiezione*; attraverso la proiezione, è possibile        
-  realizzare scheletri, ovvero orchestrazioni di servizi incomplete   
-  che possono essere utilizzate come linee di base per realizzare i   
-  servizi web che partecipano alla coreografia di servizio. D'altra   
-  parte, le orchestrazioni già esistenti possono essere composte in   
-  coreografie.                                                        
+La differenza tra i due approcci è meglio compresa attraverso il    
+loro confronto. Da una parte, nelle coreografie, la logica delle    
+interazioni basate sui messaggi tra i partecipanti è specificata da 
+una prospettiva globale. Nell'orchestrazione dei servizi, d'altra   
+parte, la logica viene specificata dal punto di vista locale di un  
+singolo partecipante, chiamato l'orchestratore. Nel linguaggio di   
+orchestrazione BPEL, ad esempio, la specifica dell'orchestrazione   
+del servizio (ad esempio il file del processo BPEL) può essere      
+distribuita sull'infrastruttura (ad esempio un motore di esecuzione 
+BPEL come Apache ODE), e questo costituisce l’implementazione del   
+servizio composto.      
+
+In un certo senso, le coreografie e le orchestrazioni sono due      
+facce della stessa medaglia. Da un lato, i ruoli di una coreografia 
+possono essere estratti come orchestrazioni attraverso un processo  
+chiamato *proiezione*; attraverso la proiezione, è possibile        
+realizzare scheletri, ovvero orchestrazioni di servizi incomplete   
+che possono essere utilizzate come linee di base per realizzare i   
+servizi web che partecipano alla coreografia di servizio. D'altra   
+parte, le orchestrazioni già esistenti possono essere composte in   
+coreografie.                                                        
                                                                       
 *Chris Peltz (2003): Web Services Orchestration and Choreography.     
 IEEE Computer 36(10):46-52*                                          
@@ -272,18 +273,17 @@ spesso quando due paradigmi differenti, spesso implicati da
 altrettante tecnologie, devono coesistere e mapparsi uno sull’altro   
 durante la progettazione e realizzazione di un sistema.               
                                                                       
-| Il più famoso caso di impedance mismatch è quello                   
-  dell’object-to-relational, noto metaforicamente anche come il       
-  Vietnam dell’informatica [4]_, che si verifica quando un sistema di 
-  gestione di database relazionali (RDBMS) è servito da un programma  
-  applicativo (o da più programmi applicativi) scritto in un          
-  linguaggio di programmazione orientato agli oggetti, in particolare 
-  perché gli oggetti o le definizioni di classe devono essere         
-  associati a tabelle di database definite da uno schema relazionale. 
-| Nel ModI 2018 ci sono casi di impedance mismatch quando             
-  un’interfaccia di servizio progettata secondo lo stile RPC-like     
-  deve essere realizzata in REST.                                     
-
+Il più famoso caso di impedance mismatch è quello                   
+dell’object-to-relational, noto metaforicamente anche come il       
+Vietnam dell’informatica [4]_, che si verifica quando un sistema di 
+gestione di database relazionali (RDBMS) è servito da un programma  
+applicativo (o da più programmi applicativi) scritto in un          
+linguaggio di programmazione orientato agli oggetti, in particolare 
+perché gli oggetti o le definizioni di classe devono essere         
+associati a tabelle di database definite da uno schema relazionale. 
+Nel ModI 2018 ci sono casi di impedance mismatch quando             
+un’interfaccia di servizio progettata secondo lo stile RPC-like     
+deve essere realizzata in REST.                                     
 
 .. [1]
    Ad es., se fruitore ed erogatore computano nell’ordine dei secondi,
