@@ -121,13 +121,13 @@ nelle varie casistiche partendo da una interfaccia di servizio secondo
 ciascuno dei due paradigmi (RPC-like e resource oriented) e cercando
 di realizzarla utilizzando le due diverse tecnologie SOAP e REST.
 
-|image0|
-
-Figura 1. Interfaccia di servizio usando SOAP/WSDL. Per semplicità
-nell’esempio si suppone che il singolo item nell’Order sia
-rappresentabile con una semplice stringa (che codifica il suo codice, ad
-esempio) e sempre in quantità singola (per cui un Order non fa altro che
-aggregare differenti Items)
+.. figure:: ./media/image1.png
+   :name: Interfaccia di servizio
+   :alt: Interfaccia di servizio usando SOAP/WSDL. Per semplicità
+   nell’esempio si suppone che il singolo item nell’Order sia
+   rappresentabile con una semplice stringa (che codifica il suo codice, ad
+   esempio) e sempre in quantità singola (per cui un Order non fa altro che
+   aggregare differenti Items)
 
 **Esempio 1**. Si immagini di voler realizzare un’interfaccia di
 servizio resource-oriented che permette di accedere ad informazioni su
