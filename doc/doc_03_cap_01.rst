@@ -1,4 +1,4 @@
-1. Paradigmi per la progettazione delle interfacce di servizio
+Paradigmi per la progettazione delle interfacce di servizio
 ==============================================================
 
 Una trattazione completa dei paradigmi per la progettazione e
