@@ -4,7 +4,7 @@ Paradigmi per la progettazione delle interfacce di servizio
 Una trattazione completa dei paradigmi per la progettazione e
 realizzazione delle interfacce di servizio esula dagli scopi del
 presente documento. Il lettore interessato ad approfondire gli aspetti
-metodologici può riferirsi a [1]_ , [2]_ . La breve discussione che viene
+metodologici può riferirsi a [1]_, [2]_ . La breve discussione che viene
 presentata in questa sezione, condotta anche attraverso esempi, vuole
 ricordare al lettore la problematica dell’\ *impedance mismatch* tra
 differenti tecnologie per la realizzazione di interfacce di servizio ed
@@ -122,7 +122,7 @@ ciascuno dei due paradigmi (RPC-like e resource oriented) e cercando
 di realizzarla utilizzando le due diverse tecnologie SOAP e REST.
 
 .. image:: ./media/image1.png
-   :scale: 50 %
+   :scale: 75 %
    :align: center
    
 **Figura 1.** Interfaccia di servizio usando SOAP/WSDL.
@@ -144,7 +144,7 @@ Order e Item ed i verbi HTTP (ovvero GET, PUT, POST e DELETE) si mappano
 esattamente sulle operazioni CRUD, come mostrato in Figura 2.
 
 .. image:: ./media/image2.png
-   :scale: 50 %
+   :scale: 75 %
    :align: center
    
 **Figura 2.** Interfaccia di servizio usando REST
@@ -164,7 +164,7 @@ una volta che la procedure/task sia stata completata ed il risultato è
 stato prodotto. Figura 3 schematizza l’interfaccia di servizio.
 
 .. image:: ./media/image3.png
-   :scale: 50 %
+   :scale: 75 %
    :align: center
 
 **Figura 3.** Interfacce di servizio usando SOAP/WSDL
