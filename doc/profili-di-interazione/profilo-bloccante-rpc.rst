@@ -330,6 +330,7 @@ Esempio
 
 A seguire un esempio di chiamata al metodo ``M``.
 
+
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | Endpoint                                                      | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1                                  |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
@@ -337,14 +338,13 @@ A seguire un esempio di chiamata al metodo ``M``.
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | 1. Request Body                                               | .. code-block:: XML                                                                                    |
 |                                                               |                                                                                                        |
-|                                                               |                                                                                                        |
 |                                                               | <?xml version="1.0"?>                                                                                  |
 |                                                               |                                                                                                        |
 |                                                               | <soap:Envelope                                                                                         |
 |                                                               |       xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"                                            |
 |                                                               |       soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">                                    |
 |                                                               |                                                                                                        |
-|                                                               |     <soap:Header>	                                                                                      |
+|                                                               |     <soap:Header>	                                                                                     |
 |                                                               |       <!--Autenticazione-->                                                                            |
 |                                                               |     </soap:Header>                                                                                     |
 |                                                               |                                                                                                        |
