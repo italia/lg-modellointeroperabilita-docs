@@ -1,7 +1,7 @@
 Profili non bloccanti
 =====================
 
-Nelle Sezioni 2.3.1 e 2.3.2 verranno mostrati i profili di interazione
+Nel seguito del capitolo verranno mostrati i profili di interazione
 non bloccante, in cui un fruitore sottomette una richiesta e questa
 viene solo presa in carico immediatamente, mentre il suo soddisfacimento
 può avvenire in maniera differita.
@@ -29,6 +29,7 @@ vengono allegati degli identificativi (es. numeri di protocollo) che
 accompagnano la pratica. In questi casi, il correlation ID può essere
 sostituito da questi identificativi già previsti dal servizio.
 
+.. _paragrafo-1:
 Profili non bloccante RPC PUSH (basato su callback)
 ---------------------------------------------------
 
@@ -890,6 +891,7 @@ essersi preso carico della richiesta.
 |                                   | </soap:Envelope>                  |
 +-----------------------------------+-----------------------------------+
 
+.. _paragrafo-2:
 Profilo non bloccante RPC PULL (busy waiting)
 ---------------------------------------------
 
