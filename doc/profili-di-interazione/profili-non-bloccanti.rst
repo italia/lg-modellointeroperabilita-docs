@@ -46,7 +46,10 @@ di servizio per la ricezione delle risposte.
 Descrizione
 ~~~~~~~~~~~
 
-Figura 2. Interazione non bloccante tramite callback
+.. image:: ./media/interazione_2.png
+   :scale: 50 %
+
+**Figura 2.** Interazione non bloccante tramite callback
 
 In questo scenario (vedi Figura 2), la richiesta del fruitore contiene
 un riferimento al servizio da chiamare al momento della risposta. Si
