@@ -717,6 +717,10 @@ stessa, il risultato.
 Descrizione
 ~~~~~~~~~~~
 
+.. image:: ../media/interazione_3.png
+   :align: center
+   :scale: 50 %
+
 Figura 3. Interazione non bloccante tramite busy waiting
 
 Come si può vedere in Figura 3, il fruitore invia una richiesta (passo
