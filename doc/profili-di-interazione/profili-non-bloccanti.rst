@@ -46,7 +46,8 @@ di servizio per la ricezione delle risposte.
 Descrizione
 ~~~~~~~~~~~
 
-.. image:: ./media/interazione_2.png
+.. image:: ../media/interazione_2.png
+   :align: center
    :scale: 50 %
 
 **Figura 2.** Interazione non bloccante tramite callback
