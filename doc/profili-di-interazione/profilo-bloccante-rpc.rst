@@ -21,7 +21,7 @@ Descrizione
 -----------
 
 .. image:: ../media/interazione_1.png
-   :scale: 75 %
+   :scale: 50 %
 
 **Figura 1.** Interazione bloccante RPC
 
