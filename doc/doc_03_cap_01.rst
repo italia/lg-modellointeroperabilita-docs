@@ -4,7 +4,7 @@ Paradigmi per la progettazione delle interfacce di servizio
 Una trattazione completa dei paradigmi per la progettazione e
 realizzazione delle interfacce di servizio esula dagli scopi del
 presente documento. Il lettore interessato ad approfondire gli aspetti
-metodologici può riferirsi a [1,2]. La breve discussione che viene
+metodologici può riferirsi a [1]_ , [2]_ . La breve discussione che viene
 presentata in questa sezione, condotta anche attraverso esempi, vuole
 ricordare al lettore la problematica dell’\ *impedance mismatch* tra
 differenti tecnologie per la realizzazione di interfacce di servizio ed
