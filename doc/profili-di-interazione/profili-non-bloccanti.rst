@@ -1130,8 +1130,8 @@ framework di sviluppo:
 
 .. _esempio-5:
 
-2.3.2.4.2. Esempio
-^^^^^^^^^^^^^^^^^^
+Esempio
+^^^^^^^
 
 +-----------------------------------+-----------------------------------+
 | Specifica Servizio Server         | https://api.amministrazioneesempi |
