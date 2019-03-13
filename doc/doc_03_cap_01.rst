@@ -122,6 +122,7 @@ ciascuno dei due paradigmi (RPC-like e resource oriented) e cercando
 di realizzarla utilizzando le due diverse tecnologie SOAP e REST.
 
 .. image:: ./media/image1.png
+   :scale: 50 %
    :align: center
    
 **Figura 1.** Interfaccia di servizio usando SOAP/WSDL.
@@ -143,6 +144,7 @@ Order e Item ed i verbi HTTP (ovvero GET, PUT, POST e DELETE) si mappano
 esattamente sulle operazioni CRUD, come mostrato in Figura 2.
 
 .. image:: ./media/image2.png
+   :scale: 50 %
    :align: center
    
 **Figura 2.** Interfaccia di servizio usando REST
@@ -162,6 +164,7 @@ una volta che la procedure/task sia stata completata ed il risultato è
 stato prodotto. Figura 3 schematizza l’interfaccia di servizio.
 
 .. image:: ./media/image3.png
+   :scale: 50 %
    :align: center
 
 **Figura 3.** Interfacce di servizio usando SOAP/WSDL
