@@ -325,7 +325,7 @@ Esempio
 |       <soap:address location="http://localhost:8080/soap/nomeinterfacciaservizio/v1"/>                                  |                                                                            |
 |     </wsdl:port>                                                                                                        |                                                                            |
 |   </wsdl:service>                                                                                                       |                                                                            |
-| </wsdl:definitions>                                                                                                     |                                                                            |
+|   </wsdl:definitions>                                                                                                   |                                                                            |
 +-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
 A seguire un esempio di chiamata al metodo ``M``.
