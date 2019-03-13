@@ -17,7 +17,7 @@ implementazioni SOAP che in quelle REST, di meta-informazioni specifiche
 (quali il correlation ID ed l’endpoint per le callback). Queste sono
 estranee solitamente alla business logic del servizio, ma è necessario
 definirle a livello di interfaccia di servizio ai fini
-dell’interoperabilità.. A tal fine verranno definiti header(HTTP nel
+dell’interoperabilità. A tal fine verranno definiti header(HTTP nel
 caso REST ed envelope nel caso SOAP) utili a contenere queste
 informazioni.
 
@@ -455,351 +455,166 @@ framework di sviluppo:
 Esempio
 ^^^^^^^
 
-+-----------------------------------+-----------------------------------+
-| Specifica Servizio Server         | https://api.amministrazioneesempi |
-|                                   | o.it/soap/nomeinterfacciaservizio |
-|                                   | /v1?wsdl                          |
-+-----------------------------------+-----------------------------------+
-| <wsdl:definitions                 |                                   |
-| xmlns:xsd="http://www.w3.org/2001 |                                   |
-| /XMLSchema"                       |                                   |
-| xmlns:wsdl="http://schemas.xmlsoa |                                   |
-| p.org/wsdl/"                      |                                   |
-| xmlns:tns="http://amministrazione |                                   |
-| esempio.it/nomeinterfacciaservizi |                                   |
-| o"                                |                                   |
-| xmlns:soap="http://schemas.xmlsoa |                                   |
-| p.org/wsdl/soap/"                 |                                   |
-| xmlns:ns1="http://schemas.xmlsoap |                                   |
-| .org/soap/http"                   |                                   |
-| name="SOAPCallbackServerService"  |                                   |
-| targetNamespace="http://amministr |                                   |
-| azioneesempio.it/nomeinterfaccias |                                   |
-| ervizio">                         |                                   |
-| <wsdl:types>                      |                                   |
-| <xs:schema                        |                                   |
-| xmlns:xs="http://www.w3.org/2001/ |                                   |
-| XMLSchema"                        |                                   |
-| xmlns:tns="http://amministrazione |                                   |
-| esempio.it/nomeinterfacciaservizi |                                   |
-| o"                                |                                   |
-| attributeFormDefault="unqualified |                                   |
-| "                                 |                                   |
-| elementFormDefault="unqualified"  |                                   |
-| targetNamespace="http://amministr |                                   |
-| azioneesempio.it/nomeinterfaccias |                                   |
-| ervizio">                         |                                   |
-| <xs:element name="MRequest"       |                                   |
-| type="tns:MRequest"/>             |                                   |
-| <xs:element                       |                                   |
-| name="MRequestResponse"           |                                   |
-| type="tns:MRequestResponse"/>     |                                   |
-| <xs:complexType name="MRequest">  |                                   |
-| <xs:sequence>                     |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="M" type="tns:mType"/>       |                                   |
-| </xs:sequence>                    |                                   |
-| </xs:complexType>                 |                                   |
-| <xs:complexType name="mType">     |                                   |
-| <xs:sequence>                     |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="o_id" type="xs:int"/>       |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="a"                          |                                   |
-| type="tns:aComplexType"/>         |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="b" type="xs:string"/>       |                                   |
-| </xs:sequence>                    |                                   |
-| </xs:complexType>                 |                                   |
-| <xs:complexType                   |                                   |
-| name="aComplexType">              |                                   |
-| <xs:sequence>                     |                                   |
-| <xs:element maxOccurs="unbounded" |                                   |
-| minOccurs="0" name="a1s"          |                                   |
-| nillable="true"                   |                                   |
-| type="xs:string"/>                |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="a2" type="xs:string"/>      |                                   |
-| </xs:sequence>                    |                                   |
-| </xs:complexType>                 |                                   |
-| <xs:complexType                   |                                   |
-| name="MRequestResponse">          |                                   |
-| <xs:sequence>                     |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="return"                     |                                   |
-| type="tns:ackMessage"/>           |                                   |
-| </xs:sequence>                    |                                   |
-| </xs:complexType>                 |                                   |
-| <xs:complexType                   |                                   |
-| name="ackMessage">                |                                   |
-| <xs:sequence>                     |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="outcome" type="xs:string"/> |                                   |
-| </xs:sequence>                    |                                   |
-| </xs:complexType>                 |                                   |
-| <xs:complexType                   |                                   |
-| name="errorMessageFault">         |                                   |
-| <xs:sequence>                     |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="customFaultCode"            |                                   |
-| type="xs:string"/>                |                                   |
-| </xs:sequence>                    |                                   |
-| </xs:complexType>                 |                                   |
-| <xs:element                       |                                   |
-| name="ErrorMessageFault"          |                                   |
-| nillable="true"                   |                                   |
-| type="tns:errorMessageFault"/>    |                                   |
-| <xs:element name="X-ReplyTo"      |                                   |
-| nillable="true"                   |                                   |
-| type="xs:string"/>                |                                   |
-| <xs:element                       |                                   |
-| name="X-CorrelationID"            |                                   |
-| nillable="true"                   |                                   |
-| type="xs:string"/>                |                                   |
-| </xs:schema>                      |                                   |
-| </wsdl:types>                     |                                   |
-| <wsdl:message name="MRequest">    |                                   |
-| <wsdl:part element="tns:MRequest" |                                   |
-| name="parameters"> </wsdl:part>   |                                   |
-| <wsdl:part                        |                                   |
-| element="tns:X-ReplyTo"           |                                   |
-| name="X-ReplyTo"> </wsdl:part>    |                                   |
-| </wsdl:message>                   |                                   |
-| <wsdl:message                     |                                   |
-| name="MRequestResponse">          |                                   |
-| <wsdl:part                        |                                   |
-| element="tns:MRequestResponse"    |                                   |
-| name="result"> </wsdl:part>       |                                   |
-| <wsdl:part                        |                                   |
-| element="tns:X-CorrelationID"     |                                   |
-| name="X-CorrelationID">           |                                   |
-| </wsdl:part>                      |                                   |
-| </wsdl:message>                   |                                   |
-| <wsdl:message                     |                                   |
-| name="ErrorMessageException">     |                                   |
-| <wsdl:part                        |                                   |
-| element="tns:ErrorMessageFault"   |                                   |
-| name="ErrorMessageException">     |                                   |
-| </wsdl:part>                      |                                   |
-| </wsdl:message>                   |                                   |
-| <wsdl:portType                    |                                   |
-| name="SOAPCallback">              |                                   |
-| <wsdl:operation name="MRequest">  |                                   |
-| <wsdl:input                       |                                   |
-| message="tns:MRequest"            |                                   |
-| name="MRequest"> </wsdl:input>    |                                   |
-| <wsdl:output                      |                                   |
-| message="tns:MRequestResponse"    |                                   |
-| name="MRequestResponse">          |                                   |
-| </wsdl:output>                    |                                   |
-| <wsdl:fault                       |                                   |
-| message="tns:ErrorMessageExceptio |                                   |
-| n"                                |                                   |
-| name="ErrorMessageException">     |                                   |
-| </wsdl:fault>                     |                                   |
-| </wsdl:operation>                 |                                   |
-| </wsdl:portType>                  |                                   |
-| <wsdl:binding                     |                                   |
-| name="SOAPCallbackServerServiceSo |                                   |
-| apBinding"                        |                                   |
-| type="tns:SOAPCallback">          |                                   |
-| <soap:binding style="document"    |                                   |
-| transport="http://schemas.xmlsoap |                                   |
-| .org/soap/http"/>                 |                                   |
-| <wsdl:operation name="MRequest">  |                                   |
-| <soap:operation soapAction=""     |                                   |
-| style="document"/>                |                                   |
-| <wsdl:input name="MRequest">      |                                   |
-| <soap:header                      |                                   |
-| message="tns:MRequest"            |                                   |
-| part="X-ReplyTo" use="literal">   |                                   |
-| </soap:header>                    |                                   |
-| <soap:body parts="parameters"     |                                   |
-| use="literal"/>                   |                                   |
-| </wsdl:input>                     |                                   |
-| <wsdl:output                      |                                   |
-| name="MRequestResponse">          |                                   |
-| <soap:header                      |                                   |
-| message="tns:MRequestResponse"    |                                   |
-| part="X-CorrelationID"            |                                   |
-| use="literal"> </soap:header>     |                                   |
-| <soap:body parts="result"         |                                   |
-| use="literal"/>                   |                                   |
-| </wsdl:output>                    |                                   |
-| <wsdl:fault                       |                                   |
-| name="ErrorMessageException">     |                                   |
-| <soap:fault                       |                                   |
-| name="ErrorMessageException"      |                                   |
-| use="literal"/>                   |                                   |
-| </wsdl:fault>                     |                                   |
-| </wsdl:operation>                 |                                   |
-| </wsdl:binding>                   |                                   |
-| <wsdl:service                     |                                   |
-| name="SOAPCallbackServerService"> |                                   |
-| <wsdl:port                        |                                   |
-| binding="tns:SOAPCallbackServerSe |                                   |
-| rviceSoapBinding"                 |                                   |
-| name="SOAPCallbackPort">          |                                   |
-| <soap:address                     |                                   |
-| location="http:////api.amministra |                                   |
-| zioneesempio.it/soap/nomeinterfac |                                   |
-| ciaservizio/v1"/>                 |                                   |
-| </wsdl:port>                      |                                   |
-| </wsdl:service>                   |                                   |
-| </wsdl:definitions>               |                                   |
-+-----------------------------------+-----------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Specifica Servizio Server                                                                                                                                                     | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl                                                                                                                                                     |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. code-block:: XML                                                                                                                                                                                                                                                                                                                                                                                            |
+|                                                                                                                                                                                                                                                                                                                                                                                                                |
+|    <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"    xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"    xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SOAPCallbackServerService" targetNamespace="http://amministrazioneesempio.it/   nomeinterfacciaservizio"> |
+|      <wsdl:types>                                                                                                                                                                                                                                                                                                                                                                                              |
+|        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio"    attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                                                                                          |
+|          <xs:element name="MRequest" type="tns:MRequest"/>                                                                                                                                                                                                                                                                                                                                                     |
+|          <xs:element name="MRequestResponse" type="tns:MRequestResponse"/>                                                                                                                                                                                                                                                                                                                                     |
+|          <xs:complexType name="MRequest">                                                                                                                                                                                                                                                                                                                                                                      |
+|            <xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                       |
+|              <xs:element minOccurs="0" name="M" type="tns:mType"/>                                                                                                                                                                                                                                                                                                                                             |
+|            </xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                      |
+|          </xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                     |
+|          <xs:complexType name="mType">                                                                                                                                                                                                                                                                                                                                                                         |
+|            <xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                       |
+|              <xs:element minOccurs="0" name="o_id" type="xs:int"/>                                                                                                                                                                                                                                                                                                                                             |
+|              <xs:element minOccurs="0" name="a" type="tns:aComplexType"/>                                                                                                                                                                                                                                                                                                                                      |
+|              <xs:element minOccurs="0" name="b" type="xs:string"/>                                                                                                                                                                                                                                                                                                                                             |
+|            </xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                      |
+|          </xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                     |
+|          <xs:complexType name="aComplexType">                                                                                                                                                                                                                                                                                                                                                                  |
+|            <xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                       |
+|              <xs:element maxOccurs="unbounded" minOccurs="0" name="a1s" nillable="true" type="xs:string"/>                                                                                                                                                                                                                                                                                                     |
+|              <xs:element minOccurs="0" name="a2" type="xs:string"/>                                                                                                                                                                                                                                                                                                                                            |
+|            </xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                      |
+|          </xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                     |
+|          <xs:complexType name="MRequestResponse">                                                                                                                                                                                                                                                                                                                                                              |
+|            <xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                       |
+|              <xs:element minOccurs="0" name="return" type="tns:ackMessage"/>                                                                                                                                                                                                                                                                                                                                   |
+|            </xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                      |
+|          </xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                     |
+|          <xs:complexType name="ackMessage">                                                                                                                                                                                                                                                                                                                                                                    |
+|            <xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                       |
+|              <xs:element minOccurs="0" name="outcome" type="xs:string"/>                                                                                                                                                                                                                                                                                                                                       |
+|            </xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                      |
+|          </xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                     |
+|          <xs:complexType name="errorMessageFault">                                                                                                                                                                                                                                                                                                                                                             |
+|            <xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                       |
+|              <xs:element minOccurs="0" name="customFaultCode" type="xs:string"/>                                                                                                                                                                                                                                                                                                                               |
+|            </xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                      |
+|          </xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                     |
+|          <xs:element name="ErrorMessageFault" nillable="true" type="tns:errorMessageFault"/>                                                                                                                                                                                                                                                                                                                   |
+|          <xs:element name="X-ReplyTo" nillable="true" type="xs:string"/>                                                                                                                                                                                                                                                                                                                                       |
+|          <xs:element name="X-CorrelationID" nillable="true" type="xs:string"/>                                                                                                                                                                                                                                                                                                                                 |
+|        </xs:schema>                                                                                                                                                                                                                                                                                                                                                                                            |
+|      </wsdl:types>                                                                                                                                                                                                                                                                                                                                                                                             |
+|      <wsdl:message name="MRequest">                                                                                                                                                                                                                                                                                                                                                                            |
+|        <wsdl:part element="tns:MRequest" name="parameters"> </wsdl:part>                                                                                                                                                                                                                                                                                                                                       |
+|        <wsdl:part element="tns:X-ReplyTo" name="X-ReplyTo"> </wsdl:part>                                                                                                                                                                                                                                                                                                                                       |
+|      </wsdl:message>                                                                                                                                                                                                                                                                                                                                                                                           |
+|      <wsdl:message name="MRequestResponse">                                                                                                                                                                                                                                                                                                                                                                    |
+|        <wsdl:part element="tns:MRequestResponse" name="result"> </wsdl:part>                                                                                                                                                                                                                                                                                                                                   |
+|        <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>                                                                                                                                                                                                                                                                                                                           |
+|      </wsdl:message>                                                                                                                                                                                                                                                                                                                                                                                           |
+|      <wsdl:message name="ErrorMessageException">                                                                                                                                                                                                                                                                                                                                                               |
+|        <wsdl:part element="tns:ErrorMessageFault" name="ErrorMessageException"> </wsdl:part>                                                                                                                                                                                                                                                                                                                   |
+|      </wsdl:message>                                                                                                                                                                                                                                                                                                                                                                                           |
+|      <wsdl:portType name="SOAPCallback">                                                                                                                                                                                                                                                                                                                                                                       |
+|        <wsdl:operation name="MRequest">                                                                                                                                                                                                                                                                                                                                                                        |
+|          <wsdl:input message="tns:MRequest" name="MRequest"> </wsdl:input>                                                                                                                                                                                                                                                                                                                                     |
+|          <wsdl:output message="tns:MRequestResponse" name="MRequestResponse"> </wsdl:output>                                                                                                                                                                                                                                                                                                                   |
+|          <wsdl:fault message="tns:ErrorMessageException" name="ErrorMessageException"> </wsdl:fault>                                                                                                                                                                                                                                                                                                           |
+|        </wsdl:operation>                                                                                                                                                                                                                                                                                                                                                                                       |
+|      </wsdl:portType>                                                                                                                                                                                                                                                                                                                                                                                          |
+|      <wsdl:binding name="SOAPCallbackServerServiceSoapBinding" type="tns:SOAPCallback">                                                                                                                                                                                                                                                                                                                        |
+|        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>                                                                                                                                                                                                                                                                                                                       |
+|        <wsdl:operation name="MRequest">                                                                                                                                                                                                                                                                                                                                                                        |
+|          <soap:operation soapAction="" style="document"/>                                                                                                                                                                                                                                                                                                                                                      |
+|          <wsdl:input name="MRequest">                                                                                                                                                                                                                                                                                                                                                                          |
+|            <soap:header message="tns:MRequest" part="X-ReplyTo" use="literal"> </soap:header>                                                                                                                                                                                                                                                                                                                  |
+|            <soap:body parts="parameters" use="literal"/>                                                                                                                                                                                                                                                                                                                                                       |
+|          </wsdl:input>                                                                                                                                                                                                                                                                                                                                                                                         |
+|          <wsdl:output name="MRequestResponse">                                                                                                                                                                                                                                                                                                                                                                 |
+|            <soap:header message="tns:MRequestResponse" part="X-CorrelationID" use="literal"> </soap:header>                                                                                                                                                                                                                                                                                                    |
+|            <soap:body parts="result" use="literal"/>                                                                                                                                                                                                                                                                                                                                                           |
+|          </wsdl:output>                                                                                                                                                                                                                                                                                                                                                                                        |
+|          <wsdl:fault name="ErrorMessageException">                                                                                                                                                                                                                                                                                                                                                             |
+|            <soap:fault name="ErrorMessageException" use="literal"/>                                                                                                                                                                                                                                                                                                                                            |
+|          </wsdl:fault>                                                                                                                                                                                                                                                                                                                                                                                         |
+|        </wsdl:operation>                                                                                                                                                                                                                                                                                                                                                                                       |
+|      </wsdl:binding>                                                                                                                                                                                                                                                                                                                                                                                           |
+|      <wsdl:service name="SOAPCallbackServerService">                                                                                                                                                                                                                                                                                                                                                           |
+|        <wsdl:port binding="tns:SOAPCallbackServerServiceSoapBinding" name="SOAPCallbackPort">                                                                                                                                                                                                                                                                                                                  |
+|          <soap:address location="http:////api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1"/>                                                                                                                                                                                                                                                                                                     |
+|        </wsdl:port>                                                                                                                                                                                                                                                                                                                                                                                            |
+|      </wsdl:service>                                                                                                                                                                                                                                                                                                                                                                                           |
+|    </wsdl:definitions>                                                                                                                                                                                                                                                                                                                                                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-+-----------------------------------+-----------------------------------+
-| Specifica Servizio Callback       | https://api.indirizzoclient.it/so |
-|                                   | ap/nomeinterfacciaservizio/v1?wsd |
-|                                   | l                                 |
-+-----------------------------------+-----------------------------------+
-| <wsdl:definitions                 |                                   |
-| xmlns:xsd="http://www.w3.org/2001 |                                   |
-| /XMLSchema"                       |                                   |
-| xmlns:wsdl="http://schemas.xmlsoa |                                   |
-| p.org/wsdl/"                      |                                   |
-| xmlns:tns="http://amministrazione |                                   |
-| esempio.it/nomeinterfacciaservizi |                                   |
-| o"                                |                                   |
-| xmlns:soap="http://schemas.xmlsoa |                                   |
-| p.org/wsdl/soap/"                 |                                   |
-| xmlns:ns1="http://schemas.xmlsoap |                                   |
-| .org/soap/http"                   |                                   |
-| name="SOAPCallbackClientInterface |                                   |
-| Service"                          |                                   |
-| targetNamespace="http://amministr |                                   |
-| azioneesempio.it/nomeinterfaccias |                                   |
-| ervizio">                         |                                   |
-| <wsdl:types>                      |                                   |
-| <xs:schema                        |                                   |
-| xmlns:xs="http://www.w3.org/2001/ |                                   |
-| XMLSchema"                        |                                   |
-| xmlns:tns="http://amministrazione |                                   |
-| esempio.it/nomeinterfacciaservizi |                                   |
-| o"                                |                                   |
-| attributeFormDefault="unqualified |                                   |
-| "                                 |                                   |
-| elementFormDefault="unqualified"  |                                   |
-| targetNamespace="http://amministr |                                   |
-| azioneesempio.it/nomeinterfaccias |                                   |
-| ervizio">                         |                                   |
-| <xs:element                       |                                   |
-| name="MRequestResponse"           |                                   |
-| type="tns:MRequestResponse"/>     |                                   |
-| <xs:element                       |                                   |
-| name="MRequestResponseResponse"   |                                   |
-| type="tns:MRequestResponseRespons |                                   |
-| e"/>                              |                                   |
-| <xs:complexType                   |                                   |
-| name="MRequestResponse">          |                                   |
-| <xs:sequence>                     |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="return"                     |                                   |
-| type="tns:mResponseType"/>        |                                   |
-| </xs:sequence>                    |                                   |
-| </xs:complexType>                 |                                   |
-| <xs:complexType                   |                                   |
-| name="mResponseType">             |                                   |
-| <xs:sequence>                     |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="c" type="xs:string"/>       |                                   |
-| </xs:sequence>                    |                                   |
-| </xs:complexType>                 |                                   |
-| <xs:complexType                   |                                   |
-| name="MRequestResponseResponse">  |                                   |
-| <xs:sequence>                     |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="return"                     |                                   |
-| type="tns:ackMessage"/>           |                                   |
-| </xs:sequence>                    |                                   |
-| </xs:complexType>                 |                                   |
-| <xs:complexType                   |                                   |
-| name="ackMessage">                |                                   |
-| <xs:sequence>                     |                                   |
-| <xs:element minOccurs="0"         |                                   |
-| name="outcome" type="xs:string"/> |                                   |
-| </xs:sequence>                    |                                   |
-| </xs:complexType>                 |                                   |
-| <xs:element                       |                                   |
-| name="X-CorrelationID"            |                                   |
-| nillable="true"                   |                                   |
-| type="xs:string"/>                |                                   |
-| </xs:schema>                      |                                   |
-| </wsdl:types>                     |                                   |
-| <wsdl:message                     |                                   |
-| name="MRequestResponse">          |                                   |
-| <wsdl:part                        |                                   |
-| element="tns:MRequestResponse"    |                                   |
-| name="parameters"> </wsdl:part>   |                                   |
-| <wsdl:part                        |                                   |
-| element="tns:X-CorrelationID"     |                                   |
-| name="X-CorrelationID">           |                                   |
-| </wsdl:part>                      |                                   |
-| </wsdl:message>                   |                                   |
-| <wsdl:message                     |                                   |
-| name="MRequestResponseResponse">  |                                   |
-| <wsdl:part                        |                                   |
-| element="tns:MRequestResponseResp |                                   |
-| onse"                             |                                   |
-| name="parameters"> </wsdl:part>   |                                   |
-| </wsdl:message>                   |                                   |
-| <wsdl:portType                    |                                   |
-| name="SOAPCallbackPort">          |                                   |
-| <wsdl:operation                   |                                   |
-| name="MRequestResponse">          |                                   |
-| <wsdl:input                       |                                   |
-| message="tns:MRequestResponse"    |                                   |
-| name="MRequestResponse">          |                                   |
-| </wsdl:input>                     |                                   |
-| <wsdl:output                      |                                   |
-| message="tns:MRequestResponseResp |                                   |
-| onse"                             |                                   |
-| name="MRequestResponseResponse">  |                                   |
-| </wsdl:output>                    |                                   |
-| </wsdl:operation>                 |                                   |
-| </wsdl:portType>                  |                                   |
-| <wsdl:binding                     |                                   |
-| name="SOAPCallbackClientInterface |                                   |
-| ServiceSoapBinding"               |                                   |
-| type="tns:SOAPCallbackPort">      |                                   |
-| <soap:binding style="document"    |                                   |
-| transport="\ http://schemas.xmlso |                                   |
-| ap.org/soap/http%22/>             |                                   |
-| <wsdl:operation                   |                                   |
-| name="MRequestResponse">          |                                   |
-| <soap:operation soapAction=""     |                                   |
-| style="document"/>                |                                   |
-| <wsdl:input                       |                                   |
-| name="MRequestResponse">          |                                   |
-| <soap:header                      |                                   |
-| message="tns:MRequestResponse"    |                                   |
-| part="X-CorrelationID"            |                                   |
-| use="literal"> </soap:header>     |                                   |
-| <soap:body parts="parameters"     |                                   |
-| use="literal"/>                   |                                   |
-| </wsdl:input>                     |                                   |
-| <wsdl:output                      |                                   |
-| name="MRequestResponseResponse">  |                                   |
-| <soap:body use="literal"/>        |                                   |
-| </wsdl:output>                    |                                   |
-| </wsdl:operation>                 |                                   |
-| </wsdl:binding>                   |                                   |
-| <wsdl:service                     |                                   |
-| name="SOAPCallbackClientInterface |                                   |
-| Service">                         |                                   |
-| <wsdl:port                        |                                   |
-| binding="tns:SOAPCallbackClientIn |                                   |
-| terfaceServiceSoapBinding"        |                                   |
-| name="SOAPCallbackPort">          |                                   |
-| <soap:address                     |                                   |
-| location="http://api.indirizzocli |                                   |
-| ent.it/soap/nomeinterfacciaserviz |                                   |
-| io/v1"/>                          |                                   |
-| </wsdl:port>                      |                                   |
-| </wsdl:service>                   |                                   |
-| </wsdl:definitions>               |                                   |
-+-----------------------------------+-----------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Specifica Servizio Callback                                                                                                                                                            | https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1?wsdl                                                                                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| .. code-block:: XML                                                                                                                                                                                                                                                                                                                                                                                                     |
+|                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|    <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"    xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"    xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SOAPCallbackClientInterfaceService" targetNamespace="http://amministrazioneesempio.it/   nomeinterfacciaservizio"> |
+|      <wsdl:types>                                                                                                                                                                                                                                                                                                                                                                                                       |
+|        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio"    attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                                                                                                   |
+|          <xs:element name="MRequestResponse" type="tns:MRequestResponse"/>                                                                                                                                                                                                                                                                                                                                              |
+|          <xs:element name="MRequestResponseResponse" type="tns:MRequestResponseResponse"/>                                                                                                                                                                                                                                                                                                                              |
+|          <xs:complexType name="MRequestResponse">                                                                                                                                                                                                                                                                                                                                                                       |
+|            <xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                                |
+|              <xs:element minOccurs="0" name="return" type="tns:mResponseType"/>                                                                                                                                                                                                                                                                                                                                         |
+|            </xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                               |
+|          </xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                              |
+|          <xs:complexType name="mResponseType">                                                                                                                                                                                                                                                                                                                                                                          |
+|            <xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                                |
+|              <xs:element minOccurs="0" name="c" type="xs:string"/>                                                                                                                                                                                                                                                                                                                                                      |
+|            </xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                               |
+|          </xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                              |
+|          <xs:complexType name="MRequestResponseResponse">                                                                                                                                                                                                                                                                                                                                                               |
+|            <xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                                |
+|              <xs:element minOccurs="0" name="return" type="tns:ackMessage"/>                                                                                                                                                                                                                                                                                                                                            |
+|            </xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                               |
+|          </xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                              |
+|          <xs:complexType name="ackMessage">                                                                                                                                                                                                                                                                                                                                                                             |
+|            <xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                                |
+|              <xs:element minOccurs="0" name="outcome" type="xs:string"/>                                                                                                                                                                                                                                                                                                                                                |
+|            </xs:sequence>                                                                                                                                                                                                                                                                                                                                                                                               |
+|          </xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                              |
+|          <xs:element name="X-CorrelationID" nillable="true" type="xs:string"/>                                                                                                                                                                                                                                                                                                                                          |
+|        </xs:schema>                                                                                                                                                                                                                                                                                                                                                                                                     |
+|      </wsdl:types>                                                                                                                                                                                                                                                                                                                                                                                                      |
+|      <wsdl:message name="MRequestResponse">                                                                                                                                                                                                                                                                                                                                                                             |
+|        <wsdl:part element="tns:MRequestResponse" name="parameters"> </wsdl:part>                                                                                                                                                                                                                                                                                                                                        |
+|        <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>                                                                                                                                                                                                                                                                                                                                    |
+|      </wsdl:message>                                                                                                                                                                                                                                                                                                                                                                                                    |
+|      <wsdl:message name="MRequestResponseResponse">                                                                                                                                                                                                                                                                                                                                                                     |
+|        <wsdl:part element="tns:MRequestResponseResponse" name="parameters"> </wsdl:part>                                                                                                                                                                                                                                                                                                                                |
+|      </wsdl:message>                                                                                                                                                                                                                                                                                                                                                                                                    |
+|      <wsdl:portType name="SOAPCallbackPort">                                                                                                                                                                                                                                                                                                                                                                            |
+|        <wsdl:operation name="MRequestResponse">                                                                                                                                                                                                                                                                                                                                                                         |
+|          <wsdl:input message="tns:MRequestResponse" name="MRequestResponse"> </wsdl:input>                                                                                                                                                                                                                                                                                                                              |
+|          <wsdl:output message="tns:MRequestResponseResponse" name="MRequestResponseResponse"> </wsdl:output>                                                                                                                                                                                                                                                                                                            |
+|        </wsdl:operation>                                                                                                                                                                                                                                                                                                                                                                                                |
+|      </wsdl:portType>                                                                                                                                                                                                                                                                                                                                                                                                   |
+|      <wsdl:binding name="SOAPCallbackClientInterfaceServiceSoapBinding" type="tns:SOAPCallbackPort">                                                                                                                                                                                                                                                                                                                    |
+|        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>                                                                                                                                                                                                                                                                                                                                |
+|        <wsdl:operation name="MRequestResponse">                                                                                                                                                                                                                                                                                                                                                                         |
+|          <soap:operation soapAction="" style="document"/>                                                                                                                                                                                                                                                                                                                                                               |
+|          <wsdl:input name="MRequestResponse">                                                                                                                                                                                                                                                                                                                                                                           |
+|            <soap:header message="tns:MRequestResponse" part="X-CorrelationID" use="literal"> </soap:header>                                                                                                                                                                                                                                                                                                             |
+|            <soap:body parts="parameters" use="literal"/>                                                                                                                                                                                                                                                                                                                                                                |
+|          </wsdl:input>                                                                                                                                                                                                                                                                                                                                                                                                  |
+|          <wsdl:output name="MRequestResponseResponse">                                                                                                                                                                                                                                                                                                                                                                  |
+|            <soap:body use="literal"/>                                                                                                                                                                                                                                                                                                                                                                                   |
+|          </wsdl:output>                                                                                                                                                                                                                                                                                                                                                                                                 |
+|        </wsdl:operation>                                                                                                                                                                                                                                                                                                                                                                                                |
+|      </wsdl:binding>                                                                                                                                                                                                                                                                                                                                                                                                    |
+|      <wsdl:service name="SOAPCallbackClientInterfaceService">                                                                                                                                                                                                                                                                                                                                                           |
+|        <wsdl:port binding="tns:SOAPCallbackClientInterfaceServiceSoapBinding" name="SOAPCallbackPort">                                                                                                                                                                                                                                                                                                                  |
+|          <soap:address location="http://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1"/>                                                                                                                                                                                                                                                                                                                       |
+|        </wsdl:port>                                                                                                                                                                                                                                                                                                                                                                                                     |
+|      </wsdl:service>                                                                                                                                                                                                                                                                                                                                                                                                    |
+|    </wsdl:definitions>                                                                                                                                                                                                                                                                                                                                                                                                  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Segue un esempio di chiamata al metodo M in cui l’erogatore conferma di
 essersi preso carico della richiesta.
@@ -846,50 +661,39 @@ essersi preso carico della richiesta.
 |                 |     </soap:Envelope>                                                                                                                                                       |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-+-----------------------------------+-----------------------------------+
-| Endpoint                          | https://api.indirizzoclient.it/so |
-|                                   | ap/nomeinterfacciaclient/v1       |
-+-----------------------------------+-----------------------------------+
-| Method                            | MRequestResponse                  |
-+-----------------------------------+-----------------------------------+
-| (3) Request Body                  | <soap:Envelope                    |
-|                                   | xmlns:soap="http://schemas.xmlsoa |
-|                                   | p.org/soap/envelope/">            |
-|                                   | <soap:Header>                     |
-|                                   | <ns2:X-CorrelationID              |
-|                                   | xmlns:ns2="http://amministrazione |
-|                                   | esempio.it/nomeinterfacciaservizi |
-|                                   | o">4d826a26-4cd8-4b03-9bc1-2b48e8 |
-|                                   | 9f0f40</ns2:X-CorrelationID>      |
-|                                   | </soap:Header>                    |
-|                                   | <soap:Body>                       |
-|                                   | <ns2:MRequestResponse             |
-|                                   | xmlns:ns2="http://amministrazione |
-|                                   | esempio.it/nomeinterfacciaservizi |
-|                                   | o">                               |
-|                                   | <return>                          |
-|                                   | <c>OK</c>                         |
-|                                   | </return>                         |
-|                                   | </ns2:MRequestResponse>           |
-|                                   | </soap:Body>                      |
-|                                   | </soap:Envelope>                  |
-+-----------------------------------+-----------------------------------+
-| (4) Response Body                 | <soap:Envelope                    |
-|                                   | xmlns:soap="http://schemas.xmlsoa |
-|                                   | p.org/soap/envelope/">            |
-|                                   | <soap:Body>                       |
-|                                   | <ns2:MRequestResponseResponse     |
-|                                   | xmlns:ns2="http://amministrazione |
-|                                   | esempio.it/nomeinterfacciaservizi |
-|                                   | o">                               |
-|                                   | <return>                          |
-|                                   | <outcome>ACK</outcome>            |
-|                                   | </return>                         |
-|                                   | </ns2:MRequestResponseResponse>   |
-|                                   | </soap:Body>                      |
-|                                   | </soap:Envelope>                  |
-+-----------------------------------+-----------------------------------+
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Endpoint          | https://api.indirizzoclient.it/soap/nomeinterfacciaclient/v1                                                                                                   |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Method            | MRequestResponse                                                                                                                                               |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| (3) Request Body  | .. code-block:: XML                                                                                                                                            |
+|                   |                                                                                                                                                                |
+|                   |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
+|                   |      <soap:Header>                                                                                                                                             |
+|                   |        <ns2:X-CorrelationID xmlns:ns2="http://amministrazioneesempio.it/   nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-CorrelationID> |
+|                   |      </soap:Header>                                                                                                                                            |
+|                   |      <soap:Body>                                                                                                                                               |
+|                   |        <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                             |
+|                   |          <return>                                                                                                                                              |
+|                   |            <c>OK</c>                                                                                                                                           |
+|                   |          </return>                                                                                                                                             |
+|                   |        </ns2:MRequestResponse>                                                                                                                                 |
+|                   |      </soap:Body>                                                                                                                                              |
+|                   |    </soap:Envelope>                                                                                                                                            |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| (4) Response Body |                                                                                                                                                                |
+|                   | .. code-block:: XML                                                                                                                                            |
+|                   |                                                                                                                                                                |
+|                   |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
+|                   |      <soap:Body>                                                                                                                                               |
+|                   |        <ns2:MRequestResponseResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                     |
+|                   |          <return>                                                                                                                                              |
+|                   |            <outcome>ACK</outcome>                                                                                                                              |
+|                   |          </return>                                                                                                                                             |
+|                   |        </ns2:MRequestResponseResponse>                                                                                                                         |
+|                   |      </soap:Body>                                                                                                                                              |
+|                   |    </soap:Envelope>                                                                                                                                            |
++-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _paragrafo-2:
 Profilo non bloccante RPC PULL (busy waiting)
@@ -1011,307 +815,255 @@ l’erogatore DEVE almeno:
 Esempio
 ^^^^^^^
 
-+-----------------------------------+-----------------------------------+
-| Specifica Servizio Server         | https://api.amministrazioneesempi |
-|                                   | o.it/rest/v1/nomeinterfacciaservi |
-|                                   | zio/openapi.yaml                  |
-+-----------------------------------+-----------------------------------+
-| openapi: 3.0.1                    |                                   |
-| info:                             |                                   |
-| title: RESTbusywaiting            |                                   |
-| license:                          |                                   |
-| name: Apache 2.0 License          |                                   |
-| url:                              |                                   |
-| http://www.apache.org/licenses/LI |                                   |
-| CENSE-2.0.html                    |                                   |
-| version: "1.0"                    |                                   |
-| paths:                            |                                   |
-| /resources/{id_resource}/M:       |                                   |
-| post:                             |                                   |
-| description: M                    |                                   |
-| operationId: PushMessage          |                                   |
-| parameters:                       |                                   |
-| - name: id_resource               |                                   |
-| in: path                          |                                   |
-| required: true                    |                                   |
-| schema:                           |                                   |
-| type: integer                     |                                   |
-| format: int32                     |                                   |
-| requestBody:                      |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/MType'      |                                   |
-| responses:                        |                                   |
-| 500:                              |                                   |
-| description: Errore interno       |                                   |
-| avvenuto                          |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 404:                              |                                   |
-| description: Identificativo non   |                                   |
-| trovato                           |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 202:                              |                                   |
-| description: Preso carico         |                                   |
-| correttamente di M                |                                   |
-| headers:                          |                                   |
-| Location:                         |                                   |
-| description: Posizione nella      |                                   |
-| quale richiedere lo stato della   |                                   |
-| richiesta                         |                                   |
-| required: true                    |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/MProcessing |                                   |
-| Status'                           |                                   |
-| /resources/{id_resource}/M/{id_ta |                                   |
-| sk}/result:                       |                                   |
-| get:                              |                                   |
-| description: M Result             |                                   |
-| operationId: PullResponseById     |                                   |
-| parameters:                       |                                   |
-| - name: id_resource               |                                   |
-| in: path                          |                                   |
-| required: true                    |                                   |
-| schema:                           |                                   |
-| type: integer                     |                                   |
-| format: int32                     |                                   |
-| - name: id_task                   |                                   |
-| in: path                          |                                   |
-| required: true                    |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| responses:                        |                                   |
-| 500:                              |                                   |
-| description: Errore interno       |                                   |
-| avvenuto                          |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 404:                              |                                   |
-| description: Identificativo non   |                                   |
-| trovato                           |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 200:                              |                                   |
-| description: Esecuzione di M      |                                   |
-| completata                        |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/MResponseTy |                                   |
-| pe'                               |                                   |
-| /resources/{id_resource}/M/{id_ta |                                   |
-| sk}:                              |                                   |
-| get:                              |                                   |
-| description: M Processing Status  |                                   |
-| operationId:                      |                                   |
-| PullResponseStatusById            |                                   |
-| parameters:                       |                                   |
-| - name: id_resource               |                                   |
-| in: path                          |                                   |
-| required: true                    |                                   |
-| schema:                           |                                   |
-| type: integer                     |                                   |
-| format: int32                     |                                   |
-| - name: id_task                   |                                   |
-| in: path                          |                                   |
-| required: true                    |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| responses:                        |                                   |
-| 500:                              |                                   |
-| description: Errore interno       |                                   |
-| avvenuto                          |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 404:                              |                                   |
-| description: Identificativo non   |                                   |
-| trovato                           |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 200:                              |                                   |
-| description: Esecuzione di M      |                                   |
-| completata                        |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/MProcessing |                                   |
-| Status'                           |                                   |
-| 303:                              |                                   |
-| description: Preso carico         |                                   |
-| correttamente di M                |                                   |
-| headers:                          |                                   |
-| Location:                         |                                   |
-| description: Posizione nella      |                                   |
-| quale richiedere l'esito della    |                                   |
-| richiesta                         |                                   |
-| required: true                    |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/MProcessing |                                   |
-| Status'                           |                                   |
-| components:                       |                                   |
-| schemas:                          |                                   |
-| MProcessingStatus:                |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| status:                           |                                   |
-| type: string                      |                                   |
-| message:                          |                                   |
-| type: string                      |                                   |
-| MType:                            |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| a:                                |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/AComplexTyp |                                   |
-| e'                                |                                   |
-| b:                                |                                   |
-| type: string                      |                                   |
-| MResponseType:                    |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| c:                                |                                   |
-| type: string                      |                                   |
-| AComplexType:                     |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| a1s:                              |                                   |
-| type: array                       |                                   |
-| items:                            |                                   |
-| type: string                      |                                   |
-| a2:                               |                                   |
-| type: string                      |                                   |
-| ErrorMessage:                     |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| error_message:                    |                                   |
-| type: string                      |                                   |
-+-----------------------------------+-----------------------------------+
++---------------------------+------------------------------------------------------------------------------------+
+| Specifica Servizio Server | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml |
++---------------------------+------------------------------------------------------------------------------------+
+| .. code-block:: YAML                                                                                           |
+|                                                                                                                |
+|    openapi: 3.0.1                                                                                              |
+|    info:                                                                                                       |
+|      title: RESTbusywaiting                                                                                    |
+|      license:                                                                                                  |
+|        name: Apache 2.0 License                                                                                |
+|        url: http://www.apache.org/licenses/LICENSE-2.0.html                                                    |
+|      version: "1.0"                                                                                            |
+|    paths:                                                                                                      |
+|      /resources/{id_resource}/M:                                                                               |
+|        post:                                                                                                   |
+|          description: M                                                                                        |
+|          operationId: PushMessage                                                                              |
+|          parameters:                                                                                           |
+|          - name: id_resource                                                                                   |
+|            in: path                                                                                            |
+|            required: true                                                                                      |
+|            schema:                                                                                             |
+|              type: integer                                                                                     |
+|              format: int32                                                                                     |
+|          requestBody:                                                                                          |
+|            content:                                                                                            |
+|              application/json:                                                                                 |
+|                schema:                                                                                         |
+|                  $ref: '#/components/schemas/MType'                                                            |
+|          responses:                                                                                            |
+|            500:                                                                                                |
+|              description: Errore interno avvenuto                                                              |
+|              content:                                                                                          |
+|                application/json:                                                                               |
+|                  schema:                                                                                       |
+|                    $ref: '#/components/schemas/ErrorMessage'                                                   |
+|            404:                                                                                                |
+|              description: Identificativo non trovato                                                           |
+|              content:                                                                                          |
+|                application/json:                                                                               |
+|                  schema:                                                                                       |
+|                    $ref: '#/components/schemas/ErrorMessage'                                                   |
+|            202:                                                                                                |
+|              description: Preso carico correttamente di M                                                      |
+|              headers:                                                                                          |
+|                Location:                                                                                       |
+|                  description: Posizione nella quale richiedere lo stato della richiesta                        |
+|                  required: true                                                                                |
+|                  schema:                                                                                       |
+|                    type: string                                                                                |
+|              content:                                                                                          |
+|                application/json:                                                                               |
+|                  schema:                                                                                       |
+|                    $ref: '#/components/schemas/MProcessingStatus'                                              |
+|      /resources/{id_resource}/M/{id_task}/result:                                                              |
+|        get:                                                                                                    |
+|          description: M Result                                                                                 |
+|          operationId: PullResponseById                                                                         |
+|          parameters:                                                                                           |
+|          - name: id_resource                                                                                   |
+|            in: path                                                                                            |
+|            required: true                                                                                      |
+|            schema:                                                                                             |
+|              type: integer                                                                                     |
+|              format: int32                                                                                     |
+|          - name: id_task                                                                                       |
+|            in: path                                                                                            |
+|            required: true                                                                                      |
+|            schema:                                                                                             |
+|              type: string                                                                                      |
+|          responses:                                                                                            |
+|            500:                                                                                                |
+|              description: Errore interno avvenuto                                                              |
+|              content:                                                                                          |
+|                application/json:                                                                               |
+|                  schema:                                                                                       |
+|                    $ref: '#/components/schemas/ErrorMessage'                                                   |
+|            404:                                                                                                |
+|              description: Identificativo non trovato                                                           |
+|              content:                                                                                          |
+|                application/json:                                                                               |
+|                  schema:                                                                                       |
+|                    $ref: '#/components/schemas/ErrorMessage'                                                   |
+|            200:                                                                                                |
+|              description: Esecuzione di M completata                                                           |
+|              content:                                                                                          |
+|                application/json:                                                                               |
+|                  schema:                                                                                       |
+|                    $ref: '#/components/schemas/MResponseType'                                                  |
+|      /resources/{id_resource}/M/{id_task}:                                                                     |
+|        get:                                                                                                    |
+|          description: M Processing Status                                                                      |
+|          operationId: PullResponseStatusById                                                                   |
+|          parameters:                                                                                           |
+|          - name: id_resource                                                                                   |
+|            in: path                                                                                            |
+|            required: true                                                                                      |
+|            schema:                                                                                             |
+|              type: integer                                                                                     |
+|              format: int32                                                                                     |
+|          - name: id_task                                                                                       |
+|            in: path                                                                                            |
+|            required: true                                                                                      |
+|            schema:                                                                                             |
+|              type: string                                                                                      |
+|          responses:                                                                                            |
+|            500:                                                                                                |
+|              description: Errore interno avvenuto                                                              |
+|              content:                                                                                          |
+|                application/json:                                                                               |
+|                  schema:                                                                                       |
+|                    $ref: '#/components/schemas/ErrorMessage'                                                   |
+|            404:                                                                                                |
+|              description: Identificativo non trovato                                                           |
+|              content:                                                                                          |
+|                application/json:                                                                               |
+|                  schema:                                                                                       |
+|                    $ref: '#/components/schemas/ErrorMessage'                                                   |
+|            200:                                                                                                |
+|              description: Esecuzione di M completata                                                           |
+|              content:                                                                                          |
+|                application/json:                                                                               |
+|                  schema:                                                                                       |
+|                    $ref: '#/components/schemas/MProcessingStatus'                                              |
+|            303:                                                                                                |
+|              description: Preso carico correttamente di M                                                      |
+|              headers:                                                                                          |
+|                Location:                                                                                       |
+|                  description: Posizione nella quale richiedere l'esito della richiesta                         |
+|                  required: true                                                                                |
+|                  schema:                                                                                       |
+|                    type: string                                                                                |
+|              content:                                                                                          |
+|                application/json:                                                                               |
+|                  schema:                                                                                       |
+|                    $ref: '#/components/schemas/MProcessingStatus'                                              |
+|    components:                                                                                                 |
+|      schemas:                                                                                                  |
+|        MProcessingStatus:                                                                                      |
+|          type: object                                                                                          |
+|          properties:                                                                                           |
+|            status:                                                                                             |
+|              type: string                                                                                      |
+|            message:                                                                                            |
+|              type: string                                                                                      |
+|        MType:                                                                                                  |
+|          type: object                                                                                          |
+|          properties:                                                                                           |
+|            a:                                                                                                  |
+|              $ref: '#/components/schemas/AComplexType'                                                         |
+|            b:                                                                                                  |
+|              type: string                                                                                      |
+|        MResponseType:                                                                                          |
+|          type: object                                                                                          |
+|          properties:                                                                                           |
+|            c:                                                                                                  |
+|              type: string                                                                                      |
+|        AComplexType:                                                                                           |
+|          type: object                                                                                          |
+|          properties:                                                                                           |
+|            a1s:                                                                                                |
+|              type: array                                                                                       |
+|              items:                                                                                            |
+|                type: string                                                                                    |
+|            a2:                                                                                                 |
+|              type: string                                                                                      |
+|        ErrorMessage:                                                                                           |
+|          type: object                                                                                          |
+|          properties:                                                                                           |
+|            error_message:                                                                                      |
+|              type: string                                                                                      |
++----------------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata ad M in cui l’erogatore dichiara di
 essersi preso carico della richiesta.
 
-+-----------------------------------+-----------------------------------+
-| HTTP Operation                    | POST                              |
-+-----------------------------------+-----------------------------------+
-| Endpoint                          | https://api.amministrazioneesempi |
-|                                   | o.it/rest/v1/nomeinterfacciaservi |
-|                                   | zio/resources/1234/M              |
-+-----------------------------------+-----------------------------------+
-| (1) Request Header &              | {                                 |
-| Body                              |                                   |
-|                                   | "a": {                            |
-|                                   |                                   |
-|                                   | "a1”: [1,...,2],                  |
-|                                   |                                   |
-|                                   | "a2": "Stringa di esempio"        |
-|                                   |                                   |
-|                                   | },                                |
-|                                   |                                   |
-|                                   | "b": "Stringa di esempio"         |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| (2) Response                      | Location:                         |
-| Body (HTTP Status Code 202        | resources/1234/M/8131edc0-29ed-4d |
-| Accepted)                         | 6e-ba43-cce978c7ea8d              |
-|                                   |                                   |
-|                                   | | {                               |
-|                                   | | "status": "pending",            |
-|                                   | | "message": "Preso carico della  |
-|                                   |   richiesta"                      |
-|                                   | | }                               |
-+-----------------------------------+-----------------------------------+
++---------------------------------------------------+----------------------------------------------------------------------------------------+
+| HTTP Operation                                    | POST                                                                                   |
++---------------------------------------------------+----------------------------------------------------------------------------------------+
+| Endpoint                                          | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
++---------------------------------------------------+----------------------------------------------------------------------------------------+
+| (1) Request Header & Body                         | .. code-block:: YAML                                                                   |
+|                                                   |                                                                                        |
+|                                                   |                                                                                        |
+|                                                   |   {                                                                                    |
+|                                                   |      "a": {                                                                            |
+|                                                   |        "a1”: [1,...,2],                                                                |
+|                                                   |        "a2": "Stringa di esempio"                                                      |
+|                                                   |      },                                                                                |
+|                                                   |      "b": "Stringa di esempio"                                                         |
+|                                                   |    }                                                                                   |
++---------------------------------------------------+----------------------------------------------------------------------------------------+
+| (2) Response Body (HTTP Status Code 202 Accepted) | .. code-block:: YAML                                                                   |
+|                                                   |                                                                                        |
+|                                                   |   Location:  resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d                     |
+|                                                   |                                                                                        |
+|                                                   |    {                                                                                   |
+|                                                   |      "status": "pending",                                                              |
+|                                                   |      "message": "Preso carico della richiesta"                                         |
+|                                                   |    }                                                                                   |
++---------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata con cui il fruitore verifica
 l’esecuzione di M nei casi di processamento ancora in atto (4a) e di
 processamento avvenuto (4b).
 
-+-----------------------------------+-----------------------------------+
-| HTTP Operation                    | GET                               |
-+-----------------------------------+-----------------------------------+
-| Endpoint                          | http://api.amministrazioneesempio |
-|                                   | .it/rest/v1/nomeinterfacciaserviz |
-|                                   | io/                               |
-|                                   | resources/1234/M/8131edc0-29ed-4d |
-|                                   | 6e-ba43-cce978c7ea8d              |
-+-----------------------------------+-----------------------------------+
-| (4a) Response Body (HTTP Response | {                                 |
-| code 200)                         | "status": "pending",              |
-|                                   | "message": "Preso carico della    |
-|                                   | richiesta"                        |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| (4a) Response Body (HTTP Response | {                                 |
-| code 200)                         | "status": "processing",           |
-|                                   | "message": "Richiesta in fase di  |
-|                                   | processamento"                    |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| (4b) Response Header &            | Location:                         |
-| Body (HTTP Response code 303)     | resources/1234/M/8131edc0-29ed-4d |
-|                                   | 6e-ba43-cce978c7ea8d/result       |
-|                                   | {                                 |
-|                                   | "status": "done",                 |
-|                                   | "message": "Processamento         |
-|                                   | completo"                         |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| HTTP Operation                              | GET                                                                                                                         |
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| Endpoint                                    | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/ resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d |
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| (4a) Response Body (HTTP Response code 200) | .. code-block:: JSON                                                                                                        |
+|                                             |                                                                                                                             |
+|                                             |                                                                                                                             |
+|                                             |    {                                                                                                                        |
+|                                             |      "status": "pending",                                                                                                   |
+|                                             |      "message": "Preso carico della richiesta"                                                                              |
+|                                             |    }                                                                                                                        |
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| (4a) Response Body (HTTP Response code 200) |  .. code-block:: JSON                                                                                                       |
+|                                             |                                                                                                                             |
+|                                             |    {                                                                                                                        |
+|                                             |      "status": "processing",                                                                                                |
+|                                             |      "message": "Richiesta in fase di processamento"                                                                        |
+|                                             |    }                                                                                                                        |
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| (4b) Response Header &                      | .. code-block:: JSON                                                                                                        |
+|    Body (HTTP Response code 303)            |                                                                                                                             |
+|                                             |    {                                                                                                                        |
+|                                             |      "status": "done",                                                                                                      |
+|                                             |      "message": "Processamento completo"                                                                                    |
+|                                             |    }                                                                                                                        |
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
 della sua richiesta.
 
-+-----------------------------------+-----------------------------------+
-| HTTP Operation                    | GET                               |
-+-----------------------------------+-----------------------------------+
-| Endpoint                          | http://api.amministrazioneesempio |
-|                                   | .it/rest/v1/nomeinterfacciaserviz |
-|                                   | io/                               |
-|                                   | resources/1234/M/8131edc0-29ed-4d |
-|                                   | 6e-ba43-cce978c7ea8d/result       |
-+-----------------------------------+-----------------------------------+
-| (6) Response Body (HTTP Response  | {                                 |
-| code 200)                         | "c": "OK"                         |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| HTTP Operation                             | GET                                                                                                                                |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| Endpoint                                   | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/ resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| (6) Response Body (HTTP Response code 200) |                                                                                                                                    |
+|                                            | .. code-block:: JSON                                                                                                               |
+|                                            |                                                                                                                                    |
+|                                            |    {                                                                                                                               |
+|                                            |      "c": "OK"                                                                                                                     |
+|                                            |    }                                                                                                                               |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _interfaccia-soap-2:
 
