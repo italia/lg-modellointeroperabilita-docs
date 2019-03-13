@@ -339,33 +339,38 @@ Esempio
 Di seguito un esempio di chiamata al metodo M con la presa in carico da
 parte dell’erogatore.
 
++---------------------------------+----------------------------------------------------------------------------------------+
+| HTTP Operation                  | POST                                                                                   |
++---------------------------------+----------------------------------------------------------------------------------------+
+| Endpoint                        | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
++---------------------------------+----------------------------------------------------------------------------------------+
+| 1 Request Header & Body         | .. code-block:: JSON                                                                   |
+|                                 |                                                                                        |
+|                                 |                                                                                        |
+|                                 |     X-ReplyTo: https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse  |
+|                                 |                                                                                        |
+|                                 |     {                                                                                  |
+|                                 |       "a": {                                                                           |
+|                                 |         "a1": [1,...,2],                                                               |
+|                                 |         "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"                                           |
+|                                 |       },                                                                               |
+|                                 |       "b": "Stringa di esempio"                                                        |
+|                                 |     }                                                                                  |
++---------------------------------+----------------------------------------------------------------------------------------+
+| 2 Response Header & Body        | .. code-block:: JSON                                                                   |
+| (HTTP Status Code 202 Accepted) |                                                                                        |
+|                                 |                                                                                        |
+|                                 |     X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d                             |
+|                                 |                                                                                        |
+|                                 |     {                                                                                  |
+|                                 |       "result" : "ACK"                                                                 |
+|                                 |     }                                                                                  |
++---------------------------------+----------------------------------------------------------------------------------------+
 
 Di seguito un esempio di risposta da parte dell’erogatore verso il
 fruitore.
 
-+-----------------------------------+-----------------------------------+
-| HTTP Operation                    | POST                              |
-+-----------------------------------+-----------------------------------+
-| Endpoint                          | https://api.indirizzoclient.it/re |
-|                                   | st/v1/nomeinterfacciaclient/Mresp |
-|                                   | onse                              |
-+-----------------------------------+-----------------------------------+
-| (3) Request Header &              | X-Correlation-ID:                 |
-| Body                              | 69a445fb-6a9f-44fe-b1c3-59c0f7fb5 |
-|                                   | 68d                               |
-|                                   |                                   |
-|                                   | {                                 |
-|                                   |                                   |
-|                                   | "c" : "OK"                        |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| (4) Response                      | {                                 |
-| Body (HTTP Status Code 200 OK)    |                                   |
-|                                   | "result" : "ACK"                  |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
+
 
 .. _interfaccia-soap-1:
 
