@@ -367,10 +367,27 @@ parte dell’erogatore.
 |                                 |     }                                                                                  |
 +---------------------------------+----------------------------------------------------------------------------------------+
 
-Di seguito un esempio di risposta da parte dell’erogatore verso il
-fruitore.
+Di seguito un esempio di risposta da parte dell’erogatore verso il fruitore.
 
-
++---------------------------------+------------------------------------------------------------------------+
+| HTTP Operation                  | POST                                                                   |
++---------------------------------+------------------------------------------------------------------------+
+| Endpoint                        | https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse |
++---------------------------------+------------------------------------------------------------------------+
+| 3 Request Header & Body         | .. code-block:: JSON                                                   |
+|                                 |                                                                        |
+|                                 |    X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d              |
+|                                 |                                                                        |
+|                                 |     {                                                                  |
+|                                 |       "c": "OK"                                                        |
+|                                 |     }                                                                  |
++---------------------------------+------------------------------------------------------------------------+
+| 4 Response Header & Body        | .. code-block:: JSON                                                   |
+| (HTTP Status Code 202 Accepted) |                                                                        |
+|                                 |     {                                                                  |
+|                                 |       "result" : "ACK"                                                 |
+|                                 |     }                                                                  |
++---------------------------------+------------------------------------------------------------------------+
 
 .. _interfaccia-soap-1:
 
