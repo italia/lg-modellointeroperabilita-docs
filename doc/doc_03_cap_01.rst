@@ -121,8 +121,9 @@ nelle varie casistiche partendo da una interfaccia di servizio secondo
 ciascuno dei due paradigmi (RPC-like e resource oriented) e cercando
 di realizzarla utilizzando le due diverse tecnologie SOAP e REST.
 
-|image0|
-
+.. image:: ./media/image1.png
+   :align: center
+   
 **Figura 1.** Interfaccia di servizio usando SOAP/WSDL.
 
 Per semplicità nell’esempio si suppone che il singolo item nell’Order sia rappresentabile con una semplice stringa (che codifica il suo codice, ad esempio) e sempre in quantità singola (per cui un Order non fa altro che aggregare differenti Items)
@@ -141,8 +142,9 @@ Utilizzando REST, l’interfaccia di servizio corrisponde a due risorse,
 Order e Item ed i verbi HTTP (ovvero GET, PUT, POST e DELETE) si mappano
 esattamente sulle operazioni CRUD, come mostrato in Figura 2.
 
-|image1|
-
+.. image:: ./media/image2.png
+   :align: center
+   
 **Figura 2.** Interfaccia di servizio usando REST
 
 Se l’interfaccia di servizio è resource-oriented (come appunto nel caso
@@ -159,7 +161,8 @@ esecuzione (fintanto che non è completato), oppure il risultato finale
 una volta che la procedure/task sia stata completata ed il risultato è
 stato prodotto. Figura 3 schematizza l’interfaccia di servizio.
 
-|image2|
+.. image:: ./media/image3.png
+   :align: center
 
 **Figura 3.** Interfacce di servizio usando SOAP/WSDL
 
@@ -174,7 +177,7 @@ quindi a far partire il task.
       ⇒ POST /task
       [Input data payload]
 
-      ⇐ 202 Accepted [3]_
+      ⇐ 202 Accepted
       Location: /task/20181231
 
       {
@@ -312,16 +315,4 @@ Maturity Model.
 
 .. [3]
    Cf. https://www.crummy.com/writing/speaking/2008-QCon/act3.html
-
-.. |image0| image:: ./media/image1.png
-   :width: 3.44581in
-   :height: 3.55729in
-
-.. |image1| image:: ./media/image2.png
-   :width: 6.27083in
-   :height: 3.97222in
-
-.. |image2| image:: ./media/image3.png
-   :width: 3.5in
-   :height: 1.60417in
 
