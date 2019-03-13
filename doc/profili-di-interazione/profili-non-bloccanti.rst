@@ -1026,7 +1026,7 @@ processamento avvenuto (4b).
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | Endpoint                                    | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/ resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| (4a) Response Body (HTTP Response code 200) | .. code-block:: JSON                                                                                                        |
+| 4a   Response Body (HTTP Response code 200) | .. code-block:: JSON                                                                                                        |
 |                                             |                                                                                                                             |
 |                                             |                                                                                                                             |
 |                                             |    {                                                                                                                        |
@@ -1034,14 +1034,14 @@ processamento avvenuto (4b).
 |                                             |      "message": "Preso carico della richiesta"                                                                              |
 |                                             |    }                                                                                                                        |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| (4a) Response Body (HTTP Response code 200) |  .. code-block:: JSON                                                                                                       |
+| 4a Response Body (HTTP Response code 200)   |  .. code-block:: JSON                                                                                                       |
 |                                             |                                                                                                                             |
 |                                             |    {                                                                                                                        |
 |                                             |      "status": "processing",                                                                                                |
 |                                             |      "message": "Richiesta in fase di processamento"                                                                        |
 |                                             |    }                                                                                                                        |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| (4b) Response Header &                      | .. code-block:: JSON                                                                                                        |
+| 4b Response Header &                        | .. code-block:: JSON                                                                                                        |
 |    Body (HTTP Response code 303)            |                                                                                                                             |
 |                                             |    {                                                                                                                        |
 |                                             |      "status": "done",                                                                                                      |
@@ -1057,7 +1057,7 @@ della sua richiesta.
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | Endpoint                                   | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/ resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| (6) Response Body (HTTP Response code 200) |                                                                                                                                    |
+| (6\) Response Body (HTTP Response code 200)|                                                                                                                                    |
 |                                            | .. code-block:: JSON                                                                                                               |
 |                                            |                                                                                                                                    |
 |                                            |    {                                                                                                                               |
