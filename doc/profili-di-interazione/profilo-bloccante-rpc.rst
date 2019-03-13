@@ -20,7 +20,10 @@ casi in cui:
 Descrizione
 -----------
 
-Figura 1. Interazione bloccante RPC
+.. image:: ../media/interazione_1.png
+   :scale: 75 %
+
+**Figura 1.** Interazione bloccante RPC
 
 In questo profilo si ha una risposta da parte dell’erogatore contestuale
 alla richiesta del fruitore. Figura 1 mostra lo schema di questa
