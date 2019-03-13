@@ -149,293 +149,131 @@ DEVE almeno:
 Esempio
 ^^^^^^^
 
-+-----------------------------------+-----------------------------------+
-| Specifica Servizio Server         | https://api.amministrazioneesempi |
-|                                   | o.it/rest/v1/nomeinterfacciaservi |
-|                                   | zio/RESTCallbackServer.yaml       |
-+-----------------------------------+-----------------------------------+
-| | openapi: 3.0.1                  |                                   |
-| | info:                           |                                   |
-| | title: RESTCallbackServer       |                                   |
-| | license:                        |                                   |
-| | name: Apache 2.0 License        |                                   |
-| | url:                            |                                   |
-|   http://www.apache.org/licenses/ |                                   |
-| LICENSE-2.0.html                  |                                   |
-| | version: "1.0"                  |                                   |
-| | paths:                          |                                   |
-| | /resources/{id_resource}/M:     |                                   |
-| | post:                           |                                   |
-| | description: M                  |                                   |
-| | operationId: PushMessage        |                                   |
-| | parameters:                     |                                   |
-| | - name: X-ReplyTo               |                                   |
-| | in: header                      |                                   |
-| | schema:                         |                                   |
-| | type: string                    |                                   |
-| | - name: id_resource             |                                   |
-| | in: path                        |                                   |
-| | required: true                  |                                   |
-| | schema:                         |                                   |
-| | type: integer                   |                                   |
-| | format: int32                   |                                   |
-| | requestBody:                    |                                   |
-| | content:                        |                                   |
-| | application/json:               |                                   |
-| | schema:                         |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/MType'    |                                   |
-| | responses:                      |                                   |
-| | 500:                            |                                   |
-| | description: Errore interno     |                                   |
-|   avvenuto                        |                                   |
-| | content:                        |                                   |
-| | application/json:               |                                   |
-| | schema:                         |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/ErrorMess |                                   |
-| age'                              |                                   |
-| | 404:                            |                                   |
-| | description: Identificativo non |                                   |
-|   trovato                         |                                   |
-| | content:                        |                                   |
-| | application/json:               |                                   |
-| | schema:                         |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/ErrorMess |                                   |
-| age'                              |                                   |
-| | 202:                            |                                   |
-| | description: Preso carico       |                                   |
-|   correttamente di M              |                                   |
-| | headers:                        |                                   |
-| | X-Correlation-ID:               |                                   |
-| | required: true                  |                                   |
-| | schema:                         |                                   |
-| | type: string                    |                                   |
-| | content:                        |                                   |
-| | application/json:               |                                   |
-| | schema:                         |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/ACKMessag |                                   |
-| e'                                |                                   |
-| | callbacks:                      |                                   |
-| | completionCallback:             |                                   |
-| | '{$request.header#/X-ReplyTo}': |                                   |
-| | post:                           |                                   |
-| | requestBody:                    |                                   |
-| | content:                        |                                   |
-| | application/json:               |                                   |
-| | schema:                         |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/MResponse |                                   |
-| Type'                             |                                   |
-| | responses:                      |                                   |
-|                                   |                                   |
-| 500:                              |                                   |
-|                                   |                                   |
-| description: Errore interno       |                                   |
-| avvenuto                          |                                   |
-|                                   |                                   |
-| content:                          |                                   |
-|                                   |                                   |
-| application/json:                 |                                   |
-|                                   |                                   |
-| schema:                           |                                   |
-|                                   |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-|                                   |                                   |
-| 404:                              |                                   |
-|                                   |                                   |
-| description: Identificativo non   |                                   |
-| trovato                           |                                   |
-|                                   |                                   |
-| content:                          |                                   |
-|                                   |                                   |
-| application/json:                 |                                   |
-|                                   |                                   |
-| schema:                           |                                   |
-|                                   |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-|                                   |                                   |
-| 200:                              |                                   |
-|                                   |                                   |
-| description: Risposta             |                                   |
-| correttamente ricevuta            |                                   |
-|                                   |                                   |
-| content:                          |                                   |
-|                                   |                                   |
-| application/json:                 |                                   |
-|                                   |                                   |
-| schema:                           |                                   |
-|                                   |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/ACKMessag |                                   |
-| e'                                |                                   |
-| | components:                     |                                   |
-| | schemas:                        |                                   |
-| | MType:                          |                                   |
-| | type: object                    |                                   |
-| | properties:                     |                                   |
-| | a:                              |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/AComplexT |                                   |
-| ype'                              |                                   |
-| | b:                              |                                   |
-| | type: string                    |                                   |
-| | ACKMessage:                     |                                   |
-| | type: object                    |                                   |
-| | properties:                     |                                   |
-| | outcome:                        |                                   |
-| | type: string                    |                                   |
-| | MResponseType:                  |                                   |
-| | type: object                    |                                   |
-| | properties:                     |                                   |
-| | c:                              |                                   |
-| | type: string                    |                                   |
-| | AComplexType:                   |                                   |
-| | type: object                    |                                   |
-| | properties:                     |                                   |
-| | a1s:                            |                                   |
-| | type: array                     |                                   |
-| | items:                          |                                   |
-| | type: integer                   |                                   |
-| | format: int32                   |                                   |
-| | a2:                             |                                   |
-| | type: string                    |                                   |
-| | ErrorMessage:                   |                                   |
-| | type: object                    |                                   |
-| | properties:                     |                                   |
-| | error_message:                  |                                   |
-| | type: string                    |                                   |
-+-----------------------------------+-----------------------------------+
-
-+-----------------------------------+-----------------------------------+
-| Specifica Servizio Callback       | https://api.indirizzoclient.it/re |
-|                                   | st/v1/nomeinterfacciaservizio/RES |
-|                                   | TCallbackClient.yaml              |
-+-----------------------------------+-----------------------------------+
-| | openapi: 3.0.1                  |                                   |
-| | info:                           |                                   |
-| | title: RESTCallbackClient       |                                   |
-| | license:                        |                                   |
-| | name: Apache 2.0 License        |                                   |
-| | url:                            |                                   |
-|   http://www.apache.org/licenses/ |                                   |
-| LICENSE-2.0.html                  |                                   |
-| | version: "1.0"                  |                                   |
-| | paths:                          |                                   |
-| | /MResponse:                     |                                   |
-| | post:                           |                                   |
-| | description: M                  |                                   |
-| | operationId:                    |                                   |
-|   PushResponseMessage             |                                   |
-| | parameters:                     |                                   |
-| | - name: X-Correlation-ID        |                                   |
-| | in: header                      |                                   |
-| | schema:                         |                                   |
-| | type: string                    |                                   |
-| | requestBody:                    |                                   |
-|                                   |                                   |
-| content:                          |                                   |
-|                                   |                                   |
-| application/json:                 |                                   |
-|                                   |                                   |
-| schema:                           |                                   |
-|                                   |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/MResponse |                                   |
-| Type'                             |                                   |
-| | responses:                      |                                   |
-| | 500:                            |                                   |
-| | description: Errore interno     |                                   |
-|   avvenuto                        |                                   |
-| | content:                        |                                   |
-| | application/json:               |                                   |
-| | schema:                         |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/ErrorMess |                                   |
-| age'                              |                                   |
-| | 404:                            |                                   |
-| | description: Identificativo non |                                   |
-|   trovato                         |                                   |
-| | content:                        |                                   |
-| | application/json:               |                                   |
-| | schema:                         |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/ErrorMess |                                   |
-| age'                              |                                   |
-| | 200:                            |                                   |
-| | description: Risposta           |                                   |
-|   correttamente ricevuta          |                                   |
-| | content:                        |                                   |
-| | application/json:               |                                   |
-| | schema:                         |                                   |
-| | $ref:                           |                                   |
-|   '#/components/schemas/ACKMessag |                                   |
-| e'                                |                                   |
-| | components:                     |                                   |
-| | schemas:                        |                                   |
-| | ACKMessage:                     |                                   |
-| | type: object                    |                                   |
-| | properties:                     |                                   |
-| | outcome:                        |                                   |
-| | type: string                    |                                   |
-| | MResponseType:                  |                                   |
-| | type: object                    |                                   |
-| | properties:                     |                                   |
-| | c:                              |                                   |
-| | type: string                    |                                   |
-| | ErrorMessage:                   |                                   |
-| | type: object                    |                                   |
-| | properties:                     |                                   |
-| | error_message:                  |                                   |
-| | type: string                    |                                   |
-+-----------------------------------+-----------------------------------+
++---------------------------+-----------------------------------------------------------------------------------------------+
+| Specifica Servizio Server | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTCallbackServer.yaml |
++---------------------------+-----------------------------------------------------------------------------------------------+
+| .. code-block:: yaml                                                                                                      |
+|                                                                                                                           |
+|    openapi: 3.0.1                                                                                                         |
+|     info:                                                                                                                 |
+|       title: RESTCallbackServer                                                                                           |
+|       license:                                                                                                            |
+|         name: Apache 2.0 License                                                                                          |
+|         url: http://www.apache.org/licenses/LICENSE-2.0.html                                                              |
+|       version: "1.0"                                                                                                      |
+|     paths:                                                                                                                |
+|       /resources/{id_resource}/M:                                                                                         |
+|         post:                                                                                                             |
+|           description: M                                                                                                  |
+|           operationId: PushMessage                                                                                        |
+|           parameters:                                                                                                     |
+|           - name: X-ReplyTo                                                                                               |
+|             in: header                                                                                                    |
+|             schema:                                                                                                       |
+|               type: string                                                                                                |
+|           - name: id_resource                                                                                             |
+|             in: path                                                                                                      |
+|             required: true                                                                                                |
+|             schema:                                                                                                       |
+|               type: integer                                                                                               |
+|               format: int32                                                                                               |
+|           requestBody:                                                                                                    |
+|             content:                                                                                                      |
+|               application/json:                                                                                           |
+|                 schema:                                                                                                   |
+|                   $ref: '#/components/schemas/MType'                                                                      |
+|           responses:                                                                                                      |
+|             500:                                                                                                          |
+|               description: Errore interno avvenuto                                                                        |
+|               content:                                                                                                    |
+|                 application/json:                                                                                         |
+|                   schema:                                                                                                 |
+|                     $ref: '#/components/schemas/ErrorMessage'                                                             |
+|             404:                                                                                                          |
+|               description: Identificativo non trovato                                                                     |
+|               content:                                                                                                    |
+|                 application/json:                                                                                         |
+|                   schema:                                                                                                 |
+|                     $ref: '#/components/schemas/ErrorMessage'                                                             |
+|             202:                                                                                                          |
+|               description: Preso carico correttamente di M                                                                |
+|               headers:                                                                                                    |
+|                 X-Correlation-ID:                                                                                         |
+|                   required: true                                                                                          |
+|                   schema:                                                                                                 |
+|                     type: string                                                                                          |
+|               content:                                                                                                    |
+|                 application/json:                                                                                         |
+|                   schema:                                                                                                 |
+|                     $ref: '#/components/schemas/ACKMessage'                                                               |
+|           callbacks:                                                                                                      |
+|             completionCallback:                                                                                           |
+|               '{$request.header#/X-ReplyTo}':                                                                             |
+|                 post:                                                                                                     |
+|                   requestBody:                                                                                            |
+|                     content:                                                                                              |
+|                       application/json:                                                                                   |
+|                         schema:                                                                                           |
+|                           $ref: '#/components/schemas/MResponseType'                                                      |
+|                   responses:                                                                                              |
+|                     500:                                                                                                  |
+|                       description: Errore interno avvenuto                                                                |
+|                       content:                                                                                            |
+|                         application/json:                                                                                 |
+|                           schema:                                                                                         |
+|                             $ref: '#/components/schemas/ErrorMessage'                                                     |
+|                     404:                                                                                                  |
+|                       description: Identificativo non trovato                                                             |
+|                       content:                                                                                            |
+|                         application/json:                                                                                 |
+|                           schema:                                                                                         |
+|                             $ref: '#/components/schemas/ErrorMessage'                                                     |
+|                     200:                                                                                                  |
+|                       description: Risposta correttamente ricevuta                                                        |
+|                       content:                                                                                            |
+|                         application/json:                                                                                 |
+|                           schema:                                                                                         |
+|                             $ref: '#/components/schemas/ACKMessage'                                                       |
+|     components:                                                                                                           |
+|       schemas:                                                                                                            |
+|         MType:                                                                                                            |
+|           type: object                                                                                                    |
+|           properties:                                                                                                     |
+|             a:                                                                                                            |
+|               $ref: '#/components/schemas/AComplexType'                                                                   |
+|             b:                                                                                                            |
+|               type: string                                                                                                |
+|         ACKMessage:                                                                                                       |
+|           type: object                                                                                                    |
+|           properties:                                                                                                     |
+|             outcome:                                                                                                      |
+|               type: string                                                                                                |
+|         MResponseType:                                                                                                    |
+|           type: object                                                                                                    |
+|           properties:                                                                                                     |
+|             c:                                                                                                            |
+|               type: string                                                                                                |
+|         AComplexType:                                                                                                     |
+|           type: object                                                                                                    |
+|           properties:                                                                                                     |
+|             a1s:                                                                                                          |
+|               type: array                                                                                                 |
+|               items:                                                                                                      |
+|                 type: integer                                                                                             |
+|                 format: int32                                                                                             |
+|             a2:                                                                                                           |
+|               type: string                                                                                                |
+|         ErrorMessage:                                                                                                     |
+|           type: object                                                                                                    |
+|           properties:                                                                                                     |
+|             error_message:                                                                                                |
+|               type: string                                                                                                |
++---------------------------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata al metodo M con la presa in carico da
 parte dell’erogatore.
 
-+-----------------------------------+-----------------------------------+
-| HTTP Operation                    | POST                              |
-+-----------------------------------+-----------------------------------+
-| Endpoint                          | https://api.amministrazioneesempi |
-|                                   | o.it/rest/v1/nomeinterfacciaservi |
-|                                   | zio/resources/1234/M              |
-+-----------------------------------+-----------------------------------+
-| (1) Request Header &              | X-ReplyTo:                        |
-| Body                              | https://api.indirizzoclient.it/re |
-|                                   | st/v1/nomeinterfacciaclient/Mresp |
-|                                   | onse                              |
-|                                   |                                   |
-|                                   | {                                 |
-|                                   |                                   |
-|                                   | "a": {                            |
-|                                   |                                   |
-|                                   | "a1": [1,...,2],                  |
-|                                   |                                   |
-|                                   | "a2":                             |
-|                                   | "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"    |
-|                                   |                                   |
-|                                   | },                                |
-|                                   |                                   |
-|                                   | "b": "Stringa di esempio"         |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| (2) Response Header &             | X-Correlation-ID:                 |
-| Body (HTTP Status Code 202        | 69a445fb-6a9f-44fe-b1c3-59c0f7fb5 |
-| Accepted)                         | 68d                               |
-|                                   |                                   |
-|                                   | {                                 |
-|                                   |                                   |
-|                                   | "result" : "ACK"                  |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
+
 
 Di seguito un esempio di risposta da parte dell’erogatore verso il
 fruitore.
