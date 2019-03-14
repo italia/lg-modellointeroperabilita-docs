@@ -1,10 +1,10 @@
-3.2. [M2MS02] Direct Trust con certificato X.509 su SOAP con threat mitigation
-==============================================================================
+[M2MS02] Direct Trust con certificato X.509 su SOAP con threat mitigation
+-------------------------------------------------------------------------
 
 .. _scenario-3:
 
-3.2.1. Scenario
----------------
+Scenario
+^^^^^^^^
 
 Il seguente profilo estende il profilo M2MS01.
 
@@ -19,8 +19,8 @@ messaggio:
 
 .. _descrizione-3:
 
-3.2.2. Descrizione
-------------------
+Descrizione
+^^^^^^^^^^^
 
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 [4].
@@ -43,15 +43,15 @@ relativa risposta.
 
 .. _dettaglio-3:
 
-3.2.3. Dettaglio
-----------------
+Dettaglio
+^^^^^^^^^
 
 |image0|
 
 .. _flusso-delle-interazioni-3:
 
-3.2.3.1. Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Flusso delle interazioni
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **A: Richiesta**
 
@@ -78,8 +78,8 @@ richiedente.
 
 .. _regole-di-processamento-3:
 
-3.2.3.2. Regole di processamento
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Regole di processamento
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **A: Richiesta**
 
@@ -143,8 +143,8 @@ Note:
 
 .. _tracciato-1:
 
-3.2.3.3. Tracciato
-~~~~~~~~~~~~~~~~~~
+Tracciato
+~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
 richiedente all’interfaccia di servizio dell’erogatore relativo ad un
@@ -268,6 +268,6 @@ algoritmi secondo quanto indicato alla sezione `Elenco degli
 algoritmi <#elenco-degli-algoritmi>`__, nonché la modalità di inclusione
 o referenziazione del certificato X.509.
 
-.. |image0| image:: ./media/image4.png
+.. |image0| image:: ./index/image4.png
    :width: 2.34375in
    :height: 1.28125in
