@@ -1,10 +1,10 @@
-3.3. [M2MR01] Direct Trust con certificato X.509 su REST
-========================================================
+[M2MR01] Direct Trust con certificato X.509 su REST
+---------------------------------------------------
 
 .. _scenario-4:
 
-3.3.1. Scenario
----------------
+Scenario
+^^^^^^^^
 
 Comunicazione tra richiedente ed erogatore che assicuri a livello di
 messaggio:
@@ -14,8 +14,8 @@ messaggio:
 
 .. _descrizione-4:
 
-3.3.2. Descrizione
-------------------
+Descrizione
+^^^^^^^^^^^
 
 Il presente profilo declina l’utilizzo di:
 
@@ -41,15 +41,15 @@ relativa risposta.
 
 .. _dettaglio-4:
 
-3.3.3. Dettaglio
-----------------
+Dettaglio
+^^^^^^^^^
 
 |image0|
 
 .. _flusso-delle-interazioni-4:
 
-3.3.3.1. Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Flusso delle interazioni
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **A: Richiesta**
 
@@ -71,8 +71,8 @@ richiedente.
 
 .. _regole-di-processamento-4:
 
-3.3.3.2. Regole di processamento
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Regole di processamento
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **A: Richiesta**
 
@@ -139,8 +139,8 @@ Note:
 
 .. _tracciato-2:
 
-3.3.3.3. Tracciato
-~~~~~~~~~~~~~~~~~~
+Tracciato
+~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
 richiedente all’interfaccia di servizio dell’erogatore.
@@ -199,6 +199,6 @@ algoritmi secondo quanto indicato alla sezione `Elenco degli
 algoritmi <#elenco-degli-algoritmi>`__, nonché la modalità di inclusione
 o referenziazione del certificato X.509.
 
-.. |image0| image:: ./media/image8.png
+.. |image0| image:: index/image8.png
    :width: 2.34375in
    :height: 1.28125in
