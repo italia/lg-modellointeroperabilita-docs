@@ -1,5 +1,5 @@
-1. Introduzione
-===============
+Introduzione
+============
 
 Il presente documento descrive i *profili* individuati da AgID che la
 Pubblica Amministrazione DOVREBBE utilizzare per soddisfare le proprie
