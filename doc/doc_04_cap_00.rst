@@ -66,8 +66,6 @@ tecnologie che garantiscano i requisiti richiesti.
 
 **Trust**
 
-------------
-
 Il Trust è uno dei mezzi più importanti per gestire le problematiche di
 sicurezza nello scambio di informazione in rete per consentire
 l'interoperabilità tra i sistemi. Esso si basa sul reciproco
@@ -80,8 +78,6 @@ attraverso accordi che si basano sulla condivisione del reciproco *modus
 operandi*.
 
 **Modalità di combinazione dei profili**
-
-------------
 
 I profili sono rappresentati con una sequenza di 6 caratteri:
 
