@@ -1,11 +1,192 @@
-2. Sicurezza di canale e/o Autenticazione delle organizzazioni
-==============================================================
+Sicurezza di canale e/o Autenticazione delle organizzazioni
+============================================================
 
-.. toctree::
-  :maxdepth: 3
-  :caption: Indice dei contenuti
+[M2MC01] Direct Trust Transport-Level Security
+----------------------------------------------
 
-  sicurezza-di-canale-eo-autenticazione-delle-organizzazioni/m2mc01-direct-trust-transport-level-security.rst
-  sicurezza-di-canale-eo-autenticazione-delle-organizzazioni/descrizione.rst
-  sicurezza-di-canale-eo-autenticazione-delle-organizzazioni/dettaglio.rst
-  sicurezza-di-canale-eo-autenticazione-delle-organizzazioni/m2mc02-direct-trust-mutual-transport-level-security.rst
+Scenario
+^^^^^^^^
+
+Comunicazione tra richiedente ed erogatore che assicuri, a livello di
+canale:
+
+-  confidenzialità
+
+-  integrità
+
+-  autenticazione dell’erogatore, quale organizzazione
+
+-  difesa dalle minacce derivanti dagli attacchi: Replay Attack e
+   Spoofing
+
+Descrizione
+^^^^^^^^^^^
+
+Il presente profilo assume l’esistenza di un trust tra richiedente
+(client) ed erogatore (server), che permette il riconoscimento del
+certificato X.509, o la CA emittente dell’erogatore, così come previsto
+dal protocollo Transport-Level Security [5][6].
+
+La sequenza dei messaggi di richiesta/risultato avviene a seguito
+dell’instaurazione di un canale di trasmissione sicuro in cui
+l’erogatore è autenticato.
+
+Dettaglio
+^^^^^^^^^
+
+|image1|
+
+Flusso delle interazioni
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tra erogatore e fruitore viene instaurato un canale di trasmissione
+sicuro; il flusso dei messaggi avviene secondo la sequenza:
+
+**A: Richiesta**
+
+Il richiedente invia il messaggio di richiesta all’interfaccia di
+servizio dell’erogatore.
+
+**B: Risultato**
+
+L’erogatore predispone il messaggio di risposta e lo inoltra al
+richiedente.
+
+Regole di processamento
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Il canale sicuro tra erogatore e fruitore viene instaurato utilizzando
+il protocollo TLS, secondo le modalità specificate alla sezione `Elenco
+degli algoritmi <#elenco-degli-algoritmi>`__ .
+
+**A: Richiesta**
+
+1. Il richiedente costruisce un messaggio di richiesta.
+
+2. Il richiedente spedisce sul canale sicuro stabilito il messaggio di
+   richiesta all’interfaccia di servizio dell’erogatore.
+
+**B: Risultato**
+
+3. L’erogatore elabora il messaggio e restituisce il risultato.
+
+L’impiego del protocollo TLS garantisce a livello di canale:
+
+-  l’autenticazione dell’erogatore identificato mediante il certificato
+   X.509
+
+-  la confidenzialità dei messaggi scambiati
+
+-  l’integrità dei messaggi scambiati
+
+L’impiego del protocollo TLS 1.2 o maggiore, garantisce un’efficace
+difesa dalle minacce, quali ad esempio:
+
+-  Replay Attack
+
+-  Spoofing
+
+
+[M2MC02] Direct Trust mutual Transport-Level Security
+-----------------------------------------------------
+
+.. _scenario-1:
+
+Scenario
+^^^^^^^^
+
+Comunicazione tra richiedente ed erogatore che assicuri a livello di
+canale:
+
+-  confidenzialità
+
+-  integrità
+
+-  autenticazione dell’erogatore e del fruitore, quale organizzazione
+
+-  difesa dalle minacce derivanti dagli attacchi: Replay Attack e
+   Spoofing
+
+.. _descrizione-1:
+
+Descrizione
+^^^^^^^^^^^
+
+Il presente profilo assume l’esistenza di un trust tra richiedente
+(client) ed erogatore (server), che permette il riconoscimento da
+entrambe le parti dei certificati X.509, o le CA emittenti, così come
+previsto dal protocollo Transport-Level Security [5][6].
+
+La sequenza dei messaggi di richiesta/risultato avviene a seguito
+dell’instaurazione di un canale di trasmissione sicuro in cui sono state
+autenticate entrambe le organizzazioni.
+
+.. _dettaglio-1:
+
+Dettaglio
+^^^^^^^^^
+
+|image0|
+
+.. _flusso-delle-interazioni-1:
+
+Flusso delle interazioni
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tra erogatore e fruitore viene instaurato un canale di trasmissione
+sicuro; il flusso dei messaggi avviene secondo la sequenza:
+
+**A: Richiesta**
+
+Il richiedente invia il messaggio di richiesta all’interfaccia di
+servizio dell’erogatore.
+
+**B: Risultato**
+
+L’erogatore predispone il messaggio di risposta e lo inoltra al
+richiedente.
+
+.. _regole-di-processamento-1:
+
+Regole di processamento
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Il canale sicuro tra erogatore e fruitore viene instaurato in mutua
+autenticazione utilizzando il protocollo TLS, secondo le modalità
+specificate alla sezione `Elenco degli
+algoritmi <#elenco-degli-algoritmi>`__ .
+
+**A: Richiesta**
+
+1. Il richiedente costruisce un messaggio di richiesta.
+
+2. Il richiedente spedisce utilizzando canale sicuro stabilito con il il
+   messaggio di richiesta all’interfaccia di servizio dell’erogatore.
+
+**B: Risultato**
+
+3. L’erogatore elabora il messaggio e restituisce un risultato.
+
+L’impiego del protocollo TLS garantisce a livello di canale:
+
+-  l’autenticazione di erogatore e fruitore identificati mediante
+   certificati X.509
+
+-  la confidenzialità dei messaggi scambiati
+
+-  l’integrità dei messaggi scambiati
+
+L’impiego del protocollo TLS 1.2 o maggiore, garantisce un’efficace
+difesa dalle minacce, quali ad esempio:
+
+-  Replay Attack
+
+-  Spoofing
+
+.. |image0| image:: index/image6.png
+   :width: 2.34375in
+   :height: 1.28125in
+
+.. |image1| image:: index/image3.png
+   :width: 2.34375in
+   :height: 1.28125in
