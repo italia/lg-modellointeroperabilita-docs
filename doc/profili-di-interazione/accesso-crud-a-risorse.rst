@@ -20,6 +20,8 @@ Descrizione
 ------------------
 
 .. image:: ../media/interazione_4.png
+   :align: center
+   :scale: 75 %
 
 **Figura 4.** Interazione bloccante CRUD
 
