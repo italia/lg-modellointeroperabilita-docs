@@ -123,6 +123,6 @@ presenti nel documento in cui vengono evidenziate le relazioni.
   
 |image0|
 
-.. |image0| image:: ./media/image7.png
+.. |image0| image:: index/image7.png
    :width: 3.38021in
    :height: 4.3891in
