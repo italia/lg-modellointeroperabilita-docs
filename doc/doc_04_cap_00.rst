@@ -1,5 +1,5 @@
-Sicurezza del nuovo modello di interoperabilità
-===============================================
+Sicurezza 
+=========
 
 Il presente documento descrive i *profili* individuati da AgID che la
 Pubblica Amministrazione DOVREBBE utilizzare per soddisfare le proprie
@@ -113,7 +113,7 @@ presenti nel documento in cui vengono evidenziate le relazioni.
 
 .. toctree::
   :maxdepth: 3
-  :caption: Indice dei contenuti
+  :caption: Indice dei contenuti del documento Sicurezza
 
   introduzione.rst
   sicurezza-di-canale-eo-autenticazione-delle-organizzazioni.rst
