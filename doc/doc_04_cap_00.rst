@@ -1,13 +1,14 @@
 Sicurezza del nuovo modello di interoperabilità
 
-
 .. code-block:: XML
 
    <soap:Envelope>
      <soap:Header>
        <wsse:Security soap:mustUnderstand="1">
-         <wsse:BinarySecurityToken 		EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" 		ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" 
-   wsu:Id="X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7">MIICyzCCAbOgAwIBAgIECxY+9TAhkiG9w...
+         <wsse:BinarySecurityToken
+		        EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"
+		        ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" 
+                wsu:Id="X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7">MIICyzCCAbOgAwIBAgIECxY+9TAhkiG9w...
          </wsse:BinarySecurityToken>
          <wsu:Timestamp wsu:Id="TS-cd361ace-ba99-424a-aa3c-8c38c3263ced">
            <wsu:Created>2018-10-04T10:17:28.061Z</wsu:Created>
@@ -34,7 +35,9 @@ Sicurezza del nuovo modello di interoperabilità
            <ds:KeyInfo Id="KI-cad9ee47-dec8-4340-8fa1-74805f7e26f8">
              <wsse:SecurityTokenReference wsu:Id="STR-e193f25f-9727-4197-b7aa-25b01c9f2ba3">
               <wsse:Reference 
-                URI="#X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7"  ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>          </wsse:SecurityTokenReference>
+                URI="#X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7"
+				ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+			  </wsse:SecurityTokenReference>
            </ds:KeyInfo>
          </ds:Signature>
        </wsse:Security>
@@ -44,7 +47,7 @@ Sicurezza del nuovo modello di interoperabilità
          <arg0>Hello World!</arg0>
        </ns2:sayHi>
      </soap:Body>
-   </soap:Envelope>     
+   </soap:Envelope>   
 
 
 .. toctree::
