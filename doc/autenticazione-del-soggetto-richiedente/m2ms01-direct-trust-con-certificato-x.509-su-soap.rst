@@ -1,10 +1,10 @@
-3.1. [M2MS01] Direct Trust con certificato X.509 su SOAP
-========================================================
+[M2MS01] Direct Trust con certificato X.509 su SOAP
+---------------------------------------------------
 
 .. _scenario-2:
 
-3.1.1. Scenario
----------------
+Scenario
+^^^^^^^^
 
 Comunicazione tra richiedente ed erogatore che assicuri a livello di
 messaggio:
@@ -14,8 +14,8 @@ messaggio:
 
 .. _descrizione-2:
 
-3.1.2. Descrizione
-------------------
+Descrizione
+^^^^^^^^^^^
 
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 [4].
@@ -38,15 +38,15 @@ relativa risposta.
 
 .. _dettaglio-2:
 
-3.1.3. Dettaglio
-----------------
+Dettaglio
+^^^^^^^^^
 
 |image0|
 
 .. _flusso-delle-interazioni-2:
 
-3.1.3.1. Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Flusso delle interazioni
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **A: Richiesta**
 
@@ -69,8 +69,8 @@ richiedente.
 
 .. _regole-di-processamento-2:
 
-3.1.3.2. Regole di processamento
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Regole di processamento
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **A: Richiesta**
 
@@ -120,8 +120,8 @@ Note:
 -  Un meccanismo simile può essere utilizzato per autenticare
    l’’erogatore.
 
-3.1.3.3. Tracciato
-~~~~~~~~~~~~~~~~~~
+Tracciato
+~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
 richiedente all’interfaccia di servizio dell’erogatore.
@@ -220,6 +220,6 @@ algoritmi secondo quanto indicato alla sezione `Elenco degli
 algoritmi <#elenco-degli-algoritmi>`__, nonché la modalità di inclusione
 o referenziazione del certificato x509.
 
-.. |image0| image:: ./media/image9.png
+.. |image0| image:: ./index/image9.png
    :width: 2.34375in
    :height: 1.28125in
