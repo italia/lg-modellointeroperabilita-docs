@@ -7,8 +7,8 @@ Soluzione per confidenzialità ed autenticazione del soggetto richiedente
 
 .. _scenario-8:
 
-5.1.1. Scenario
-^^^^^^^^^^^^^^^
+Scenario
+^^^^^^^^
 
 Dare seguito ad uno scambio tra richiedente ed erogatore che garantisca:
 
