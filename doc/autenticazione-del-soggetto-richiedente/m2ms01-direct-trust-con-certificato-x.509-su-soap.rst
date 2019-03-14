@@ -220,6 +220,6 @@ algoritmi secondo quanto indicato alla sezione `Elenco degli
 algoritmi <#elenco-degli-algoritmi>`__, nonché la modalità di inclusione
 o referenziazione del certificato x509.
 
-.. |image0| image:: ./index/image9.png
+.. |image0| image:: index/image9.png
    :width: 2.34375in
    :height: 1.28125in
