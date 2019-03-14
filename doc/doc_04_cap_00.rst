@@ -4,7 +4,6 @@ Sicurezza del nuovo modello di interoperabilità
   :maxdepth: 3
   :caption: Indice dei contenuti
 
-  introduzione.rst
   sicurezza-di-canale-eo-autenticazione-delle-organizzazioni.rst
   autenticazione-del-soggetto-richiedente.rst
   integrità.rst
