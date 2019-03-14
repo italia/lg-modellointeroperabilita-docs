@@ -931,14 +931,3 @@ o referenziazione del certificato x509.
    :width: 2.34375in
    :height: 1.28125in
    
-.. |image1| image:: index/image4.png
-   :width: 2.34375in
-   :height: 1.28125in
-   
-.. |image2| image:: index/image8.png
-   :width: 2.34375in
-   :height: 1.28125in
-   
-.. |image3| image:: index/image1.png
-   :width: 2.47917in
-   :height: 1.3125in
