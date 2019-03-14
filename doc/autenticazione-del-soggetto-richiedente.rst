@@ -598,27 +598,25 @@ Regole di processamento
    b. la payload del JWT con zero o più claim rappresentative degli
       elementi chiave del messaggio.
 
-3. il richiedente firma il token JWT secondo la specifica JWS adottando
-   la JWS Compact Serialization
+3. il richiedente firma il token ``JWT`` secondo la specifica ``JWS`` adottando
+   la ``JWS Compact Serialization``
 
-4. il richiedente posiziona il token JWT firmato nell’header HTTP
-   Authorization
+4. il richiedente posiziona il token ``JWT`` firmato nell’header ``HTTP Authorization``
 
 5. Il richiedente spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
 
 **B: Risultato**
 
-6.  L’erogatore decodifica il token JWT presente nell’header HTTP
+6.  L’erogatore decodifica il token ``JWT`` presente nell’header HTTP
     Authorization
 
-7.  L’erogatore recupera il certificato X.509 referenziato nell’header
-    JOSE
+7.  L’erogatore recupera il certificato X.509 referenziato nell’header ``JOSE``
 
 8.  L’erogatore verifica il certificato secondo i criteri del trust
 
 9.  L’erogatore valida la firma verificando l’elemento Signature del
-    token JWT
+    token ``JWT``
 
 10. L’erogatore autentica il richiedente
 
@@ -686,9 +684,9 @@ Esempio porzione token JWT
 Il tracciato rispecchia le seguenti scelte implementative
 esemplificative:
 
--  riferimento al certificato X.509 (x5c)
+-  riferimento al certificato X.509 (``x5c``)
 
--  algoritmi di firma e digest (alg).
+-  algoritmi di firma e digest (``alg``).
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione `Elenco degli
@@ -790,32 +788,32 @@ Regole di processamento
 1. Il richiedente predispone la payload del messaggio (ad esempio un
    oggetto JSON)
 
-2. Il richiedente costruisce il token JWT popolando:
+2. Il richiedente costruisce il token ``JWT`` popolando:
 
    a. l’header JSON Object Signing and Encryption (JOSE) con almeno:
 
       i.   la claim alg al fine di definire l’algoritmo utilizzato per
            la signature
 
-      ii.  la claim typ pari a JWT
+      ii.  la claim typ pari a ``JWT``
 
       iii. in maniera alternativa, per referenziare il certificato
            X.509, una delle seguenti claim:
 
-           1. x5u (X.509 URL)
+           1. ``x5u`` (X.509 URL)
 
-           2. x5c (X.509 Certificate Chain)
+           2. ``x5c`` (X.509 Certificate Chain)
 
-           3. x5t (X.509 Certificate SHA-1 Thumbprint)
+           3. ``x5t`` (X.509 Certificate SHA-1 Thumbprint)
 
-           4. x5t#S256 (X.509 Certificate SHA-256 Thumbprint)
+           4. ``x5t#S256`` (X.509 Certificate SHA-256 Thumbprint)
 
    b. la payload del JWT con le claim rappresentative degli elementi
       significativi del messaggio, quali almeno:
 
-      iv. iat: contenente il riferimento temporale univoco per messaggio
+      iv. ``iat``: contenente il riferimento temporale univoco per messaggio
 
-      v.  aud: contenente il riferimento dell’erogatore
+      v.  ``aud``: contenente il riferimento dell’erogatore
 
 3. il richiedente firma il token JWT secondo la specifica JWS adottando
    la JWS Compact Serialization
@@ -918,9 +916,9 @@ Esempio porzione token JWT
 Il tracciato rispecchia alcune scelte implementative esemplificative in
 merito:
 
--  riferimento al certificato X.509 (x5c)
+-  riferimento al certificato X.509 (``x5c``)
 
--  algoritmi di firma e digest (alg).
+-  algoritmi di firma e digest (``alg``).
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione `Elenco degli
