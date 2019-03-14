@@ -327,6 +327,6 @@ conclusa, in quanto può presentarsi uno dei seguenti casi:
 
 In queste situazioni il richiedente riesegue il passo A.
 
-.. |image0| image:: ./media/image10.png
+.. |image0| image:: index/image10.png
    :width: 4.70833in
    :height: 2.32292in
