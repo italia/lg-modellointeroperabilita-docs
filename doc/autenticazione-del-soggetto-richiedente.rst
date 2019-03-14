@@ -82,18 +82,18 @@ Regole di processamento
 2. Il richiedente calcola la firma per gli elementi significativi del
    messaggio usando l’XML Signature. Il digest è firmato usando la
    chiave privata associata al certificato X.509 del richiedente.
-   L’elemento <Signature> è posizionato nell’header <Security> del
+   L’elemento ``<Signature>`` è posizionato nell’header ``<Security>`` del
    messaggio.
 
 3. Il richiedente referenzia il certificato X.509 usando in maniera
-   alternativa, nell’header <Security>, i seguenti elementi previsti
+   alternativa, nell’header ``<Security>``, i seguenti elementi previsti
    nella specifica ws-security:
 
-   a. <wsse:BinarySecurityToken>
+   a. ``<wsse:BinarySecurityToken>``
 
-   b. <wsse:KeyIdentifier>
+   b. ``<wsse:KeyIdentifier>``
 
-   c. <wsse:SecurityTokenReference>
+   c. ``<wsse:SecurityTokenReference>``
 
 4. Il richiedente spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
@@ -101,12 +101,12 @@ Regole di processamento
 **B: Risultato**
 
 5. L’erogatore recupera il certificato X.509 referenziato nell’header
-   <Security>.
+   ``<Security>``.
 
 6. L’erogatore verifica il certificato secondo i criteri del trust.
 
-7. L’erogatore valida la firma verificando l’elemento <Signature>
-   nell’header <Security>.
+7. L’erogatore valida la firma verificando l’elemento ``<Signature>``
+   nell’header ``<Security>``.
 
 8. L’erogatore autentica il richiedente.
 
@@ -116,8 +116,8 @@ Regole di processamento
 Note:
 
 -  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
-   <Signature> rispettivamente <DigestMethod>,<SignatureMethod> e
-   <CanonicalizationMethod> si fa riferimento alla sezione `Elenco degli
+   ``<Signature>`` rispettivamente ``<DigestMethod>``, ``<SignatureMethod>`` e
+   ``<CanonicalizationMethod>`` si fa riferimento alla sezione `Elenco degli
    algoritmi <#elenco-degli-algoritmi>`__ .
 
 -  Un meccanismo simile può essere utilizzato per autenticare
@@ -207,13 +207,13 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
 Il codice rispecchia alcune scelte implementative esemplificative in
 merito:
 
--  riferimento al security token (BinarySecurityToken)
+-  riferimento al security token (``BinarySecurityToken``)
 
--  algoritmi di canonizzazione (CanonicalizationMethod)
+-  algoritmi di canonizzazione (``CanonicalizationMethod``)
 
--  algoritmi di firma (SignatureMethod)
+-  algoritmi di firma (``SignatureMethod``)
 
--  algoritmo per il digest (DigestMethod)
+-  algoritmo per il digest (``DigestMethod``)
 
 -  l’inclusione dell’elemento Timestamp quale porzione significativa del
    messaggio e la relativa firma.
@@ -311,25 +311,25 @@ Regole di processamento
 
 1. Il richiedente costruisce un messaggio SOAP per il servizio.
 
-2. Il richiedente aggiunge al messaggio l’header WS-Addressing e
-   l’elemento <wsu:Timestamp> composto dagli elementi <wsu:Created> e
-   <wsu:Expires>
+2. Il richiedente aggiunge al messaggio l’header ``WS-Addressing`` e
+   l’elemento ``<wsu:Timestamp>`` composto dagli elementi ``<wsu:Created>`` e
+   ``<wsu:Expires>``
 
 3. Il richiedente calcola la firma per gli elementi significativi del
-   messaggio, in particolare <wsu:Timestamp> e <wsa:To> del blocco
-   WS-Addressing. Il digest è firmato usando la chiave privata associata
-   al certificato X.509 del richiedente. L’elemento <Signature> è
-   posizionato nell’header <Security> del messaggio.
+   messaggio, in particolare ``<wsu:Timestamp>`` e ``<wsa:To>`` del blocco
+   ``WS-Addressing``. Il digest è firmato usando la chiave privata associata
+   al certificato X.509 del richiedente. L’elemento ``<Signature>`` è
+   posizionato nell’header ``<Security>`` del messaggio.
 
 4. Il richiedente referenzia il certificato X.509 usando in maniera
-   alternativa, nell’header <Security>, i seguenti elementi previsti
+   alternativa, nell’header ``<Security>``, i seguenti elementi previsti
    nella specifica ws-security:
 
-   a. <wsse:BinarySecurityToken>
+   a. ``<wsse:BinarySecurityToken>``
 
-   b. <wsse:KeyIdentifier>
+   b. ``<wsse:KeyIdentifier>``
 
-   c. <wsse:SecurityTokenReference>
+   c. ``<wsse:SecurityTokenReference>``
 
 5. Il richiedente spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
@@ -337,19 +337,19 @@ Regole di processamento
 **B: Risultato**
 
 6.  L’erogatore recupera il certificato X.509 referenziato nell’header
-    <Security>.
+    ``<Security>``.
 
 7.  L’erogatore verifica il certificato secondo i criteri del trust.
 
-8.  L’erogatore valida l’elemento <Signature> nell’header <Security>.
+8.  L’erogatore valida l’elemento <Signature> nell’header ``<Security>``.
 
-    i.  L’erogatore verifica il contenuto dell’elemento <wsu:Timestamp>
+    i.  L’erogatore verifica il contenuto dell’elemento ``<wsu:Timestamp>``
         nell’header del messaggio al fine di verificare la validità
         temporale del messaggio anche per mitigare il rischio di replay
         attack.
 
     ii. L’erogatore verifica la corrispondenza tra se stesso e quanto
-        definito nell’elemento <wsa:To> del blocco WS-Addressing.
+        definito nell’elemento ``<wsa:To>`` del blocco WS-Addressing.
 
 9.  L’erogatore autentica il richiedente.
 
@@ -360,8 +360,8 @@ Regole di processamento
 Note:
 
 -  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
-   <Signature> rispettivamente <DigestMethod>,<SignatureMethod> e
-   <CanonicalizationMethod> si fa riferimento agli algoritmi indicati
+   ``<Signature>`` rispettivamente ``<DigestMethod>``, ``<SignatureMethod>`` e
+   ``<CanonicalizationMethod>`` si fa riferimento agli algoritmi indicati
    alla sezione `Elenco degli algoritmi <#elenco-degli-algoritmi>`__,
 
 -  Un meccanismo simile può essere utilizzato per autenticare
@@ -481,13 +481,13 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
 Il tracciato rispecchia le seguenti scelte implementative
 esemplificative:
 
--  riferimento al security token (BinarySecurityToken)
+-  riferimento al security token (``BinarySecurityToken``)
 
--  algoritmi di canonizzazione (CanonicalizationMethod)
+-  algoritmi di canonizzazione (``CanonicalizationMethod``)
 
--  algoritmi di firma (SignatureMethod).
+-  algoritmi di firma (``SignatureMethod``).
 
--  algoritmo per il digest (DigestMethod)
+-  algoritmo per il digest (``DigestMethod``)
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione `Elenco degli
@@ -582,18 +582,18 @@ Regole di processamento
       i.   la claim alg al fine di definire l’algoritmo utilizzato per
            la signature
 
-      ii.  la claim typ pari a JWT
+      ii.  la claim ``typ`` pari a ``JWT``
 
       iii. in maniera alternativa, per referenziare il certificato
            X.509, una delle seguenti claim:
 
-           1. x5u (X.509 URL)
+           1. ``x5u`` (X.509 URL)
 
-           2. x5c (X.509 Certificate Chain)
+           2. ``x5c`` (X.509 Certificate Chain)
 
-           3. x5t (X.509 Certificate SHA-1 Thumbprint)
+           3. ``x5t`` (X.509 Certificate SHA-1 Thumbprint)
 
-           4. x5t#S256 (X.509 Certificate SHA-256 Thumbprint)
+           4. ``x5t#S256`` (X.509 Certificate SHA-256 Thumbprint)
 
    b. la payload del JWT con zero o più claim rappresentative degli
       elementi chiave del messaggio.
