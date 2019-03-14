@@ -188,6 +188,7 @@ invece il fruitore debba attendere per presentare nuove richieste.
 | Endpoint                                                   | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | \(1) Request Body                                          | .. code-block:: JSON                                                                   |
+|                                                            |                                                                                        |
 |                                                            |    {                                                                                   |
 |                                                            |      "a": {                                                                            |
 |                                                            |        "a1s": [1,2],                                                                   |
@@ -197,6 +198,7 @@ invece il fruitore debba attendere per presentare nuove richieste.
 |                                                            |    }                                                                                   |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | \(2) Response Body (HTTP Status Code 200 OK)               | .. code-block:: JSON                                                                   |
+|                                                            |                                                                                        |
 |                                                            |    X-Rate-Limit-Limit: 30                                                              |
 |                                                            |    X-Rate-Limit-Remaining: 11                                                          |
 |                                                            |    X-Rate-Limit-Reset: 44                                                              |
@@ -207,12 +209,10 @@ invece il fruitore debba attendere per presentare nuove richieste.
 +------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | \(2) Response Body (HTTP Status Code 429 Too Many Request) | .. code-block:: JSON                                                                   |
 |                                                            |                                                                                        |
-|                                                            |    X-Rate-Limit-Limit: 30                                                              |
-|                                                            |    X-Rate-Limit-Remaining: 11                                                          |
-|                                                            |    X-Rate-Limit-Reset: 44                                                              |
+|                                                            |    Retry-After: 60                                                                     |
 |                                                            |                                                                                        |
 |                                                            |    {                                                                                   |
-|                                                            |      "c" : "risultato"                                                                 |
+|                                                            |      "error_message" : "messaggio di errore"                                           |
 |                                                            |    }                                                                                   |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
