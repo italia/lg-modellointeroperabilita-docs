@@ -721,7 +721,7 @@ Descrizione
    :align: center
    :scale: 50 %
 
-Figura 3. Interazione non bloccante tramite busy waiting
+**Figura 3.** Interazione non bloccante tramite busy waiting
 
 Come si può vedere in Figura 3, il fruitore invia una richiesta (passo
 (1)) e riceve immediatamente dall’erogatore un messaggio di avvenuta
