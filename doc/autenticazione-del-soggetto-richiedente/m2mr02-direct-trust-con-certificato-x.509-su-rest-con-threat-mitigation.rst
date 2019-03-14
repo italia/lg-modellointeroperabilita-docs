@@ -1,10 +1,10 @@
-3.4. [M2MR02] Direct Trust con certificato X.509 su REST con threat mitigation
-==============================================================================
+[M2MR02] Direct Trust con certificato X.509 su REST con threat mitigation
+-------------------------------------------------------------------------
 
 .. _scenario-5:
 
-3.4.1. Scenario
----------------
+Scenario
+^^^^^^^^
 
 Il seguente profilo estende il profilo M2MR01.
 
@@ -19,8 +19,8 @@ messaggio:
 
 .. _descrizione-5:
 
-3.4.2. Descrizione
-------------------
+Descrizione
+^^^^^^^^^^^
 
 Il presente profilo declina l’utilizzo di:
 
@@ -47,15 +47,15 @@ relativa risposta.
 
 .. _dettaglio-5:
 
-3.4.3. Dettaglio
-----------------
+Dettaglio
+^^^^^^^^^
 
 |image0|
 
 .. _flusso-delle-interazioni-5:
 
-3.4.3.1. Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Flusso delle interazioni
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **A: Richiesta**
 
@@ -85,8 +85,8 @@ richiedente.
 
 .. _regole-di-processamento-5:
 
-3.4.3.2. Regole di processamento
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Regole di processamento
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **A: Richiesta**
 
@@ -230,6 +230,6 @@ algoritmi secondo quanto indicato alla sezione `Elenco degli
 algoritmi <#elenco-degli-algoritmi>`__, nonché la modalità di inclusione
 o referenziazione del certificato x509.
 
-.. |image0| image:: ./media/image1.png
+.. |image0| image:: index/image1.png
    :width: 2.47917in
    :height: 1.3125in
