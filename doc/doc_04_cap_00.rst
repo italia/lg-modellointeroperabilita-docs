@@ -115,7 +115,6 @@ presenti nel documento in cui vengono evidenziate le relazioni.
   :maxdepth: 3
   :caption: Indice dei contenuti del documento Sicurezza
 
-  introduzione.rst
   sicurezza-di-canale-eo-autenticazione-delle-organizzazioni.rst
   autenticazione-del-soggetto-richiedente.rst
   integrità.rst
