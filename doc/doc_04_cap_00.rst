@@ -107,6 +107,7 @@ profili** che ricoprano le esigenze.
 Di seguito viene mostrata una rappresentazione dei profili attualmente
 presenti nel documento in cui vengono evidenziate le relazioni.
 
+|image0|
 
 .. toctree::
   :maxdepth: 3
@@ -121,8 +122,6 @@ presenti nel documento in cui vengono evidenziate le relazioni.
   bibliografia.rst
   
   
-|image0|
-
 .. |image0| image:: index/image7.png
    :width: 3.38021in
    :height: 4.3891in
