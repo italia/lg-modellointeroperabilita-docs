@@ -109,6 +109,8 @@ presenti nel documento in cui vengono evidenziate le relazioni.
 
 |image0|
 
+**Figura 1.** Rappresentazione grafica delle dipendenze tra i profili
+
 .. toctree::
   :maxdepth: 3
   :caption: Indice dei contenuti
