@@ -182,41 +182,39 @@ Di seguito un esempio di chiamata al servizio bloccante con risposta nel
 caso in cui i limiti non siano ancora stati raggiunti e nel caso in cui
 invece il fruitore debba attendere per presentare nuove richieste.
 
-+------------------------------------------------------------+-----------------------------------------------------------------------+
-| HTTP Operation                                             | POST                                                                  |
-+------------------------------------------------------------+-----------------------------------------------------------------------+
-| Endpoint                                                   | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio |
-|                                                            | /                                                                     |
-|                                                            | resources/1234/M                                                      |
-+------------------------------------------------------------+-----------------------------------------------------------------------+
-| \(1) Request Body                                          | .. code-block:: JSON                                                  |
-|                                                            |    {                                                                  |
-|                                                            |      "a": {                                                           |
-|                                                            |        "a1s": [1,2],                                                  |
-|                                                            |        "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"                           |
-|                                                            |      },                                                               |
-|                                                            |      "b": "Stringa di esempio"                                        |
-|                                                            |    }                                                                  |
-+------------------------------------------------------------+-----------------------------------------------------------------------+
-| \(2) Response Body (HTTP Status Code 200 OK)               | .. code-block:: JSON                                                  |
-|                                                            |    X-Rate-Limit-Limit: 30                                             |
-|                                                            |    X-Rate-Limit-Remaining: 11                                         |
-|                                                            |    X-Rate-Limit-Reset: 44                                             |
-|                                                            |                                                                       |
-|                                                            |    {                                                                  |
-|                                                            |      "c" : "risultato"                                                |
-|                                                            |    }                                                                  |
-+------------------------------------------------------------+-----------------------------------------------------------------------+
-| \(2) Response Body (HTTP Status Code 429 Too Many Request) | .. code-block:: JSON                                                  |
-|                                                            |                                                                       |
-|                                                            |    X-Rate-Limit-Limit: 30                                             |
-|                                                            |    X-Rate-Limit-Remaining: 11                                         |
-|                                                            |    X-Rate-Limit-Reset: 44                                             |
-|                                                            |                                                                       |
-|                                                            |    {                                                                  |
-|                                                            |      "c" : "risultato"                                                |
-|                                                            |    }                                                                  |
-+------------------------------------------------------------+-----------------------------------------------------------------------+
++------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| HTTP Operation                                             | POST                                                                                   |
++------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Endpoint                                                   | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
++------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| \(1) Request Body                                          | .. code-block:: JSON                                                                   |
+|                                                            |    {                                                                                   |
+|                                                            |      "a": {                                                                            |
+|                                                            |        "a1s": [1,2],                                                                   |
+|                                                            |        "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"                                            |
+|                                                            |      },                                                                                |
+|                                                            |      "b": "Stringa di esempio"                                                         |
+|                                                            |    }                                                                                   |
++------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| \(2) Response Body (HTTP Status Code 200 OK)               | .. code-block:: JSON                                                                   |
+|                                                            |    X-Rate-Limit-Limit: 30                                                              |
+|                                                            |    X-Rate-Limit-Remaining: 11                                                          |
+|                                                            |    X-Rate-Limit-Reset: 44                                                              |
+|                                                            |                                                                                        |
+|                                                            |    {                                                                                   |
+|                                                            |      "c" : "risultato"                                                                 |
+|                                                            |    }                                                                                   |
++------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| \(2) Response Body (HTTP Status Code 429 Too Many Request) | .. code-block:: JSON                                                                   |
+|                                                            |                                                                                        |
+|                                                            |    X-Rate-Limit-Limit: 30                                                              |
+|                                                            |    X-Rate-Limit-Remaining: 11                                                          |
+|                                                            |    X-Rate-Limit-Reset: 44                                                              |
+|                                                            |                                                                                        |
+|                                                            |    {                                                                                   |
+|                                                            |      "c" : "risultato"                                                                 |
+|                                                            |    }                                                                                   |
++------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. [1]
    RFC 7231 prevede che l’header Retry-After possa essere utilizzato sia
