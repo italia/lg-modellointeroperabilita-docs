@@ -43,214 +43,180 @@ profilo RPC bloccante arricchito con gli header relativi al rate
 limiting. L’utilizzo degli header HTTP in SOAP è fuori dagli obiettivi
 di WSDL come Interface Definition Language.
 
-+-----------------------------------+-----------------------------------+
-| Specifica Servizio                | https://api.amministrazioneesempi |
-|                                   | o.it/rest/v1/nomeinterfacciaservi |
-|                                   | zio/openapi.yaml                  |
-+-----------------------------------+-----------------------------------+
-| openapi: 3.0.1                    |                                   |
-| info:                             |                                   |
-| title: RESTrobustezza             |                                   |
-| license:                          |                                   |
-| name: Apache 2.0 License          |                                   |
-| url:                              |                                   |
-| http://www.apache.org/licenses/LI |                                   |
-| CENSE-2.0.html                    |                                   |
-| version: "1.0"                    |                                   |
-| paths:                            |                                   |
-| /resources/{id_resource}/M:       |                                   |
-| post:                             |                                   |
-| description: M                    |                                   |
-| operationId: PushMessage_1        |                                   |
-| parameters:                       |                                   |
-| - name: id_resource               |                                   |
-| in: path                          |                                   |
-| required: true                    |                                   |
-| schema:                           |                                   |
-| type: integer                     |                                   |
-| format: int32                     |                                   |
-| requestBody:                      |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/MType'      |                                   |
-| responses:                        |                                   |
-| 500:                              |                                   |
-| description: Errore interno       |                                   |
-| avvenuto                          |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 404:                              |                                   |
-| description: Identificativo non   |                                   |
-| trovato                           |                                   |
-| headers:                          |                                   |
-| X-RateLimit-Remaining:            |                                   |
-| description: Chiamate rimanenti   |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| X-RateLimit-Reset:                |                                   |
-| description: Secondi dal reset    |                                   |
-| del limite                        |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| X-RateLimit-Limit:                |                                   |
-| description: Limite massimo       |                                   |
-| richieste                         |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 200:                              |                                   |
-| description: Esecuzione di M      |                                   |
-| avvenuta con successo             |                                   |
-| headers:                          |                                   |
-| X-RateLimit-Remaining:            |                                   |
-| description: Chiamate rimanenti   |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| X-RateLimit-Reset:                |                                   |
-| description: Secondi dal reset    |                                   |
-| del limite                        |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| X-RateLimit-Limit:                |                                   |
-| description: Limite massimo       |                                   |
-| richieste                         |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/MResponseTy |                                   |
-| pe'                               |                                   |
-| 400:                              |                                   |
-| description: Richiesta malformata |                                   |
-| headers:                          |                                   |
-| X-RateLimit-Remaining:            |                                   |
-| description: Chiamate rimanenti   |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| X-RateLimit-Reset:                |                                   |
-| description: Secondi dal reset    |                                   |
-| del limite                        |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| X-RateLimit-Limit:                |                                   |
-| description: Limite massimo       |                                   |
-| richieste                         |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| 429:                              |                                   |
-| description: Limite di richieste  |                                   |
-| raggiunto                         |                                   |
-| headers:                          |                                   |
-| Retry-After:                      |                                   |
-| description: Limite massimo       |                                   |
-| richieste                         |                                   |
-| schema:                           |                                   |
-| type: string                      |                                   |
-| content:                          |                                   |
-| application/json:                 |                                   |
-| schema:                           |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/ErrorMessag |                                   |
-| e'                                |                                   |
-| components:                       |                                   |
-| schemas:                          |                                   |
-| MType:                            |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| a:                                |                                   |
-| $ref:                             |                                   |
-| '#/components/schemas/AComplexTyp |                                   |
-| e'                                |                                   |
-| b:                                |                                   |
-| type: string                      |                                   |
-| MResponseType:                    |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| c:                                |                                   |
-| type: string                      |                                   |
-| AComplexType:                     |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| a1s:                              |                                   |
-| type: array                       |                                   |
-| items:                            |                                   |
-| type: integer                     |                                   |
-| format: int32                     |                                   |
-| a2:                               |                                   |
-| type: string                      |                                   |
-| ErrorMessage:                     |                                   |
-| type: object                      |                                   |
-| properties:                       |                                   |
-| error_message:                    |                                   |
-| type: string                      |                                   |
-+-----------------------------------+-----------------------------------+
++--------------------+------------------------------------------------------------------------------------+
+| Specifica Servizio | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml |
++--------------------+------------------------------------------------------------------------------------+
+| .. code-block:: YAML                                                                                    |
+|                                                                                                         |
+|    openapi: 3.0.1                                                                                       |
+|    info:                                                                                                |
+|      title: RESTrobustezza                                                                              |
+|      license:                                                                                           |
+|        name: Apache 2.0 License                                                                         |
+|        url: http://www.apache.org/licenses/LICENSE-2.0.html                                             |
+|      version: "1.0"                                                                                     |
+|    paths:                                                                                               |
+|      /resources/{id_resource}/M:                                                                        |
+|        post:                                                                                            |
+|          description: M                                                                                 |
+|          operationId: PushMessage_1                                                                     |
+|          parameters:                                                                                    |
+|          - name: id_resource                                                                            |
+|            in: path                                                                                     |
+|            required: true                                                                               |
+|            schema:                                                                                      |
+|              type: integer                                                                              |
+|              format: int32                                                                              |
+|          requestBody:                                                                                   |
+|            content:                                                                                     |
+|              application/json:                                                                          |
+|                schema:                                                                                  |
+|                  $ref: '#/components/schemas/MType'                                                     |
+|          responses:                                                                                     |
+|            500:                                                                                         |
+|              description: Errore interno avvenuto                                                       |
+|              content:                                                                                   |
+|                application/json:                                                                        |
+|                  schema:                                                                                |
+|                    $ref: '#/components/schemas/ErrorMessage'                                            |
+|            404:                                                                                         |
+|              description: Identificativo non trovato                                                    |
+|              headers:                                                                                   |
+|                X-RateLimit-Remaining:                                                                   |
+|                  description: Chiamate rimanenti                                                        |
+|                  schema:                                                                                |
+|                    type: string                                                                         |
+|                X-RateLimit-Reset:                                                                       |
+|                  description: Secondi dal reset del limite                                              |
+|                  schema:                                                                                |
+|                    type: string                                                                         |
+|                X-RateLimit-Limit:                                                                       |
+|                  description: Limite massimo richieste                                                  |
+|                  schema:                                                                                |
+|                    type: string                                                                         |
+|              content:                                                                                   |
+|                application/json:                                                                        |
+|                  schema:                                                                                |
+|                    $ref: '#/components/schemas/ErrorMessage'                                            |
+|            200:                                                                                         |
+|              description: Esecuzione di M avvenuta con successo                                         |
+|              headers:                                                                                   |
+|                X-RateLimit-Remaining:                                                                   |
+|                  description: Chiamate rimanenti                                                        |
+|                  schema:                                                                                |
+|                    type: string                                                                         |
+|                X-RateLimit-Reset:                                                                       |
+|                  description: Secondi dal reset del limite                                              |
+|                  schema:                                                                                |
+|                    type: string                                                                         |
+|                X-RateLimit-Limit:                                                                       |
+|                  description: Limite massimo richieste                                                  |
+|                  schema:                                                                                |
+|                    type: string                                                                         |
+|              content:                                                                                   |
+|                application/json:                                                                        |
+|                  schema:                                                                                |
+|                    $ref: '#/components/schemas/MResponseType'                                           |
+|            400:                                                                                         |
+|              description: Richiesta malformata                                                          |
+|              headers:                                                                                   |
+|                X-RateLimit-Remaining:                                                                   |
+|                  description: Chiamate rimanenti                                                        |
+|                  schema:                                                                                |
+|                    type: string                                                                         |
+|                X-RateLimit-Reset:                                                                       |
+|                  description: Secondi dal reset del limite                                              |
+|                  schema:                                                                                |
+|                    type: string                                                                         |
+|                X-RateLimit-Limit:                                                                       |
+|                  description: Limite massimo richieste                                                  |
+|                  schema:                                                                                |
+|                    type: string                                                                         |
+|              content:                                                                                   |
+|                application/json:                                                                        |
+|                  schema:                                                                                |
+|                    $ref: '#/components/schemas/ErrorMessage'                                            |
+|            429:                                                                                         |
+|              description: Limite di richieste raggiunto                                                 |
+|              headers:                                                                                   |
+|                Retry-After:                                                                             |
+|                  description: Limite massimo richieste                                                  |
+|                  schema:                                                                                |
+|                    type: string                                                                         |
+|              content:                                                                                   |
+|                application/json:                                                                        |
+|                  schema:                                                                                |
+|                    $ref: '#/components/schemas/ErrorMessage'                                            |
+|    components:                                                                                          |
+|      schemas:                                                                                           |
+|        MType:                                                                                           |
+|          type: object                                                                                   |
+|          properties:                                                                                    |
+|            a:                                                                                           |
+|              $ref: '#/components/schemas/AComplexType'                                                  |
+|            b:                                                                                           |
+|              type: string                                                                               |
+|        MResponseType:                                                                                   |
+|          type: object                                                                                   |
+|          properties:                                                                                    |
+|            c:                                                                                           |
+|              type: string                                                                               |
+|        AComplexType:                                                                                    |
+|          type: object                                                                                   |
+|          properties:                                                                                    |
+|            a1s:                                                                                         |
+|              type: array                                                                                |
+|              items:                                                                                     |
+|                type: integer                                                                            |
+|                format: int32                                                                            |
+|            a2:                                                                                          |
+|              type: string                                                                               |
+|        ErrorMessage:                                                                                    |
+|          type: object                                                                                   |
+|          properties:                                                                                    |
+|            error_message:                                                                               |
+|              type: string                                                                               |
++---------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata al servizio bloccante con risposta nel
 caso in cui i limiti non siano ancora stati raggiunti e nel caso in cui
 invece il fruitore debba attendere per presentare nuove richieste.
 
-+-----------------------------------+-----------------------------------+
-| HTTP Operation                    | POST                              |
-+-----------------------------------+-----------------------------------+
-| Endpoint                          | `https://api.amministrazioneesemp |
-|                                   | io.it/rest/v1/nomeinterfacciaserv |
-|                                   | izio/resources/1234/M <https://ap |
-|                                   | i.amministrazioneesempio.it/rest/ |
-|                                   | v1/nomeinterfacciaservizio/M>`__  |
-+-----------------------------------+-----------------------------------+
-| (1) Request                       | {                                 |
-| Body                              |                                   |
-|                                   | "a": {                            |
-|                                   |                                   |
-|                                   | "a1s": [1,2],                     |
-|                                   |                                   |
-|                                   | "a2":                             |
-|                                   | "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"    |
-|                                   |                                   |
-|                                   | },                                |
-|                                   |                                   |
-|                                   | "b": "Stringa di esempio"         |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| (2) Response                      | | X-Rate-Limit-Limit: 30          |
-| Body (HTTP Status Code 200 OK)    | | X-Rate-Limit-Remaining: 11      |
-|                                   | | X-Rate-Limit-Reset: 44          |
-|                                   |                                   |
-|                                   | {                                 |
-|                                   |                                   |
-|                                   | "c" : "risultato"                 |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
-| (2) Response                      | Retry-After: 60                   |
-| Body (HTTP Status Code 429 Too    |                                   |
-| Many Requests)                    | {                                 |
-|                                   |                                   |
-|                                   | "error_message" : "messaggio di   |
-|                                   | errore"                           |
-|                                   |                                   |
-|                                   | }                                 |
-+-----------------------------------+-----------------------------------+
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| HTTP Operation                                             | POST                                                                  |
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| Endpoint                                                   | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio |
+|                                                            | /                                                                     |
+|                                                            | resources/1234/M                                                      |
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| \(1) Request Body                                          | .. code-block:: JSON                                                  |
+|                                                            |    {                                                                  |
+|                                                            |      "a": {                                                           |
+|                                                            |        "a1s": [1,2],                                                  |
+|                                                            |        "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"                           |
+|                                                            |      },                                                               |
+|                                                            |      "b": "Stringa di esempio"                                        |
+|                                                            |    }                                                                  |
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| \(2) Response Body (HTTP Status Code 200 OK)               | .. code-block:: JSON                                                  |
+|                                                            |    X-Rate-Limit-Limit: 30                                             |
+|                                                            |    X-Rate-Limit-Remaining: 11                                         |
+|                                                            |    X-Rate-Limit-Reset: 44                                             |
+|                                                            |                                                                       |
+|                                                            |    {                                                                  |
+|                                                            |      "c" : "risultato"                                                |
+|                                                            |    }                                                                  |
++------------------------------------------------------------+-----------------------------------------------------------------------+
+| \(2) Response Body (HTTP Status Code 429 Too Many Request) | .. code-block:: JSON                                                  |
+|                                                            |                                                                       |
+|                                                            |    X-Rate-Limit-Limit: 30                                             |
+|                                                            |    X-Rate-Limit-Remaining: 11                                         |
+|                                                            |    X-Rate-Limit-Reset: 44                                             |
+|                                                            |                                                                       |
+|                                                            |    {                                                                  |
+|                                                            |      "c" : "risultato"                                                |
+|                                                            |    }                                                                  |
++------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. [1]
    RFC 7231 prevede che l’header Retry-After possa essere utilizzato sia
