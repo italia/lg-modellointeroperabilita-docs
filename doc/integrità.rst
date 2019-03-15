@@ -89,17 +89,17 @@ Regole di processamento
 2. Il richiedente calcola la firma della payload del messaggio usando
    l’XML Signature. Il digest è firmato usando la chiave privata
    associata al certificato X.509 del richiedente. L’elemento
-   <Signature> è posizionato nell’header <Security> del messaggio.
+   ``<Signature>`` è posizionato nell’header ``<Security>`` del messaggio.
 
 3. Il richiedente referenzia il certificato X.509 usando in maniera
-   alternativa, nell’header <Security>, i seguenti elementi previsti
+   alternativa, nell’header ``<Security>``, i seguenti elementi previsti
    nella specifica ws-security:
 
-   d. <wsse:BinarySecurityToken>
+   d. ``<wsse:BinarySecurityToken>``
 
-   e. <wsse:KeyIdentifier>
+   e. ``<wsse:KeyIdentifier>``
 
-   f. <wsse:SecurityTokenReference>
+   f. ``<wsse:SecurityTokenReference>``
 
 4. Il richiedente spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
@@ -107,12 +107,12 @@ Regole di processamento
 **B: Risultato**
 
 5. L’erogatore recupera il certificato X.509 referenziato nell’header
-   <Security>.
+   ``<Security>``.
 
 6. L’erogatore verifica il certificato secondo i criteri del trust.
 
 7. L’erogatore valida la firma verificando l’elemento <Signature>
-   nell’header <Security>.
+   nell’header ``<Security>``.
 
 8. Se il certificato è valido anche per identificare il soggetto
    richiedente, l’erogatore autentica lo stesso
@@ -123,8 +123,8 @@ Regole di processamento
 Note:
 
 -  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
-   <Signature> rispettivamente <DigestMethod>,<SignatureMethod> e
-   <CanonicalizationMethod> si fa riferimento agli algoritmi indicati
+   <Signature> rispettivamente ``<DigestMethod>``,``<SignatureMethod>`` e
+   ``<CanonicalizationMethod>`` si fa riferimento agli algoritmi indicati
    alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
@@ -189,13 +189,13 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
 Il codice rispecchia alcune scelte implementative esemplificative in
 merito:
 
--  riferimento al security token (BinarySecurityToken)
+-  riferimento al security token (``BinarySecurityToken``)
 
--  algoritmi di canonizzazione (CanonicalizationMethod)
+-  algoritmi di canonizzazione (``CanonicalizationMethod``)
 
--  algoritmi di firma (SignatureMethod)
+-  algoritmi di firma (``SignatureMethod``)
 
--  algoritmo per il digest (DigestMethod)
+-  algoritmo per il digest (``DigestMethod``)
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato al sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”, nonché la modalità di inclusione o
@@ -311,13 +311,13 @@ Regole di processamento
       iii. in maniera alternativa, per referenziare il certificato
            X.509, una delle seguenti claim:
 
-           1. x5u (X.509 URL)
+           1. ``x5u`` (X.509 URL)
 
-           2. x5c (X.509 Certificate Chain)
+           2. ``x5c`` (X.509 Certificate Chain)
 
-           3. x5t (X.509 Certificate SHA-1 Thumbprint)
+           3. ``x5t`` (X.509 Certificate SHA-1 Thumbprint)
 
-           4. x5t#S256 (X.509 Certificate SHA-256 Thumbprint)
+           4. ``x5t#S256`` (X.509 Certificate SHA-256 Thumbprint)
 
    b. la payload del jwt deve contenere almeno i seguenti claim:
 
@@ -364,7 +364,7 @@ Regole di processamento
 
 Note:
 
--  Per quanto riguarda gli algoritmi da utilizzare nelle claim alg e pda
+-  Per quanto riguarda gli algoritmi da utilizzare nelle claim ``alg`` e ``pda``
    si fa riferimento agli algoritmi indicati sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”.
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
@@ -418,11 +418,11 @@ Esempio del body del messaggio
 Il tracciato rispecchia alcune scelte implementative esemplificative in
 merito:
 
--  riferimento al certificato X.509 (x5c)
+-  riferimento al certificato X.509 (``x5c``)
 
--  algoritmi di firma e digest (alg).
+-  algoritmi di firma e digest (``alg``).
 
--  algoritmo di hashing per calcolare il digest del body (pda)
+-  algoritmo di hashing per calcolare il digest del body (``pda``)
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto presente nella sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”, nonché la modalità di inclusione o
