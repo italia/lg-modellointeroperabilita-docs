@@ -230,8 +230,7 @@ Il presente profilo declina l’utilizzo di:
 
 -  JSON Web Token (JWT) definita dall’RFC 7519 `[1] <#bibliografia>`__
 
--  JSON Web Signature (JWS) definita dall’RFC 7515
-   `[2] <#bibliografia>`__
+-  JSON Web Signature (JWS) definita dall’RFC 7515 `[2] <#bibliografia>`__
 
 Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
