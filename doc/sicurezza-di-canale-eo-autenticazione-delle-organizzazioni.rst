@@ -34,8 +34,10 @@ l’erogatore è autenticato.
 Dettaglio
 ^^^^^^^^^
 
-|image1|
-
+.. image:: index/image3.png
+   :align: center
+   :scale: 75 %
+   
 Flusso delle interazioni
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -126,7 +128,9 @@ autenticate entrambe le organizzazioni.
 Dettaglio
 ^^^^^^^^^
 
-|image0|
+.. image:: index/image6.png
+   :align: center
+   :scale: 75 %
 
 .. _flusso-delle-interazioni-1:
 
@@ -183,10 +187,4 @@ difesa dalle minacce, quali ad esempio:
 
 -  Spoofing
 
-.. |image0| image:: index/image6.png
-   :width: 2.34375in
-   :height: 1.28125in
 
-.. |image1| image:: index/image3.png
-   :width: 2.34375in
-   :height: 1.28125in
