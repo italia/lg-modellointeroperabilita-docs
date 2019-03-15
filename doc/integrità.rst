@@ -141,15 +141,13 @@ richiedente all’interfaccia di servizio dell’erogatore.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
--  soap="http://schemas.xmlsoap.org/soap/envelope/"
+.. code-block:: XML
 
--  wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
-
--  ds="http://www.w3.org/2000/09/xmldsig#"
-
--  ec="http://www.w3.org/2001/10/xml-exc-c14n#"
-
--  http://www.w3.org/2005/08/addressing
+  soap="http://schemas.xmlsoap.org/soap/envelope/"
+  wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+  ds="http://www.w3.org/2000/09/xmldsig#"
+  ec="http://www.w3.org/2001/10/xml-exc-c14n#"
+  http://www.w3.org/2005/08/addressing
 
 .. code-block:: XML
 
