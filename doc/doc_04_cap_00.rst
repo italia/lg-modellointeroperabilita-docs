@@ -111,6 +111,14 @@ presenti nel documento in cui vengono evidenziate le relazioni.
    
 **Figura 1.** Rappresentazione grafica delle dipendenze tra i profili
 
+**NOTA BENE**
+
+Le parole chiave “DEVE”, “DEVONO”, “NON DEVE”, “NON DEVONO”, “E’ RICHIESTO”,
+“DOVREBBE”, “NON DOVREBBE”, “RACCOMANDATO”, “NON RACCOMANDATO”
+“PUO’” e “OPZIONALE” nel testo del documento debbono essere interpretate come descritto
+nel seguito, in conformità alle corrispondenti traduzioni contenute nel documento IETF
+RFC 2119. 
+
 .. toctree::
   :maxdepth: 3
   :caption: Indice dei contenuti del documento Sicurezza
