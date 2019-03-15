@@ -9,7 +9,7 @@ Pubblica Amministrazione DOVREBBE utilizzare per soddisfare le proprie
 necessità espresse attraverso requisiti funzionali e non funzionali.
 
 I profili
-^^^^^^^^^
+---------
 
 -  definiscono a livello di specifica tecnologica uno “strumento
    condiviso” utile a favorire l’interoperabilità tra le pubbliche
@@ -69,7 +69,7 @@ necessaria ove l’ente erogatore del servizio non disponga già di
 tecnologie che garantiscano i requisiti richiesti.
 
 Trust
-^^^^^
+-----
 
 Il Trust è uno dei mezzi più importanti per gestire le problematiche di
 sicurezza nello scambio di informazione in rete per consentire
@@ -83,7 +83,7 @@ attraverso accordi che si basano sulla condivisione del reciproco *modus
 operandi*.
 
 Modalità di combinazione dei profili
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 
 I profili sono rappresentati con una sequenza di 6 caratteri:
 
