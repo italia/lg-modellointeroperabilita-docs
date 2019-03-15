@@ -27,7 +27,7 @@ Descrizione
 ^^^^^^^^^^^
 
 Il presente profilo specializza lo standard OASIS Web Services Security
-X.509 Certificate Token Profile Versione 1.1.1 [ :ref:`sec4` ]
+X.509 Certificate Token Profile Versione 1.1.1 [ :ref:`bibliografia:sec4` ]
 
 Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
