@@ -1,8 +1,12 @@
 Riferimenti Bibliografici
 =========================
 
+.. sec1:
+
 1. RFC 7519 - J. Bradley; N. Sakimura; M. Jones. `"JSON Web Token
    (JWT)" <https://tools.ietf.org/html/rfc7519>`__.
+
+.. sec2:
 
 2. RFC 7515 - J. Bradley; N. Sakimura; M. Jones. `"JSON Web Signature
    (JWS)" <https://tools.ietf.org/html/rfc7515>`__.
