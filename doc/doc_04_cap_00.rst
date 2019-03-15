@@ -1,11 +1,15 @@
 Sicurezza 
 =========
 
+Contesto
+--------
+
 Il presente documento descrive i *profili* individuati da AgID che la
 Pubblica Amministrazione DOVREBBE utilizzare per soddisfare le proprie
 necessità espresse attraverso requisiti funzionali e non funzionali.
 
-I profili:
+I profili
+^^^^^^^^^
 
 -  definiscono a livello di specifica tecnologica uno “strumento
    condiviso” utile a favorire l’interoperabilità tra le pubbliche
@@ -64,7 +68,8 @@ necessari, inoltre la scelta dei profili da implementare risulta
 necessaria ove l’ente erogatore del servizio non disponga già di
 tecnologie che garantiscano i requisiti richiesti.
 
-**Trust**
+Trust
+^^^^^
 
 Il Trust è uno dei mezzi più importanti per gestire le problematiche di
 sicurezza nello scambio di informazione in rete per consentire
@@ -77,7 +82,8 @@ fiducia tra richiedente ed erogatore, stabilita in modalità diretta,
 attraverso accordi che si basano sulla condivisione del reciproco *modus
 operandi*.
 
-**Modalità di combinazione dei profili**
+Modalità di combinazione dei profili
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I profili sono rappresentati con una sequenza di 6 caratteri:
 
