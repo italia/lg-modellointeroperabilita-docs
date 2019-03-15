@@ -50,6 +50,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
     'docs-italia-theme',
+    'sphinx.ext.autosectionlabel',
     'sphinxcontrib.discourse'
 ]
 
