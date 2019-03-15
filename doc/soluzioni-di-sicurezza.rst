@@ -166,8 +166,10 @@ proprietà:
 Flusso delle interazioni
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|image0|
-
+.. image:: index/image10.png
+   :align: center
+   :scale: 75 %
+   
 **A: Verifica numero tentativi di inoltro**
 
 Il richiedente realizza una delle seguenti azioni:
@@ -326,7 +328,3 @@ conclusa, in quanto può presentarsi uno dei seguenti casi:
    il messaggio di risposta.
 
 In queste situazioni il richiedente riesegue il passo A.
-
-.. |image0| image:: index/image10.png
-   :width: 4.70833in
-   :height: 2.32292in
