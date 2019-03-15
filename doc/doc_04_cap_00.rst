@@ -1,9 +1,6 @@
 Sicurezza 
 =========
 
-Contesto
---------
-
 Il presente documento descrive i *profili* individuati da AgID che la
 Pubblica Amministrazione DOVREBBE utilizzare per soddisfare le proprie
 necessità espresse attraverso requisiti funzionali e non funzionali.
