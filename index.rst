@@ -5,7 +5,7 @@ Modello di interoperabilità per la Pubblica Amministrazione
 
    La consultazione pubblica per questo documento è attiva da XXX a XXX.
 
-Questo documento raccoglie il testo delle linee guida del *Modello di interoperabilità 2018 per la Pubblica Amministrazione*, disponibile per la consultazione pubblica.
+Questo documento raccoglie il testo delle linee guida del *Modello di interoperabilità per la Pubblica Amministrazione*, disponibile per la consultazione pubblica.
 
 `Leggi le istruzioni per la consultazione <doc/istruzioni_consultazione.html>`_
 
