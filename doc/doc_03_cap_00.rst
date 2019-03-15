@@ -13,8 +13,8 @@ non bloccanti e sulle tecnologie SOAP e REST.
 
 La sezione è organizzata nel seguente modo:
 
--  *Capitolo 1 - Paradigmi per la progettazione delle interfacce di
-   servizio* presenta una discussione sulla progettazione di interfacce
+-  *Capitolo 1 - Paradigmi per la progettazione delle interfacce di servizio*
+   presenta una discussione sulla progettazione di interfacce
    di servizio in modalità cosiddetta *RPC-like* ed in modalità
    cosiddetta *resource-oriented*, e su altri aspetti legati alla
    relazione tra sistemi informativi delle pubbliche amministrazioni e
@@ -36,6 +36,8 @@ La sezione è organizzata nel seguente modo:
    capitoli precedenti.
 
 .. _section-1:
+
+**NOTA BENE**
 
 Le parole chiave “DEVE”, “DEVONO”, “NON DEVE”, “NON DEVONO”, “E’ RICHIESTO”,
 “DOVREBBE”, “NON DOVREBBE”, “RACCOMANDATO”, “NON RACCOMANDATO”
