@@ -58,7 +58,7 @@ Regole di processamento
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Il canale sicuro tra erogatore e fruitore viene instaurato utilizzando
-il protocollo TLS, secondo le modalità specificate alla sezione `Elenco degli algoritmi <#elenco-degli-algoritmi>`__.
+il protocollo TLS, secondo le modalità specificate alla sezione `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
 
 **A: Richiesta**
 
@@ -156,7 +156,7 @@ Regole di processamento
 
 Il canale sicuro tra erogatore e fruitore viene instaurato in mutua
 autenticazione utilizzando il protocollo TLS, secondo le modalità
-specificate alla sezione `Elenco degli algoritmi <#elenco-degli-algoritmi>`__.
+specificate alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
 
 **A: Richiesta**
 
