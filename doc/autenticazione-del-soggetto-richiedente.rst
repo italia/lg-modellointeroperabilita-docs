@@ -44,7 +44,8 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-|image0|
+.. image:: index/image9.png
+   :align: center
 
 .. _flusso-delle-interazioni-2:
 
@@ -131,17 +132,14 @@ richiedente all’interfaccia di servizio dell’erogatore.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
--  soap="http://schemas.xmlsoap.org/soap/envelope/"
+.. code-block:: URI
 
--  wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
-
--  wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
-
--  ds="http://www.w3.org/2000/09/xmldsig#"
-
--  ec="http://www.w3.org/2001/10/xml-exc-c14n#"
-
--  http://www.w3.org/2005/08/addressing
+   soap="http://schemas.xmlsoap.org/soap/envelope/"
+   wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+   wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+   ds="http://www.w3.org/2000/09/xmldsig#"
+   ec="http://www.w3.org/2001/10/xml-exc-c14n#"
+   http://www.w3.org/2005/08/addressing
 
 .. code-block:: XML
 
@@ -259,7 +257,8 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-|image0|
+.. image:: index/image9.png
+   :align: center
 
 .. _flusso-delle-interazioni-3:
 
@@ -365,17 +364,14 @@ servizio di echo.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
--  soap="http://schemas.xmlsoap.org/soap/envelope/"
+.. code-block:: URI
 
--  wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
-
--  wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
-
--  ds="http://www.w3.org/2000/09/xmldsig#"
-
--  ec="http://www.w3.org/2001/10/xml-exc-c14n#"
-
--  http://www.w3.org/2005/08/addressing
+   soap="http://schemas.xmlsoap.org/soap/envelope/"
+   wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+   wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+   ds="http://www.w3.org/2000/09/xmldsig#"
+   ec="http://www.w3.org/2001/10/xml-exc-c14n#"
+   http://www.w3.org/2005/08/addressing
 
 .. code-block:: XML
 
@@ -504,7 +500,8 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-|image0|
+.. image:: index/image9.png
+   :align: center
 
 .. _flusso-delle-interazioni-4:
 
@@ -695,7 +692,8 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-|image0|
+.. image:: index/image9.png
+   :align: center
 
 .. _flusso-delle-interazioni-5:
 
@@ -828,8 +826,6 @@ Esempio porzione pacchetto HTTP
    .
    .
 
-
-
 Esempio porzione token JWT
 
 .. code-block:: JSON
@@ -859,9 +855,4 @@ merito:
 Gli enti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione `Elenco degli
 algoritmi <#elenco-degli-algoritmi>`__, nonché la modalità di inclusione
-o referenziazione del certificato x509.
-
-.. |image0| image:: index/image9.png
-   :width: 2.34375in
-   :height: 1.28125in
-   
+o referenziazione del certificato x509.   
