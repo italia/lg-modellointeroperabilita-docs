@@ -27,7 +27,7 @@ Descrizione
 ^^^^^^^^^^^
 
 Il presente profilo specializza lo standard OASIS Web Services Security
-X.509 Certificate Token Profile Versione 1.1.1 [sec4]_.
+X.509 Certificate Token Profile Versione 1.1.1 [4].
 
 Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
@@ -439,31 +439,3 @@ referenziazione del certificato x509.
    Il presente documento ha individuato il claim con sigla “mpd” al fine
    di gestire in maniera univoca per la pubblica amministrazione
    italiana il valore del digest relativo della payload del messaggio.
-    
-.. [sec1] RFC 7519 - J. Bradley; N. Sakimura; M. Jones. `"JSON Web Token
-   (JWT)" <https://tools.ietf.org/html/rfc7519>`__.
-
-.. [sec2] RFC 7515 - J. Bradley; N. Sakimura; M. Jones. `"JSON Web Signature
-   (JWS)" <https://tools.ietf.org/html/rfc7515>`__.
-
-.. [sec3] ISO/IEC 13888-1:2009. "*Information technology - Security techniques
-   - Non-repudiation - Part 1: General*". ISO/IEC, 2009
-
-.. [sec4] OASIS wss-x509TokenProfile-v1.1.1-csprd01 - A. Nadalin; C. Kaler; R.
-   Monzillo; P. Hallam-Baker; C. Milono. “\ `Web Services Security X.509
-   Certificate Token Profile Version
-   1.1.1 <http://docs.oasis-open.org/wss-m/wss/v1.1.1/csprd01/wss-x509TokenProfile-v1.1.1-csprd01.html>`__\ ”
-
-.. [sec5] RFC 5246 - T. Dierks; E. Rescorla - “\ `The Transport Layer Security
-   (TLS) Protocol Version
-   1.2 <https://www.ietf.org/rfc/rfc5246.txt>`__\ ”
-
-.. [sec6] RFC 8446 - E. Rescorla - “\ `The Transport Layer Security (TLS)
-   Protocol Version 1.3 <https://tools.ietf.org/html/rfc8446>`__\ ”
-
-.. [sec7] RFC 2119 - S. Bradner - “\ `Key words for use in RFCs to Indicate
-   Requirement Levels <https://www.ietf.org/rfc/rfc2119.txt>`__\ ”
-
-.. [sec8] RFC 3553 - E. Rescorla, et al. - “\ `Guidelines for Writing RFC Text
-   on Security
-   Considerations <https://www.ietf.org/rfc/rfc3552.txt>`__\ ”
