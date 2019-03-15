@@ -16,7 +16,7 @@ messaggio:
 
 Nel caso in cui il certificato per garantire l’integrità è valido anche
 per identificare il soggetto richiedente, il presente profilo estende
-M2MS01 o M2MS02, e quindi viene assicurato:
+**M2MS01** o **M2MS02**, e quindi viene assicurato:
 
 -  autenticazione del soggetto richiedente, quale organizzazione o unità
    organizzativa richiedente, o entrambe le parti.
