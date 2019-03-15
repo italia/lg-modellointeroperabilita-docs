@@ -50,8 +50,10 @@ la relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-|image0|
-
+.. image:: index/image5.png
+   :align: center
+   :scale: 75 %
+  
 .. _flusso-delle-interazioni-6:
 
 Flusso delle interazioni
@@ -255,7 +257,9 @@ la relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-|image1|
+.. image:: index/image2.png
+   :align: center
+   :scale: 75 %
 
 .. _flusso-delle-interazioni-7:
 
@@ -439,12 +443,4 @@ referenziazione del certificato x509.
 .. [2]
    Il presente documento ha individuato il claim con sigla “mpd” al fine
    di gestire in maniera univoca per la pubblica amministrazione
-   italiana il valore del digest relativo della payload del messaggio,
-
-.. |image0| image:: index/image5.png
-   :width: 2.47917in
-   :height: 1.3125in
-
-.. |image1| image:: index/image2.png
-   :width: 2.47917in
-   :height: 1.3125in
+   italiana il valore del digest relativo della payload del messaggio.
