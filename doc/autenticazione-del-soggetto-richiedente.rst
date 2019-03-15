@@ -697,6 +697,7 @@ Dettaglio
 
 .. image:: index/image9.png
    :align: center
+   :scale: 75 %
 
 .. _flusso-delle-interazioni-5:
 
