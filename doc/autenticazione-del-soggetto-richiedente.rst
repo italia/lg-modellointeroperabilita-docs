@@ -21,7 +21,7 @@ Descrizione
 ^^^^^^^^^^^
 
 Il presente profilo specializza lo standard OASIS Web Services Security
-X.509 Certificate Token Profile Versione 1.1.1 [4].
+X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
 Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
@@ -233,7 +233,7 @@ Descrizione
 ^^^^^^^^^^^
 
 Il presente profilo specializza lo standard OASIS Web Services Security
-X.509 Certificate Token Profile Versione 1.1.1 [4].
+X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
 Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
@@ -474,9 +474,9 @@ Descrizione
 
 Il presente profilo declina l’utilizzo di:
 
--  JSON Web Token (JWT) definita dall’RFC 7519 [1]
+-  JSON Web Token (JWT) definita dall’RFC 7519 `[1] <bibliografia.html>`__
 
--  JSON Web Signature (JWS) definita dall’RFC 7515 [2]
+-  JSON Web Signature (JWS) definita dall’RFC 7515 `[2] <bibliografia.html>`__
 
 Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
@@ -664,10 +664,9 @@ Descrizione
 
 Il presente profilo declina l’utilizzo di:
 
--  JSON Web Token (JWT) definita dall’RFC 7519 `[1] <#bibliografia>`__
+-  JSON Web Token (JWT) definita dall’RFC 7519 `[1] <bibliografia.html>`__
 
--  JSON Web Signature (JWS) definita dall’RFC 7515
-   `[2] <#bibliografia>`__
+-  JSON Web Signature (JWS) definita dall’RFC 7515 `[2] <bibliografia.html>`__
 
 Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
