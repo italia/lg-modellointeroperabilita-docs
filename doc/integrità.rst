@@ -23,7 +23,8 @@ M2MS01 o M2MS02, e quindi viene assicurato:
 
 .. _descrizione-6:
 
-Descrizione^^^^^^^^
+Descrizione
+^^^^^^^^^^^
 
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia#4>`_.
