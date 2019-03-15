@@ -1,10 +1,9 @@
-Modello di interoperabilità 2018 per la Pubblica Amministrazione
-################################################################
+Modello di interoperabilità per la Pubblica Amministrazione
+############################################################
 
 .. admonition:: Consultazione pubblica
 
-   La consultazione pubblica per questo documento è attiva dall'8 maggio al 7 giugno 2018.
-
+   La consultazione pubblica per questo documento è attiva da XXX a XXX.
 
 Questo documento raccoglie il testo delle linee guida del *Modello di interoperabilità 2018 per la Pubblica Amministrazione*, disponibile per la consultazione pubblica.
 
