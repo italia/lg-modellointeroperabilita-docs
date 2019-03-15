@@ -119,8 +119,7 @@ Note:
 
 -  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
    ``<Signature>`` rispettivamente ``<DigestMethod>``, ``<SignatureMethod>`` e
-   ``<CanonicalizationMethod>`` si fa riferimento alla sezione `Elenco degli
-   algoritmi <#elenco-degli-algoritmi>`__ .
+   ``<CanonicalizationMethod>`` si fa riferimento alla sezione `Elenco degli algoritmi`_.
 
 -  Un meccanismo simile può essere utilizzato per autenticare
    l’’erogatore.
@@ -205,8 +204,7 @@ merito:
    messaggio e la relativa firma.
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato alla sezione `Elenco degli
-algoritmi <#elenco-degli-algoritmi>`__, nonché la modalità di inclusione
+algoritmi secondo quanto indicato alla sezione `Elenco degli algoritmi`_, nonché la modalità di inclusione
 o referenziazione del certificato x509.
 
 
@@ -350,7 +348,7 @@ Note:
 -  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
    ``<Signature>`` rispettivamente ``<DigestMethod>``, ``<SignatureMethod>`` e
    ``<CanonicalizationMethod>`` si fa riferimento agli algoritmi indicati
-   alla sezione `Elenco degli algoritmi <#elenco-degli-algoritmi>`__,
+   alla sezione `Elenco degli algoritmi`_,
 
 -  Un meccanismo simile può essere utilizzato per autenticare
    l’erogatore.
@@ -452,8 +450,7 @@ esemplificative:
 -  algoritmo per il digest (``DigestMethod``)
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato alla sezione `Elenco degli
-algoritmi <#elenco-degli-algoritmi>`__, nonché la modalità di inclusione
+algoritmi secondo quanto indicato alla sezione `Elenco degli algoritmi`_, nonché la modalità di inclusione
 o referenziazione del certificato X.509.
 
 [M2MR01] Direct Trust con certificato X.509 su REST
@@ -591,8 +588,7 @@ Regole di processamento
 Note:
 
 -  Per quanto riguarda gli algoritmi da utilizzare nella claim alg si fa
-   riferimento agli algoritmi indicati alla sezione `Elenco degli
-   algoritmi <#elenco-degli-algoritmi>`__. Un meccanismo simile può
+   riferimento agli algoritmi indicati alla sezione `Elenco degli algoritmi`_. Un meccanismo simile può
    essere utilizzato per autenticare l’erogatore.
 
 .. _tracciato-2:
@@ -639,8 +635,7 @@ esemplificative:
 -  algoritmi di firma e digest (``alg``).
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato alla sezione `Elenco degli
-algoritmi <#elenco-degli-algoritmi>`__, nonché la modalità di inclusione
+algoritmi secondo quanto indicato alla sezione `Elenco degli algoritmi`_, nonché la modalità di inclusione
 o referenziazione del certificato X.509.
 
 [M2MR02] Direct Trust con certificato X.509 su REST con threat mitigation
@@ -805,8 +800,7 @@ Regole di processamento
 Note:
 
 -  Per quanto riguarda gli algoritmi da utilizzare nella claim alg si fa
-   riferimento agli algoritmi indicati alla sezione `Elenco degli
-   algoritmi <#elenco-degli-algoritmi>`__.
+   riferimento agli algoritmi indicati alla sezione `Elenco degli algoritmi`_.
 
 -  Un meccanismo simile può essere utilizzato per autenticare
    l’erogatore.
@@ -857,6 +851,5 @@ merito:
 -  algoritmi di firma e digest (``alg``).
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato alla sezione `Elenco degli
-algoritmi <#elenco-degli-algoritmi>`__, nonché la modalità di inclusione
+algoritmi secondo quanto indicato alla sezione `Elenco degli algoritmi`_, nonché la modalità di inclusione
 o referenziazione del certificato x509.   
