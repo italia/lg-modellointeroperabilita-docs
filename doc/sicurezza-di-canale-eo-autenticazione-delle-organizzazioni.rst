@@ -25,7 +25,7 @@ Descrizione
 Il presente profilo assume l’esistenza di un trust tra richiedente
 (client) ed erogatore (server), che permette il riconoscimento del
 certificato X.509, o la CA emittente dell’erogatore, così come previsto
-dal protocollo Transport-Level Security [5][6].
+dal protocollo Transport-Level Security `[5] <bibliografia.html>`__ `[6] <bibliografia.html>`__.
 
 La sequenza dei messaggi di richiesta/risultato avviene a seguito
 dell’instaurazione di un canale di trasmissione sicuro in cui
@@ -116,7 +116,7 @@ Descrizione
 Il presente profilo assume l’esistenza di un trust tra richiedente
 (client) ed erogatore (server), che permette il riconoscimento da
 entrambe le parti dei certificati X.509, o le CA emittenti, così come
-previsto dal protocollo Transport-Level Security [5][6].
+previsto dal protocollo Transport-Level Security `[5] <bibliografia.html>`__ `[6] <bibliografia.html>`__.
 
 La sequenza dei messaggi di richiesta/risultato avviene a seguito
 dell’instaurazione di un canale di trasmissione sicuro in cui sono state
