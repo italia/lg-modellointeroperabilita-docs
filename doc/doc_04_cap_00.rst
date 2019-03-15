@@ -120,7 +120,7 @@ nel seguito, in conformità alle corrispondenti traduzioni contenute nel documen
 RFC 2119. 
 
 .. toctree::
-  :maxdepth: 3
+  :maxdepth: 2
   :caption: Indice dei contenuti del documento Sicurezza
 
   sicurezza-di-canale-eo-autenticazione-delle-organizzazioni.rst
