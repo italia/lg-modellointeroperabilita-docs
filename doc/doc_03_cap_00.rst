@@ -13,7 +13,7 @@ non bloccanti e sulle tecnologie SOAP e REST.
 
 La sezione è organizzata nel seguente modo:
 
--  *Capitolo 1 - Paradigmi per la progettazione delle interfacce di servizio*
+-  *3.1 - Paradigmi per la progettazione delle interfacce di servizio*
    presenta una discussione sulla progettazione di interfacce
    di servizio in modalità cosiddetta *RPC-like* ed in modalità
    cosiddetta *resource-oriented*, e su altri aspetti legati alla
@@ -22,18 +22,20 @@ La sezione è organizzata nel seguente modo:
    dispiegamento delle interfacce di servizio siano correlate alla
    tipologia di client e di dispositivo che le fruisce.
 
--  *Capitolo 2 - Profili di interazione* descrive i profili di
+-  *3.2 - Profili di interazione* descrive i profili di
    interoperabilità proposti, adottando uno stile uniforme di
    presentazione a scheda, in modo da rendere agevole la consultazione e
    di immediata fruibilità.
 
--  *Capitolo 3* - *Concetti di base* presenta ulteriori concetti
+-  *3.3* - *Concetti di base* presenta ulteriori concetti
    architetturali che vengono richiamati nella sezione e che vengono qui
    ricordati, insieme a della bibliografia di riferimento, sia per
    motivi di autocontenimento che di disambiguazione. Il Capitolo 3 è
    destinato al lettore che voglia approfondire alcuni concetti
    generali, ovvero funge da veloce riferimento durante la lettura dei
    capitoli precedenti.
+   
+- *3.4* - *Riferimenti Bibliografici*
 
 .. _section-1:
 
