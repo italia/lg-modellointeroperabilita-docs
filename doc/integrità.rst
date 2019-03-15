@@ -321,10 +321,10 @@ Regole di processamento
 
    b. la payload del jwt deve contenere almeno i seguenti claim:
 
-      iv. pda [1]_: contenente l’algoritmo di hashing utilizzato per il
+      iv. ``pda`` [1]_: contenente l’algoritmo di hashing utilizzato per il
           calcolo del digest della payload del messaggio
 
-      v.  mpd [2]_: contenente il digest della payload del messaggio
+      v.  ``mpd`` [2]_: contenente il digest della payload del messaggio
 
 3. il richiedente firma il token JWT secondo la specifica JWS adottando
    la JWS Compact Serialization
@@ -425,8 +425,7 @@ merito:
 -  algoritmo di hashing per calcolare il digest del body (``pda``)
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto presente nella sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”, nonché la modalità di inclusione o
-referenziazione del certificato x509.
+algoritmi secondo quanto presente nella sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”, nonché la modalità di inclusione o referenziazione del certificato x509.
 
 .. [1]
    Il presente documento ha individuato il claim con sigla “pda” al fine
