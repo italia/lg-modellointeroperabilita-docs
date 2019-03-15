@@ -125,7 +125,7 @@ Note:
 -  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
    <Signature> rispettivamente <DigestMethod>,<SignatureMethod> e
    <CanonicalizationMethod> si fa riferimento agli algoritmi indicati
-   alla sezione `Elenco degli algoritmi <#elenco-degli-algoritmi>`__.
+   alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    della payload del del messaggio risposta dell’erogatore al
@@ -200,8 +200,7 @@ merito:
 -  algoritmo per il digest (DigestMethod)
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato al sezione “\ `Elenco degli
-algoritmi <#_dm3er5ua5pkp>`__\ ”, nonché la modalità di inclusione o
+algoritmi secondo quanto indicato al sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”, nonché la modalità di inclusione o
 referenziazione del certificato x509.
 
 [M2MR03] Integrità della payload del messaggio REST
@@ -369,8 +368,7 @@ Regole di processamento
 Note:
 
 -  Per quanto riguarda gli algoritmi da utilizzare nelle claim alg e pda
-   si fa riferimento agli algoritmi indicati sezione “\ `Elenco degli
-   algoritmi <#_dm3er5ua5pkp>`__\ ”.
+   si fa riferimento agli algoritmi indicati sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”.
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    della risposta da parte dell’erogatore al richiedente.
@@ -430,8 +428,7 @@ merito:
 -  algoritmo di hashing per calcolare il digest del body (pda)
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto presente nella sezione “\ `Elenco degli
-algoritmi <#_dm3er5ua5pkp>`__\ ”, nonché la modalità di inclusione o
+algoritmi secondo quanto presente nella sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”, nonché la modalità di inclusione o
 referenziazione del certificato x509.
 
 .. [1]
