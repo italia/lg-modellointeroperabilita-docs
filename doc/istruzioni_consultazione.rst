@@ -4,7 +4,7 @@ Istruzioni per la consultazione pubblica
 Informazioni sulla consultazione
 ================================
 
--  **Durata della consultazione:** dall'8 maggio 2018 al 7 giugno 2018
+-  **Durata della consultazione:** da XXX a XXX
 
 -  **Settore:** ICT
 
@@ -36,4 +36,4 @@ Come partecipare
 
 Le linee guida sul Modello di Interoperabilità per le PA sono pubblicate su `Docs Italia <http://lg-modellointeroperabilita.readthedocs.io>`_ ed è possibile commentarle su `Forum Italia <https://forum.italia.it/c/documenti-in-consultazione/linee-guida-modello-di-interoperabilita>`_.
 
-È possibile inviare i propri commenti fino al 7 giugno 2018.
+È possibile inviare i propri commenti fino a XXX.
