@@ -718,11 +718,10 @@ Descrizione
 
 .. image:: ../media/interazione_3.png
    :align: center
-   :scale: 50 %
 
-**Figura 3.** Interazione non bloccante tramite busy waiting
+   Interazione non bloccante tramite busy waiting
 
-Come si può vedere in Figura 3, il fruitore invia una richiesta (passo
+Come si può vedere in figura, il fruitore invia una richiesta (passo
 (1)) e riceve immediatamente dall’erogatore un messaggio di avvenuta
 ricezione insieme ad un indirizzo presso il quale verificare lo stato
 del processamento (caso REST) oppure un correlation ID (caso SOAP)
