@@ -44,7 +44,7 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. image:: index/image1.png
+.. figure:: index/image1.png
    :align: center
 
 .. _flusso-delle-interazioni-2:
