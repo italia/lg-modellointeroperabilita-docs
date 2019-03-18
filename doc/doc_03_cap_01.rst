@@ -143,11 +143,13 @@ Utilizzando REST, l’interfaccia di servizio corrisponde a due risorse,
 Order e Item ed i verbi HTTP (ovvero GET, PUT, POST e DELETE) si mappano
 esattamente sulle operazioni CRUD, come mostrato in Figura 2.
 
-.. image:: ./media/image2.png
+
+.. figure:: ./media/image2.png
    :scale: 75 %
    :align: center
+   :alt: interfaccia di servizio usando rest
    
-**Figura 2.** Interfaccia di servizio usando REST
+   **Figura 2.** Interfaccia di servizio usando REST
 
 Se l’interfaccia di servizio è resource-oriented (come appunto nel caso
 precedente, in cui di fatto si vuole accedere a informazioni sugli
