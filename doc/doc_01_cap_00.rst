@@ -1,7 +1,7 @@
-Presentazione del Modello di Interoperabilità 2018
-++++++++++++++++++++++++++++++++++++++++++++++++++
+Presentazione del Modello di Interoperabilità
++++++++++++++++++++++++++++++++++++++++++++++
 
-La visione generale del Modello di Interoperabilità 2018, considerando il contesto Europeo, introduce gli elementi che saranno considerati e le modalità con cui si provvederà al costante aggiornamento dello stesso.
+La visione generale del Modello di Interoperabilità, considerando il contesto Europeo, introduce gli elementi che saranno considerati e le modalità con cui si provvederà al costante aggiornamento dello stesso.
 
 .. toctree::
    :maxdepth: 2
