@@ -104,3 +104,6 @@ Digest REST
 +-----------+------------------------+
 
 .. _section-1:
+
+.. discourse::
+   :topic_identifier: XXXX
