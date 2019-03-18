@@ -81,7 +81,7 @@ In particolare SPCoop prevedeva:
 
 Il tempo trascorso dalla definizione del modello e il mutato quadro tecnico, organizzativo e normativo rendono necessario l'aggiornamento del modello, obiettivo appunto della presente iniziativa, come anticipato nel 2017 attraverso la Determinazione 219/2017 - `Linee guida per transitare al nuovo modello di interoperabilità <http://www.agid.gov.it/sites/default/files/upload\_avvisi/linee\_guida\_passaggio\_nuovo\_modello\_interoperabilita.pdf>`__ [9]_.
 
-L'esperienza maturata con SPCoop, di seguito sintetizzata, deve essere considerata nella definizione del ModI 2018.
+L'esperienza maturata con SPCoop, di seguito sintetizzata, deve essere considerata nella definizione del ModI.
 
 **Cosa ha funzionato**
 

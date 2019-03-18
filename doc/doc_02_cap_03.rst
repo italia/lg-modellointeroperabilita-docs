@@ -65,7 +65,7 @@ La specifica SOAP permette la definizione di specifici profili di interoperabili
 Sicurezza
 ---------
 
-Per quanto riguarda la sicurezza, l'ultimo profilo standard definito da OASIS è il `Basic Security Profile 1.1 <http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html>`_ [50]_. Il profilo è datato ma le considerazioni sono ancora valide. Per quanto riguarda le versioni dei protocolli, si devono rispettare i vincoli imposti dal Modello di Interoperabilità 2018 in questo documento.
+Per quanto riguarda la sicurezza, l'ultimo profilo standard definito da OASIS è il `Basic Security Profile 1.1 <http://www.ws-i.org/Profiles/BasicSecurityProfile-1.1.html>`_ [50]_. Il profilo è datato ma le considerazioni sono ancora valide. Per quanto riguarda le versioni dei protocolli, si devono rispettare i vincoli imposti dal Modello di Interoperabilità in questo documento.
 
 È importante, nel caso si richiedessero funzionalità di autorizzazione, autenticazione e non ripudio, oltre che di riservatezza (coperta dall'utilizzo obbligatorio di HTTPS [51]_) fare affidamento alle tecnologie di autenticazione ed autorizzazione a livello applicativo. Il Basic Security Profile 1.1, basato sull'estensione WS-Security, suggerisce l'uso di SAML 2.0. Come detto, rispetto alle tecnologie di autenticazione ed autorizzazione, ci sono alcuni domini applicativi per i quali OAuth2 o OpenID sono più appropriati. In questi ultimi casi, fermo restando l'utilizzo della XML Signature definita in WS-Security per quanto riguarda il non ripudio, l'utilizzo di token di autorizzazione ed autenticazione non SAML richiede la definizione di `request header custom <https://developers.google.com/adwords/api/docs/guides/call-structure>`_ [52]_.
 

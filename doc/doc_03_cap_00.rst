@@ -1,7 +1,7 @@
 Profili e linee Guida
 +++++++++++++++++++++
 
-La terza sezione del Modello di Interoperabilità 2018, così come
+La terza sezione del Modello di Interoperabilità, così come
 introdotto nella sezione relativa alla Visione generale, fornisce
 indicazioni concrete, a livello tecnico, su differenti modalità
 operative per realizzare l’interoperabilità tra sistemi informativi di
