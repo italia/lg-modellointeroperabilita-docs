@@ -63,7 +63,7 @@ La chiave pubblica della certification authority è installata nei sistemi opera
 
 Il meccanismo PKI è sicuro fino a quando un attaccante non è in grado di installare sulle macchine del destinatario una public key fasulla per le certification authority. Per ovviare a questi problemi sono necessari dei meccanismi di sicurezza a livello di macchina che sono fuori dal perimetro di questo documento. Lo standard comunemente usato per i certificati è X.509.
 
-Nel Modello di Interoperabilità 2018, le amministrazioni dovranno acquistare certificati commerciali. Negli ultimi anni alternative all'approccio PKI sono state proposte (ad es., Web of Trust) ma il Modello attualmente ne vieta l'utilizzo.
+Nel Modello di Interoperabilità, le amministrazioni dovranno acquistare certificati commerciali. Negli ultimi anni alternative all'approccio PKI sono state proposte (ad es., Web of Trust) ma il Modello attualmente ne vieta l'utilizzo.
 
 Autenticazione
 ^^^^^^^^^^^^^^
@@ -127,7 +127,7 @@ Nel caso di autenticazione ed autorizzazione, occorre distinguere gli approcci u
 
 Nei protocolli human-to-machine, un client riceve autorizzazioni ad usare un certo tipo di risorsa per conto di un utente umano tramite le credenziali di quest'ultimo. La richiesta del token/assertion è effettuata per mezzo di uno user-agent (cioè un browser o una app mobile) che funge da intermediario.
 
-Il ModI 2018 obbliga all'utilizzo di SPID per l'autenticazione human-to-machine o degli altri metodi indicati nell\'`art. 64 del Codice per l'Amministrazione Digitale <http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete>`_ [31]_ che includono anche la Carta d'Identità Elettronica - CIE e la Carta Nazionale dei Servizi - CNS. 
+Il ModI obbliga all'utilizzo di SPID per l'autenticazione human-to-machine o degli altri metodi indicati nell\'`art. 64 del Codice per l'Amministrazione Digitale <http://www.agid.gov.it/cad/art-64-sistema-pubblico-gestione-identita-digitali-modalita-accesso-ai-servizi-erogati-rete>`_ [31]_ che includono anche la Carta d'Identità Elettronica - CIE e la Carta Nazionale dei Servizi - CNS. 
 
 `SPID <http://spid-regole-tecniche.readthedocs.io/en/latest/>`_ [32]_ è attualmente basato su SAML ma il supporto per OpenID Connect è in fase di definizione al fine di supportare in maniera più semplice l'autenticazione da piattaforme mobili.
 
@@ -162,7 +162,7 @@ Per quanto riguarda l'autorizzazione machine-to-machine invece è possibile util
 Protocolli per integrità e confidenzialità
 ------------------------------------------
 
-Per ragioni storiche lo stack TCP/IP non ha di base funzionalità di sicurezza. I messaggi viaggiano in chiaro sulla rete. Poiché le tecnologie per l'integrazione che verranno introdotte utilizzano HTTP come principale protocollo di trasporto o applicativo [38]_, è importante che il canale di comunicazione sia protetto. La IETF definisce come standard per la securizzazione di TCP il protocollo Transport Layer Security - TLS. Con il termine HTTPS si definisce l'utilizzo di HTTP su canale TLS. Tutte le interfacce di servizio esposte nel ModI 2018 devono essere basate su HTTPS. Il protocollo TLS (ed il suo predecessore deprecato Secure Sockets Layer - SSL) assicurano su TCP confidenzialità (tramite cifratura) ed integrità (tramite firma digitale e PKI). Come introdotto in Sezione 2.1.5, il meccanismo di firma digitale assicura anche autenticazione ma questa è fatta machine-to-machine.
+Per ragioni storiche lo stack TCP/IP non ha di base funzionalità di sicurezza. I messaggi viaggiano in chiaro sulla rete. Poiché le tecnologie per l'integrazione che verranno introdotte utilizzano HTTP come principale protocollo di trasporto o applicativo [38]_, è importante che il canale di comunicazione sia protetto. La IETF definisce come standard per la securizzazione di TCP il protocollo Transport Layer Security - TLS. Con il termine HTTPS si definisce l'utilizzo di HTTP su canale TLS. Tutte le interfacce di servizio esposte nel ModI devono essere basate su HTTPS. Il protocollo TLS (ed il suo predecessore deprecato Secure Sockets Layer - SSL) assicurano su TCP confidenzialità (tramite cifratura) ed integrità (tramite firma digitale e PKI). Come introdotto in Sezione 2.1.5, il meccanismo di firma digitale assicura anche autenticazione ma questa è fatta machine-to-machine.
 
 Il protocollo TLS (versione stabile corrente 1.2, draft 1.3 presentato a marzo 2018) si basa come detto sull'utilizzo della firma digitale per lo scambio di una chiave di sessione da utilizzare come chiave simmetrica.
 
@@ -175,7 +175,7 @@ Per quanto riguarda i singoli algoritmi utilizzati:
 -   Per l'integrità si suggerisce l'uso di SHA almeno a 256 bit (quindi a partire dal cosiddetto SHA-2).
 
 +-----------------------------------------------------------------------+
-| Nel Modello di Interoperabilità 2018, a prescindere dal profilo di    |
+| Nel Modello di Interoperabilità, a prescindere dal profilo di         |
 | autenticazione ed autorizzazione scelta (che dipende dal caso d'uso), |
 | il protocollo di trasmissione:                                        |
 |                                                                       |
