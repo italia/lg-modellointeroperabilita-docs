@@ -301,3 +301,7 @@ deve essere realizzata in REST.
 
 .. [4]
    Cf. http://blogs.tedneward.com/post/the-vietnam-of-computer-science/
+   
+.. discourse::
+   :topic_identifier: XXXX
+   
