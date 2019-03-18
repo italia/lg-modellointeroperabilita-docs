@@ -435,3 +435,6 @@ algoritmi secondo quanto presente nella sezione “\  `Elenco degli algoritmi <e
    Il presente documento ha individuato il claim con sigla “mpd” al fine
    di gestire in maniera univoca per la pubblica amministrazione
    italiana il valore del digest relativo della payload del messaggio.
+
+.. discourse::
+   :topic_identifier: XXXX
