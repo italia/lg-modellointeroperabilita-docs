@@ -130,3 +130,6 @@ RFC 2119.
   soluzioni-di-sicurezza.rst
   elenco-degli-algoritmi.rst
   bibliografia.rst
+
+.. discourse::
+   :topic_identifier: XXXX
