@@ -12,7 +12,7 @@ eseguire compiti complessi, al fine di eseguire operazioni di tipo CRUD
 esempio, una prenotazione è una risorsa che può essere creata (quando
 viene fissata), letta, modificata ed eliminata. Questo genere di
 operazione ha durata molto breve, e quindi deve essere implementata
-mediante una modalità bloccante come quella vista in Sezione 2.1.
+mediante una modalità bloccante come quella vista in Sezione 3.2.2.
 
 .. _descrizione-3:
 
