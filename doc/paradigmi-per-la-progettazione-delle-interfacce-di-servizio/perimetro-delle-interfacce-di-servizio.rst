@@ -23,7 +23,7 @@ soprattutto relativamente agli aspetti di sicurezza. Le interfacce di
 servizio vengono offerte da qualsiasi server applicativo, senza essere
 vincolate ad essere raggiungibili attraverso un unico gateway.
 
-Le figure **3.4** e **3.5** illustra schematicamente la differenza tra i due framework.
+Le figure **3.4** e **3.5** illustrano schematicamente la differenza tra i due framework.
 
 Quindi ogni server applicativo offre interfacce di servizio, tuttavia è
 comunque significativo distinguere se l’interfaccia di servizio viene
