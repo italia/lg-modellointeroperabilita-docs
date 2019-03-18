@@ -19,7 +19,6 @@ Vai al testo delle linee guida:
 Indice generale del documento
 
 .. toctree::
-   :numbered:
    :maxdepth: 2
 
    doc/doc_01_cap_00
