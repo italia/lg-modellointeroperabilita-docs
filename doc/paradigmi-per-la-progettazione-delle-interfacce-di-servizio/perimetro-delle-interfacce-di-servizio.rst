@@ -43,9 +43,9 @@ Questi aspetti verranno discussi nel successivo paragrafo.
 .. figure:: ../media/image4.png
    :alt: perimetro in SPCoop
 
-   \(a) Perimetro delle interfacce in SPCoop
+   Perimetro delle interfacce in SPCoop
 
 .. figure:: ../media/image5.png
    :alt: perimetro in SPCoop
 
-   \(b) Perimetro delle interfacce in ModI
+   Perimetro delle interfacce in ModI
