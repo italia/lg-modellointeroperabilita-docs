@@ -50,9 +50,8 @@ la relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. image:: index/image5.png
+.. figure:: index/image1.png
    :align: center
-   :scale: 75 %
   
 .. _flusso-delle-interazioni-6:
 
@@ -253,9 +252,8 @@ la relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. image:: index/image2.png
+.. figure:: index/image1.png
    :align: center
-   :scale: 75 %
 
 .. _flusso-delle-interazioni-7:
 
