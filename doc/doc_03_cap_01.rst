@@ -121,11 +121,12 @@ nelle varie casistiche partendo da una interfaccia di servizio secondo
 ciascuno dei due paradigmi (RPC-like e resource oriented) e cercando
 di realizzarla utilizzando le due diverse tecnologie SOAP e REST.
 
-.. image:: ./media/image1.png
+.. figure:: ./media/image1.png
    :scale: 75 %
    :align: center
+   :alt: interfaccia di servizio usando SOAP/WSDL
    
-**Figura 1.** Interfaccia di servizio usando SOAP/WSDL.
+   Interfaccia di servizio usando SOAP/WSDL.
 
 Per semplicità nell’esempio si suppone che il singolo item nell’Order sia rappresentabile con una semplice stringa (che codifica il suo codice, ad esempio) e sempre in quantità singola (per cui un Order non fa altro che aggregare differenti Items)
 
@@ -149,7 +150,7 @@ esattamente sulle operazioni CRUD, come mostrato in Figura 2.
    :align: center
    :alt: interfaccia di servizio usando rest
    
-   **Figura 2.** Interfaccia di servizio usando REST
+   Interfaccia di servizio usando REST.
 
 Se l’interfaccia di servizio è resource-oriented (come appunto nel caso
 precedente, in cui di fatto si vuole accedere a informazioni sugli
@@ -165,11 +166,12 @@ esecuzione (fintanto che non è completato), oppure il risultato finale
 una volta che la procedure/task sia stata completata ed il risultato è
 stato prodotto. Figura 3 schematizza l’interfaccia di servizio.
 
-.. image:: ./media/image3.png
+.. figure:: ./media/image3.png
    :scale: 75 %
    :align: center
-
-**Figura 3.** Interfacce di servizio usando SOAP/WSDL
+   :alt: interfacce di servizio usando SOAP/WSDL
+   
+   Interfacce di servizio usando SOAP/WSDL
 
 Per realizzare una interfaccia di servizio che fornisce la stessa logica
 in tecnologia REST occorre ridefinire l'interfaccia utilizzando il
@@ -226,6 +228,7 @@ il risultato finale.
 .. code-block:: JSON
 
    ⇒ GET /task/20181231
+   
    ⇐ 303 See Other
    Location: /task/20181231/result
 
