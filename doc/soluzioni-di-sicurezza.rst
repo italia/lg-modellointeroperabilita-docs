@@ -327,3 +327,6 @@ conclusa, in quanto può presentarsi uno dei seguenti casi:
    il messaggio di risposta.
 
 In queste situazioni il fruitore riesegue il passo A.
+
+.. discourse::
+   :topic_identifier: XXXX
