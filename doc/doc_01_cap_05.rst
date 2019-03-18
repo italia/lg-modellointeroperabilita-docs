@@ -4,7 +4,7 @@ Principi del nuovo modello di interoperabilità
 Interazioni
 -----------
 
-L'ambito di applicazione del Modello di Interoperabilità 2018 comprende i tre tipi di interazioni previsti nell'EIF. Le interazioni prevedono che i soggetti coinvolti svolgano alternativamente la funzione di **erogatore** di servizio, nel caso del soggetto che mette a disposizione API o servizio utilizzati da altri, e la funzione di **fruitore**, nel caso invece del soggetto che utilizza le API o servizi messi a disposizione da altro soggetto.
+L'ambito di applicazione del Modello di Interoperabilità comprende i tre tipi di interazioni previsti nell'EIF. Le interazioni prevedono che i soggetti coinvolti svolgano alternativamente la funzione di **erogatore** di servizio, nel caso del soggetto che mette a disposizione API o servizio utilizzati da altri, e la funzione di **fruitore**, nel caso invece del soggetto che utilizza le API o servizi messi a disposizione da altro soggetto.
 
 .. image:: ../media/image5.png
 
@@ -58,15 +58,17 @@ Incrementalità del modello
 
 In base alle considerazioni precedenti, il Modello di Interoperabilità si concretizza nella definizione, lo sviluppo, il miglioramento, la resa operativa, il mantenimento e la promozione di servizi, strumenti, norme tecniche e specifiche per l'interoperabilità delle soluzioni ICT basata su un'architettura modulare che include componenti interconnessi con l'ausilio di infrastrutture comuni. Questo modello, al fine di evitare le problematiche di possibile obsolescenza, e fronteggiare la necessità di continui aggiornamenti, si estrinsecherà concretamente in rilasci successivi e cadenzati nel tempo, di una serie di 5 documenti, in particolare:
 
-1. **Presentazione del Modello di Interoperabilità 2018**, che è il documento attuale, rilasciato nella prima versione a maggio 2018.
+1. **Presentazione del Modello di Interoperabilità**, che è il documento attuale, rilasciato nella prima versione a maggio 2018.
 
 2. **Tecnologie ed approcci all'Integrazione ed Interoperabilità**, che nella prima versione (maggio 2018) viene rilasciato contestualmente al presente documento. Ha come oggetto l\'individuazione delle possibili tecnologie ed approcci che possono essere utilizzati dalle PA.
 
-3. **Pattern e Profili di Interoperabilità**, che fornirà indicazioni concrete, a livello tecnico, su differenti modalità operative per realizzare l'interoperabilità, tenendo conto delle possibili tecnologie ed approcci disponibili. La prima release di questo documento è prevista per l'estate 2018. Il Modello introduce il concetto di profilo di interoperabilità e come esso possa essere evoluto nel tempo; si introduce anche il concetto di pattern di interoperabilità. Infine questo documento si occuperà di discutere anche l'aspetto della QoS - Quality of Service e degli SLA - Service Level Agreement.
+3. **Profili e linee guida**, che fornirà indicazioni concrete, a livello tecnico, su differenti modalità operative per realizzare l'interoperabilità, tenendo conto delle possibili tecnologie ed approcci disponibili. Il Modello introduce il concetto di profilo di interoperabilità e come esso possa essere evoluto nel tempo.
 
-4. **Governance del Modello di Interoperabilità**, che presenterà compiutamente la governance dell'intero modello e le sue modalità di evoluzione, ed è previsto in una prima versione per l'estate 2018.
+4. **Sicurezza**, che fornirà indicazioni concrete per rispondere ad esigenza di sicurezza da applicare ai profili di interoperabilità definiti nel precedente documento.
 
-5. **Registri e Cataloghi**, che si occuperà di definire le linee guida per i registri e cataloghi necessari a supportare il modello stesso. Anche per questo documento è prevista una prima versione per l'estate 2018.
+5. **Governance del Modello di Interoperabilità**, che presenterà compiutamente la governance dell'intero modello e le sue modalità di evoluzione.
+
+6. **Registri e Cataloghi**, che si occuperà di definire le linee guida per i registri e cataloghi necessari a supportare il modello stesso.
 
 Gli interventi mirano, in coordinamento con le altre azioni presenti nel Piano Triennale per l'Informatica nella PA, a:
 
@@ -134,7 +136,7 @@ La realizzazione del Catalogo deve, fatti salvi i principi comuni che saranno em
 Governance del modello
 ----------------------
 
-L'Agenzia per l'Italia Digitale è responsabile delle attività di *governance* del ModI 2018 con l'obiettivo di definire, condividere ed assicurare l'aggiornamento continuo dei seguenti aspetti:
+L'Agenzia per l'Italia Digitale è responsabile delle attività di *governance* del ModI con l'obiettivo di definire, condividere ed assicurare l'aggiornamento continuo dei seguenti aspetti:
 
 -   l'*insieme delle tecnologie* che abilitano l'interoperabilità tra le PA, e tra queste e cittadini ed imprese;
 
@@ -186,7 +188,7 @@ L'Agenzia per l'Italia Digitale ha il ruolo di:
    :topic_identifier: 3234
 
 	
-.. [10] Con abuso di nomenclatura, ma intuitivamente chiaro, si intende nel presente documento servizio e API come sinonimo, ad indicare una componente software, esposta sul Web, che funge da servente e può essere utilizzata da client. In modo rigoroso, sia SPCoop che il ModI 2018 prevedono l'esposizione da parte di una PA di un'API accessibile sul Web come modalità base di interoperabilità e scambio di dati/informazioni, tale API permette la fruizione di un servizio offerto dalla PA stessa. La tecnologia web service è una particolare modalità con cui realizzare API che siano accessibili su Internet/intranet, da cui il termine Web. Tali concetti verranno     ulteriormente approfonditi nel Modello di Interoperabilità 2018.
+.. [10] Con abuso di nomenclatura, ma intuitivamente chiaro, si intende nel presente documento servizio e API come sinonimo, ad indicare una componente software, esposta sul Web, che funge da servente e può essere utilizzata da client. In modo rigoroso, sia SPCoop che il ModI prevedono l'esposizione da parte di una PA di un'API accessibile sul Web come modalità base di interoperabilità e scambio di dati/informazioni, tale API permette la fruizione di un servizio offerto dalla PA stessa. La tecnologia web service è una particolare modalità con cui realizzare API che siano accessibili su Internet/intranet, da cui il termine Web. Tali concetti verranno     ulteriormente approfonditi nel Modello di Interoperabilità.
 
 .. [11] Quindi non attivato da un utente umano, anche impropriamente detto *enterprise* in taluni contesti.
 
