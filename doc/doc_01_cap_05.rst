@@ -56,7 +56,7 @@ La differenza tra i due casi risiede quindi nel grado di autonomia che i soggett
 Incrementalità del modello
 --------------------------
 
-In base alle considerazioni precedenti, il Modello di Interoperabilità si concretizza nella definizione, lo sviluppo, il miglioramento, la resa operativa, il mantenimento e la promozione di servizi, strumenti, norme tecniche e specifiche per l'interoperabilità delle soluzioni ICT basata su un'architettura modulare che include componenti interconnessi con l'ausilio di infrastrutture comuni. Questo modello, al fine di evitare le problematiche di possibile obsolescenza, e fronteggiare la necessità di continui aggiornamenti, si estrinsecherà concretamente in rilasci successivi e cadenzati nel tempo, di una serie di 5 documenti, in particolare:
+In base alle considerazioni precedenti, il Modello di Interoperabilità si concretizza nella definizione, lo sviluppo, il miglioramento, la resa operativa, il mantenimento e la promozione di servizi, strumenti, norme tecniche e specifiche per l'interoperabilità delle soluzioni ICT basata su un'architettura modulare che include componenti interconnessi con l'ausilio di infrastrutture comuni. Questo modello, al fine di evitare le problematiche di possibile obsolescenza, e fronteggiare la necessità di continui aggiornamenti, si estrinsecherà concretamente in rilasci successivi e cadenzati nel tempo, di una serie di 6 documenti, in particolare:
 
 1. **Presentazione del Modello di Interoperabilità**, che è il documento attuale, rilasciato nella prima versione a maggio 2018.
 
