@@ -44,9 +44,8 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. image:: index/image9.png
+.. image:: index/image1.png
    :align: center
-   :scale: 75 %
 
 .. _flusso-delle-interazioni-2:
 
@@ -256,9 +255,8 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. image:: index/image9.png
+.. figure:: index/image1.png
    :align: center
-   :scale: 75 %
 
 .. _flusso-delle-interazioni-3:
 
@@ -499,9 +497,8 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. image:: index/image9.png
+.. figure:: index/image1.png
    :align: center
-   :scale: 75 %
 
 .. _flusso-delle-interazioni-4:
 
@@ -689,9 +686,8 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. image:: index/image9.png
+.. figure:: index/image1.png
    :align: center
-   :scale: 75 %
 
 .. _flusso-delle-interazioni-5:
 
