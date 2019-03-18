@@ -20,12 +20,14 @@ casi in cui:
 Descrizione
 -----------
 
-.. image:: ../media/interazione_1.png
+.. figure:: ../media/interazione_1.png
+   :align: center
+   :alt: interazione bloccante RPC
 
-**Figura 1.** Interazione bloccante RPC
+   Interazione bloccante RPC
 
 In questo profilo si ha una risposta da parte dell’erogatore contestuale
-alla richiesta del fruitore. Figura 1 mostra lo schema di questa
+alla richiesta del fruitore. La figura mostra lo schema di questa
 interazione.
 
 Interfaccia REST
