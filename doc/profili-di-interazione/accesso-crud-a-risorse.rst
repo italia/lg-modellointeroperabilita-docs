@@ -19,13 +19,12 @@ mediante una modalità bloccante come quella vista in Sezione 2.1.
 Descrizione
 ------------------
 
-.. image:: ../media/interazione_4.png
+.. figure:: ../media/interazione_4.png
    :align: center
-   :scale: 75 %
 
-**Figura 4.** Interazione bloccante CRUD
+   Interazione bloccante CRUD
 
-Il sequence diagram è, come si nota in Figura 4, equivalente a quello di
+Il sequence diagram è, come si nota in figura, equivalente a quello di
 una RPC bloccante. In questo caso la richiesta DEVE contenere:
 
 -  Una operazione da effettuare sulla risorsa da scegliere tra Create,
