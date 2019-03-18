@@ -135,14 +135,14 @@ servizio resource-oriented che permette di accedere ad informazioni su
 ordini e voci (oggetti acquistati, *item*) inseriti negli ordini.
 Utilizzando SOAP/WSDL, si realizza un’interfaccia di servizio che offre
 operazioni quali submitOrder() e getOrderDetails(), come mostrato in
-Figura 1. L’interfaccia di servizio utilizza Order come oggetto
+Figura 3.1. L’interfaccia di servizio utilizza Order come oggetto
 serializzabile (in XML) per i dettagli dell’ordine da ritornare come
 tipo di ritorno nelle varie operazioni ovvero come parametro per la sua
 creazione.
 
 Utilizzando REST, l’interfaccia di servizio corrisponde a due risorse,
 Order e Item ed i verbi HTTP (ovvero GET, PUT, POST e DELETE) si mappano
-esattamente sulle operazioni CRUD, come mostrato in Figura 2.
+esattamente sulle operazioni CRUD, come mostrato in Figura 3.2.
 
 
 .. figure:: ./media/image2.png
@@ -164,7 +164,7 @@ un’interfaccia di servizio TaskManagement con operazioni startTask() e
 getResult(), che ritorna un valore che codifica che il task è ancora in
 esecuzione (fintanto che non è completato), oppure il risultato finale
 una volta che la procedure/task sia stata completata ed il risultato è
-stato prodotto. Figura 3 schematizza l’interfaccia di servizio.
+stato prodotto. Figura 3.3 schematizza l’interfaccia di servizio.
 
 .. figure:: ./media/image3.png
    :scale: 75 %
