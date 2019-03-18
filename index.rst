@@ -9,15 +9,10 @@ Questo documento raccoglie il testo delle linee guida del *Modello di interopera
 
 `Leggi le istruzioni per la consultazione <doc/istruzioni_consultazione.html>`_
 
-
-
 Vai al testo delle linee guida:
 
 .. toctree::
-   :numbered:
    doc/istruzioni_consultazione
-
-Indice generale del documento
 
 .. toctree::
    :numbered:
