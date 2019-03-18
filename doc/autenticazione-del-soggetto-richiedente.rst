@@ -1,5 +1,5 @@
-Autenticazione del soggetto richiedente
-=======================================
+Autenticazione del soggetto fruitore
+====================================
 
 [M2MS01] Direct Trust con certificato X.509 su SOAP
 ---------------------------------------------------
@@ -9,11 +9,11 @@ Autenticazione del soggetto richiedente
 Scenario
 ^^^^^^^^
 
-Comunicazione tra richiedente ed erogatore che assicuri a livello di
+Comunicazione tra fruitore ed erogatore che assicuri a livello di
 messaggio:
 
--  autenticazione del soggetto richiedente, quale organizzazione o unità
-   organizzativa richiedente, o entrambe le parti;
+-  autenticazione del soggetto fruitore, quale organizzazione o unità
+   organizzativa fruitrice, o entrambe le parti;
 
 .. _descrizione-2:
 
@@ -23,14 +23,14 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
+Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
 Il meccanismo con cui è stabilito il trust non condiziona il presente
 profilo.
 
-Il richiedente inoltra un messaggio all’interfaccia di servizio
+Il fruitore inoltra un messaggio all’interfaccia di servizio
 dell’erogatore includendo o referenziando il certificato X.509 e una
 porzione significativa del messaggio firmata.
 
@@ -54,7 +54,7 @@ Flusso delle interazioni
 
 **A: Richiesta**
 
-Il richiedente invia il messaggio di richiesta all’interfaccia di
+Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
 Il messaggio include o referenzia il certificato X.509 riconosciuto
@@ -69,7 +69,7 @@ L’erogatore, ricevuto il messaggio, provvede alla verifica del
 certificato X.509 e valida la firma..
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
-richiedente.
+fruitore.
 
 .. _regole-di-processamento-2:
 
@@ -78,15 +78,15 @@ Regole di processamento
 
 **A: Richiesta**
 
-1. Il richiedente costruisce un messaggio SOAP per il servizio.
+1. Il fruitore costruisce un messaggio SOAP per il servizio.
 
-2. Il richiedente calcola la firma per gli elementi significativi del
+2. Il fruitore calcola la firma per gli elementi significativi del
    messaggio usando l’XML Signature. Il digest è firmato usando la
-   chiave privata associata al certificato X.509 del richiedente.
+   chiave privata associata al certificato X.509 del fruitore.
    L’elemento ``<Signature>`` è posizionato nell’header ``<Security>`` del
    messaggio.
 
-3. Il richiedente referenzia il certificato X.509 usando in maniera
+3. Il fruitore referenzia il certificato X.509 usando in maniera
    alternativa, nell’header ``<Security>``, i seguenti elementi previsti
    nella specifica ws-security:
 
@@ -96,7 +96,7 @@ Regole di processamento
 
    c. ``<wsse:SecurityTokenReference>``
 
-4. Il richiedente spedisce il messaggio all’interfaccia di servizio
+4. Il fruitore spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
 
 **B: Risultato**
@@ -109,7 +109,7 @@ Regole di processamento
 7. L’erogatore valida la firma verificando l’elemento ``<Signature>``
    nell’header ``<Security>``.
 
-8. L’erogatore autentica il richiedente.
+8. L’erogatore autentica il fruitore.
 
 9. Se le azioni da 5 a 8 hanno avuto esito positivo, il messaggio viene
    elaborato e viene restituito il risultato del servizio richiamato.
@@ -127,7 +127,7 @@ Tracciato
 ~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
-richiedente all’interfaccia di servizio dell’erogatore.
+fruitore all’interfaccia di servizio dell’erogatore.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
@@ -217,11 +217,11 @@ Scenario
 
 Il seguente profilo estende il profilo M2MS01.
 
-Comunicazione tra richiedente ed erogatore che assicuri a livello di
+Comunicazione tra fruitore ed erogatore che assicuri a livello di
 messaggio:
 
--  autenticazione del soggetto richiedente, quale organizzazione o unità
-   organizzativa richiedente, o entrambe le parti;
+-  autenticazione del soggetto fruitore, quale organizzazione o unità
+   organizzativa fruitore, o entrambe le parti;
 
 -  difesa dalle minacce derivanti dagli attacchi: Replay Attack e
    Spoofing;
@@ -234,14 +234,14 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
+Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
 Il meccanismo con cui è stabilito il trust non condiziona il presente
 profilo.
 
-Il richiedente inoltra un messaggio all’interfaccia di servizio
+Il fruitore inoltra un messaggio all’interfaccia di servizio
 dell’erogatore includendo o referenziando il certificato X.509 e
 assicurando la firma dei claim del messaggio.
 
@@ -265,7 +265,7 @@ Flusso delle interazioni
 
 **A: Richiesta**
 
-Il richiedente invia il messaggio di richiesta all’interfaccia di
+Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
 Il messaggio include o referenzia il certificato X.509 riconosciuto
@@ -284,7 +284,7 @@ L’erogatore, ricevuto il messaggio, provvede alla verifica del
 certificato X.509, valida la firma e le claim ricevute.
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
-richiedente.
+fruitore.
 
 .. _regole-di-processamento-3:
 
@@ -293,19 +293,19 @@ Regole di processamento
 
 **A: Richiesta**
 
-1. Il richiedente costruisce un messaggio SOAP per il servizio.
+1. Il fruitore costruisce un messaggio SOAP per il servizio.
 
-2. Il richiedente aggiunge al messaggio l’header ``WS-Addressing`` e
+2. Il fruitore aggiunge al messaggio l’header ``WS-Addressing`` e
    l’elemento ``<wsu:Timestamp>`` composto dagli elementi ``<wsu:Created>`` e
    ``<wsu:Expires>``
 
-3. Il richiedente calcola la firma per gli elementi significativi del
+3. Il fruitore calcola la firma per gli elementi significativi del
    messaggio, in particolare ``<wsu:Timestamp>`` e ``<wsa:To>`` del blocco
    ``WS-Addressing``. Il digest è firmato usando la chiave privata associata
-   al certificato X.509 del richiedente. L’elemento ``<Signature>`` è
+   al certificato X.509 del fruitore. L’elemento ``<Signature>`` è
    posizionato nell’header ``<Security>`` del messaggio.
 
-4. Il richiedente referenzia il certificato X.509 usando in maniera
+4. Il fruitore referenzia il certificato X.509 usando in maniera
    alternativa, nell’header ``<Security>``, i seguenti elementi previsti
    nella specifica ws-security:
 
@@ -315,7 +315,7 @@ Regole di processamento
 
    c. ``<wsse:SecurityTokenReference>``
 
-5. Il richiedente spedisce il messaggio all’interfaccia di servizio
+5. Il fruitore spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
 
 **B: Risultato**
@@ -335,7 +335,7 @@ Regole di processamento
     ii. L’erogatore verifica la corrispondenza tra se stesso e quanto
         definito nell’elemento ``<wsa:To>`` del blocco WS-Addressing.
 
-9.  L’erogatore autentica il richiedente.
+9.  L’erogatore autentica il fruitore.
 
 10. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
@@ -357,7 +357,7 @@ Tracciato
 ~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
-richiedente all’interfaccia di servizio dell’erogatore relativo ad un
+fruitore all’interfaccia di servizio dell’erogatore relativo ad un
 servizio di echo.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
@@ -459,11 +459,11 @@ o referenziazione del certificato X.509.
 Scenario
 ^^^^^^^^
 
-Comunicazione tra richiedente ed erogatore che assicuri a livello di
+Comunicazione tra fruitore ed erogatore che assicuri a livello di
 messaggio:
 
--  autenticazione del soggetto richiedente, quale organizzazione o unità
-   organizzativa richiedente, o entrambe le parti.
+-  autenticazione del soggetto fruitore, quale organizzazione o unità
+   organizzativa fruitore, o entrambe le parti.
 
 .. _descrizione-4:
 
@@ -476,14 +476,14 @@ Il presente profilo declina l’utilizzo di:
 
 -  JSON Web Signature (JWS) definita dall’RFC 7515 `[2] <bibliografia.html>`__
 
-Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
+Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
 Il meccanismo con cui è stabilito il trust non condiziona il presente
 profilo.
 
-Il richiedente inoltra un messaggio all’interfaccia di servizio
+Il fruitore inoltra un messaggio all’interfaccia di servizio
 dell’erogatore includendo o referenziando il certificato X.509 e una
 porzione significativa del messaggio firmata..
 
@@ -507,7 +507,7 @@ Flusso delle interazioni
 
 **A: Richiesta**
 
-Il richiedente invia il messaggio di richiesta all’interfaccia di
+Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
 Il messaggio include il token JWT firmato.
@@ -521,7 +521,7 @@ L’erogatore, ricevuto il messaggio, provvede alla verifica del
 certificato X.509 e valida la firma del token JWT.
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
-richiedente.
+fruitore.
 
 .. _regole-di-processamento-4:
 
@@ -530,10 +530,10 @@ Regole di processamento
 
 **A: Richiesta**
 
-1. Il richiedente predispone la payload del messaggio (ad esempio un
+1. Il fruitore predispone la payload del messaggio (ad esempio un
    oggetto JSON)
 
-2. Il richiedente costruisce il token JWT popolando:
+2. Il fruitore costruisce il token JWT popolando:
 
    a. l’header JSON Object Signing and Encryption (JOSE) con almeno:
 
@@ -556,12 +556,12 @@ Regole di processamento
    b. la payload del JWT con zero o più claim rappresentative degli
       elementi chiave del messaggio.
 
-3. il richiedente firma il token ``JWT`` secondo la specifica ``JWS`` adottando
+3. il fruitore firma il token ``JWT`` secondo la specifica ``JWS`` adottando
    la ``JWS Compact Serialization``
 
-4. il richiedente posiziona il token ``JWT`` firmato nell’header ``HTTP Authorization``
+4. il fruitore posiziona il token ``JWT`` firmato nell’header ``HTTP Authorization``
 
-5. Il richiedente spedisce il messaggio all’interfaccia di servizio
+5. Il fruitore spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
 
 **B: Risultato**
@@ -576,7 +576,7 @@ Regole di processamento
 9.  L’erogatore valida la firma verificando l’elemento Signature del
     token ``JWT``
 
-10. L’erogatore autentica il richiedente
+10. L’erogatore autentica il fruitore
 
 11. Se le azioni da 6 a 10 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
@@ -594,7 +594,7 @@ Tracciato
 ~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
-richiedente all’interfaccia di servizio dell’erogatore.
+fruitore all’interfaccia di servizio dell’erogatore.
 
 Esempio porzione pacchetto HTTP
 
@@ -645,11 +645,11 @@ Scenario
 
 Il seguente profilo estende il profilo M2MR01.
 
-Comunicazione tra richiedente ed erogatore che assicuri a livello di
+Comunicazione tra fruitore ed erogatore che assicuri a livello di
 messaggio:
 
--  autenticazione del soggetto richiedente, quale organizzazione o unità
-   organizzativa richiedente, o entrambe le parti
+-  autenticazione del soggetto fruitore, quale organizzazione o unità
+   organizzativa fruitore, o entrambe le parti
 
 -  la difesa dalle minacce derivanti dagli attacchi: Replay Attack e
    Spoofing
@@ -665,14 +665,14 @@ Il presente profilo declina l’utilizzo di:
 
 -  JSON Web Signature (JWS) definita dall’RFC 7515 `[2] <bibliografia.html>`__
 
-Si assume l’esistenza di un trust tra richiedente (client) ed erogatore
+Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
 Il meccanismo con cui è stabilito il trust non condiziona il presente
 profilo.
 
-Il richiedente inoltra un messaggio all’interfaccia di servizio
+Il fruitore inoltra un messaggio all’interfaccia di servizio
 dell’erogatore includendo o referenziando il certificato X.509 e
 assicurando la firma dei claim del messaggio.
 
@@ -696,7 +696,7 @@ Flusso delle interazioni
 
 **A: Richiesta**
 
-Il richiedente invia il messaggio di richiesta all’interfaccia di
+Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
 Il messaggio include il token JWT firmato.
@@ -718,7 +718,7 @@ L’erogatore, ricevuto il messaggio, provvede alla verifica del
 certificato X.509, valida la firma del token JWT e le claim ricevute.
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
-richiedente.
+fruitore.
 
 .. _regole-di-processamento-5:
 
@@ -727,10 +727,10 @@ Regole di processamento
 
 **A: Richiesta**
 
-1. Il richiedente predispone la payload del messaggio (ad esempio un
+1. Il fruitore predispone la payload del messaggio (ad esempio un
    oggetto JSON)
 
-2. Il richiedente costruisce il token ``JWT`` popolando:
+2. Il fruitore costruisce il token ``JWT`` popolando:
 
    a. l’header JSON Object Signing and Encryption (JOSE) con almeno:
 
@@ -757,13 +757,13 @@ Regole di processamento
 
       v.  ``aud``: contenente il riferimento dell’erogatore
 
-3. il richiedente firma il token JWT secondo la specifica JWS adottando
+3. il fruitore firma il token JWT secondo la specifica JWS adottando
    la JWS Compact Serialization
 
-4. il richiedente posiziona il token JWT firmato nell’header HTTP
+4. il fruitore posiziona il token JWT firmato nell’header HTTP
    Authorization
 
-5. Il richiedente spedisce il messaggio all’interfaccia di servizio
+5. Il fruitore spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
 
 **B: Risultato**
@@ -786,7 +786,7 @@ Regole di processamento
 11. L’erogatore verifica la corrispondenza tra se stesso e quanto
     definito nella claim aud contenuta nella payload del JWT.
 
-12. L’erogatore autentica il richiedente.
+12. L’erogatore autentica il fruitore.
 
 13. Se le azioni da 6 a 12 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
@@ -806,7 +806,7 @@ Tracciato
 ~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
-richiedente all’interfaccia di servizio dell’erogatore.
+fruitore all’interfaccia di servizio dell’erogatore.
 
 Esempio porzione pacchetto HTTP
 

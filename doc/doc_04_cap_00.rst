@@ -11,7 +11,7 @@ necessità espresse attraverso requisiti funzionali e non funzionali.
    condiviso” utile a favorire l’interoperabilità tra le pubbliche
    amministrazione, cittadini ed imprese.
 
--  forniscono un comune linguaggio per richiedenti ed erogatori utile a
+-  forniscono un comune linguaggio per fruitori ed erogatori utile a
    trattare le necessità e le caratteristiche delle *interfacce di
    servizio*.
 
@@ -73,7 +73,7 @@ riconoscimento delle entità interagenti e sulla fiducia nei rispettivi
 comportamenti.
 
 Nel presente documento, per *direct trust,* si intende la relazione di
-fiducia tra richiedente ed erogatore, stabilita in modalità diretta,
+fiducia tra fruitore ed erogatore, stabilita in modalità diretta,
 attraverso accordi che si basano sulla condivisione del reciproco *modus
 operandi*.
 

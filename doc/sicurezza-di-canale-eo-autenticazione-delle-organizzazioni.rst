@@ -7,7 +7,7 @@ Sicurezza di canale e/o Autenticazione delle organizzazioni
 Scenario
 ^^^^^^^^
 
-Comunicazione tra richiedente ed erogatore che assicuri, a livello di
+Comunicazione tra fruitore ed erogatore che assicuri, a livello di
 canale:
 
 -  confidenzialità
@@ -22,7 +22,7 @@ canale:
 Descrizione
 ^^^^^^^^^^^
 
-Il presente profilo assume l’esistenza di un trust tra richiedente
+Il presente profilo assume l’esistenza di un trust tra fruitore
 (client) ed erogatore (server), che permette il riconoscimento del
 certificato X.509, o la CA emittente dell’erogatore, così come previsto
 dal protocollo Transport-Level Security `[5] <bibliografia.html>`__ `[6] <bibliografia.html>`__.
@@ -45,13 +45,13 @@ sicuro; il flusso dei messaggi avviene secondo la sequenza:
 
 **A: Richiesta**
 
-Il richiedente invia il messaggio di richiesta all’interfaccia di
+Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
 **B: Risultato**
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
-richiedente.
+fruitore.
 
 Regole di processamento
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,9 +61,9 @@ il protocollo TLS, secondo le modalità specificate alla sezione `Elenco degli a
 
 **A: Richiesta**
 
-1. Il richiedente costruisce un messaggio di richiesta.
+1. Il fruitore costruisce un messaggio di richiesta.
 
-2. Il richiedente spedisce sul canale sicuro stabilito il messaggio di
+2. Il fruitore spedisce sul canale sicuro stabilito il messaggio di
    richiesta all’interfaccia di servizio dell’erogatore.
 
 **B: Risultato**
@@ -95,7 +95,7 @@ difesa dalle minacce, quali ad esempio:
 Scenario
 ^^^^^^^^
 
-Comunicazione tra richiedente ed erogatore che assicuri a livello di
+Comunicazione tra fruitore ed erogatore che assicuri a livello di
 canale:
 
 -  confidenzialità
@@ -112,7 +112,7 @@ canale:
 Descrizione
 ^^^^^^^^^^^
 
-Il presente profilo assume l’esistenza di un trust tra richiedente
+Il presente profilo assume l’esistenza di un trust tra fruitore
 (client) ed erogatore (server), che permette il riconoscimento da
 entrambe le parti dei certificati X.509, o le CA emittenti, così come
 previsto dal protocollo Transport-Level Security `[5] <bibliografia.html>`__ `[6] <bibliografia.html>`__.
@@ -139,13 +139,13 @@ sicuro; il flusso dei messaggi avviene secondo la sequenza:
 
 **A: Richiesta**
 
-Il richiedente invia il messaggio di richiesta all’interfaccia di
+Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
 **B: Risultato**
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
-richiedente.
+fruitore.
 
 .. _regole-di-processamento-1:
 
@@ -158,9 +158,9 @@ specificate alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`
 
 **A: Richiesta**
 
-1. Il richiedente costruisce un messaggio di richiesta.
+1. Il fruitore costruisce un messaggio di richiesta.
 
-2. Il richiedente spedisce utilizzando canale sicuro stabilito con il il
+2. Il fruitore spedisce utilizzando canale sicuro stabilito con il il
    messaggio di richiesta all’interfaccia di servizio dell’erogatore.
 
 **B: Risultato**

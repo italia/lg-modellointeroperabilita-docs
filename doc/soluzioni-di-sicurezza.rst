@@ -2,7 +2,7 @@ Soluzioni di sicurezza
 ======================
 
 
-Soluzione per confidenzialità ed autenticazione del soggetto richiedente
+Soluzione per confidenzialità ed autenticazione del soggetto fruitore
 ------------------------------------------------------------------------
 
 .. _scenario-8:
@@ -10,14 +10,14 @@ Soluzione per confidenzialità ed autenticazione del soggetto richiedente
 Scenario
 ^^^^^^^^
 
-Dare seguito ad uno scambio tra richiedente ed erogatore che garantisca:
+Dare seguito ad uno scambio tra fruitore ed erogatore che garantisca:
 
 -  la confidenzialità a livello di canale
 
 -  l’autenticazione del soggetto Fruitore
 
 Il soggetto fruitore potrebbe non coincidere con l’unità organizzativa
-richiedente, ma comunque appartenere alla stessa.
+fruitore, ma comunque appartenere alla stessa.
 
 Questa soluzione utilizza i seguenti profili:
 
@@ -28,13 +28,13 @@ Questa soluzione utilizza i seguenti profili:
 Precondizioni
 ^^^^^^^^^^^^^
 
-Si assume l’esistenza di un trust tra richiedente ed erogatore che
+Si assume l’esistenza di un trust tra fruitore ed erogatore che
 stabilisce:
 
 -  riconoscimento da parte dell’erogatore dei certificati X.509, o la CA
    emittente, relative al soggetto fruitore
 
--  riconoscimento da parte del richiedente del certificato X.509, o la
+-  riconoscimento da parte del fruitore del certificato X.509, o la
    CA emittente, relative al soggetto erogatore
 
 Il meccanismo con cui è stabilito il trust non condiziona quanto
@@ -53,7 +53,7 @@ utilizzo di REST, per garantire:
 
 -  l’autenticazione dell’identità del soggetto fruitore
 
-Il richiedente invia il messaggio di richiesta all’interfaccia di
+Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
 Il messaggio viene trasmesso su un canale sicuro utilizzando il profilo
@@ -74,13 +74,13 @@ Soluzioni per la non ripudiabilità della trasmissione
 Scenario
 ^^^^^^^^
 
-Dare seguito ad uno scambio tra richiedente ed erogatore che garantisca
+Dare seguito ad uno scambio tra fruitore ed erogatore che garantisca
 la non ripudiabilità [8] assicurando a livello di messaggio:
 
 -  integrità del messaggio
 
--  autenticazione del soggetto richiedente, quale organizzazione o unità
-   organizzativa richiedente quale mittente del contenuto
+-  autenticazione del soggetto fruitore, quale organizzazione o unità
+   organizzativa fruitore quale mittente del contenuto
 
 -  conferma da parte dell’erogatore della ricezione del contenuto
 
@@ -109,7 +109,7 @@ l’autenticazione del Fruitore è lo stesso.
 Si assume che il certificato che garantisce l’integrità del messaggio di
 conferma e l’autenticazione dell’Erogatore è lo stesso.
 
-Si assume l’esistenza di un trust tra richiedente ed erogatore che
+Si assume l’esistenza di un trust tra fruitore ed erogatore che
 stabilisce:
 
 -  reciproco riconoscimento da parte dell’erogatore e del fruitore dei
@@ -118,18 +118,18 @@ stabilisce:
 Il meccanismo con cui è stabilito il trust non condiziona quanto
 descritto nella sezione.
 
-Il richiedente ed erogatore devono concordare:
+Il fruitore ed erogatore devono concordare:
 
 -  il tempo di validità della transazione che intercorre tra:
 
-   -  l’istante di inoltro del richiedente
+   -  l’istante di inoltro del fruitore
 
    -  l’istante di ricezione dell’erogatore;
 
--  il tempo massimo di attesa del richiedente del messaggio di risposta
+-  il tempo massimo di attesa del fruitore del messaggio di risposta
    per ritenere la comunicazione non avvenuta;
 
--  il numero massimo di tentativi di rinvio da parte del richiedente
+-  il numero massimo di tentativi di rinvio da parte del fruitore
    accettati dall’erogatore;
 
 -  eventuale utilizzo di canali alternativi (quali ad esempio PEC,
@@ -146,12 +146,12 @@ Il richiedente ed erogatore devono concordare:
 Attraverso le tecnologie di criptazione sono garantite le seguenti
 proprietà:
 
--  integrità e non ripudio del messaggio inviato dal richiedente
+-  integrità e non ripudio del messaggio inviato dal fruitore
 
 -  integrità e non ripudio del messaggio di conferma da parte
    dell’erogatore
 
--  autenticazione del soggetto richiedente
+-  autenticazione del soggetto fruitore
 
 -  autenticazione del soggetto erogatore
 
@@ -171,22 +171,22 @@ Flusso delle interazioni
    
 **A: Verifica numero tentativi di inoltro**
 
-Il richiedente realizza una delle seguenti azioni:
+Il fruitore realizza una delle seguenti azioni:
 
 **A.1 [Primo Invio]**
 
-Il richiedente inizializza il numero di tentativi di inoltro ad 1 e
+Il fruitore inizializza il numero di tentativi di inoltro ad 1 e
 prosegue a quanto indicato al passo B.
 
 **A.2 [Invio Successivo con numero di tentativi inferiore al massimo
 pattuito]**
 
-Il richiedente incrementa il numero di tentativi di inoltro e da seguito
+Il fruitore incrementa il numero di tentativi di inoltro e da seguito
 a quanto indicato al passo B.
 
 **A.3 [Superamento numero di tentativi massimi pattuiti]**
 
-Il richiedente utilizza i canali alternativi (quali ad esempio PEC,
+Il fruitore utilizza i canali alternativi (quali ad esempio PEC,
 Contact Center, ...) per superare o evidenziare problemi di
 comunicazione riscontrati non proseguendo con i passi successivi.
 
@@ -209,7 +209,7 @@ utilizzo di REST, per garantire:
 
 -  l’autenticità del momento di invio.
 
-Il richiedente invia il messaggio di richiesta all’interfaccia di
+Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
 Il messaggio viene trasmesso su un canale sicuro per garantire:
@@ -219,9 +219,9 @@ Il messaggio viene trasmesso su un canale sicuro per garantire:
 **C: Persistenza Erogatore**
 
 Per garantire la non ripudiabilità del messaggio ricevuto dal
-richiedente, così come previsto dai profili utilizzati:
+fruitore, così come previsto dai profili utilizzati:
 
--  L’erogatore provvede all’autenticazione del richiedente;
+-  L’erogatore provvede all’autenticazione del fruitore;
 
 -  L’erogatore verifica l’integrità del messaggio firmato, inoltre la
    presenza dell’istante di trasmissione nel messaggio, ne garantisce
@@ -252,7 +252,7 @@ pattuito]**
 
 L’erogatore accerta la presenza di un identificativo univoco del
 messaggio già ricevuto, a causa di una mancata ricezione del messaggio
-di conferma da parte del richiedente.
+di conferma da parte del fruitore.
 
 Incrementa il numero di tentativi di richieste ricevute e prosegue al
 passo D.
@@ -261,7 +261,7 @@ passo D.
 
 L’erogatore accerta la presenza di un identificativo univoco del
 messaggio già ricevuto, a causa di una mancata ricezione del messaggio
-di conferma da parte del richiedente.
+di conferma da parte del fruitore.
 
 L’erogatore accerta di aver raggiunto il numero massimo di tentativi di
 richieste ricevute. L’erogatore utilizza i canali alternativi (quali ad
@@ -296,16 +296,16 @@ di utilizzo di REST, per garantire:
 
 Per garantire la non ripudiabilità del messaggio inviato all’erogatore:
 
--  Il richiedente provvede all’autenticazione dell’erogatore rispetto al
+-  Il fruitore provvede all’autenticazione dell’erogatore rispetto al
    messaggio di risposta.
 
--  Il richiedente verifica l’integrità del messaggio di risposta firmato
+-  Il fruitore verifica l’integrità del messaggio di risposta firmato
    in cui, la presenza del timestamp sul protocollo di messaggio ne
    garantisce validazione a lungo termine e il tempo di ricezione.
 
 ed inoltre per assicurare l’opponibilità a terzi:
 
--  Il richiedente rende persistente il messaggio di risposta firmato.
+-  Il fruitore rende persistente il messaggio di risposta firmato.
 
 La persistenza del messaggio deve:
 
@@ -317,7 +317,7 @@ La persistenza del messaggio deve:
 
 **Note**
 
-Nel caso in cui il richiedente non riceve il messaggio di risposta entro
+Nel caso in cui il fruitore non riceve il messaggio di risposta entro
 i termini concordati tra le parti, si ritiene la comunicazione non
 conclusa, in quanto può presentarsi uno dei seguenti casi:
 
@@ -326,4 +326,4 @@ conclusa, in quanto può presentarsi uno dei seguenti casi:
 -  il messaggio di richiesta ha raggiunto l’erogatore ma non ha ricevuto
    il messaggio di risposta.
 
-In queste situazioni il richiedente riesegue il passo A.
+In queste situazioni il fruitore riesegue il passo A.
