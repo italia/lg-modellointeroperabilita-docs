@@ -39,7 +39,7 @@ Queste innovazioni fanno preferire l\'approccio REST:
 
 -   L'accesso avviene in maniera prevalente con operazioni di tipo CRUD sui dati.
 
-Quindi rispetto a quanto discusso  in “Presentazione del Modello di Interoperabilità” sui paradigmi di cooperazione, questo suggerisce l'uso di REST nei casi di condivisione di dati e di composizione applicativa, quando le operazioni componenti sono prevalentemente orientate a fornire dati. Il servizio digitale corrispondente all'interfaccia di servizio è prevalentemente informativo (cf. Sezione 1).
+Quindi rispetto a quanto discusso  in “Presentazione del Modello di Interoperabilità 2018” sui paradigmi di cooperazione, questo suggerisce l'uso di REST nei casi di condivisione di dati e di composizione applicativa, quando le operazioni componenti sono prevalentemente orientate a fornire dati. Il servizio digitale corrispondente all'interfaccia di servizio è prevalentemente informativo (cf. Sezione 1).
 
 L'utilizzo di SOAP è suggerito:
 
@@ -51,7 +51,7 @@ L'utilizzo di SOAP è suggerito:
 
 -   Quando servono specifiche assicurazioni circa la QoS (quali quelle fornite dall'estensione WS-ReliableMessaging).
 
-Quindi rispetto a quanto discusso in “Presentazione del Modello di Interoperabilità” sui paradigmi di cooperazione, questo suggerisce l'uso di SOAP nei casi di processo inter-PA e di composizione applicativa quando le operazioni componenti offrono delle logiche complesse.
+Quindi rispetto a quanto discusso in “Presentazione del Modello di Interoperabilità 2018” sui paradigmi di cooperazione, questo suggerisce l'uso di SOAP nei casi di processo inter-PA e di composizione applicativa quando le operazioni componenti offrono delle logiche complesse.
 
 La tabella seguente riporta alcuni aspetti tecnologici che devono essere tenuti in considerazione (le celle in cui è presente "-" indicano che l'aspetto in questione non è considerato e standardizzato, e quindi è a cura dello specifico progetto/applicazione indirizzarlo attraverso sviluppi ad hoc)
 
@@ -106,7 +106,7 @@ Nel progetto di interfacce di servizio REST invece occorre:
 
 -   Progettare le strutture JSON per la rappresentazione dei dati.
 
-Il ModI, come discusso nella Sezione 1, prevede che la progettazione parta dalla definizione delle interfacce di servizio, indipendentemente dalla tecnologia di realizzazione sia SOAP che REST, anche se con accorgimenti tecnici differenti nella sua realizzazione.
+Il ModI 2018, come discusso nella Sezione 1, prevede che la progettazione parta dalla definizione delle interfacce di servizio, indipendentemente dalla tecnologia di realizzazione sia SOAP che REST, anche se con accorgimenti tecnici differenti nella sua realizzazione.
 
 
 .. discourse::
