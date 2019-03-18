@@ -14,11 +14,13 @@ Questo documento raccoglie il testo delle linee guida del *Modello di interopera
 Vai al testo delle linee guida:
 
 .. toctree::
+   :numbered:
    doc/istruzioni_consultazione
 
 Indice generale del documento
 
 .. toctree::
+   :numbered:
    :maxdepth: 2
 
    doc/doc_01_cap_00
