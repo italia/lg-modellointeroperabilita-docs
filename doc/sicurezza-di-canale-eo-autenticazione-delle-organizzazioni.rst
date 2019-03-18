@@ -34,9 +34,8 @@ l’erogatore è autenticato.
 Dettaglio
 ^^^^^^^^^
 
-.. image:: index/image1.png
+.. figure:: index/image1.png
    :align: center
-   :scale: 75 %
    
 Flusso delle interazioni
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,9 +126,8 @@ autenticate entrambe le organizzazioni.
 Dettaglio
 ^^^^^^^^^
 
-.. image:: index/image6.png
+.. figure:: index/image1.png
    :align: center
-   :scale: 75 %
 
 .. _flusso-delle-interazioni-1:
 
