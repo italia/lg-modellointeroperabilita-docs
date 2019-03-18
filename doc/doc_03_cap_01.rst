@@ -298,9 +298,6 @@ Maturity Model.
   paradigmi-per-la-progettazione-delle-interfacce-di-servizio/considerazioni-sulla-natura-del-fruitore.rst
   paradigmi-per-la-progettazione-delle-interfacce-di-servizio/migrazione-dei-servizi-spcoop-nel-nuovo-framework-di-interoperabilità.rst
     
-.. discourse::
-   :topic_identifier: 3228
-
 .. [1]
    SOAP - Simple Object Access Protocol è il protocollo originariamente
    proposto, e standardizzato dal W3C, per lo sviluppo e dispiegamento
@@ -327,4 +324,5 @@ Maturity Model.
 .. [3]
    Cf. https://www.crummy.com/writing/speaking/2008-QCon/act3.html
    
-
+.. discourse::
+   :topic_identifier: 3228
