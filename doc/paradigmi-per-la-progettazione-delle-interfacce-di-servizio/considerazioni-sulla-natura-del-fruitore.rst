@@ -1,11 +1,11 @@
 Considerazioni sulla natura del fruitore
 ========================================
 
-Come anticipato nei paragrafi precedenti, nel ModI 2018 scompare il
+Come anticipato nei paragrafi precedenti, nel ModI scompare il
 concetto di dominio e di porta di dominio, a favore di un approccio in
 cui le interfacce di servizio possono essere offerte e dispiegate presso
 qualsiasi elemento computazionale in uso presso l’Amministrazione.
-Parallelamente, nel ModI 2018, i client applicativi alle interfacce di
+Parallelamente, nel ModI, i client applicativi alle interfacce di
 servizio possono essere qualsiasi, potenzialmente sia sviluppati
 dall’amministrazione stessa (ad esempio, una app mobile o una Web app
 per offrire il servizio) o da terze parti; questa a sua volta possono
