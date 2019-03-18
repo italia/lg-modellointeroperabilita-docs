@@ -848,3 +848,6 @@ merito:
 Gli enti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
 o referenziazione del certificato x509.   
+
+.. discourse::
+   :topic_identifier: XXXX
