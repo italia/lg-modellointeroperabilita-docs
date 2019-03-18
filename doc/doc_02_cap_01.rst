@@ -166,7 +166,7 @@ per indicare **l'esposizione delle funzionalità applicative che sono necessarie
 | ecc.                                                                  |
 +-----------------------------------------------------------------------+
 
-Nel prosieguo di questo documento, ci si focalizza solamente sulle interfacce di servizio, che sono il fondamento del Modello di Interoperabilità.
+Nel prosieguo di questo documento, ci si focalizza solamente sulle interfacce di servizio, che sono il fondamento del Modello di Interoperabilità 2018.
 
 Caratteristiche delle interfacce di servizio
 --------------------------------------------
@@ -335,7 +335,7 @@ L'erogatore deve inoltre tracciare un evento per ogni richiesta, contenente alme
 Attori e Interazioni
 --------------------
 
-Come anticipato in "Presentazione del Modello di Interoperabilità", l'obiettivo a tendere è quello di una PA in cui le singole amministrazioni offrono interfacce di servizio, in corrispondenza ai servizi digitali che erogano, e possono a loro volta cooperare attraverso l'invocazione di interfacce di servizio offerte da altre PA.
+Come anticipato in "Presentazione del Modello di Interoperabilità 2018", l'obiettivo a tendere è quello di una PA in cui le singole amministrazioni offrono interfacce di servizio, in corrispondenza ai servizi digitali che erogano, e possono a loro volta cooperare attraverso l'invocazione di interfacce di servizio offerte da altre PA.
 
 L'EIF riprende la classificazione delle interazioni possibili in generale in Administration-to-Citizen (A2C), Administration-to-Business (A2B) e Administration-to-Administration (A2A), ulteriormente distinguendo se il fruitore del servizio è un soggetto umano od un modulo software, arrivando quindi a definire le seguenti possibili interazioni:
 
@@ -478,8 +478,7 @@ Le indicazioni generali sono:
 
 .. [14] La granularità è il livello di dettaglio con cui i dati sono esposti e scambiati. *Coarse-grained* significa un livello di dettaglio "basso", in quanto molti dettagli possono o devono rimanere interni all'implementazione dell'interfaccia di servizio. *Fine-grained* significa invece che il dato deve essere specificato ad un dettaglio massimo, poiché il fruitore ha bisogno di una visione puntuale del dato stesso.
 
-.. [15] Come anticipato in “Presentazione del Modello di Interoperabilità” ed
-approfondito in “Governance del Modello di Interoperabilità”, la modellazione e specifica dei dati avviene nei Gruppi di Lavoro interni agli Ecosistemi, che indirizzano il lavoro di standardizzazione.
+.. [15] Come anticipato in “Presentazione del Modello di Interoperabilità 2018” ed approfondito in “Governance del Modello di Interoperabilità”, la modellazione e specifica dei dati avviene nei Gruppi di Lavoro interni agli Ecosistemi, che indirizzano il lavoro di standardizzazione.
 
 .. [16] Ad esempio, la serializzazione in JSON di un dato dovrebbe essere la medesima sia se viene esposto esternamente tramite REST API sia se transita da un messaging system interno all\'amministrazione. Una rappresentazione opportuna permette quindi la fruizione del dato da sistemi diversi limitando il ricorso alle conversioni.
 
