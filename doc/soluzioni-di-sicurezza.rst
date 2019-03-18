@@ -166,9 +166,8 @@ proprietà:
 Flusso delle interazioni
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: index/image10.png
+.. figure:: index/image10.png
    :align: center
-   :scale: 75 %
    
 **A: Verifica numero tentativi di inoltro**
 
