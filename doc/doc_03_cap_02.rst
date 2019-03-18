@@ -37,5 +37,5 @@ L’endpoint deve indicare in modo esplicito la tecnologia utilizzata
   profili-di-interazione/robustezza.rst
   profili-di-interazione/passaggio-di-allegati.rst
   
-  .. discourse::
+.. discourse::
    :topic_identifier: XXXX
