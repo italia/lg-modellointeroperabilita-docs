@@ -34,7 +34,7 @@ l’erogatore è autenticato.
 Dettaglio
 ^^^^^^^^^
 
-.. image:: index/image3.png
+.. image:: index/image1.png
    :align: center
    :scale: 75 %
    
