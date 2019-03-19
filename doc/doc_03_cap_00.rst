@@ -55,6 +55,3 @@ RFC 2119.
   doc_03_cap_02.rst
   doc_03_cap_03.rst
   doc_03_cap_04.rst
-
-.. discourse::
-   :topic_identifier: XXXX
