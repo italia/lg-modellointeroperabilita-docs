@@ -38,4 +38,4 @@ L’endpoint deve indicare in modo esplicito la tecnologia utilizzata
   profili-di-interazione/passaggio-di-allegati.rst
   
 .. discourse::
-   :topic_identifier: XXXX
+   :topic_identifier: 8904
