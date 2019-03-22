@@ -16,6 +16,3 @@ Riferimenti Bibliografici
 
 3. Leonard Richardson, Sam Ruby, Mike Amundsen (2013): RESTful Web APIs.
    ISBN: 9781449359713.
-   
-.. discourse::
-   :topic_identifier: XXXX
