@@ -9,7 +9,7 @@ Un message broker supporta solitamente diverse modalità di interazione:
 
 -   Publish/Subscribe. In questo scenario un publisher invia dei messaggi sul canale ed il message broker li invia a diversi ricevitori sulla base di sottoscrizioni. Questo tipo di interazione supporta diversi scenari tra cui uno a molti o molti a molti;
 
--   Queuing. In questo caso un richiedente invia una richiesta su una coda specifica (corrispondente all'erogatore) e l'erogatore invia la risposta sulla medesima coda; di fatto è una realizzazione asincrona della modalità request/reply;
+-   Queuing. In questo caso un fruitore invia una richiesta su una coda specifica (corrispondente all'erogatore) e l'erogatore invia la risposta sulla medesima coda; di fatto è una realizzazione asincrona della modalità request/reply;
 
 -   Store/Forward. In questo caso il broker memorizza i messaggi e quindi inoltra agli interessati.
 
