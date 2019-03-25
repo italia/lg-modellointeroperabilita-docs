@@ -272,7 +272,7 @@ Gli SLI calcolati devono includere la latenza aggiuntiva dovuta ad eventuali com
 
 Essi inoltre devono:
 
--   utilizzare unità di misura del sistema internazionale (ad es., secondi, bytes);
+-   utilizzare unità di misura referenziate dal Sistema Internazionale (ad es., secondi, bytes);
 
 -   indicare nel nome identificativo l'eventuale periodo di aggregazione coi soli suffissi s (secondi), m (minuti), d (giorni) e y (anni) utilizzando al posto dei mesi il numero di giorni.
 

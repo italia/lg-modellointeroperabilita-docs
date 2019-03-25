@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # -- PROJECT Variables ----------------------------------------------------
-settings_project_name = "Linee Guida Modello di Interoperabilità"
+settings_project_name = u"Linee Guida Modello di Interoperabilità"
 settings_copyright_copyleft = "Agenzia per l'Italia Digitale"
 settings_editor_name = "Agenzia per l'Italia Digitale"
 settings_doc_version = 'Bozza in consultazione'
@@ -57,9 +57,9 @@ extensions = [
 templates_path = ['_templates']
 
 # The suffix of source filenames.
-source_parsers = {
-    '.md': CommonMarkParser,
-}
+#source_parsers = {
+#    '.md': CommonMarkParser,
+#}
 
 source_suffix = ['.rst', '.md']
 
