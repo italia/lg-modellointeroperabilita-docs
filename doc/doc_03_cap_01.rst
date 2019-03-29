@@ -83,15 +83,7 @@ Web come piattaforma leggera per l'elaborazione distribuita. Non è, in
 prima istanza, necessario aggiungere nulla a quanto è già esistente
 sul Web per consentire ad applicazioni remote di interagire.
 
-REST non prevede esplicitamente nessuna modalità per descrivere come
-interagire con una risorsa. Le operazioni sono implicite nel protocollo
-HTTP. Qualcosa di analogo a WSDL è WADL, Web Application Definition
-Language, un formato XML per definire risorse, operazioni ed eccezioni
-previste da un Web service di tipo REST. WADL è stato sottoposto al W3C
-per la standardizzazione nel 2009, ma allo stato attuale non ci sono
-piani per la sua discussione ed eventuale approvazione. In realtà esso
-non ha avuto un'accoglienza molto favorevole da parte delle comunità di
-sviluppatori REST.
+.. rpolli: già indicato in [doc 02 cap 04](doc/doc_02_cap_04.rst:12) e successive.
 
 OpenAPI è un formato di descrizione per Web service REST; un file
 OpenAPI consente di descrivere l'intera interfaccia (endpoint
