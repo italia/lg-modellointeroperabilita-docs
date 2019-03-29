@@ -83,13 +83,6 @@ Web come piattaforma leggera per l'elaborazione distribuita. Non è, in
 prima istanza, necessario aggiungere nulla a quanto è già esistente
 sul Web per consentire ad applicazioni remote di interagire.
 
-I Web Service basati su SOAP prevedono lo standard WSDL, Web Service
-Description Language, per definire l'interfaccia di un servizio. Questa
-è un'ulteriore evidenza del tentativo di adattare al Web l'approccio
-all'interoperabilità basato su chiamate remote; infatti il WSDL non è
-altro che un IDL (Interface Description Language) per un componente
-software; l'esistenza di WSDL favorisce l'uso di tool per creare
-automaticamente client in un determinato linguaggio di programmazione.
 REST non prevede esplicitamente nessuna modalità per descrivere come
 interagire con una risorsa. Le operazioni sono implicite nel protocollo
 HTTP. Qualcosa di analogo a WSDL è WADL, Web Application Definition
