@@ -85,15 +85,6 @@ sul Web per consentire ad applicazioni remote di interagire.
 
 .. rpolli: già indicato in [doc 02 cap 04](doc/doc_02_cap_04.rst:12) e successive.
 
-OpenAPI è un formato di descrizione per Web service REST; un file
-OpenAPI consente di descrivere l'intera interfaccia (endpoint
-disponibili e operazioni su ciascun endpoint, parametri di input e
-output per ogni operazione, metodi di autenticazione, informazioni di
-contatto, licenza, termini di utilizzo, ecc.). Le specifiche possono
-essere scritte in YAML o JSON. Swagger [2]_ è un insieme di strumenti
-open source che, basandosi sulle specifiche OpenAPI, permette di
-supportare il progetto, costruzione e documentazione di REST Web
-service.
 Un Web service SOAP è adatto a realizzare sia interfacce di servizio
 RPC-like che resource-oriented, mentre un Web service REST è
 finalizzato a realizzare interfacce di servizio resource oriented.
