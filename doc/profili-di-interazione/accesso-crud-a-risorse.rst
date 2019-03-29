@@ -53,9 +53,9 @@ Interfaccia REST
 Regole di processamento
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-L’approccio RESTful trova la sua applicazione naturale in operazioni
+L'approccio RESTful trova la sua applicazione naturale in operazioni
 CRUD - Create, Read, Update, Delete su risorse ed a tal fine sfrutta i
-verbi standard dell’HTTP per indicare tali operazioni. In particolare la
+verbi standard dell'HTTP per indicare tali operazioni. In particolare la
 seguente mappatura viene utilizzata:
 
 +-----------------+-----------------+-----------------+-----------------+
@@ -68,18 +68,18 @@ seguente mappatura viene utilizzata:
 |                 |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | Create          | POST            | 201 (Created),  | 404 (Not        |
-|                 |                 | l’header        | Found), 409     |
+|                 |                 | l'header        | Found), 409     |
 |                 |                 | 'Location'      | (Conflict) se   |
 |                 |                 | nella risposta  | la risorsa è    |
 |                 |                 | può contenere   | già esistente.  |
 |                 |                 | un link a       |                 |
 |                 |                 | /clienti/{id}   |                 |
-|                 |                 | che indica l’ID |                 |
+|                 |                 | che indica l'ID |                 |
 |                 |                 | creato.         |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | Read            | GET             | 200 (OK), lista | 200 (OK), 404   |
 |                 |                 | dei clienti.    | (Not Found), se |
-|                 |                 | Implementare    | l’ID non è      |
+|                 |                 | Implementare    | l'ID non è      |
 |                 |                 | meccanismi di   | stato trovato o |
 |                 |                 | paginazione,    | è non valido.   |
 |                 |                 | ordinamento e   |                 |
@@ -90,7 +90,7 @@ seguente mappatura viene utilizzata:
 | Update/Replace/ | PUT             | 405 (Method Not | 200 (OK) o 204  |
 | Create          |                 | Allowed), a     | (No Content).   |
 |                 |                 | meno che non si | 404 (Not        |
-|                 |                 | voglia          | Found), se l’ID |
+|                 |                 | voglia          | Found), se l'ID |
 |                 |                 | sostituire ogni | non è stato     |
 |                 |                 | risorsa nella   | trovato o è non |
 |                 |                 | collezione.     | valido. 201     |
@@ -100,7 +100,7 @@ seguente mappatura viene utilizzata:
 | Update/Modify   | PATCH           | 405 (Method Not | 200 (OK) o 204  |
 |                 |                 | Allowed), a     | (No Content).   |
 |                 |                 | meno che non si | 404 (Not        |
-|                 |                 | voglia          | Found), se l’ID |
+|                 |                 | voglia          | Found), se l'ID |
 |                 |                 | applicare una   | non è stato     |
 |                 |                 | modifica ad     | trovato o è non |
 |                 |                 | ogni risorsa    | valido.         |
@@ -109,18 +109,18 @@ seguente mappatura viene utilizzata:
 +-----------------+-----------------+-----------------+-----------------+
 | Delete          | DELETE          | 405 (Method Not | 200 (OK). 404   |
 |                 |                 | Allowed), a     | (Not Found), se |
-|                 |                 | meno che non si | l’ID non è      |
+|                 |                 | meno che non si | l'ID non è      |
 |                 |                 | voglia          | stato trovato o |
 |                 |                 | permettere di   | è non valido.   |
 |                 |                 | eliminare       |                 |
-|                 |                 | l’intera        |                 |
+|                 |                 | l'intera        |                 |
 |                 |                 | collezione.     |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-Si noti in particolari l’uso distinto di PUT e PATCH per la sostituzione
-e l’applicazione di modifiche ad una risorsa rispettivamente. E’
+Si noti in particolari l'uso distinto di PUT e PATCH per la sostituzione
+e l'applicazione di modifiche ad una risorsa rispettivamente. E'
 possibile utilizzare anche altri verbi HTTP a patto che si rispettino i
-dettami dell’approccio RESTful.
+dettami dell'approccio RESTful.
 
 In alcuni casi il verbo PUT può essere utilizzato con funzionalità di
 UPSERT (Update o Insert). In particolare, questo è necessario nei casi
@@ -132,236 +132,20 @@ erogatore.
 Esempio
 ~~~~~~~~~~~~~~~~
 
-Al fine di illustrare l’approccio RESTful al CRUD, si farà riferimento
+Al fine di illustrare l'approccio RESTful al CRUD, si farà riferimento
 ad un esempio in cui si vogliano gestire le prenotazioni di un
 appuntamento presso un ufficio municipale. Il servente, verifica la
 compatibilità con la disponibilità nello specifico orario ed accetta o
-nega la creazione o l’eventuale variazione. In particolare, come da
+nega la creazione o l'eventuale variazione. In particolare, come da
 specifica seguente i metodi implementati sono POST (creazione), DELETE
 (eliminazione), PATCH (modifica) e GET (lettura).
 
-+---------------------------+--------------------------------------------------------------------------------------+
-| Specifica Servizio Server | https://api.amministrazioneesempi o.it/rest/v1/nomeinterfacciaservi zio/openapi.yaml |
-+---------------------------+--------------------------------------------------------------------------------------+
-| .. code-block:: YAML                                                                                             |
-|                                                                                                                  |
-|   openapi: 3.0.1                                                                                                 |
-|    info:                                                                                                         |
-|      title: RESTCRUD                                                                                             |
-|      license:                                                                                                    |
-|        name: Apache 2.0 License                                                                                  |
-|        url: http://www.apache.org/licenses/LICENSE-2.0.html                                                      |
-|      version: "1.0"                                                                                              |
-|    paths:                                                                                                        |
-|      /municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni:                                                |
-|        post:                                                                                                     |
-|          description: AggiungiPrenotazione                                                                       |
-|          operationId: AddReservation_1                                                                           |
-|          parameters:                                                                                             |
-|          - name: X-Correlation-ID                                                                                |
-|            in: header                                                                                            |
-|            schema:                                                                                               |
-|              type: string                                                                                        |
-|          - name: id_municipio                                                                                    |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          - name: id_ufficio                                                                                      |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          requestBody:                                                                                            |
-|            content:                                                                                              |
-|              application/json:                                                                                   |
-|                schema:                                                                                           |
-|                  $ref: '#/components/schemas/Prenotazione'                                                       |
-|          responses:                                                                                              |
-|            201:                                                                                                  |
-|              headers:                                                                                            |
-|                Location:                                                                                         |
-|                  description: ID della prenotazione creata                                                       |
-|                  schema:                                                                                         |
-|                    type: string                                                                                  |
-|            500:                                                                                                  |
-|              description: Errore interno avvenuto                                                                |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/ErrorMessage'                                                     |
-|            404:                                                                                                  |
-|              description: Identificativo non trovato                                                             |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/ErrorMessage'                                                     |
-|            400:                                                                                                  |
-|              description: Richiesta non accoglibile                                                              |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/ErrorMessage'                                                     |
-|      /municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/{id_prenotazione}:                              |
-|        get:                                                                                                      |
-|          description: LeggiPrenotazione                                                                          |
-|          operationId: GetReservation_1                                                                           |
-|          parameters:                                                                                             |
-|          - name: id_municipio                                                                                    |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          - name: id_ufficio                                                                                      |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          - name: id_prenotazione                                                                                 |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          responses:                                                                                              |
-|            500:                                                                                                  |
-|              description: Errore interno avvenuto                                                                |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/ErrorMessage'                                                     |
-|            404:                                                                                                  |
-|              description: Identificativo non trovato                                                             |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/ErrorMessage'                                                     |
-|            200:                                                                                                  |
-|              description: Prenotazione estratta correttamente                                                    |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/Prenotazione'                                                     |
-|        delete:                                                                                                   |
-|          description: EliminaPrenotazione                                                                        |
-|          operationId: DeleteReservation                                                                          |
-|          parameters:                                                                                             |
-|          - name: id_municipio                                                                                    |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          - name: id_ufficio                                                                                      |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          - name: id_prenotazione                                                                                 |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          responses:                                                                                              |
-|            500:                                                                                                  |
-|              description: Errore interno avvenuto                                                                |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/ErrorMessage'                                                     |
-|            404:                                                                                                  |
-|              description: Identificativo non trovato                                                             |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/ErrorMessage'                                                     |
-|            200:                                                                                                  |
-|              description: Prenotazione eliminata correttamente                                                   |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/Prenotazione'                                                     |
-|        patch:                                                                                                    |
-|          description: ModificaPrenotazione                                                                       |
-|          operationId: PatchReservation                                                                           |
-|          parameters:                                                                                             |
-|          - name: id_municipio                                                                                    |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          - name: id_ufficio                                                                                      |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          - name: id_prenotazione                                                                                 |
-|            in: path                                                                                              |
-|            required: true                                                                                        |
-|            schema:                                                                                               |
-|              type: integer                                                                                       |
-|              format: int32                                                                                       |
-|          requestBody:                                                                                            |
-|            content:                                                                                              |
-|              application/json:                                                                                   |
-|                schema:                                                                                           |
-|                  $ref: '#/components/schemas/PatchPrenotazione'                                                  |
-|          responses:                                                                                              |
-|            500:                                                                                                  |
-|              description: Errore interno avvenuto                                                                |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/ErrorMessage'                                                     |
-|            404:                                                                                                  |
-|              description: Identificativo non trovato                                                             |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/ErrorMessage'                                                     |
-|            200:                                                                                                  |
-|              description: Prenotazione modificata correttamente                                                  |
-|              content:                                                                                            |
-|                application/json:                                                                                 |
-|                  schema:                                                                                         |
-|                    $ref: '#/components/schemas/Prenotazione'                                                     |
-|    components:                                                                                                   |
-|      schemas:                                                                                                    |
-|        Prenotazione:                                                                                             |
-|          type: object                                                                                            |
-|          properties:                                                                                             |
-|            nome:                                                                                                 |
-|              type: string                                                                                        |
-|            cognome:                                                                                              |
-|              type: string                                                                                        |
-|            cf:                                                                                                   |
-|              type: string                                                                                        |
-|            dettagli:                                                                                             |
-|              $ref: '#/components/schemas/PatchPrenotazione'                                                      |
-|        PatchPrenotazione:                                                                                        |
-|          type: object                                                                                            |
-|          properties:                                                                                             |
-|            data:                                                                                                 |
-|              type: string                                                                                        |
-|              format: date-time                                                                                   |
-|            ora:                                                                                                  |
-|              type: string                                                                                        |
-|            motivazione:                                                                                          |
-|              type: string                                                                                        |
-|        ErrorMessage:                                                                                             |
-|          type: object                                                                                            |
-|          properties:                                                                                             |
-|            error_message:                                                                                        |
-|              type: string                                                                                        |
-+------------------------------------------------------------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------------------+
+| Specifica Servizio Server | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml |
++---------------------------+------------------------------------------------------------------------------------+
+| .. literalinclude:: ../media/rest-crud.yaml                                                                    |
+|    :language: yaml                                                                                             |
++----------------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata in cui il fruitore richiede la
 creazione di una prenotazione.
@@ -391,9 +175,9 @@ creazione di una prenotazione.
 |                                                            |    https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
-Di seguito un esempio in cui il fruitore richiede l’estrazione di una
-specifica prenotazione. Si noti l’utilizzo dell’URL restituito
-nell’header HTTP Location al passo precedente.
+Di seguito un esempio in cui il fruitore richiede l'estrazione di una
+specifica prenotazione. Si noti l'utilizzo dell'URL restituito
+nell'header HTTP Location al passo precedente.
 
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | HTTP Operation                            | GET                                                                                                                                       |
