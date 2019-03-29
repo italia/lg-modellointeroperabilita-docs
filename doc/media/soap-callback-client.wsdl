@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SOAPCallbackClientInterfaceService" targetNamespace="http://amministrazioneesempio.it/   nomeinterfacciaservizio">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://amministrazioneesempio.it/nomeinterfacciaservizio"><xs:element name="MRequestResponse" type="tns:MRequestResponse"/><xs:element name="MRequestResponseResponse" type="tns:MRequestResponseResponse"/><xs:complexType name="MRequestResponse"><xs:sequence><xs:element minOccurs="0" name="return" type="tns:mResponseType"/></xs:sequence></xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                              
+          <xs:complexType name="mResponseType"><xs:sequence><xs:element minOccurs="0" name="c" type="xs:string"/></xs:sequence></xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                              
+          <xs:complexType name="MRequestResponseResponse"><xs:sequence><xs:element minOccurs="0" name="return" type="tns:ackMessage"/></xs:sequence></xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                              
+          <xs:complexType name="ackMessage"><xs:sequence><xs:element minOccurs="0" name="outcome" type="xs:string"/></xs:sequence></xs:complexType>                                                                                                                                                                                                                                                                                                                                                                                              
+          <xs:element name="X-CorrelationID" nillable="true" type="xs:string"/>                                                                                                                                                                                                                                                                                                                                          
+        </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="MRequestResponse">
+    <wsdl:part element="tns:MRequestResponse" name="parameters"> </wsdl:part>
+    <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MRequestResponseResponse">
+    <wsdl:part element="tns:MRequestResponseResponse" name="parameters"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SOAPCallbackPort">
+    <wsdl:operation name="MRequestResponse">
+      <wsdl:input message="tns:MRequestResponse" name="MRequestResponse"> </wsdl:input>
+      <wsdl:output message="tns:MRequestResponseResponse" name="MRequestResponseResponse"> </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPCallbackClientInterfaceServiceSoapBinding" type="tns:SOAPCallbackPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="MRequestResponse"><soap:operation soapAction="" style="document"/><wsdl:input name="MRequestResponse"><soap:header message="tns:MRequestResponse" part="X-CorrelationID" use="literal"> </soap:header><soap:body parts="parameters" use="literal"/></wsdl:input>                                                                                                                                                                                                                                                                                                                                                                                                  
+          <wsdl:output name="MRequestResponseResponse"><soap:body use="literal"/></wsdl:output>                                                                                                                                                                                                                                                                                                                                                                                                 
+        </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOAPCallbackClientInterfaceService">
+    <wsdl:port binding="tns:SOAPCallbackClientInterfaceServiceSoapBinding" name="SOAPCallbackPort">
+      <soap:address location="http://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

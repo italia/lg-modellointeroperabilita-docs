@@ -1,0 +1,166 @@
+openapi: 3.0.1
+info:
+  title: RESTbusywaiting
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: "1.0"
+paths:
+  /resources/{id_resource}/M:
+    post:
+      description: M
+      operationId: PushMessage
+      parameters:
+      - name: id_resource
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MType'
+      responses:
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        404:
+          description: Identificativo non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        202:
+          description: Preso carico correttamente di M
+          headers:
+            Location:
+              description: Posizione nella quale richiedere lo stato della richiesta
+              required: true
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MProcessingStatus'
+  /resources/{id_resource}/M/{id_task}/result:
+    get:
+      description: M Result
+      operationId: PullResponseById
+      parameters:
+      - name: id_resource
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: id_task
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        404:
+          description: Identificativo non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        200:
+          description: Esecuzione di M completata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MResponseType'
+  /resources/{id_resource}/M/{id_task}:
+    get:
+      description: M Processing Status
+      operationId: PullResponseStatusById
+      parameters:
+      - name: id_resource
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: id_task
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        404:
+          description: Identificativo non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        200:
+          description: Esecuzione di M completata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MProcessingStatus'
+        303:
+          description: Preso carico correttamente di M
+          headers:
+            Location:
+              description: Posizione nella quale richiedere l'esito della richiesta
+              required: true
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MProcessingStatus'
+components:
+  schemas:
+    MProcessingStatus:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+    MType:
+      type: object
+      properties:
+        a:
+          $ref: '#/components/schemas/AComplexType'
+        b:
+          type: string
+    MResponseType:
+      type: object
+      properties:
+        c:
+          type: string
+    AComplexType:
+      type: object
+      properties:
+        a1s:
+          type: array
+          items:
+            type: string
+        a2:
+          type: string
+    ErrorMessage:
+      type: object
+      properties:
+        error_message:
+          type: string
