@@ -109,8 +109,8 @@ presenti nel documento in cui vengono evidenziate le relazioni.
    :align: center
    :alt: rappresentazione grafica delle dipendenze tra i profili
    :scale: 100 %
-   
-   Rappresentazione grafica delle dipendenze tra i profili
+
+Rappresentazione grafica delle dipendenze tra i profili
 
 **NOTA BENE**
 

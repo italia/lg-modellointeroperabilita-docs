@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SOAPBusyWaitingService" targetNamespace="http://amministrazioneesempio.it/   nomeinterfacciaservizio">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+      <xs:element name="MProcessingStatus" type="tns:MProcessingStatus"/>
+      <xs:element name="MProcessingStatusResponse" type="tns:MProcessingStatusResponse"/>
+      <xs:element name="MRequest" type="tns:MRequest"/>
+      <xs:element name="MRequestResponse" type="tns:MRequestResponse"/>
+      <xs:element name="MResponse" type="tns:MResponse"/>
+      <xs:element name="MResponseResponse" type="tns:MResponseResponse"/>
+      <xs:complexType name="MProcessingStatus">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="MProcessingStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:processingStatus"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="processingStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="errorMessageFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customFaultCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="M" type="tns:mType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="o_id" type="xs:int"/>
+          <xs:element minOccurs="0" name="a" type="tns:aComplexType"/>
+          <xs:element minOccurs="0" name="b" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="aComplexType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="a1s" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="a2" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MRequestResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:processingStatus"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="MResponseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:mResponseType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="c" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ErrorMessageFault" nillable="true" type="tns:errorMessageFault"/>
+      <xs:element name="X-CorrelationID" nillable="true" type="xs:string"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="MProcessingStatus">
+    <wsdl:part element="tns:MProcessingStatus" name="parameters"> </wsdl:part>
+    <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MProcessingStatusResponse">
+    <wsdl:part element="tns:MProcessingStatusResponse" name="parameters"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MRequest">
+    <wsdl:part element="tns:MRequest" name="parameters"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MRequestResponse">
+    <wsdl:part element="tns:MRequestResponse" name="result"> </wsdl:part>
+    <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MResponse">
+    <wsdl:part element="tns:MResponse" name="parameters"> </wsdl:part>
+    <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MResponseResponse">
+    <wsdl:part element="tns:MResponseResponse" name="parameters"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ErrorMessageException">
+    <wsdl:part element="tns:ErrorMessageFault" name="ErrorMessageException"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SOAPBusyWaiting">
+    <wsdl:operation name="MProcessingStatus">
+      <wsdl:input message="tns:MProcessingStatus" name="MProcessingStatus"> </wsdl:input>
+      <wsdl:output message="tns:MProcessingStatusResponse" name="MProcessingStatusResponse"> </wsdl:output>
+      <wsdl:fault message="tns:ErrorMessageException" name="ErrorMessageException"> </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MRequest">
+      <wsdl:input message="tns:MRequest" name="MRequest"> </wsdl:input>
+      <wsdl:output message="tns:MRequestResponse" name="MRequestResponse"> </wsdl:output>
+      <wsdl:fault message="tns:ErrorMessageException" name="ErrorMessageException"> </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MResponse">
+      <wsdl:input message="tns:MResponse" name="MResponse"> </wsdl:input>
+      <wsdl:output message="tns:MResponseResponse" name="MResponseResponse"> </wsdl:output>
+      <wsdl:fault message="tns:ErrorMessageException" name="ErrorMessageException"> </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPBusyWaitingServiceSoapBinding" type="tns:SOAPBusyWaiting">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="MProcessingStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="MProcessingStatus">
+        <soap:header message="tns:MProcessingStatus" part="X-CorrelationID" use="literal"> </soap:header>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MProcessingStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessageException">
+        <soap:fault name="ErrorMessageException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="MRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MRequestResponse">
+        <soap:header message="tns:MRequestResponse" part="X-CorrelationID" use="literal"> </soap:header>
+        <soap:body parts="result" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessageException">
+        <soap:fault name="ErrorMessageException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MResponse">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="MResponse">
+        <soap:header message="tns:MResponse" part="X-CorrelationID" use="literal"> </soap:header>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MResponseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessageException">
+        <soap:fault name="ErrorMessageException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOAPBusyWaitingService">
+    <wsdl:port binding="tns:SOAPBusyWaitingServiceSoapBinding" name="SOAPBusyWaitingPort">
+      <soap:address location="http://localhost:8080/soap/nomeinterfacciaservizio/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

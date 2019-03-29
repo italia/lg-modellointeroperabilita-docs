@@ -81,86 +81,9 @@ Esempio
 +--------------------+-----------------------------------------------------------------------------------------+
 | Specifica Servizio | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTblocking.yaml |
 +--------------------+-----------------------------------------------------------------------------------------+
-| .. code-block:: yaml                                                                                         |
-|                                                                                                              |
-|   openapi: 3.0.1                                                                                             |                         
-|     info:                                                                                                    |
-|       title: RESTblocking                                                                                    |
-|       license:                                                                                               |
-|         name: Apache 2.0 License                                                                             |
-|         url: http://www.apache.org/licenses/LICENSE-2.0.html                                                 |
-|       version: "1.0"                                                                                         |                         
-|     paths:                                                                                                   |
-|       /resources/{id_resource}/M:                                                                            |
-|         post:                                                                                                |
-|           description: Esegue M                                                                              |
-|           operationId: M                                                                                     |
-|           parameters:                                                                                        |
-|           - name: id_resource                                                                                |
-|             in: path                                                                                         |
-|             required: true                                                                                   |
-|             schema:                                                                                          |
-|               type: integer                                                                                  |
-|               format: int32                                                                                  |
-|           requestBody:                                                                                       |
-|             content:                                                                                         |
-|               application/json:                                                                              |
-|                 schema:                                                                                      |
-|                   $ref: '#/components/schemas/MType'                                                         |
-|           responses:                                                                                         |
-|             500:                                                                                             |
-|               description: Errore interno avvenuto                                                           |
-|               content:                                                                                       |
-|                 application/json:                                                                            |
-|                   schema:                                                                                    |
-|                     $ref: '#/components/schemas/ErrorMessage'                                                |
-|             404:                                                                                             |
-|               description: Identificativo non trovato                                                        |
-|               content:                                                                                       |
-|                 application/json:                                                                            |
-|                   schema:                                                                                    |
-|                     $ref: '#/components/schemas/ErrorMessage'                                                |
-|             400:                                                                                             |
-|               description: Richiesta non valida                                                              |
-|               content:                                                                                       |
-|                 application/json:                                                                            |
-|                   schema:                                                                                    |
-|                     $ref: '#/components/schemas/ErrorMessage'                                                |
-|             200:                                                                                             |
-|               description: Esecuzione di M avvenuta con successo                                             |
-|               content:                                                                                       |
-|                 application/json:                                                                            |
-|                   schema:                                                                                    |
-|                     $ref: '#/components/schemas/MResponseType'                                               |                         
-|     components:                                                                                              |
-|       schemas:                                                                                               |
-|         MType:                                                                                               |
-|           type: object                                                                                       |
-|           properties:                                                                                        |
-|             a:                                                                                               |
-|               $ref: '#/components/schemas/AComplexType'                                                      |
-|             b:                                                                                               |
-|               type: string                                                                                   |
-|         MResponseType:                                                                                       |
-|           type: object                                                                                       |
-|           properties:                                                                                        |
-|             c:                                                                                               |
-|               type: string                                                                                   |
-|         AComplexType:                                                                                        |
-|           type: object                                                                                       |
-|           properties:                                                                                        |
-|             a1s:                                                                                             |
-|               type: array                                                                                    |
-|               items:                                                                                         |
-|                 type: integer                                                                                |
-|                 format: int32                                                                                |
-|             a2:                                                                                              |
-|               type: string                                                                                   |
-|         ErrorMessage:                                                                                        |
-|           type: object                                                                                       |
-|           properties:                                                                                        |
-|             error_message:                                                                                   |
-|               type: string                                                                                   |
+| .. literalinclude:: ../media/rest-blocking.yaml                                                              |
+|    :language: yaml                                                                                           |
+|    :linenos:                                                                                                 |
 +--------------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata al metodo ``M``.
@@ -235,102 +158,13 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 
 Esempio
 ~~~~~~~
-+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
-| Specifica Servizio                                                                                                      | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl |
-+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
-| .. code-block:: XML                                                                                                     |                                                                            |
-|                                                                                                                         |                                                                            |
-|   <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"          |                                                                            |
-|                     xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio"                                |                                                                            |
-|                     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" |                                                                            |
-|                     name="SOAPBlockingImplService"                                                                      |                                                                            |
-|                     targetNamespace="http://amministrazioneesempio.it/nomeinterfacciaservizio">                         |                                                                            |
-|   <wsdl:types>                                                                                                          |                                                                            |
-|     <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"                                                              |                                                                            |
-|                xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio"                                     |                                                                            |
-|                attributeFormDefault="unqualified" elementFormDefault="unqualified"                                      |                                                                            |
-|                targetNamespace="http://amministrazioneesempio.it/nomeinterfacciaservizio">                              |                                                                            |
-|       <xs:element name="M" type="tns:M"/>                                                                               |                                                                            |
-|       <xs:element name="MResponse" type="tns:MResponse"/>                                                               |                                                                            |
-|       <xs:complexType name="M">                                                                                         |                                                                            |
-|         <xs:sequence>                                                                                                   |                                                                            |
-|           <xs:element minOccurs="0" name="M" type="tns:mType"/>                                                         |                                                                            |
-|         </xs:sequence>                                                                                                  |                                                                            |
-|       </xs:complexType>                                                                                                 |                                                                            |
-|       <xs:complexType name="mType">                                                                                     |                                                                            |
-|         <xs:sequence>                                                                                                   |                                                                            |
-|           <xs:element minOccurs="0" name="oId" type="xs:int"/>                                                          |                                                                            |
-|           <xs:element minOccurs="0" name="a" type="tns:aComplexType"/>                                                  |                                                                            |
-|           <xs:element minOccurs="0" name="b" type="xs:string"/>                                                         |                                                                            |
-|         </xs:sequence>                                                                                                  |                                                                            |
-|       </xs:complexType>                                                                                                 |                                                                            |
-|       <xs:complexType name="aComplexType">                                                                              |                                                                            |
-|         <xs:sequence>                                                                                                   |                                                                            |
-|           <xs:element minOccurs="0" name="a1s" type="tns:a1ComplexType"/>                                               |                                                                            |
-|           <xs:element minOccurs="0" name="a2" type="xs:string"/>                                                        |                                                                            |
-|         </xs:sequence>                                                                                                  |                                                                            |
-|       </xs:complexType>                                                                                                 |                                                                            |
-|       <xs:complexType name="a1ComplexType">                                                                             |                                                                            |
-|         <xs:sequence>                                                                                                   |                                                                            |
-|           <xs:element maxOccurs="unbounded" minOccurs="0" name="a1" nillable="true" type="xs:string"/>                  |                                                                            |
-|         </xs:sequence>                                                                                                  |                                                                            |
-|       </xs:complexType>                                                                                                 |                                                                            |
-|       <xs:complexType name="MResponse">                                                                                 |                                                                            |
-|         <xs:sequence>                                                                                                   |                                                                            |
-|           <xs:element minOccurs="0" name="return" type="tns:mResponseType"/>                                            |                                                                            |
-|         </xs:sequence>                                                                                                  |                                                                            |
-|       </xs:complexType>                                                                                                 |                                                                            |
-|       <xs:complexType name="mResponseType">                                                                             |                                                                            |
-|         <xs:sequence>                                                                                                   |                                                                            |
-|           <xs:element minOccurs="0" name="c" type="xs:string"/>                                                         |                                                                            |
-|         </xs:sequence>                                                                                                  |                                                                            |
-|       </xs:complexType>                                                                                                 |                                                                            |
-|       <xs:complexType name="errorMessageFault">                                                                         |                                                                            |
-|         <xs:sequence>                                                                                                   |                                                                            |
-|           <xs:element minOccurs="0" name="customFaultCode" type="xs:string"/>                                           |                                                                            |
-|         </xs:sequence>                                                                                                  |                                                                            |
-|       </xs:complexType>                                                                                                 |                                                                            |
-|       <xs:element name="ErrorMessageFault" nillable="true" type="tns:errorMessageFault"/>                               |                                                                            |
-|     </xs:schema>                                                                                                        |                                                                            |
-|   </wsdl:types>                                                                                                         |                                                                            |
-|   <wsdl:message name="MResponse">                                                                                       |                                                                            |
-|     <wsdl:part element="tns:MResponse" name="parameters"> </wsdl:part>                                                  |                                                                            |
-|   </wsdl:message>                                                                                                       |                                                                            |
-|   <wsdl:message name="ErrorMessageException">                                                                           |                                                                            |
-|     <wsdl:part element="tns:ErrorMessageFault" name="ErrorMessageException"> </wsdl:part>                               |                                                                            |
-|   </wsdl:message>                                                                                                       |                                                                            |
-|   <wsdl:message name="M">                                                                                               |                                                                            |
-|     <wsdl:part element="tns:M" name="parameters"> </wsdl:part>                                                          |                                                                            |
-|   </wsdl:message>                                                                                                       |                                                                            |
-|   <wsdl:portType name="SOAPBlockingImpl">                                                                               |                                                                            |
-|     <wsdl:operation name="M">                                                                                           |                                                                            |
-|       <wsdl:input message="tns:M" name="M"> </wsdl:input>                                                               |                                                                            |
-|       <wsdl:output message="tns:MResponse" name="MResponse"> </wsdl:output>                                             |                                                                            |
-|       <wsdl:fault message="tns:ErrorMessageException" name="ErrorMessageException"> </wsdl:fault>                       |                                                                            |
-|     </wsdl:operation>                                                                                                   |                                                                            |
-|   </wsdl:portType>                                                                                                      |                                                                            |
-|   <wsdl:binding name="SOAPBlockingImplServiceSoapBinding" type="tns:SOAPBlockingImpl">                                  |                                                                            |
-|     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>                                   |                                                                            |
-|     <wsdl:operation name="M">                                                                                           |                                                                            |
-|       <soap:operation soapAction="" style="document"/>                                                                  |                                                                            |
-|       <wsdl:input name="M">                                                                                             |                                                                            |
-|         <soap:body use="literal"/>                                                                                      |                                                                            |
-|       </wsdl:input>                                                                                                     |                                                                            |
-|       <wsdl:output name="MResponse">                                                                                    |                                                                            |
-|         <soap:body use="literal"/>                                                                                      |                                                                            |
-|       </wsdl:output>                                                                                                    |                                                                            |
-|       <wsdl:fault name="ErrorMessageException">                                                                         |                                                                            |
-|         <soap:fault name="ErrorMessageException" use="literal"/>                                                        |                                                                            |
-|       </wsdl:fault>                                                                                                     |                                                                            |
-|     </wsdl:operation>                                                                                                   |                                                                            |
-|   </wsdl:binding>                                                                                                       |                                                                            |
-|   <wsdl:service name="SOAPBlockingImplService">                                                                         |                                                                            |
-|     <wsdl:port binding="tns:SOAPBlockingImplServiceSoapBinding" name="SOAPBlockingImplPort">                            |                                                                            |
-|       <soap:address location="http://localhost:8080/soap/nomeinterfacciaservizio/v1"/>                                  |                                                                            |
-|     </wsdl:port>                                                                                                        |                                                                            |
-|   </wsdl:service>                                                                                                       |                                                                            |
-|   </wsdl:definitions>                                                                                                   |                                                                            |
-+-------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
++-----------------------------------------------------------+----------------------------------------------------------------------------+
+| Specifica Servizio                                        | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl |
++-----------------------------------------------------------+----------------------------------------------------------------------------+
+| .. literalinclude:: ../media/soap-blocking.wsdl                                                                                        |
+|    :language: xml                                                                                                                      |
+|    :linenos:                                                                                                                           |
++-----------------------------------------------------------+----------------------------------------------------------------------------+
 
 A seguire un esempio di chiamata al metodo ``M``.
 
@@ -348,7 +182,7 @@ A seguire un esempio di chiamata al metodo ``M``.
 |                                                               |           xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"                                            |
 |                                                               |           soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">                                    |
 |                                                               |                                                                                                            |
-|                                                               |         <soap:Header>	                                                                                     |
+|                                                               |         <soap:Header>                                                                                      |
 |                                                               |                                                                                                            |
 |                                                               |           <!--Autenticazione-->                                                                            |
 |                                                               |         </soap:Header>                                                                                     |

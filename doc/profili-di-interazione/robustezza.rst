@@ -187,7 +187,7 @@ invece il fruitore debba attendere per presentare nuove richieste.
 +------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Endpoint                                                   | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| \(1) Request Body                                          | .. code-block:: JSON                                                                   |
+| \(1) Request Body                                          | .. code-block:: json                                                                   |
 |                                                            |                                                                                        |
 |                                                            |    {                                                                                   |
 |                                                            |      "a": {                                                                            |
@@ -197,7 +197,7 @@ invece il fruitore debba attendere per presentare nuove richieste.
 |                                                            |      "b": "Stringa di esempio"                                                         |
 |                                                            |    }                                                                                   |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| \(2) Response Body (HTTP Status Code 200 OK)               | .. code-block:: JSON                                                                   |
+| \(2) Response Body (HTTP Status Code 200 OK)               | .. code-block:: json                                                                   |
 |                                                            |                                                                                        |
 |                                                            |    X-Rate-Limit-Limit: 30                                                              |
 |                                                            |    X-Rate-Limit-Remaining: 11                                                          |
@@ -207,7 +207,7 @@ invece il fruitore debba attendere per presentare nuove richieste.
 |                                                            |      "c" : "risultato"                                                                 |
 |                                                            |    }                                                                                   |
 +------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| \(2) Response Body (HTTP Status Code 429 Too Many Request) | .. code-block:: JSON                                                                   |
+| \(2) Response Body (HTTP Status Code 429 Too Many Request) | .. code-block:: html                                                                   |
 |                                                            |                                                                                        |
 |                                                            |    Retry-After: 60                                                                     |
 |                                                            |                                                                                        |

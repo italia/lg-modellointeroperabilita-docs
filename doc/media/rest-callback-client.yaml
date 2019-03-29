@@ -1,0 +1,58 @@
+openapi: 3.0.1
+ info:
+   title: RESTCallbackClient
+   license:
+     name: Apache 2.0 License
+     url: http://www.apache.org/licenses/LICENSE-2.0.html
+   version: "1.0"
+ paths:
+   /MResponse:
+     post:
+       description: M
+       operationId: PushResponseMessage
+       parameters:
+       - name: X-Correlation-ID
+         in: header
+         schema:
+           type: string
+       requestBody:
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/MResponseType'
+       responses:
+         500:
+           description: Errore interno avvenuto
+           content:
+             application/json:
+               schema:
+                 $ref: '#/components/schemas/ErrorMessage'
+         404:
+           description: Identificativo non trovato
+           content:
+             application/json:
+               schema:
+                 $ref: '#/components/schemas/ErrorMessage'
+         200:
+           description: Risposta correttamente ricevuta
+           content:
+             application/json:
+               schema:
+                 $ref: '#/components/schemas/ACKMessage'
+ components:
+   schemas:
+     ACKMessage:
+       type: object
+       properties:
+         outcome:
+           type: string
+     MResponseType:
+       type: object
+       properties:
+         c:
+           type: string
+     ErrorMessage:
+       type: object
+       properties:
+         error_message:
+           type: string

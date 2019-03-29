@@ -131,7 +131,7 @@ fruitore all’interfaccia di servizio dell’erogatore.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
-.. code-block:: URI
+.. code-block:: html
 
    soap="http://schemas.xmlsoap.org/soap/envelope/"
    wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
@@ -362,7 +362,7 @@ servizio di echo.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
-.. code-block:: URI
+.. code-block:: html
 
    soap="http://schemas.xmlsoap.org/soap/envelope/"
    wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"

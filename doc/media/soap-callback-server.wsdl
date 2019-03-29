@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SOAPCallbackServerService" targetNamespace="http://amministrazioneesempio.it/   nomeinterfacciaservizio">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+      <xs:element name="MRequest" type="tns:MRequest"/>
+      <xs:element name="MRequestResponse" type="tns:MRequestResponse"/>
+      <xs:complexType name="MRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="M" type="tns:mType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="o_id" type="xs:int"/>
+          <xs:element minOccurs="0" name="a" type="tns:aComplexType"/>
+          <xs:element minOccurs="0" name="b" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="aComplexType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="a1s" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="a2" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MRequestResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:ackMessage"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ackMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="outcome" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="errorMessageFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customFaultCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ErrorMessageFault" nillable="true" type="tns:errorMessageFault"/>
+      <xs:element name="X-ReplyTo" nillable="true" type="xs:string"/>
+      <xs:element name="X-CorrelationID" nillable="true" type="xs:string"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="MRequest">
+    <wsdl:part element="tns:MRequest" name="parameters"> </wsdl:part>
+    <wsdl:part element="tns:X-ReplyTo" name="X-ReplyTo"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MRequestResponse">
+    <wsdl:part element="tns:MRequestResponse" name="result"> </wsdl:part>
+    <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ErrorMessageException">
+    <wsdl:part element="tns:ErrorMessageFault" name="ErrorMessageException"> </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SOAPCallback">
+    <wsdl:operation name="MRequest">
+      <wsdl:input message="tns:MRequest" name="MRequest"> </wsdl:input>
+      <wsdl:output message="tns:MRequestResponse" name="MRequestResponse"> </wsdl:output>
+      <wsdl:fault message="tns:ErrorMessageException" name="ErrorMessageException"> </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPCallbackServerServiceSoapBinding" type="tns:SOAPCallback">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="MRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="MRequest">
+        <soap:header message="tns:MRequest" part="X-ReplyTo" use="literal"> </soap:header>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MRequestResponse">
+        <soap:header message="tns:MRequestResponse" part="X-CorrelationID" use="literal"> </soap:header>
+        <soap:body parts="result" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ErrorMessageException">
+        <soap:fault name="ErrorMessageException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOAPCallbackServerService">
+    <wsdl:port binding="tns:SOAPCallbackServerServiceSoapBinding" name="SOAPCallbackPort">
+      <soap:address location="http:////api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
