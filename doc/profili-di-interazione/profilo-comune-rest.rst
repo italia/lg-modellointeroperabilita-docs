@@ -8,8 +8,7 @@ Formato dei dati
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Tranne ove previsto da standard e specifiche settoriali, in REST la
-comunicazione deve avvenire tramite oggetti JSON ​\ `RFC
-7159​ <http://www.rfc-editor.org/rfc/rfc7159.txt>`__ con il relativo
+comunicazione deve avvenire tramite oggetti JSON :RFC:`7159` con il relativo
 ​\ `media-type​ <https://www.iana.org/assignments/media-types/media-types.xhtml>`__
 ``application/json``.
 
@@ -17,16 +16,16 @@ Specifiche settoriali (es. INSPIRE, HL7) devono essere rispettate anche
 laddove queste siano parzialmente in conflitto con il profilo qui
 specificato, eg:
 
--  per​ HL7 si veda FHIR ​\ https://www.hl7.org/fhir/
+-  per​ HL7 si veda FHIR_
 
--  per​ xBLR si veda XBLR-json
-   ​\ https://www.xbrl.org/xbrl-json-making-xbrl-easier/
+-  per​ xBLR si veda XBLR-json_
+   ​\
 
 Codificare dati strutturati con oggetti JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I dati strutturati devono essere trasferiti tramite ​oggetti JSON​
-​\ `RFC-7159​ <https://tools.ietf.org/html/rfc7159>`__, in modo da
+​:RFC:`7159`, in modo da
 permettere l'estensione retrocompatibile della response con ulteriori
 attributi (Eg. paginazione). Cioè:
 
@@ -61,7 +60,7 @@ Evitare Content-Type personalizzati
 
 Evitare l'uso di media-type personalizzati come da ​\ `RFC
 6838 <https://tools.ietf.org/html/rfc6838#section-3.4>`__ (eg.
-`application/x.custom.name+json`) ed utilizzare nomi standard come:
+``application/x.custom.name+json``) ed utilizzare nomi standard come:
 
 - `application/json​ <https://www.iana.org/assignments/media-types/application/json>`__,
 - `application/problem+json​ <https://www.iana.org/assignments/media-types/application/problem+json>`__,
@@ -81,16 +80,13 @@ nazionale e le relative ontologie.
 Utilizzare formati standard per Data ed Ora
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Le date devono essere conformi ad `RFC3339​ <https://www.ietf.org/rfc/rfc3339.txt>`__,
+Le date devono essere conformi ad :RFC:`3339`,
 ad esempio `2015-05-28` per la data e `2015-05-28T14:07:17Z` per l'ora.
 
-Le date negli header HTTP devono essere conformi allo standard ​\ `HTTP
-date format <http://tools.ietf.org/html/rfc7231#section-7.1.1.1>`__
+Le date negli header HTTP devono essere conformi allo standard
+`HTTP date format`_ definito in :RFC:`7231`.
 
-`definito in RFC
-7231​ <http://tools.ietf.org/html/rfc7231#section-7.1.1.1>`__.
-
-RFC3339 permette di indicare una timezone prefissando la data con la
+:RFC:`3339` permette di indicare una timezone prefissando la data con la
 distanza da UTC:
 
 -  `2015-05-28T14:07:17+01:00`
@@ -101,7 +97,8 @@ suffisso Z (Zulu time zone)
 
 -  `2015-05-28T14:07:17Z`
 
-#### Tempi di durata e intervalli devono utilizzare ISO 8601.
+Tempi di durata e intervalli devono utilizzare ISO 8601.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Di seguito alcuni esempi di durata in formato ​\ `ISO 8601 per i tempi
 di durata​ <https://en.wikipedia.org/wiki/ISO_8601#Durations>`__.
@@ -110,23 +107,23 @@ Le durate sono prefissate da "P", giorni e Ore sono separati da "T".
 
 Esempi:
 
-- P1Y2M3D - 1 anno, 2 mesi e 3 giorni
-- PT1H4M5S - 1 ora, 4 minuti e 5 secondi
-- P1M - 1 mese
-- PT1M - 1 minuto
-- P1Y2M10DT2H30M - 1 anno, 2 mesi, 10 giorni 2 ore e 30 minuti
+- ``P1Y2M3D`` - 1 anno, 2 mesi e 3 giorni
+- ``PT1H4M5S`` - 1 ora, 4 minuti e 5 secondi
+- ``P1M`` - 1 mese
+- ``PT1M`` - 1 minuto
+- ``P1Y2M10DT2H30M`` - 1 anno, 2 mesi, 10 giorni 2 ore e 30 minuti
 
 Un'analoga sintassi ISO8601 per lo stesso intervallo è la seguente:
 
-P0001-02-10T2:30:00
+``P0001-02-10T2:30:00``
 
 Utilizzare le convenzioni di rappresentazione
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  I nomi degli array devono essere al plurale.
--  I booleani non devono essere null.
--  Gli array vuoti non devono essere null, ma liste vuote, ad es. "[]".
--  Le enumeration devono essere rappresentate da Stringhe non nulle
+-  I booleani non devono essere ``null``.
+-  Gli array vuoti non devono essere ``null``, ma liste vuote, ad es. ``[]``.
+-  Le enumeration devono essere rappresentate da stringhe non nulle
 
 Usare standard per Lingue, Nazioni e Monete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -136,8 +133,7 @@ la Valorizzazione del Patrimonio Informativo Nazionale, inclusi:
 
 -  `ISO 3166-1-alpha2 country (due lettere) <http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__
 -  `ISO 639-1 language code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
--  `BCP-47​ <https://tools.ietf.org/html/bcp47>`__ (basato su ISO 639-1)
-   per le varianti dei linguaggi.
+-  :BCP:`47` (basato su ISO 639-1) per le varianti dei linguaggi.
    Dove non strettamente necessario il subta​g​b​, basta la prima parte (ad es. it vs it- IT)
 -  `ISO 4217 currency codes​ <http://en.wikipedia.org/wiki/ISO_4217>`__
    alpha-3 usato in
@@ -186,30 +182,23 @@ tabella. Le implementazioni devono utilizzare il tipo più adatto.
 
 Le proprietà degli oggetti JSON devono avere un naming consistente
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(scegliere uno dei due) e devono essere codificate in ASCII:
+Segliere uno dei due stili di seguito e devono essere codificate in ASCII:
 
 -  snake_case
-
 -  camelCase
 
 Non usare contemporaneamente snake_case e camelCase nella stessa API.
 
 Analogamente non usare contemporaneamente i due stili nella naming
-convention, ad
-
-esempio
+convention, ad esempio
 
 -  sì​: ``{ "givenName": "Mario", "familyName": "Rossi"}``
 -  sì: ``{ "given_name": "Mario", "family_name": "Rossi"}``
 -  no: ``{ "givenName": "Mario", "family_name": "Rossi"}``
 
-Preferire l'uso di ASCII snake_case al camelCase:  [1]_[a-z_0-9]*$.
-Sebbene sia
-
-possibile scegliere coerentemente, ove possibile si deve preferire
-l'utilizzo dello
-
-snake_case.
+Preferire l'uso di ASCII snake_case al camelCase:  [1]_``[a-z_0-9]*$``.
+Sebbene sia possibile scegliere coerentemente, ove possibile si deve preferire
+l'utilizzo dello snake_case.
 
 Progettazione e Naming delle Interfacce di Servizio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -234,7 +223,7 @@ In generale gli header:
 -  la semantica e gli intenti delle operazioni deve essere definita
    tramite URI, Status e Method e non dagli Header, che dovrebbero supportare
    funzionalità di protocollo come flow control, content negotiation, ed authentication,
-   come indicato ​in `RFC-7231​ <https://tools.ietf.org/html/rfc7231>`__.
+   come indicato ​in :RFC:`7231`.
 
 Prima di usare un header:
 
@@ -267,8 +256,8 @@ benefici.
 Quando le risorse contengono link e riferimenti a risorse esterne, si
 dovrebbero usare le specifiche indicate in ​\ `IANA registered link
 relations​ <http://www.iana.org/assignments/link-relations/link-relations.xml>`__.
-Se le specifiche IANA contengono dei dash "-", questi vanno convertiti
-in underscore "_", e​g. terms-of-service -> terms_of_service.
+Se le specifiche IANA contengono dei dash ``-``, questi vanno convertiti
+in underscore ``_``, e​g. ``terms-of-service -> terms_of_service``.
 
 Esempio: una ricerca paginata con link relations.
 
@@ -303,6 +292,7 @@ Esempio: una ricerca paginata con link relations.
       "prev":"https://...",
       "last":"https://..."
     }
+
 
 Usare parole separate da trattino "-" per i Path
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -346,9 +336,7 @@ Le collezioni di risorse devono usare nomi al plurale
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Differenziare il nome delle collezioni e delle risorse permette di
-separare a livello di URI
-
-endpoint che sono in larga parte funzionalmente differenti.
+separare a livello di URI endpoint che sono in larga parte funzionalmente differenti.
 
 Esempio 1: ricerca documenti per data in una collezione
 
@@ -378,19 +366,30 @@ Esempio 2: recupera un singolo documento
 Utilizzare Query Strings standardizzate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Esempio 1: La paginazione dev'essere implementata tramite i parametri
-cursor, limit, offset, sort
+Esempio 1: La paginazione dev'essere implementata tramite i parametri:
+
+::
+
+    cursor, limit, offset, sort
 
 Esempio 2: La ricerca, il filtering e l'embedding dei parametri
-dev'essere implementata tramite i parametri q, fields. embed
+dev'essere implementata tramite i parametri:
+
+::
+
+    q, fields. embed
 
 E' possibile trovare un elenco di parametri standardizzati nel
 repository:
 
 - https://github.com/teamdigitale/openapi/tree/master/docs
 
-Non usare Link Headers RFC5988 se la response è in JSON
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Non usare l'header ``Link`` :RFC:`8288` se la response è in JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Eventuali link a risorse vanno restituiti nel payload. Va\' invece
+evitato di ritornare l'header ``Link`` definito in :RFC:`8288`
+(già :RFC:`5988`).
 
 Usare URI assoluti nei risultati
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -404,66 +403,13 @@ Usare lo schema Problem JSON per le risposte di errore
 
 In caso di errori si deve ritornare:
 
--  un payload di tipo Problem definito in ​\ `RFC
-   7807 <http://tools.ietf.org/html/rfc7807>`__
+-  un payload di tipo Problem definito in ​:RFC:`7807`
 -  il media type dev'essere ``application/problem+json``
 -  lo status code dev'essere esplicativo
 -  l'oggetto può essere esteso
 
 Quando si restituisce un errore è importante *non esporre dati interni*
-delle applicazioni e seguire le indicazioni nel §6.4 delle
-`Linee Guida per lo sviluppo di sicuro di codice <https://www.agid.gov.it/sites/default/files/repository_files/documentazione/linee_guida_per_lo_sviluppo_sicuro_di_codice_v1.0.pdf>`__
-
-
-Performance e Robustezza
--------------------------------
-
-Utilizzare lo status code http 429 con gli header per il rate limiting
-
-Gli erogatori devono definire ed esporre ai fruitori politiche di
-throttling segnalando
-
-eventuali limiti raggiunti con ​HTTP 429 (too many requests)​.
-
-Le API devono restituire in ogni response i valori globali di throttling
-tramite i seguenti
-
-header:
-
--  X-RateLimit-Limit​: limite massimo di richieste per un endpoint
-
--  X-RateLimit-Remaining​: numero di richieste rimanenti fino al
-   prossimo reset
-
--  X-RateLimit-Reset​: il numero di secondi che mancano al prossimo
-   reset
-
-In caso di superamento delle quote le API devono restituire anche
-l'header:
-
--  Retry-After​: il numero minimo di secondi dopo cui il client è
-   invitato a riprovare
-
-Attenzione:
-
--  l'RFC 7231 prevede che Retry-After header possa essere utilizzato sia
-   in forma di data che di secondi;
-
--  alcune API pubbliche utilizzano l'header ​X-RateLimit-Reset anche nel
-   formato Unix​ Timestamp
-
-I fruitori devono:
-
--  rispettare gli header di throttling
-
--  rispettare l'header ​X-RateLimit-Reset sia quando restituisce il
-   numero di secondi che mancano al prossimo reset, sia quando ritorna
-   il timestamp unix
-
--  rispettare l'header
-   ​\ `Retry-After​ <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After>`__
-   sia nella variante che espone il numero di secondi dopo cui
-   riprovare, sia nella variante che espone la data in cui riprovare
+delle applicazioni e seguire le indicazioni nel §6.4 delle `Linee Guida per lo sviluppo di sicuro di codice`_
 
 
 Ottimizzare l'uso della banda e migliorare la responsività
@@ -472,11 +418,8 @@ Ottimizzare l'uso della banda e migliorare la responsività
 Utilizzare quando possibile:
 
 -  gzip compression;
-
 -  paginazione;
-
 -  un filtro sugli attributi necessari;
-
 -  le specifiche di optimistic locking (etag, if-(none-)match)
 
 E' possibile ridurre l'uso della banda e velocizzare le richieste
@@ -510,8 +453,7 @@ Esempio 1: Non filtrato
       }
     }
 
-Esempio 2:
-Filtrato\ ` <http://zalando.github.io/restful-api-%20guidelines/index.html#filtered>`__
+Esempio 2: Filtrato `<http://zalando.github.io/restful-api-guidelines/index.html#filtered>`__
 
 ::
 
@@ -534,10 +476,9 @@ richieste, quando bisogna ritornare risorse correlate tra loro.
 
 In tal caso va usato:
 
--  il​ parametro "embed" utilizzando lo stesso formato dei campi per il
+-  il​ parametro ``embed`` utilizzando lo stesso formato dei campi per il
    filtering
-
--  l'attributo \_embedded contenente le entry espanse.
+-  l'attributo ``_embedded`` contenente le entry espanse.
 
 ::
 
@@ -595,7 +536,7 @@ Le API devono supportare la paginazione delle collezioni tramite:
    l'implementazione di pagine con infinite scrolling.
 
 La paginazione dovrebbe essere implementata in modo da limitare l'uso
-improprio delle API (eg. download in parallelo di interi dataset, …)
+improprio delle API (eg. download in parallelo di interi dataset, ...)
 
 Per il ripristino del download di un documento si faccia riferimento a
 Range Requests :RFC:`7233`.
@@ -605,12 +546,12 @@ Supportare le informazioni di inoltro tramite l'header Forwarded
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le informazioni di inoltro HTTP (eg. indirizzo ip di provenienza,
-destinazione …) erogatori devono essere:
+destinazione ...) erogatori devono essere:
 
 -  preservate​ dall'infrastruttura
 
 -  scambiate tramite l'header Forwarded definito in :RFC:`7239` e pronto per
-   IPv6.
+   IPv6 :RFC:`8200`.
 
 eg.
 
@@ -623,6 +564,17 @@ non hanno un comportamento codificato e dipendono dalle varie implementazioni,
 devono comunque essere supportati e preservati.
 
 
+
+.. _`HTTP date format`: http://tools.ietf.org/html/rfc7231#section-7.1.1.1
+
+.. _`Linee Guida per lo sviluppo di sicuro di codice`:
+    https://www.agid.gov.it/sites/default/files/repository_files/documentazione/linee_guida_per_lo_sviluppo_sicuro_di_codice_v1.0.pdf
+
+.. _FHIR: https://www.hl7.org/fhir/
+
+.. _XBLR-json: https://www.xbrl.org/xbrl-json-making-xbrl-easier/
+
+
 Riferimenti
 -------------------
 
@@ -633,29 +585,23 @@ Specifiche
 
 Articoli
 
--  `Roy Thomas Fielding - Architectural Styles and the Design of
-   Network-Based <http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm>`__
-
--  `Software
-Architectures​ <http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm>`__ Definizione teorica dell'approccio REST
+-  `Roy Thomas Fielding - Architectural Styles and the Design of Network-Based <http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm>`__
+-  `Software Architectures​ <http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm>`__ Definizione teorica dell'approccio REST.
 
 
 Libri​
 
--  `PIs: From Start to
-Finish <http://www.infoq.com/minibooks/emag-web-%20api>`__
+-  `PIs: From Start to Finish <http://www.infoq.com/minibooks/emag-web-%20api>`__
 
 -  `Blogs <http://www.amazon.de/REST-Practice-Hypermedia-Systems-%20Architecture/dp/0596805829>`__
 
 -  `Service Design Patterns <http://www.servicedesignpatterns.com/>`__
 
--  `REST in Practice: Hypermedia and Systems
-   Architecture <http://www.amazon.de/REST-Practice-Hypermedia-Systems-%20Architecture/dp/0596805829>`__
+-  `REST in Practice: Hypermedia and Systems Architecture <http://www.amazon.de/REST-Practice-Hypermedia-Systems-%20Architecture/dp/0596805829>`__
 
 -  `Build APIs You Won't Hate <https://leanpub.com/build-apis-you-wont-hate>`__
 
--  `InfoQ eBook - Web A​PIs: From Start to
-   Finish​ <http://www.infoq.com/minibooks/emag-web-%20api>`__\ `¶ <http://www.infoq.com/minibooks/emag-web-api>`__
+-  `InfoQ eBook - Web A​PIs: From Start to Finish​ <http://www.infoq.com/minibooks/emag-web-%20api>`__\ `¶ <http://www.infoq.com/minibooks/emag-web-api>`__
 
 ​Blogs
 
