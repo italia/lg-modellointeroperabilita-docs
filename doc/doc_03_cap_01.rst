@@ -125,7 +125,7 @@ di realizzarla utilizzando le due diverse tecnologie SOAP e REST.
    :scale: 75 %
    :align: center
    :alt: interfaccia di servizio usando SOAP/WSDL
-   
+
    Interfaccia di servizio usando SOAP/WSDL.
 
 Per semplicità nell'esempio si suppone che il singolo item nell'Order sia rappresentabile con una semplice stringa (che codifica il suo codice, ad esempio) e sempre in quantità singola (per cui un Order non fa altro che aggregare differenti Items)
@@ -170,7 +170,7 @@ stato prodotto. Figura 3.3 schematizza l'interfaccia di servizio.
    :scale: 75 %
    :align: center
    :alt: interfacce di servizio usando SOAP/WSDL
-   
+
    Interfacce di servizio usando SOAP/WSDL
 
 Per realizzare una interfaccia di servizio che fornisce la stessa logica
@@ -194,7 +194,7 @@ quindi a far partire il task.
          "ping-time": "2018-12-31T19:43:37+0100"
          }
       }
-      
+
 Il codice di stato **202 Accepted** indica che l'interfaccia di servizio ha verificato l'input della richiesta e lo ha accettato, ma non è possibile fornire una risposta immediata.
 
 Il client deve seguire il collegamento fornito nell'intestazione
@@ -206,7 +206,7 @@ sospeso.
    ⇒ GET /task/20181231
 
    ⇐ 200 OK
-   
+
    {
       "task": {
       "status": "processing",
@@ -214,7 +214,7 @@ sospeso.
       "ping-time": "2018-12-31T19:52:45+0100"
       }
    }
-   
+
 I client possono inviare richieste GET in qualsiasi momento per
 tenere traccia dei progressi. Oltre allo stato, la risposta contiene
 anche un suggerimento (nell'elemento ping-time) su quando deve essere
@@ -228,7 +228,7 @@ il risultato finale.
 .. code-block:: JSON
 
    ⇒ GET /task/20181231
-   
+
    ⇐ 303 See Other
    Location: /task/20181231/result
 
@@ -297,7 +297,7 @@ Maturity Model.
   paradigmi-per-la-progettazione-delle-interfacce-di-servizio/perimetro-delle-interfacce-di-servizio.rst
   paradigmi-per-la-progettazione-delle-interfacce-di-servizio/considerazioni-sulla-natura-del-fruitore.rst
   paradigmi-per-la-progettazione-delle-interfacce-di-servizio/migrazione-dei-servizi-spcoop-nel-nuovo-framework-di-interoperabilità.rst
-    
+
 .. [1]
    SOAP - Simple Object Access Protocol è il protocollo originariamente
    proposto, e standardizzato dal W3C, per lo sviluppo e dispiegamento
@@ -323,6 +323,6 @@ Maturity Model.
 
 .. [3]
    Cf. https://www.crummy.com/writing/speaking/2008-QCon/act3.html
-   
+
 .. discourse::
    :topic_identifier: 8919

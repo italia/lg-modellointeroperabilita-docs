@@ -4,7 +4,7 @@ Profili e linee Guida
 La terza sezione del Modello di Interoperabilità, così come
 introdotto nella sezione relativa alla Visione generale, fornisce
 indicazioni concrete, a livello tecnico, su differenti modalità
-operative per realizzare l’interoperabilità tra sistemi informativi di
+operative per realizzare l'interoperabilità tra sistemi informativi di
 differenti pubbliche amministrazioni, tenendo conto delle possibili
 tecnologie ed approcci disponibili. Data la veloce evoluzione
 tecnologica, questo documento verrà continuamente aggiornato ed
@@ -41,9 +41,9 @@ La sezione è organizzata nel seguente modo:
 
 **NOTA BENE**
 
-Le parole chiave “DEVE”, “DEVONO”, “NON DEVE”, “NON DEVONO”, “E’ RICHIESTO”,
-“DOVREBBE”, “NON DOVREBBE”, “RACCOMANDATO”, “NON RACCOMANDATO”
-“PUO’” e “OPZIONALE” nel testo del documento debbono essere interpretate come descritto
+Le parole chiave "DEVE", "DEVONO", "NON DEVE", "NON DEVONO", "E' RICHIESTO",
+"DOVREBBE", "NON DOVREBBE", "RACCOMANDATO", "NON RACCOMANDATO"
+"PUO'" e "OPZIONALE" nel testo del documento debbono essere interpretate come descritto
 nel seguito, in conformità alle corrispondenti traduzioni contenute nel documento IETF
 RFC 2119. 
 
