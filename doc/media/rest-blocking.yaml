@@ -72,7 +72,4 @@ components:
        a2:
          type: string
    ErrorMessage:
-     type: object
-     properties:
-       error_message:
-         type: string
+     $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/schemas/Problem'
