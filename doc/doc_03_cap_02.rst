@@ -30,7 +30,8 @@ L'endpoint deve indicare in modo esplicito la tecnologia utilizzata
   :maxdepth: 3
   :caption: Contenuti
 
-  profili-di-interazione/profilo-comune-rest.rst
+  profili-di-interazione/regole-comuni-rest.rst
+  profili-di-interazione/regole-comuni-soap.rst
   profili-di-interazione/modalità-di-descrizione-dei-profili.rst
   profili-di-interazione/profilo-bloccante-rpc.rst
   profili-di-interazione/profili-non-bloccanti.rst
