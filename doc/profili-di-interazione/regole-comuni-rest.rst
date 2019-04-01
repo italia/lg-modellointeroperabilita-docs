@@ -17,9 +17,7 @@ laddove queste siano parzialmente in conflitto con il profilo qui
 specificato, eg:
 
 -  per​ HL7 si veda FHIR_
-
 -  per​ xBLR si veda XBLR-json_
-   ​\
 
 Codificare dati strutturati con oggetti JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -136,8 +134,7 @@ la Valorizzazione del Patrimonio Informativo Nazionale, inclusi:
 -  :BCP:`47` (basato su ISO 639-1) per le varianti dei linguaggi.
    Dove non strettamente necessario il subta​g​b​, basta la prima parte (ad es. it vs it- IT)
 -  `ISO 4217 currency codes​ <http://en.wikipedia.org/wiki/ISO_4217>`__
-   alpha-3 usato in
-   ​\ `FatturePA <http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.0.pdf>`__
+   alpha-3 usato in FatturePA_
 
 Per le valute, è possibile basarsi sullo schema Money - ripreso dal
 lavoro di standardizzazione del ​\ `Berlin Group sotto l'egida dell'European Standards​ <https://www.berlin-group.org/>`__
@@ -574,6 +571,7 @@ devono comunque essere supportati e preservati.
 
 .. _XBLR-json: https://www.xbrl.org/xbrl-json-making-xbrl-easier/
 
+.. _FatturePA: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.0.pdf
 
 Riferimenti
 -------------------
@@ -582,6 +580,7 @@ Specifiche
 
 -  `OpenAPI
    Specification <https://github.com/OAI/OpenAPI-Specification/>`__\ ` <https://tools.ietf.org/html/bcp47>`__
+
 
 Articoli
 
@@ -610,3 +609,4 @@ Libri​
 
 .. [1]
    a-z\_
+

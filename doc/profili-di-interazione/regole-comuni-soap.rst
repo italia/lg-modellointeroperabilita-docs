@@ -1,4 +1,4 @@
-3.2 SOAP
+SOAP
 ================
 
 l'utilizzo del protocollo SOAP ai fini di interoperabilità è l'oggetto
@@ -9,7 +9,7 @@ diffusi sono conformi a questa specifica sulla quale quindi il presente
 documento non si soffermerà. Indichiamo di seguito invece le best
 practice relative alla specifica dei servizi e del formato dei dati.
 
-3.2.1. Formato dei dati
+Formato dei dati
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Codificare dati strutturati con oggetti XML
@@ -117,7 +117,7 @@ I nomi delle liste devono essere al plurale.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I ``Boolean`` non devono essere mai null.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le properties devono avere un naming consistente
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -134,13 +134,11 @@ Utilizzare per le codifiche web gli standard indicati in Linee Guida per
 la Valorizzazione del Patrimonio Informativo Nazionale, inclusi:
 
 -  `ISO 3166-1-alpha2 country (due lettere) <http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__
-
 -  `ISO 639-1 language code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-
--  :BCP:`47`​ (basato su ISO 639-1) per le varianti dei linguaggi
-
+-  :BCP:`47` (basato su ISO 639-1) per le varianti dei linguaggi.
+   Dove non strettamente necessario il subta​g​​, basta la prima parte (ad es. it vs it- IT)
 -  `ISO 4217 currency codes​ <http://en.wikipedia.org/wiki/ISO_4217>`__
-   alpha-3 usato in `FatturePA`_
+   alpha-3 usato in FatturePA_
 
 Nel caso di importi, l'elemento dovrà contenere sia un elemento o attributo di tipo
 
@@ -208,16 +206,17 @@ particolare, per i servizi:
 
 dove:
 
--  <dominioOrganizzativo> indica l'organizzazione che espone il
-servizio,
-- <DominioApplicativo> indica il settore all'interno dell'organizzazione,
-- <NomeServizio> segue le specifiche di cui ai punti precedenti, e <major> indica il
-numero di versione (difatti non inserito nel nome del servizio).
+- ``<dominioOrganizzativo>`` indica l'organizzazione che espone il servizio,
+- ``<DominioApplicativo>`` indica il settore all'interno dell'organizzazione,
+- ``<NomeServizio>`` segue le specifiche di cui ai punti precedenti, e <major> indica il
+  numero di versione (difatti non inserito nel nome del servizio).
 
 Per quanto riguarda gli XSD all'interno del WSDL si segue il pattern
 seguente:
 
-http://<dominioOrganizzativo>/xmlns/<DominioApplicativo>
+::
+
+    http://<dominioOrganizzativo>/xmlns/<DominioApplicativo>
 
 
 
@@ -275,10 +274,12 @@ La versione 1.2 di SOAP definisce in dettaglio (si veda la parte 2 della
 specifica) l'utilizzo di codici di stato HTTP come confermato dal basic profile 2.0.
 Si richiede quindi l'utilizzo di questi codici.
 
-3.2.4. Riferimenti
+,  Riferimenti
 ~~~~~~~~~~~~~~~~~~
 
 .. _FatturePA: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.0.pdf
+
+.. _`HTTP date format`: http://tools.ietf.org/html/rfc7231#section-7.1.1.1
 
 
 Specifiche
