@@ -64,12 +64,12 @@
         </xs:sequence>
       </xs:complexType>
       <xs:element name="ErrorMessageFault" nillable="true" type="tns:errorMessageFault"/>
-      <xs:element name="X-CorrelationID" nillable="true" type="xs:string"/>
+      <xs:element name="X-Correlation-ID" nillable="true" type="xs:string"/>
     </xs:schema>
   </wsdl:types>
   <wsdl:message name="MProcessingStatus">
     <wsdl:part element="tns:MProcessingStatus" name="parameters"> </wsdl:part>
-    <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>
+    <wsdl:part element="tns:X-Correlation-ID" name="X-Correlation-ID"> </wsdl:part>
   </wsdl:message>
   <wsdl:message name="MProcessingStatusResponse">
     <wsdl:part element="tns:MProcessingStatusResponse" name="parameters"> </wsdl:part>
@@ -79,11 +79,11 @@
   </wsdl:message>
   <wsdl:message name="MRequestResponse">
     <wsdl:part element="tns:MRequestResponse" name="result"> </wsdl:part>
-    <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>
+    <wsdl:part element="tns:X-Correlation-ID" name="X-Correlation-ID"> </wsdl:part>
   </wsdl:message>
   <wsdl:message name="MResponse">
     <wsdl:part element="tns:MResponse" name="parameters"> </wsdl:part>
-    <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>
+    <wsdl:part element="tns:X-Correlation-ID" name="X-Correlation-ID"> </wsdl:part>
   </wsdl:message>
   <wsdl:message name="MResponseResponse">
     <wsdl:part element="tns:MResponseResponse" name="parameters"> </wsdl:part>
@@ -113,7 +113,7 @@
     <wsdl:operation name="MProcessingStatus">
       <soap:operation soapAction="" style="document"/>
       <wsdl:input name="MProcessingStatus">
-        <soap:header message="tns:MProcessingStatus" part="X-CorrelationID" use="literal"> </soap:header>
+        <soap:header message="tns:MProcessingStatus" part="X-Correlation-ID" use="literal"> </soap:header>
         <soap:body parts="parameters" use="literal"/>
       </wsdl:input>
       <wsdl:output name="MProcessingStatusResponse">
@@ -129,7 +129,7 @@
         <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output name="MRequestResponse">
-        <soap:header message="tns:MRequestResponse" part="X-CorrelationID" use="literal"> </soap:header>
+        <soap:header message="tns:MRequestResponse" part="X-Correlation-ID" use="literal"> </soap:header>
         <soap:body parts="result" use="literal"/>
       </wsdl:output>
       <wsdl:fault name="ErrorMessageException">
@@ -139,7 +139,7 @@
     <wsdl:operation name="MResponse">
       <soap:operation soapAction="" style="document"/>
       <wsdl:input name="MResponse">
-        <soap:header message="tns:MResponse" part="X-CorrelationID" use="literal"> </soap:header>
+        <soap:header message="tns:MResponse" part="X-Correlation-ID" use="literal"> </soap:header>
         <soap:body parts="parameters" use="literal"/>
       </wsdl:input>
       <wsdl:output name="MResponseResponse">
