@@ -153,7 +153,7 @@ Esempio
 +---------------------------+-----------------------------------------------------------------------------------------------+
 | .. literalinclude:: ../media/rest-callback-server.yaml                                                                    |
 |    :language: yaml                                                                                                        |
-|                                                                                                               |
+|                                                                                                                           |
 +---------------------------------------------------------------------------------------------------------------------------+
 
 +---------------------------+----------------------------------------------------------------------------------------+
@@ -161,7 +161,7 @@ Esempio
 +---------------------------+----------------------------------------------------------------------------------------+
 | .. literalinclude:: ../media/rest-callback-client.yaml                                                             |
 |    :language: yaml                                                                                                 |
-|                                                                                                        |
+|                                                                                                                    |
 +--------------------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata al metodo M con la presa in carico da
@@ -233,11 +233,9 @@ seguenti regole:
    eventuali header SOAP richiesti;
 
 -  La specifica dell’interfaccia del fruitore DEVE rispettare quanto
-   richiesto dall’erogatore; in particolare, non esistendo un
-   equivalente in WSDL del formalismo per le callback, si richiede che
-   l’erogatore fornisca un WSDL di esempio su un endpoint differente da
-   quello del servizio; il fruitore svilupperà quindi un servizio che
-   rispetta questa specifica al fine di fornire un endpoint di callback;
+   richiesto dall’erogatore; in particolare si richiede che
+   l’erogatore fornisca un WSDL descrittivo del servizio di callback 
+   che il fruitore è tenuto ad implementare;
 
 -  Al passo (1), il fruitore DEVE indicare l’endpoint della callback
    utilizzando l’header SOAP custom X-ReplyTo;
@@ -252,9 +250,6 @@ seguenti regole:
 
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
    acknowledgement il ricevimento della risposta.
-
-Il corpo dei messaggi HTTP scambiati durante l’interazione DEVE seguire
-lo standard XML.
 
 .. _regole-di-processamento-3:
 
@@ -287,7 +282,7 @@ Esempio
 +----------------------------------------------+----------------------------------------------------------------------------+
 | .. literalinclude:: ../media/soap-callback-server.wsdl                                                                    |
 |    :language: yaml                                                                                                        |
-|                                                                                                                  |
+|                                                                                                                           |
 +---------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -296,7 +291,7 @@ Esempio
 +-------------------------------------------------+-------------------------------------------------------------------------+
 | .. literalinclude:: ../media/soap-callback-client.wsdl                                                                    |
 |    :language: yaml                                                                                                        |
-|                                                                                                                  |
+|                                                                                                                           |
 +---------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -507,7 +502,7 @@ Esempio
 +---------------------------+------------------------------------------------------------------------------------+
 | .. literalinclude:: ../media/rest-nonblocking.yaml                                                             |
 |    :language: yaml                                                                                             |
-|    :linenos:                                                                                                   |
+|                                                                                                                |
 +----------------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata ad M in cui l’erogatore dichiara di
@@ -656,7 +651,7 @@ Esempio
 +-------------------------------------------------+-----------------------------------------------------------------------------+
 | .. literalinclude:: ../media/soap-blocking.wsdl                                                                               |
 |    :language: XML                                                                                                             |
-|    :linenos:                                                                                                                  |
+|                                                                                                                               |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata ad M in cui l’erogatore risponde di
