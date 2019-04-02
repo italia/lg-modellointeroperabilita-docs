@@ -116,7 +116,9 @@ Questo è dovuto al fatto che SOAP è di fatto la specifica di un
 middleware, e quindi neutro rispetto al paradigma, mentre REST, in
 quanto stile architetturale, è maggiormente caratterizzato. Gli esempi
 successivi evidenziano l'\ *impedance mismatch* (differenza tra i
-modelli realizzativi e concettuali, cf. Capitolo 3) che si origina
+modelli realizzativi e concettuali, cf.
+.. TODO referenza 
+Capitolo 3) che si origina
 nelle varie casistiche partendo da una interfaccia di servizio secondo
 ciascuno dei due paradigmi (RPC-like e resource oriented) e cercando
 di realizzarla utilizzando le due diverse tecnologie SOAP e REST.
@@ -285,7 +287,9 @@ presentare i casi seguenti:
    presenza di controlli ipermediali nella rappresentazione delle
    risorse.
 
-Si anticipa che nel Capitolo 2 dedicato ai profili, si adotteranno, nel
+Si anticipa che nel
+.. TODO Referenza
+Capitolo 2 dedicato ai profili, si adotteranno, nel
 caso dei profili non bloccanti realizzati in tecnologia REST, delle
 interfacce di servizio classificabili di livello 1 del Richardson
 Maturity Model.
