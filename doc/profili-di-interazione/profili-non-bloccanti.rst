@@ -107,7 +107,7 @@ DEVONO essere rispettate le seguenti regole:
 
 -  Al passo (3), l’erogatore DEVE riutilizzare lo stesso correlation ID
    fornito al passo (2) sempre utilizzando l’header HTTP custom
-   X-CorrelationID; Il verbo HTTP utilizzato deve essere POST;
+   X-Correlation-ID; Il verbo HTTP utilizzato deve essere POST;
 
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
    acknowledgement il ricevimento della risposta; Il codice HTTP di
@@ -248,11 +248,11 @@ seguenti regole:
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, il correlation ID utilizzando l’header SOAP
-   custom X-CorrelationID;
+   custom X-Correlation-ID;
 
 -  Al passo (3), l’erogatore DEVE riutilizzare lo stesso correlation ID
    fornito al passo (2) sempre utilizzando l’header SOAP custom
-   X-CorrelationID;
+   X-Correlation-ID;
 
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
    acknowledgement il ricevimento della risposta.
@@ -336,7 +336,7 @@ essersi preso carico della richiesta.
 |                 |                                                                                                                                                                            |
 |                 |     <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                                 |
 |                 |       <soap:Header>                                                                                                                                                        |
-|                 |         <ns2:X-CorrelationID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-CorrelationID>               |
+|                 |         <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-Correlation-ID>               |
 |                 |       </soap:Header>                                                                                                                                                       |
 |                 |       <soap:Body>                                                                                                                                                          |
 |                 |       <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                                          |
@@ -357,7 +357,7 @@ essersi preso carico della richiesta.
 |                   |                                                                                                                                                                |
 |                   |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
 |                   |      <soap:Header>                                                                                                                                             |
-|                   |        <ns2:X-CorrelationID xmlns:ns2="http://amministrazioneesempio.it/   nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-CorrelationID> |
+|                   |        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/   nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-Correlation-ID> |
 |                   |      </soap:Header>                                                                                                                                            |
 |                   |      <soap:Body>                                                                                                                                               |
 |                   |        <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                             |
@@ -604,11 +604,11 @@ DEVONO essere rispettate le seguenti regole:
    ed ottenerne il risultato;
 
 -  La specifica dell’interfaccia dell’erogatore DEVE indicare l’header
-   SOAP X-CorrelationID;
+   SOAP X-Correlation-ID;
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, un correlation ID riportato nel header
-   custom SOAP X-CorrelationID;
+   custom SOAP X-Correlation-ID;
 
 -  Al passo (3), l’erogatore DEVE utilizzare i l correlation ID ottenuto
    al passo (2) per richiedere lo stato di processamento di una
@@ -694,7 +694,7 @@ avere preso in carico la richiesta.
 |                                             |                                                                                                                                                                |
 |                                             |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
 |                                             |      <soap:Header>                                                                                                                                             |
-|                                             |        <ns2:X-CorrelationID xmlns:ns2="http://amministrazioneesempio.it/   nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-CorrelationID> |
+|                                             |        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/   nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-Correlation-ID> |
 |                                             |      </soap:Header>                                                                                                                                            |
 |                                             |      <soap:Body>                                                                                                                                               |
 |                                             |        <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                             |
@@ -722,7 +722,7 @@ processamento avvenuto (4b).
 |                                              |    <?xml version="1.0"?>                                                                                                                                       |
 |                                              |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
 |                                              |      <soap:Header>                                                                                                                                             |
-|                                              |        <ns2:X-CorrelationID xmlns:ns2="http://amministrazioneesempio.it/   nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-CorrelationID> |
+|                                              |        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/   nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-Correlation-ID> |
 |                                              |      </soap:Header>                                                                                                                                            |
 |                                              |      <soap:Body>                                                                                                                                               |
 |                                              |        <ns2:MProcessingStatus xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio"/>                                                           |
@@ -785,7 +785,7 @@ della sua richiesta.
 |                                            |                                                                                                                                                                |
 |                                            |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
 |                                            |      <soap:Header>                                                                                                                                             |
-|                                            |        <ns2:X-CorrelationID xmlns:ns2="http://amministrazioneesempio.it/   nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-CorrelationID> |
+|                                            |        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/   nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-Correlation-ID> |
 |                                            |      </soap:Header>                                                                                                                                            |
 |                                            |      <soap:Body>                                                                                                                                               |
 |                                            |        <ns2:MResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio"/>                                                                   |
