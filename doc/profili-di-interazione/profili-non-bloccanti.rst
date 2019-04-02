@@ -113,9 +113,6 @@ DEVONO essere rispettate le seguenti regole:
    acknowledgement il ricevimento della risposta; Il codice HTTP di
    stato DEVE essere 200 OK a meno che non si verifichino errori.
 
-Il corpo dei messaggi HTTP scambiati durante l’interazione DEVE seguire
-lo standard JSON.
-
 .. _regole-di-processamento-2:
 
 Regole di processamento
