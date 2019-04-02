@@ -1,0 +1,216 @@
+openapi: 3.0.1
+info:
+  title: RESTCRUD
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: "1.0"
+paths:
+  /municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni:
+    post:
+      description: AggiungiPrenotazione
+      operationId: AddReservation_1
+      parameters:
+      - name: X-Correlation-ID
+        in: header
+        schema:
+          type: string
+      - name: id_municipio
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: id_ufficio
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Prenotazione'
+      responses:
+        201:
+          headers:
+            Location:
+              description: ID della prenotazione creata
+              schema:
+                type: string
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        404:
+          description: Identificativo non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        400:
+          description: Richiesta non accoglibile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  /municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/{id_prenotazione}:
+    get:
+      description: LeggiPrenotazione
+      operationId: GetReservation_1
+      parameters:
+      - name: id_municipio
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: id_ufficio
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: id_prenotazione
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        404:
+          description: Identificativo non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        200:
+          description: Prenotazione estratta correttamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Prenotazione'
+    delete:
+      description: EliminaPrenotazione
+      operationId: DeleteReservation
+      parameters:
+      - name: id_municipio
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: id_ufficio
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: id_prenotazione
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        404:
+          description: Identificativo non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        200:
+          description: Prenotazione eliminata correttamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Prenotazione'
+    patch:
+      description: ModificaPrenotazione
+      operationId: PatchReservation
+      parameters:
+      - name: id_municipio
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: id_ufficio
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: id_prenotazione
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchPrenotazione'
+      responses:
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        404:
+          description: Identificativo non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        200:
+          description: Prenotazione modificata correttamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Prenotazione'
+components:
+  schemas:
+    Prenotazione:
+      type: object
+      properties:
+        nome:
+          type: string
+        cognome:
+          type: string
+        cf:
+          type: string
+        dettagli:
+          $ref: '#/components/schemas/PatchPrenotazione'
+    PatchPrenotazione:
+      type: object
+      properties:
+        data:
+          type: string
+          format: date-time
+        ora:
+          type: string
+        motivazione:
+          type: string
+    ErrorMessage:
+      type: object
+      properties:
+        error_message:
+          type: string

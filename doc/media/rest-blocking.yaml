@@ -1,0 +1,78 @@
+openapi: 3.0.1
+info:
+ title: RESTblocking
+ license:
+   name: Apache 2.0 License
+   url: http://www.apache.org/licenses/LICENSE-2.0.html
+ version: "1.0"
+paths:
+ /resources/{id_resource}/M:
+   post:
+     description: Esegue M
+     operationId: M
+     parameters:
+     - name: id_resource
+       in: path
+       required: true
+       schema:
+         type: integer
+         format: int32
+     requestBody:
+       content:
+         application/json:
+           schema:
+             $ref: '#/components/schemas/MType'
+     responses:
+       500:
+         description: Errore interno avvenuto
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/ErrorMessage'
+       404:
+         description: Identificativo non trovato
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/ErrorMessage'
+       400:
+         description: Richiesta non valida
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/ErrorMessage'
+       200:
+         description: Esecuzione di M avvenuta con successo
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/MResponseType'
+components:
+ schemas:
+   MType:
+     type: object
+     properties:
+       a:
+         $ref: '#/components/schemas/AComplexType'
+       b:
+         type: string
+   MResponseType:
+     type: object
+     properties:
+       c:
+         type: string
+   AComplexType:
+     type: object
+     properties:
+       a1s:
+         type: array
+         items:
+           type: integer
+           format: int32
+       a2:
+         type: string
+   ErrorMessage:
+     type: object
+     properties:
+       error_message:
+         type: string

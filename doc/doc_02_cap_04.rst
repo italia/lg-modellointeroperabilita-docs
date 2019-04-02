@@ -13,7 +13,17 @@ A differenza delle interfacce di servizio SOAP, per cui una serie di standard è
 
 Per la specifica delle interfacce REST esistono due grandi iniziative: OpenAPI e RAML.
 Sebbene simili dal punto di vista dello sviluppatore di interfacce di servizio, la specifica RAML è più indirizzata alla creazione automatica di server e di client per API, mentre OpenAPI (attualmente nella versione OpenAPI v3) contiene elementi più descrittivi per la documentazione e la catalogazione (che invece sono disponibili in RAML come estensioni ad hoc) e si sta imponendo come standard de facto.
-Altri standard proposti in passato, quali Web Application Description Language - WADL, hanno avuto scarso successo e nei framework in cui sono stati utilizzati si sta optando per il passaggio ad `OpenAPI v3 <https://www.openapis.org/>`_ [57]_. Per queste ragioni il ModI 2018 impone l’uso di OpenAPI v3.
+Altri standard proposti in passato, quali Web Application Description Language - WADL, hanno avuto scarso successo e nei framework in cui sono stati utilizzati si sta optando per il passaggio ad `OpenAPI v3 <https://www.openapis.org/>`_ [57]_. Per queste ragioni il ModI impone l’uso di OpenAPI v3.
+
+Un file OpenAPI consente di descrivere l'intera interfaccia (endpoint
+disponibili e operazioni su ciascun endpoint, parametri di input e
+output per ogni operazione, metodi di autenticazione, informazioni di
+contatto, licenza, termini di utilizzo, ecc.). Le specifiche possono
+essere scritte in YAML o JSON. Swagger [#fnSwagger]_ è un insieme di strumenti
+open source che, basandosi sulle specifiche OpenAPI, permette di
+supportare il progetto, costruzione e documentazione di REST Web
+service.
+
 
 È possibile assicurare la conversione tra le differenti rappresentazioni delle interfacce REST tramite tool automatici.
 
@@ -83,7 +93,7 @@ Throttling ed indisponibilità del servizio
 
 Nelle API basate su REST, meccanismi di throttling vengono implementati al fine di garantire l’accessibilità delle interfacce di servizio ed evitare in alcuni casi la raccolta non autorizzata (web-harvesting) dei dati. 
 
-Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 429, nel Modl2018 si richiede di notificare al fruitore lo stato del throttling ed eventuali limiti come segue:
+Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 429, nel Modl si richiede di notificare al fruitore lo stato del throttling ed eventuali limiti come segue:
 
 - restituire in ogni risposta valida i valori globali di throttling tramite i seguenti header HTTP:
 
@@ -99,7 +109,7 @@ Poiché l'RFC 6585 prevede per la gestione del throttling il solo status code 42
 	
 	- HTTP 503 (service unavailable) se l'infrastruttura non può erogare le operazioni offerte nei tempi attesi (definiti dalla SLA associata all’interfaccia di servizio).
 	
-- nei casi 429 e 503 gli erogatori dovrebbero notificare al client dopo quanti secondi ripresentarsi tramite l'header `Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-Afte>`_ [78]_ (pratica anche detta “circuit breaker”), anche implementando meccanismi di exponential back-off. L'RFC prevede che questo header possa essere utilizzato sia in forma di data che di secondi, ma il Modl2018 vieta l’utilizzo del formato data poiché se non implementato correttamente potrebbe aggravare lo stato dei sistemi.
+- nei casi 429 e 503 gli erogatori dovrebbero notificare al client dopo quanti secondi ripresentarsi tramite l'header `Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-Afte>`_ [78]_ (pratica anche detta “circuit breaker”), anche implementando meccanismi di exponential back-off. L'RFC prevede che questo header possa essere utilizzato sia in forma di data che di secondi, ma il Modl vieta l’utilizzo del formato data poiché se non implementato correttamente potrebbe aggravare lo stato dei sistemi.
 
 I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indicazioni provenienti dagli header e dagli status code di cui sopra.
 
@@ -180,3 +190,17 @@ I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indica
 .. [77] Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
 
 .. [78] Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After>`_
+
+.. [#fnSwagger]
+   Originariamente Swagger (della società SmartBear Software) era un
+   insieme di tool sia per la descrizione delle interfacce che per il
+   loro sviluppo. Nel 2015 un gruppo di aziende, sotto la sponsorship
+   della Linux Foundation, ha dato vita all'iniziativa OpenAPI, a cui
+   SmartBear ha donato il formato di specifica che è stato rinominato da
+   Swagger Specification in OpenAPI Specification. OpenAPI 3.0 è
+   l'ultima versione della specifica. Gli strumenti Swagger, che sono
+   ancora supportati da SmartBear Software, sono tra gli strumenti più
+   popolari per implementare la specifica OpenAPI e continueranno a
+   mantenere il nome Swagger. Esistono molti altri strumenti open source
+   e proprietari, non correlati a Swagger, che supportano la specifica
+   OpenAPI.

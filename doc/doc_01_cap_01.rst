@@ -1,11 +1,11 @@
 Introduzione
 ============
 
-Il Modello di Interoperabilità 2018 [1]_ (nel seguito in breve ModI 2018) rappresenta il modello di supporto alla strategia di interoperabilità e cooperazione tra le Pubbliche Amministrazioni (di seguito PA), che definendo i contesti di interazione e integrazione tra le PA, i cittadini e le imprese permette di vedere la PA nella sua interezza come un unico sistema informativo (virtuale).
+Il Modello di Interoperabilità [1]_ (nel seguito in breve ModI) rappresenta il modello di supporto alla strategia di interoperabilità e cooperazione tra le Pubbliche Amministrazioni (di seguito PA), che definendo i contesti di interazione e integrazione tra le PA, i cittadini e le imprese permette di vedere la PA nella sua interezza come un unico sistema informativo (virtuale).
 
-La definizione del ModI 2018 deve essere coerente con il nuovo *European Interoperability Framework* (EIF) oggetto della `Comunicazione COM (2017)134 <https://ec.europa.eu/transparency/regdoc/rep/1/2017/IT/COM-2017-134-F1-IT-MAIN-PART-1.PDF>`__ [2]_ della Commissione Europea del 23 marzo 2017, al fine di assicurare anche l'interoperabilità nel contesto Europeo e per l'attuazione del *Digital Single Market* (Mercato Unico Digitale).
+La definizione del ModI deve essere coerente con il nuovo *European Interoperability Framework* (EIF) oggetto della `Comunicazione COM (2017)134 <https://ec.europa.eu/transparency/regdoc/rep/1/2017/IT/COM-2017-134-F1-IT-MAIN-PART-1.PDF>`__ [2]_ della Commissione Europea del 23 marzo 2017, al fine di assicurare anche l'interoperabilità nel contesto Europeo e per l'attuazione del *Digital Single Market* (Mercato Unico Digitale).
 
-Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
+Gli obiettivi del nuovo Modello di Interoperabilità sono:
 
 -   definire le modalità di integrazione tra le PA;
 
@@ -24,7 +24,7 @@ Gli obiettivi del nuovo Modello di Interoperabilità 2018 sono:
    :topic_identifier: 3228
 
    
-.. [1] Il ModI 2018 è concettualmente la seconda versione (aggiornamento) del framework di interoperabilità della PA che nella prima versione fu definito nel 2005 con il nome di SPCoop - Servizio Pubblico di Cooperazione Applicativa, cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__ 
+.. [1] Il ModI è concettualmente la seconda versione (aggiornamento) del framework di interoperabilità della PA che nella prima versione fu definito nel 2005 con il nome di SPCoop - Servizio Pubblico di Cooperazione Applicativa, cf. `http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa <http://www.agid.gov.it/agenda-digitale/infrastrutture-architetture/sistema-pubblico-connettivita/cooperazione-applicativa>`__ 
     Il termine *modello* trova corrispettivo nel termine inglese framework, e pertanto nel presente documento i due termini verranno considerati sinonimi.
     
 .. [2] Cf. `https://ec.europa.eu/transparency/regdoc/rep/1/2017/IT/COM-2017-134-F1-IT-MAIN-PART-1.PDF <https://ec.europa.eu/transparency/regdoc/rep/1/2017/IT/COM-2017-134-F1-IT-MAIN-PART-1.PDF>`__
