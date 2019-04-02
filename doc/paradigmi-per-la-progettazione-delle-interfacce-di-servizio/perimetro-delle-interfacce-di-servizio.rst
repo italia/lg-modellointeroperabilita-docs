@@ -31,15 +31,9 @@ offerta per interoperare:
 
 - all’interno del dominio (da parte di clienti applicativi offerti dalla stessa amministrazione, ad es., un’applicazione Web od una mobile)
 
-- verso altre amministrazioni (quindi un cliente applicativo di altra amministrazione, con cui comunque esiste una relazione fiduciaria)
+- verso altre amministrazioni o altri soggetti con cui è stabilità una relazione di fiducia
 
 - esternamente, da parte di moduli applicativi completamente esterni alle pubbliche amministrazioni, e per i quali non esiste a priori nessuna relazione, nè organizzativa nè di fiducia.
-
-Sostanzialmente, come peraltro riportato nei Piani Triennali,
-utilizzando la metafora del Sistema Informativo della Pubblica
-Amministrazione italiana, diventa importante distinguere se
-l’interoperabilità è interna al Sistema informativo, od a fini esterni.
-Questi aspetti verranno discussi nel successivo paragrafo.
 
 .. figure:: ../media/image4.png
    :alt: perimetro in SPCoop
