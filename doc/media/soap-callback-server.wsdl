@@ -69,7 +69,7 @@
         <soap:body parts="parameters" use="literal"/>
       </wsdl:input>
       <wsdl:output name="MRequestResponse">
-        <soap:header message="tns:MRequestResponse" part="X-CorrelationID" use="literal"> </soap:header>
+        <soap:header message="tns:MRequestResponse" part="X-Correlation-ID" use="literal"> </soap:header>
         <soap:body parts="result" use="literal"/>
       </wsdl:output>
       <wsdl:fault name="ErrorMessageException">
