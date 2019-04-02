@@ -14,10 +14,8 @@ sezione delle linee guida.
 Per i concetti di bloccante e non bloccante si rimanda alla lettura del
 paragrafo "Concetti di base" del documento.
 
-Ogni interfaccia di servizio sviluppata nell'ambito della pubblica
-amministrazione deve essere corredata da una specifica di interfaccia
-che utilizzi un IDL - Interface Description Language standard che il
-ModI fissa:
+Ogni interfaccia di servizio deve essere rappresentata mediante
+un IDL - Interface Description Language standard - che il ModI fissa:
 
 -  per le interfacce di servizio REST, OpenAPI 3.0 e successive
 
