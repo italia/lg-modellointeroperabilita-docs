@@ -48,9 +48,6 @@ seguite le seguenti indicazioni:
 -  Al passo (2) il fruitore DEVE utilizzare lo stato 200 OK a meno che
    non si verifichino errori.
 
-Il corpo dei messaggi scambiati durante l’interazione deve seguire lo
-standard JSON.
-
 Regole di processamento
 ~~~~~~~~~~~~~~~~~~~~~~~
 
