@@ -1,4 +1,4 @@
-Sicurezza 
+Sicurezza
 =========
 
 Il presente documento descrive i *profili* individuati da AgID che la
@@ -118,15 +118,15 @@ Le parole chiave “DEVE”, “DEVONO”, “NON DEVE”, “NON DEVONO”, “
 “DOVREBBE”, “NON DOVREBBE”, “RACCOMANDATO”, “NON RACCOMANDATO”
 “PUO’” e “OPZIONALE” nel testo del documento debbono essere interpretate come descritto
 nel seguito, in conformità alle corrispondenti traduzioni contenute nel documento IETF
-RFC 2119. 
+RFC 2119.
 
 .. toctree::
   :maxdepth: 2
   :caption: Indice dei contenuti del documento Sicurezza
 
-  sicurezza-di-canale-eo-autenticazione-delle-organizzazioni.rst
-  autenticazione-del-soggetto-richiedente.rst
-  integrità.rst
-  soluzioni-di-sicurezza.rst
-  elenco-degli-algoritmi.rst
-  bibliografia.rst
+  doc_04/sicurezza-di-canale-eo-autenticazione-delle-organizzazioni.rst
+  doc_04/autenticazione-del-soggetto-richiedente.rst
+  doc_04/integrita.rst
+  doc_04/soluzioni-di-sicurezza.rst
+  doc_04/elenco-degli-algoritmi.rst
+  doc_04/bibliografia.rst
