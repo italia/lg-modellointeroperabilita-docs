@@ -123,8 +123,7 @@ Interfaccia SOAP
 Se il profilo viene implementato con tecnologia SOAP, a differenza del
 caso REST, il metodo invocato non è specificato nell’endpoint chiamato,
 poichè viene identificato all’interno del body. Inoltre tutti gli ID
-coinvolti DEVONO essere riportati all’interno del body. Si richiede che
-il contenuto informativo del messaggio venga espresso mediante XML.
+coinvolti DEVONO essere riportati all’interno del body.
 
 .. _regole-di-processamento-1:
 
