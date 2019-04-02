@@ -54,34 +54,6 @@ bloccante.
 
 ------------
 
-**Observer/observable, interfaccia listener e notifica tramite Callback**
-
-In un framework di programmazione, *observer/observable* è uno schema
-di organizzazione dei moduli in cui un modulo (l\' *observable*) offre
-delle funzioni per permettere agli altri (gli *observer*) di
-registrarsi. Gli observer devono offrire un'interfaccia di *callback*
-(anche detta di *listener*) attraverso cui l'observable, quando vuole
-notificare qualcosa, invoca un'opportuna funzione di notifica. In tal
-modo, gli observer hanno dichiarato in fase di registrazione come
-essere "chiamati indietro" (appunto callback) quando succede
-qualcosa, e l'observable può gestire tutti gli observer registrati in
-modo trasparente, senza conoscere i dettagli realizzativi di ogni
-singola callback, in quanto tutti realizzano la stessa interfaccia,
-differenziandosi eventualmente nell'implementazione.
-
-In ambito distribuito, il riferimento passato dagli observer in fase
-di registrazione è rappresentato da un endpoint di rete con tutte le
-informazioni necessarie ad invocare su di esso l'interfaccia
-listener/procedure di callback.
-
-Questo meccanismo permette di realizzare interazioni non bloccanti.
-
-*D'Souza, D. F., Cameron Wills, A. (1999). Objects, components, and
-frameworks with UML: the Catalysis approach. Addison-Wesley Longman
-Publishing Co.*
-
-------------
-
 **Façade**
 
 È uno schema di organizzazione dei moduli in cui uno, detto appunto
