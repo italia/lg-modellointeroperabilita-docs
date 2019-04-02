@@ -71,7 +71,7 @@ mentre i SOAP Web service mettono in risalto il concetto di servizio.
 
 .. rpolli: SOA e ROA definiti in doc/doc_02_cap_04.rst:9
 
-L'approccio REST, invece, tende a evidenziare le caratteristiche del
+L'approccio REST evidenzia le caratteristiche del
 Web come piattaforma leggera per l'elaborazione distribuita. Non è, in
 prima istanza, necessario aggiungere nulla a quanto è già esistente
 sul Web per consentire ad applicazioni remote di interagire.
