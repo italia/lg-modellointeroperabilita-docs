@@ -68,15 +68,8 @@ La prima differenza tra i due tipi di Web service è la visione del Web
 come piattaforma di elaborazione che viene implicitamente proposta:
 REST propone una visione del Web incentrata sul concetto di risorsa
 mentre i SOAP Web service mettono in risalto il concetto di servizio.
-Infatti, l'approccio dei SOAP Web service ha mutuato un'architettura
-applicativa denominata SOA -- Service Oriented Architecture, a cui si
-è contrapposta l'architettura ROA -- Resource Oriented Architecture,
-ispirata ai principi REST. L'approccio adottato dai Web service basati
-su SOAP è derivato dalle tecnologie di interoperabilità esistenti al
-di fuori del Web e basate essenzialmente su chiamate di procedura
-remota, come DCOM, CORBA e RMI. In sostanza questo approccio può
-essere visto come una sorta di adattamento di queste tecnologie al
-Web.
+
+.. rpolli: SOA e ROA definiti in doc/doc_02_cap_04.rst:9
 
 L'approccio REST, invece, tende a evidenziare le caratteristiche del
 Web come piattaforma leggera per l'elaborazione distribuita. Non è, in
