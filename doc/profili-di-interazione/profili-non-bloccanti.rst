@@ -120,9 +120,8 @@ Regole di processamento
 
 Al termine del processamento delle richieste, l’erogatore ed il fruitore
 devono fare uso dei codici di stato HTTP rispettandone la
-semantica [2]_. In particolare, al ricevimento della richiesta da parte
-del fruitore (risp. dell’erogatore), l’erogatore (risp. il fruitore)
-DEVE almeno:
+semantica [2]_.
+Friuitore ed erogatore, nel processare le richieste, DEVONO almeno:
 
 -  Verificare la validità sintattica dei dati in ingresso. In caso di
    dati errati deve restituire il codice HTTP 400 Bad Request fornendo
@@ -132,7 +131,7 @@ DEVE almeno:
    DEVE restituire il codice 404 Not Found, indicando nel body di
    risposta quale degli ID è mancante;
 
--  In caso di errori non dipendenti dal fruitore, DEVE restituire i
+-  In caso di errori non dipendenti dalla richiesta, DEVE restituire i
    codici HTTP 5XX rispettando la semantica degli stessi ed indicando
    nel body di risposta il motivo dell’errore;
 
@@ -141,7 +140,7 @@ DEVE almeno:
    il fruitore restituire il codice HTTP 200 OK, riempiendo il body di
    risposta con un acknowledgement dell’avvenuta ricezione. Nel caso di
    errore al momento di ricezione della risposta da parte del fruitore,
-   è possibile definire meccanismi specifici per la ritrasmissione della
+   è possibile utilizzare meccanismi specifici per la ritrasmissione della
    risposta o della richiesta.
 
 .. _esempio-2:
@@ -154,7 +153,7 @@ Esempio
 +---------------------------+-----------------------------------------------------------------------------------------------+
 | .. literalinclude:: ../media/rest-callback-server.yaml                                                                    |
 |    :language: yaml                                                                                                        |
-|    :linenos:                                                                                                              |
+|                                                                                                               |
 +---------------------------------------------------------------------------------------------------------------------------+
 
 +---------------------------+----------------------------------------------------------------------------------------+
@@ -162,7 +161,7 @@ Esempio
 +---------------------------+----------------------------------------------------------------------------------------+
 | .. literalinclude:: ../media/rest-callback-client.yaml                                                             |
 |    :language: yaml                                                                                                 |
-|    :linenos:                                                                                                       |
+|                                                                                                        |
 +--------------------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata al metodo M con la presa in carico da
@@ -288,7 +287,7 @@ Esempio
 +----------------------------------------------+----------------------------------------------------------------------------+
 | .. literalinclude:: ../media/soap-callback-server.wsdl                                                                    |
 |    :language: yaml                                                                                                        |
-|    :linenos:                                                                                                              |
+|                                                                                                                  |
 +---------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -297,7 +296,7 @@ Esempio
 +-------------------------------------------------+-------------------------------------------------------------------------+
 | .. literalinclude:: ../media/soap-callback-client.wsdl                                                                    |
 |    :language: yaml                                                                                                        |
-|    :linenos:                                                                                                              |
+|                                                                                                                  |
 +---------------------------------------------------------------------------------------------------------------------------+
 
 
