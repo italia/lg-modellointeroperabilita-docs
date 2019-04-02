@@ -18,11 +18,20 @@ casi in cui:
 Descrizione
 -----------
 
-.. figure:: ../media/interazione_1.png
-   :align: center
+.. mermaid::
+   :caption: Interazione bloccante RPC
    :alt: interazione bloccante RPC
 
-   Interazione bloccante RPC
+   sequenceDiagram
+      participant F as Fruitore
+      participant E as Erogatore
+      activate F
+      F->>E: (1) Request
+      activate E
+      E-->>F: (2) Reply
+      deactivate E
+      deactivate F
+
 
 In questo profilo si ha una risposta da parte dell’erogatore contestuale
 alla richiesta del fruitore. La figura mostra lo schema di questa
