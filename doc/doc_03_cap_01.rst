@@ -303,8 +303,6 @@ Maturity Model.
   :caption: Indice dei contenuti
 
   paradigmi-per-la-progettazione-delle-interfacce-di-servizio/perimetro-delle-interfacce-di-servizio.rst
-  paradigmi-per-la-progettazione-delle-interfacce-di-servizio/considerazioni-sulla-natura-del-fruitore.rst
-  paradigmi-per-la-progettazione-delle-interfacce-di-servizio/migrazione-dei-servizi-spcoop-nel-nuovo-framework-di-interoperabilità.rst
 
 .. [1]
    SOAP - Simple Object Access Protocol è il protocollo originariamente
