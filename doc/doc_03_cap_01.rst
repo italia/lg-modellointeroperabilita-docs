@@ -117,7 +117,9 @@ middleware, e quindi neutro rispetto al paradigma, mentre REST, in
 quanto stile architetturale, è maggiormente caratterizzato. Gli esempi
 successivi evidenziano l'\ *impedance mismatch* (differenza tra i
 modelli realizzativi e concettuali, cf.
+
 .. TODO referenza 
+
 Capitolo 3) che si origina
 nelle varie casistiche partendo da una interfaccia di servizio secondo
 ciascuno dei due paradigmi (RPC-like e resource oriented) e cercando
@@ -288,7 +290,9 @@ presentare i casi seguenti:
    risorse.
 
 Si anticipa che nel
-.. TODO Referenza
+
+.. TODO referenza
+
 Capitolo 2 dedicato ai profili, si adotteranno, nel
 caso dei profili non bloccanti realizzati in tecnologia REST, delle
 interfacce di servizio classificabili di livello 1 del Richardson
