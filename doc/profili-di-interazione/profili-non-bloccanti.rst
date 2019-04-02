@@ -405,7 +405,9 @@ Come si può vedere in figura, il fruitore invia una richiesta (passo
 (1)) e riceve immediatamente dall’erogatore un messaggio di avvenuta
 ricezione insieme ad un indirizzo presso il quale verificare lo stato
 del processamento (caso REST) oppure un correlation ID (caso SOAP)
-(passo (2)). Da questo momento in poi il fruitore, ad intervalli
+(passo (2)).
+
+Da questo momento in poi il fruitore, ad intervalli
 periodici, richiede lo stato di processamento della sua richiesta
 utilizzando l’endpoint indicato oppure il correlation ID (passo (3)) fin
 quando la risposta alla richiesta sarà pronta (passi (4a) e (4b)). Gli
@@ -617,8 +619,6 @@ DEVONO essere rispettate le seguenti regole:
 
 -  Al passo (6), l’erogatore fornisce il risultato del processamento.
 
-Il corpo dei messaggi HTTP scambiati durante l’interazione DEVE seguire
-lo standard XML.
 
 .. _regole-di-processamento-5:
 
@@ -649,7 +649,7 @@ Esempio
 +-------------------------------------------------+-----------------------------------------------------------------------------+
 | Specifica Servizio Server                       | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl  |
 +-------------------------------------------------+-----------------------------------------------------------------------------+
-| .. literalinclude:: ../media/soap-blocking.wsdl                                                                               |
+| .. literalinclude:: ../media/soap-non-blocking.wsdl                                                                               |
 |    :language: XML                                                                                                             |
 |                                                                                                                               |
 +-------------------------------------------------------------------------------------------------------------------------------+
