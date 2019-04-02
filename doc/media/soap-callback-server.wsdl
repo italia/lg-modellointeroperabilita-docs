@@ -39,7 +39,7 @@
       </xs:complexType>
       <xs:element name="ErrorMessageFault" nillable="true" type="tns:errorMessageFault"/>
       <xs:element name="X-ReplyTo" nillable="true" type="xs:string"/>
-      <xs:element name="X-CorrelationID" nillable="true" type="xs:string"/>
+      <xs:element name="X-Correlation-ID" nillable="true" type="xs:string"/>
     </xs:schema>
   </wsdl:types>
   <wsdl:message name="MRequest">
@@ -48,7 +48,7 @@
   </wsdl:message>
   <wsdl:message name="MRequestResponse">
     <wsdl:part element="tns:MRequestResponse" name="result"> </wsdl:part>
-    <wsdl:part element="tns:X-CorrelationID" name="X-CorrelationID"> </wsdl:part>
+    <wsdl:part element="tns:X-Correlation-ID" name="X-Correlation-ID"> </wsdl:part>
   </wsdl:message>
   <wsdl:message name="ErrorMessageException">
     <wsdl:part element="tns:ErrorMessageFault" name="ErrorMessageException"> </wsdl:part>
