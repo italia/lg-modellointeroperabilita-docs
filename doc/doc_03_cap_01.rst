@@ -68,47 +68,16 @@ La prima differenza tra i due tipi di Web service è la visione del Web
 come piattaforma di elaborazione che viene implicitamente proposta:
 REST propone una visione del Web incentrata sul concetto di risorsa
 mentre i SOAP Web service mettono in risalto il concetto di servizio.
-Infatti, l'approccio dei SOAP Web service ha mutuato un'architettura
-applicativa denominata SOA -- Service Oriented Architecture, a cui si
-è contrapposta l'architettura ROA -- Resource Oriented Architecture,
-ispirata ai principi REST. L'approccio adottato dai Web service basati
-su SOAP è derivato dalle tecnologie di interoperabilità esistenti al
-di fuori del Web e basate essenzialmente su chiamate di procedura
-remota, come DCOM, CORBA e RMI. In sostanza questo approccio può
-essere visto come una sorta di adattamento di queste tecnologie al
-Web.
 
-L'approccio REST, invece, tende a evidenziare le caratteristiche del
+.. rpolli: SOA e ROA definiti in doc/doc_02_cap_04.rst:9
+
+L'approccio REST evidenzia le caratteristiche del
 Web come piattaforma leggera per l'elaborazione distribuita. Non è, in
 prima istanza, necessario aggiungere nulla a quanto è già esistente
 sul Web per consentire ad applicazioni remote di interagire.
 
-I Web Service basati su SOAP prevedono lo standard WSDL, Web Service
-Description Language, per definire l'interfaccia di un servizio. Questa
-è un'ulteriore evidenza del tentativo di adattare al Web l'approccio
-all'interoperabilità basato su chiamate remote; infatti il WSDL non è
-altro che un IDL (Interface Description Language) per un componente
-software; l'esistenza di WSDL favorisce l'uso di tool per creare
-automaticamente client in un determinato linguaggio di programmazione.
-REST non prevede esplicitamente nessuna modalità per descrivere come
-interagire con una risorsa. Le operazioni sono implicite nel protocollo
-HTTP. Qualcosa di analogo a WSDL è WADL, Web Application Definition
-Language, un formato XML per definire risorse, operazioni ed eccezioni
-previste da un Web service di tipo REST. WADL è stato sottoposto al W3C
-per la standardizzazione nel 2009, ma allo stato attuale non ci sono
-piani per la sua discussione ed eventuale approvazione. In realtà esso
-non ha avuto un'accoglienza molto favorevole da parte delle comunità di
-sviluppatori REST.
+.. rpolli: già indicato in [doc 02 cap 04](doc/doc_02_cap_04.rst:12) e successive.
 
-OpenAPI è un formato di descrizione per Web service REST; un file
-OpenAPI consente di descrivere l'intera interfaccia (endpoint
-disponibili e operazioni su ciascun endpoint, parametri di input e
-output per ogni operazione, metodi di autenticazione, informazioni di
-contatto, licenza, termini di utilizzo, ecc.). Le specifiche possono
-essere scritte in YAML o JSON. Swagger [2]_ è un insieme di strumenti
-open source che, basandosi sulle specifiche OpenAPI, permette di
-supportare il progetto, costruzione e documentazione di REST Web
-service.
 Un Web service SOAP è adatto a realizzare sia interfacce di servizio
 RPC-like che resource-oriented, mentre un Web service REST è
 finalizzato a realizzare interfacce di servizio resource oriented.

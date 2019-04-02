@@ -15,6 +15,16 @@ Per la specifica delle interfacce REST esistono due grandi iniziative: OpenAPI e
 Sebbene simili dal punto di vista dello sviluppatore di interfacce di servizio, la specifica RAML è più indirizzata alla creazione automatica di server e di client per API, mentre OpenAPI (attualmente nella versione OpenAPI v3) contiene elementi più descrittivi per la documentazione e la catalogazione (che invece sono disponibili in RAML come estensioni ad hoc) e si sta imponendo come standard de facto.
 Altri standard proposti in passato, quali Web Application Description Language - WADL, hanno avuto scarso successo e nei framework in cui sono stati utilizzati si sta optando per il passaggio ad `OpenAPI v3 <https://www.openapis.org/>`_ [57]_. Per queste ragioni il ModI impone l’uso di OpenAPI v3.
 
+Un file OpenAPI consente di descrivere l'intera interfaccia (endpoint
+disponibili e operazioni su ciascun endpoint, parametri di input e
+output per ogni operazione, metodi di autenticazione, informazioni di
+contatto, licenza, termini di utilizzo, ecc.). Le specifiche possono
+essere scritte in YAML o JSON. Swagger [#fnSwagger]_ è un insieme di strumenti
+open source che, basandosi sulle specifiche OpenAPI, permette di
+supportare il progetto, costruzione e documentazione di REST Web
+service.
+
+
 È possibile assicurare la conversione tra le differenti rappresentazioni delle interfacce REST tramite tool automatici.
 
 Legato al concetto di specifica nel mondo REST è quello di *Hypermedia As The Engine Of Application State - HATEOAS*. Secondo questo approccio, accedendo ad una risorsa, la risposta del server contiene hyperlink ad altre azioni che possono essere eseguite sulla risorsa [58]_. HATEOAS permette di scoprire dinamicamente le operazioni presenti in una interfaccia di servizio e può essere utilizzato come approccio complementare (non sostitutivo) alla specifica.
@@ -180,3 +190,17 @@ I fruitori dell'interfaccia di servizio devono impegnarsi a rispettare le indica
 .. [77] Cf. `http://www.iana.org/assignments/link-relations/link-relations.xml <http://www.iana.org/assignments/link-relations/link-relations.xml>`_
 
 .. [78] Cf. `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After>`_
+
+.. [#fnSwagger]
+   Originariamente Swagger (della società SmartBear Software) era un
+   insieme di tool sia per la descrizione delle interfacce che per il
+   loro sviluppo. Nel 2015 un gruppo di aziende, sotto la sponsorship
+   della Linux Foundation, ha dato vita all'iniziativa OpenAPI, a cui
+   SmartBear ha donato il formato di specifica che è stato rinominato da
+   Swagger Specification in OpenAPI Specification. OpenAPI 3.0 è
+   l'ultima versione della specifica. Gli strumenti Swagger, che sono
+   ancora supportati da SmartBear Software, sono tra gli strumenti più
+   popolari per implementare la specifica OpenAPI e continueranno a
+   mantenere il nome Swagger. Esistono molti altri strumenti open source
+   e proprietari, non correlati a Swagger, che supportano la specifica
+   OpenAPI.

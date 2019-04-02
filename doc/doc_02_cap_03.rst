@@ -56,6 +56,12 @@ Tra le estensioni supportate dai framework più diffusi abbiamo:
 -   WS-Coordination è un framework estensibile per il coordinamento di web service (corrispondenti alle interfacce di servizio). In particolare esso spiega come implementare (e quindi è preso a riferimento dalle varie implementazioni dello stack WS-\*) i protocolli di coordinamento inclusi quelli descritti da WS-AtomicTransaction.
 
 La specifica delle interfacce di servizio SOAP è effettuata tramite `Web Services Description Language - WSDL <https://www.w3.org/TR/wsdl20-primer/>`_ [46]_. Oltre ad indicare le funzionalità offerte dall'interfaccia di servizio dal punto di vista funzionale, esso permette anche di definire le caratteristiche non funzionali tramite le estensioni `WS-Policy <https://www.w3.org/TR/ws-policy/>`_ [47]_ che permettono di specificare le varie componenti della QoS.
+L'uso di WSDL evidenzia il tentativo di adattare al Web l'approccio
+all'interoperabilità basato su chiamate remote; il WSDL non è
+altro che un IDL (Interface Description Language) per un componente
+software; l'esistenza di WSDL favorisce l'uso di tool per creare
+automaticamente client in un determinato linguaggio di programmazione.
+
 
 Indicazioni di utilizzo
 -----------------------
