@@ -102,7 +102,7 @@ DEVONO essere rispettate le seguenti regole:
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, il correlation ID utilizzando l’header HTTP
-   custom X-CorrelationID; Il codice HTTP di stato DEVE essere 202
+   custom X-Correlation-ID; Il codice HTTP di stato DEVE essere 202
    Accepted a meno che non si verifichino errori;
 
 -  Al passo (3), l’erogatore DEVE riutilizzare lo stesso correlation ID
