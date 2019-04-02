@@ -12,7 +12,7 @@ aspetti funzionali rimandando per gli aspetti di sicurezza alla apposita
 sezione delle linee guida.
 
 Per i concetti di bloccante e non bloccante si rimanda alla lettura del
-capitolo 3 del documento.
+paragrafo "Concetti di base" del documento.
 
 Ogni interfaccia di servizio sviluppata nell'ambito della pubblica
 amministrazione deve essere corredata da una specifica di interfaccia
