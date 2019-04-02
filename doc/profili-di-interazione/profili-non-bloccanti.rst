@@ -8,9 +8,11 @@ può avvenire in maniera differita.
 
 Gli approcci non bloccanti vengono utilizzati nei casi in cui i tempi
 per l’erogazione di una risposta da parte del fruitore sono lunghi
-perché (i) la richiesta è onerosa in termini temporali e/o (ii) il
-fruitore non può farsi immediatamente carico dell’erogazione del
-servizio.
+perché
+
+- la richiesta è onerosa in termini temporali
+
+- il fruitore non può farsi immediatamente carico dell’erogazione del servizio.
 
 Al fine di collegare le richieste con le risposte si farà uso, sia nelle
 implementazioni SOAP che in quelle REST, di meta-informazioni specifiche
@@ -26,8 +28,9 @@ automatizzare o semplificare un servizio già offerto dalla pubblica
 amministrazione. In una moltitudine di casi questi servizi sono
 asincroni (non bloccanti) per natura, e consistono di richieste a cui
 vengono allegati degli identificativi (es. numeri di protocollo) che
-accompagnano la pratica. In questi casi, il correlation ID può essere
-sostituito da questi identificativi già previsti dal servizio.
+accompagnano la richiesta.
+In questi casi, il correlation ID può essere sostituito da questi
+identificativi già previsti dal servizio.
 
 .. _paragrafo-1:
 
