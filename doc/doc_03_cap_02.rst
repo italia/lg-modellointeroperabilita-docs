@@ -25,15 +25,16 @@ L'endpoint deve indicare in modo esplicito la tecnologia utilizzata
 (REST o SOAP) e la versione (versioning su URL).
 
 .. toctree::
-  :maxdepth: 3
+  :maxdepth: 2
   :caption: Contenuti
 
   profili-di-interazione/modalità-di-descrizione-dei-profili.rst
   profili-di-interazione/profilo-bloccante-rpc.rst
   profili-di-interazione/profili-non-bloccanti.rst
   profili-di-interazione/accesso-crud-a-risorse.rst
+  profili-di-interazione/regole-comuni-rest-soap.rst
   profili-di-interazione/robustezza.rst
   profili-di-interazione/passaggio-di-allegati.rst
-  
+
 .. discourse::
    :topic_identifier: 8904
