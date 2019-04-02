@@ -253,7 +253,7 @@ client interessati a leggere l'output della richiesta POST originale.
 
 Questo secondo esempio mostra invece che se l'interfaccia di servizio è
 orientata alle funzionalità (come appunto nell'esempio, in cui di fatto
-si vogliono eseguire operazioni remote) allora l'\ *impedance mismatch*
+si vogliono eseguire operazioni remote) allora l'*impedance mismatch*
 con SOAP è minimo, e nel caso invece si voglia utilizzare REST, occorre
 convertire l'interfaccia originariamente RPC-like in una resource
 oriented.
