@@ -71,10 +71,9 @@ riportando l’esito ed indicando il correlation ID. Il fruitore riconosce
 (4)).
 
 Il profilo basato su callback è un caso particolare di publish/subscribe
-(vedi Capitolo 3). Nel publish/subscribe, il sottoscrittore (cioè il
-fruitore) richiede di ricevere aggiornamenti circa un determinato
-argomento ad uno specifico indirizzo. Nel caso della callback,
-l’argomento è rappresentato dallo stato di esecuzione di una richiesta.
+(vedi Capitolo 3).
+
+.. TODO Referenza
 
 .. _interfaccia-rest-1:
 
