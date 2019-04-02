@@ -398,6 +398,7 @@ Descrizione
 
 .. image:: ../media/interazione_3.png
    :align: center
+   :scale: 75 %
 
 Interazione non bloccante tramite busy waiting
 
