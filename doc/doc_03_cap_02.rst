@@ -3,8 +3,8 @@ Profili di Interazione
 
 Il *profilo di interazione* definisce le modalità secondo le quali un
 fruitore ed un erogatore possono interagire, l'interazione avviene
-definendo le interfacce di servizio che comprendono le primitive dei
-messaggi scambiati. I *profili di interazione* quali riferimenti
+definendo le interfacce di servizio.
+I *profili di interazione* quali riferimenti
 concettuali coniugano, fatto salvo per l'accesso CRUD, message exchange
 pattern (MEP) per le tecnologie SOAP e REST proposte dal ModI.
 L'attenzione in questa sezione delle linee guida viene rivolta agli
