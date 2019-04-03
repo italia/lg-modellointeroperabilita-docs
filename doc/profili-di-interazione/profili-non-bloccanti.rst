@@ -32,12 +32,12 @@ accompagnano la richiesta.
 In questi casi, il correlation ID può essere sostituito da questi
 identificativi già previsti dal servizio.
 
-.. _paragrafo-1:
+.. _paragrafo-nonbloccante-1:
 
 Profili non bloccante RPC PUSH (basato su callback)
 ---------------------------------------------------
 
-.. _scenario-1:
+.. _scenario-nonbloccante-1:
 
 Scenario
 ~~~~~~~~
@@ -46,14 +46,14 @@ Questo caso particolare, denominato RPC PUSH, è utilizzabile nel caso in
 cui il fruitore abbia a sua volta possibilità di esporre una interfaccia
 di servizio per la ricezione delle risposte.
 
-.. _descrizione-1:
+.. _descrizione-nonbloccante-1:
 
 Descrizione
 ~~~~~~~~~~~
 
 .. figure:: ../media/interazione_2.png
    :align: center
-   
+
    Interazione non bloccante tramite callback
 
 In questo scenario (vedi figura), la richiesta del fruitore contiene
@@ -75,7 +75,7 @@ Il profilo basato su callback è un caso particolare di publish/subscribe
 
 .. TODO Referenza
 
-.. _interfaccia-rest-1:
+.. _interfaccia-rest-nonbloccante-1:
 
 Interfaccia REST
 ~~~~~~~~~~~~~~~~
@@ -113,7 +113,7 @@ DEVONO essere rispettate le seguenti regole:
    acknowledgement il ricevimento della risposta; Il codice HTTP di
    stato DEVE essere 200 OK a meno che non si verifichino errori.
 
-.. _regole-di-processamento-2:
+.. _regole-di-processamento-nonbloccante-2:
 
 Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -143,7 +143,7 @@ Friuitore ed erogatore, nel processare le richieste, DEVONO almeno:
    è possibile utilizzare meccanismi specifici per la ritrasmissione della
    risposta o della richiesta.
 
-.. _esempio-2:
+.. _esempio-nonbloccante-2:
 
 Esempio
 ^^^^^^^
@@ -217,7 +217,7 @@ Di seguito un esempio di risposta da parte dell’erogatore verso il fruitore.
 |                                 |     }                                                                  |
 +---------------------------------+------------------------------------------------------------------------+
 
-.. _interfaccia-soap-1:
+.. _interfaccia-soap-nonbloccante-1:
 
 Interfaccia SOAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -251,7 +251,7 @@ seguenti regole:
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
    acknowledgement il ricevimento della risposta.
 
-.. _regole-di-processamento-3:
+.. _regole-di-processamento-nonbloccante-3:
 
 Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -272,7 +272,7 @@ framework di sviluppo:
    al passo (1) e l’erogatore al passo (3)) di identificare con
    precisione l’errore.
 
-.. _esempio-3:
+.. _esempio-nonbloccante-3:
 
 Esempio
 ^^^^^^^
@@ -281,7 +281,7 @@ Esempio
 | Specifica Servizio Server                    | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl |
 +----------------------------------------------+----------------------------------------------------------------------------+
 | .. literalinclude:: ../media/soap-callback-server.wsdl                                                                    |
-|    :language: yaml                                                                                                        |
+|    :language: xml                                                                                                         |
 |                                                                                                                           |
 +---------------------------------------------------------------------------------------------------------------------------+
 
@@ -290,7 +290,7 @@ Esempio
 | Specifica Servizio Callback                     | https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1?wsdl     |
 +-------------------------------------------------+-------------------------------------------------------------------------+
 | .. literalinclude:: ../media/soap-callback-client.wsdl                                                                    |
-|    :language: yaml                                                                                                        |
+|    :language: xml                                                                                                         |
 |                                                                                                                           |
 +---------------------------------------------------------------------------------------------------------------------------+
 
@@ -373,12 +373,12 @@ essersi preso carico della richiesta.
 |                   |    </soap:Envelope>                                                                                                                                            |
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. _paragrafo-2:
+.. _paragrafo-nonbloccante-2:
 
 Profilo non bloccante RPC PULL (busy waiting)
 ---------------------------------------------
 
-.. _scenario-2:
+.. _scenario-nonbloccante-2:
 
 Scenario
 ~~~~~~~~
@@ -391,7 +391,7 @@ l’erogatore fornisce un indirizzo interrogabile per verificare lo stato
 di processamento di una richiesta e, al fine del processamento della
 stessa, il risultato.
 
-.. _descrizione-2:
+.. _descrizione-nonbloccante-2:
 
 Descrizione
 ~~~~~~~~~~~
@@ -417,7 +417,7 @@ definiti tramite meccanismi di robustezza quali quelli definiti in
 Sezione 2.5. A questo punto il fruitore può richiedere il risultato
 (passi (5) e (6)).
 
-.. _interfaccia-rest-2:
+.. _interfaccia-rest-nonbloccante-2:
 
 Interfaccia REST
 ~~~~~~~~~~~~~~~~
@@ -462,7 +462,7 @@ riportato nel Capitolo 1):
 Il corpo dei messaggi HTTP scambiati durante l’interazione DEVE seguire
 lo standard JSON.
 
-.. _regole-di-processamento-4:
+.. _regole-di-processamento-nonbloccante-4:
 
 Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -495,7 +495,7 @@ l’erogatore DEVE almeno:
 -  Restituire il codice 303 See Other quando il processamento è
    concluso.
 
-.. _esempio-4:
+.. _esempio-nonbloccante-4:
 
 Esempio
 ^^^^^^^
@@ -585,7 +585,7 @@ della sua richiesta.
 |                                            |    }                                                                                                                               |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
-.. _interfaccia-soap-2:
+.. _interfaccia-soap-nonbloccante-2:
 
 Interfaccia SOAP
 ~~~~~~~~~~~~~~~~
@@ -621,7 +621,7 @@ DEVONO essere rispettate le seguenti regole:
 -  Al passo (6), l’erogatore fornisce il risultato del processamento.
 
 
-.. _regole-di-processamento-5:
+.. _regole-di-processamento-nonbloccante-5:
 
 Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -642,7 +642,7 @@ framework di sviluppo:
    al passo (1) e l’erogatore al passo (3)) di identificare con
    precisione l’errore.
 
-.. _esempio-5:
+.. _esempio-nonbloccante-5:
 
 Esempio
 ^^^^^^^
