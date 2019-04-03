@@ -51,7 +51,8 @@ extensions = [
     'sphinx.ext.ifconfig',
     'docs-italia-theme',
     'sphinx.ext.autosectionlabel',
-    'sphinxcontrib.discourse'
+    'sphinxcontrib.discourse',
+    'sphinxcontrib.mermaid'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

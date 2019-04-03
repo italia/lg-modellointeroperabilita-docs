@@ -4,3 +4,6 @@ git+https://github.com/pdavide/sphinxcontrib-versiontag
 recommonmark
 doc8
 sphinx
+
+# Render mermaid diagrams
+sphinxcontrib-mermaid
