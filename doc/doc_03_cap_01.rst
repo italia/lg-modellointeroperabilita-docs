@@ -304,12 +304,12 @@ offerta per interoperare:
 
 - esternamente, da parte di moduli applicativi completamente esterni alle pubbliche amministrazioni, e per i quali non esiste a priori nessuna relazione, nè organizzativa nè di fiducia.
 
-.. figure:: ../media/image4.png
+.. figure:: media/image4.png
    :alt: perimetro in SPCoop
 
    Perimetro delle interfacce in SPCoop
 
-.. figure:: ../media/image5.png
+.. figure:: media/image5.png
    :alt: perimetro in SPCoop
 
    Perimetro delle interfacce in ModI
