@@ -172,9 +172,11 @@ parte dell’erogatore.
 +---------------------------------+----------------------------------------------------------------------------------------+
 | Endpoint                        | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
 +---------------------------------+----------------------------------------------------------------------------------------+
-| 1 Request Header & Body         | .. code-block:: JSON                                                                   |
+| 1 Request Header & Body         | .. code-block:: http                                                                   |
 |                                 |                                                                                        |
 |                                 |                                                                                        |
+|                                 |     POST /rest/v1/nomeinterfacciaservizio/resources/1234/M HTTP/1.1                    |
+|                                 |     Content-Type: application/json                                                     |
 |                                 |     X-ReplyTo: https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse  |
 |                                 |                                                                                        |
 |                                 |     {                                                                                  |
@@ -185,9 +187,11 @@ parte dell’erogatore.
 |                                 |       "b": "Stringa di esempio"                                                        |
 |                                 |     }                                                                                  |
 +---------------------------------+----------------------------------------------------------------------------------------+
-| 2 Response Header & Body        | .. code-block:: JSON                                                                   |
+| 2 Response Header & Body        | .. code-block:: http                                                                   |
 | (HTTP Status Code 202 Accepted) |                                                                                        |
 |                                 |                                                                                        |
+|                                 |     HTTP/1.1 202 Accepted                                                              |
+|                                 |     Content-Type: application/json                                                     |
 |                                 |     X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d                             |
 |                                 |                                                                                        |
 |                                 |     {                                                                                  |
@@ -202,16 +206,20 @@ Di seguito un esempio di risposta da parte dell’erogatore verso il fruitore.
 +---------------------------------+------------------------------------------------------------------------+
 | Endpoint                        | https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse |
 +---------------------------------+------------------------------------------------------------------------+
-| 3 Request Header & Body         | .. code-block:: JSON                                                   |
+| 3 Request Header & Body         | .. code-block:: http                                                   |
 |                                 |                                                                        |
+|                                 |    POST /rest/v1/nomeinterfacciaclient/Mresponse HTTP/1.1              |
 |                                 |    X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d              |
 |                                 |                                                                        |
-|                                 |     {                                                                  |
+|                                 |    {                                                                   |
 |                                 |       "c": "OK"                                                        |
-|                                 |     }                                                                  |
+|                                 |    }                                                                   |
 +---------------------------------+------------------------------------------------------------------------+
-| 4 Response Header & Body        | .. code-block:: JSON                                                   |
-| (HTTP Status Code 202 Accepted) |                                                                        |
+| 4 Response Header & Body        | .. code-block:: http                                                   |
+| (HTTP Status Code 200 Success)  |                                                                        |
+|                                 |     HTTP/1.1 200 Success                                               |
+|                                 |     Content-Type: application/json                                     |
+|                                 |                                                                        |
 |                                 |     {                                                                  |
 |                                 |       "result" : "ACK"                                                 |
 |                                 |     }                                                                  |
