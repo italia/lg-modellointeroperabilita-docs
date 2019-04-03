@@ -524,8 +524,9 @@ essersi preso carico della richiesta.
 +---------------------------------------------------+----------------------------------------------------------------------------------------+
 | Endpoint                                          | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
 +---------------------------------------------------+----------------------------------------------------------------------------------------+
-| (1) Request Header & Body                         | .. code-block:: YAML                                                                   |
+| (1) Request Header & Body                         | .. code-block:: http                                                                   |
 |                                                   |                                                                                        |
+|                                                   |   POST /rest/v1/nomeinterfacciaservizio/resources/1234/M                               |
 |                                                   |                                                                                        |
 |                                                   |   {                                                                                    |
 |                                                   |      "a": {                                                                            |
@@ -535,13 +536,17 @@ essersi preso carico della richiesta.
 |                                                   |      "b": "Stringa di esempio"                                                         |
 |                                                   |    }                                                                                   |
 +---------------------------------------------------+----------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP Status Code 202 Accepted) | .. code-block:: YAML                                                                   |
+| (2) Response Body (HTTP Status Code 202 Accepted) | .. code-block:: http                                                                   |
 |                                                   |                                                                                        |
+|                                                   |                                                                                        |
+|                                                   |   HTTP/1.1 202 Accepted                                                                |
+|                                                   |   Content-Type: application/json                                                       |
 |                                                   |   Location:  resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d                     |
 |                                                   |                                                                                        |
 |                                                   |    {                                                                                   |
 |                                                   |      "status": "pending",                                                              |
-|                                                   |      "message": "Preso carico della richiesta"                                         |
+|                                                   |      "message": "Preso carico della richiesta",                                        |
+|                                                   |      "id": "8131edc0-29ed-4d6e-ba43-cce978c7ea8d"                                      |
 |                                                   |    }                                                                                   |
 +---------------------------------------------------+----------------------------------------------------------------------------------------+
 
@@ -552,9 +557,9 @@ processamento avvenuto (4b).
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | HTTP Operation                              | GET                                                                                                                         |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                    | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/ resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d |
+| Endpoint                                    | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d  |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| 4a   Response Body (HTTP Response code 200) | .. code-block:: JSON                                                                                                        |
+| 4a   Response Body (HTTP Response code 200) | .. code-block:: http                                                                                                        |
 |                                             |                                                                                                                             |
 |                                             |                                                                                                                             |
 |                                             |    {                                                                                                                        |
@@ -562,14 +567,14 @@ processamento avvenuto (4b).
 |                                             |      "message": "Preso carico della richiesta"                                                                              |
 |                                             |    }                                                                                                                        |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| 4a Response Body (HTTP Response code 200)   |  .. code-block:: JSON                                                                                                       |
+| 4a Response Body (HTTP Response code 200)   |  .. code-block:: http                                                                                                       |
 |                                             |                                                                                                                             |
 |                                             |    {                                                                                                                        |
 |                                             |      "status": "processing",                                                                                                |
 |                                             |      "message": "Richiesta in fase di processamento"                                                                        |
 |                                             |    }                                                                                                                        |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| 4b Response Header &                        | .. code-block:: JSON                                                                                                        |
+| 4b Response Header &                        | .. code-block:: http                                                                                                        |
 |    Body (HTTP Response code 303)            |                                                                                                                             |
 |                                             |    {                                                                                                                        |
 |                                             |      "status": "done",                                                                                                      |
@@ -583,10 +588,10 @@ della sua richiesta.
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | HTTP Operation                             | GET                                                                                                                                |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                   | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/ resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result |
+| Endpoint                                   | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result  |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | (6\) Response Body (HTTP Response code 200)|                                                                                                                                    |
-|                                            | .. code-block:: JSON                                                                                                               |
+|                                            | .. code-block:: http                                                                                                               |
 |                                            |                                                                                                                                    |
 |                                            |    {                                                                                                                               |
 |                                            |      "c": "OK"                                                                                                                     |
