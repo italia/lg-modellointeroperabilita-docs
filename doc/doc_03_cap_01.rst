@@ -87,7 +87,7 @@ quanto stile architetturale, è maggiormente caratterizzato. Gli esempi
 successivi evidenziano l'\ *impedance mismatch* (differenza tra i
 modelli realizzativi e concettuali, cf.
 
-.. TODO referenza 
+.. TODO: referenza 
 
 Capitolo 3) che si origina
 nelle varie casistiche partendo da una interfaccia di servizio secondo
@@ -260,7 +260,7 @@ presentare i casi seguenti:
 
 Si anticipa che nel
 
-.. TODO referenza
+.. TODO: referenza
 
 Capitolo 2 dedicato ai profili, si adotteranno, nel
 caso dei profili non bloccanti realizzati in tecnologia REST, delle
@@ -268,7 +268,7 @@ interfacce di servizio classificabili di livello 1 del Richardson
 Maturity Model.
 
 Perimetro delle interfacce di servizio
-======================================
+--------------------------------------
 
 Un aspetto che si vuole qui richiamare è la relazione tra l’interno e
 l’esterno del sistema informativo di una pubblica amministrazione, e
