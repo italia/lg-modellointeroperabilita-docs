@@ -9,7 +9,7 @@ casi in cui:
 
 -  L’esecuzione del metodo ``M`` è poco onerosa computazionalmente e può
    essere portata immediatamente a termine dall’erogatore.
-   
+
 -  Il contesto rende complessa l’implementazione delle modalità non
    bloccanti di cui alle sezioni successive. Ad esempio, non è possibile
    per il fruitore esporre una propria interfaccia di servizio ed il fruitore non può farsi carico di mantenere il
@@ -108,8 +108,12 @@ Di seguito un esempio di chiamata al metodo ``M``.
 |                                                                |    :language: javascript                                                               |
 |                                                                |                                                                                        |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP Status Code 404 Not Found)             |                                                                                        |
+| (2) Response Body (HTTP Status Code 400 Bad Request)           |                                                                                        |
 |                                                                | .. literalinclude:: ../media/problem-400.json                                          |
+|                                                                |    :language: javascript                                                               |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| (2) Response Body (HTTP Status Code 404 Not Found)             |                                                                                        |
+|                                                                | .. literalinclude:: ../media/problem-404.json                                          |
 |                                                                |    :language: javascript                                                               |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
