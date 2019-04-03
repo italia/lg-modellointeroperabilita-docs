@@ -2,6 +2,6 @@
  * Qui il `type` non serve poiché 404 ha un significato ben chiaro
  */
 {
-    "status": 400,
+    "status": 404,
     "title": "Risorsa non trovata.",
 }

@@ -1,0 +1,106 @@
+openapi: 3.0.1
+info:
+  title: RESTrobustezza
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: "1.0"
+paths:
+  /resources/{id_resource}/M:
+    post:
+      description: M
+      operationId: PushMessage_1
+      parameters:
+      - name: id_resource
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MType'
+      responses:
+        200:
+          description: Esecuzione di M avvenuta con successo
+          headers: &ratelimit_headers
+            X-RateLimit-Limit:
+              $ref: '#/components/headers/X-RateLimit-Limit'
+            X-RateLimit-Remaining:
+              $ref: '#/components/headers/X-RateLimit-Remaining'
+            X-RateLimit-Reset:
+              $ref: '#/components/headers/X-RateLimit-Reset'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MResponseType'
+        404:
+          description: Identificativo non trovato
+          headers:
+            <<: *ratelimit_headers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        400:
+          description: Richiesta malformata
+          headers:
+            <<: *ratelimit_headers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        429:
+          description: Limite di richieste raggiunto
+          headers:
+            Retry-After:
+              description: Limite massimo richieste
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+components:
+  headers:
+    X-RateLimit-Limit:
+      $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/headers/X-RateLimit-Limit'
+    X-RateLimit-Remaining:
+      $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/headers/X-RateLimit-Remaining'
+    X-RateLimit-Reset:
+      $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/headers/X-RateLimit-Reset'
+    Retry-After:
+      $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/headers/Retry-After'
+  schemas:
+    MType:
+      type: object
+      properties:
+        a:
+          $ref: '#/components/schemas/AComplexType'
+        b:
+          type: string
+    MResponseType:
+      type: object
+      properties:
+        c:
+          type: string
+    AComplexType:
+      type: object
+      properties:
+        a1s:
+          type: array
+          items:
+            type: integer
+            format: int32
+        a2:
+          type: string
+    ErrorMessage:
+      $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/schemas/Problem'
