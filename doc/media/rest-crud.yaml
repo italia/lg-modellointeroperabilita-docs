@@ -1,79 +1,88 @@
 openapi: 3.0.1
 info:
   title: RESTCRUD
+  version: "1.0"
+  description: |-
+    Questo file descrive semplicemente i metodi di un'API
+    e non indica tutte le informazioni di metadatazione che
+    normalmente vanno inserite.
   license:
     name: Apache 2.0 License
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: "1.0"
 paths:
   /municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni:
+    get:
+      description: Mostra prenotazioni
+      operationId: listReservations
+      parameters:
+      - $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/parameters/limit'
+      - $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/parameters/cursor'
+      - $ref: '#/components/parameters/path_id_municipio'
+      - $ref: '#/components/parameters/path_id_ufficio'
+      responses:
+        '200':
+          description: Una lista di prenotazioni.
+          content:
+            application/json:
+              schema:
+                properties:
+                  prenotazioni:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Prenotazione'
+                  count:
+                    type: integer
+                    format: int32
+                  next:
+                    type: string
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
+
     post:
-      description: AggiungiPrenotazione
+      description: Aggiungi una prenotazione
       operationId: AddReservation_1
       parameters:
       - name: X-Correlation-ID
         in: header
         schema:
           type: string
-      - name: id_municipio
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: id_ufficio
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
+      - $ref: '#/components/parameters/path_id_municipio'
+      - $ref: '#/components/parameters/path_id_ufficio'
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Prenotazione'
       responses:
-        201:
+        '201':
+          description: Crea una prenotazione.
           headers:
             Location:
               description: ID della prenotazione creata
               schema:
                 type: string
-        500:
-          description: Errore interno avvenuto
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        404:
-          description: Identificativo non trovato
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        400:
-          description: Richiesta non accoglibile
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
+                $ref: '#/components/schemas/Prenotazione'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
+
   /municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/{id_prenotazione}:
     get:
       description: LeggiPrenotazione
       operationId: GetReservation_1
       parameters:
-      - name: id_municipio
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: id_ufficio
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
+      - $ref: '#/components/parameters/path_id_municipio'
+      - $ref: '#/components/parameters/path_id_ufficio'
       - name: id_prenotazione
         in: path
         required: true
@@ -81,40 +90,24 @@ paths:
           type: integer
           format: int32
       responses:
-        500:
-          description: Errore interno avvenuto
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        404:
-          description: Identificativo non trovato
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        200:
+        '200':
           description: Prenotazione estratta correttamente
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Prenotazione'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
     delete:
       description: EliminaPrenotazione
       operationId: DeleteReservation
       parameters:
-      - name: id_municipio
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: id_ufficio
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
+      - $ref: '#/components/parameters/path_id_municipio'
+      - $ref: '#/components/parameters/path_id_ufficio'
       - name: id_prenotazione
         in: path
         required: true
@@ -122,40 +115,23 @@ paths:
           type: integer
           format: int32
       responses:
-        500:
-          description: Errore interno avvenuto
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        404:
-          description: Identificativo non trovato
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        200:
+        '200':
           description: Prenotazione eliminata correttamente
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Prenotazione'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
+
     patch:
       description: ModificaPrenotazione
       operationId: PatchReservation
       parameters:
-      - name: id_municipio
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: id_ufficio
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
+      - $ref: '#/components/parameters/path_id_municipio'
+      - $ref: '#/components/parameters/path_id_ufficio'
       - name: id_prenotazione
         in: path
         required: true
@@ -168,25 +144,56 @@ paths:
             schema:
               $ref: '#/components/schemas/PatchPrenotazione'
       responses:
-        500:
-          description: Errore interno avvenuto
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        404:
-          description: Identificativo non trovato
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        200:
+        '200':
           description: Prenotazione modificata correttamente
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Prenotazione'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
 components:
+  parameters:
+    path_id_municipio:
+      name: id_municipio
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+    path_id_ufficio:
+      name: id_ufficio
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+  responses:
+    400BadRequest:
+      description: Richiesta non accoglibile
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    404NotFound:
+      description: Identificativo non trovato
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    default:
+      description: |-
+        Errore inatteso. Questo viene ritornato nel caso ci sia
+        un errore inatteso. Non vanno mai esposti i dati interni
+        del server.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
   schemas:
     Prenotazione:
       type: object
@@ -195,8 +202,8 @@ components:
           type: string
         cognome:
           type: string
-        cf:
-          type: string
+        codice_fiscale:
+          $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/schemas/TaxCode'
         dettagli:
           $ref: '#/components/schemas/PatchPrenotazione'
     PatchPrenotazione:
@@ -210,7 +217,4 @@ components:
         motivazione:
           type: string
     ErrorMessage:
-      type: object
-      properties:
-        error_message:
-          type: string
+      $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/schemas/Problem'

@@ -9,7 +9,7 @@ casi in cui:
 
 -  L’esecuzione del metodo ``M`` è poco onerosa computazionalmente e può
    essere portata immediatamente a termine dall’erogatore.
-   
+
 -  Il contesto rende complessa l’implementazione delle modalità non
    bloccanti di cui alle sezioni successive. Ad esempio, non è possibile
    per il fruitore esporre una propria interfaccia di servizio ed il fruitore non può farsi carico di mantenere il
@@ -87,7 +87,6 @@ Esempio
 +--------------------+-----------------------------------------------------------------------------------------+
 | .. literalinclude:: ../media/rest-blocking.yaml                                                              |
 |    :language: yaml                                                                                           |
-|    :linenos:                                                                                                 |
 +--------------------------------------------------------------------------------------------------------------+
 
 Di seguito un esempio di chiamata al metodo ``M``.
@@ -113,17 +112,18 @@ Di seguito un esempio di chiamata al metodo ``M``.
 |                                                                |      "c" : "risultato"                                                                 |
 |                                                                |    }                                                                                   |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP Status Code 500 Internal Server Error) | .. code-block:: JSON                                                                   |
+| (2) Response Body (HTTP Status Code 500 Internal Server Error) |                                                                                        |
+|                                                                | .. literalinclude:: ../media/problem-500.json                                          |
+|                                                                |    :language: javascript                                                               |
 |                                                                |                                                                                        |
-|                                                                |    {                                                                                   |
-|                                                                |      "error_message" : "messaggio di errore"                                           |
-|                                                                |    }                                                                                   |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP Status Code 404 Not Found)             | .. code-block:: JSON                                                                   |
-|                                                                |                                                                                        |
-|                                                                |    {                                                                                   |
-|                                                                |      "error_message" : "la risorsa 1234 non esiste"                                    |
-|                                                                |    }                                                                                   |
+| (2) Response Body (HTTP Status Code 400 Bad Request)           |                                                                                        |
+|                                                                | .. literalinclude:: ../media/problem-400.json                                          |
+|                                                                |    :language: javascript                                                               |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| (2) Response Body (HTTP Status Code 404 Not Found)             |                                                                                        |
+|                                                                | .. literalinclude:: ../media/problem-404.json                                          |
+|                                                                |    :language: javascript                                                               |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Interfaccia SOAP
@@ -134,7 +134,7 @@ caso REST, il metodo invocato non è specificato nell’endpoint chiamato,
 poichè viene identificato all’interno del body. Inoltre tutti gli ID
 coinvolti DEVONO essere riportati all’interno del body.
 
-.. _regole-di-processamento-1:
+.. _regole-di-processamento-rpc-soap-1:
 
 Regole di processamento
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -157,7 +157,7 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 -  In caso di successo restituire il codice HTTP 200 OK, riempiendo il
    body di risposta con il risultato dell’operazione.
 
-.. _esempio-1:
+.. _esempio-rpc-soap-1:
 
 Esempio
 ~~~~~~~

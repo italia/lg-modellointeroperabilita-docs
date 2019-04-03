@@ -1,10 +1,14 @@
 openapi: 3.0.1
 info:
  title: RESTblocking
+ version: "1.0"
+ description: |-
+   Questo file descrive semplicemente i metodi di un'API
+   e non indica tutte le informazioni di metadatazione che
+   normalmente vanno inserite.
  license:
    name: Apache 2.0 License
    url: http://www.apache.org/licenses/LICENSE-2.0.html
- version: "1.0"
 paths:
  /resources/{id_resource}/M:
    post:
@@ -23,8 +27,14 @@ paths:
            schema:
              $ref: '#/components/schemas/MType'
      responses:
-       500:
-         description: Errore interno avvenuto
+       200:
+         description: Esecuzione di M avvenuta con successo
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/MResponseType'
+       400:
+         description: Richiesta non valida
          content:
            application/json:
              schema:
@@ -35,18 +45,13 @@ paths:
            application/json:
              schema:
                $ref: '#/components/schemas/ErrorMessage'
-       400:
-         description: Richiesta non valida
+       500:
+         description: Errore interno
          content:
            application/json:
              schema:
                $ref: '#/components/schemas/ErrorMessage'
-       200:
-         description: Esecuzione di M avvenuta con successo
-         content:
-           application/json:
-             schema:
-               $ref: '#/components/schemas/MResponseType'
+
 components:
  schemas:
    MType:
@@ -72,7 +77,4 @@ components:
        a2:
          type: string
    ErrorMessage:
-     type: object
-     properties:
-       error_message:
-         type: string
+     $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/schemas/Problem'

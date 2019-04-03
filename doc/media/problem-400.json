@@ -1,0 +1,9 @@
+/*
+ * Qui viene dichiarato il `type`.
+ */
+{
+    "type": "https://apidoc.example.com/probs/invalid-a",
+    "status": 400,
+    "title": "L'attributo `b` ha un valore non valido.",
+    "detail": "L'attributo `b` dev'essere una stringa di lunghezza inferiore a 32 caratteri.",
+}

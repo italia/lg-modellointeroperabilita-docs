@@ -32,12 +32,12 @@ accompagnano la richiesta.
 In questi casi, il correlation ID può essere sostituito da questi
 identificativi già previsti dal servizio.
 
-.. _paragrafo-1:
+.. _paragrafo-nonbloccante-1:
 
 Profili non bloccante RPC PUSH (basato su callback)
 ---------------------------------------------------
 
-.. _scenario-1:
+.. _scenario-nonbloccante-1:
 
 Scenario
 ~~~~~~~~
@@ -46,14 +46,14 @@ Questo caso particolare, denominato RPC PUSH, è utilizzabile nel caso in
 cui il fruitore abbia a sua volta possibilità di esporre una interfaccia
 di servizio per la ricezione delle risposte.
 
-.. _descrizione-1:
+.. _descrizione-nonbloccante-1:
 
 Descrizione
 ~~~~~~~~~~~
 
 .. figure:: ../media/interazione_2.png
    :align: center
-   
+
    Interazione non bloccante tramite callback
 
 In questo scenario (vedi figura), la richiesta del fruitore contiene
@@ -75,7 +75,7 @@ Il profilo basato su callback è un caso particolare di publish/subscribe
 
 .. TODO Referenza
 
-.. _interfaccia-rest-1:
+.. _interfaccia-rest-nonbloccante-1:
 
 Interfaccia REST
 ~~~~~~~~~~~~~~~~
@@ -113,7 +113,7 @@ DEVONO essere rispettate le seguenti regole:
    acknowledgement il ricevimento della risposta; Il codice HTTP di
    stato DEVE essere 200 OK a meno che non si verifichino errori.
 
-.. _regole-di-processamento-2:
+.. _regole-di-processamento-nonbloccante-2:
 
 Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -143,7 +143,7 @@ Friuitore ed erogatore, nel processare le richieste, DEVONO almeno:
    è possibile utilizzare meccanismi specifici per la ritrasmissione della
    risposta o della richiesta.
 
-.. _esempio-2:
+.. _esempio-nonbloccante-2:
 
 Esempio
 ^^^^^^^
@@ -172,9 +172,11 @@ parte dell’erogatore.
 +---------------------------------+----------------------------------------------------------------------------------------+
 | Endpoint                        | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
 +---------------------------------+----------------------------------------------------------------------------------------+
-| 1 Request Header & Body         | .. code-block:: JSON                                                                   |
+| 1 Request Header & Body         | .. code-block:: http                                                                   |
 |                                 |                                                                                        |
 |                                 |                                                                                        |
+|                                 |     POST /rest/v1/nomeinterfacciaservizio/resources/1234/M HTTP/1.1                    |
+|                                 |     Content-Type: application/json                                                     |
 |                                 |     X-ReplyTo: https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse  |
 |                                 |                                                                                        |
 |                                 |     {                                                                                  |
@@ -185,9 +187,11 @@ parte dell’erogatore.
 |                                 |       "b": "Stringa di esempio"                                                        |
 |                                 |     }                                                                                  |
 +---------------------------------+----------------------------------------------------------------------------------------+
-| 2 Response Header & Body        | .. code-block:: JSON                                                                   |
+| 2 Response Header & Body        | .. code-block:: http                                                                   |
 | (HTTP Status Code 202 Accepted) |                                                                                        |
 |                                 |                                                                                        |
+|                                 |     HTTP/1.1 202 Accepted                                                              |
+|                                 |     Content-Type: application/json                                                     |
 |                                 |     X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d                             |
 |                                 |                                                                                        |
 |                                 |     {                                                                                  |
@@ -202,22 +206,26 @@ Di seguito un esempio di risposta da parte dell’erogatore verso il fruitore.
 +---------------------------------+------------------------------------------------------------------------+
 | Endpoint                        | https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse |
 +---------------------------------+------------------------------------------------------------------------+
-| 3 Request Header & Body         | .. code-block:: JSON                                                   |
+| 3 Request Header & Body         | .. code-block:: http                                                   |
 |                                 |                                                                        |
+|                                 |    POST /rest/v1/nomeinterfacciaclient/Mresponse HTTP/1.1              |
 |                                 |    X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d              |
 |                                 |                                                                        |
-|                                 |     {                                                                  |
+|                                 |    {                                                                   |
 |                                 |       "c": "OK"                                                        |
-|                                 |     }                                                                  |
+|                                 |    }                                                                   |
 +---------------------------------+------------------------------------------------------------------------+
-| 4 Response Header & Body        | .. code-block:: JSON                                                   |
-| (HTTP Status Code 202 Accepted) |                                                                        |
+| 4 Response Header & Body        | .. code-block:: http                                                   |
+| (HTTP Status Code 200 Success)  |                                                                        |
+|                                 |     HTTP/1.1 200 Success                                               |
+|                                 |     Content-Type: application/json                                     |
+|                                 |                                                                        |
 |                                 |     {                                                                  |
 |                                 |       "result" : "ACK"                                                 |
 |                                 |     }                                                                  |
 +---------------------------------+------------------------------------------------------------------------+
 
-.. _interfaccia-soap-1:
+.. _interfaccia-soap-nonbloccante-1:
 
 Interfaccia SOAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -251,7 +259,7 @@ seguenti regole:
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
    acknowledgement il ricevimento della risposta.
 
-.. _regole-di-processamento-3:
+.. _regole-di-processamento-nonbloccante-3:
 
 Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -272,7 +280,7 @@ framework di sviluppo:
    al passo (1) e l’erogatore al passo (3)) di identificare con
    precisione l’errore.
 
-.. _esempio-3:
+.. _esempio-nonbloccante-3:
 
 Esempio
 ^^^^^^^
@@ -281,7 +289,7 @@ Esempio
 | Specifica Servizio Server                    | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl |
 +----------------------------------------------+----------------------------------------------------------------------------+
 | .. literalinclude:: ../media/soap-callback-server.wsdl                                                                    |
-|    :language: yaml                                                                                                        |
+|    :language: xml                                                                                                         |
 |                                                                                                                           |
 +---------------------------------------------------------------------------------------------------------------------------+
 
@@ -290,7 +298,7 @@ Esempio
 | Specifica Servizio Callback                     | https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1?wsdl     |
 +-------------------------------------------------+-------------------------------------------------------------------------+
 | .. literalinclude:: ../media/soap-callback-client.wsdl                                                                    |
-|    :language: yaml                                                                                                        |
+|    :language: xml                                                                                                         |
 |                                                                                                                           |
 +---------------------------------------------------------------------------------------------------------------------------+
 
@@ -373,12 +381,12 @@ essersi preso carico della richiesta.
 |                   |    </soap:Envelope>                                                                                                                                            |
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. _paragrafo-2:
+.. _paragrafo-nonbloccante-2:
 
 Profilo non bloccante RPC PULL (busy waiting)
 ---------------------------------------------
 
-.. _scenario-2:
+.. _scenario-nonbloccante-2:
 
 Scenario
 ~~~~~~~~
@@ -391,7 +399,7 @@ l’erogatore fornisce un indirizzo interrogabile per verificare lo stato
 di processamento di una richiesta e, al fine del processamento della
 stessa, il risultato.
 
-.. _descrizione-2:
+.. _descrizione-nonbloccante-2:
 
 Descrizione
 ~~~~~~~~~~~
@@ -417,7 +425,7 @@ definiti tramite meccanismi di robustezza quali quelli definiti in
 Sezione 2.5. A questo punto il fruitore può richiedere il risultato
 (passi (5) e (6)).
 
-.. _interfaccia-rest-2:
+.. _interfaccia-rest-nonbloccante-2:
 
 Interfaccia REST
 ~~~~~~~~~~~~~~~~
@@ -462,7 +470,7 @@ riportato nel Capitolo 1):
 Il corpo dei messaggi HTTP scambiati durante l’interazione DEVE seguire
 lo standard JSON.
 
-.. _regole-di-processamento-4:
+.. _regole-di-processamento-nonbloccante-4:
 
 Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -495,7 +503,7 @@ l’erogatore DEVE almeno:
 -  Restituire il codice 303 See Other quando il processamento è
    concluso.
 
-.. _esempio-4:
+.. _esempio-nonbloccante-4:
 
 Esempio
 ^^^^^^^
@@ -516,8 +524,9 @@ essersi preso carico della richiesta.
 +---------------------------------------------------+----------------------------------------------------------------------------------------+
 | Endpoint                                          | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
 +---------------------------------------------------+----------------------------------------------------------------------------------------+
-| (1) Request Header & Body                         | .. code-block:: YAML                                                                   |
+| (1) Request Header & Body                         | .. code-block:: http                                                                   |
 |                                                   |                                                                                        |
+|                                                   |   POST /rest/v1/nomeinterfacciaservizio/resources/1234/M                               |
 |                                                   |                                                                                        |
 |                                                   |   {                                                                                    |
 |                                                   |      "a": {                                                                            |
@@ -527,13 +536,17 @@ essersi preso carico della richiesta.
 |                                                   |      "b": "Stringa di esempio"                                                         |
 |                                                   |    }                                                                                   |
 +---------------------------------------------------+----------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP Status Code 202 Accepted) | .. code-block:: YAML                                                                   |
+| (2) Response Body (HTTP Status Code 202 Accepted) | .. code-block:: http                                                                   |
 |                                                   |                                                                                        |
+|                                                   |                                                                                        |
+|                                                   |   HTTP/1.1 202 Accepted                                                                |
+|                                                   |   Content-Type: application/json                                                       |
 |                                                   |   Location:  resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d                     |
 |                                                   |                                                                                        |
 |                                                   |    {                                                                                   |
 |                                                   |      "status": "pending",                                                              |
-|                                                   |      "message": "Preso carico della richiesta"                                         |
+|                                                   |      "message": "Preso carico della richiesta",                                        |
+|                                                   |      "id": "8131edc0-29ed-4d6e-ba43-cce978c7ea8d"                                      |
 |                                                   |    }                                                                                   |
 +---------------------------------------------------+----------------------------------------------------------------------------------------+
 
@@ -544,9 +557,9 @@ processamento avvenuto (4b).
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | HTTP Operation                              | GET                                                                                                                         |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                    | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/ resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d |
+| Endpoint                                    | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d  |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| 4a   Response Body (HTTP Response code 200) | .. code-block:: JSON                                                                                                        |
+| 4a   Response Body (HTTP Response code 200) | .. code-block:: http                                                                                                        |
 |                                             |                                                                                                                             |
 |                                             |                                                                                                                             |
 |                                             |    {                                                                                                                        |
@@ -554,14 +567,14 @@ processamento avvenuto (4b).
 |                                             |      "message": "Preso carico della richiesta"                                                                              |
 |                                             |    }                                                                                                                        |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| 4a Response Body (HTTP Response code 200)   |  .. code-block:: JSON                                                                                                       |
+| 4a Response Body (HTTP Response code 200)   |  .. code-block:: http                                                                                                       |
 |                                             |                                                                                                                             |
 |                                             |    {                                                                                                                        |
 |                                             |      "status": "processing",                                                                                                |
 |                                             |      "message": "Richiesta in fase di processamento"                                                                        |
 |                                             |    }                                                                                                                        |
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| 4b Response Header &                        | .. code-block:: JSON                                                                                                        |
+| 4b Response Header &                        | .. code-block:: http                                                                                                        |
 |    Body (HTTP Response code 303)            |                                                                                                                             |
 |                                             |    {                                                                                                                        |
 |                                             |      "status": "done",                                                                                                      |
@@ -575,17 +588,17 @@ della sua richiesta.
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | HTTP Operation                             | GET                                                                                                                                |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                   | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/ resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result |
+| Endpoint                                   | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result  |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | (6\) Response Body (HTTP Response code 200)|                                                                                                                                    |
-|                                            | .. code-block:: JSON                                                                                                               |
+|                                            | .. code-block:: http                                                                                                               |
 |                                            |                                                                                                                                    |
 |                                            |    {                                                                                                                               |
 |                                            |      "c": "OK"                                                                                                                     |
 |                                            |    }                                                                                                                               |
 +--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
-.. _interfaccia-soap-2:
+.. _interfaccia-soap-nonbloccante-2:
 
 Interfaccia SOAP
 ~~~~~~~~~~~~~~~~
@@ -621,7 +634,7 @@ DEVONO essere rispettate le seguenti regole:
 -  Al passo (6), l’erogatore fornisce il risultato del processamento.
 
 
-.. _regole-di-processamento-5:
+.. _regole-di-processamento-nonbloccante-5:
 
 Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -642,7 +655,7 @@ framework di sviluppo:
    al passo (1) e l’erogatore al passo (3)) di identificare con
    precisione l’errore.
 
-.. _esempio-5:
+.. _esempio-nonbloccante-5:
 
 Esempio
 ^^^^^^^

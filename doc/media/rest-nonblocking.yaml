@@ -1,10 +1,14 @@
 openapi: 3.0.1
 info:
   title: RESTbusywaiting
-  license:
-    name: Apache 2.0 License
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: "1.0"
+ version: "1.0"
+ description: |-
+   Questo file descrive semplicemente i metodi di un'API
+   e non indica tutte le informazioni di metadatazione che
+   normalmente vanno inserite.
+ license:
+   name: Apache 2.0 License
+   url: http://www.apache.org/licenses/LICENSE-2.0.html
 paths:
   /resources/{id_resource}/M:
     post:
@@ -23,18 +27,6 @@ paths:
             schema:
               $ref: '#/components/schemas/MType'
       responses:
-        500:
-          description: Errore interno avvenuto
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        404:
-          description: Identificativo non trovato
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
         202:
           description: Preso carico correttamente di M
           headers:
@@ -47,6 +39,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MProcessingStatus'
+        404:
+          description: Identificativo non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
   /resources/{id_resource}/M/{id_task}/result:
     get:
       description: M Result
@@ -64,24 +68,24 @@ paths:
         schema:
           type: string
       responses:
-        500:
-          description: Errore interno avvenuto
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        404:
-          description: Identificativo non trovato
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
         200:
           description: Esecuzione di M completata
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/MResponseType'
+        404:
+          description: Identificativo non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
   /resources/{id_resource}/M/{id_task}:
     get:
       description: M Processing Status
@@ -99,18 +103,6 @@ paths:
         schema:
           type: string
       responses:
-        500:
-          description: Errore interno avvenuto
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        404:
-          description: Identificativo non trovato
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
         200:
           description: Esecuzione di M completata
           content:
@@ -129,6 +121,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MProcessingStatus'
+        404:
+          description: Identificativo non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+        500:
+          description: Errore interno avvenuto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
     MProcessingStatus:
@@ -160,7 +164,4 @@ components:
         a2:
           type: string
     ErrorMessage:
-      type: object
-      properties:
-        error_message:
-          type: string
+      $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/schemas/Problem'
