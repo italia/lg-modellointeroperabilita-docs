@@ -660,6 +660,10 @@ Esempio porzione token JWT
 Il tracciato rispecchia le seguenti scelte implementative
 esemplificative:
 
+
+-  Inserito istante di scadenza dell'asserzione,
+   in modo che essa possa essere utilizzata solo fino all'istante ``exp``;
+
 -  riferimento al certificato X.509 (``x5c``)
 
 -  algoritmi di firma e digest (``alg``).
@@ -858,15 +862,15 @@ Esempio porzione pacchetto HTTP
    GET http://localhost:8080/ws-test/service/hello/echo/Ciao
    Accept: application/json
    Authorization: eyJhbGciOiJSUzI1NiIsInR5c.vz8...
-   .
+
    .
    .
 
 Esempio porzione token JWT
 
-.. code-block:: python
+.. code-block::
 
-   # header
+   header
    {
      "alg": "RS256",
      "typ": "JWT",
@@ -874,7 +878,7 @@ Esempio porzione token JWT
        "MIICyzCCAbOgAwIBAgIEC..."
      ]
    }
-   # payload
+   payload
    {
      "aud": "http://localhost:8080/ws-test/service/hello/echo"
      "iat": "1516239022",
@@ -885,7 +889,10 @@ Esempio porzione token JWT
 Il tracciato rispecchia alcune scelte implementative esemplificative in
 merito:
 
--  riferimento al certificato X.509 (``x5c``)
+-  Inserito intervallo temporale di validità dell'asserzione,
+   in modo che essa possa essere utilizzata solo nell'intervallo ``iat``, ``exp``;
+
+-  riferimento al certificato X.509 (``x5c``);
 
 -  algoritmi di firma e digest (``alg``).
 
