@@ -1,15 +1,15 @@
 Sicurezza
 =========
 
-Il presente documento descrive i *profili* individuati da AgID che la
-Pubblica Amministrazione DOVREBBE utilizzare per soddisfare le proprie
-necessità espresse attraverso requisiti funzionali e non funzionali.
+Il presente documento descrive i *profili* individuati da AgID che i
+soggetti erogatori DOVREBBERO utilizzare per soddisfare le necessità
+espresse attraverso requisiti funzionali e non funzionali.
 
 **I profili**
 
 -  definiscono a livello di specifica tecnologica uno “strumento
    condiviso” utile a favorire l’interoperabilità tra le pubbliche
-   amministrazione, cittadini ed imprese.
+   amministrazioni, cittadini ed imprese.
 
 -  forniscono un comune linguaggio per fruitori ed erogatori utile a
    trattare le necessità e le caratteristiche delle *interfacce di
@@ -46,9 +46,9 @@ Ogni profilo è strutturato come segue:
    -  **Tracciato:** ove presente, fornisce un esempio dei messaggi
       prodotti nell’interazione.
 
-La Pubbliche Amministrazione, a seguito dell’\ **analisi dei requisiti**
+I soggetti interessati, a seguito dell’\ **analisi dei requisiti**
 realizzata internamente, per individuare le proprie esigenze funzionali
-e non funzionali, DOVREBBE:
+e non funzionali, DOVREBBERO:
 
 1. individuare tra i *profili di interazione* quelli che soddisfano le
    proprie esigenze;
