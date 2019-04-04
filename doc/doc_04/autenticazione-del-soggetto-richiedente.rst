@@ -471,8 +471,8 @@ esemplificative:
 -  algoritmo per il digest (``DigestMethod``)
 
 Le parti, in base alle proprie esigenze, usano
-gli algoritmi indicati in   `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__,
- nonché la modalità di inclusione o referenziazione del certificato X.509.
+gli algoritmi indicati in   `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__
+, nonché la modalità di inclusione o referenziazione del certificato X.509.
 
 [M2MR01] Direct Trust con certificato X.509 su REST
 ---------------------------------------------------
@@ -843,7 +843,7 @@ Note:
 -  Un meccanismo simile può essere utilizzato per autenticare
    l’erogatore.
 
-.. _tracciato-3:
+.. _tracciato-5:
 
 Tracciato
 ~~~~~~~~~
