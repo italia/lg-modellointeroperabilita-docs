@@ -322,7 +322,7 @@ Regole di processamento
 
            - ``x5t#S256`` (X.509 Certificate SHA-256 Thumbprint)
 
-   b. il payload del jwt deve contenere almeno i seguenti claim:
+   b. si consideri di utilizzare le seguenti claim nel payload, secondo le finalità del servizio:
 
       - ``iss``: identificativo del mittente
       - ``aud``: identificativo del destinatario
