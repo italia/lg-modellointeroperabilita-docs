@@ -81,7 +81,7 @@ il protocollo TLS, secondo le modalità specificate alla sezione `Elenco degli a
 
 3. L’erogatore elabora il messaggio e restituisce il risultato.
 
-Come indicato in :RFC:`8446` l’impiego del protocollo TLS garantisce a **livello di canale**:
+Come indicato in :RFC:`5246` l’impiego del protocollo TLS garantisce a **livello di canale**:
 
 -  l’autenticazione dell’erogatore identificato mediante il certificato
    X.509
@@ -177,7 +177,7 @@ specificate alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`
 
 3. L’erogatore elabora il messaggio e restituisce un risultato.
 
-Come indicato in :RFC:`8446` l’impiego del protocollo TLS garantisce a **livello di canale**:
+Come indicato in :RFC:`5246` l’impiego del protocollo TLS garantisce a **livello di canale**:
 
 -  l’autenticazione di erogatore e fruitore identificati mediante
    certificati X.509
