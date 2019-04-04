@@ -44,8 +44,19 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. figure:: index/image1.png
-   :align: center
+.. mermaid::
+   :caption: Autenticazione del Fruitore
+   :alt: Autenticazione del Fruitore
+
+   sequenceDiagram
+      participant F as Fruitore
+      participant E as Erogatore
+      activate F
+      F->>E: (1) Richiesta
+      activate E
+      E-->>F: (2) Risposta
+      deactivate E
+      deactivate F
 
 .. _flusso-delle-interazioni-2:
 
@@ -255,8 +266,19 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. figure:: index/image1.png
-   :align: center
+.. mermaid::
+   :caption: Autenticazione del Fruitore
+   :alt: Autenticazione del Fruitore
+
+   sequenceDiagram
+      participant F as Fruitore
+      participant E as Erogatore
+      activate F
+      F->>E: (1) Richiesta
+      activate E
+      E-->>F: (2) Risposta
+      deactivate E
+      deactivate F
 
 .. _flusso-delle-interazioni-3:
 
@@ -497,8 +519,19 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. figure:: index/image1.png
-   :align: center
+.. mermaid::
+   :caption: Autenticazione del Fruitore
+   :alt: Autenticazione del Fruitore
+
+   sequenceDiagram
+      participant F as Fruitore
+      participant E as Erogatore
+      activate F
+      F->>E: (1) Richiesta
+      activate E
+      E-->>F: (2) Risposta
+      deactivate E
+      deactivate F
 
 .. _flusso-delle-interazioni-4:
 
@@ -686,8 +719,19 @@ relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. figure:: index/image1.png
-   :align: center
+.. mermaid::
+   :caption: Autenticazione del Fruitore
+   :alt: Autenticazione del Fruitore
+
+   sequenceDiagram
+      participant F as Fruitore
+      participant E as Erogatore
+      activate F
+      F->>E: (1) Richiesta
+      activate E
+      E-->>F: (2) Risposta
+      deactivate E
+      deactivate F
 
 .. _flusso-delle-interazioni-5:
 
