@@ -38,7 +38,7 @@ Ogni profilo è strutturato come segue:
 -  **Dettaglio:**
 
    -  **Flusso delle interazioni:** descrizione delle interazioni tra le
-      2 part alle interfacce.
+      2 parti alle interfacce.
 
    -  **Regole di processamento:** elenco dei passi da eseguire per
       implementare il profilo.
@@ -46,7 +46,7 @@ Ogni profilo è strutturato come segue:
    -  **Tracciato:** ove presente, fornisce un esempio dei messaggi
       prodotti nell’interazione.
 
-Le Pubbliche Amministrazioni, a seguito dell’\ **analisi dei requisiti**
+La Pubbliche Amministrazione, a seguito dell’\ **analisi dei requisiti**
 realizzata internamente, per individuare le proprie esigenze funzionali
 e non funzionali, DOVREBBE:
 

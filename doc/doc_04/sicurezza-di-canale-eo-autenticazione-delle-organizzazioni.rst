@@ -36,7 +36,7 @@ Dettaglio
 
 .. figure:: index/image1.png
    :align: center
-   
+
 Flusso delle interazioni
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -82,6 +82,9 @@ L’impiego del protocollo TLS garantisce a livello di canale:
 L’impiego del protocollo TLS 1.2 o maggiore, garantisce un’efficace
 difesa dalle minacce, quali ad esempio:
 
+.. rpolli: invece di "garantisce" userei "mitiga il rischio di". Nel caso del replay-attack
+   potrebbero venire anche dall'interno dell'organizzazione trustata
+
 -  Replay Attack
 
 -  Spoofing
@@ -90,7 +93,7 @@ difesa dalle minacce, quali ad esempio:
 [M2MC02] Direct Trust mutual Transport-Level Security
 -----------------------------------------------------
 
-.. _scenario-1:
+.. _sicurezza_canale_scenario-1:
 
 Scenario
 ^^^^^^^^
@@ -107,7 +110,7 @@ canale:
 -  difesa dalle minacce derivanti dagli attacchi: Replay Attack e
    Spoofing
 
-.. _descrizione-1:
+.. _sicurezza_canale_descrizione-1:
 
 Descrizione
 ^^^^^^^^^^^
@@ -121,7 +124,7 @@ La sequenza dei messaggi di richiesta/risultato avviene a seguito
 dell’instaurazione di un canale di trasmissione sicuro in cui sono state
 autenticate entrambe le organizzazioni.
 
-.. _dettaglio-1:
+.. _sicurezza_canale_dettaglio-1:
 
 Dettaglio
 ^^^^^^^^^
@@ -129,7 +132,7 @@ Dettaglio
 .. figure:: index/image1.png
    :align: center
 
-.. _flusso-delle-interazioni-1:
+.. _sicurezza_canale_flusso-delle-interazioni-1:
 
 Flusso delle interazioni
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,7 +150,7 @@ servizio dell’erogatore.
 L’erogatore predispone il messaggio di risposta e lo inoltra al
 fruitore.
 
-.. _regole-di-processamento-1:
+.. _sicurezza_canale_regole-di-processamento-1:
 
 Regole di processamento
 ~~~~~~~~~~~~~~~~~~~~~~~
