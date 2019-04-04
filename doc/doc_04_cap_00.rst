@@ -17,7 +17,7 @@ espresse attraverso requisiti funzionali e non funzionali.
 
 -  offrono agli sviluppatori le modalità tecniche supportate da standard
    tecnologici documentati, revisionati e testati per esporre i *servizi
-   digitali* fornendo indicazioni in risposta alle necessità.
+   digitali*.
 
 I profili affrontano il tema della sicurezza su due livelli differenti:
 
