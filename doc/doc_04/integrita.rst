@@ -247,14 +247,6 @@ valida l’integrità della payload del messaggio firmato. Se la verifica e
 la validazione sono superate, l’erogatore consuma la richiesta e produce
 la relativa risposta.
 
-Alla luce di JWT_BCP_ e successivi è fondamentale tra l'altro:
-
-- concordare e validare gli algoritmi JWT utilizzati;
-- verificare i parametri di input passati alle funzioni crittografiche:
-- usare sempre e solo utf-8;
-- validare i claim ``iss``, ``aud``, ``subj``
-- .
-
 .. _dettaglio-7:
 
 Dettaglio
