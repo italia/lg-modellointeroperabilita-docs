@@ -1,4 +1,4 @@
-Integrità 
+Integrità
 =========
 
 [M2MS03] Integrità della payload del messaggio SOAP
@@ -50,9 +50,9 @@ la relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. figure:: index/image1.png
+.. figure:: ../index/image1.png
    :align: center
-  
+
 .. _flusso-delle-interazioni-6:
 
 Flusso delle interazioni
@@ -140,13 +140,13 @@ fruitore all’interfaccia di servizio dell’erogatore.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
-.. code-block:: XML
+.. code-block:: python
 
   soap="http://schemas.xmlsoap.org/soap/envelope/"
   wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
   ds="http://www.w3.org/2000/09/xmldsig#"
   ec="http://www.w3.org/2001/10/xml-exc-c14n#"
-  http://www.w3.org/2005/08/addressing
+  "http://www.w3.org/2005/08/addressing"
 
 .. code-block:: XML
 
@@ -183,7 +183,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
          <arg0>Hello World!</arg0>
        </ns2:sayHi>
      </soap:Body>
-   </soap:Envelope> 
+   </soap:Envelope>
 
 Il codice rispecchia alcune scelte implementative esemplificative in
 merito:
@@ -227,9 +227,9 @@ Descrizione
 
 Il presente profilo declina l’utilizzo di:
 
--  JSON Web Token (JWT) definita dall’RFC 7519 `[1] <#bibliografia>`__
+-  JSON Web Token (JWT) definita dall’ :RFC:`7519` `[1] <#bibliografia>`__
 
--  JSON Web Signature (JWS) definita dall’RFC 7515 `[2] <#bibliografia>`__
+-  JSON Web Signature (JWS) definita dall’ :RFC:`7515` `[2] <#bibliografia>`__
 
 Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
@@ -301,28 +301,34 @@ Regole di processamento
 
    a. l’header JSON Object Signing and Encryption (JOSE) con almeno:
 
-      i.   la claim alg al fine di definire l’algoritmo utilizzato per
+      i.   il parameter ``alg`` al fine di definire l’algoritmo utilizzato per
            la signature
 
-      ii.  la claim typ pari a JWT
+      ii.  il parameter ``typ`` pari a JWT
 
-      iii. in maniera alternativa, per referenziare il certificato
-           X.509, una delle seguenti claim:
+      iii. referenziare il certificato X.509, uno dei seguenti parameters:
 
-           1. ``x5u`` (X.509 URL)
+           - ``x5u`` (X.509 URL)
 
-           2. ``x5c`` (X.509 Certificate Chain)
+           - ``x5c`` (X.509 Certificate Chain)
 
-           3. ``x5t`` (X.509 Certificate SHA-1 Thumbprint)
+           - ``x5t#S256`` (X.509 Certificate SHA-256 Thumbprint)
 
-           4. ``x5t#S256`` (X.509 Certificate SHA-256 Thumbprint)
+   b. si consideri di utilizzare le seguenti claim nel payload, secondo le finalità del servizio:
 
-   b. la payload del jwt deve contenere almeno i seguenti claim:
+      - ``iss``: identificativo del mittente
+      - ``aud``: identificativo del destinatario
+      - ``iat``: timestamp UNIX emissione del JWT
+      - ``exp``: timestamp UNIX di scadenza del JWT
+      - ``jti``: identificativo del JWT, per evitare replay attack
+      - ``sub``: soggetto del jwt e/o identificativo dello scambio
 
-      iv. ``pda`` [1]_: contenente l’algoritmo di hashing utilizzato per il
+.. rpolli TODO vediamo un attimo i nomi. Io userei un sistema simile al `Digest` header.
+
+      - ``pda`` [1]_: contenente l’algoritmo di hashing utilizzato per il
           calcolo del digest della payload del messaggio
 
-      v.  ``mpd`` [2]_: contenente il digest della payload del messaggio
+      - ``mpd`` [2]_: contenente il digest della payload del messaggio
 
 3. il fruitore firma il token JWT secondo la specifica JWS adottando
    la JWS Compact Serialization
@@ -378,10 +384,10 @@ fruitore all’interfaccia di servizio dell’erogatore.
 
 Esempio porzione pacchetto HTTP
 
-.. code-block:: JSON
+.. code-block:: http
 
    POST http://localhost:8080/ws-test/service/hello/echo/
-   Accept:text/xml 
+   Accept: application/json
    Authorization: eyJhbGciOiJSUzI1NiIsInR5c.vz8...
    .
    .
@@ -389,7 +395,7 @@ Esempio porzione pacchetto HTTP
 
 Esempio porzione token JWT
 
-.. code-block:: JSON
+.. code-block:: http
 
    header
    {
@@ -402,12 +408,12 @@ Esempio porzione token JWT
    payload
    {
      "pda":"S256",
-     "mpd":"B89AB4CA23D27F197AAE30F50843F0136900A1A154DCA00CDD8A5B8B4D071500" 
+     "mpd":"B89AB4CA23D27F197AAE30F50843F0136900A1A154DCA00CDD8A5B8B4D071500"
    }
 
 Esempio del body del messaggio
 
-.. code-block:: JSON
+.. code-block:: http
 
    {
    "testo":"Hello world!"
