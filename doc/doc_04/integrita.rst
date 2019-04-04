@@ -431,9 +431,6 @@ merito:
 Gli enti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto presente nella sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”, nonché la modalità di inclusione o referenziazione del certificato x509.
 
-
-.. _JWT_BCP: https://tools.ietf.org/html/draft-ietf-oauth-jwt-bcp-04
-
 .. [1]
    Il presente documento ha individuato il claim con sigla “pda” al fine
    di indicare in maniera univoca per la pubblica amministrazione
