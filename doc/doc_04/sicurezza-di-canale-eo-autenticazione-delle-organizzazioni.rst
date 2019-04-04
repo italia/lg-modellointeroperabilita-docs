@@ -25,17 +25,27 @@ Descrizione
 Il presente profilo assume l’esistenza di un trust tra fruitore
 (client) ed erogatore (server), che permette il riconoscimento del
 certificato X.509, o la CA emittente dell’erogatore, così come previsto
-dal protocollo Transport-Level Security `[5] <bibliografia.html>`__ `[6] <bibliografia.html>`__.
+dal protocollo Transport Layer Security `[5] <bibliografia.html>`__ `[6] <bibliografia.html>`__.
 
-La sequenza dei messaggi di richiesta/risultato avviene a seguito
-dell’instaurazione di un canale di trasmissione sicuro in cui
+La sequenza dei messaggi di richiesta/risposta avviene dopo 
+aver instaurato il canale di trasmissione sicuro in cui
 l’erogatore è autenticato.
 
 Dettaglio
 ^^^^^^^^^
 
-.. figure:: index/image1.png
-   :align: center
+.. mermaid::
+   
+   sequenceDiagram
+      participant F as Fruitore
+      participant E as Erogatore
+      activate F
+      F->>E: (1) Richiesta
+      activate E
+      E-->>F: (2) Risposta
+      deactivate E
+      deactivate F
+
 
 Flusso delle interazioni
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,10 +58,11 @@ sicuro; il flusso dei messaggi avviene secondo la sequenza:
 Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
-**B: Risultato**
+**B: Risposta**
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
 fruitore.
+
 
 Regole di processamento
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,24 +77,20 @@ il protocollo TLS, secondo le modalità specificate alla sezione `Elenco degli a
 2. Il fruitore spedisce sul canale sicuro stabilito il messaggio di
    richiesta all’interfaccia di servizio dell’erogatore.
 
-**B: Risultato**
+**B: Risposta**
 
 3. L’erogatore elabora il messaggio e restituisce il risultato.
 
-L’impiego del protocollo TLS garantisce a livello di canale:
+Come indicato in :RFC:`8446` l’impiego del protocollo TLS garantisce a **livello di canale**:
 
 -  l’autenticazione dell’erogatore identificato mediante il certificato
    X.509
 
--  la confidenzialità dei messaggi scambiati
+-  la confidenzialità dei dati scambiati
 
--  l’integrità dei messaggi scambiati
+-  l’integrità dei dati scambiati 
 
-L’impiego del protocollo TLS 1.2 o maggiore, garantisce un’efficace
-difesa dalle minacce, quali ad esempio:
-
-.. rpolli: invece di "garantisce" userei "mitiga il rischio di". Nel caso del replay-attack
-   potrebbero venire anche dall'interno dell'organizzazione trustata
+L’impiego del protocollo TLS 1.2 o maggiore, mitiga il rischio di:
 
 -  Replay Attack
 
@@ -170,7 +177,7 @@ specificate alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`
 
 3. L’erogatore elabora il messaggio e restituisce un risultato.
 
-L’impiego del protocollo TLS garantisce a livello di canale:
+Come indicato in :RFC:`8446` l’impiego del protocollo TLS garantisce a **livello di canale**:
 
 -  l’autenticazione di erogatore e fruitore identificati mediante
    certificati X.509
@@ -179,8 +186,7 @@ L’impiego del protocollo TLS garantisce a livello di canale:
 
 -  l’integrità dei messaggi scambiati
 
-L’impiego del protocollo TLS 1.2 o maggiore, garantisce un’efficace
-difesa dalle minacce, quali ad esempio:
+L’impiego del protocollo TLS 1.2 o maggiore, mitiga il rischio di:
 
 -  Replay Attack
 
