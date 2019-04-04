@@ -27,7 +27,8 @@ Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust non condiziona il presente
+Il meccanismo con cui è stabilito il trust, inclusa la modalità
+di scambio dei certificati X.509) non condiziona il presente
 profilo.
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
@@ -65,7 +66,7 @@ Flusso delle interazioni
 
 **A: Richiesta**
 
-Il fruitore invia il messaggio di richiesta all’interfaccia di
+Il fruitore invia la richiesta all’interfaccia di
 servizio dell’erogatore.
 
 Il messaggio include o referenzia il certificato X.509 riconosciuto
@@ -74,10 +75,10 @@ dall’erogatore.
 Al messaggio è aggiunta la firma di una porzione significativa dello
 stesso.
 
-**B: Risultato**
+**B: Risposta**
 
-L’erogatore, ricevuto il messaggio, provvede alla verifica del
-certificato X.509 e valida la firma..
+L’erogatore, ricevuto il messaggio, verifica il
+certificato X.509 e valida la firma.
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
 fruitore.
@@ -110,7 +111,7 @@ Regole di processamento
 4. Il fruitore spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
 
-**B: Risultato**
+**B: Risposta**
 
 5. L’erogatore recupera il certificato X.509 referenziato nell’header
    ``<Security>``.
@@ -127,12 +128,12 @@ Regole di processamento
 
 Note:
 
--  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
+-  Gli algoritmi da utilizzare nell’elemento
    ``<Signature>`` rispettivamente ``<DigestMethod>``, ``<SignatureMethod>`` e
-   ``<CanonicalizationMethod>`` si fa riferimento alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
+   ``<CanonicalizationMethod>`` sono indicati alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
 
 -  Un meccanismo simile può essere utilizzato per autenticare
-   l’’erogatore.
+   l' erogatore.
 
 Tracciato
 ~~~~~~~~~
@@ -142,23 +143,23 @@ fruitore all’interfaccia di servizio dell’erogatore.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
-.. code-block:: html
+.. code-block:: python
 
    soap="http://schemas.xmlsoap.org/soap/envelope/"
    wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
    wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
    ds="http://www.w3.org/2000/09/xmldsig#"
    ec="http://www.w3.org/2001/10/xml-exc-c14n#"
-   http://www.w3.org/2005/08/addressing
+   "http://www.w3.org/2005/08/addressing"
 
 .. code-block:: XML
 
    <soap:Envelope>
      <soap:Header>
        <wsse:Security soap:mustUnderstand="1">
-         <wsse:BinarySecurityToken 
+         <wsse:BinarySecurityToken
            EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"
-           ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" 
+           ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"
            wsu:Id="X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7">MIICyzCCAbOgAwIBAgIECxY+9TAhkiG9w...
          </wsse:BinarySecurityToken>
          <wsu:Timestamp wsu:Id="TS-cd361ace-ba99-424a-aa3c-8c38c3263ced">
@@ -170,7 +171,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
              <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
                <ec:InclusiveNamespaces PrefixList="soap" />
              </ds:CanonicalizationMethod>
-             <ds:SignatureMethod 
+             <ds:SignatureMethod
                  Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
              <ds:Reference URI="#TS-cd361ace-ba99-424a-aa3c-8c38c3263ced">
                <ds:Transforms>
@@ -185,7 +186,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
            <ds:SignatureValue>AIrDa7ukDfFJD867goC+c7K3UampxpX/Nj/...</ds:SignatureValue>
            <ds:KeyInfo Id="KI-cad9ee47-dec8-4340-8fa1-74805f7e26f8">
              <wsse:SecurityTokenReference wsu:Id="STR-e193f25f-9727-4197-b7aa-25b01c9f2ba3">
-              <wsse:Reference 
+              <wsse:Reference
                 URI="#X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7"  ValueType="http://docs.oasis-open.org/   wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
                 </wsse:SecurityTokenReference>
            </ds:KeyInfo>
@@ -199,8 +200,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
      </soap:Body>
    </soap:Envelope>
 
-Il codice rispecchia alcune scelte implementative esemplificative in
-merito:
+Il tracciato rispecchia alcune scelte implementative esemplificative:
 
 -  riferimento al security token (``BinarySecurityToken``)
 
@@ -210,11 +210,11 @@ merito:
 
 -  algoritmo per il digest (``DigestMethod``)
 
--  l’inclusione dell’elemento Timestamp quale porzione significativa del
+-  l’inclusione dell’elemento ``Timestamp`` quale porzione significativa del
    messaggio e la relativa firma.
 
-Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
+Le parti, in base alle proprie esigenze, utilizzano gli algoritmi indicati 
+nella sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
 o referenziazione del certificato x509.
 
 
@@ -249,7 +249,8 @@ Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust non condiziona il presente
+Il meccanismo con cui è stabilito il trust, inclusa la modalità
+di scambio dei certificati X.509, non condiziona il presente
 profilo.
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
@@ -274,7 +275,7 @@ Dettaglio
       participant F as Fruitore
       participant E as Erogatore
       activate F
-      F->>E: (1) Richiesta
+      F->>E: (1) Richiesta firmata
       activate E
       E-->>F: (2) Risposta
       deactivate E
@@ -300,7 +301,7 @@ stesso con almeno le seguenti claim:
 
 -  un riferimento temporale univoco per messaggio
 
-**B: Risultato**
+**B: Risposta**
 
 L’erogatore, ricevuto il messaggio, provvede alla verifica del
 certificato X.509, valida la firma e le claim ricevute.
@@ -340,7 +341,7 @@ Regole di processamento
 5. Il fruitore spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
 
-**B: Risultato**
+**B: Risposta**
 
 6.  L’erogatore recupera il certificato X.509 referenziato nell’header
     ``<Security>``.
@@ -373,34 +374,34 @@ Note:
 -  Un meccanismo simile può essere utilizzato per autenticare
    l’erogatore.
 
-.. _tracciato-1:
+.. _tracciato-3:
 
 Tracciato
 ~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
 fruitore all’interfaccia di servizio dell’erogatore relativo ad un
-servizio di echo.
+servizio di ``echo``.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
-.. code-block:: html
+.. code-block:: python
 
    soap="http://schemas.xmlsoap.org/soap/envelope/"
    wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
    wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
    ds="http://www.w3.org/2000/09/xmldsig#"
    ec="http://www.w3.org/2001/10/xml-exc-c14n#"
-   http://www.w3.org/2005/08/addressing
+   "http://www.w3.org/2005/08/addressing"
 
 .. code-block:: XML
 
    <soap:Envelope>
      <soap:Header>
        <wsse:Security soap:mustUnderstand="1">
-         <wsse:BinarySecurityToken 
-               EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" 
-               ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" 
+         <wsse:BinarySecurityToken
+               EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"
+               ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"
                wsu:Id="X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7">MIICyzCCAbOgAwIBAgIECxY+9TAhkiG9w...
          </wsse:BinarySecurityToken>
          <wsu:Timestamp wsu:Id="TS-cd361ace-ba99-424a-aa3c-8c38c3263ced">
@@ -435,7 +436,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
            <ds:SignatureValue>AIrDa7ukDfFJD867goC+c7K3UampxpX/Nj/...</ds:SignatureValue>
            <ds:KeyInfo Id="KI-cad9ee47-dec8-4340-8fa1-74805f7e26f8">
              <wsse:SecurityTokenReference wsu:Id="STR-e193f25f-9727-4197-b7aa-25b01c9f2ba3">
-              <wsse:Reference URI="#X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7" 
+              <wsse:Reference URI="#X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7"
                     ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
               </wsse:SecurityTokenReference>
            </ds:KeyInfo>
@@ -446,7 +447,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
        <MessageID xmlns="http://www.w3.org/2005/08/addressing">
               urn:uuid:3edf013f-0e2e-4fec-8487-95ade733a288
        </MessageID>
-       <To xmlns="http://www.w3.org/2005/08/addressing"       
+       <To xmlns="http://www.w3.org/2005/08/addressing"
            wsu:Id="id-4398e270-dae1-497e-97db-5fd1c5dbef1a">
            http://example.profile.security.modi.agid.gov.it/security-profile/echo </To>
      </soap:Header>
@@ -456,7 +457,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
        </ns2:sayHi>
      </soap:Body>
    </soap:Envelope>
-   
+
 
 Il tracciato rispecchia le seguenti scelte implementative
 esemplificative:
@@ -469,9 +470,9 @@ esemplificative:
 
 -  algoritmo per il digest (``DigestMethod``)
 
-Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
-o referenziazione del certificato X.509.
+Le parti, in base alle proprie esigenze, usano 
+gli algoritmi indicati in   `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, 
+ nonché la modalità di inclusione o referenziazione del certificato X.509.
 
 [M2MR01] Direct Trust con certificato X.509 su REST
 ---------------------------------------------------
@@ -502,7 +503,8 @@ Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust non condiziona il presente
+Il meccanismo con cui è stabilito il trust, inclusa la modalità
+di scambio dei certificati X.509) non condiziona il presente
 profilo.
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
@@ -548,7 +550,7 @@ Il messaggio include il token JWT firmato.
 Il token JWT include o referenzia il certificato X.509 riconosciuto
 dall’erogatore.
 
-**B: Risultato**
+**B: Risposta**
 
 L’erogatore, ricevuto il messaggio, provvede alla verifica del
 certificato X.509 e valida la firma del token JWT.
@@ -597,7 +599,7 @@ Regole di processamento
 5. Il fruitore spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
 
-**B: Risultato**
+**B: Risposta**
 
 6.  L’erogatore decodifica il token ``JWT`` presente nell’header HTTP
     Authorization
@@ -634,8 +636,8 @@ Esempio porzione pacchetto HTTP
 .. code-block:: JSON
 
    GET http://localhost:8080/ws-test/service/hello/echo/Ciao
-   Accept: text/xml 
-   Authorization: eyJhbGciOiJSUzI1NiIsInR5c.vz8... 
+   Accept: text/xml
+   Authorization: eyJhbGciOiJSUzI1NiIsInR5c.vz8...
    .
    .
    .
@@ -664,7 +666,7 @@ esemplificative:
 
 -  algoritmi di firma e digest (``alg``).
 
-Gli enti, in base alle proprie esigenze, individuano gli specifici
+Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
 o referenziazione del certificato X.509.
 
@@ -702,7 +704,8 @@ Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust non condiziona il presente
+Il meccanismo con cui è stabilito il trust, inclusa la modalità
+di scambio dei certificati X.509) non condiziona il presente
 profilo.
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
@@ -756,7 +759,7 @@ Il token JWT:
 
    -  un riferimento temporale univoco per messaggio
 
-**B: Risultato**
+**B: Risposta**
 
 L’erogatore, ricevuto il messaggio, provvede alla verifica del
 certificato X.509, valida la firma del token JWT e le claim ricevute.
@@ -810,7 +813,7 @@ Regole di processamento
 5. Il fruitore spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
 
-**B: Risultato**
+**B: Risposta**
 
 6.  L’erogatore decodifica il token JWT presente nell’header HTTP
     Authorization
@@ -858,7 +861,7 @@ Esempio porzione pacchetto HTTP
 
    GET http://localhost:8080/ws-test/service/hello/echo/Ciao
    Accept: text/xml
-   Authorization: eyJhbGciOiJSUzI1NiIsInR5c.vz8... 
+   Authorization: eyJhbGciOiJSUzI1NiIsInR5c.vz8...
    .
    .
    .
@@ -878,7 +881,7 @@ Esempio porzione token JWT
    payload
    {
      “iat”:”1516239022”,
-     “aud”:”http://localhost:8080/ws-test/service/hello/echo” 
+     “aud”:”http://localhost:8080/ws-test/service/hello/echo”
    }
 
 
@@ -889,9 +892,9 @@ merito:
 
 -  algoritmi di firma e digest (``alg``).
 
-Gli enti, in base alle proprie esigenze, individuano gli specifici
+Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
-o referenziazione del certificato x509.   
+o referenziazione del certificato x509.
 
 .. discourse::
    :topic_identifier: 8907
