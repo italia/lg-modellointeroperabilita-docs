@@ -112,7 +112,7 @@ canale:
 
 -  integrità
 
--  autenticazione dell’erogatore e del fruitore, quale organizzazione
+-  autenticazione dell’erogatore e del fruitore, quale organizzazioni
 
 -  difesa dalle minacce derivanti dagli attacchi: Replay Attack e
    Spoofing
@@ -125,10 +125,10 @@ Descrizione
 Il presente profilo assume l’esistenza di un trust tra fruitore
 (client) ed erogatore (server), che permette il riconoscimento da
 entrambe le parti dei certificati X.509, o le CA emittenti, così come
-previsto dal protocollo Transport-Level Security `[5] <bibliografia.html>`__ `[6] <bibliografia.html>`__.
+previsto dal protocollo Transport Layer Security `[5] <bibliografia.html>`__ `[6] <bibliografia.html>`__.
 
-La sequenza dei messaggi di richiesta/risultato avviene a seguito
-dell’instaurazione di un canale di trasmissione sicuro in cui sono state
+La sequenza dei messaggi di richiesta/risposta avviene dopo 
+aver instaurato il canale di trasmissione sicuro in cui sono state
 autenticate entrambe le organizzazioni.
 
 .. _sicurezza_canale_dettaglio-1:
@@ -142,7 +142,7 @@ Dettaglio
       participant F as Fruitore
       participant E as Erogatore
       activate F
-      F->>E: (1) Richiesta
+      F->>E: (1) Richiesta (con certificato)
       activate E
       E-->>F: (2) Risposta
       deactivate E
@@ -161,7 +161,7 @@ sicuro; il flusso dei messaggi avviene secondo la sequenza:
 Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
-**B: Risultato**
+**B: Risposta**
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
 fruitore.
@@ -182,7 +182,7 @@ specificate alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`
 2. Il fruitore spedisce utilizzando canale sicuro stabilito con il il
    messaggio di richiesta all’interfaccia di servizio dell’erogatore.
 
-**B: Risultato**
+**B: Risposta**
 
 3. L’erogatore elabora il messaggio e restituisce un risultato.
 
@@ -191,9 +191,9 @@ Come indicato in :RFC:`5246` l’impiego del protocollo TLS garantisce a **livel
 -  l’autenticazione di erogatore e fruitore identificati mediante
    certificati X.509
 
--  la confidenzialità dei messaggi scambiati
+-  la confidenzialità dei dati scambiati
 
--  l’integrità dei messaggi scambiati
+-  l’integrità dei dati scambiati
 
 L’impiego del protocollo TLS 1.2 o maggiore, mitiga il rischio di:
 
