@@ -51,10 +51,24 @@ di servizio per la ricezione delle risposte.
 Descrizione
 ~~~~~~~~~~~
 
-.. figure:: ../media/interazione_2.png
-   :align: center
+.. mermaid::
+   :caption: Interazione non bloccante tramite callback
+   :alt: interazione non bloccante tramite callback
 
-   Interazione non bloccante tramite callback
+    sequenceDiagram
+        Fruitore ->> Erogatore: (1): Request +  Callback EndPoint
+        activate Fruitore
+       activate Erogatore
+        Erogatore -->>Fruitore: (2): Ack + CorrelationID
+        deactivate Fruitore
+       deactivate Erogatore
+
+        Erogatore ->>Fruitore: (3): Replay + CorrelationID
+        activate Fruitore
+       activate Erogatore
+        Fruitore -->> Erogatore: (4): Ack
+        deactivate Fruitore
+       deactivate Erogatore
 
 In questo scenario (vedi figura), la richiesta del fruitore contiene
 un riferimento al servizio da chiamare al momento della risposta. Si
