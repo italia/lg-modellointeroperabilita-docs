@@ -147,88 +147,92 @@ nega la creazione o l'eventuale variazione. In particolare, come da
 specifica seguente i metodi implementati sono POST (creazione), DELETE
 (eliminazione), PATCH (modifica) e GET (lettura).
 
-+---------------------------+------------------------------------------------------------------------------------+
-| Specifica Servizio Server | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml |
-+---------------------------+------------------------------------------------------------------------------------+
-| .. literalinclude:: ../media/rest-crud.yaml                                                                    |
-|    :language: yaml                                                                                             |
-+----------------------------------------------------------------------------------------------------------------+
+
+ Specifica Servizio Server  https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml
+
+ .. literalinclude:: ../media/rest-crud.yaml
+    :language: yaml
+
 
 Di seguito un esempio di chiamata in cui il fruitore richiede la
 creazione di una prenotazione.
 
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| HTTP Operation                                             | POST                                                                                                                                         |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                                   | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni             |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| \(1) Request Header & Body                                 | .. code-block:: JSON                                                                                                                         |
-|                                                            |                                                                                                                                              |
-|                                                            |    X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d                                                                                    |
-|                                                            |                                                                                                                                              |
-|                                                            |    {                                                                                                                                         |
-|                                                            |      "nome": "string",                                                                                                                       |
-|                                                            |      "cognome": "string",                                                                                                                    |
-|                                                            |      "cf": "string",                                                                                                                         |
-|                                                            |      "dettagli": {                                                                                                                           |
-|                                                            |        "data": "2018-12-03T14:29:12.137Z",                                                                                                   |
-|                                                            |        "motivazione": "string"                                                                                                               |
-|                                                            |      }                                                                                                                                       |
-|                                                            |    }                                                                                                                                         |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| \(2) Response Header & Body (HTTP Status Code 201 Created) | .. code-block:: JSON                                                                                                                         |
-|                                                            |                                                                                                                                              |
-|                                                            |    Location:                                                                                                                                 |
-|                                                            |    https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+.. code-block:: http
+
+   POST /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni HTTP/1.1
+   X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d
+
+   {
+     "nome": "string",
+     "cognome": "string",
+     "cf": "string",
+     "dettagli": {
+       "data": "2018-12-03T14:29:12.137Z",
+       "motivazione": "string"
+     }
+   }
+
+
+.. code-block:: http
+
+   HTTP/1.1 201 Created
+   Location:
+   https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254
+
+
 
 Di seguito un esempio in cui il fruitore richiede l'estrazione di una
 specifica prenotazione. Si noti l'utilizzo dell'URL restituito
 nell'header HTTP Location al passo precedente.
 
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| HTTP Operation                            | GET                                                                                                                                       |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                  | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| \(2) Response Body (HTTP Status Code 200) | .. code-block:: JSON                                                                                                                      |
-|                                           |                                                                                                                                           |
-|                                           |    {                                                                                                                                      |
-|                                           |      "nome": "string",                                                                                                                    |
-|                                           |      "cognome": "string",                                                                                                                 |
-|                                           |      "cf": "string",                                                                                                                      |
-|                                           |      "dettagli": {                                                                                                                        |
-|                                           |        "data": "2018-12-03T14:29:12.137Z",                                                                                                |
-|                                           |        "motivazione": "string"                                                                                                            |
-|                                           |      }                                                                                                                                    |
-|                                           |    }                                                                                                                                      |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+.. code-block:: http
+
+   GET /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+
+   {
+     "nome": "string",
+     "cognome": "string",
+     "cf": "string",
+     "dettagli": {
+       "data": "2018-12-03T14:29:12.137Z",
+       "motivazione": "string"
+     }
+   }
 
 Di seguito un esempio in cui il fruitore richiede la modifica di una
 prenotazione per quanto riguarda i dettagli.
 
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| HTTP Operation                            | PATCH                                                                                                                                     |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                  | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| \(1) Request Header & Body                | .. code-block:: JSON                                                                                                                      |
-|                                           |                                                                                                                                           |
-|                                           |    {                                                                                                                                      |
-|                                           |      "data": "2018-12-03T14:29:12.137Z",                                                                                                  |
-|                                           |      "motivazione": "nuova motivazione"                                                                                                   |
-|                                           |    }                                                                                                                                      |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| \(2) Response Body (HTTP Status Code 200) |                                                                                                                                           |
-+-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+ \(1) Request Header & Body
+
+.. code-block:: http
+
+   PATCH /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+
+   {
+     "data": "2018-12-03T14:29:12.137Z",
+     "motivazione": "nuova motivazione"
+   }
+
+
+\(2) Response Body (HTTP Status Code 200)
+
+.. code-block:: http
+
+      HTTP/1.1 200 OK
+
 
 Di seguito un esempio in cui il fruitore richiede di eliminare una
 specifica prenotazione.
 
-+----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| HTTP Operation                               | DELETE                                                                                                                                    |
-+----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                     | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 |
-+----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| \(2) Response Body (HTTP Status Code 200 OK) |                                                                                                                                           |
-+----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+ \(1) Request Header & Body
+
+.. code-block:: http
+
+   DELETE /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+
+
+\(2) Response Body (HTTP Status Code 200)
+
+.. code-block:: http
+
+      HTTP/1.1 200 OK
