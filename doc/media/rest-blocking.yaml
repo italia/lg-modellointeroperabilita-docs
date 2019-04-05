@@ -45,8 +45,10 @@ paths:
            application/json:
              schema:
                $ref: '#/components/schemas/ErrorMessage'
-       500:
-         description: Errore interno
+       default:
+         description: |-
+           Errore inatteso. Non ritornare informazioni
+           sulla logica interna e/o non pertinenti all'interfaccia.
          content:
            application/json:
              schema:

@@ -43,17 +43,9 @@ paths:
              schema:
                $ref: '#/components/schemas/ACKMessage'
        404:
-         description: Identificativo non trovato
-         content:
-           application/json:
-             schema:
-               $ref: '#/components/schemas/ErrorMessage'
-       500:
-         description: Errore interno avvenuto
-         content:
-           application/json:
-             schema:
-               $ref: '#/components/schemas/ErrorMessage'
+         $ref: '#/components/responses/404NotFound'
+       default:
+         $ref: '#/components/responses/default'
      callbacks:
        completionCallback:
          '{$request.header#/X-ReplyTo}':
@@ -71,18 +63,21 @@ paths:
                      schema:
                        $ref: '#/components/schemas/ACKMessage'
                404:
-                 description: Identificativo non trovato
-                 content:
-                   application/json:
-                     schema:
-                       $ref: '#/components/schemas/ErrorMessage'
-               500:
-                 description: Errore interno avvenuto
-                 content:
-                   application/json:
-                     schema:
-                       $ref: '#/components/schemas/ErrorMessage'
+                 $ref: '#/components/responses/404NotFound'
+               default:
+                 $ref: '#/components/responses/default'
 components:
+ responses:
+   404NotFound:
+     $ref: 'https://teamdigitale.github.io/openapi/definitions.yaml#/responses/404NotFound'
+   default:
+     description: |-
+       Errore inatteso. Non ritornare informazioni
+       sulla logica interna e/o non pertinenti all'interfaccia.
+     content:
+       application/json:
+         schema:
+           $ref: '#/components/schemas/ErrorMessage'
  schemas:
    MType:
      type: object
