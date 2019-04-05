@@ -53,22 +53,24 @@ Descrizione
 
 .. mermaid::
    :caption: Interazione non bloccante tramite callback
-   :alt: interazione non bloccante tramite callback
+   :alt: Interazione non bloccante tramite callback
 
     sequenceDiagram
-        Fruitore ->> Erogatore: (1): Request +  Callback EndPoint
-        activate Fruitore
-       activate Erogatore
-        Erogatore -->>Fruitore: (2): Ack + CorrelationID
-        deactivate Fruitore
-       deactivate Erogatore
+		participant F as Fruitore
+		participant E as Erogatore
+		activate F
+		F ->> E: 1. Request(Callback EndPoint)
+		activate E
+		E -->> F: 2. CorrelationID
+		deactivate F
+		deactivate E
+		activate F
+		E ->> F: 3. Replay(CorrelationID)
+		activate E
+		F -->> E: 4. Ack
+		deactivate F
+		deactivate E
 
-        Erogatore ->>Fruitore: (3): Replay + CorrelationID
-        activate Fruitore
-       activate Erogatore
-        Fruitore -->> Erogatore: (4): Ack
-        deactivate Fruitore
-       deactivate Erogatore
 
 In questo scenario (vedi figura), la richiesta del fruitore contiene
 un riferimento al servizio da chiamare al momento della risposta. Si
@@ -412,38 +414,38 @@ Descrizione
 
 .. mermaid::
    :caption: Interazione non bloccante tramite busy waiting
-   :alt: interazione non bloccante tramite busy waiting
+   :alt: Interazione non bloccante tramite busy waiting
 
     sequenceDiagram
-       activate Fruitore
-       Fruitore ->> Erogatore: (1): Request
-       activate Erogatore
-        Erogatore -->>Fruitore: (2): CorrelationID
-       deactivate Fruitore
-       deactivate Erogatore
+		participant F as Fruitore
+		participant E as Erogatore
+		activate F
+		F ->> E: 1. Request()
+		activate E
+		E -->>F: 2. CorrelationID
+		deactivate F
+		deactivate E
+		loop 0..n
+		activate F
+		F ->>E: 3. CheckStatus(CorrelationID)
+		activate E
+		E-->> F : 4a. CurrentStatus
+		deactivate F
+		deactivate E
+		end
+		activate F
+		F ->>E:  3. CheckStatus(CorrelationID)
+		activate E
+		E-->> F : 4b. CurrentStatus
+		deactivate F
+		deactivate E
+		activate F
+		F ->>E: 5. RetriveResult(CorrelationID)
+		activate E
+		E-->> F : 6. Result
+		deactivate F
+		deactivate E
 
-        loop 0..n
-            Fruitore ->>Erogatore: (3): Check Status
-            activate Fruitore
-            activate Erogatore
-            Erogatore-->> Fruitore : (4a): Current Status
-            deactivate Fruitore
-            deactivate Erogatore
-        end
-
-        Fruitore ->>Erogatore: (3): Check Status
-        activate Fruitore
-       activate Erogatore
-        Erogatore-->> Fruitore : (4b): Current Status
-       deactivate Fruitore
-       deactivate Erogatore
-
-        Fruitore ->>Erogatore: (5): Retrive Result
-        activate Fruitore
-       activate Erogatore
-        Erogatore-->> Fruitore : (6): Result
-       deactivate Fruitore
-       deactivate Erogatore
 
 Come si può vedere in figura, il fruitore invia una richiesta (passo
 (1)) e riceve immediatamente dall’erogatore un messaggio di avvenuta

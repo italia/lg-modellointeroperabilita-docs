@@ -24,12 +24,14 @@ Descrizione
    :alt: interazione bloccante CRUD
 
     sequenceDiagram
-        activate Fruitore
-        Fruitore ->> Erogatore: (1): Request
-       activate Erogatore
-        Erogatore -->>Fruitore: (2): Replay
-       deactivate Fruitore
-       deactivate Erogatore
+      participant F as Fruitore
+      participant E as Erogatore
+      activate F
+      F->>E: 1. Request()
+      activate E
+      E-->>F: 2. Reply
+      deactivate E
+      deactivate F
 
 Il sequence diagram è, come si nota in figura, equivalente a quello di
 una RPC bloccante. In questo caso la richiesta DEVE contenere:

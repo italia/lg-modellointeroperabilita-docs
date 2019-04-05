@@ -167,21 +167,21 @@ Flusso delle interazioni
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. mermaid::
-   :caption: non ripudiabilità della trasmissione
-   :alt: non ripudiabilità della trasmissione
+   :caption: Non ripudiabilità della trasmissione
+   :alt: Non ripudiabilità della trasmissione
 
    sequenceDiagram
-       activate Fruitore
-       Fruitore ->> Fruitore: (A): Verifica numero tentativi di inoltro
-
-        Fruitore ->> Erogatore: (B): Richiesta
-        activate Erogatore
-        Erogatore ->>Erogatore: (C): Persistenza erogatore
-        Erogatore -->>Fruitore: (D): Risposta
-       deactivate Erogatore
-
-        Fruitore ->> Fruitore: (E): Persistenza fruitore
-       deactivate Fruitore
+		participant F as Fruitore
+		participant E as Erogatore
+		activate F
+		F ->> F:  A. Verifica numero tentativi di inoltro
+		F ->> E:  B. Richiesta
+		activate E
+		E ->>E: C. Persistenza erogatore
+		E -->>F: D. Risposta
+		deactivate E
+		F ->> F: E. Persistenza fruitore
+		deactivate F
    
 **A: Verifica numero tentativi di inoltro**
 
