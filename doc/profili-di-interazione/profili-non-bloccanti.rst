@@ -423,72 +423,76 @@ Scenario
 ~~~~~~~~
 
 Questo scenario è simile al precedente, di cui eredita le motivazioni,
-ma in questo caso si decide, per ragioni ad esempio dovute e limitazioni
-circa le tecnologie utilizzate o i protocolli di rete, che il fruitore
-non fornisce un indirizzo per le risposte (metodo di callback), mentre
+ma in questo caso si decide che il fruitore
+non fornisce un indirizzo di callback, mentre
 l’erogatore fornisce un indirizzo interrogabile per verificare lo stato
-di processamento di una richiesta e, al fine del processamento della
+di processamento di una richiesta e, al fine dell'elaborazione della
 stessa, il risultato.
 
 .. _descrizione-nonbloccante-2:
 
+.. TODO referenze per modello POST + Location -> GET
+    https://developer.openstack.org/api-ref/compute/?expanded=create-server-detail,delete-server-detail
+
+
 Descrizione
 ~~~~~~~~~~~
+
+Questo scenario prevede due possibili workflow, uno per REST ed uno
+per SOAP. I diagrammi sono nelle rispettive sezioni.
+
+Il fruitore invia una richiesta (passo (1)) e riceve immediatamente un acknowledge (passo (2)) insieme ad:
+
+- un indirizzo dove verificare lo stato del processamento o della risorsa (REST);
+- oppure un correlation ID (SOAP).
+
+D'ora in poi il fruitore, periodicamente, verifica lo stato della richiesta
+utilizzando (passo (3)):
+
+- l'url indicato (REST)
+- oppure il correlation ID (SOAP)
+
+fin quando la risposta alla richiesta sarà pronta (passi (4a) o (4b)).
+
+Gli intervalli di polling possono essere
+definiti tramite i meccanismi di robustezza definiti in
+Sezione 2.5.
+
+A questo punto il fruitore può accedere al risultato o alla risorsa finale (passi (5) e (6)).
+
+.. _interfaccia-rest-nonbloccante-2:
+
+Interfaccia REST
+~~~~~~~~~~~~~~~~
 
 .. mermaid::
    :caption: Interazione non bloccante tramite busy waiting
    :alt: Interazione non bloccante tramite busy waiting
 
     sequenceDiagram
-		participant F as Fruitore
-		participant E as Erogatore
-		activate F
-		F ->> E: 1. Request()
-		activate E
-		E -->>F: 2. CorrelationID
-		deactivate F
-		deactivate E
-		loop 0..n
-		activate F
-		F ->>E: 3. CheckStatus(CorrelationID)
-		activate E
-		E-->> F : 4a. CurrentStatus
-		deactivate F
-		deactivate E
-		end
-		activate F
-		F ->>E:  3. CheckStatus(CorrelationID)
-		activate E
-		E-->> F : 4b. CurrentStatus
-		deactivate F
-		deactivate E
-		activate F
-		F ->>E: 5. RetriveResult(CorrelationID)
-		activate E
-		E-->> F : 6. Result
-		deactivate F
-		deactivate E
+       activate Fruitore
+        Fruitore ->> Erogatore: (1): Request
+       activate Erogatore
+        Erogatore -->>Fruitore: (2): Location
+       deactivate Fruitore
+       deactivate Erogatore
 
+       loop 0..n
+            Fruitore ->>Erogatore: (3): Retrieve Resource/Result
+            activate Fruitore
+            activate Erogatore
+            Erogatore-->> Fruitore : (4a): Resource not ready
+            deactivate Fruitore
+            deactivate Erogatore
+       end
 
-Come si può vedere in figura, il fruitore invia una richiesta (passo
-(1)) e riceve immediatamente dall’erogatore un messaggio di avvenuta
-ricezione insieme ad un indirizzo presso il quale verificare lo stato
-del processamento (caso REST) oppure un correlation ID (caso SOAP)
-(passo (2)).
+       activate Fruitore
+         Fruitore ->>Erogatore: (5): Retrieve Resource/Result
+       activate Erogatore
+         Erogatore-->> Fruitore : (6): Resource ready
+       deactivate Fruitore
+       deactivate Erogatore
 
-Da questo momento in poi il fruitore, ad intervalli
-periodici, richiede lo stato di processamento della sua richiesta
-utilizzando l’endpoint indicato oppure il correlation ID (passo (3)) fin
-quando la risposta alla richiesta sarà pronta (passi (4a) e (4b)). Gli
-intervalli permessi da parte da parte dell’erogatore possono essere
-definiti tramite meccanismi di robustezza quali quelli definiti in
-Sezione 2.5. A questo punto il fruitore può richiedere il risultato
-(passi (5) e (6)).
-
-.. _interfaccia-rest-nonbloccante-2:
-
-Interfaccia REST
-~~~~~~~~~~~~~~~~
 
 Nel caso in cui il profilo venga implementato con tecnologia REST,
 DEVONO essere rispettate le seguenti regole (che riflettono l’esempio 2
@@ -505,27 +509,20 @@ riportato nel Capitolo 1):
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, un percorso di risorsa per interrogare lo
-   stato di processamento della richiesta utilizzando l’header HTTP
-   standard Location; Il codice HTTP di stato DEVE essere 202 Accepted a
+   stato di processamento della richiesta utilizzando l’header HTTP ``Location``;
+   Il codice HTTP di stato DEVE essere ``202 Accepted`` a
    meno che non si verifichino errori;
 
 -  Al passo (3), il fruitore DEVE utilizzare il percorso di cui al passo
-   (2) per richiedere lo stato di processamento; Il verbo HTTP
+   (2) per richiedere lo stato della risorsa; Il verbo HTTP
    utilizzato deve essere GET;
 
--  Al passo (4a) l’erogatore indica che il processamento non si è ancora
-   concluso, fornendo informazioni circa lo stato della lavorazione
-   della richiesta; il codice HTTP restituito è 200 OK;
+-  Al passo (4a) l’erogatore indica che la risorsa non è ancora pronta,
+   fornendo informazioni circa lo stato della lavorazione
+   della richiesta; il codice HTTP restituito è ``200 OK``;
 
--  Nel caso il processamento si sia concluso (passo (4b), l’erogatore
-   risponde con il codice HTTP 303 See Other; il percorso per ottenere
-   la risposta è indicato nell’header standard Location;
-
--  Al passo (5), il fruitore utilizza il percorso di cui al passo (4b)
-   al fine di richiedere il risultato della richiesta. Il verbo HTTP
-   utilizzato deve essere GET;
-
--  Al passo (6), l’erogatore fornisce il risultato del processamento.
+-  Se la risorsa è pronta (passo (4b), l’erogatore
+   risponde con la rappresentazione della risorsa;
 
 Il corpo dei messaggi HTTP scambiati durante l’interazione DEVE seguire
 lo standard JSON.
@@ -560,8 +557,6 @@ l’erogatore DEVE almeno:
    possibile definire meccanismi specifici per la ritrasmissione della
    risposta o della richiesta.
 
--  Restituire il codice 303 See Other quando il processamento è
-   concluso.
 
 .. _esempio-nonbloccante-4:
 
@@ -666,6 +661,41 @@ Endpoint http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/re
 
 Interfaccia SOAP
 ~~~~~~~~~~~~~~~~
+
+.. mermaid::
+   :caption: Interazione non bloccante tramite busy waiting
+   :alt: interazione non bloccante tramite busy waiting
+
+    sequenceDiagram
+		participant F as Fruitore
+		participant E as Erogatore
+		activate F
+		F ->> E: 1. Request()
+		activate E
+		E -->>F: 2. CorrelationID
+		deactivate F
+		deactivate E
+		loop 0..n
+            activate F
+            F ->>E: 3. CheckStatus(CorrelationID)
+            activate E
+            E-->> F : 4a. CurrentStatus
+            deactivate F
+            deactivate E
+		end
+		activate F
+		F ->>E:  3. CheckStatus(CorrelationID)
+		activate E
+		E-->> F : 4b. CurrentStatus
+		deactivate F
+		deactivate E
+		activate F
+		F ->>E: 5. RetriveResult(CorrelationID)
+		activate E
+		E-->> F : 6. Result
+		deactivate F
+		deactivate E
+
 
 Nel caso in cui il profilo venga implementato con tecnologia SOAP,
 DEVONO essere rispettate le seguenti regole:
