@@ -107,6 +107,7 @@ presenti nel documento in cui vengono evidenziate le relazioni.
 
 .. image:: index/image7.png
    :align: center
+   :scale: 100%
    :alt: rappresentazione grafica delle dipendenze tra i profili
 
 Rappresentazione grafica delle dipendenze tra i profili

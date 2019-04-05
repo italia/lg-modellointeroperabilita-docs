@@ -1,31 +1,29 @@
 Raccomandazioni tecniche per REST
 =================================
 
-In questa sezione si raccolgono le linee guida per il ModI valide come
-best- practice ai fini dell'interoperabilità.
+In questa sezione si raccolgono per la tecnologia REST
+dei suggerimenti al fine di favorire l'interoperabilità.
 
 Formato dei dati
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
-Tranne ove previsto da standard e specifiche settoriali, in REST la
-comunicazione deve avvenire tramite oggetti JSON :RFC:`7159` con il relativo
+Nella tecnologia REST, la comunicazione DEVE avvenire tramite oggetti JSON :RFC:`7159` con il relativo
 ​\ `media-type​ <https://www.iana.org/assignments/media-types/media-types.xhtml>`__
 ``application/json``.
 
-Specifiche settoriali (es. INSPIRE, HL7) devono essere rispettate anche
-laddove queste siano parzialmente in conflitto con il profilo qui
-specificato, eg:
+Il vincolo indicato in precedenza può essere violato in presenza di specifiche in cui gli oggetti di
+comunicazione sono formalizzati in forma diversa da JSON (es. INSPIRE, HL7).
 
--  per​ HL7 si veda FHIR_
--  per​ xBLR si veda XBLR-json_
+.. TODO: non è chiaro il fine del paragrafo, sembra in sovrapposizione con quanto scritto nel paragrafo precedente.
 
 Codificare dati strutturati con oggetti JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-I dati strutturati devono essere trasferiti tramite ​oggetti JSON​
-​:RFC:`7159`, in modo da
-permettere l'estensione retrocompatibile della response con ulteriori
-attributi (Eg. paginazione). Cioè:
+I dati strutturati DEVONO essere trasferiti tramite ​oggetti JSON​
+​:RFC:`7159`, in modo da permettere l'estensione retrocompatibile della
+response con ulteriori attributi (Eg. paginazione).
+
+Cioè:
 
 -  il payload di una response contenente una entry ritorna un oggetto
 
@@ -56,27 +54,28 @@ attributi (Eg. paginazione). Cioè:
 Evitare Content-Type personalizzati
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Evitare l'uso di media-type personalizzati come da ​\ `RFC
+Si raccomanda di evitare l'uso di media-type personalizzati come da ​\ `RFC
 6838 <https://tools.ietf.org/html/rfc6838#section-3.4>`__ (eg.
 ``application/x.custom.name+json``) ed utilizzare nomi standard come:
 
 - `application/json​ <https://www.iana.org/assignments/media-types/application/json>`__,
 - `application/problem+json​ <https://www.iana.org/assignments/media-types/application/problem+json>`__,
 - `application/jose+json​ <https://www.iana.org/assignments/media-types/application/jose+json>`__,
-- `application/fhir+json​ <https://www.iana.org/assignments/media-types/application/fhir+json>`__.
 
-Utilizzare Content-Type specifici per dati binari, immagini o documenti
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Si raccomanda di utilizzare Content-Type specifici per dati binari, immagini o documenti
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Utilizzare le properties secondo nomenclature standard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Le properties devono utilizzare ove possibile la nomenclatura indicata
+Le properties DEVONO utilizzare ove possibile la nomenclatura indicata
 nelle Linee Guida per la valorizzazione del Patrimonio informativo
 nazionale e le relative ontologie.
 
-Utilizzare formati standard per Data ed Ora
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. TODO: indicare i riferimenti a ontopia
+
+Si raccomanda di utilizzare formati standard per Data ed Ora
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le date devono essere conformi ad :RFC:`3339`,
 ad esempio `2015-05-28` per la data e `2015-05-28T14:07:17Z` per l'ora.
@@ -885,10 +884,6 @@ Riferimenti
 
 .. _`Linee Guida per lo sviluppo di sicuro di codice`:
     https://www.agid.gov.it/sites/default/files/repository_files/documentazione/linee_guida_per_lo_sviluppo_sicuro_di_codice_v1.0.pdf
-
-.. _FHIR: https://www.hl7.org/fhir/
-
-.. _XBLR-json: https://www.xbrl.org/xbrl-json-making-xbrl-easier/
 
 .. _FatturePA: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.0.pdf
 

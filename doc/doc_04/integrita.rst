@@ -50,8 +50,17 @@ la relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. figure:: ../index/image1.png
-   :align: center
+.. mermaid::
+
+   sequenceDiagram
+      participant F as Fruitore
+      participant E as Erogatore
+      activate F
+      F->>E: (1) Richiesta
+      activate E
+      E-->>F: (2) Risposta
+      deactivate E
+      deactivate F
 
 .. _flusso-delle-interazioni-6:
 
