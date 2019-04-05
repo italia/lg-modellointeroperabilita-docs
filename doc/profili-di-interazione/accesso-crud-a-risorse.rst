@@ -19,10 +19,17 @@ mediante una modalità bloccante come quella vista in Sezione 3.2.2.
 Descrizione
 ------------------
 
-.. figure:: ../media/interazione_4.png
-   :align: center
+.. mermaid::
+   :caption: Interazione bloccante CRUD
+   :alt: interazione bloccante CRUD
 
-   Interazione bloccante CRUD
+    sequenceDiagram
+        activate Fruitore
+        Fruitore ->> Erogatore: (1): Request
+       activate Erogatore
+        Erogatore -->>Fruitore: (2): Replay
+       deactivate Fruitore
+       deactivate Erogatore
 
 Il sequence diagram è, come si nota in figura, equivalente a quello di
 una RPC bloccante. In questo caso la richiesta DEVE contenere:
