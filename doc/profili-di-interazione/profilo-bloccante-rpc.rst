@@ -26,9 +26,9 @@ Descrizione
       participant F as Fruitore
       participant E as Erogatore
       activate F
-      F->>E: (1) Request
+      F->>E: 1. Request()
       activate E
-      E-->>F: (2) Reply
+      E-->>F: 2. Reply
       deactivate E
       deactivate F
 
