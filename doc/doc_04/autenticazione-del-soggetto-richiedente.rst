@@ -275,7 +275,7 @@ Dettaglio
       participant F as Fruitore
       participant E as Erogatore
       activate F
-      F->>E: (1) Richiesta firmata
+      F->>E: (1) Richiesta
       activate E
       E-->>F: (2) Risposta
       deactivate E
