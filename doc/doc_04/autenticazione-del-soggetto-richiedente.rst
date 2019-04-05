@@ -698,9 +698,9 @@ Descrizione
 
 Il presente profilo declina l’utilizzo di:
 
--  JSON Web Token (JWT) definita dall’RFC 7519 `[1] <bibliografia.html>`__
+-  JSON Web Token (JWT) definita dall’:RFC:`7519` `[1] <bibliografia.html>`__
 
--  JSON Web Signature (JWS) definita dall’RFC 7515 `[2] <bibliografia.html>`__
+-  JSON Web Signature (JWS) definita dall’:RFC:`7515` `[2] <bibliografia.html>`__
 
 Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
