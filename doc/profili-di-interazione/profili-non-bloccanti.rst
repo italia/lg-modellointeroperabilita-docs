@@ -418,11 +418,40 @@ stessa, il risultato.
 Descrizione
 ~~~~~~~~~~~
 
-.. image:: ../media/interazione_3.png
-   :align: center
-   :scale: 75 %
+.. mermaid::
+   :caption: Interazione non bloccante tramite busy waiting
+   :alt: interazione non bloccante tramite busy waiting
 
-Interazione non bloccante tramite busy waiting
+    sequenceDiagram
+       Fruitore ->> Erogatore: (1): Request
+        activate Fruitore
+       activate Erogatore
+        Erogatore -->>Fruitore: (2): CorrelationID
+       deactivate Fruitore
+       deactivate Erogatore
+
+        loop 0..n
+            Fruitore ->>Erogatore: (3): Check Status
+            activate Fruitore
+            activate Erogatore
+            Erogatore-->> Fruitore : (4a): Current Status
+            deactivate Fruitore
+            deactivate Erogatore
+        end
+
+        Fruitore ->>Erogatore: (3): Check Status
+        activate Fruitore
+       activate Erogatore
+        Erogatore-->> Fruitore : (4b): Current Status
+       deactivate Fruitore
+       deactivate Erogatore
+
+        Fruitore ->>Erogatore: (5): Retrive Result
+        activate Fruitore
+       activate Erogatore
+        Erogatore-->> Fruitore : (6): Result
+       deactivate Fruitore
+       deactivate Erogatore
 
 Come si può vedere in figura, il fruitore invia una richiesta (passo
 (1)) e riceve immediatamente dall’erogatore un messaggio di avvenuta
