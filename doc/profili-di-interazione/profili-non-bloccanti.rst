@@ -509,7 +509,7 @@ riportato nel Capitolo 1):
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, un percorso di risorsa per interrogare lo
-   stato di processamento della richiesta utilizzando l’header HTTP ``Location``;
+   stato di processamento della richiesta utilizzando l’header HTTP ``Location`` :RFC:`7231#section-7.1.2`;
    Il codice HTTP di stato DEVE essere ``202 Accepted`` a
    meno che non si verifichino errori;
 
