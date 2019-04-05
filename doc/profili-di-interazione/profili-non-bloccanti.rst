@@ -162,21 +162,17 @@ Friuitore ed erogatore, nel processare le richieste, DEVONO almeno:
 Esempio
 ^^^^^^^
 
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| Specifica Servizio Server | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTCallbackServer.yaml |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| .. literalinclude:: ../media/rest-callback-server.yaml                                                                    |
-|    :language: yaml                                                                                                        |
-|                                                                                                                           |
-+---------------------------------------------------------------------------------------------------------------------------+
+ Specifica Servizio Server  https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTCallbackServer.yaml
 
-+---------------------------+----------------------------------------------------------------------------------------+
-| Specifica Servizio Client | https://api.indirizzoclient.it/rest/v1/nomeinterfacciaservizio/RESTCallbackClient.yaml |
-+---------------------------+----------------------------------------------------------------------------------------+
-| .. literalinclude:: ../media/rest-callback-client.yaml                                                             |
-|    :language: yaml                                                                                                 |
-|                                                                                                                    |
-+--------------------------------------------------------------------------------------------------------------------+
+ .. literalinclude:: ../media/rest-callback-server.yaml
+    :language: yaml
+
+----
+
+ Specifica Servizio Client  https://api.indirizzoclient.it/rest/v1/nomeinterfacciaservizio/RESTCallbackClient.yaml
+
+ .. literalinclude:: ../media/rest-callback-client.yaml
+    :language: yaml
 
 Di seguito un esempio di chiamata al metodo M con la presa in carico da
 parte dell’erogatore.
@@ -299,22 +295,18 @@ framework di sviluppo:
 Esempio
 ^^^^^^^
 
-+----------------------------------------------+----------------------------------------------------------------------------+
-| Specifica Servizio Server                    | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl |
-+----------------------------------------------+----------------------------------------------------------------------------+
-| .. literalinclude:: ../media/soap-callback-server.wsdl                                                                    |
-|    :language: xml                                                                                                         |
-|                                                                                                                           |
-+---------------------------------------------------------------------------------------------------------------------------+
+ Specifica Servizio Server                     https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl
+
+ .. literalinclude:: ../media/soap-callback-server.wsdl
+    :language: xml
 
 
-+-------------------------------------------------+-------------------------------------------------------------------------+
-| Specifica Servizio Callback                     | https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1?wsdl     |
-+-------------------------------------------------+-------------------------------------------------------------------------+
-| .. literalinclude:: ../media/soap-callback-client.wsdl                                                                    |
-|    :language: xml                                                                                                         |
-|                                                                                                                           |
-+---------------------------------------------------------------------------------------------------------------------------+
+----
+
+ Specifica Servizio Callback                      https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1?wsdl
+
+ .. literalinclude:: ../media/soap-callback-client.wsdl
+    :language: xml
 
 
 Segue un esempio di chiamata al metodo M in cui l’erogatore conferma di
