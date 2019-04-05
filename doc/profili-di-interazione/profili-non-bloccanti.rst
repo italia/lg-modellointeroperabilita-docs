@@ -162,21 +162,17 @@ Friuitore ed erogatore, nel processare le richieste, DEVONO almeno:
 Esempio
 ^^^^^^^
 
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| Specifica Servizio Server | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTCallbackServer.yaml |
-+---------------------------+-----------------------------------------------------------------------------------------------+
-| .. literalinclude:: ../media/rest-callback-server.yaml                                                                    |
-|    :language: yaml                                                                                                        |
-|                                                                                                                           |
-+---------------------------------------------------------------------------------------------------------------------------+
+ Specifica Servizio Server  https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTCallbackServer.yaml
 
-+---------------------------+----------------------------------------------------------------------------------------+
-| Specifica Servizio Client | https://api.indirizzoclient.it/rest/v1/nomeinterfacciaservizio/RESTCallbackClient.yaml |
-+---------------------------+----------------------------------------------------------------------------------------+
-| .. literalinclude:: ../media/rest-callback-client.yaml                                                             |
-|    :language: yaml                                                                                                 |
-|                                                                                                                    |
-+--------------------------------------------------------------------------------------------------------------------+
+ .. literalinclude:: ../media/rest-callback-server.yaml
+    :language: yaml
+
+----
+
+ Specifica Servizio Client  https://api.indirizzoclient.it/rest/v1/nomeinterfacciaservizio/RESTCallbackClient.yaml
+
+ .. literalinclude:: ../media/rest-callback-client.yaml
+    :language: yaml
 
 Di seguito un esempio di chiamata al metodo M con la presa in carico da
 parte dell’erogatore.
@@ -256,7 +252,7 @@ seguenti regole:
 
 -  La specifica dell’interfaccia del fruitore DEVE rispettare quanto
    richiesto dall’erogatore; in particolare si richiede che
-   l’erogatore fornisca un WSDL descrittivo del servizio di callback 
+   l’erogatore fornisca un WSDL descrittivo del servizio di callback
    che il fruitore è tenuto ad implementare;
 
 -  Al passo (1), il fruitore DEVE indicare l’endpoint della callback
@@ -299,22 +295,18 @@ framework di sviluppo:
 Esempio
 ^^^^^^^
 
-+----------------------------------------------+----------------------------------------------------------------------------+
-| Specifica Servizio Server                    | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl |
-+----------------------------------------------+----------------------------------------------------------------------------+
-| .. literalinclude:: ../media/soap-callback-server.wsdl                                                                    |
-|    :language: xml                                                                                                         |
-|                                                                                                                           |
-+---------------------------------------------------------------------------------------------------------------------------+
+ Specifica Servizio Server                     https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl
+
+ .. literalinclude:: ../media/soap-callback-server.wsdl
+    :language: xml
 
 
-+-------------------------------------------------+-------------------------------------------------------------------------+
-| Specifica Servizio Callback                     | https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1?wsdl     |
-+-------------------------------------------------+-------------------------------------------------------------------------+
-| .. literalinclude:: ../media/soap-callback-client.wsdl                                                                    |
-|    :language: xml                                                                                                         |
-|                                                                                                                           |
-+---------------------------------------------------------------------------------------------------------------------------+
+----
+
+ Specifica Servizio Callback                      https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1?wsdl
+
+ .. literalinclude:: ../media/soap-callback-client.wsdl
+    :language: xml
 
 
 Segue un esempio di chiamata al metodo M in cui l’erogatore conferma di
@@ -551,95 +543,99 @@ l’erogatore DEVE almeno:
 Esempio
 ^^^^^^^
 
-+---------------------------+------------------------------------------------------------------------------------+
-| Specifica Servizio Server | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml |
-+---------------------------+------------------------------------------------------------------------------------+
-| .. literalinclude:: ../media/rest-nonblocking.yaml                                                             |
-|    :language: yaml                                                                                             |
-|                                                                                                                |
-+----------------------------------------------------------------------------------------------------------------+
+Specifica Servizio Server: https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml
+
+.. literalinclude:: ../media/rest-nonblocking.yaml
+   :language: yaml
+
+----
 
 Di seguito un esempio di chiamata ad M in cui l’erogatore dichiara di
 essersi preso carico della richiesta.
 
-+---------------------------------------------------+----------------------------------------------------------------------------------------+
-| HTTP Operation                                    | POST                                                                                   |
-+---------------------------------------------------+----------------------------------------------------------------------------------------+
-| Endpoint                                          | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
-+---------------------------------------------------+----------------------------------------------------------------------------------------+
-| (1) Request Header & Body                         | .. code-block:: http                                                                   |
-|                                                   |                                                                                        |
-|                                                   |   POST /rest/v1/nomeinterfacciaservizio/resources/1234/M                               |
-|                                                   |                                                                                        |
-|                                                   |   {                                                                                    |
-|                                                   |      "a": {                                                                            |
-|                                                   |        "a1": [1,...,2],                                                                |
-|                                                   |        "a2": "Stringa di esempio"                                                      |
-|                                                   |      },                                                                                |
-|                                                   |      "b": "Stringa di esempio"                                                         |
-|                                                   |    }                                                                                   |
-+---------------------------------------------------+----------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP Status Code 202 Accepted) | .. code-block:: http                                                                   |
-|                                                   |                                                                                        |
-|                                                   |                                                                                        |
-|                                                   |   HTTP/1.1 202 Accepted                                                                |
-|                                                   |   Content-Type: application/json                                                       |
-|                                                   |   Location:  resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d                     |
-|                                                   |                                                                                        |
-|                                                   |    {                                                                                   |
-|                                                   |      "status": "pending",                                                              |
-|                                                   |      "message": "Preso carico della richiesta",                                        |
-|                                                   |      "id": "8131edc0-29ed-4d6e-ba43-cce978c7ea8d"                                      |
-|                                                   |    }                                                                                   |
-+---------------------------------------------------+----------------------------------------------------------------------------------------+
+----
+
+Endpoint https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
+
+.. code-block:: http
+
+  POST /rest/v1/nomeinterfacciaservizio/resources/1234/M   HTTP/1.1
+
+  {
+     "a": {
+       "a1": [1,...,2],
+       "a2": "Stringa di esempio"
+     },
+     "b": "Stringa di esempio"
+   }
+
+.. code-block:: http
+
+  HTTP/1.1 202 Accepted
+  Content-Type: application/json
+  Location:  resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
+
+   {
+     "status": "pending",
+     "message": "Preso carico della richiesta",
+     "id": "8131edc0-29ed-4d6e-ba43-cce978c7ea8d"
+   }
+
+----
 
 Di seguito un esempio di chiamata con cui il fruitore verifica
 l’esecuzione di M nei casi di processamento ancora in atto (4a) e di
 processamento avvenuto (4b).
 
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| HTTP Operation                              | GET                                                                                                                         |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                    | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d  |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| 4a   Response Body (HTTP Response code 200) | .. code-block:: http                                                                                                        |
-|                                             |                                                                                                                             |
-|                                             |                                                                                                                             |
-|                                             |    {                                                                                                                        |
-|                                             |      "status": "pending",                                                                                                   |
-|                                             |      "message": "Preso carico della richiesta"                                                                              |
-|                                             |    }                                                                                                                        |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| 4a Response Body (HTTP Response code 200)   |  .. code-block:: http                                                                                                       |
-|                                             |                                                                                                                             |
-|                                             |    {                                                                                                                        |
-|                                             |      "status": "processing",                                                                                                |
-|                                             |      "message": "Richiesta in fase di processamento"                                                                        |
-|                                             |    }                                                                                                                        |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| 4b Response Header &                        | .. code-block:: http                                                                                                        |
-|    Body (HTTP Response code 303)            |                                                                                                                             |
-|                                             |    {                                                                                                                        |
-|                                             |      "status": "done",                                                                                                      |
-|                                             |      "message": "Processamento completo"                                                                                    |
-|                                             |    }                                                                                                                        |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+Endpoint http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
+
+.. code-block:: http
+
+    HTTP/1.1 200 Success
+
+    {
+      "status": "pending",
+      "message": "Preso carico della richiesta"
+    }
+
+
+.. code-block:: http
+
+    HTTP/1.1 200 Success
+
+    {
+      "status": "processing",
+      "message": "Richiesta in fase di processamento"
+    }
+
+
+.. code-block:: http
+
+    HTTP/1.1 303 Permanent
+
+    {
+      "status": "done",
+      "message": "Processamento completo"
+    }
+
+----
 
 Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
 della sua richiesta.
 
-+--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| HTTP Operation                             | GET                                                                                                                                |
-+--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                   | http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result  |
-+--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| (6\) Response Body (HTTP Response code 200)|                                                                                                                                    |
-|                                            | .. code-block:: http                                                                                                               |
-|                                            |                                                                                                                                    |
-|                                            |    {                                                                                                                               |
-|                                            |      "c": "OK"                                                                                                                     |
-|                                            |    }                                                                                                                               |
-+--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+
+Endpoint http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
+
+
+.. code-block:: http
+
+    HTTP/1.1 200 Success
+
+    {
+      "c": "OK"
+    }
+
+
 
 .. _interfaccia-soap-nonbloccante-2:
 
@@ -703,141 +699,175 @@ framework di sviluppo:
 Esempio
 ^^^^^^^
 
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| Specifica Servizio Server                       | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl  |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| .. literalinclude:: ../media/soap-nonblocking.wsdl                                                                            |
-|    :language: XML                                                                                                             |
-|                                                                                                                               |
-+-------------------------------------------------------------------------------------------------------------------------------+
+Specifica Servizio Server: https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl
+
+.. literalinclude:: ../media/soap-nonblocking.wsdl
+   :language: XML
+
+----
 
 Di seguito un esempio di chiamata ad M in cui l’erogatore risponde di
 avere preso in carico la richiesta.
 
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                    | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M                                                                                        |
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Method                                      | MRequest                                                                                                                                                       |
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| (1) Request Body                            | .. code-block:: XML                                                                                                                                            |
-|                                             |                                                                                                                                                                |
-|                                             |    <?xml version="1.0"?>                                                                                                                                       |
-|                                             |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
-|                                             |      <soap:Body>                                                                                                                                               |
-|                                             |        <ns2:MRequest xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                                     |
-|                                             |          <M>                                                                                                                                                   |
-|                                             |            <o_id>1234</o_id><a>                                                                                                                                |
-|                                             |              <a1s>1</a1s>...<a1s>2</a1s>                                                                                                                       |
-|                                             |              <a2>Stringa di esempio</a2>                                                                                                                       |
-|                                             |            </a>                                                                                                                                                |
-|                                             |            <b>Stringa di esempio</b>                                                                                                                           |
-|                                             |          </M>                                                                                                                                                  |
-|                                             |        </ns2:MRequest>                                                                                                                                         |
-|                                             |      </soap:Body>                                                                                                                                              |
-|                                             |    </soap:Envelope>                                                                                                                                            |
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP status code 200 OK) |                                                                                                                                                                |
-|                                             | .. code-block:: XML                                                                                                                                            |
-|                                             |                                                                                                                                                                |
-|                                             |                                                                                                                                                                |
-|                                             |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
-|                                             |      <soap:Header>                                                                                                                                             |
-|                                             |        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-Correlation-ID>  |
-|                                             |      </soap:Header>                                                                                                                                            |
-|                                             |      <soap:Body>                                                                                                                                               |
-|                                             |        <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                             |
-|                                             |          <return>                                                                                                                                              |
-|                                             |            <status>pending</status>                                                                                                                            |
-|                                             |            <message>Preso carico della richiesta</message>                                                                                                     |
-|                                             |          </return>                                                                                                                                             |
-|                                             |        </ns2:MRequestResponse>                                                                                                                                 |
-|                                             |      </soap:Body>                                                                                                                                              |
-|                                             |    </soap:Envelope>                                                                                                                                            |
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Endpoint https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M
+
+
+- 1\) Richiesta
+
+.. code-block:: http
+
+    POST /api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M HTTP/1.1
+    (method: MRequest)
+
+    <?xml version="1.0"?>
+    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Body>
+        <ns2:MRequest xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+          <M>
+            <o_id>1234</o_id><a>
+              <a1s>1</a1s>...<a1s>2</a1s>
+              <a2>Stringa di esempio</a2>
+            </a>
+            <b>Stringa di esempio</b>
+          </M>
+        </ns2:MRequest>
+      </soap:Body>
+    </soap:Envelope>
+
+- 2\) Risposta
+
+.. code-block:: http
+
+    HTTP/1.1 200 Success
+
+    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Header>
+        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+            59eca678-5392-4e45-bdf3-7f55d398c940
+        </ns2:X-Correlation-ID>  |
+      </soap:Header>
+      <soap:Body>
+        <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+          <return>
+            <status>pending</status>
+            <message>Preso carico della richiesta</message>
+          </return>
+        </ns2:MRequestResponse>
+      </soap:Body>
+    </soap:Envelope>
+
 
 Di seguito un esempio di chiamata con cui il fruitore verifica
 l’esecuzione di M nei casi di processamento ancora in atto (4a) e di
 processamento avvenuto (4b).
 
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                     | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M                                                                                        |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Method                                       | MProcessingStatus                                                                                                                                              |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| (3) Request Body                             |                                                                                                                                                                |
-|                                              | .. code-block:: XML                                                                                                                                            |
-|                                              |                                                                                                                                                                |
-|                                              |    <?xml version="1.0"?>                                                                                                                                       |
-|                                              |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
-|                                              |      <soap:Header>                                                                                                                                             |
-|                                              |        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-Correlation-ID>  |
-|                                              |      </soap:Header>                                                                                                                                            |
-|                                              |      <soap:Body>                                                                                                                                               |
-|                                              |        <ns2:MProcessingStatus xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio"/>                                                           |
-|                                              |      </soap:Body>                                                                                                                                              |
-|                                              |    </soap:Envelope>                                                                                                                                            |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| (4a) Response Body (HTTP status code 200 OK) | .. code-block:: XML                                                                                                                                            |
-|                                              |                                                                                                                                                                |
-|                                              |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
-|                                              |      <soap:Body>                                                                                                                                               |
-|                                              |        <ns2:MProcessingStatusResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                    |
-|                                              |          <return>                                                                                                                                              |
-|                                              |            <status>processing</status>                                                                                                                         |
-|                                              |            <message>Richiesta in fase di processamento</message>                                                                                               |
-|                                              |          </return>                                                                                                                                             |
-|                                              |        </ns2:MProcessingStatusResponse>                                                                                                                        |
-|                                              |      </soap:Body>                                                                                                                                              |
-|                                              |    </soap:Envelope>                                                                                                                                            |
-|                                              |                                                                                                                                                                |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| (4b) Response Body (HTTP status code 200 OK) |                                                                                                                                                                |
-|                                              | .. code-block:: XML                                                                                                                                            |
-|                                              |                                                                                                                                                                |
-|                                              |                                                                                                                                                                |
-|                                              |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
-|                                              |      <soap:Body>                                                                                                                                               |
-|                                              |        <ns2:MProcessingStatusResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                    |
-|                                              |          <return>                                                                                                                                              |
-|                                              |            <status>done</status>                                                                                                                               |
-|                                              |            <message>Processamento completo</message>                                                                                                           |
-|                                              |          </return>                                                                                                                                             |
-|                                              |        </ns2:MProcessingStatusResponse>                                                                                                                        |
-|                                              |      </soap:Body>                                                                                                                                              |
-|                                              |    </soap:Envelope>                                                                                                                                            |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
+Endpoint: https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M
+
+
+
+MProcessingStatus
+
+
+- 3\) richiesta verifica status
+
+.. code-block:: http
+
+
+    POST /api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M
+    (method: MRequest)
+
+   <?xml version="1.0"?>
+   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+     <soap:Header>
+       <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-Correlation-ID>
+     </soap:Header>
+     <soap:Body>
+       <ns2:MProcessingStatus xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio"/>
+     </soap:Body>
+   </soap:Envelope>
+
+- 4\) risposta verifica status in attesa
+
+.. code-block:: http
+
+    HTTP/1.1 200 Success
+
+    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Body>
+        <ns2:MProcessingStatusResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+          <return>
+            <status>processing</status>
+            <message>Richiesta in fase di processamento</message>
+          </return>
+        </ns2:MProcessingStatusResponse>
+      </soap:Body>
+    </soap:Envelope>
+
+- 4\) risposta verifica status completato
+
+.. code-block:: http
+
+    HTTP/1.1 200 Success
+
+    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Body>
+        <ns2:MProcessingStatusResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+          <return>
+            <status>done</status>
+            <message>Processamento completo</message>
+          </return>
+        </ns2:MProcessingStatusResponse>
+      </soap:Body>
+    </soap:Envelope>
+
+
+
 
 Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
 della sua richiesta.
 
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint                                   | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M                                                                                        |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Method                                     | MResponse                                                                                                                                                      |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| (5) Request Body                           | .. code-block:: XML                                                                                                                                            |
-|                                            |                                                                                                                                                                |
-|                                            |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
-|                                            |      <soap:Header>                                                                                                                                             |
-|                                            |        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-Correlation-ID>  |
-|                                            |      </soap:Header>                                                                                                                                            |
-|                                            |      <soap:Body>                                                                                                                                               |
-|                                            |        <ns2:MResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio"/>                                                                   |
-|                                            |      </soap:Body>                                                                                                                                              |
-|                                            |    </soap:Envelope>                                                                                                                                            |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| (6) Response Body (HTTP Response code 200) | .. code-block:: XML                                                                                                                                            |
-|                                            |                                                                                                                                                                |
-|                                            |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
-|                                            |       <soap:Body>                                                                                                                                              |
-|                                            |          <ns2:MResponseResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                          |
-|                                            |             <return>                                                                                                                                           |
-|                                            |               <c>OK</c>                                                                                                                                        |
-|                                            |             </return>                                                                                                                                          |
-|                                            |           </ns2:MResponseResponse>                                                                                                                             |
-|                                            |      </soap:Body>                                                                                                                                              |
-|                                            |    </soap:Envelope>                                                                                                                                            |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Endpoint: https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M
+
+- 5\) richiesta recupero entry (MResponse)
+
+
+.. code-block:: http
+
+
+    POST /soap/nomeinterfacciaservizio/v1/M       HTTP/1.1
+
+    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Header>
+        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+                59eca678-5392-4e45-bdf3-7f55d398c940
+        </ns2:X-Correlation-ID>
+      </soap:Header>
+      <soap:Body>
+        <ns2:MResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio"/>
+      </soap:Body>
+    </soap:Envelope>
+
+- 6\) risposta recupero entry
+
+.. code-block:: http
+
+    HTTP/1.1 200 Success
+
+    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+       <soap:Body>
+          <ns2:MResponseResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+             <return>
+               <c>OK</c>
+             </return>
+           </ns2:MResponseResponse>
+      </soap:Body>
+    </soap:Envelope>
+
+
+
 
 .. [1]
    Cf. https://swagger.io/docs/specification/callbacks/

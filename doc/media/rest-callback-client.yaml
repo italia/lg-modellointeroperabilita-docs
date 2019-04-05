@@ -1,6 +1,6 @@
 openapi: 3.0.1
- info:
-   title: RESTCallbackClient
+info:
+ title: RESTCallbackClient
  version: "1.0"
  description: |-
    Questo file descrive semplicemente i metodi di un'API
@@ -9,51 +9,54 @@ openapi: 3.0.1
  license:
    name: Apache 2.0 License
    url: http://www.apache.org/licenses/LICENSE-2.0.html
- paths:
-   /MResponse:
-     post:
-       description: M
-       operationId: PushResponseMessage
-       parameters:
-       - name: X-Correlation-ID
-         in: header
-         schema:
-           type: string
-       requestBody:
+paths:
+ /MResponse:
+   post:
+     description: M
+     operationId: PushResponseMessage
+     parameters:
+     - name: X-Correlation-ID
+       in: header
+       schema:
+         type: string
+     requestBody:
+       content:
+         application/json:
+           schema:
+             $ref: '#/components/schemas/MResponseType'
+     responses:
+       200:
+         description: Risposta correttamente ricevuta
          content:
            application/json:
              schema:
-               $ref: '#/components/schemas/MResponseType'
-       responses:
-         500:
-           description: Errore interno avvenuto
-           content:
-             application/json:
-               schema:
-                 $ref: '#/components/schemas/ErrorMessage'
-         404:
-           description: Identificativo non trovato
-           content:
-             application/json:
-               schema:
-                 $ref: '#/components/schemas/ErrorMessage'
-         200:
-           description: Risposta correttamente ricevuta
-           content:
-             application/json:
-               schema:
-                 $ref: '#/components/schemas/ACKMessage'
- components:
-   schemas:
-     ACKMessage:
-       type: object
-       properties:
-         outcome:
-           type: string
-     MResponseType:
-       type: object
-       properties:
-         c:
-           type: string
-     ErrorMessage:
-       $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/schemas/Problem'
+               $ref: '#/components/schemas/ACKMessage'
+       404:
+         description: Identificativo non trovato
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/ErrorMessage'
+       default:
+         description: |-
+           Errore inatteso. Non ritornare informazioni
+           sulla logica interna e/o non pertinenti all'interfaccia.
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/ErrorMessage'
+
+components:
+ schemas:
+   ACKMessage:
+     type: object
+     properties:
+       outcome:
+         type: string
+   MResponseType:
+     type: object
+     properties:
+       c:
+         type: string
+   ErrorMessage:
+     $ref: 'https://raw.githubusercontent.com/teamdigitale/openapi/0.0.4/docs/definitions.yaml#/schemas/Problem'
