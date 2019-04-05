@@ -423,8 +423,8 @@ Descrizione
    :alt: interazione non bloccante tramite busy waiting
 
     sequenceDiagram
+       activate Fruitore
        Fruitore ->> Erogatore: (1): Request
-        activate Fruitore
        activate Erogatore
         Erogatore -->>Fruitore: (2): CorrelationID
        deactivate Fruitore
