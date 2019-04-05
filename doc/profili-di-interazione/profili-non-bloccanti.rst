@@ -190,6 +190,7 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
 1\) Request Header & Body
 
  .. code-block:: http
+
         POST /rest/v1/nomeinterfacciaservizio/resources/1234/M HTTP/1.1
         Content-Type: application/json
         X-ReplyTo: https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
@@ -206,6 +207,7 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
 2\) Response Header & Body (HTTP Status Code 202 Accepted)
 
 .. code-block:: http
+
         HTTP/1.1 202 Accepted
         Content-Type: application/json
         X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d
