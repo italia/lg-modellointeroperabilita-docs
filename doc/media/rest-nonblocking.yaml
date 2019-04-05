@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: RESTbusywaiting
+ title: RESTbusywaiting
  version: "1.0"
  description: |-
    Questo file descrive semplicemente i metodi di un'API
@@ -10,17 +10,10 @@ info:
    name: Apache 2.0 License
    url: http://www.apache.org/licenses/LICENSE-2.0.html
 paths:
-  /resources/{id_resource}/M:
+  /tasks:
     post:
-      description: M
+      description: Crea in maniera asincrona un task o una risorsa.
       operationId: PushMessage
-      parameters:
-      - name: id_resource
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
       requestBody:
         content:
           application/json:
@@ -31,117 +24,91 @@ paths:
           description: Preso carico correttamente di M
           headers:
             Location:
-              description: Posizione nella quale richiedere lo stato della richiesta
+              description: URL dove recuperare il risultato
               required: true
               schema:
                 type: string
+                format: uri
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MProcessingStatus'
-        404:
-          description: Identificativo non trovato
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        500:
-          description: Errore interno avvenuto
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-  /resources/{id_resource}/M/{id_task}/result:
+                $ref: '#/components/schemas/MTaskRef'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        default:
+          $ref: '#/components/responses/default'
+  /tasks/{id_task}:
     get:
       description: M Result
       operationId: PullResponseById
       parameters:
-      - name: id_resource
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: id_task
-        in: path
-        required: true
-        schema:
-          type: string
+      - $ref: '#/components/parameters/id_task'
       responses:
         200:
-          description: Esecuzione di M completata
+          description: |-
+            Lo stato della risorsa o del task. Se il task
+            è completato o la risorsa è disponibile, il valore
+            di `status` e' `processed`
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/MResponseType'
-        404:
-          description: Identificativo non trovato
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        500:
-          description: Errore interno avvenuto
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-  /resources/{id_resource}/M/{id_task}:
-    get:
-      description: M Processing Status
-      operationId: PullResponseStatusById
-      parameters:
-      - name: id_resource
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
-      - name: id_task
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        200:
-          description: Esecuzione di M completata
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MProcessingStatus'
-        303:
-          description: Preso carico correttamente di M
-          headers:
-            Location:
-              description: Posizione nella quale richiedere l'esito della richiesta
-              required: true
-              schema:
-                type: string
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MProcessingStatus'
-        404:
-          description: Identificativo non trovato
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
-        500:
-          description: Errore interno avvenuto
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorMessage'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
 components:
+  parameters:
+    id_task:
+      name: id_task
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    400BadRequest:
+      description: Richiesta non accoglibile
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    404NotFound:
+      description: Identificativo non trovato
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    default:
+      description: |-
+        Errore inatteso. Questo viene ritornato nel caso ci sia
+        un errore inatteso. Non vanno mai esposti i dati interni
+        del server.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
   schemas:
-    MProcessingStatus:
-      type: object
+    Link:
+      properties:
+        href:
+          type: string
+          format: url
+          example: 'https://api.example.com/tasks/1234'
+        type:
+          type: string
+          example: self
+
+    MTaskRef:
       properties:
         status:
           type: string
-        message:
-          type: string
+          example: processing
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
     MType:
       type: object
       properties:
@@ -154,6 +121,9 @@ components:
       properties:
         c:
           type: string
+        status:
+          type: string
+          example: processed
     AComplexType:
       type: object
       properties:

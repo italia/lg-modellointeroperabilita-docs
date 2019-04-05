@@ -51,14 +51,16 @@ Dettaglio
 ^^^^^^^^^
 
 .. mermaid::
+   :caption: Integrità della payload del messaggio
+   :alt: Integrità della payload del messaggio
 
    sequenceDiagram
       participant F as Fruitore
       participant E as Erogatore
       activate F
-      F->>E: (1) Richiesta
+      F->>E: 1. Request()
       activate E
-      E-->>F: (2) Risposta
+      E-->>F: 2. Reply
       deactivate E
       deactivate F
 
@@ -261,8 +263,19 @@ la relativa risposta.
 Dettaglio
 ^^^^^^^^^
 
-.. figure:: index/image1.png
-   :align: center
+.. mermaid::
+   :caption: Integrità della payload del messaggio
+   :alt: Integrità della payload del messaggio
+   
+   sequenceDiagram
+      participant F as Fruitore
+      participant E as Erogatore
+      activate F
+      F->>E: 1. Request()
+      activate E
+      E-->>F: 2. Reply
+      deactivate E
+      deactivate F
 
 .. _flusso-delle-interazioni-7:
 

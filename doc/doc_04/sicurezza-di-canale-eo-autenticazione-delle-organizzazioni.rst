@@ -35,14 +35,16 @@ Dettaglio
 ^^^^^^^^^
 
 .. mermaid::
+   :caption: Sicurezza di canale e/o Autenticazione dell'Erogatore
+   :alt: Sicurezza di canale e/o Autenticazione dell'Erogatore
    
    sequenceDiagram
       participant F as Fruitore
       participant E as Erogatore
       activate F
-      F->>E: (1) Richiesta
+      F->>E: 1. Request()
       activate E
-      E-->>F: (2) Risposta
+      E-->>F: 2. Reply()
       deactivate E
       deactivate F
 
@@ -137,14 +139,15 @@ Dettaglio
 ^^^^^^^^^
 
 .. mermaid::
-   
+   :caption: Sicurezza di canale e/o Autenticazione delle organizzazioni
+   :alt: Sicurezza di canale e/o Autenticazione delle organizzazioni
    sequenceDiagram
       participant F as Fruitore
       participant E as Erogatore
       activate F
-      F->>E: (1) Richiesta
+      F->>E: 1. Request()
       activate E
-      E-->>F: (2) Risposta
+      E-->>F: 2. Reply()
       deactivate E
       deactivate F
 
