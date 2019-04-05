@@ -397,7 +397,7 @@ Esempio porzione pacchetto HTTP
 
    POST http://localhost:8080/ws-test/service/hello/echo/
    Accept: application/json
-   Authorization: eyJhbGciOiJSUzI1NiIsInR5c.vz8...
+   Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
    .
    .
    .
