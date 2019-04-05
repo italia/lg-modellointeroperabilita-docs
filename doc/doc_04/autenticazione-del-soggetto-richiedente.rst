@@ -859,7 +859,7 @@ Esempio porzione pacchetto HTTP
 
 .. code-block:: JSON
 
-   GET http://localhost:8080/ws-test/service/hello/echo/Ciao
+   GET http://localhost:8080/ws-test/service/hello/echo/Ciao  HTTP/1.1
    Accept: application/json
    Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
 

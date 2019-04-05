@@ -166,8 +166,22 @@ proprietà:
 Flusso delle interazioni
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: ../index/image10.png
-   :align: center
+.. mermaid::
+   :caption: non ripudiabilità della trasmissione
+   :alt: non ripudiabilità della trasmissione
+
+   sequenceDiagram
+       activate Fruitore
+       Fruitore ->> Fruitore: (A): Verifica numero tentativi di inoltro
+
+        Fruitore ->> Erogatore: (B): Richiesta
+        activate Erogatore
+        Erogatore ->>Erogatore: (C): Persistenza erogatore
+        Erogatore -->>Fruitore: (D): Risposta
+       deactivate Erogatore
+
+        Fruitore ->> Fruitore: (E): Persistenza fruitore
+       deactivate Fruitore
    
 **A: Verifica numero tentativi di inoltro**
 
