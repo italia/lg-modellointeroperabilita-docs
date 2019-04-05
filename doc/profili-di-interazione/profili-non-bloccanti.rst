@@ -162,14 +162,16 @@ Friuitore ed erogatore, nel processare le richieste, DEVONO almeno:
 Esempio
 ^^^^^^^
 
- Specifica Servizio Server  https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTCallbackServer.yaml
+ **Specifica Servizio Server**
+ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTCallbackServer.yaml
 
  .. literalinclude:: ../media/rest-callback-server.yaml
     :language: yaml
 
 ----
 
- Specifica Servizio Client  https://api.indirizzoclient.it/rest/v1/nomeinterfacciaservizio/RESTCallbackClient.yaml
+ **Specifica Servizio Client**
+ https://api.indirizzoclient.it/rest/v1/nomeinterfacciaservizio/RESTCallbackClient.yaml
 
  .. literalinclude:: ../media/rest-callback-client.yaml
     :language: yaml
@@ -177,68 +179,78 @@ Esempio
 Di seguito un esempio di chiamata al metodo M con la presa in carico da
 parte dell’erogatore.
 
-+---------------------------------+----------------------------------------------------------------------------------------+
-| HTTP Operation                  | POST                                                                                   |
-+---------------------------------+----------------------------------------------------------------------------------------+
-| Endpoint                        | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
-+---------------------------------+----------------------------------------------------------------------------------------+
-| 1 Request Header & Body         | .. code-block:: http                                                                   |
-|                                 |                                                                                        |
-|                                 |                                                                                        |
-|                                 |     POST /rest/v1/nomeinterfacciaservizio/resources/1234/M HTTP/1.1                    |
-|                                 |     Content-Type: application/json                                                     |
-|                                 |     X-ReplyTo: https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse  |
-|                                 |                                                                                        |
-|                                 |     {                                                                                  |
-|                                 |       "a": {                                                                           |
-|                                 |         "a1": [1,...,2],                                                               |
-|                                 |         "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"                                           |
-|                                 |       },                                                                               |
-|                                 |       "b": "Stringa di esempio"                                                        |
-|                                 |     }                                                                                  |
-+---------------------------------+----------------------------------------------------------------------------------------+
-| 2 Response Header & Body        | .. code-block:: http                                                                   |
-| (HTTP Status Code 202 Accepted) |                                                                                        |
-|                                 |                                                                                        |
-|                                 |     HTTP/1.1 202 Accepted                                                              |
-|                                 |     Content-Type: application/json                                                     |
-|                                 |     X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d                             |
-|                                 |                                                                                        |
-|                                 |     {                                                                                  |
-|                                 |       "result" : "ACK"                                                                 |
-|                                 |     }                                                                                  |
-+---------------------------------+----------------------------------------------------------------------------------------+
+
+**HTTP Operation**
+POST
+
+
+**Endpoint**
+https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
+
+1\) Request Header & Body
+
+ .. code-block:: http
+
+        POST /rest/v1/nomeinterfacciaservizio/resources/1234/M HTTP/1.1
+        Content-Type: application/json
+        X-ReplyTo: https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
+
+        {
+          "a": {
+            "a1": [1,...,2],
+            "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
+          },
+          "b": "Stringa di esempio"
+        }
+
+
+2\) Response Header & Body (HTTP Status Code 202 Accepted)
+
+.. code-block:: http
+
+        HTTP/1.1 202 Accepted
+        Content-Type: application/json
+        X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d
+
+        {
+          "result" : "ACK"
+        }
+
 
 Di seguito un esempio di risposta da parte dell’erogatore verso il fruitore.
 
-+---------------------------------+------------------------------------------------------------------------+
-| HTTP Operation                  | POST                                                                   |
-+---------------------------------+------------------------------------------------------------------------+
-| Endpoint                        | https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse |
-+---------------------------------+------------------------------------------------------------------------+
-| 3 Request Header & Body         | .. code-block:: http                                                   |
-|                                 |                                                                        |
-|                                 |    POST /rest/v1/nomeinterfacciaclient/Mresponse HTTP/1.1              |
-|                                 |    X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d              |
-|                                 |                                                                        |
-|                                 |    {                                                                   |
-|                                 |       "c": "OK"                                                        |
-|                                 |    }                                                                   |
-+---------------------------------+------------------------------------------------------------------------+
-| 4 Response Header & Body        | .. code-block:: http                                                   |
-| (HTTP Status Code 200 Success)  |                                                                        |
-|                                 |     HTTP/1.1 200 Success                                               |
-|                                 |     Content-Type: application/json                                     |
-|                                 |                                                                        |
-|                                 |     {                                                                  |
-|                                 |       "result" : "ACK"                                                 |
-|                                 |     }                                                                  |
-+---------------------------------+------------------------------------------------------------------------+
+**HTTP Operation**
+POST
+
+**Endpoint**
+https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
+
+3\) Request Header & Body
+
+.. code-block:: http
+
+        POST /rest/v1/nomeinterfacciaclient/Mresponse HTTP/1.1
+        X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d
+
+        {
+           "c": "OK"
+        }
+
+4\) Response Header & Body (HTTP Status Code 200 Success)
+
+.. code-block:: http
+
+        HTTP/1.1 200 Success
+        Content-Type: application/json
+
+        {
+          "result" : "ACK"
+        }
 
 .. _interfaccia-soap-nonbloccante-1:
 
 Interfaccia SOAP
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Nel caso di implementazione mediante tecnologia SOAP, l’endpoint di
 callback ed il correlation ID, vengono inseriti all’interno dell’header
@@ -295,7 +307,8 @@ framework di sviluppo:
 Esempio
 ^^^^^^^
 
- Specifica Servizio Server                     https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl
+ **Specifica Servizio Server**
+ https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl
 
  .. literalinclude:: ../media/soap-callback-server.wsdl
     :language: xml
@@ -303,7 +316,8 @@ Esempio
 
 ----
 
- Specifica Servizio Callback                      https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1?wsdl
+ **Specifica Servizio Callback**
+ https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1?wsdl
 
  .. literalinclude:: ../media/soap-callback-client.wsdl
     :language: xml
@@ -312,80 +326,89 @@ Esempio
 Segue un esempio di chiamata al metodo M in cui l’erogatore conferma di
 essersi preso carico della richiesta.
 
-+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint        | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1                                                                                                      |
-+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Method          | MRequest                                                                                                                                                                   |
-+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| 1 Request Body  | .. code-block:: XML                                                                                                                                                        |
-|                 |                                                                                                                                                                            |
-|                 |     <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                                 |
-|                 |       <soap:Header>                                                                                                                                                        |
-|                 |         <ns2:X-ReplyTo xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">http:///api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1</ns2:X-ReplyTo> |
-|                 |       </soap:Header>                                                                                                                                                       |
-|                 |       <soap:Body>                                                                                                                                                          |
-|                 |         <ns2:MRequest xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                                                |
-|                 |           <M>                                                                                                                                                              |
-|                 |            <o_id>1234</o_id>                                                                                                                                               |
-|                 |             <a>                                                                                                                                                            |
-|                 |              <a1s><a1>1</a1>...<a1>2</a1></a1s>                                                                                                                            |
-|                 |              <a2>Stringa di esempio</a2>                                                                                                                                   |
-|                 |             </a>                                                                                                                                                           |
-|                 |             <b>Stringa di esempio</b>                                                                                                                                      |
-|                 |           </M>                                                                                                                                                             |
-|                 |         </ns2:MRequest>                                                                                                                                                    |
-|                 |       </soap:Body>                                                                                                                                                         |
-|                 |     </soap:Envelope>                                                                                                                                                       |
-+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| 2 Response Body | .. code-block:: XML                                                                                                                                                        |
-|                 |                                                                                                                                                                            |
-|                 |     <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                                 |
-|                 |       <soap:Header>                                                                                                                                                        |
-|                 |         <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-Correlation-ID>             |
-|                 |       </soap:Header>                                                                                                                                                       |
-|                 |       <soap:Body>                                                                                                                                                          |
-|                 |       <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                                          |
-|                 |           <return>                                                                                                                                                         |
-|                 |             <outcome>ACCEPTED</outcome>                                                                                                                                    |
-|                 |           </return>                                                                                                                                                        |
-|                 |         </ns2:MRequestResponse>                                                                                                                                            |
-|                 |       </soap:Body>                                                                                                                                                         |
-|                 |     </soap:Envelope>                                                                                                                                                       |
-+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+**Endpoint**
+https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1
 
-+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Endpoint          | https://api.indirizzoclient.it/soap/nomeinterfacciaclient/v1                                                                                                   |
-+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Method            | MRequestResponse                                                                                                                                               |
-+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| (3) Request Body  | .. code-block:: XML                                                                                                                                            |
-|                   |                                                                                                                                                                |
-|                   |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
-|                   |      <soap:Header>                                                                                                                                             |
-|                   |        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-Correlation-ID>  |
-|                   |      </soap:Header>                                                                                                                                            |
-|                   |      <soap:Body>                                                                                                                                               |
-|                   |        <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                             |
-|                   |          <return>                                                                                                                                              |
-|                   |            <c>OK</c>                                                                                                                                           |
-|                   |          </return>                                                                                                                                             |
-|                   |        </ns2:MRequestResponse>                                                                                                                                 |
-|                   |      </soap:Body>                                                                                                                                              |
-|                   |    </soap:Envelope>                                                                                                                                            |
-+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| (4) Response Body |                                                                                                                                                                |
-|                   | .. code-block:: XML                                                                                                                                            |
-|                   |                                                                                                                                                                |
-|                   |    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                                                                      |
-|                   |      <soap:Body>                                                                                                                                               |
-|                   |        <ns2:MRequestResponseResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">                                                     |
-|                   |          <return>                                                                                                                                              |
-|                   |            <outcome>ACK</outcome>                                                                                                                              |
-|                   |          </return>                                                                                                                                             |
-|                   |        </ns2:MRequestResponseResponse>                                                                                                                         |
-|                   |      </soap:Body>                                                                                                                                              |
-|                   |    </soap:Envelope>                                                                                                                                            |
-+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+**Method**
+MRequest
+
+1\) Request Body
+
+.. code-block:: XML
+
+        <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+          <soap:Header>
+            <ns2:X-ReplyTo xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">http:///api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1</ns2:X-ReplyTo>
+          </soap:Header>
+          <soap:Body>
+            <ns2:MRequest xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+              <M>
+               <o_id>1234</o_id>
+                <a>
+                 <a1s><a1>1</a1>...<a1>2</a1></a1s>
+                 <a2>Stringa di esempio</a2>
+                </a>
+                <b>Stringa di esempio</b>
+              </M>
+            </ns2:MRequest>
+          </soap:Body>
+        </soap:Envelope>
+
+2\) Response Body
+
+.. code-block:: XML
+
+        <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+          <soap:Header>
+            <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-Correlation-ID>
+          </soap:Header>
+          <soap:Body>
+          <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+              <return>
+                <outcome>ACCEPTED</outcome>
+              </return>
+            </ns2:MRequestResponse>
+          </soap:Body>
+        </soap:Envelope>
+
+
+**Endpoint**
+https://api.indirizzoclient.it/soap/nomeinterfacciaclient/v1
+
+**Method**
+MRequestResponse
+
+
+(3) Request Body
+
+.. code-block:: XML
+
+        <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+          <soap:Header>
+            <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-Correlation-ID>
+          </soap:Header>
+          <soap:Body>
+            <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+              <return>
+                <c>OK</c>
+              </return>
+            </ns2:MRequestResponse>
+          </soap:Body>
+        </soap:Envelope>
+
+(4) Response Body
+
+.. code-block:: XML
+
+        <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+          <soap:Body>
+            <ns2:MRequestResponseResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+              <return>
+                <outcome>ACK</outcome>
+              </return>
+            </ns2:MRequestResponseResponse>
+          </soap:Body>
+        </soap:Envelope>
 
 .. _paragrafo-nonbloccante-2:
 
