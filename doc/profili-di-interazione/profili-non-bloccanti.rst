@@ -469,29 +469,29 @@ Interfaccia REST
    :caption: Interazione non bloccante tramite busy waiting
    :alt: Interazione non bloccante tramite busy waiting
 
-    sequenceDiagram
-       activate Fruitore
-        Fruitore ->> Erogatore: (1): Request
-       activate Erogatore
-        Erogatore -->>Fruitore: (2): Location
-       deactivate Fruitore
-       deactivate Erogatore
-
-       loop 0..n
-            Fruitore ->>Erogatore: (3): Retrieve Resource/Result
-            activate Fruitore
-            activate Erogatore
-            Erogatore-->> Fruitore : (4a): Resource not ready
-            deactivate Fruitore
-            deactivate Erogatore
-       end
-
-       activate Fruitore
-         Fruitore ->>Erogatore: (5): Retrieve Resource/Result
-       activate Erogatore
-         Erogatore-->> Fruitore : (6): Resource ready
-       deactivate Fruitore
-       deactivate Erogatore
+   sequenceDiagram
+		participant F as Fruitore
+		participant E as Erogatore
+		activate F
+		F ->> E: 1. Request()
+		activate E
+		E -->>F: 2. Location
+		deactivate F
+		deactivate E
+		loop check status
+		activate F
+		F ->>E: 3. RetrieveResource()
+		activate E
+		E-->> F : 4. Not Ready
+		deactivate F
+		deactivate E
+		end
+		activate F
+		F ->>E: 5. RetrieveResource()
+		activate E
+		E-->> F : 6. Resource
+		deactivate F
+		deactivate E
 
 
 Nel caso in cui il profilo venga implementato con tecnologia REST,
@@ -517,11 +517,11 @@ riportato nel Capitolo 1):
    (2) per richiedere lo stato della risorsa; Il verbo HTTP
    utilizzato deve essere GET;
 
--  Al passo (4a) l’erogatore indica che la risorsa non è ancora pronta,
+-  Al passo (4) l’erogatore indica che la risorsa non è ancora pronta,
    fornendo informazioni circa lo stato della lavorazione
    della richiesta; il codice HTTP restituito è ``200 OK``;
 
--  Se la risorsa è pronta (passo (4b), l’erogatore
+-  Se la risorsa è pronta (passo (5), l’erogatore
    risponde con la rappresentazione della risorsa;
 
 Il corpo dei messaggi HTTP scambiati durante l’interazione DEVE seguire
