@@ -82,8 +82,8 @@ l’erogatore DEVE almeno:
 
 Esempio
 ~~~~~~~
-
-Specifica Servizio | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTblocking.yaml
+**Specifica Servizio**
+https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTblocking.yaml
 
 .. literalinclude:: ../media/rest-blocking.yaml
     :language: yaml
@@ -160,7 +160,8 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 
 Esempio
 ~~~~~~~
-Specifica Servizio: https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl
+**Specifica Servizio**
+https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl
 
 .. literalinclude:: ../media/soap-blocking.wsdl
    :language: xml
