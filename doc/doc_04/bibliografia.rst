@@ -19,28 +19,28 @@ Riferimenti Bibliografici
 .. _sec4:
 
 4. OASIS wss-x509TokenProfile-v1.1.1-csprd01 - A. Nadalin; C. Kaler; R.
-   Monzillo; P. Hallam-Baker; C. Milono. “\ `Web Services Security X.509
+   Monzillo; P. Hallam-Baker; C. Milono. "\ `Web Services Security X.509
    Certificate Token Profile Version
-   1.1.1 <http://docs.oasis-open.org/wss-m/wss/v1.1.1/csprd01/wss-x509TokenProfile-v1.1.1-csprd01.html>`__\ ”
+   1.1.1 <http://docs.oasis-open.org/wss-m/wss/v1.1.1/csprd01/wss-x509TokenProfile-v1.1.1-csprd01.html>`__\ "
 
 .. _sec5:
 
-5. RFC 5246 - T. Dierks; E. Rescorla - “\ `The Transport Layer Security
+5. RFC 5246 - T. Dierks; E. Rescorla - "\ `The Transport Layer Security
    (TLS) Protocol Version
-   1.2 <https://www.ietf.org/rfc/rfc5246.txt>`__\ ”
+   1.2 <https://www.ietf.org/rfc/rfc5246.txt>`__\ "
 
 .. _sec6:
 
-6. RFC 8446 - E. Rescorla - “\ `The Transport Layer Security (TLS)
-   Protocol Version 1.3 <https://tools.ietf.org/html/rfc8446>`__\ ”
+6. RFC 8446 - E. Rescorla - "\ `The Transport Layer Security (TLS)
+   Protocol Version 1.3 <https://tools.ietf.org/html/rfc8446>`__\ "
 
 .. _sec7:
 
-7. RFC 2119 - S. Bradner - “\ `Key words for use in RFCs to Indicate
-   Requirement Levels <https://www.ietf.org/rfc/rfc2119.txt>`__\ ”
+7. RFC 2119 - S. Bradner - "\ `Key words for use in RFCs to Indicate
+   Requirement Levels <https://www.ietf.org/rfc/rfc2119.txt>`__\ "
 
 .. _sec8:
 
-8. RFC 3553 - E. Rescorla, et al. - “\ `Guidelines for Writing RFC Text
+8. RFC 3553 - E. Rescorla, et al. - "\ `Guidelines for Writing RFC Text
    on Security
-   Considerations <https://www.ietf.org/rfc/rfc3552.txt>`__\ ”
+   Considerations <https://www.ietf.org/rfc/rfc3552.txt>`__\ "
