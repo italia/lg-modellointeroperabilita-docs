@@ -362,13 +362,15 @@ filtrando i campi delle risorse restituite.
 
 Esempio 1: Non filtrato
 
-::
+.. code-block:: HTTP
+    :caption: Request
 
-    >> Request:
     GET http://api.example.org/resources/123 HTTP/1.1
-    HTTP/1.1 200 OK
 
-    << Response:
+.. code-block:: HTTP
+    :caption: Response
+
+    HTTP/1.1 200 OK
     Content-Type: application/json
 
     {
@@ -386,12 +388,14 @@ Esempio 1: Non filtrato
 
 Esempio 2: Filtrato
 
-:: code-block:: HTTP
+.. code-block:: HTTP
+    :caption: Request
 
-    >> Request:
-    GET http://api.example.org/resources/123?fields=(name,partner(name)) HTTP/1.1
+    GET /resources/123?fields=(name,partner(name)) HTTP/1.1
 
-    << Response:
+.. code-block:: HTTP
+    :caption: Response
+
     HTTP/1.1 200 OK
     Content-Type: application/json
 
@@ -411,12 +415,19 @@ In tal caso va usato:
    filtering
 -  l'attributo ``_embedded`` contenente le entry espanse.
 
-:: code-block:: HTTP
 
-    >> Request:
+.. code-block:: HTTP
+    :caption: Request
+
     GET /tax_code/MRORSS12T05E472W?embed=(person) HTTP/1.1
+    Accept: application/json
 
-    << Response:
+.. code-block:: HTTP
+    :caption: Response
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+
     {
       "tax_code":"MRORSS12T05E472W",
       "_embedded":{
