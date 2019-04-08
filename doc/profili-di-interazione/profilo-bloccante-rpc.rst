@@ -90,40 +90,49 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTblocki
 
 Di seguito un esempio di chiamata al metodo ``M``.
 
-+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| Http Operation                                                 | POST                                                                                   |
-+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| Endpoint                                                       | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M |
-+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| (1) Request Body                                               | .. code-block:: JSON                                                                   |
-|                                                                |                                                                                        |
-|                                                                |    {                                                                                   |
-|                                                                |       "a": {                                                                           |
-|                                                                |       "a1s": [1,2],                                                                    |
-|                                                                |       "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"                                             |
-|                                                                |       },                                                                               |
-|                                                                |       "b": "Stringa di esempio"                                                        |
-|                                                                |    }                                                                                   |
-+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP Status Code 200 OK)                    | .. code-block:: JSON                                                                   |
-|                                                                |                                                                                        |
-|                                                                |    {                                                                                   |
-|                                                                |      "c" : "risultato"                                                                 |
-|                                                                |    }                                                                                   |
-+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP Status Code 500 Internal Server Error) |                                                                                        |
-|                                                                | .. literalinclude:: ../media/problem-500.json                                          |
-|                                                                |    :language: javascript                                                               |
-|                                                                |                                                                                        |
-+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP Status Code 400 Bad Request)           |                                                                                        |
-|                                                                | .. literalinclude:: ../media/problem-400.json                                          |
-|                                                                |    :language: javascript                                                               |
-+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| (2) Response Body (HTTP Status Code 404 Not Found)             |                                                                                        |
-|                                                                | .. literalinclude:: ../media/problem-404.json                                          |
-|                                                                |    :language: javascript                                                               |
-+----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+**Http Operation**
+POST
+
+**Endpoint**
+https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
+
+(1) Request Body
+
+.. code-block:: JSON
+
+    {
+     "a": {
+       "a1s": [1,2],
+       "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
+       },
+       "b": "Stringa di esempio"
+    }
+
+
+(2) Response Body (HTTP Status Code 200 OK)
+
+.. code-block:: JSON
+
+    {
+      "c" : "risultato"
+    }
+
+(2) Response Body (HTTP Status Code 500 Internal Server Error)
+
+.. literalinclude:: ../media/problem-500.json
+    :language: javascript
+
+
+(2) Response Body (HTTP Status Code 400 Bad Request)
+
+.. literalinclude:: ../media/problem-400.json
+    :language: javascript
+
+(2) Response Body (HTTP Status Code 404 Not Found)
+
+.. literalinclude:: ../media/problem-404.json
+    :language: javascript
 
 Interfaccia SOAP
 -----------------
@@ -160,6 +169,7 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 
 Esempio
 ~~~~~~~
+
 **Specifica Servizio**
 https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl
 
@@ -168,75 +178,82 @@ https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1?wsdl
 
 A seguire un esempio di chiamata al metodo ``M``.
 
-+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| Endpoint                                                      | https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1                                      |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| Method                                                        | M                                                                                                          |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| 1. Request Body                                               | .. code-block:: XML                                                                                        |
-|                                                               |                                                                                                            |
-|                                                               |                                                                                                            |
-|                                                               |     <?xml version="1.0"?>                                                                                  |
-|                                                               |                                                                                                            |
-|                                                               |     <soap:Envelope                                                                                         |
-|                                                               |           xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"                                            |
-|                                                               |           soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">                                    |
-|                                                               |                                                                                                            |
-|                                                               |         <soap:Header>                                                                                      |
-|                                                               |                                                                                                            |
-|                                                               |           <!--Autenticazione-->                                                                            |
-|                                                               |         </soap:Header>                                                                                     |
-|                                                               |                                                                                                            |
-|                                                               |         <soap:Body xmlns:m="http://api.amministrazioneesempio.it/nomeinterfacciaservizio">                 |
-|                                                               |         <m:M>                                                                                              |
-|                                                               |           <m:oId>1234</m:oId>                                                                              |
-|                                                               |           <m:a>                                                                                            |
-|                                                               |             <m:a1s><a1>1</a1>...<a1>2</a1></m:a1s>                                                         |
-|                                                               |             <m:a2>RGFuJ3MgVG9vbHMgYXJlIGNvb2wh</m:a2>                                                      |
-|                                                               |           </m:a>                                                                                           |
-|                                                               |           <m:b>Stringa di esempio</m:b>                                                                    |
-|                                                               |         </m:M>                                                                                             |
-|                                                               |         </soap:Body>                                                                                       |
-|                                                               |                                                                                                            |
-|                                                               |     </soap:Envelope>                                                                                       |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| 2. Response Body (HTTP status code 200 OK)                    | .. code-block:: XML                                                                                        |
-|                                                               |                                                                                                            |
-|                                                               |     <?xml version="1.0"?>                                                                                  |
-|                                                               |                                                                                                            |
-|                                                               |     <soap:Envelope                                                                                         |
-|                                                               |     xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"                                                  |
-|                                                               |     soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">                                          |
-|                                                               |                                                                                                            |
-|                                                               |     <soap:Body xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">                         |
-|                                                               |     <m:MResponse>                                                                                          |
-|                                                               |       <return>                                                                                             |
-|                                                               |         <m:c>OK</m:c>                                                                                      |
-|                                                               |       </return>                                                                                            |
-|                                                               |     </m:MResponse>                                                                                         |
-|                                                               |     </soap:Body>                                                                                           |
-|                                                               |                                                                                                            |
-|                                                               |     </soap:Envelope>                                                                                       |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| 2. Response Body (HTTP status code 500 Internal Server Error) | .. code-block:: XML                                                                                        |
-|                                                               |                                                                                                            |
-|                                                               |                                                                                                            |
-|                                                               |     <?xml version="1.0"?>                                                                                  |
-|                                                               |                                                                                                            |
-|                                                               |     <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">                                 |
-|                                                               |       <soap:Body>                                                                                          |
-|                                                               |         <soap:Fault>                                                                                       |
-|                                                               |            <faultcode>soap:Server</faultcode>                                                              |
-|                                                               |            <faultstring>Error</faultstring>                                                                |
-|                                                               |            <detail>                                                                                        |
-|                                                               |               <ns2:ErrorMessageFault xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio"> |
-|                                                               |                  <customFaultCode>1234</customFaultCode>                                                   |
-|                                                               |               </ns2:ErrorMessageFault>                                                                     |
-|                                                               |            </detail>                                                                                       |
-|                                                               |         </soap:Fault>                                                                                      |
-|                                                               |      </soap:Body>                                                                                          |
-|                                                               |     </soap:Envelope>                                                                                       |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+**Endpoint**
+https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1
+
+Method
+**M**
+
+1. Request Body
+
+.. code-block:: XML
+
+    <?xml version="1.0"?>
+
+    <soap:Envelope
+          xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"
+          soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
+
+        <soap:Header>
+
+          <!--Autenticazione-->
+        </soap:Header>
+
+        <soap:Body xmlns:m="http://api.amministrazioneesempio.it/nomeinterfacciaservizio">
+        <m:M>
+          <m:oId>1234</m:oId>
+          <m:a>
+            <m:a1s><a1>1</a1>...<a1>2</a1></m:a1s>
+            <m:a2>RGFuJ3MgVG9vbHMgYXJlIGNvb2wh</m:a2>
+          </m:a>
+          <m:b>Stringa di esempio</m:b>
+        </m:M>
+        </soap:Body>
+
+    </soap:Envelope>
+
+
+2. Response Body (HTTP status code 200 OK)
+
+.. code-block:: XML
+
+        <?xml version="1.0"?>
+
+        <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"
+        soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
+
+        <soap:Body xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+        <m:MResponse>
+          <return>
+            <m:c>OK</m:c>
+          </return>
+        </m:MResponse>
+        </soap:Body>
+
+        </soap:Envelope>
+
+2. Response Body (HTTP status code 500 Internal Server Error)
+
+.. code-block:: XML
+
+    <?xml version="1.0"?>
+
+    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Body>
+        <soap:Fault>
+           <faultcode>soap:Server</faultcode>
+           <faultstring>Error</faultstring>
+           <detail>
+              <ns2:ErrorMessageFault xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+                 <customFaultCode>1234</customFaultCode>
+              </ns2:ErrorMessageFault>
+           </detail>
+        </soap:Fault>
+     </soap:Body>
+    </soap:Envelope>
+
 
 .. [1]
    http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
