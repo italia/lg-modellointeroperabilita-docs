@@ -86,8 +86,6 @@ riportando l’esito ed indicando il correlation ID. Il fruitore riconosce
 (sempre mediante un messaggio di ack) la ricezione della risposta (passo
 (4)).
 
-Il profilo basato su callback è un caso particolare di publish/subscribe
-(vedi Capitolo 3).
 
 .. TODO Referenza
 
