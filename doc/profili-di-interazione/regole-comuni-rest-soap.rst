@@ -2,16 +2,16 @@ Raccomandazioni tecniche per REST
 =================================
 
 In questa sezione si raccolgono per la tecnologia REST
-dei suggerimenti al fine di favorire l'interoperabilità.
+delle indicazioni al fine di favorire l'interoperabilità.
 
 Formato dei dati
 ~~~~~~~~~~~~~~~~
 
-Nella tecnologia REST, la comunicazione DEVE avvenire tramite oggetti JSON :RFC:`7159` con il relativo
-​\ `media-type​ <https://www.iana.org/assignments/media-types/media-types.xhtml>`__
+Nella tecnologia REST, la comunicazione DOVREBBE avvenire tramite oggetti JSON :RFC:`7159` con il relativo
+​\  `media-type​ <https://www.iana.org/assignments/media-types/media-types.xhtml>`__
 ``application/json``.
 
-Il vincolo indicato in precedenza può essere violato in presenza di specifiche in cui gli oggetti di
+E' possibile eccepire in presenza di specifiche in cui gli oggetti di
 comunicazione sono formalizzati in forma diversa da JSON (es. INSPIRE, HL7).
 
 .. TODO: non è chiaro il fine del paragrafo, sembra in sovrapposizione con quanto scritto nel paragrafo precedente.
@@ -19,8 +19,8 @@ comunicazione sono formalizzati in forma diversa da JSON (es. INSPIRE, HL7).
 Codificare dati strutturati con oggetti JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-I dati strutturati DEVONO essere trasferiti tramite ​oggetti JSON​
-​:RFC:`7159`, in modo da permettere l'estensione retrocompatibile della
+I dati in formato JSON :RFC:`7159` strutturati DEVONO essere trasferiti tramite ​oggetti
+​, in modo da permettere l'estensione retrocompatibile della
 response con ulteriori attributi (Eg. paginazione).
 
 Cioè:
@@ -62,17 +62,25 @@ Si raccomanda di evitare l'uso di media-type personalizzati come da ​\ `RFC
 - `application/problem+json​ <https://www.iana.org/assignments/media-types/application/problem+json>`__,
 - `application/jose+json​ <https://www.iana.org/assignments/media-types/application/jose+json>`__,
 
-Si raccomanda di utilizzare Content-Type specifici per dati binari, immagini o documenti
+Si raccomanda di utilizzare Content-Type semanticamente coerenti
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Quando si ritornano dati binari, immagini o documenti (eg. pdf, png, ...)
+utilizzare
+
+.. code-block::
+
+   Content-Type: application/pdf
+
 
 Utilizzare le properties secondo nomenclature standard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le properties DEVONO utilizzare ove possibile la nomenclatura indicata
-nelle Linee Guida per la valorizzazione del Patrimonio informativo
-nazionale e le relative ontologie.
+nelle `Linee Guida per la valorizzazione del Patrimonio informativo
+pubblico <https://docs.italia.it/italia/daf/lg-patrimonio-pubblico/it/bozza/>`__
+e le `relative ontologie <https://github.com/italia/daf-ontologie-vocabolari-controllati>`__.
 
-.. TODO: indicare i riferimenti a ontopia
 
 Si raccomanda di utilizzare formati standard per Data ed Ora
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -114,13 +122,13 @@ Un'analoga sintassi ISO8601 per lo stesso intervallo è la seguente:
 
 ``P0001-02-10T2:30:00``
 
-Utilizzare le convenzioni di rappresentazione
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  I nomi degli array devono essere al plurale.
+Utilizzare le seguenti convenzioni di rappresentazione
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 -  I booleani non devono essere ``null``.
 -  Gli array vuoti non devono essere ``null``, ma liste vuote, ad es. ``[]``.
--  Le enumeration devono essere rappresentate da stringhe non nulle
+-  Le enumeration devono essere rappresentate da stringhe non nulle.
 
 Usare standard per Lingue, Nazioni e Monete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -131,16 +139,12 @@ la Valorizzazione del Patrimonio Informativo Nazionale, inclusi:
 -  `ISO 3166-1-alpha2 country (due lettere) <http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__
 -  `ISO 639-1 language code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
 -  :BCP:`47` (basato su ISO 639-1) per le varianti dei linguaggi.
-   Dove non strettamente necessario il subta​g​b​, basta la prima parte (ad es. it vs it- IT)
+   Dove non strettamente necessario il subta​g​​, basta la prima parte (ad es. it vs it- IT)
 -  `ISO 4217 currency codes​ <http://en.wikipedia.org/wiki/ISO_4217>`__
-   alpha-3 usato in FatturePA_
+   alpha-3
 
 Per le valute, è possibile basarsi sullo schema Money - ripreso dal
 lavoro di standardizzazione del ​\ `Berlin Group sotto l'egida dell'European Standards​ <https://www.berlin-group.org/>`__
-ed indicato in:
-
--  https://github.com/teamdigitale/openapi/tree/master/docs/schemas
-
 e contenente i campi:
 
 -  amount​ (string)
@@ -151,10 +155,10 @@ Esempio 1:
 .. code-block:: JSON
 
     {
-       "tax_id":"imu-e472",
-       "value":{
-          "amount":"100.23",
-          "currency":"EUR"
+       "tax_id": "imu-e472",
+       "value": {
+          "amount": "100.23",
+          "currency": "EUR"
        }
     }
 
@@ -162,23 +166,27 @@ Esempio 1:
 Definire ``format`` quando si usano i tipi Number ed Integer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-I numeri e gli interi devono indicare la dimensione secondo la seguente
-tabella. Le implementazioni devono utilizzare il tipo più adatto.
+I numeri e gli interi devono indicare la dimensione utilizzando
+il parametro ``format``. La seguente tabella - non esaustiva - elenca
+un set minimo di formati. Le implementazioni devono utilizzare il tipo più adatto.
+
+Le parti possono concordare la definizione di nuovi tipi, che dev'essere
+documentata nell'interfaccia.
 
 .. csv-table::
 
     :header:  type,   format,   valori ammessi
-    integer,   int32,   interi tra -2^31 e 2^31-1
-    integer,   int64,   interi tra -2^63 e 2^63-1
-    integer,   bigint,   intero con segno di grandezza arbitraria
-    number,   float,   IEEE 754-2008/ISO 60559:2011 decimale a 64 bit
-    number,   double,   IEEE 754-2008/ISO 60559:2011 decimale a 128 bit
-    number,   decimal,   decimale a precisione ​fissa​ e arbitraria
+    integer,  int32,    interi tra -2^31 e 2^31-1
+    integer,  int64,    interi tra -2^63 e 2^63-1
+    number,   decimal32 o float,    IEEE 754-2008/ISO 60559:2011 decimale a 32 bit
+    number,   decimal64 o double,    IEEE 754-2008/ISO 60559:2011 decimale a 64 bit
+    number,   decimal128,   IEEE 754-2008/ISO 60559:2011 decimale a 128 bit
 
 
 Le proprietà degli oggetti JSON devono avere un naming consistente
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Segliere uno dei due stili di seguito e devono essere codificate in ASCII:
+
+Segliere uno dei due stili di seguito e codificarlo in ASCII:
 
 -  snake_case
 -  camelCase
