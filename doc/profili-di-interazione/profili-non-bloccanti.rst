@@ -509,8 +509,10 @@ riportato nel Capitolo 1):
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, un percorso di risorsa per interrogare lo
+
    stato di processamento della richiesta utilizzando :httpheader:`Location`;
    Il codice HTTP di stato DEVE essere :httpstatus:`202` a
+
    meno che non si verifichino errori;
 
 -  Al passo (3), il fruitore DEVE utilizzare il percorso di cui al passo

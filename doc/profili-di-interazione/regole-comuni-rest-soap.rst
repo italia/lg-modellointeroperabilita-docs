@@ -54,8 +54,7 @@ Cioè:
 Evitare Content-Type personalizzati
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Si raccomanda di evitare l'uso di media-type personalizzati come da ​\ `RFC
-6838 <https://tools.ietf.org/html/rfc6838#section-3.4>`__ (eg.
+Si raccomanda di evitare l'uso di media-type personalizzati come da ​:RFC:`6838#section-3.4` (eg.
 ``application/x.custom.name+json``) ed utilizzare nomi standard come:
 
 - `application/json​ <https://www.iana.org/assignments/media-types/application/json>`__,
@@ -880,7 +879,7 @@ Riferimenti
 ~~~~~~~~~~~~~~~~~~
 
 
-.. _`HTTP date format`: http://tools.ietf.org/html/rfc7231#section-7.1.1.1
+.. _`HTTP date format`: :RFC:`7231#section-7.1.1.1`
 
 .. _`Linee Guida per lo sviluppo di sicuro di codice`:
     https://www.agid.gov.it/sites/default/files/repository_files/documentazione/linee_guida_per_lo_sviluppo_sicuro_di_codice_v1.0.pdf
