@@ -1,4 +1,5 @@
-git+https://github.com/italia/docs-italia-theme.git
+git+https://github.com/italia/docs-italia-theme.git@bootstrap-italia
+git+https://github.com/teamdigitale/sphinxcontrib-httpspec
 git+https://github.com/pdavide/sphinxcontrib-discourse
 git+https://github.com/pdavide/sphinxcontrib-versiontag
 recommonmark

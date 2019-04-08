@@ -54,7 +54,7 @@ seguite le seguenti indicazioni:
    l’esecuzione della chiamata a procedura il verbo HTTP POST su un URL
    contenente gli ID interessati ed il nome del metodo;
 
--  Al passo (2) il fruitore DEVE utilizzare lo stato 200 OK a meno che
+-  Al passo (2) il fruitore DEVE utilizzare :httpstatus:`200` a meno che
    non si verifichino errori.
 
 Regole di processamento
@@ -66,18 +66,18 @@ particolare, al ricevimento della richiesta da parte del fruitore,
 l’erogatore DEVE almeno:
 
 -  Verificare la validità sintattica dei dati in ingresso. In caso di
-   dati errati deve restituire il codice HTTP 400 Bad Request fornendo
+   dati errati deve restituire :httpstatus:`400` Bad Request fornendo
    nel body di risposta dettagli circa l’errore;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVE restituire il codice 404 Not Found, indicando nel body di
+   DEVE restituire :httpstatus:`404` Not Found, indicando nel body di
    risposta quale degli ID è mancante;
 
 -  In caso di errori non dipendenti dal fruitore, DEVE restituire i
    codici HTTP 5XX rispettando la semantica degli stessi ed indicando
    nel body di risposta il motivo dell’errore;
 
--  In caso di successo restituire il codice HTTP 200 OK, riempiendo il
+-  In caso di successo restituire :httpstatus:`200` OK, riempiendo il
    body di risposta con il risultato dell’operazione.
 
 Esempio
@@ -152,17 +152,17 @@ del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
 Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 
 -  DEVE verificare la validità sintattica dei dati in ingresso. In caso
-   di dati errati deve restituire il codice HTTP 500 fornendo dettagli
+   di dati errati deve restituire :httpstatus:`500` fornendo dettagli
    circa l’errore utilizzando il meccanismo della SOAP fault;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVE restituire il codice HTTP 500 indicando tramite la SOAP fault
+   DEVE restituire :httpstatus:`500` indicando tramite la SOAP fault
    quale degli ID è mancante;
 
 -  In caso di errori non dipendenti dal fruitore, DEVE restituire il
    codice HTTP 500, indicando il motivo dell’errore nella SOAP fault;
 
--  In caso di successo restituire il codice HTTP 200 OK, riempiendo il
+-  In caso di successo restituire :httpstatus:`200` OK, riempiendo il
    body di risposta con il risultato dell’operazione.
 
 .. _esempio-rpc-soap-1:
