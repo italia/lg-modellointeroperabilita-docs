@@ -17,9 +17,9 @@ Riferimenti Bibliografici
 .. _sec4:
 
 4. OASIS wss-x509TokenProfile-v1.1.1-csprd01 - A. Nadalin; C. Kaler; R.
-   Monzillo; P. Hallam-Baker; C. Milono. “\ `Web Services Security X.509
+   Monzillo; P. Hallam-Baker; C. Milono. "\ `Web Services Security X.509
    Certificate Token Profile Version
-   1.1.1 <http://docs.oasis-open.org/wss-m/wss/v1.1.1/csprd01/wss-x509TokenProfile-v1.1.1-csprd01.html>`__\ ”
+   1.1.1 <http://docs.oasis-open.org/wss-m/wss/v1.1.1/csprd01/wss-x509TokenProfile-v1.1.1-csprd01.html>`__\ "
 
 .. _sec5:
 

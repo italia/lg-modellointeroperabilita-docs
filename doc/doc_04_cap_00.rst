@@ -7,8 +7,8 @@ espresse attraverso requisiti funzionali e non funzionali.
 
 **I profili**
 
--  definiscono a livello di specifica tecnologica uno “strumento
-   condiviso” utile a favorire l’interoperabilità tra le pubbliche
+-  definiscono a livello di specifica tecnologica uno "strumento
+   condiviso" utile a favorire l’interoperabilità tra le pubbliche
    amministrazioni, cittadini ed imprese.
 
 -  forniscono un comune linguaggio per fruitori ed erogatori utile a
@@ -114,9 +114,9 @@ Rappresentazione grafica delle dipendenze tra i profili
 
 **NOTA BENE**
 
-Le parole chiave “DEVE”, “DEVONO”, “NON DEVE”, “NON DEVONO”, “E’ RICHIESTO”,
-“DOVREBBE”, “NON DOVREBBE”, “RACCOMANDATO”, “NON RACCOMANDATO”
-“PUO’” e “OPZIONALE” nel testo del documento debbono essere interpretate come descritto
+Le parole chiave "DEVE", "DEVONO", "NON DEVE", "NON DEVONO", "E’ RICHIESTO",
+"DOVREBBE", "NON DOVREBBE", "RACCOMANDATO", "NON RACCOMANDATO"
+"PUO’" e "OPZIONALE" nel testo del documento debbono essere interpretate come descritto
 nel seguito, in conformità alle corrispondenti traduzioni contenute nel documento IETF
 :RFC:`2119`.
 

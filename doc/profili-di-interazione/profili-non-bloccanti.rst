@@ -118,8 +118,8 @@ DEVONO essere rispettate le seguenti regole:
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, il correlation ID utilizzando l’header HTTP
-   custom X-Correlation-ID; Il codice HTTP di stato DEVE essere 202
-   Accepted a meno che non si verifichino errori;
+   custom X-Correlation-ID; Il codice HTTP di stato DEVE essere :httpstatus:`202`
+   a meno che non si verifichino errori;
 
 -  Al passo (3), l’erogatore DEVE riutilizzare lo stesso correlation ID
    fornito al passo (2) sempre utilizzando l’header HTTP custom
@@ -127,7 +127,7 @@ DEVONO essere rispettate le seguenti regole:
 
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
    acknowledgement il ricevimento della risposta; Il codice HTTP di
-   stato DEVE essere 200 OK a meno che non si verifichino errori.
+   stato DEVE essere :httpstatus:`200` a meno che non si verifichino errori.
 
 .. _regole-di-processamento-nonbloccante-2:
 
@@ -140,20 +140,20 @@ semantica [2]_.
 Friuitore ed erogatore, nel processare le richieste, DEVONO almeno:
 
 -  Verificare la validità sintattica dei dati in ingresso. In caso di
-   dati errati deve restituire il codice HTTP 400 Bad Request fornendo
+   dati errati deve restituire :httpstatus:`400` fornendo
    nel body di risposta dettagli circa l’errore;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVE restituire il codice 404 Not Found, indicando nel body di
+   DEVE restituire :httpstatus:`404`, indicando nel body di
    risposta quale degli ID è mancante;
 
--  In caso di errori non dipendenti dalla richiesta, DEVE restituire i
-   codici HTTP 5XX rispettando la semantica degli stessi ed indicando
+-  In caso di errori non dipendenti dalla richiesta, DEVE restituire
+   HTTP status 5XX rispettando la semantica degli stessi ed indicando
    nel body di risposta il motivo dell’errore;
 
 -  Al momento della ricezione della richiesta, l’erogatore restituisce
-   il codice 202 Accepted. In caso di ricezione corretta della risposta,
-   il fruitore restituire il codice HTTP 200 OK, riempiendo il body di
+   :httpstatus:`202`. In caso di ricezione corretta della risposta,
+   il fruitore restituire :httpstatus:`200`, riempiendo il body di
    risposta con un acknowledgement dell’avvenuta ricezione. Nel caso di
    errore al momento di ricezione della risposta da parte del fruitore,
    è possibile utilizzare meccanismi specifici per la ritrasmissione della
@@ -206,7 +206,7 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
         }
 
 
-2\) Response Header & Body (HTTP Status Code 202 Accepted)
+2\) Response Header & Body (:httpstatus:`202`)
 
 .. code-block:: http
 
@@ -294,10 +294,10 @@ seguire le seguenti regole, come supportato dalla maggioranza dei
 framework di sviluppo:
 
 -  In caso di successo di una richiesta, il codice di stato HTTP DEVE
-   essere 200 OK. Questo vale anche per il passo (2) del profilo a
+   essere  :httpstatus:`200`. Questo vale anche per il passo (2) del profilo a
    differenza del caso REST;
 
--  In caso di errore si DEVE utilizzare il codice di stato 500
+-  In caso di errore si DEVE utilizzare  :httpstatus:`500`
    accompagnato dal meccanismo basato su WS fault. Questo vale per
    errori nella validazione, sia sintattica che semantica dei messaggi e
    per eventuali errori interni, permettendo al chiamante (il fruitore
@@ -509,8 +509,10 @@ riportato nel Capitolo 1):
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, un percorso di risorsa per interrogare lo
-   stato di processamento della richiesta utilizzando l’header HTTP ``Location`` :RFC:`7231#section-7.1.2`;
-   Il codice HTTP di stato DEVE essere ``202 Accepted`` a
+
+   stato di processamento della richiesta utilizzando :httpheader:`Location`;
+   Il codice HTTP di stato DEVE essere :httpstatus:`202` a
+
    meno che non si verifichino errori;
 
 -  Al passo (3), il fruitore DEVE utilizzare il percorso di cui al passo
@@ -519,7 +521,7 @@ riportato nel Capitolo 1):
 
 -  Al passo (4) l’erogatore indica che la risorsa non è ancora pronta,
    fornendo informazioni circa lo stato della lavorazione
-   della richiesta; il codice HTTP restituito è ``200 OK``;
+   della richiesta; il codice HTTP restituito è :httpstatus:`200`;
 
 -  Se la risorsa è pronta (passo (5), l’erogatore
    risponde con la rappresentazione della risorsa;
@@ -538,11 +540,11 @@ particolare, al ricevimento della richiesta da parte del fruitore,
 l’erogatore DEVE almeno:
 
 -  Verificare la validità sintattica dei dati in ingresso. In caso di
-   dati errati deve restituire il codice HTTP 400 Bad Request fornendo
+   dati errati deve restituire  :httpstatus:`400`   fornendo
    nel body di risposta dettagli circa l’errore;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVE restituire il codice 404 Not Found, indicando nel body di
+   DEVE restituire  :httpstatus:`404`  , indicando nel body di
    risposta quale degli ID è mancante;
 
 -  In caso di errori non dipendenti dal fruitore, DEVE restituire i
@@ -550,8 +552,8 @@ l’erogatore DEVE almeno:
    nel body di risposta il motivo dell’errore;
 
 -  Al momento della ricezione della richiesta, l’erogatore restituisce
-   il codice 202 Accepted. In caso di ricezione corretta della risposta,
-   il fruitore restituire il codice HTTP 200 OK, riempiendo il body di
+   :httpstatus:`202`. In caso di ricezione corretta della risposta,
+   il fruitore restituire :httpstatus:`200`  , riempiendo il body di
    risposta con il risultato dell’operazione. Nel caso di errore al
    momento di ricezione della risposta da parte del fruitore, è
    possibile definire meccanismi specifici per la ritrasmissione della
@@ -739,10 +741,10 @@ seguire le seguenti regole, come supportato dalla maggioranza dei
 framework di sviluppo:
 
 -  In caso di successo di una richiesta, il codice di stato HTTP DEVE
-   essere 200 OK. Questo vale anche per il passo (2) del profilo a
+   essere  :httpstatus:`200`. Questo vale anche per il passo (2) del profilo a
    differenza del caso REST;
 
--  In caso di errore si DEVE utilizzare il codice di stato 500
+-  In caso di errore si DEVE utilizzare  :httpstatus:`500`
    accompagnato dal meccanismo basato su WS fault. Questo vale per
    errori nella validazione, sia sintattica che semantica dei messaggi e
    per eventuali errori interni, permettendo al chiamante (il fruitore

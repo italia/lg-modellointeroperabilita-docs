@@ -189,7 +189,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
          </ds:Signature>
        </wsse:Security>
         </soap:Header>
-     <soap:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"    wsu:id=”bd-567d101-aed1-789e-81cb-5ae1c5dbef1a”>
+     <soap:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"    wsu:id="bd-567d101-aed1-789e-81cb-5ae1c5dbef1a">
        <ns2:sayHi xmlns:ns2="http://example.profile.security.modi.agid.gov.it/">
          <arg0>Hello World!</arg0>
        </ns2:sayHi>
@@ -208,7 +208,7 @@ merito:
 -  algoritmo per il digest (``DigestMethod``)
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato al sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”, nonché la modalità di inclusione o
+algoritmi secondo quanto indicato al sezione "\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ", nonché la modalità di inclusione o
 referenziazione del certificato x509.
 
 [M2MR03] Integrità della payload del messaggio REST
@@ -391,7 +391,7 @@ Regole di processamento
 Note:
 
 -  Per quanto riguarda gli algoritmi da utilizzare nelle claim ``alg`` e ``pda``
-   si fa riferimento agli algoritmi indicati sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”.
+   si fa riferimento agli algoritmi indicati sezione "\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ".
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    della risposta da parte dell’erogatore al fruitore.
@@ -451,16 +451,16 @@ merito:
 -  algoritmo di hashing per calcolare il digest del body (``pda``)
 
 Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto presente nella sezione “\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ”, nonché la modalità di inclusione o referenziazione del certificato x509.
+algoritmi secondo quanto presente nella sezione "\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ", nonché la modalità di inclusione o referenziazione del certificato x509.
 
 .. [1]
-   Il presente documento ha individuato il claim con sigla “pda” al fine
+   Il presente documento ha individuato il claim con sigla "pda" al fine
    di indicare in maniera univoca per la pubblica amministrazione
    italiana il valore dell’algoritmo di hashing utilizzato per il
    calcolo del digest della payload del messaggio.
 
 .. [2]
-   Il presente documento ha individuato il claim con sigla “mpd” al fine
+   Il presente documento ha individuato il claim con sigla "mpd" al fine
    di gestire in maniera univoca per la pubblica amministrazione
    italiana il valore del digest relativo della payload del messaggio.
 
