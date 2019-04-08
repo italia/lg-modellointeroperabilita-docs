@@ -238,21 +238,21 @@ Method
 
 .. code-block:: XML
 
-<?xml version="1.0"?>
+    <?xml version="1.0"?>
 
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-  <soap:Body>
-    <soap:Fault>
-       <faultcode>soap:Server</faultcode>
-       <faultstring>Error</faultstring>
-       <detail>
-          <ns2:ErrorMessageFault xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-             <customFaultCode>1234</customFaultCode>
-          </ns2:ErrorMessageFault>
-       </detail>
-    </soap:Fault>
- </soap:Body>
-</soap:Envelope>
+    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Body>
+        <soap:Fault>
+           <faultcode>soap:Server</faultcode>
+           <faultstring>Error</faultstring>
+           <detail>
+              <ns2:ErrorMessageFault xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+                 <customFaultCode>1234</customFaultCode>
+              </ns2:ErrorMessageFault>
+           </detail>
+        </soap:Fault>
+     </soap:Body>
+    </soap:Envelope>
 
 
 .. [1]
