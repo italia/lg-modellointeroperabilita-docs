@@ -81,12 +81,11 @@ profilo RPC bloccante arricchito con gli header relativi al rate
 limiting. L’utilizzo degli header HTTP in SOAP è fuori dagli obiettivi
 di WSDL come Interface Definition Language.
 
-+--------------------+------------------------------------------------------------------------------------+
-| Specifica Servizio | https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml |
-+--------------------+------------------------------------------------------------------------------------+
-| .. literalinclude:: ../media/robustezza.yaml                                                            |
-|    :language: yaml                                                                                      |
-+---------------------------------------------------------------------------------------------------------+
+Specifica Servizio
+https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml
+
+.. literalinclude:: ../media/robustezza.yaml
+   :language: yaml
 
 Di seguito un esempio di chiamata al servizio bloccante con risposta nel
 caso in cui i limiti non siano ancora stati raggiunti e nel caso in cui
@@ -94,7 +93,8 @@ invece il fruitore debba attendere per presentare nuove richieste.
 
 ----
 
-Endpoint: https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
+**Endpoint**
+https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
 
 ----
 
