@@ -4,7 +4,7 @@ git+https://github.com/pdavide/sphinxcontrib-discourse
 git+https://github.com/pdavide/sphinxcontrib-versiontag
 recommonmark
 doc8
-sphinx
+sphinx<=1.7
 
 # Render mermaid diagrams
 sphinxcontrib-mermaid
