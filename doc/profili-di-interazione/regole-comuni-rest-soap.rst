@@ -198,9 +198,6 @@ convention, ad esempio
 -  sì: ``{ "given_name": "Mario", "family_name": "Rossi"}``
 -  no: ``{ "givenName": "Mario", "family_name": "Rossi"}``
 
-Preferire l'uso di ASCII snake_case al camelCase:  [1]_``[a-z_0-9]*$``.
-Sebbene sia possibile scegliere coerentemente, ove possibile si deve preferire
-l'utilizzo dello snake_case.
 
 Progettazione e Naming delle Interfacce di Servizio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -211,10 +208,11 @@ valgono le seguenti.
 Uso corretto dei metodi HTTP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-I metodi HTTP DEVONO essere utilizzati rispettando la semantica indicata
-in
 
-`rfc7231#section-4.3 <https://tools.ietf.org/html/rfc7231#section-4.3>`__
+I metodi HTTP devono essere utilizzati rispettando la semantica indicata
+in :RFC:`7231#section-4.3`.
+
+.. TODO rimuovere la parte ridondante dal resto.
 
 Uso corretto degli header HTTP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -222,23 +220,23 @@ Uso corretto degli header HTTP
 In generale gli header:
 
 -  DEVONO essere utilizzati solo per passare informazioni di contesto
+
 -  la semantica e gli intenti delle operazioni deve essere definita
+
    tramite URI, Status e Method e non dagli Header, che dovrebbero supportare
-   funzionalità di protocollo come flow control, content negotiation, ed authentication,
-   come indicato ​in :RFC:`7231`.
+   funzionalità di protocollo come indicato ​in :RFC:`7231`.
 
 Prima di usare un header:
 
--  si deve verificare se è già adottato da IANA
-
-`https://www.iana.org/assignments/message-headers/message-headers.xhtml <https://www.iana.org/assignments/message-headers/message-%20headers.xhtml>`__
+-  si deve verificare se è già adottato da IANA _IANA_message_headers
 
 
-Usare parole separate da trattino "-" per i Path
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Per i Path, e non i parametri del path (eg.
-{tax_code_id}), usare il separatore "-".
+Usare parole separate da trattino "-" per i Path (kebab-case)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Questo si applica solo al Path.
+
 
 Esempio:
 
@@ -246,15 +244,7 @@ Esempio:
 
     /​tax-code​/{tax_code_id}
 
-Il Path dovrebbe essere semplice, intuitivo e coerente.
-
-
-Usare un case consistente snake_case o camelCase per i Query Parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Utilizzare un'unico case per tutti i Query Parameters nella stessa API.
-
-In presenza di acronimi universalmente riconosciuti il loro utilizzo è consigliato.
+Inoltre, il Path dovrebbe essere semplice, intuitivo e coerente.
 
 
 Preferire Hyphenated-Pascal-Case per gli header HTTP
@@ -272,11 +262,12 @@ Esempi:
 
     Original-Message-ID
 
-Le collezioni di risorse devono usare nomi al plurale
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Differenziare il nome delle collezioni e delle risorse permette di
-separare a livello di URI endpoint che sono in larga parte funzionalmente differenti.
+Le collezioni di risorse possono usare nomi al plurale
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Si consiglia di differenziare il nome delle collezioni e delle risorse. Questo permette di
+separare a livello di URI, endpoint che sono in larga parte funzionalmente differenti.
 
 Esempio 1: ricerca documenti per data in una collezione
 
@@ -317,12 +308,10 @@ dev'essere implementata tramite i parametri:
 
 ::
 
-    q, fields. embed
+    q, fields, embed
 
-E' possibile trovare un elenco di parametri standardizzati nel
-repository:
+.. TODO completare l'elenco.
 
-- https://github.com/teamdigitale/openapi/tree/master/docs
 
 Non usare l'header ``Link`` :RFC:`8288` se la response è in JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -349,7 +338,7 @@ In caso di errori si deve ritornare:
 -  l'oggetto può essere esteso
 
 Quando si restituisce un errore è importante *non esporre dati interni*
-delle applicazioni e seguire le indicazioni nel §6.4 delle `Linee Guida per lo sviluppo di sicuro di codice`_
+delle applicazioni.
 
 
 Ottimizzare l'uso della banda e migliorare la responsività
@@ -357,27 +346,25 @@ Ottimizzare l'uso della banda e migliorare la responsività
 
 Utilizzare quando possibile:
 
--  gzip compression;
+-  tecniche di compressione;
 -  paginazione;
 -  un filtro sugli attributi necessari;
--  le specifiche di optimistic locking (etag, if-(none-)match)
+-  le specifiche di optimistic locking (:httpheader:`ETag`, if-(none-)match) :RFC:`7232`
 
 E' possibile ridurre l'uso della banda e velocizzare le richieste
-filtrando i campi delle risorse restituite. Si vedano qui ulteriori
-informazioni su come supportare il filtraggio dei campi delle risorse
-ritornate:
-
-https://cloud.google.com/compute/docs/api/how-tos/performance#partial
+filtrando i campi delle risorse restituite.
 
 Esempio 1: Non filtrato
 
-::
+.. code-block:: HTTP
+    :caption: Request
 
-    >> Request:
     GET http://api.example.org/resources/123 HTTP/1.1
-    HTTP/1.1 200 OK
 
-    << Response:
+.. code-block:: HTTP
+    :caption: Response
+
+    HTTP/1.1 200 OK
     Content-Type: application/json
 
     {
@@ -393,14 +380,16 @@ Esempio 1: Non filtrato
       }
     }
 
-Esempio 2: Filtrato `<http://zalando.github.io/restful-api-guidelines/index.html#filtered>`__
+Esempio 2: Filtrato
 
-::
+.. code-block:: HTTP
+    :caption: Request
 
-    >> Request:
-    GET http://api.example.org/resources/123?fields=(name,partner(name)) HTTP/1.1
+    GET /resources/123?fields=(name,partner(name)) HTTP/1.1
 
-    << Response:
+.. code-block:: HTTP
+    :caption: Response
+
     HTTP/1.1 200 OK
     Content-Type: application/json
 
@@ -420,12 +409,19 @@ In tal caso va usato:
    filtering
 -  l'attributo ``_embedded`` contenente le entry espanse.
 
-::
 
-    >> Request:
+.. code-block:: HTTP
+    :caption: Request
+
     GET /tax_code/MRORSS12T05E472W?embed=(person) HTTP/1.1
+    Accept: application/json
 
-    << Response:
+.. code-block:: HTTP
+    :caption: Response
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+
     {
       "tax_code":"MRORSS12T05E472W",
       "_embedded":{
@@ -438,19 +434,23 @@ In tal caso va usato:
     }
 
 
-Di default il caching deve essere disabilitato tramite:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Di default il caching http deve essere disabilitato
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Cache-Control​: no-cache header.
+Il caching va' disabilitato tramite :httpheader:`Cache-Control`
+per evitare che delle richieste vengano inopportunamente messe in
+cache. Esempio:
 
-in modo da evitare che delle richieste vengano inopportunamente messe in
-cache.
+.. code-block::
 
-Le API che supportano il caching DEVONO documentare le varie limitazioni
+    Cache-Control​: no-cache
+
+
+Le API che supportano il caching devono documentare le varie limitazioni
 e modalità di utilizzo tramite gli header definiti in :RFC:`7234`
 
--  Cache-Control
--  Vary
+-  :httpheader:`Cache-Control`
+-  :httpheader:`Vary`
 
 Eventuali conflitti nella creazione di risorse vanno gestiti tramite gli
 header:
@@ -462,53 +462,12 @@ header:
 contenenti un hash del response body, un hash dell'ultimo campo
 modificato della entry o un numero di versione.
 
-Se l'etag della entry su cui si opera non corrisponde al valore della
-richiesta, la response ritorna lo status code ``412 - precondition failed``.
-
-Le API devono supportare la paginazione delle collezioni tramite:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  paginazione classica tramite i query parameter offset e limit
-
--  paginazione con cursore; la paginazione a cursore permette
-   l'implementazione di pagine con infinite scrolling.
-
-La paginazione dovrebbe essere implementata in modo da limitare l'uso
-improprio delle API (eg. download in parallelo di interi dataset, ...)
-
-Per il ripristino del download di un documento si faccia riferimento a
-Range Requests :RFC:`7233`.
-
-
-Supportare le informazioni di inoltro tramite l'header Forwarded
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Le informazioni di inoltro HTTP (eg. indirizzo ip di provenienza,
-destinazione ...) erogatori DEVONO essere:
-
--  preservate​ dall'infrastruttura
-
--  scambiate tramite l'header Forwarded definito in :RFC:`7239` e pronto per
-   IPv6 :RFC:`8200`.
-
-eg.
-
-.. ::
-
-   Forwarded: for=192.0.2.60; for="[2001:db8:cafe::17]"; proto=https; by=203.0.113.43
-
-Gli header ``X-Forwarded-For`` ``X-Forwarded-Host`` e ``X-Forwarded-Proto`` - che
-non hanno un comportamento codificato e dipendono dalle varie implementazioni,
-devono comunque essere supportati e preservati.
-
-
 Riferimenti
 ~~~~~~~~~~~~~~
 
 Specifiche
 
--  `OpenAPI
-   Specification <https://github.com/OAI/OpenAPI-Specification/>`__
+-  `OpenAPI Specification <https://github.com/OAI/OpenAPI-Specification/>`__
 - :BCP:`bcp47`
 
 
@@ -678,6 +637,7 @@ Riferimenti
     https://www.agid.gov.it/sites/default/files/repository_files/documentazione/linee_guida_per_lo_sviluppo_sicuro_di_codice_v1.0.pdf
 
 
+.. _IANA_message_headers: https://www.iana.org/assignments/message-headers/message-headers.xhtml
 
 Specifiche
 
