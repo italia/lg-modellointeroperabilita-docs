@@ -52,7 +52,6 @@ extensions = [
     'docs-italia-theme',
     'sphinx.ext.autosectionlabel',
     'sphinxcontrib.discourse',
-    'sphinxcontrib.httpspec',
     'sphinxcontrib.mermaid'
 ]
 
