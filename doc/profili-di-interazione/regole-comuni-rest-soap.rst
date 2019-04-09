@@ -84,10 +84,10 @@ e le `relative ontologie <https://github.com/italia/daf-ontologie-vocabolari-con
 Si raccomanda di utilizzare formati standard per Data ed Ora
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Le date devono essere conformi ad :RFC:`3339`,
+Le date DEVONO essere conformi ad :RFC:`3339`,
 ad esempio `2015-05-28` per la data e `2015-05-28T14:07:17Z` per l'ora.
 
-Le date negli header HTTP devono essere conformi allo standard
+Le date negli header HTTP DEVONO essere conformi allo standard
 `HTTP date format`_ definito in :RFC:`7231`.
 
 :RFC:`3339` permette di indicare una timezone prefissando la data con la
@@ -105,7 +105,7 @@ Tempi di durata e intervalli devono utilizzare ISO 8601.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Di seguito alcuni esempi di durata in formato ​\ `ISO 8601 per i tempi
-di durata​ <https://en.wikipedia.org/wiki/ISO_8601#Durations>`__.
+di durata​ <https://www.iso.org/iso-8601-date-and-time-format.html>`__.
 
 Le durate sono prefissate da "P", giorni e Ore sono separati da "T".
 
@@ -125,9 +125,9 @@ Un'analoga sintassi ISO8601 per lo stesso intervallo è la seguente:
 Utilizzare le seguenti convenzioni di rappresentazione
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  I booleani non devono essere ``null``.
--  Gli array vuoti non devono essere ``null``, ma liste vuote, ad es. ``[]``.
--  Le enumeration devono essere rappresentate da stringhe non nulle.
+-  I booleani non DEVONO essere ``null``.
+-  Gli array vuoti non DEVONO essere ``null``, ma liste vuote, ad es. ``[]``.
+-  Le enumeration DEVONO essere rappresentate da stringhe non nulle.
 
 Usare standard per Lingue, Nazioni e Monete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,12 +135,11 @@ Usare standard per Lingue, Nazioni e Monete
 Utilizzare per le codifiche web gli standard indicati in Linee Guida per
 la Valorizzazione del Patrimonio Informativo Nazionale, inclusi:
 
--  `ISO 3166-1-alpha2 country (due lettere) <http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__
--  `ISO 639-1 language code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+-  `ISO 3166-1-alpha2 country (due lettere) <https://www.iso.org/iso-3166-country-codes.html>`__
+-  `ISO 639-1 language code <https://www.iso.org/standard/22109.html>`__
 -  :BCP:`47` (basato su ISO 639-1) per le varianti dei linguaggi.
-   Dove non strettamente necessario il subta​g​​, basta la prima parte (ad es. it vs it- IT)
--  `ISO 4217 currency codes​ <http://en.wikipedia.org/wiki/ISO_4217>`__
-   alpha-3
+-  `ISO 4217 alpha-3 currency codes​ <https://www.iso.org/iso-4217-currency-codes.html>`__
+   
 
 Per le valute, è possibile basarsi sullo schema Money - ripreso dal
 lavoro di standardizzazione del ​\ `Berlin Group sotto l'egida dell'European Standards​ <https://www.berlin-group.org/>`__
@@ -165,9 +164,9 @@ Esempio 1:
 Definire ``format`` quando si usano i tipi Number ed Integer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-I numeri e gli interi devono indicare la dimensione utilizzando
+I numeri e gli interi DEVONO indicare la dimensione utilizzando
 il parametro ``format``. La seguente tabella - non esaustiva - elenca
-un set minimo di formati. Le implementazioni devono utilizzare il tipo più adatto.
+un set minimo di formati. Le implementazioni DEVONO utilizzare il tipo più adatto.
 
 Le parti possono concordare la definizione di nuovi tipi, che dev'essere
 documentata nell'interfaccia.
@@ -177,8 +176,8 @@ documentata nell'interfaccia.
     :header:  type,   format,   valori ammessi
     integer,  int32,    interi tra -2^31 e 2^31-1
     integer,  int64,    interi tra -2^63 e 2^63-1
-    number,   decimal32 o float,    IEEE 754-2008/ISO 60559:2011 decimale a 32 bit
-    number,   decimal64 o double,    IEEE 754-2008/ISO 60559:2011 decimale a 64 bit
+    number,   decimal32,    IEEE 754-2008/ISO 60559:2011 decimale a 32 bit
+    number,   decimal64,    IEEE 754-2008/ISO 60559:2011 decimale a 64 bit
     number,   decimal128,   IEEE 754-2008/ISO 60559:2011 decimale a 128 bit
 
 
@@ -209,6 +208,7 @@ valgono le seguenti.
 Uso corretto dei metodi HTTP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+
 I metodi HTTP devono essere utilizzati rispettando la semantica indicata
 in :RFC:`7231#section-4.3`.
 
@@ -219,8 +219,10 @@ Uso corretto degli header HTTP
 
 In generale gli header:
 
--  devono essere utilizzati solo per passare informazioni di contesto
--  la semantica e gli intenti delle operazioni devono essere definiti
+-  DEVONO essere utilizzati solo per passare informazioni di contesto
+
+-  la semantica e gli intenti delle operazioni deve essere definita
+
    tramite URI, Status e Method e non dagli Header, che dovrebbero supportare
    funzionalità di protocollo come indicato ​in :RFC:`7231`.
 
@@ -229,26 +231,18 @@ Prima di usare un header:
 -  si deve verificare se è già adottato da IANA _IANA_message_headers
 
 
-Usare un case consistente snake_case o camelCase per i Query e Path Parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Il case scelto per query e path parameters dev'essere consistente: non mescolare snake_case e
-camelCase nella stessa API.
-
-I nomi utilizzati devono usare abbreviazioni e acronimi universalmente
-riconosciuti.
 
 Usare parole separate da trattino "-" per i Path (kebab-case)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Questo si applica solo al Path.
 
+
 Esempio:
 
 ::
 
     /​tax-code​/{tax_code_id}
-
 
 Inoltre, il Path dovrebbe essere semplice, intuitivo e coerente.
 
@@ -452,7 +446,6 @@ cache. Esempio:
     Cache-Control​: no-cache
 
 
-
 Le API che supportano il caching devono documentare le varie limitazioni
 e modalità di utilizzo tramite gli header definiti in :RFC:`7234`
 
@@ -468,8 +461,6 @@ header:
 
 contenenti un hash del response body, un hash dell'ultimo campo
 modificato della entry o un numero di versione.
-
-
 
 Riferimenti
 ~~~~~~~~~~~~~~
@@ -513,76 +504,40 @@ Libri​
 Raccomandazioni tecniche per SOAP
 ==================================
 
-l'utilizzo del protocollo SOAP ai fini di interoperabilità è l'oggetto
-del WS-I Basic Profile (BP) la cui versione 2.01 (ultima versione
-rilasciata) è quella a cui fa riferimento il ModI. In particolare il
-BP2.0 impiega SOAP 1.22 e WS-Addressing3. I framework implementativi più
-diffusi sono conformi a questa specifica sulla quale quindi il presente
-documento non si soffermerà. Indichiamo di seguito invece le best
-practice relative alla specifica dei servizi e del formato dei dati.
+Nell'ambito del protocollo SOAP hai fini dell'interoperabilità è definito in WS-I Basic Profile.
 
-Formato dei dati
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adozione di WS-I
+~~~~~~~~~~~~~~~~
 
-Codificare dati strutturati con oggetti XML
+ModI assume l'adozione della specifica `WS-I Basic Profile versione 2.0 <http://www.ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html>`__
+, in quanto i framework implementativi più diffusi sono conformi a questa specifica.
 
-I dati strutturati devono essere trasferiti tramite ​oggetti XML​ che
-utilizzano elementi contenitivi per le liste:
+Di seguito sono riportate suggerimenti al fine di favorire l'interoperabilità.
 
--  il payload di una response contenente una entry ritorna un oggetto
 
-.. code-block:: XML
+Evitare l'uso di media-type personalizzati
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    <persona givenName="Paolo" familyName="Rossi" id="313" />
 
--  il payload di una response contenente più entry ​ritorna un oggetto
-   contenente
-
-una lista​ e non direttamente una lista.
-
-.. code-block:: XML
-
-    <persone>
-        <persona givenName="Carlo" familyName="Bianchi" id="314" />
-        <persona givenName="Giuseppe" familyName="Verdi" id="315" />
-    </persone>
-
-Vanno utilizzati namespace e definiti specifici XSD.
-
-Evitare Content-Type personalizzati
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1 Cf. ​\ http://ws-i.org/profiles/BasicProfile-2.0-2010-11-09.html
-
-2 Cf. ​\ https://www.w3.org/TR/soap12/
-
-3 Cf. ​\ `https://www.w3.org/Submission/ws-
-addressing/ <https://www.w3.org/Submission/ws-addressing/>`__
-
-Evitare l'uso di media-type personalizzati come da ​\ `RFC 6838 <https://tools.ietf.org/html/rfc6838#section-3.4>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-(eg.application/x.custom.name+xml) ed utilizzare nomi standard come
+Si raccomanda di evitare l'uso di media-type personalizzati come da ​:RFC:`6838#section-3.4`
+(eg. ``application/x.custom.name+xml``) ed utilizzare nomi standard come
 ​ `application/xml`_
 
-Utilizzare embedding o referencing per trasferire i dati binari.
-l'inserimento di dati binari all'interno del payload può avvenire o tramite embedding (ed in questo
-caso la codifica base64 è da preferirsi a quella esadecimale) oppure tramite referencing.
 
-Attributi ed elementi devono utilizzare ove possibile la nomenclatura indicata
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Utilizzare le properties secondo nomenclature standard
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-nelle Linee Guida per la valorizzazione del Patrimonio informativo
-nazionale e le relative ontologie
+Le properties DEVONO utilizzare ove possibile la nomenclatura indicata
+nelle `Linee Guida per la valorizzazione del Patrimonio informativo
+pubblico <https://docs.italia.it/italia/daf/lg-patrimonio-pubblico/it/bozza/>`__
+e le `relative ontologie <https://github.com/italia/daf-ontologie-vocabolari-controllati>`__.
+
 
 Utilizzare formati standard per Data ed Ora
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Le date devono essere conformi ad :RFC:`3339`,
+Le date DEVONO essere conformi ad :RFC:`3339`,
 ad esempio `2015-05-28` per la data e `2015-05-28T14:07:17Z` per l'ora.
-
-Le date negli header HTTP devono essere conformi allo standard
-`HTTP date format`_ definito in :RFC:`7231`.
 
 :RFC:`3339` permette di indicare una timezone prefissando la data con la
 distanza da UTC:
@@ -595,11 +550,12 @@ suffisso Z (Zulu time zone)
 
 -  `2015-05-28T14:07:17Z`
 
+
 Tempi di durata e intervalli devono utilizzare ISO 8601.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Di seguito alcuni esempi di durata in formato ​\ `ISO 8601 per i tempi
-di durata​ <https://en.wikipedia.org/wiki/ISO_8601#Durations>`__.
+di durata​ <https://www.iso.org/iso-8601-date-and-time-format.html>`__.
 
 Le durate sono prefissate da "P", giorni e Ore sono separati da "T".
 
@@ -615,29 +571,6 @@ Un'analoga sintassi ISO8601 per lo stesso intervallo è la seguente:
 
 ``P0001-02-10T2:30:00``
 
-Utilizzare le convenzioni di rappresentazione
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Si consiglia l'utilizzo di elementi come figli di un elemento quando:
-
--  Può esistere come elemento a se stante
-
--  Occorre definire una lista (gli attributi non possono essere
-   multivalore)
-
-I nomi delle liste devono essere al plurale.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-I ``Boolean`` non devono essere mai null.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Le properties devono avere un naming consistente
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-l'utilizzo più frequente è quello di camelCase sia per gli elementi che
-per gli attributi. In alcuni casi è possibile utilizzare PascalCase per
-gli elementi e camelCase per gli attributi (come nel
-​\ `NIME <https://en.wikipedia.org/wiki/National_Information_Exchange_Model>`__\ 4)
 
 Usare standard per Lingue, Nazioni e Monete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -645,38 +578,17 @@ Usare standard per Lingue, Nazioni e Monete
 Utilizzare per le codifiche web gli standard indicati in Linee Guida per
 la Valorizzazione del Patrimonio Informativo Nazionale, inclusi:
 
--  `ISO 3166-1-alpha2 country (due lettere) <http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`__
--  `ISO 639-1 language code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+-  `ISO 3166-1-alpha2 country (due lettere) <https://www.iso.org/iso-3166-country-codes.html>`__
+-  `ISO 639-1 language code <https://www.iso.org/standard/22109.html>`__
 -  :BCP:`47` (basato su ISO 639-1) per le varianti dei linguaggi.
-   Dove non strettamente necessario il subta​g​​, basta la prima parte (ad es. it vs it- IT)
--  `ISO 4217 currency codes​ <http://en.wikipedia.org/wiki/ISO_4217>`__
-   alpha-3 usato in FatturePA_
+-  `ISO 4217 alpha-3 currency codes​ <https://www.iso.org/iso-4217-currency-codes.html>`__
 
-Nel caso di importi, l'elemento dovrà contenere sia un elemento o attributo di tipo
-
-standard xs:currency che una indicazione del codice della valuta. Ad esempio:
-
-.. code-block:: XML
-
-    <prezzo valuta="EUR" totale="100.00" />
-
-Progettazione e Naming delle Interfacce di Servizio
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Ai fini del progetto delle interfacce di servizio, esistono diverse
-metodologie. In particolare nel ModI si suggerisce l'utilizzo della metodologia di identificazione
-delle interfacce contenuta nel libro ​\ `UML Components`_ che permette di identificare servizi ed operazioni per
-i singoli componenti applicativi.
 
 Descrittività dei nomi utilizzati
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 I nomi utilizzati per servizi ed operazioni nelle interfacce di servizio
 devono essere auto-descrittivi e fornire quanta più informazione possibile riguardo al
 comportamento implementato.
-
-Occorre inoltre eliminare il rischio di collisioni tra
-nomi in differenti domini nel caso in cui un termine possa avere dei significati multipli
-(es. protocollo).
 
 Si deve inoltre evitare l'utilizzo di acronimi quando questi non siano
 universalmente riconosciuti anche al di fuori del dominio applicativo.
@@ -685,31 +597,20 @@ universalmente riconosciuti anche al di fuori del dominio applicativo.
 Utilizzo di camelCase e PascalCase
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-I nomi dei servizi devono essere specificati in PascalCase mentre per le
-operazioni implementate e gli argomenti si utilizza il camelCase.
+Per i nomi dei servizi si suggerisce di utilizzare PascalCase mentre per le
+operazioni implementate e gli argomenti si suggerisce l'utilizzo del camelCase.
 
-Utilizzo di nomi agnostici rispetto all'implementazione
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-I nomi utilizzati per i servizi e le operazioni non dovrebbero rivelare
-dettagli implementativi.
-
-4 Cf.
-​\ https://en.wikipedia.org/wiki/National_Information_Exchange_Model
 
 Non includere il numero di versione all'interno del nome del servizio
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Non includere la parola Service nel nome del servizio
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Unicità dei namespace e utilizzo di pattern fissi
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Ogni servizio all'interno del WSDL deve avere un suo namespace unico. I
-namespace
+Ove possibile all'interno del WSDL deve essere presente un namespace unico.
 
-utilizzati per i servizi devono seguire un pattern specifico. In
+I namespace utilizzati per i servizi devono seguire un pattern specifico. In
 particolare, per i servizi:
 
 ::
@@ -731,61 +632,6 @@ seguente:
     http://<dominioOrganizzativo>/xmlns/<DominioApplicativo>
 
 
-
-Ottimizzare l'uso della banda e migliorare la responsività
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Utilizzare quando possibile, in special modo per le operazioni che
-ritornano liste e risultati di ricerche:
-
--  gzip compression;
--  paginazione;
--  un filtro sugli attributi necessari.
-
-Le interfacce devono supportare la paginazione delle collezioni tramite:
-
--  paginazione classica tramite parametri ``offset`` e ``limit``
--  paginazione a cursore permette l'implementazione di pagine con
-   infinite scrolling.
-
-La paginazione deve essere implementata in modo da limitare l'uso
-improprio delle interfacce
-
-(eg. download in parallelo di interi dataset, …)
-
-
-Di default il caching deve essere disabilitato
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-E' possibile disabilitare il caching tramite l'header:
-
--  Cache-Control: no-cache header.
-
-in modo da evitare che delle richieste vengano inopportunamente messe in
-cache.
-
-Le API che supportano il caching devono documentare le varie limitazioni
-e modalità di
-
-utilizzo tramite gli header definiti in :RFC:`7324`
-
--  Cache-Control
--  Vary
-
-In generale le richieste SOAP utilizzando il metodo HTTP POST (non
-idempotente), ma nei casi in cui l'operazione effettuata è idempotente è
-possibile implementare meccanismi di caching simili a quelli visti nel
-caso REST.
-
-
-
-Utilizzo degli status code HTTP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TODO verificare alla luce di quanto indicato negli altri capitoli
-
-La versione 1.2 di SOAP definisce in dettaglio (si veda la parte 2 della
-specifica) l'utilizzo di codici di stato HTTP come confermato dal basic profile 2.0.
-Si richiede quindi l'utilizzo di questi codici.
-
 Riferimenti
 ~~~~~~~~~~~~~~~~~~
 
@@ -795,7 +641,6 @@ Riferimenti
 .. _`Linee Guida per lo sviluppo di sicuro di codice`:
     https://www.agid.gov.it/sites/default/files/repository_files/documentazione/linee_guida_per_lo_sviluppo_sicuro_di_codice_v1.0.pdf
 
-.. _FatturePA: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.0.pdf
 
 .. _IANA_message_headers: https://www.iana.org/assignments/message-headers/message-headers.xhtml
 
