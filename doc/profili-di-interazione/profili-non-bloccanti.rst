@@ -86,8 +86,6 @@ riportando l’esito ed indicando il correlation ID. Il fruitore riconosce
 (sempre mediante un messaggio di ack) la ricezione della risposta (passo
 (4)).
 
-Il profilo basato su callback è un caso particolare di publish/subscribe
-(vedi Capitolo 3).
 
 .. TODO Referenza
 
@@ -338,40 +336,44 @@ MRequest
 
 .. code-block:: XML
 
-        <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-          <soap:Header>
-            <ns2:X-ReplyTo xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">http:///api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1</ns2:X-ReplyTo>
-          </soap:Header>
-          <soap:Body>
-            <ns2:MRequest xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-              <M>
-               <o_id>1234</o_id>
-                <a>
-                 <a1s><a1>1</a1>...<a1>2</a1></a1s>
-                 <a2>Stringa di esempio</a2>
-                </a>
-                <b>Stringa di esempio</b>
-              </M>
-            </ns2:MRequest>
-          </soap:Body>
-        </soap:Envelope>
-
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+		<soap:Header>
+			<m:X-ReplyTo>http://localhost:8181/soap/nomeinterfacciaservizio/v1</m:X-ReplyTo>
+		</soap:Header>
+		<soap:Body>
+			<m:MRequest>
+				<M>
+					<o_id>1234</o_id>
+					<a>
+						<a1s>1</a1s>
+						<a2>prova</a2>
+					</a>
+					<b>prova</b>
+				</M>
+			</m:MRequest>
+		</soap:Body>
+	</soap:Envelope>
+	
 2\) Response Body
 
 .. code-block:: XML
 
-        <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-          <soap:Header>
-            <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-Correlation-ID>
-          </soap:Header>
-          <soap:Body>
-          <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-              <return>
-                <outcome>ACCEPTED</outcome>
-              </return>
-            </ns2:MRequestResponse>
-          </soap:Body>
-        </soap:Envelope>
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">>
+		<soap:Header>
+			<m:X-Correlation-ID>b8268033-de67-4fa0-bf06-caebbfa5117a</m:X-Correlation-ID>
+		</soap:Header>
+		<soap:Body>
+			<m:MRequestResponse>
+				<return>
+					<outcome>ACCEPTED</outcome>
+				</return>
+			</m:MRequestResponse>
+		</soap:Body>
+	</soap:Envelope>
 
 
 **Endpoint**
@@ -385,32 +387,36 @@ MRequestResponse
 
 .. code-block:: XML
 
-        <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-          <soap:Header>
-            <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">4d826a26-4cd8-4b03-9bc1-2b48e89f0f40</ns2:X-Correlation-ID>
-          </soap:Header>
-          <soap:Body>
-            <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-              <return>
-                <c>OK</c>
-              </return>
-            </ns2:MRequestResponse>
-          </soap:Body>
-        </soap:Envelope>
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+		<soap:Header>
+			<m:X-Correlation-ID>b8268033-de67-4fa0-bf06-caebbfa5117a</m:X-Correlation-ID>
+		</soap:Header>
+		<soap:Body>
+			<m:MRequestResponse>
+				<return>
+					<c>OK</c>
+				</return>
+			</m:MRequestResponse>
+		</soap:Body>
+	</soap:Envelope>
 
 (4) Response Body
 
 .. code-block:: XML
 
-        <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-          <soap:Body>
-            <ns2:MRequestResponseResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-              <return>
-                <outcome>ACK</outcome>
-              </return>
-            </ns2:MRequestResponseResponse>
-          </soap:Body>
-        </soap:Envelope>
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+		<soap:Body>
+			<m:MRequestResponseResponse>
+				<return>
+					<outcome>OK</outcome>
+				</return>
+			</m:MRequestResponseResponse>
+		</soap:Body>
+	</soap:Envelope>
 
 .. _paragrafo-nonbloccante-2:
 

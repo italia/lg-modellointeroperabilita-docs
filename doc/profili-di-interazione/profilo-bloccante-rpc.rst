@@ -155,7 +155,7 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
    di dati errati deve restituire :httpstatus:`500` fornendo dettagli
    circa l’errore utilizzando il meccanismo della SOAP fault;
 
--  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
+-  Nel caso in cui qualcuno degli ID nel body non esista,
    DEVE restituire :httpstatus:`500` indicando tramite la SOAP fault
    quale degli ID è mancante;
 
@@ -189,71 +189,68 @@ Method
 
 .. code-block:: XML
 
-    <?xml version="1.0"?>
-
-    <soap:Envelope
-          xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"
-          soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
-
-        <soap:Header>
-
-          <!--Autenticazione-->
-        </soap:Header>
-
-        <soap:Body xmlns:m="http://api.amministrazioneesempio.it/nomeinterfacciaservizio">
-        <m:M>
-          <m:oId>1234</m:oId>
-          <m:a>
-            <m:a1s><a1>1</a1>...<a1>2</a1></m:a1s>
-            <m:a2>RGFuJ3MgVG9vbHMgYXJlIGNvb2wh</m:a2>
-          </m:a>
-          <m:b>Stringa di esempio</m:b>
-        </m:M>
-        </soap:Body>
-
-    </soap:Envelope>
-
+    
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio" >
+		<soap:Header>
+			<!--Autenticazione-->
+		</soap:Header>
+		<soap:Body>
+		<m:MRequest>
+			<M>
+				<oId>1234</oId>
+				<a>
+					<a1s><a1>1</a1>...<a1>2</a1></a1s>
+					<a2>RGFuJ3MgVG9vbHMgYXJlIGNvb2wh</a2>
+				</a>
+				<b>Stringa di esempio</b>
+			</M>
+		</m:MRequest> 
+		</soap:Body>
+	</soap:Envelope>
 
 2. Response Body (HTTP status code 200 OK)
 
 .. code-block:: XML
 
-        <?xml version="1.0"?>
+	<soap:Envelope
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio" >
 
-        <soap:Envelope
-        xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"
-        soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
+		<soap:Body>
+		<m:MRequestResponse>
+		  <return>
+			<m:c>OK</m:c>
+		  </return>
+		</m:MRequestResponse>
+	</soap:Body>
 
-        <soap:Body xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-        <m:MResponse>
-          <return>
-            <m:c>OK</m:c>
-          </return>
-        </m:MResponse>
-        </soap:Body>
-
-        </soap:Envelope>
+	</soap:Envelope>
 
 2. Response Body (HTTP status code 500 Internal Server Error)
 
 .. code-block:: XML
 
-    <?xml version="1.0"?>
-
-    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-      <soap:Body>
-        <soap:Fault>
-           <faultcode>soap:Server</faultcode>
-           <faultstring>Error</faultstring>
-           <detail>
-              <ns2:ErrorMessageFault xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-                 <customFaultCode>1234</customFaultCode>
-              </ns2:ErrorMessageFault>
-           </detail>
-        </soap:Fault>
-     </soap:Body>
-    </soap:Envelope>
-
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio" >
+		<soap:Body>
+		  <soap:Fault>
+			 <soap:Code>
+				<soap:Value>soap:Receiver</soap:Value>
+			 </soap:Code>
+			 <soap:Reason>
+				<soap:Text xml:lang="en">Error</soap:Text>
+			 </soap:Reason>
+			 <soap:Detail>
+				<m:ErrorMessageFault>
+				   <customFaultCode>1234</customFaultCode>
+				</m:ErrorMessageFault>
+			 </soap:Detail>
+		  </soap:Fault>
+		</soap:Body>
+	</soap:Envelope>
 
 .. [1]
    http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
