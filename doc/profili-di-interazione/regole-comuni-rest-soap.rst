@@ -231,7 +231,7 @@ Prima di usare un header:
 
 
 Usare un case consistente snake_case o camelCase per i Query e Path Parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Il case scelto per query e path parameters dev'essere consistente: non mescolare snake_case e
 camelCase nella stessa API.
@@ -269,8 +269,9 @@ Esempi:
 
     Original-Message-ID
 
+
 Le collezioni di risorse possono usare nomi al plurale
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Si consiglia di differenziare il nome delle collezioni e delle risorse. Questo permette di
 separare a livello di URI, endpoint che sono in larga parte funzionalmente differenti.
@@ -440,13 +441,18 @@ In tal caso va usato:
     }
 
 
-Di default il caching http deve essere disabilitato tramite:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Di default il caching http deve essere disabilitato
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Cache-Control​: no-cache header.
+Il caching va' disabilitato tramite :httpheader:`Cache-Control`
+per evitare che delle richieste vengano inopportunamente messe in
+cache. Esempio:
 
-in modo da evitare che delle richieste vengano inopportunamente messe in
-cache.
+.. code-block::
+
+    Cache-Control​: no-cache
+
+
 
 Le API che supportano il caching devono documentare le varie limitazioni
 e modalità di utilizzo tramite gli header definiti in :RFC:`7234`
