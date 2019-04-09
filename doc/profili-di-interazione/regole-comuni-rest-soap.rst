@@ -504,7 +504,10 @@ Libri​
 Raccomandazioni tecniche per SOAP
 ==================================
 
-Nell'ambito del protocollo SOAP hai fini dell'interoperabilità è definito in WS-I Basic Profile. 
+Nell'ambito del protocollo SOAP hai fini dell'interoperabilità è definito in WS-I Basic Profile.
+
+Adozione di WS-I
+~~~~~~~~~~~~~~~~
 
 ModI assume l'adozione della specifica `WS-I Basic Profile versione 2.0 <http://www.ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html>`__
 , in quanto i framework implementativi più diffusi sono conformi a questa specifica.
@@ -512,10 +515,12 @@ ModI assume l'adozione della specifica `WS-I Basic Profile versione 2.0 <http://
 Di seguito sono riportate suggerimenti al fine di favorire l'interoperabilità.
 
 
-Evitare l'uso di media-type personalizzati come da ​\ `RFC 6838 <https://tools.ietf.org/html/rfc6838#section-3.4>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Evitare l'uso di media-type personalizzati
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(eg.application/x.custom.name+xml) ed utilizzare nomi standard come
+
+Si raccomanda di evitare l'uso di media-type personalizzati come da ​:RFC:`6838#section-3.4`
+(eg. ``application/x.custom.name+xml``) ed utilizzare nomi standard come
 ​ `application/xml`_
 
 
@@ -601,9 +606,9 @@ Non includere il numero di versione all'interno del nome del servizio
 
 
 Unicità dei namespace e utilizzo di pattern fissi
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Ove possibile all'interno del WSDL deve essere presente un namespace unico. 
+Ove possibile all'interno del WSDL deve essere presente un namespace unico.
 
 I namespace utilizzati per i servizi devono seguire un pattern specifico. In
 particolare, per i servizi:
@@ -626,7 +631,7 @@ seguente:
 
     http://<dominioOrganizzativo>/xmlns/<DominioApplicativo>
 
-	
+
 Riferimenti
 ~~~~~~~~~~~~~~~~~~
 
