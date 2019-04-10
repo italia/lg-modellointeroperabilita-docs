@@ -120,19 +120,35 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
 
 (2) Response Body (HTTP Status Code 500 Internal Server Error)
 
-.. literalinclude:: ../media/problem-500.json
-    :language: javascript
+.. code-block:: JSON
+
+	{
+	    "type": "https://apidoc.example.com/probs/operation-too-long",
+	    "status": 500,
+	    "title": "L'operazione dura troppo.",
+	    "detail": "Il sistema non e' riuscito a completare in tempo l'operazione prevista.",
+	}
 
 
 (2) Response Body (HTTP Status Code 400 Bad Request)
 
-.. literalinclude:: ../media/problem-400.json
-    :language: javascript
+.. code-block:: JSON
+
+	{
+	    "type": "https://apidoc.example.com/probs/invalid-a",
+	    "status": 400,
+	    "title": "L'attributo `b` ha un valore non valido.",
+	    "detail": "L'attributo `b` dev'essere una stringa di lunghezza inferiore a 32 caratteri.",
+	}
 
 (2) Response Body (HTTP Status Code 404 Not Found)
 
-.. literalinclude:: ../media/problem-404.json
-    :language: javascript
+.. code-block:: JSON
+
+	{
+	    "status": 404,
+	    "title": "Risorsa non trovata.",
+	}
 
 Interfaccia SOAP
 -----------------
