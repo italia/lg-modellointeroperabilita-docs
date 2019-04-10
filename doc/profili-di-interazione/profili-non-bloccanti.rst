@@ -92,7 +92,7 @@ Interfaccia REST
 ~~~~~~~~~~~~~~~~
 
 Nel caso in cui il profilo venga implementato con tecnologia REST,
-DEVONO essere rispettate le seguenti regole:
+DEVONO essere rispettate le seguenti indicazioni:
 
 -  Le specifiche delle interfacce del fruitore e dell’erogatore DEVONO
    dichiarare tutti i codici di stato HTTP restituiti con relativo
@@ -130,11 +130,11 @@ Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Al termine del processamento delle richieste, l’erogatore ed il fruitore
-devono fare uso dei codici di stato HTTP rispettandone la
+DEVONO fare uso dei codici di stato HTTP rispettandone la
 semantica [2]_.
-Friuitore ed erogatore, nel processare le richieste, DEVONO almeno:
+Friutore ed erogatore:
 
--  Verificare la validità sintattica dei dati in ingresso. In caso di
+-  DEVONO verificare la validità sintattica dei dati in ingresso. In caso di
    dati errati deve restituire :httpstatus:`400` fornendo
    nel body di risposta dettagli circa l’errore;
 
