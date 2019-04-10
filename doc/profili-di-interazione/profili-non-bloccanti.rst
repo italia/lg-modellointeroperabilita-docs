@@ -10,7 +10,7 @@ Gli approcci non bloccanti vengono utilizzati nei casi in cui i tempi
 per l’erogazione di una risposta da parte del fruitore sono lunghi
 perché
 
-- la richiesta è onerosa in termini temporali
+- la richiesta è onerosa in termini temporali;
 
 - il fruitore non può farsi immediatamente carico dell’erogazione del servizio.
 
@@ -43,7 +43,7 @@ Scenario
 ~~~~~~~~
 
 Questo caso particolare, denominato RPC PUSH, è utilizzabile nel caso in
-cui il fruitore abbia a sua volta possibilità di esporre una interfaccia
+cui il fruitore abbia a sua volta la possibilità di esporre una interfaccia
 di servizio per la ricezione delle risposte.
 
 .. _descrizione-nonbloccante-1:
@@ -53,7 +53,7 @@ Descrizione
 
 .. mermaid::
    :caption: Interazione non bloccante tramite callback
-   :alt: Interazione non bloccante tramite callback
+   :alt: interazione non bloccante tramite callback
 
     sequenceDiagram
 		participant F as Fruitore
@@ -85,9 +85,6 @@ chiama il fruitore (invertendo quindi i ruoli chiamato/chiamante)
 riportando l’esito ed indicando il correlation ID. Il fruitore riconosce
 (sempre mediante un messaggio di ack) la ricezione della risposta (passo
 (4)).
-
-
-.. TODO Referenza
 
 .. _interfaccia-rest-nonbloccante-1:
 
