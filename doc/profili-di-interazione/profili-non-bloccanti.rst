@@ -186,7 +186,7 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
 
 1\) Request Header & Body
 
- .. code-block:: http
+.. code-block:: http
 
         POST /rest/v1/nomeinterfacciaservizio/resources/1234/M HTTP/1.1
         Content-Type: application/json
@@ -233,7 +233,7 @@ https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
            "c": "OK"
         }
 
-4\) Response Header & Body (HTTP Status Code 200 Success)
+4\) Response Header & Body (:httpstatus:`200`)
 
 .. code-block:: http
 
@@ -254,7 +254,7 @@ callback ed il correlation ID, vengono inseriti all’interno dell’header
 SOAP come campi custom. Erogatore e fruitore DEVONO inoltre seguire le
 seguenti regole:
 
--  Le specifica delle interfacce del fruitore e dell’erogatore DEVONO
+-  Le specifiche delle interfacce del fruitore e dell’erogatore DEVONO
    dichiarare tutti i metodi esposti con relativi schemi dei messaggi di
    richiesta e di ritorno. Inoltre le interfacce devono specificare
    eventuali header SOAP richiesti;
@@ -281,23 +281,32 @@ seguenti regole:
 .. _regole-di-processamento-nonbloccante-3:
 
 Regole di processamento
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^  
 
-Sebbene la specifica SOAP proponga l’utilizzo dei codici di stato HTTP
-al fine di indicare l’esito di una richiesta, il ModI richiede di
-seguire le seguenti regole, come supportato dalla maggioranza dei
-framework di sviluppo:
+Nel caso di errore il WS-I Basic Profile Version 2.0 richiede l’utilizzo
+del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
+In particolare, al ricevimento della richiesta, fruitore ed erogatore:
 
--  In caso di successo di una richiesta, il codice di stato HTTP DEVE
-   essere  :httpstatus:`200`. Questo vale anche per il passo (2) del profilo a
-   differenza del caso REST;
+-  DEVONO verificare la validità sintattica dei dati in ingresso. In caso di
+   dati errati DEVONO restituire  :httpstatus:`400`   fornendo
+   nel body di risposta dettagli circa l’errore;
 
--  In caso di errore si DEVE utilizzare  :httpstatus:`500`
-   accompagnato dal meccanismo basato su WS fault. Questo vale per
-   errori nella validazione, sia sintattica che semantica dei messaggi e
-   per eventuali errori interni, permettendo al chiamante (il fruitore
-   al passo (1) e l’erogatore al passo (3)) di identificare con
-   precisione l’errore.
+-  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
+   DEVONO restituire  :httpstatus:`404`  , indicando nel body di
+   risposta quale degli ID è mancante;
+
+-  In caso di errori non dipendenti dal richiedente (fruitore o erogatore), DEVONO restituire i
+   codici HTTP 5XX rispettando la semantica degli stessi ed indicando
+   nel body di risposta il motivo dell’errore;
+
+-  Al momento della ricezione della richiesta, DEVONO restituire un codice 2XX, nel dettaglio:
+	- :httpstatus:`200` in caso di presenza della payload SOAP, riempiendo il body di
+	risposta con il risultato relativo alla richiesta. 
+	- :httpstatus:`200` o :httpstatus:`202` in caso di assenza della payload SOAP
+	
+-  Nel caso di errore al momento di ricezione della risposta da parte del richiedente (fruitore o erogatore), è
+   possibile definire meccanismi specifici per la ritrasmissione delle richieste.
+
 
 .. _esempio-nonbloccante-3:
 
@@ -442,7 +451,7 @@ Descrizione
 ~~~~~~~~~~~
 
 Questo scenario prevede due possibili workflow, uno per REST ed uno
-per SOAP. I diagrammi sono nelle rispettive sezioni.
+per SOAP.
 
 Il fruitore invia una richiesta (passo (1)) e riceve immediatamente un acknowledge (passo (2)) insieme ad:
 
@@ -455,11 +464,11 @@ utilizzando (passo (3)):
 - l'url indicato (REST)
 - oppure il correlation ID (SOAP)
 
-fin quando la risposta alla richiesta sarà pronta (passi (4a) o (4b)).
+fin quando la risposta alla richiesta sarà pronta (passo (4)).
 
 Gli intervalli di polling possono essere
-definiti tramite i meccanismi di robustezza definiti in
-Sezione 2.5.
+definiti tramite i meccanismi definiti in "Robustezza".
+
 
 A questo punto il fruitore può accedere al risultato o alla risorsa finale (passi (5) e (6)).
 
@@ -511,7 +520,6 @@ DEVONO essere rispettate le seguenti regole:
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, un percorso di risorsa per interrogare lo
-
    stato di processamento della richiesta utilizzando :httpheader:`Location`;
    Il codice HTTP di stato DEVE essere :httpstatus:`202` a meno che non si verifichino errori;
 
@@ -526,8 +534,6 @@ DEVONO essere rispettate le seguenti regole:
 -  Se la risorsa è pronta (passo (5)), l’erogatore
    risponde con la rappresentazione della risorsa;
 
-Il corpo dei messaggi HTTP scambiati durante l’interazione DEVE seguire
-lo standard JSON.
 
 .. _regole-di-processamento-nonbloccante-4:
 
@@ -551,9 +557,9 @@ l’erogatore DEVE almeno:
    codici HTTP 5XX rispettando la semantica degli stessi ed indicando
    nel body di risposta il motivo dell’errore;
 
--  Al momento della ricezione della richiesta, l’erogatore restituisce
+-  Al momento della ricezione della richiesta, l’erogatore DEVE restituire
    :httpstatus:`202`. In caso di ricezione corretta della risposta,
-   il fruitore restituire :httpstatus:`200`  , riempiendo il body di
+   il fruitore DEVE restituire :httpstatus:`200`  , riempiendo il body di
    risposta con il risultato dell’operazione. Nel caso di errore al
    momento di ricezione della risposta da parte del fruitore, è
    possibile definire meccanismi specifici per la ritrasmissione della
@@ -577,7 +583,8 @@ essersi preso carico della richiesta.
 
 ----
 
-Endpoint https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
+**Endpoint** 
+https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
 
 .. code-block:: http
 
@@ -598,7 +605,7 @@ Endpoint https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/r
   Location:  resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
 
    {
-     "status": "pending",
+     "status": "accepted",
      "message": "Preso carico della richiesta",
      "id": "8131edc0-29ed-4d6e-ba43-cce978c7ea8d"
    }
@@ -606,20 +613,11 @@ Endpoint https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/r
 ----
 
 Di seguito un esempio di chiamata con cui il fruitore verifica
-l’esecuzione di M nei casi di processamento ancora in atto (4a) e di
-processamento avvenuto (4b).
+l’esecuzione di M nei casi di processamento ancora in atto (4) e di
+processamento avvenuto (5).
 
-Endpoint http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
-
-.. code-block:: http
-
-    HTTP/1.1 200 Success
-
-    {
-      "status": "pending",
-      "message": "Preso carico della richiesta"
-    }
-
+**Endpoint** 
+http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
 
 .. code-block:: http
 
@@ -681,16 +679,10 @@ Interfaccia SOAP
             activate F
             F ->>E: 3. CheckStatus(CorrelationID)
             activate E
-            E-->> F : 4a. CurrentStatus
+            E-->> F : 4. CurrentStatus
             deactivate F
             deactivate E
 		end
-		activate F
-		F ->>E:  3. CheckStatus(CorrelationID)
-		activate E
-		E-->> F : 4b. CurrentStatus
-		deactivate F
-		deactivate E
 		activate F
 		F ->>E: 5. RetriveResult(CorrelationID)
 		activate E
@@ -717,12 +709,10 @@ DEVONO essere rispettate le seguenti regole:
    al passo (2) per richiedere lo stato di processamento di una
    specifica richiesta;
 
--  Al passo (4a) l’erogatore indica che il processamento non si è ancora
-   concluso, fornendo informazioni circa lo stato della lavorazione
-   della richiesta;
-
--  Nel caso il processamento si sia concluso (passo (4b), l’erogatore
-   risponde con il codice indica in maniera esplicita il completamento;
+-  Al passo (4) l’erogatore, quando il processamento non si è ancora
+   concluso fornisce informazioni circa lo stato della lavorazione
+   della richiesta, quando invece il processamento si è concluso risponde 
+   indicando in maniera esplicita il completamento;
 
 -  Al passo (5), il fruitore utilizza il correlation ID di cui al passo
    (2) al fine di richiedere il risultato della richiesta;
@@ -735,21 +725,25 @@ DEVONO essere rispettate le seguenti regole:
 Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Sebbene la specifica SOAP proponga l’utilizzo dei codici di stato HTTP
-al fine di indicare l’esito di una richiesta, il ModI richiede di
-seguire le seguenti regole, come supportato dalla maggioranza dei
-framework di sviluppo:
+Nel caso di errore il WS-I Basic Profile Version 2.0 richiede l’utilizzo
+del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
+Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 
--  In caso di successo di una richiesta, il codice di stato HTTP DEVE
-   essere  :httpstatus:`200`. Questo vale anche per il passo (2) del profilo a
-   differenza del caso REST;
+-  DEVE verificare la validità sintattica dei dati in ingresso. In caso
+   di dati errati DEVE restituire :httpstatus:`500` fornendo dettagli
+   circa l’errore utilizzando il meccanismo della SOAP fault;
 
--  In caso di errore si DEVE utilizzare  :httpstatus:`500`
-   accompagnato dal meccanismo basato su WS fault. Questo vale per
-   errori nella validazione, sia sintattica che semantica dei messaggi e
-   per eventuali errori interni, permettendo al chiamante (il fruitore
-   al passo (1) e l’erogatore al passo (3)) di identificare con
-   precisione l’errore.
+-  Nel caso in cui qualcuno degli ID nel messaggio non esista,
+   DEVE restituire :httpstatus:`500` indicando tramite la SOAP fault
+   quale degli ID è mancante;
+
+-  In caso di errori non dipendenti dal fruitore, DEVE restituire il
+   codice :httpstatus:`500`, indicando il motivo dell’errore nella SOAP fault;
+
+-  In caso di successo restituire :httpstatus:`200`, riempiendo il
+   body di risposta con il risultato dell’operazione.
+
+
 
 .. _esempio-nonbloccante-5:
 
@@ -806,7 +800,7 @@ MRequest
 			<soap:Body>
 				<m:MRequestResponse>
 					<return>
-						<status>pending</status>
+						<status>accepted</status>
 						<message>Preso carico della richiesta</message>
 					</return>
 				</m:MRequestResponse>
@@ -815,8 +809,8 @@ MRequest
 
 
 Di seguito un esempio di chiamata con cui il fruitore verifica
-l’esecuzione di M nei casi di processamento ancora in atto (4a) e di
-processamento avvenuto (4b).
+l’esecuzione di M nei casi di processamento ancora in atto e di
+processamento avvenuto (4).
 
 
 **Endpoint** 
@@ -851,8 +845,8 @@ MProcessingStatus
 			<soap:Body>
 				<m:MProcessingStatusResponse>
 					<return>
-						<status>pending</status>
-						<message>Preso carico della richiesta</message>
+						<status>processing</status>
+						<message>Richiesta in fase di processamento</message>
 					</return>
 				</m:MProcessingStatusResponse>
 			</soap:Body>

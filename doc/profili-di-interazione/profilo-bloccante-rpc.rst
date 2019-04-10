@@ -156,7 +156,12 @@ Interfaccia SOAP
 Se il profilo viene implementato con tecnologia SOAP, a differenza del
 caso REST, il metodo invocato non è specificato nell’endpoint chiamato,
 poichè viene identificato all’interno del body. Inoltre tutti gli ID
-coinvolti DEVONO essere riportati all’interno del body.
+coinvolti DEVONO essere riportati all’interno del body. DEVE essere rispettata le seguente regola:
+
+-  La specifica dell'interfacciad ell’erogatore DEVE
+   dichiarare tutti i metodi esposti con relativi schemi dei messaggi di
+   richiesta e di ritorno. Inoltre le interfacce devono specificare
+   eventuali header SOAP richiesti;
 
 .. _regole-di-processamento-rpc-soap-1:
 
