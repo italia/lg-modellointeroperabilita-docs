@@ -8,12 +8,9 @@ metodologici può riferirsi a [1]_, [2]_ . La breve discussione che viene
 presentata in questa sezione, condotta anche attraverso esempi, vuole
 ricordare al lettore la problematica dell'\ *impedance mismatch* tra
 differenti tecnologie per la realizzazione di interfacce di servizio ed
-il modello sottostante di interfaccia (RPC-like vs. resource-oriented),
-in quanto nelle schede tecniche del successivo capitolo sui profili
-questi aspetti sono determinanti ai fini della comprensione del profilo
-stesso.
+il modello architetturale sottostante (RPC-like vs. resource-oriented).
 
-Le interfacce di servizio, cf. la seconda sezione delle linee guida,
+Le interfacce di servizio, cf. il secondo documento delle linee guida,
 possono essere progettate secondo due paradigmi:
 
 1. **RPC-like**. In questo paradigma, un'interfaccia di servizio espone
@@ -85,23 +82,10 @@ Questo è dovuto al fatto che SOAP è di fatto la specifica di un
 middleware, e quindi neutro rispetto al paradigma, mentre REST, in
 quanto stile architetturale, è maggiormente caratterizzato. Gli esempi
 successivi evidenziano l'\ *impedance mismatch* (differenza tra i
-modelli realizzativi e concettuali, cf.
-
-.. TODO: referenza 
-
-Capitolo 3) che si origina
+modelli realizzativi e concettuali, cf. Capitolo 3) che si origina
 nelle varie casistiche partendo da una interfaccia di servizio secondo
 ciascuno dei due paradigmi (RPC-like e resource oriented) e cercando
 di realizzarla utilizzando le due diverse tecnologie SOAP e REST.
-
-.. figure:: ./media/image1.png
-   :scale: 75 %
-   :align: center
-   :alt: interfaccia di servizio usando SOAP/WSDL
-
-   Interfaccia di servizio usando SOAP/WSDL.
-
-Per semplicità nell'esempio si suppone che il singolo item nell'Order sia rappresentabile con una semplice stringa (che codifica il suo codice, ad esempio) e sempre in quantità singola (per cui un Order non fa altro che aggregare differenti Items)
 
 **Esempio 1.** Si immagini di voler realizzare un'interfaccia di
 servizio resource-oriented che permette di accedere ad informazioni su
@@ -112,6 +96,13 @@ Figura 3.1. L'interfaccia di servizio utilizza Order come oggetto
 serializzabile (in XML) per i dettagli dell'ordine da ritornare come
 tipo di ritorno nelle varie operazioni ovvero come parametro per la sua
 creazione.
+
+.. figure:: ./media/image1.png
+   :scale: 75 %
+   :align: center
+   :alt: interfaccia di servizio usando SOAP/WSDL
+
+   Interfaccia di servizio usando SOAP/WSDL. Per semplicità nell'esempio si suppone che il singolo item nell'Order sia rappresentabile con una semplice stringa (che codifica il suo codice, ad esempio) e sempre in quantità singola (per cui un Order non fa altro che aggregare differenti Items).
 
 Utilizzando REST, l'interfaccia di servizio corrisponde a due risorse,
 Order e Item ed i verbi HTTP (ovvero GET, PUT, POST e DELETE) si mappano
@@ -326,11 +317,10 @@ offerta per interoperare:
 .. [2]
    Originariamente Swagger (della società SmartBear Software) era un
    insieme di tool sia per la descrizione delle interfacce che per il
-   loro sviluppo. Nel 2015 un gruppo di aziende, sotto la sponsorship
+   loro sviluppo. Nel 2015 un gruppo di aziende, sotto la sponsorizzazione
    della Linux Foundation, ha dato vita all'iniziativa OpenAPI, a cui
    SmartBear ha donato il formato di specifica che è stato rinominato da
-   Swagger Specification in OpenAPI Specification. OpenAPI 3.0 è
-   l'ultima versione della specifica. Gli strumenti Swagger, che sono
+   Swagger Specification in OpenAPI Specification. Gli strumenti Swagger, che sono
    ancora supportati da SmartBear Software, sono tra gli strumenti più
    popolari per implementare la specifica OpenAPI e continueranno a
    mantenere il nome Swagger. Esistono molti altri strumenti open source
