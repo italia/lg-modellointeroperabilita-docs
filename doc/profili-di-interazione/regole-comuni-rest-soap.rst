@@ -54,7 +54,7 @@ Cioè:
 Evitare Content-Type personalizzati
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Si raccomanda di evitare l'uso di media-type personalizzati come da ​:RFC:`6838#section-3.4` (eg.
+Si raccomanda di evitare l'uso di media-type personalizzati come da :RFC:`6838#section-3.4` (eg.
 ``application/x.custom.name+json``) ed utilizzare nomi standard come:
 
 - `application/json​ <https://www.iana.org/assignments/media-types/application/json>`__,
@@ -516,7 +516,7 @@ Evitare l'uso di media-type personalizzati
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Si raccomanda di evitare l'uso di media-type personalizzati come da ​:RFC:`6838#section-3.4`
+Si raccomanda di evitare l'uso di media-type personalizzati come da :RFC:`6838#section-3.4`
 (eg. ``application/x.custom.name+xml``) ed utilizzare nomi standard come
 ​ `application/xml`_
 
