@@ -118,11 +118,6 @@ esattamente sulle operazioni CRUD, come mostrato in Figura 3.2.
 
    Interfaccia di servizio usando REST.
 
-Se l'interfaccia di servizio è resource-oriented (come appunto nel caso
-precedente, in cui di fatto si vuole accedere a informazioni sugli
-ordini) allora l'\ *impedance mismatch* con entrambe le tecnologie è
-minima.
-
 **Esempio 2.** Si immagini di voler realizzare un'interfaccia di
 servizio che permette di avviare un task di lunga durata, ad esempio una
 complessa procedura computazionale. Utilizzando SOAP/WSDL, si realizza
