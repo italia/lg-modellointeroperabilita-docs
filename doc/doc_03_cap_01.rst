@@ -150,13 +150,13 @@ quindi a far partire il task.
 
       {
          "task": {
-         "status": "pending",
+         "status": "accepted",
          "message": "Your task has been queued for processing",
          "ping-time": "2018-12-31T19:43:37+0100"
          }
       }
 
-Il codice di stato **202 Accepted** indica che l'interfaccia di servizio ha verificato l'input della richiesta e lo ha accettato, ma non è possibile fornire una risposta immediata.
+Il codice di stato **202 Accepted** indica che l'interfaccia di servizio ha verificato l'input della richiesta e lo ha accettato, ma non è fornita una risposta immediata.
 
 Il client deve seguire il collegamento fornito nell'intestazione
 Location per informarsi (con GET) sullo stato della richiesta in
@@ -191,7 +191,7 @@ il risultato finale.
    ⇒ GET /task/20181231
 
    ⇐ 303 See Other
-   Location: /task/20181231/result
+   Location: /result/20181232
 
    {
       "task": {
@@ -207,7 +207,7 @@ client interessati a leggere l'output della richiesta POST originale.
 
 .. code-block:: JSON
 
-   ⇒ GET /task/20181231/result
+   ⇒ GET /result/20181232
 
    ⇐ 200 OK
    [Output data payload]
@@ -246,11 +246,7 @@ presentare i casi seguenti:
    presenza di controlli ipermediali nella rappresentazione delle
    risorse.
 
-Si anticipa che nel
-
-.. TODO: referenza
-
-Capitolo 2 dedicato ai profili, si adotteranno, nel
+Si anticipa che nel Capitolo 2 dedicato ai profili, si adotteranno, nel
 caso dei profili non bloccanti realizzati in tecnologia REST, delle
 interfacce di servizio classificabili di livello 1 del Richardson
 Maturity Model.
@@ -298,7 +294,7 @@ offerta per interoperare:
    Perimetro delle interfacce in SPCoop
 
 .. figure:: media/image5.png
-   :alt: perimetro in SPCoop
+   :alt: perimetro in ModI
 
    Perimetro delle interfacce in ModI
 
