@@ -102,7 +102,9 @@ creazione.
    :align: center
    :alt: interfaccia di servizio usando SOAP/WSDL
 
-   Interfaccia di servizio usando SOAP/WSDL. Per semplicità nell'esempio si suppone che il singolo item nell'Order sia rappresentabile con una semplice stringa (che codifica il suo codice, ad esempio) e sempre in quantità singola (per cui un Order non fa altro che aggregare differenti Items).
+   Interfaccia di servizio usando SOAP/WSDL.
+
+Per semplicità nell'esempio si suppone che il singolo item nell'Order sia rappresentabile con una semplice stringa (che codifica il suo codice, ad esempio) e sempre in quantità singola (per cui un Order non fa altro che aggregare differenti Items).
 
 Utilizzando REST, l'interfaccia di servizio corrisponde a due risorse,
 Order e Item ed i verbi HTTP (ovvero GET, PUT, POST e DELETE) si mappano
