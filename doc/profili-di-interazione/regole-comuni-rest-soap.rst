@@ -332,7 +332,7 @@ Usare lo schema Problem JSON per le risposte di errore
 
 In caso di errori si deve ritornare:
 
--  un payload di tipo Problem definito in ​:RFC:`7807`
+-  un payload di tipo Problem definito in :RFC:`7807`
 -  il media type dev'essere ``application/problem+json``
 -  lo status code dev'essere esplicativo
 -  l'oggetto può essere esteso
