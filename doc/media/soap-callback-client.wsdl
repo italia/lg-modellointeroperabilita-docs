@@ -74,7 +74,7 @@
 	</wsdl:binding>
 	<wsdl:service name="SOAPCallbackClientService">
 		<wsdl:port binding="tns:SOAPCallbackClientServiceSoapBinding" name="SOAPCallbackClientPort">
-			<soap:address location="http://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1"/>
+			<soap:address location="https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1"/>
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>

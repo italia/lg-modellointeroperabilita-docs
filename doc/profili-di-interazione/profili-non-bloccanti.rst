@@ -340,7 +340,7 @@ MRequest
 		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
 		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
 		<soap:Header>
-			<m:X-ReplyTo>http://localhost:8181/soap/nomeinterfacciaservizio/v1</m:X-ReplyTo>
+			<m:X-ReplyTo>https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1</m:X-ReplyTo>
 		</soap:Header>
 		<soap:Body>
 			<m:MRequest>
@@ -772,52 +772,52 @@ Specifica Servizio Server: https://api.amministrazioneesempio.it/soap/nomeinterf
 Di seguito un esempio di chiamata ad M in cui l’erogatore risponde di
 avere preso in carico la richiesta.
 
-Endpoint https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M
+**Endpoint** 
+https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1
 
+**Method**
+MRequest
 
 - 1\) Richiesta
 
-.. code-block:: http
+.. code-block:: XML
 
-    POST /api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M HTTP/1.1
-    (method: MRequest)
-
-    <?xml version="1.0"?>
-    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-      <soap:Body>
-        <ns2:MRequest xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-          <M>
-            <o_id>1234</o_id><a>
-              <a1s>1</a1s>...<a1s>2</a1s>
-              <a2>Stringa di esempio</a2>
-            </a>
-            <b>Stringa di esempio</b>
-          </M>
-        </ns2:MRequest>
-      </soap:Body>
-    </soap:Envelope>
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+		<soap:Body>
+			<m:MRequest 
+					<M>
+						<o_id>1234</o_id>
+						<a>
+							<a1s>1</a1s>
+							<a2>prova</a2>
+						</a>
+						<b>prova</b>
+					</M>
+				</m:MRequest>
+			</soap:Body>
+	</soap:Envelope>
 
 - 2\) Risposta
 
-.. code-block:: http
+.. code-block:: XML
 
-    HTTP/1.1 200 Success
-
-    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-      <soap:Header>
-        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-            59eca678-5392-4e45-bdf3-7f55d398c940
-        </ns2:X-Correlation-ID>  |
-      </soap:Header>
-      <soap:Body>
-        <ns2:MRequestResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-          <return>
-            <status>pending</status>
-            <message>Preso carico della richiesta</message>
-          </return>
-        </ns2:MRequestResponse>
-      </soap:Body>
-    </soap:Envelope>
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+			<soap:Header>
+				<m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
+			</soap:Header>
+			<soap:Body>
+				<m:MRequestResponse>
+					<return>
+						<status>pending</status>
+						<message>Preso carico della richiesta</message>
+					</return>
+				</m:MRequestResponse>
+			</soap:Body>
+	</soap:Envelope>
 
 
 Di seguito un esempio di chiamata con cui il fruitore verifica
@@ -825,66 +825,61 @@ l’esecuzione di M nei casi di processamento ancora in atto (4a) e di
 processamento avvenuto (4b).
 
 
+**Endpoint** 
+https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1
 
-
-Endpoint: https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M
-
-
-
+**Method**
 MProcessingStatus
 
 
 - 3\) richiesta verifica status
 
-.. code-block:: http
-
-
-    POST /api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M
-    (method: MRequest)
-
-   <?xml version="1.0"?>
-   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-     <soap:Header>
-       <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">59eca678-5392-4e45-bdf3-7f55d398c940</ns2:X-Correlation-ID>
-     </soap:Header>
-     <soap:Body>
-       <ns2:MProcessingStatus xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio"/>
-     </soap:Body>
-   </soap:Envelope>
+.. code-block:: XML
+    
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+			<soap:Header>
+				<m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
+			</soap:Header>
+			<soap:Body>
+				<m:MProcessingStatus/>
+			</soap:Body>
+	</soap:Envelope>
 
 - 4\) risposta verifica status in attesa
 
-.. code-block:: http
+.. code-block:: XML
 
-    HTTP/1.1 200 Success
-
-    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-      <soap:Body>
-        <ns2:MProcessingStatusResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-          <return>
-            <status>processing</status>
-            <message>Richiesta in fase di processamento</message>
-          </return>
-        </ns2:MProcessingStatusResponse>
-      </soap:Body>
-    </soap:Envelope>
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+			<soap:Body>
+				<m:MProcessingStatusResponse>
+					<return>
+						<status>pending</status>
+						<message>Preso carico della richiesta</message>
+					</return>
+				</m:MProcessingStatusResponse>
+			</soap:Body>
+	</soap:Envelope>
 
 - 4\) risposta verifica status completato
 
-.. code-block:: http
+.. code-block:: XML
 
-    HTTP/1.1 200 Success
-
-    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-      <soap:Body>
-        <ns2:MProcessingStatusResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-          <return>
-            <status>done</status>
-            <message>Processamento completo</message>
-          </return>
-        </ns2:MProcessingStatusResponse>
-      </soap:Body>
-    </soap:Envelope>
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+		<soap:Body>
+			<m:MProcessingStatusResponse>
+				<return>
+					<status>done</status>
+					<message>Richiesta completata</message>
+				</return>
+			</m:MProcessingStatusResponse>
+		</soap:Body>
+	</soap:Envelope>
 
 
 
@@ -892,43 +887,44 @@ MProcessingStatus
 Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
 della sua richiesta.
 
-Endpoint: https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1/M
+**Endpoint** 
+https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1
 
-- 5\) richiesta recupero entry (MResponse)
+**Method**
+MProcessingStatus
+
+- 5\) richiesta recupero entry
 
 
-.. code-block:: http
+.. code-block:: XML
 
-
-    POST /soap/nomeinterfacciaservizio/v1/M       HTTP/1.1
-
-    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-      <soap:Header>
-        <ns2:X-Correlation-ID xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-                59eca678-5392-4e45-bdf3-7f55d398c940
-        </ns2:X-Correlation-ID>
-      </soap:Header>
-      <soap:Body>
-        <ns2:MResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio"/>
-      </soap:Body>
-    </soap:Envelope>
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+		<soap:Header>
+			<m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
+		</soap:Header>
+		<soap:Body>
+			<m:MResponse/>
+		</soap:Body>
+	</soap:Envelope>
 
 - 6\) risposta recupero entry
 
-.. code-block:: http
+.. code-block:: XML
 
-    HTTP/1.1 200 Success
-
-    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-       <soap:Body>
-          <ns2:MResponseResponse xmlns:ns2="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-             <return>
-               <c>OK</c>
-             </return>
-           </ns2:MResponseResponse>
-      </soap:Body>
-    </soap:Envelope>
-
+	<soap:Envelope 
+		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+		<soap:Body>
+			<m:MResponseResponse">
+				<return>
+					<c>OK</c>
+				</return>
+			</m:MResponseResponse>
+		</soap:Body>
+	</soap:Envelope>
+	
 
 
 
