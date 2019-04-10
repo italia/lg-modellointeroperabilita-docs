@@ -7,12 +7,11 @@ definendo le interfacce di servizio.
 I *profili di interazione* quali riferimenti
 concettuali coniugano, fatto salvo per l'accesso CRUD, message exchange
 pattern (MEP) per le tecnologie SOAP e REST proposte dal ModI.
-L'attenzione in questa sezione delle linee guida viene rivolta agli
-aspetti funzionali rimandando per gli aspetti di sicurezza alla apposita
-sezione delle linee guida.
+Di seguito l'attenzione è rivolta agli
+aspetti funzionali rimandando per gli aspetti di sicurezza all'apposito documento
+delle linee guida.
 
-Per i concetti di bloccante e non bloccante si rimanda alla lettura del
-paragrafo "Concetti di base" del documento.
+Per i concetti di bloccante e non bloccante si rimanda alla lettura di "Concetti di base".
 
 Ogni interfaccia di servizio deve essere rappresentata mediante
 un IDL - Interface Description Language standard - che il ModI fissa:
