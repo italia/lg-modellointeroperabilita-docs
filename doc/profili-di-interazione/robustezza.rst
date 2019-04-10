@@ -20,21 +20,21 @@ Segnalare raggiunti limiti di utilizzo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Gli erogatori di interfacce di servizio REST DEVONO segnalare eventuali
-limiti raggiunti con **HTTP 429 (too many requests)**.
+limiti raggiunti con :httpstatus:`429`.
 
 Le API restituiscono in ogni response i valori globali di throttling
 tramite i seguenti header:
 
--  X-RateLimit-Limit: limite massimo di richieste per un endpoint
+-  ``X-RateLimit-Limit``: limite massimo di richieste per un endpoint
 
--  X-RateLimit-Remaining: numero di richieste rimanenti fino al prossimo
+-  ``X-RateLimit-Remaining``: numero di richieste rimanenti fino al prossimo
    reset
 
--  X-RateLimit-Reset: il numero di secondi che mancano al prossimo reset
+-  ``X-RateLimit-Reset``: il numero di secondi che mancano al prossimo reset
 
 In caso di superamento delle quote, le API restituiscono anche l'header:
 
--  Retry-After: il numero minimo di secondi dopo cui il client è
+-  :httpheader:`Retry-After`: il numero minimo di secondi dopo cui il client è
    invitato a riprovare [1]_
 
 Nel caso di interfacce di servizio SOAP non esistono regole guida
@@ -46,11 +46,11 @@ I fruitori devono:
 
 -  rispettare gli header di throttling
 
--  rispettare l'header ​X-RateLimit-Reset sia quando restituisce il
+-  rispettare l'header ``​X-RateLimit-Reset`` sia quando restituisce il
    numero di secondi che mancano al prossimo reset, sia quando ritorna
    il timestamp unix
 
--  rispettare l'header Retry-After [#Retry-After]_
+-  rispettare l'header :httpheader:`Retry-After`
    sia nella variante che espone il numero di secondi dopo cui
    riprovare, sia nella variante che espone la data in cui riprovare
 
@@ -61,19 +61,19 @@ Segnalare il sovraccarico del sistema o l'indisponibilità del servizio
 
 Gli erogatori devono definire ed esporre un piano di continuità
 operativa segnalando il sovraccarico del sistema o l'indisponibilità del
-servizio con lo status code http​ 503 (service unavailable)​.
+servizio con :httpstatus:`503`.
 
-In caso di sovraccarico o indisponibilità, l'erogatore deve ritornare
-anche l'header:
+In caso di sovraccarico o indisponibilità, l\'erogatore deve ritornare
+anche:
 
--  Retry-After​: il numero minimo di secondi dopo cui il client è
+-  :httpheader:`Retry-After` con il numero minimo di secondi dopo cui il client è
    invitato a riprovare
 
 I fruitori devono:
 
--  rispettare l'header Retry-After [#Retry-After]_
+-  rispettare :httpheader:`Retry-After`
    sia nella variante che espone il numero di secondi dopo cui
-   riprovare, sia nella variante che espone la data in cui riprovare
+   riprovare, sia nella variante che espone la data in cui riprovare.
 
 
 Si propone di seguito una specifica di servizio REST relativa ad un
@@ -98,9 +98,9 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
 
 ----
 
-1. Request Body
 
- .. code-block:: http
+.. code-block:: http
+   :caption: 1- Request
 
     POST /rest/v1/nomeinterfacciaservizio/resources/1234/M   HTTP/1.1
     Host: api.amministrazioneesempio.it
@@ -114,11 +114,9 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
       "b": "Stringa di esempio"
     }
 
-----
 
-2. Response 200 Success
-
- .. code-block:: http
+.. code-block:: http
+    :caption: 2- Response
 
     HTTP/1.1 200 Success
     X-Rate-Limit-Limit: 30
@@ -129,12 +127,8 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
       "c" : "risultato"
     }
 
-----
-
-2. Response 429 Too Many Requests
-
-
 .. code-block:: http
+   :caption: 2. Response 429 Too Many Requests
 
    HTTP/1.1 429 Too Many Requests
    Content-Type: application/problem+json
@@ -150,8 +144,5 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
 
 
 .. [1]
-   :RFC:`7231` prevede che l'header Retry-After possa essere utilizzato sia
+   :RFC:`7231` prevede che l'header :httpheader:`Retry-After` possa essere utilizzato sia
    in forma di data che di secondi
-
-.. [#Retry-After]
-   https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After
