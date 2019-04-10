@@ -516,9 +516,7 @@ DEVONO essere rispettate le seguenti regole:
    della richiesta nel body, un percorso di risorsa per interrogare lo
 
    stato di processamento della richiesta utilizzando :httpheader:`Location`;
-   Il codice HTTP di stato DEVE essere :httpstatus:`202` a
-
-   meno che non si verifichino errori;
+   Il codice HTTP di stato DEVE essere :httpstatus:`202` a meno che non si verifichino errori;
 
 -  Al passo (3), il fruitore DEVE utilizzare il percorso di cui al passo
    (2) per richiedere lo stato della risorsa; Il verbo HTTP
@@ -528,7 +526,7 @@ DEVONO essere rispettate le seguenti regole:
    fornendo informazioni circa lo stato della lavorazione
    della richiesta; il codice HTTP restituito è :httpstatus:`200`;
 
--  Se la risorsa è pronta (passo (5), l’erogatore
+-  Se la risorsa è pronta (passo (5)), l’erogatore
    risponde con la rappresentazione della risorsa;
 
 Il corpo dei messaggi HTTP scambiati durante l’interazione DEVE seguire
@@ -718,7 +716,7 @@ DEVONO essere rispettate le seguenti regole:
    della richiesta nel body, un correlation ID riportato nel header
    custom SOAP X-Correlation-ID;
 
--  Al passo (3), l’erogatore DEVE utilizzare i l correlation ID ottenuto
+-  Al passo (3), il fruitore DEVE utilizzare i l correlation ID ottenuto
    al passo (2) per richiedere lo stato di processamento di una
    specifica richiesta;
 
