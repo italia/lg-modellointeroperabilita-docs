@@ -168,7 +168,7 @@ del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
 Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 
 -  DEVE verificare la validità sintattica dei dati in ingresso. In caso
-   di dati errati deve restituire :httpstatus:`500` fornendo dettagli
+   di dati errati DEVE restituire :httpstatus:`500` fornendo dettagli
    circa l’errore utilizzando il meccanismo della SOAP fault;
 
 -  Nel caso in cui qualcuno degli ID nel body non esista,
@@ -178,7 +178,7 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 -  In caso di errori non dipendenti dal fruitore, DEVE restituire il
    codice HTTP 500, indicando il motivo dell’errore nella SOAP fault;
 
--  In caso di successo restituire :httpstatus:`200` OK, riempiendo il
+-  In caso di successo restituire :httpstatus:`200`, riempiendo il
    body di risposta con il risultato dell’operazione.
 
 .. _esempio-rpc-soap-1:
@@ -198,8 +198,8 @@ A seguire un esempio di chiamata al metodo ``M``.
 **Endpoint**
 https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1
 
-Method
-**M**
+**Method**
+M
 
 1. Request Body
 
