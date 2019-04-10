@@ -11,7 +11,7 @@ Informazioni sulla consultazione
 Esiti della consultazione
 =========================
 
-I risultati della consultazione pubblica on line saranno presi in considerazione dall'\ `Agenzia per l'Italia Digitale <http://www.agid.gov.it/>`__ per la redazione del testo definitivo della Guida Tecnica.
+I risultati della consultazione pubblica on line saranno presi in considerazione dall'`Agenzia per l'Italia Digitale <http://www.agid.gov.it/>`__ per la redazione del testo definitivo della Guida Tecnica.
 
 Destinatari
 ===========

@@ -54,7 +54,7 @@ Cioè:
 Evitare Content-Type personalizzati
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Si raccomanda di evitare l'uso di media-type personalizzati come da ​:RFC:`6838#section-3.4` (eg.
+Si raccomanda di evitare l'uso di media-type personalizzati come da :RFC:`6838` section-3.4 (eg.
 ``application/x.custom.name+json``) ed utilizzare nomi standard come:
 
 - `application/json​ <https://www.iana.org/assignments/media-types/application/json>`__,
@@ -139,7 +139,7 @@ la Valorizzazione del Patrimonio Informativo Nazionale, inclusi:
 -  `ISO 639-1 language code <https://www.iso.org/standard/22109.html>`__
 -  :BCP:`47` (basato su ISO 639-1) per le varianti dei linguaggi.
 -  `ISO 4217 alpha-3 currency codes​ <https://www.iso.org/iso-4217-currency-codes.html>`__
-   
+
 
 Per le valute, è possibile basarsi sullo schema Money - ripreso dal
 lavoro di standardizzazione del ​\ `Berlin Group sotto l'egida dell'European Standards​ <https://www.berlin-group.org/>`__
@@ -210,7 +210,7 @@ Uso corretto dei metodi HTTP
 
 
 I metodi HTTP devono essere utilizzati rispettando la semantica indicata
-in :RFC:`7231#section-4.3`.
+in :RFC:`7231` section-4.3.
 
 .. TODO rimuovere la parte ridondante dal resto.
 
@@ -332,7 +332,7 @@ Usare lo schema Problem JSON per le risposte di errore
 
 In caso di errori si deve ritornare:
 
--  un payload di tipo Problem definito in ​:RFC:`7807`
+-  un payload di tipo Problem definito in :RFC:`7807`
 -  il media type dev'essere ``application/problem+json``
 -  lo status code dev'essere esplicativo
 -  l'oggetto può essere esteso
@@ -457,7 +457,7 @@ header:
 
 -  `ETag <https://tools.ietf.org/html/rfc7232#section-2.3>`__
 -  `If-Match <https://tools.ietf.org/html/rfc7232#section-3.1>`__
--  `If-None-Match​ <https://tools.ietf.org/html/rfc7232#section-3.2>`__.
+-  `If-None-Match <https://tools.ietf.org/html/rfc7232#section-3.2>`__.
 
 contenenti un hash del response body, un hash dell'ultimo campo
 modificato della entry o un numero di versione.
@@ -506,9 +506,6 @@ Raccomandazioni tecniche per SOAP
 
 Nell'ambito del protocollo SOAP hai fini dell'interoperabilità è definito in WS-I Basic Profile.
 
-Adozione di WS-I
-~~~~~~~~~~~~~~~~
-
 ModI assume l'adozione della specifica `WS-I Basic Profile versione 2.0 <http://www.ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html>`__
 , in quanto i framework implementativi più diffusi sono conformi a questa specifica.
 
@@ -516,16 +513,16 @@ Di seguito sono riportate suggerimenti al fine di favorire l'interoperabilità.
 
 
 Evitare l'uso di media-type personalizzati
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Si raccomanda di evitare l'uso di media-type personalizzati come da ​:RFC:`6838#section-3.4`
+Si raccomanda di evitare l'uso di media-type personalizzati come da :RFC:`6838` section-3.4
 (eg. ``application/x.custom.name+xml``) ed utilizzare nomi standard come
 ​ `application/xml`_
 
 
 Utilizzare le properties secondo nomenclature standard
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Le properties DEVONO utilizzare ove possibile la nomenclatura indicata
 nelle `Linee Guida per la valorizzazione del Patrimonio informativo
@@ -534,7 +531,7 @@ e le `relative ontologie <https://github.com/italia/daf-ontologie-vocabolari-con
 
 
 Utilizzare formati standard per Data ed Ora
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Le date DEVONO essere conformi ad :RFC:`3339`,
 ad esempio `2015-05-28` per la data e `2015-05-28T14:07:17Z` per l'ora.
@@ -552,7 +549,7 @@ suffisso Z (Zulu time zone)
 
 
 Tempi di durata e intervalli devono utilizzare ISO 8601.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Di seguito alcuni esempi di durata in formato ​\ `ISO 8601 per i tempi
 di durata​ <https://www.iso.org/iso-8601-date-and-time-format.html>`__.
@@ -573,7 +570,7 @@ Un'analoga sintassi ISO8601 per lo stesso intervallo è la seguente:
 
 
 Usare standard per Lingue, Nazioni e Monete
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Utilizzare per le codifiche web gli standard indicati in Linee Guida per
 la Valorizzazione del Patrimonio Informativo Nazionale, inclusi:
@@ -585,7 +582,7 @@ la Valorizzazione del Patrimonio Informativo Nazionale, inclusi:
 
 
 Descrittività dei nomi utilizzati
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 I nomi utilizzati per servizi ed operazioni nelle interfacce di servizio
 devono essere auto-descrittivi e fornire quanta più informazione possibile riguardo al
 comportamento implementato.
@@ -595,18 +592,18 @@ universalmente riconosciuti anche al di fuori del dominio applicativo.
 
 
 Utilizzo di camelCase e PascalCase
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Per i nomi dei servizi si suggerisce di utilizzare PascalCase mentre per le
 operazioni implementate e gli argomenti si suggerisce l'utilizzo del camelCase.
 
 
 Non includere il numero di versione all'interno del nome del servizio
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Unicità dei namespace e utilizzo di pattern fissi
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ove possibile all'interno del WSDL deve essere presente un namespace unico.
 
