@@ -501,8 +501,7 @@ Interfaccia REST
 
 
 Nel caso in cui il profilo venga implementato con tecnologia REST,
-DEVONO essere rispettate le seguenti regole (che riflettono l’esempio 2
-riportato nel Capitolo 1):
+DEVONO essere rispettate le seguenti regole:
 
 -  La specifica dell’interfaccia dell’erogatore DEVE dichiarare tutti i
    codici di stato HTTP restituiti con relativo schema della risposta,
