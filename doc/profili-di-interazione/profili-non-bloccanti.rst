@@ -340,7 +340,7 @@ MRequest
 		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
 		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
 		<soap:Header>
-			<m:X-ReplyTo>http://localhost:8181/soap/nomeinterfacciaservizio/v1</m:X-ReplyTo>
+			<m:X-ReplyTo>https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1</m:X-ReplyTo>
 		</soap:Header>
 		<soap:Body>
 			<m:MRequest>
