@@ -135,20 +135,20 @@ semantica [2]_.
 Friutore ed erogatore:
 
 -  DEVONO verificare la validità sintattica dei dati in ingresso. In caso di
-   dati errati deve restituire :httpstatus:`400` fornendo
+   dati errati DEVONO restituire :httpstatus:`400` fornendo
    nel body di risposta dettagli circa l’errore;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVE restituire :httpstatus:`404`, indicando nel body di
+   DEVONO restituire :httpstatus:`404`, indicando nel body di
    risposta quale degli ID è mancante;
 
--  In caso di errori non dipendenti dalla richiesta, DEVE restituire
+-  In caso di errori non dipendenti dalla richiesta, DEVONO restituire
    HTTP status 5XX rispettando la semantica degli stessi ed indicando
    nel body di risposta il motivo dell’errore;
 
--  Al momento della ricezione della richiesta, l’erogatore restituisce
+-  Al momento della ricezione della richiesta, l’erogatore DEVE restituire
    :httpstatus:`202`. In caso di ricezione corretta della risposta,
-   il fruitore restituire :httpstatus:`200`, riempiendo il body di
+   il fruitore DEVE restituire :httpstatus:`200`, riempiendo il body di
    risposta con un acknowledgement dell’avvenuta ricezione. Nel caso di
    errore al momento di ricezione della risposta da parte del fruitore,
    è possibile utilizzare meccanismi specifici per la ritrasmissione della
