@@ -172,12 +172,12 @@ Le parti possono concordare la definizione di nuovi tipi, che dev'essere
 documentata nell'interfaccia.
 
 .. csv-table::
-
     :header:  type,   format,   valori ammessi
+
     integer,  int32,    interi tra -2^31 e 2^31-1
     integer,  int64,    interi tra -2^63 e 2^63-1
-    number,   decimal32,    IEEE 754-2008/ISO 60559:2011 decimale a 32 bit
-    number,   decimal64,    IEEE 754-2008/ISO 60559:2011 decimale a 64 bit
+    number,   decimal32 / float,    IEEE 754-2008/ISO 60559:2011 decimale a 32 bit
+    number,   decimal64 / double,    IEEE 754-2008/ISO 60559:2011 decimale a 64 bit
     number,   decimal128,   IEEE 754-2008/ISO 60559:2011 decimale a 128 bit
 
 
