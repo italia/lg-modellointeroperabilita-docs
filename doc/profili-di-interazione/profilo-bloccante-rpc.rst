@@ -11,7 +11,7 @@ casi in cui:
    essere portata immediatamente a termine dall’erogatore.
 
 -  Il contesto rende complessa l’implementazione delle modalità non
-   bloccanti di cui alle sezioni successive. Ad esempio, non è possibile
+   bloccanti. Ad esempio, non è possibile
    per il fruitore esporre una propria interfaccia di servizio ed il fruitore non può farsi carico di mantenere il
    contesto necessario ad effettuare attesa attiva.
 
@@ -41,7 +41,7 @@ Interfaccia REST
 ----------------
 
 Nel caso di implementazione tramite tecnologia REST, DEVONO essere
-seguite le seguenti indicazioni:
+seguite almeno le seguenti indicazioni:
 
 -  La specifica dell’interfaccia DEVE dichiarare tutti i codici di stato
    HTTP restituiti con relativo schema della risposta, oltre che ad
@@ -60,13 +60,13 @@ seguite le seguenti indicazioni:
 Regole di processamento
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Al termine del processamento della richiesta, l’erogatore deve fare uso
+Al termine del processamento della richiesta, l’erogatore DEVE fare uso
 dei codici di stato HTTP rispettandone la semantica [1]_. In
 particolare, al ricevimento della richiesta da parte del fruitore,
-l’erogatore DEVE almeno:
+l’erogatore:
 
--  Verificare la validità sintattica dei dati in ingresso. In caso di
-   dati errati deve restituire :httpstatus:`400` Bad Request fornendo
+-  DEVE verificare la validità sintattica dei dati in ingresso. In caso di
+   dati errati DEVE restituire :httpstatus:`400` Bad Request fornendo
    nel body di risposta dettagli circa l’errore;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
@@ -77,7 +77,7 @@ l’erogatore DEVE almeno:
    codici HTTP 5XX rispettando la semantica degli stessi ed indicando
    nel body di risposta il motivo dell’errore;
 
--  In caso di successo restituire :httpstatus:`200` OK, riempiendo il
+-  In caso di successo DEVE restituire :httpstatus:`200` OK, riempiendo il
    body di risposta con il risultato dell’operazione.
 
 Esempio
