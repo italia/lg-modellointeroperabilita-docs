@@ -171,17 +171,17 @@ Flusso delle interazioni
    :alt: Non ripudiabilità della trasmissione
 
    sequenceDiagram
-		participant F as Fruitore
-		participant E as Erogatore
-		activate F
-		F ->> F:  A. Verifica numero tentativi di inoltro
-		F ->> E:  B. Richiesta
-		activate E
-		E ->>E: C. Persistenza erogatore
-		E -->>F: D. Risposta
-		deactivate E
-		F ->> F: E. Persistenza fruitore
-		deactivate F
+        participant F as Fruitore
+        participant E as Erogatore
+        activate F
+        F ->> F:  A. Verifica numero tentativi di inoltro
+        F ->> E:  B. Richiesta
+        activate E
+        E ->>E: C. Persistenza erogatore
+        E -->>F: D. Risposta
+        deactivate E
+        F ->> F: E. Persistenza fruitore
+        deactivate F
    
 **A: Verifica numero tentativi di inoltro**
 

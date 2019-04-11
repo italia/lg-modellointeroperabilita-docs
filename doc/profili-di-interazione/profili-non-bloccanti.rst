@@ -56,20 +56,20 @@ Descrizione
    :alt: interazione non bloccante tramite callback
 
     sequenceDiagram
-		participant F as Fruitore
-		participant E as Erogatore
-		activate F
-		F ->> E: 1. Request(Callback EndPoint)
-		activate E
-		E -->> F: 2. CorrelationID
-		deactivate F
-		deactivate E
-		activate F
-		E ->> F: 3. Replay(CorrelationID)
-		activate E
-		F -->> E: 4. Ack
-		deactivate F
-		deactivate E
+        participant F as Fruitore
+        participant E as Erogatore
+        activate F
+        F ->> E: 1. Request(Callback EndPoint)
+        activate E
+        E -->> F: 2. CorrelationID
+        deactivate F
+        deactivate E
+        activate F
+        E ->> F: 3. Replay(CorrelationID)
+        activate E
+        F -->> E: 4. Ack
+        deactivate F
+        deactivate E
 
 
 In questo scenario (vedi figura), la richiesta del fruitore contiene
@@ -281,7 +281,7 @@ seguenti regole:
 .. _regole-di-processamento-nonbloccante-3:
 
 Regole di processamento
-^^^^^^^^^^^^^^^^^^^^^^^  
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Nel caso di errore il WS-I Basic Profile Version 2.0 richiede l’utilizzo
 del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
@@ -300,10 +300,11 @@ In particolare, al ricevimento della richiesta, fruitore ed erogatore:
    nel body di risposta il motivo dell’errore;
 
 -  Al momento della ricezione della richiesta, DEVONO restituire un codice 2XX, nel dettaglio:
-	- :httpstatus:`200` in caso di presenza della payload SOAP, riempiendo il body di
-	risposta con il risultato relativo alla richiesta. 
-	- :httpstatus:`200` o :httpstatus:`202` in caso di assenza della payload SOAP
-	
+
+    * :httpstatus:`200` in caso di presenza della payload SOAP, riempiendo il body di risposta
+      con il risultato relativo alla richiesta.
+    * :httpstatus:`200` o :httpstatus:`202` in caso di assenza della payload SOAP
+
 -  Nel caso di errore al momento di ricezione della risposta da parte del richiedente (fruitore o erogatore), è
    possibile definire meccanismi specifici per la ritrasmissione delle richieste.
 
@@ -342,44 +343,44 @@ MRequest
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-		<soap:Header>
-			<m:X-ReplyTo>https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1</m:X-ReplyTo>
-		</soap:Header>
-		<soap:Body>
-			<m:MRequest>
-				<M>
-					<o_id>1234</o_id>
-					<a>
-						<a1s>1</a1s>
-						<a2>prova</a2>
-					</a>
-					<b>prova</b>
-				</M>
-			</m:MRequest>
-		</soap:Body>
-	</soap:Envelope>
-	
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+        <soap:Header>
+            <m:X-ReplyTo>https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1</m:X-ReplyTo>
+        </soap:Header>
+        <soap:Body>
+            <m:MRequest>
+                <M>
+                    <o_id>1234</o_id>
+                    <a>
+                        <a1s>1</a1s>
+                        <a2>prova</a2>
+                    </a>
+                    <b>prova</b>
+                </M>
+            </m:MRequest>
+        </soap:Body>
+    </soap:Envelope>
+
 2\) Response Body
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">>
-		<soap:Header>
-			<m:X-Correlation-ID>b8268033-de67-4fa0-bf06-caebbfa5117a</m:X-Correlation-ID>
-		</soap:Header>
-		<soap:Body>
-			<m:MRequestResponse>
-				<return>
-					<outcome>ACCEPTED</outcome>
-				</return>
-			</m:MRequestResponse>
-		</soap:Body>
-	</soap:Envelope>
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">>
+        <soap:Header>
+            <m:X-Correlation-ID>b8268033-de67-4fa0-bf06-caebbfa5117a</m:X-Correlation-ID>
+        </soap:Header>
+        <soap:Body>
+            <m:MRequestResponse>
+                <return>
+                    <outcome>ACCEPTED</outcome>
+                </return>
+            </m:MRequestResponse>
+        </soap:Body>
+    </soap:Envelope>
 
 
 **Endpoint**
@@ -393,36 +394,36 @@ MRequestResponse
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-		<soap:Header>
-			<m:X-Correlation-ID>b8268033-de67-4fa0-bf06-caebbfa5117a</m:X-Correlation-ID>
-		</soap:Header>
-		<soap:Body>
-			<m:MRequestResponse>
-				<return>
-					<c>OK</c>
-				</return>
-			</m:MRequestResponse>
-		</soap:Body>
-	</soap:Envelope>
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+        <soap:Header>
+            <m:X-Correlation-ID>b8268033-de67-4fa0-bf06-caebbfa5117a</m:X-Correlation-ID>
+        </soap:Header>
+        <soap:Body>
+            <m:MRequestResponse>
+                <return>
+                    <c>OK</c>
+                </return>
+            </m:MRequestResponse>
+        </soap:Body>
+    </soap:Envelope>
 
 (4) Response Body
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-		<soap:Body>
-			<m:MRequestResponseResponse>
-				<return>
-					<outcome>OK</outcome>
-				</return>
-			</m:MRequestResponseResponse>
-		</soap:Body>
-	</soap:Envelope>
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+        <soap:Body>
+            <m:MRequestResponseResponse>
+                <return>
+                    <outcome>OK</outcome>
+                </return>
+            </m:MRequestResponseResponse>
+        </soap:Body>
+    </soap:Envelope>
 
 .. _paragrafo-nonbloccante-2:
 
@@ -482,28 +483,28 @@ Interfaccia REST
    :alt: Interazione non bloccante tramite busy waiting
 
    sequenceDiagram
-		participant F as Fruitore
-		participant E as Erogatore
-		activate F
-		F ->> E: 1. Request()
-		activate E
-		E -->>F: 2. Location
-		deactivate F
-		deactivate E
-		loop check status
-		activate F
-		F ->>E: 3. RetrieveResource()
-		activate E
-		E-->> F : 4. Not Ready
-		deactivate F
-		deactivate E
-		end
-		activate F
-		F ->>E: 5. RetrieveResource()
-		activate E
-		E-->> F : 6. Resource
-		deactivate F
-		deactivate E
+        participant F as Fruitore
+        participant E as Erogatore
+        activate F
+        F ->> E: 1. Request()
+        activate E
+        E -->>F: 2. Location
+        deactivate F
+        deactivate E
+        loop check status
+        activate F
+        F ->>E: 3. RetrieveResource()
+        activate E
+        E-->> F : 4. Not Ready
+        deactivate F
+        deactivate E
+        end
+        activate F
+        F ->>E: 5. RetrieveResource()
+        activate E
+        E-->> F : 6. Resource
+        deactivate F
+        deactivate E
 
 
 Nel caso in cui il profilo venga implementato con tecnologia REST,
@@ -583,7 +584,7 @@ essersi preso carico della richiesta.
 
 ----
 
-**Endpoint** 
+**Endpoint**
 https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
 
 .. code-block:: http
@@ -616,7 +617,7 @@ Di seguito un esempio di chiamata con cui il fruitore verifica
 l’esecuzione di M nei casi di processamento ancora in atto (4) e di
 processamento avvenuto (5).
 
-**Endpoint** 
+**Endpoint**
 http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
 
 .. code-block:: http
@@ -667,28 +668,28 @@ Interfaccia SOAP
    :alt: interazione non bloccante tramite busy waiting
 
     sequenceDiagram
-		participant F as Fruitore
-		participant E as Erogatore
-		activate F
-		F ->> E: 1. Request()
-		activate E
-		E -->>F: 2. CorrelationID
-		deactivate F
-		deactivate E
-		loop 0..n
+        participant F as Fruitore
+        participant E as Erogatore
+        activate F
+        F ->> E: 1. Request()
+        activate E
+        E -->>F: 2. CorrelationID
+        deactivate F
+        deactivate E
+        loop 0..n
             activate F
             F ->>E: 3. CheckStatus(CorrelationID)
             activate E
             E-->> F : 4. CurrentStatus
             deactivate F
             deactivate E
-		end
-		activate F
-		F ->>E: 5. RetriveResult(CorrelationID)
-		activate E
-		E-->> F : 6. Result
-		deactivate F
-		deactivate E
+        end
+        activate F
+        F ->>E: 5. RetriveResult(CorrelationID)
+        activate E
+        E-->> F : 6. Result
+        deactivate F
+        deactivate E
 
 
 Nel caso in cui il profilo venga implementato con tecnologia SOAP,
@@ -711,7 +712,7 @@ DEVONO essere rispettate le seguenti regole:
 
 -  Al passo (4) l’erogatore, quando il processamento non si è ancora
    concluso fornisce informazioni circa lo stato della lavorazione
-   della richiesta, quando invece il processamento si è concluso risponde 
+   della richiesta, quando invece il processamento si è concluso risponde
    indicando in maniera esplicita il completamento;
 
 -  Al passo (5), il fruitore utilizza il correlation ID di cui al passo
@@ -760,7 +761,7 @@ Specifica Servizio Server: https://api.amministrazioneesempio.it/soap/nomeinterf
 Di seguito un esempio di chiamata ad M in cui l’erogatore risponde di
 avere preso in carico la richiesta.
 
-**Endpoint** 
+**Endpoint**
 https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1
 
 **Method**
@@ -770,42 +771,42 @@ MRequest
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-		<soap:Body>
-			<m:MRequest 
-					<M>
-						<o_id>1234</o_id>
-						<a>
-							<a1s>1</a1s>
-							<a2>prova</a2>
-						</a>
-						<b>prova</b>
-					</M>
-				</m:MRequest>
-			</soap:Body>
-	</soap:Envelope>
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+        <soap:Body>
+            <m:MRequest
+                    <M>
+                        <o_id>1234</o_id>
+                        <a>
+                            <a1s>1</a1s>
+                            <a2>prova</a2>
+                        </a>
+                        <b>prova</b>
+                    </M>
+                </m:MRequest>
+            </soap:Body>
+    </soap:Envelope>
 
 - 2\) Risposta
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-			<soap:Header>
-				<m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
-			</soap:Header>
-			<soap:Body>
-				<m:MRequestResponse>
-					<return>
-						<status>accepted</status>
-						<message>Preso carico della richiesta</message>
-					</return>
-				</m:MRequestResponse>
-			</soap:Body>
-	</soap:Envelope>
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+            <soap:Header>
+                <m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
+            </soap:Header>
+            <soap:Body>
+                <m:MRequestResponse>
+                    <return>
+                        <status>accepted</status>
+                        <message>Preso carico della richiesta</message>
+                    </return>
+                </m:MRequestResponse>
+            </soap:Body>
+    </soap:Envelope>
 
 
 Di seguito un esempio di chiamata con cui il fruitore verifica
@@ -813,7 +814,7 @@ l’esecuzione di M nei casi di processamento ancora in atto e di
 processamento avvenuto (4).
 
 
-**Endpoint** 
+**Endpoint**
 https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1
 
 **Method**
@@ -823,51 +824,51 @@ MProcessingStatus
 - 3\) richiesta verifica status
 
 .. code-block:: XML
-    
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-			<soap:Header>
-				<m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
-			</soap:Header>
-			<soap:Body>
-				<m:MProcessingStatus/>
-			</soap:Body>
-	</soap:Envelope>
+
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+            <soap:Header>
+                <m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
+            </soap:Header>
+            <soap:Body>
+                <m:MProcessingStatus/>
+            </soap:Body>
+    </soap:Envelope>
 
 - 4\) risposta verifica status in attesa
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-			<soap:Body>
-				<m:MProcessingStatusResponse>
-					<return>
-						<status>processing</status>
-						<message>Richiesta in fase di processamento</message>
-					</return>
-				</m:MProcessingStatusResponse>
-			</soap:Body>
-	</soap:Envelope>
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+            <soap:Body>
+                <m:MProcessingStatusResponse>
+                    <return>
+                        <status>processing</status>
+                        <message>Richiesta in fase di processamento</message>
+                    </return>
+                </m:MProcessingStatusResponse>
+            </soap:Body>
+    </soap:Envelope>
 
 - 4\) risposta verifica status completato
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-		<soap:Body>
-			<m:MProcessingStatusResponse>
-				<return>
-					<status>done</status>
-					<message>Richiesta completata</message>
-				</return>
-			</m:MProcessingStatusResponse>
-		</soap:Body>
-	</soap:Envelope>
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+        <soap:Body>
+            <m:MProcessingStatusResponse>
+                <return>
+                    <status>done</status>
+                    <message>Richiesta completata</message>
+                </return>
+            </m:MProcessingStatusResponse>
+        </soap:Body>
+    </soap:Envelope>
 
 
 
@@ -875,7 +876,7 @@ MProcessingStatus
 Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
 della sua richiesta.
 
-**Endpoint** 
+**Endpoint**
 https://api.amministrazioneesempio.it/soap/nomeinterfacciaservizio/v1
 
 **Method**
@@ -886,33 +887,33 @@ MProcessingStatus
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-		<soap:Header>
-			<m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
-		</soap:Header>
-		<soap:Body>
-			<m:MResponse/>
-		</soap:Body>
-	</soap:Envelope>
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+        <soap:Header>
+            <m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
+        </soap:Header>
+        <soap:Body>
+            <m:MResponse/>
+        </soap:Body>
+    </soap:Envelope>
 
 - 6\) risposta recupero entry
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
-		<soap:Body>
-			<m:MResponseResponse">
-				<return>
-					<c>OK</c>
-				</return>
-			</m:MResponseResponse>
-		</soap:Body>
-	</soap:Envelope>
-	
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+        <soap:Body>
+            <m:MResponseResponse">
+                <return>
+                    <c>OK</c>
+                </return>
+            </m:MResponseResponse>
+        </soap:Body>
+    </soap:Envelope>
+
 
 
 
