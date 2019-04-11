@@ -300,10 +300,11 @@ In particolare, al ricevimento della richiesta, fruitore ed erogatore:
    nel body di risposta il motivo dell’errore;
 
 -  Al momento della ricezione della richiesta, DEVONO restituire un codice 2XX, nel dettaglio:
-	- :httpstatus:`200` in caso di presenza della payload SOAP, riempiendo il body di
-	risposta con il risultato relativo alla richiesta. 
-	- :httpstatus:`200` o :httpstatus:`202` in caso di assenza della payload SOAP
-	
+
+    * :httpstatus:`200` in caso di presenza della payload SOAP, riempiendo il body di risposta
+      con il risultato relativo alla richiesta.
+    * :httpstatus:`200` o :httpstatus:`202` in caso di assenza della payload SOAP
+
 -  Nel caso di errore al momento di ricezione della risposta da parte del richiedente (fruitore o erogatore), è
    possibile definire meccanismi specifici per la ritrasmissione delle richieste.
 
