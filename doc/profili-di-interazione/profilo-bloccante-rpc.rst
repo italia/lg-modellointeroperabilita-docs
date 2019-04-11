@@ -122,33 +122,33 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
 
 .. code-block:: JSON
 
-	{
-	    "type": "https://apidoc.example.com/probs/operation-too-long",
-	    "status": 500,
-	    "title": "L'operazione dura troppo.",
-	    "detail": "Il sistema non e' riuscito a completare in tempo l'operazione prevista.",
-	}
+    {
+        "type": "https://apidoc.example.com/probs/operation-too-long",
+        "status": 500,
+        "title": "L'operazione dura troppo.",
+        "detail": "Il sistema non e' riuscito a completare in tempo l'operazione prevista.",
+    }
 
 
 (2) Response Body (HTTP Status Code 400 Bad Request)
 
 .. code-block:: JSON
 
-	{
-	    "type": "https://apidoc.example.com/probs/invalid-a",
-	    "status": 400,
-	    "title": "L'attributo `b` ha un valore non valido.",
-	    "detail": "L'attributo `b` dev'essere una stringa di lunghezza inferiore a 32 caratteri.",
-	}
+    {
+        "type": "https://apidoc.example.com/probs/invalid-a",
+        "status": 400,
+        "title": "L'attributo `b` ha un valore non valido.",
+        "detail": "L'attributo `b` dev'essere una stringa di lunghezza inferiore a 32 caratteri.",
+    }
 
 (2) Response Body (HTTP Status Code 404 Not Found)
 
 .. code-block:: JSON
 
-	{
-	    "status": 404,
-	    "title": "Risorsa non trovata.",
-	}
+    {
+        "status": 404,
+        "title": "Risorsa non trovata.",
+    }
 
 Interfaccia SOAP
 -----------------
@@ -211,67 +211,67 @@ M
 .. code-block:: XML
 
     
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio" >
-		<soap:Header>
-			<!--Autenticazione-->
-		</soap:Header>
-		<soap:Body>
-		<m:MRequest>
-			<M>
-				<oId>1234</oId>
-				<a>
-					<a1s><a1>1</a1>...<a1>2</a1></a1s>
-					<a2>RGFuJ3MgVG9vbHMgYXJlIGNvb2wh</a2>
-				</a>
-				<b>Stringa di esempio</b>
-			</M>
-		</m:MRequest> 
-		</soap:Body>
-	</soap:Envelope>
+    <soap:Envelope 
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio" >
+        <soap:Header>
+            <!--Autenticazione-->
+        </soap:Header>
+        <soap:Body>
+        <m:MRequest>
+            <M>
+                <oId>1234</oId>
+                <a>
+                    <a1s><a1>1</a1>...<a1>2</a1></a1s>
+                    <a2>RGFuJ3MgVG9vbHMgYXJlIGNvb2wh</a2>
+                </a>
+                <b>Stringa di esempio</b>
+            </M>
+        </m:MRequest> 
+        </soap:Body>
+    </soap:Envelope>
 
 2. Response Body (HTTP status code 200 OK)
 
 .. code-block:: XML
 
-	<soap:Envelope
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio" >
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio" >
 
-		<soap:Body>
-		<m:MRequestResponse>
-		  <return>
-			<m:c>OK</m:c>
-		  </return>
-		</m:MRequestResponse>
-	</soap:Body>
+        <soap:Body>
+        <m:MRequestResponse>
+          <return>
+            <m:c>OK</m:c>
+          </return>
+        </m:MRequestResponse>
+    </soap:Body>
 
-	</soap:Envelope>
+    </soap:Envelope>
 
 2. Response Body (HTTP status code 500 Internal Server Error)
 
 .. code-block:: XML
 
-	<soap:Envelope 
-		xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-		xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio" >
-		<soap:Body>
-		  <soap:Fault>
-			 <soap:Code>
-				<soap:Value>soap:Receiver</soap:Value>
-			 </soap:Code>
-			 <soap:Reason>
-				<soap:Text xml:lang="en">Error</soap:Text>
-			 </soap:Reason>
-			 <soap:Detail>
-				<m:ErrorMessageFault>
-				   <customFaultCode>1234</customFaultCode>
-				</m:ErrorMessageFault>
-			 </soap:Detail>
-		  </soap:Fault>
-		</soap:Body>
-	</soap:Envelope>
+    <soap:Envelope 
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
+        xmlns:m="http://amministrazioneesempio.it/nomeinterfacciaservizio" >
+        <soap:Body>
+          <soap:Fault>
+             <soap:Code>
+                <soap:Value>soap:Receiver</soap:Value>
+             </soap:Code>
+             <soap:Reason>
+                <soap:Text xml:lang="en">Error</soap:Text>
+             </soap:Reason>
+             <soap:Detail>
+                <m:ErrorMessageFault>
+                   <customFaultCode>1234</customFaultCode>
+                </m:ErrorMessageFault>
+             </soap:Detail>
+          </soap:Fault>
+        </soap:Body>
+    </soap:Envelope>
 
 .. [1]
    http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
