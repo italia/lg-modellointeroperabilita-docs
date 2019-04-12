@@ -1,6 +1,20 @@
 Autenticazione del soggetto fruitore
 ====================================
 
+Per tutti questi profili:
+
+- si assume l’esistenza di un trust tra fruitore (client) ed erogatore
+  (server), che permette il riconoscimento da parte dell’erogatore del
+  certificato X.509, o la CA emittente;
+
+- non sono condizionati dal meccanismo con cui è stabilito il trust,
+  inclusa la modalità di scambio dei certificati X.509);
+
+- le parti, secondo le proprie esigenze, individuano gli specifici
+  algoritmi crittografici (inclusi firma ed hashing)
+  tra quelli in  `Elenco degli algoritmi`_
+  e le modalità di inclusione o referenziazione dei certificati.
+
 [M2MS01] Direct Trust con certificato X.509 su SOAP
 ---------------------------------------------------
 
@@ -23,13 +37,6 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
-(server), che permette il riconoscimento da parte dell’erogatore del
-certificato X.509, o la CA emittente.
-
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
-di scambio dei certificati X.509) non condiziona il presente
-profilo.
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
 dell’erogatore includendo o referenziando il certificato X.509 e una
@@ -128,10 +135,6 @@ Regole di processamento
 
 Note:
 
--  Gli algoritmi da utilizzare nell’elemento
-   ``<Signature>`` rispettivamente ``<DigestMethod>``, ``<SignatureMethod>`` e
-   ``<CanonicalizationMethod>`` sono indicati alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
-
 -  Un meccanismo simile può essere utilizzato per autenticare
    l' erogatore.
 
@@ -213,10 +216,6 @@ Il tracciato rispecchia alcune scelte implementative esemplificative:
 -  l’inclusione dell’elemento ``Timestamp`` quale porzione significativa del
    messaggio e la relativa firma.
 
-Le parti, in base alle proprie esigenze, utilizzano gli algoritmi indicati
-nella sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
-o referenziazione del certificato x509.
-
 
 [M2MS02] Direct Trust con certificato X.509 su SOAP con threat mitigation
 -------------------------------------------------------------------------
@@ -244,14 +243,6 @@ Descrizione
 
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
-
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
-(server), che permette il riconoscimento da parte dell’erogatore del
-certificato X.509, o la CA emittente.
-
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
-di scambio dei certificati X.509, non condiziona il presente
-profilo.
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
 dell’erogatore includendo o referenziando il certificato X.509 e
@@ -366,11 +357,6 @@ Regole di processamento
 
 Note:
 
--  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
-   ``<Signature>`` rispettivamente ``<DigestMethod>``, ``<SignatureMethod>`` e
-   ``<CanonicalizationMethod>`` si fa riferimento agli algoritmi indicati
-   alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__,
-
 -  Un meccanismo simile può essere utilizzato per autenticare
    l’erogatore.
 
@@ -470,9 +456,6 @@ esemplificative:
 
 -  algoritmo per il digest (``DigestMethod``)
 
-Le parti, in base alle proprie esigenze, usano
-gli algoritmi indicati in   `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__
-, nonché la modalità di inclusione o referenziazione del certificato X.509.
 
 [M2MR01] Direct Trust con certificato X.509 su REST
 ---------------------------------------------------
@@ -498,14 +481,6 @@ Il presente profilo declina l’utilizzo di:
 -  JSON Web Token (JWT) definita dall’ :RFC:`7519`
 
 -  JSON Web Signature (JWS) definita dall’ :RFC:`7515`
-
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
-(server), che permette il riconoscimento da parte dell’erogatore del
-certificato X.509, o la CA emittente.
-
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
-di scambio dei certificati X.509, non condiziona il presente
-profilo.
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
 dell’erogatore includendo o referenziando il certificato X.509 e una
@@ -668,9 +643,6 @@ esemplificative:
 
 -  algoritmi di firma e digest (``alg``).
 
-Le parti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
-o referenziazione del certificato X.509.
 
 [M2MR02] Direct Trust con certificato X.509 su REST con threat mitigation
 -------------------------------------------------------------------------
@@ -698,17 +670,9 @@ Descrizione
 
 Il presente profilo declina l’utilizzo di:
 
--  JSON Web Token (JWT) definita dall’:RFC:`7519` `[1] <bibliografia.html>`__
+-  JSON Web Token (JWT) definita dall’:RFC:`7519`
 
--  JSON Web Signature (JWS) definita dall’:RFC:`7515` `[2] <bibliografia.html>`__
-
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
-(server), che permette il riconoscimento da parte dell’erogatore del
-certificato X.509, o la CA emittente.
-
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
-di scambio dei certificati X.509) non condiziona il presente
-profilo.
+-  JSON Web Signature (JWS) definita dall’:RFC:`7515`
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
 dell’erogatore includendo o referenziando il certificato X.509 e
@@ -757,9 +721,11 @@ Il token JWT:
 
 -  include almeno i seguenti claim:
 
-   -  il riferimento dell’erogatore
+   - il riferimento dell’erogatore
 
-   -  un riferimento temporale univoco per messaggio
+   - un riferimento temporale univoco per messaggio
+
+   - un identificativo univoco del messaggio
 
 **B: Risposta**
 
@@ -841,9 +807,6 @@ Regole di processamento
 
 Note:
 
--  Per quanto riguarda gli algoritmi da utilizzare nella claim alg si fa
-   riferimento agli algoritmi indicati alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
-
 -  Un meccanismo simile può essere utilizzato per autenticare
    l’erogatore.
 
@@ -896,9 +859,11 @@ merito:
 
 -  algoritmi di firma e digest (``alg``).
 
-Le parti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
-o referenziazione del certificato x509.
+
+
+.. _`Elenco degli algoritmi`:  elenco-degli-algoritmi.html
 
 .. discourse::
    :topic_identifier: 8907
+
+
