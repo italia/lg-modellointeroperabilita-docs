@@ -82,10 +82,10 @@ operandi*.
 
 I profili di sicurezza del presente documento sono suddivisi in due tipologie:
 
-- **Autenticazione Intradominio [AID]**
+- **Autenticazione Intradominio [IDA]**
 Il processo di identificazione avviene all'interno del dominio di una delle due parti (fruitore ed erogatore) del *direct trust*.
 
-- **Autenticazione Extradominio [AED]**
+- **Autenticazione Extradominio [EDA]**
 Il processo di identificazione avviene mediante una terza parte esterna alle due parti (fruitore ed erogatore) interessate.
 
 **Modalità di combinazione dei profili**
@@ -94,9 +94,9 @@ I profili sono rappresentati con una sequenza di 6 caratteri:
 
 -  i primi 3 caratteri indicano la tipologia dell’entità che comunicano:
 
-   -  AID -> Autenticazione Intradominio
+   -  IDA -> Autenticazione Intradominio
 
-   -  AED -> Autenticazione Extradominio
+   -  EDA -> Autenticazione Extradominio
 
 -  il quarto carattere definisce l’ambito in cui viene gestita la
    problematica di sicurezza:
@@ -116,12 +116,18 @@ profili** di sicurezza che ricoprano le esigenze.
 Di seguito viene mostrata una rappresentazione dei profili attualmente
 presenti nel documento in cui vengono evidenziate le relazioni.
 
-.. image:: index/image7.png
-   :align: center
-   :scale: 100%
+.. mermaid::
+   :caption: Rappresentazione grafica delle dipendenze tra i profili
    :alt: rappresentazione grafica delle dipendenze tra i profili
 
-Rappresentazione grafica delle dipendenze tra i profili
+   graph TD
+      B(IDAC02)-->|extend|A[IDAC01]
+      BS(IDAS02)-->|extend|AS[IDAS01]
+      CS(IDAS03)-->|extend|AS
+      CS-->|extend| BS
+      BR(IDAR02)-->|extend|AR[IDAR01]
+      CR(IDAR03)-->|extend| AR[IDAR01]
+      CR-->|extend| BR
 
 **NOTA BENE**
 
