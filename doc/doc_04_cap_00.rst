@@ -5,7 +5,7 @@ Il presente documento descrive i *profili* di sicurezza individuati da AgID che 
 soggetti erogatori DOVREBBERO utilizzare per soddisfare le necessità
 espresse attraverso requisiti funzionali e non funzionali.
 
-Data la varaibilità nel tempo delle esigenze delle amministrazioni e delle tecnologie abilitanti,
+Data la variabilità nel tempo delle esigenze delle amministrazioni e delle tecnologie abilitanti,
 nonché considerata la natura incremenmtale del ModI, l'elenco dei *profili* di sicurezza
 non è da intendersi esaustivo.
 
