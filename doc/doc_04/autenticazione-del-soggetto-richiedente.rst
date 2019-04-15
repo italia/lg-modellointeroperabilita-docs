@@ -23,11 +23,11 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
+Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
+Il meccanismo con cui è stabilito il `trust`_, inclusa la modalità
 di scambio dei certificati X.509) non condiziona il presente
 profilo.
 
@@ -245,11 +245,11 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
+Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
+Il meccanismo con cui è stabilito il `trust`_, inclusa la modalità
 di scambio dei certificati X.509, non condiziona il presente
 profilo.
 
@@ -499,21 +499,23 @@ Il presente profilo declina l’utilizzo di:
 
 -  JSON Web Signature (JWS) definita dall’ :RFC:`7515`
 
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
-(server), che permette il riconoscimento da parte dell’erogatore del
+Si assume l’esistenza di un `trust`_ tra fruitore ed erogatore,
+che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
+Il meccanismo con cui è stabilito il `trust`_, inclusa la modalità
 di scambio dei certificati X.509, non condiziona il presente
 profilo.
 
-Il fruitore inoltra un messaggio all’interfaccia di servizio
-dell’erogatore includendo o referenziando il certificato X.509 e una
+Il fruitore inoltra un messaggio all’erogatore
+includendo o referenziando il certificato X.509 e una
 porzione significativa del messaggio firmata.
 
 L’erogatore, ricevuto il messaggio, verifica il certificato X.509 e
-valida la porzione firmata del messaggio. Se la verifica e la
-validazione sono superate, l’erogatore consuma la richiesta e produce la
+valida la porzione firmata del messaggio, inclusa la corrispondenza
+del destinatario e l'intervallo di validità della firma.
+
+Se la verifica e la validazione sono superate, l’erogatore consuma la richiesta e produce la
 relativa risposta.
 
 .. _dettaglio-4:
@@ -542,17 +544,18 @@ Flusso delle interazioni
 
 **A: Richiesta**
 
+Il fruitore genera un JWT signed contenente i riferimenti temporali
+ed il destinatario del messaggio.
+
 Il fruitore invia il messaggio di richiesta all’erogatore.
 
-Il messaggio include il token JWT firmato.
-
-Il token JWT include o referenzia il certificato X.509 riconosciuto
+Il JWT include o referenzia il certificato X.509 riconosciuto
 dall’erogatore.
 
 **B: Risposta**
 
 L’erogatore, ricevuto il messaggio, verifica il
-certificato X.509 e valida la firma del token JWT.
+certificato X.509 e valida la firma del JWT e il contenuto dei claim standard.
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
 fruitore.
@@ -567,46 +570,47 @@ Regole di processamento
 1. Il fruitore predispone la payload del messaggio (ad esempio un
    oggetto JSON)
 
-2. Il fruitore costruisce il token JWT popolando:
+2. Il fruitore costruisce il JWT popolando:
 
-   a. l’header JSON Object Signing and Encryption (JOSE) con almeno i ``parameter``:
+   a. il `Jose Header`_  con almeno i ``parameter``:
 
-      i.   ``alg`` per definire l’algoritmo di firma
+      -   `alg`_ con l’algoritmo di firma
+      -  `typ`_ uguale a ``JWT``
 
-      ii.  ``typ`` uguale a ``JWT``
+      - una o più delle seguenti opzioni per referenziare il certificato X.509:
 
-      iii. una o più delle seguenti opzioni per referenziare il certificato X.509:
+           * `x5u`_ (X.509 URL)
+           * `x5c`_ (X.509 Certificate Chain)
+           * `x5t#256`_ (X.509 Certificate SHA-256 Thumbprint)
 
-           #. ``x5u`` (X.509 URL)
+   b. la payload del JWT coi claim rappresentativi degli
+      elementi chiave del messaggio, contenente almeno:
 
-           #. ``x5c`` (X.509 Certificate Chain)
+      * i riferimenti temporali di emissione e scadenza: `iat`_ , `exp`_.
+        Se il flusso richiede di verificare l'istante di prima validità del token, si può
+        usare il claim `nbf`_.
 
-           #. ``x5t#S256`` (X.509 Certificate SHA-256 Thumbprint)
+      * il riferimento dell'erogatore in `aud`_
 
-   b. la payload del JWT con zero o più claim rappresentative degli
-      elementi chiave del messaggio.
+3. il fruitore firma il token adottando la `JWS Compact Serialization`_
 
-3. il fruitore firma il token ``JWT`` secondo la specifica ``JWS`` adottando
-   la ``JWS Compact Serialization``
+4. il fruitore posiziona il ``JWT`` signed nell’ :httpheader:`Authorization`
 
-4. il fruitore posiziona il token ``JWT`` firmato nell’header ``HTTP Authorization``
-
-.. rpolli TODO verificare se ha senso mettere Bearer o no.
-
-5. Il fruitore spedisce il messaggio all’interfaccia di servizio
-   dell’erogatore.
+5. Il fruitore spedisce il messaggio all'erogatore
 
 **B: Risposta**
 
-6.  L’erogatore decodifica il token ``JWT`` presente nell’header HTTP
-    ``Authorization``
+6.  L’erogatore decodifica il  ``JWT`` presente in :httpheader:`Authorization` e valida
+    i claim contenuti nel `Jose Header`_, in particolare verifica:
 
-7.  L’erogatore recupera il certificato X.509 referenziato nell’header ``JOSE``
+    - il contenuto dei claim `iat`_ ed `exp`_;
+    - la corrispondenza tra se stesso e il claim `aud`_;
+
+7.  L’erogatore recupera il certificato X.509 referenziato nel `Jose Header`_
 
 8.  L’erogatore verifica il certificato secondo i criteri del trust
 
-9.  L’erogatore valida la firma verificando l’elemento Signature del
-    token ``JWT``
+9.  L’erogatore valida la firma verificando l’elemento Signature del ``JWT``
 
 10. L’erogatore autentica il fruitore
 
@@ -616,8 +620,9 @@ Regole di processamento
 
 Note:
 
--  Gli algoritmi da utilizzare in ``alg`` sono indicati in  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`_.
-   Un meccanismo simile può essere utilizzato per autenticare l’erogatore.
+-  Gli algoritmi da utilizzare in `alg`_ sono indicati in  `Elenco degli algoritmi`_
+
+-  Un meccanismo simile può essere utilizzato per autenticare l’erogatore.
 
 .. _tracciato-2:
 
@@ -625,13 +630,13 @@ Tracciato
 ~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
-fruitore all’interfaccia di servizio dell’erogatore.
+fruitore all’erogatore.
 
-Esempio porzione pacchetto HTTP
+Esempio porzione messaggio HTTP
 
 .. code-block:: http
 
-   GET http://localhost:8080/ws-test/service/hello/echo/Ciao  HTTP/1.1
+   GET http://api.erogatore.org/ws-test/service/hello/echo/Ciao  HTTP/1.1
    Accept: application/json
    Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
 
@@ -640,13 +645,13 @@ Esempio porzione pacchetto HTTP
    .
 
 
-Esempio porzione token JWT
+Esempio porzione JWT
 
 .. code-block:: python
 
    # header
    {
-     "alg": "RS256",
+     "alg": "ES256",
      "typ": "JWT",
      "x5c": [
        "MIICyzCCAbOgAwIBAgIEC..."
@@ -654,25 +659,33 @@ Esempio porzione token JWT
    }
    # payload
    {
-    "exp": 1554382879
+    "iat": 1554382877,
+    "nbf": 1554382877,
+    "exp": 1554382879,
+    "aud": "https://api.erogatore.org/ws-test/service/hello/echo"
    }
 
-Il tracciato rispecchia le seguenti scelte implementative
-esemplificative:
+Gli elementi presenti nel tracciato rispettano le seguenti scelte implementative e includono:
 
 
--  Inserito istante di scadenza dell'asserzione,
-   in modo che essa possa essere utilizzata solo fino all'istante ``exp``;
+-  l'intervallo temporale di validità, in modo che il JWT
+   possa essere usato solo tra gli istanti `nbf`_ ed `exp`_;
 
--  riferimento al certificato X.509 (``x5c``)
+-  indica l'istante `iat`_ di emissione del JWT. Se le parti possono accordarsi nel considerarlo
+   come l'istante iniziale di validità del token, :rfc:`7519` non assegna a questo claim
+   nessun ruolo specifico nella validazione, a differenza di `nbf`_;
 
--  algoritmi di firma e digest (``alg``).
+-  il destinatario del JWT, che deve sempre essere validato;
+
+-  contenuto della certificate chain X.509 (`x5c`_)
+
+-  algoritmi di firma e digest (`alg`_).
 
 Le parti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
-o referenziazione del certificato X.509.
+algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
+nonché la modalità di inclusione o referenziazione del certificato X.509.
 
-[M2MR02] Direct Trust con certificato X.509 su REST con threat mitigation
+[M2MR02] Direct Trust con certificato X.509 su REST con unicità del token
 -------------------------------------------------------------------------
 
 .. _scenario-5:
@@ -688,8 +701,8 @@ messaggio:
 -  autenticazione del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitore, o entrambe le parti
 
--  la difesa dalle minacce derivanti dagli attacchi: Replay Attack e
-   Spoofing
+-  la difesa dalle minacce derivanti dagli attacchi: Replay Attack
+   quando il JWT o il messaggio non devono essere riprocessati
 
 .. _descrizione-5:
 
@@ -698,15 +711,15 @@ Descrizione
 
 Il presente profilo declina l’utilizzo di:
 
--  JSON Web Token (JWT) definita dall’:RFC:`7519` `[1] <bibliografia.html>`__
+-  JSON Web Token (JWT) definita dall’:RFC:`7519`
 
--  JSON Web Signature (JWS) definita dall’:RFC:`7515` `[2] <bibliografia.html>`__
+-  JSON Web Signature (JWS) definita dall’:RFC:`7515`
 
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
+Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
+Il meccanismo con cui è stabilito il `trust`_, inclusa la modalità
 di scambio dei certificati X.509) non condiziona il presente
 profilo.
 
@@ -714,9 +727,14 @@ Il fruitore inoltra un messaggio all’interfaccia di servizio
 dell’erogatore includendo o referenziando il certificato X.509 e
 assicurando la firma dei claim del messaggio.
 
-L’erogatore, ricevuto il messaggio, verifica il certificato X.509,
-valida la firma dei claim ed autentica il fruitore. Se la verifica e la
-validazione sono superate, l’erogatore consuma la richiesta e produce la
+L’erogatore, ricevuto il messaggio, verifica il certificato X.509 e
+valida la porzione firmata del messaggio, inclusa la corrispondenza
+del destinatario e l'intervallo di validità della firma.
+
+L'erogatore verifica inoltre l'univocità dell'identificativo ricevuto
+nel JWT.
+
+Se la verifica e la validazione sono superate, l’erogatore consuma la richiesta e produce la
 relativa risposta.
 
 .. _dettaglio-5:
@@ -745,26 +763,20 @@ Flusso delle interazioni
 
 **A: Richiesta**
 
-Il fruitore invia il messaggio di richiesta all’interfaccia di
-servizio dell’erogatore.
+Il fruitore genera un JWS contenente almeno:
 
-Il messaggio include il token JWT firmato.
+  - i riferimenti temporali ed il destinatario del messaggio;
+  - un identificativo univoco del token o del messaggio.
 
-Il token JWT:
+Il JWT include o referenzia il certificato X.509 riconosciuto
+dall’erogatore.
 
--  include o referenzia il certificato X.509 riconosciuto
-   dall’erogatore,
-
--  include almeno i seguenti claim:
-
-   -  il riferimento dell’erogatore
-
-   -  un riferimento temporale univoco per messaggio
+Il fruitore invia il messaggio di richiesta all’erogatore.
 
 **B: Risposta**
 
 L’erogatore, ricevuto il messaggio, provvede alla verifica del
-certificato X.509, valida la firma del token JWT e le claim ricevute.
+certificato X.509, valida la firma del JWT e le claim ricevute.
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
 fruitore.
@@ -779,70 +791,60 @@ Regole di processamento
 1. Il fruitore predispone la payload del messaggio (ad esempio un
    oggetto JSON)
 
-2. Il fruitore costruisce il token ``JWT`` popolando:
+2. Il fruitore costruisce il JWT popolando:
 
-   a. l’header JSON Object Signing and Encryption (JOSE) con almeno:
+   a. il `Jose Header`_  con almeno i ``parameter``:
 
-      i.   la claim alg al fine di definire l’algoritmo utilizzato per
-           la signature
+      -  `alg`_ con l’algoritmo di firma
+      -  `typ`_ uguale a ``JWT``
 
-      ii.  la claim typ pari a ``JWT``
+      - una o più delle seguenti opzioni per referenziare il certificato X.509:
 
-      iii. in maniera alternativa, per referenziare il certificato
-           X.509, una delle seguenti claim:
+           * `x5u`_ (X.509 URL)
+           * `x5c`_ (X.509 Certificate Chain)
+           * `x5t#256`_ (X.509 Certificate SHA-256 Thumbprint)
 
-           #. ``x5u`` (X.509 URL)
+   b. la payload del JWT coi claim rappresentativi degli
+      elementi chiave del messaggio, contenente almeno:
 
-           #. ``x5c`` (X.509 Certificate Chain)
+      * i riferimenti temporali di emissione e scadenza: `iat`_ , `exp`_.
+        Se il flusso richiede di verificare l'istante di prima validità del token, si può
+        usare il claim `nbf`_.
+      * il riferimento dell'erogatore in `aud`_;
+      * un identificativo univoco del token `jti`_. Se utile alla logica applicativa
+        l'identificativo può essere anche collegato al messaggio.
 
-           #. ``x5t#S256`` (X.509 Certificate SHA-256 Thumbprint)
+3. il fruitore firma il token adottando la `JWS Compact Serialization`_
 
-   b. la payload del JWT con le claim rappresentative degli elementi
-      significativi del messaggio, quali almeno:
+4. il fruitore posiziona il ``JWS`` nell’ :httpheader:`Authorization`
 
-      iv. ``iat``: UNIX timestamp di rilascio del JWT
-
-      v. ``aud``: contenente il riferimento del destinatario del JWT
-
-3. il fruitore firma il token JWT secondo la specifica JWS adottando
-   la JWS Compact Serialization
-
-4. il fruitore posiziona il token JWT firmato nell’header HTTP
-   Authorization
-
-5. Il fruitore spedisce il messaggio all’interfaccia di servizio
-   dell’erogatore.
+5. Il fruitore spedisce il messaggio all'erogatore
 
 **B: Risposta**
 
-6.  L’erogatore decodifica il token JWT presente nell’header HTTP
-    Authorization
+6.  L’erogatore decodifica il  ``JWT`` presente in :httpheader:`Authorization` e valida
+    i claim contenuti nel `Jose Header`_, in particolare verifica:
 
-7.  L’erogatore recupera il certificato X.509 referenziato nell’header
-    JOSE.
+    - il contenuto dei claim `iat`_ ed `exp`_;
+    - la corrispondenza tra se stesso e il claim `aud`_;
+    - l'univocità del claim `jti`_
 
-8.  L’erogatore verifica il certificato secondo i criteri del trust.
+7.  L’erogatore recupera il certificato X.509 referenziato nel `Jose Header`_
 
-9.  L’erogatore valida la firma verificando l’elemento Signature del
-    token JWT
+8.  L’erogatore verifica il certificato secondo i criteri del trust
 
-10. L’erogatore verifica il contenuto della claim iat contenuta nella
-    payload del JWT al fine di verificare la validità temporale del
-    messaggio anche per mitigare il rischio di replay attack.
+9.  L’erogatore valida la firma verificando l’elemento Signature del ``JWT``
 
-11. L’erogatore verifica la corrispondenza tra se stesso e quanto
-    definito nella claim aud contenuta nella payload del JWT.
+10. L’erogatore autentica il fruitore
 
-12. L’erogatore autentica il fruitore.
-
-13. Se le azioni da 6 a 12 hanno avuto esito positivo, il messaggio
+11. Se le azioni da 6 a 10 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
-    richiamato.
+    richiamato
 
 Note:
 
--  Per quanto riguarda gli algoritmi da utilizzare nella claim alg si fa
-   riferimento agli algoritmi indicati alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
+-  Per quanto riguarda gli algoritmi da utilizzare si fa
+   riferimento ad  `Elenco degli algoritmi`_.
 
 -  Un meccanismo simile può essere utilizzato per autenticare
    l’erogatore.
@@ -857,7 +859,7 @@ fruitore all’interfaccia di servizio dell’erogatore.
 
 Esempio porzione pacchetto HTTP
 
-.. code-block:: JSON
+.. code-block:: http
 
    GET http://localhost:8080/ws-test/service/hello/echo/Ciao  HTTP/1.1
    Accept: application/json
@@ -866,39 +868,77 @@ Esempio porzione pacchetto HTTP
    .
    .
 
-Esempio porzione token JWT
+Esempio porzione JWT
 
-.. code-block::
+.. code-block:: python
 
-   header
+   # header
    {
-     "alg": "RS256",
+     "alg": "ES256",
      "typ": "JWT",
      "x5c": [
        "MIICyzCCAbOgAwIBAgIEC..."
      ]
    }
-   payload
+   # payload
    {
      "aud": "http://localhost:8080/ws-test/service/hello/echo"
-     "iat": "1516239022",
-     "exp": "1516239024"
+     "iat": 1516239022,
+     "nbf": 1516239022,
+     "exp": 1516239024,
+     "jti": "065259e8-8696-44d1-84c5-d3ce04c2f40d"
    }
 
 
-Il tracciato rispecchia alcune scelte implementative esemplificative in
-merito:
+Gli elementi presenti nel tracciato rispettano le seguenti scelte implementative e includono:
 
--  Inserito intervallo temporale di validità dell'asserzione,
-   in modo che essa possa essere utilizzata solo nell'intervallo ``iat``, ``exp``;
 
--  riferimento al certificato X.509 (``x5c``);
+-  l'intervallo temporale di validità, in modo che il JWT
+   possa essere usato solo tra gli istanti `nbf`_ ed `exp`_;
 
--  algoritmi di firma e digest (``alg``).
+-  indica l'istante `iat`_ di emissione del JWT. Se le parti possono accordarsi nel considerarlo
+   come l'istante iniziale di validità del token, :rfc:`7519` non assegna a questo claim
+   nessun ruolo specifico nella validazione, a differenza di `nbf`_;
+
+-  il destinatario del JWT, che deve sempre essere validato;
+
+-  contenuto della certificate chain X.509 (`x5c`_)
+
+-  algoritmi di firma e digest (`alg`_).
 
 Le parti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
-o referenziazione del certificato x509.
+algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
+nonché la modalità di inclusione o referenziazione del certificato X.509.
+
+
+
+.. _`Elenco degli algoritmi`: elenco-degli-algoritmi.html
+
+.. _`trust`: ../doc_04_cap_00.html
+
+.. _`JWS Compact Serialization`: https://tools.ietf.org/html/rfc7515#section-7.1
+.. _`Jose Header`: https://tools.ietf.org/html/rfc7515#section-4
+
+.. _`alg`: https://tools.ietf.org/html/rfc7515#section-4.1.1
+.. _`jku`: https://tools.ietf.org/html/rfc7515#section-4.1.2
+.. _`jwk`: https://tools.ietf.org/html/rfc7515#section-4.1.3
+.. _`kid`: https://tools.ietf.org/html/rfc7515#section-4.1.4
+.. _`x5u`: https://tools.ietf.org/html/rfc7515#section-4.1.5
+.. _`x5c`: https://tools.ietf.org/html/rfc7515#section-4.1.6
+.. _`x5t#256`: https://tools.ietf.org/html/rfc7515#section-4.1.8
+
+
+.. _`iss`: https://tools.ietf.org/html/rfc7519#section-4.1.1
+.. _`sub`: https://tools.ietf.org/html/rfc7519#section-4.1.2
+.. _`aud`: https://tools.ietf.org/html/rfc7519#section-4.1.3
+.. _`exp`: https://tools.ietf.org/html/rfc7519#section-4.1.4
+.. _`nbf`: https://tools.ietf.org/html/rfc7519#section-4.1.5
+.. _`iat`: https://tools.ietf.org/html/rfc7519#section-4.1.6
+.. _`jti`: https://tools.ietf.org/html/rfc7519#section-4.1.7
+
+.. _`typ`: https://tools.ietf.org/html/rfc7519#section-5.1
+.. _`cty`: https://tools.ietf.org/html/rfc7519#section-5.2
+
 
 .. discourse::
    :topic_identifier: 8907
