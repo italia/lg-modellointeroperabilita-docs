@@ -29,11 +29,11 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
+Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust non condiziona il presente
+Il meccanismo con cui è stabilito il `trust`_ non condiziona il presente
 profilo.
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
@@ -238,15 +238,15 @@ Descrizione
 
 Il presente profilo declina l’utilizzo di:
 
--  JSON Web Token (JWT) definita dall’ :RFC:`7519` `[1] <#bibliografia>`__
+-  JSON Web Token (JWT) definita dall’ :RFC:`7519`
 
--  JSON Web Signature (JWS) definita dall’ :RFC:`7515` `[2] <#bibliografia>`__
+-  JSON Web Signature (JWS) definita dall’ :RFC:`7515`
 
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
+Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust non condiziona il presente
+Il meccanismo con cui è stabilito il `trust`_ non condiziona il presente
 profilo.
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
@@ -266,7 +266,7 @@ Dettaglio
 .. mermaid::
    :caption: Integrità della payload del messaggio
    :alt: Integrità della payload del messaggio
-   
+
    sequenceDiagram
       participant F as Fruitore
       participant E as Erogatore
@@ -284,8 +284,7 @@ Flusso delle interazioni
 
 **A: Richiesta**
 
-Il fruitore invia il messaggio di richiesta all’interfaccia di
-servizio dell’erogatore.
+Il fruitore invia il messaggio di richiesta all’erogatore.
 
 Il messaggio include il token JWT firmato.
 
