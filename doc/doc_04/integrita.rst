@@ -207,9 +207,9 @@ merito:
 
 -  algoritmo per il digest (``DigestMethod``)
 
-Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato al sezione "\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ", nonché la modalità di inclusione o
-referenziazione del certificato x509.
+Le parti, in base alle proprie esigenze, individuano gli specifici
+algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
+nonché la modalità di inclusione o referenziazione del certificato X.509.
 
 [IDAMR03] Integrità della payload del messaggio REST
 ----------------------------------------------------
@@ -224,7 +224,7 @@ messaggio:
 
 -  Integrità della payload del messaggio
 
-Nel caso in cui il certificato per garantire l’integrità è valido anche
+Se il certificato per garantire l’integrità è valido anche
 per identificare il soggetto fruitore, il presente profilo estende
 IDAR01 o IDAR02, e quindi viene assicurato:
 
@@ -320,34 +320,38 @@ Regole di processamento
 
 2. Il fruitore costruisce il token JWT popolando:
 
-   a. l’header JSON Object Signing and Encryption (JOSE) con almeno:
+   a. il `Jose Header`_  con almeno i ``parameter``:
 
-      i.   il parameter ``alg`` al fine di definire l’algoritmo utilizzato per
-           la signature
+      -  `alg`_ con l’algoritmo di firma
+      -  `typ`_ uguale a ``JWT``
 
-      ii.  il parameter ``typ`` pari a JWT
+      - una o più delle seguenti opzioni per referenziare il certificato X.509:
 
-      iii. referenziare il certificato X.509, uno dei seguenti parameters:
+           * `x5u`_ (X.509 URL)
+           * `x5c`_ (X.509 Certificate Chain)
+           * `x5t#256`_ (X.509 Certificate SHA-256 Thumbprint)
 
-           - ``x5u`` (X.509 URL)
+   b. i seguenti claim obbligatori:
 
-           - ``x5c`` (X.509 Certificate Chain)
+      * i riferimenti temporali di emissione e scadenza: `iat`_ , `exp`_.
+        Se il flusso richiede di verificare l'istante di prima validità del token, si può
+        usare il claim `nbf`_.
+      * il riferimento dell'erogatore in `aud`_;
 
-           - ``x5t#S256`` (X.509 Certificate SHA-256 Thumbprint)
 
-   b. si consideri di utilizzare le seguenti claim nel payload, secondo le finalità del servizio:
+   c. i seguenti claim, secondo la logica del servizio:
 
-      - ``iss``: identificativo del mittente
-      - ``aud``: identificativo del destinatario
-      - ``iat``: timestamp UNIX emissione del JWT
-      - ``exp``: timestamp UNIX di scadenza del JWT
-      - ``jti``: identificativo del JWT, per evitare replay attack
-      - ``sub``: oggetto (`principal` see :rfc:3744`#section-2`) dei claim contenuti nel jwt 
+      - `sub`_: oggetto (`principal` see :rfc:`3744#section-2`) dei claim contenuti nel jwt
+      - `iss`_: identificativo del mittente
+      - `aud`_: identificativo del destinatario
+      - `jti`_: identificativo del JWT, per evitare replay attack
+
+   d. i seguenti claim custom utilizzati per la firma del messaggio:
 
       - ``pda`` [1]_: contenente l’algoritmo di hashing utilizzato per il
           calcolo del digest della payload del messaggio
 
-      - ``mpd`` [2]_: contenente il digest della payload del messaggio
+      - ``pdh`` [2]_: contenente il digest della payload del messaggio
 
 .. rpolli TODO vediamo un attimo i nomi. Io userei un sistema simile al `Digest` header.
    va' inserito anche il discorso dei representation metadata
@@ -381,7 +385,7 @@ Regole di processamento
     utilizzando l’algoritmo indicato nel claim pda.
 
 12. L’erogatore verifica la corrispondenza tra il digest presente nel
-    claim mpd contenuto nel payload del token JWT rispetto a quanto
+    claim pdh contenuto nel payload del token JWT rispetto a quanto
     calcolato al passo precedente.
 
 13. Se le azioni da 6 a 12 hanno avuto esito positivo, il messaggio
@@ -390,8 +394,8 @@ Regole di processamento
 
 Note:
 
--  Per quanto riguarda gli algoritmi da utilizzare nelle claim ``alg`` e ``pda``
-   si fa riferimento agli algoritmi indicati sezione "\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ".
+-  Per gli algoritmi da utilizzare nelle claim `alg`_ e ``pda``
+   si veda `Elenco degli algoritmi`_
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    della risposta da parte dell’erogatore al fruitore.
@@ -411,15 +415,16 @@ Esempio porzione pacchetto HTTP
    POST http://localhost:8080/ws-test/service/hello/echo/
    Accept: application/json
    Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
+
    .
    .
    .
 
 Esempio porzione token JWT
 
-.. code-block:: http
+.. code-block:: python
 
-   header
+   # header
    {
      "alg": "RS256",
      "typ": "JWT",
@@ -427,31 +432,36 @@ Esempio porzione token JWT
        "MIICyzCCAbOgAwIBAgIEC..."
      ]
    }
-   payload
+   # payload
    {
-     "pda":"S256",
-     "mpd":"B89AB4CA23D27F197AAE30F50843F0136900A1A154DCA00CDD8A5B8B4D071500"
+     "aud": "http://localhost:8080/ws-test/service/hello/echo"
+     "iat": 1516239022,
+     "nbf": 1516239022,
+     "exp": 1516239024,
+     "pda": "S256",
+     "pdh": "B89AB4CA23D27F197AAE30F50843F0136900A1A154DCA00CDD8A5B8B4D071500"
    }
 
 Esempio del body del messaggio
 
-.. code-block:: http
+.. code-block:: python
 
    {
-   "testo":"Hello world!"
+     "testo": "Hello world!"
    }
 
 Il tracciato rispecchia alcune scelte implementative esemplificative in
 merito:
 
--  riferimento al certificato X.509 (``x5c``)
+-  riferimento al certificato X.509 (`x5c`_)
 
--  algoritmi di firma e digest (``alg``).
+-  algoritmi di firma e digest (`alg`_).
 
 -  algoritmo di hashing per calcolare il digest del body (``pda``)
 
-Gli enti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto presente nella sezione "\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ", nonché la modalità di inclusione o referenziazione del certificato x509.
+Le parti, in base alle proprie esigenze, individuano gli specifici
+algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
+nonché la modalità di inclusione o referenziazione del certificato X.509.
 
 .. [1]
    Il presente documento ha individuato il claim con sigla "pda" al fine
@@ -464,3 +474,32 @@ algoritmi secondo quanto presente nella sezione "\  `Elenco degli algoritmi <ele
 
 .. discourse::
    :topic_identifier: 8908
+
+
+.. _`Elenco degli algoritmi`: elenco-degli-algoritmi.html
+
+.. _`trust`: ../doc_04_cap_00.html
+
+.. _`JWS Compact Serialization`: https://tools.ietf.org/html/rfc7515#section-7.1
+.. _`Jose Header`: https://tools.ietf.org/html/rfc7515#section-4
+
+.. _`alg`: https://tools.ietf.org/html/rfc7515#section-4.1.1
+.. _`jku`: https://tools.ietf.org/html/rfc7515#section-4.1.2
+.. _`jwk`: https://tools.ietf.org/html/rfc7515#section-4.1.3
+.. _`kid`: https://tools.ietf.org/html/rfc7515#section-4.1.4
+.. _`x5u`: https://tools.ietf.org/html/rfc7515#section-4.1.5
+.. _`x5c`: https://tools.ietf.org/html/rfc7515#section-4.1.6
+.. _`x5t#256`: https://tools.ietf.org/html/rfc7515#section-4.1.8
+
+
+.. _`iss`: https://tools.ietf.org/html/rfc7519#section-4.1.1
+.. _`sub`: https://tools.ietf.org/html/rfc7519#section-4.1.2
+.. _`aud`: https://tools.ietf.org/html/rfc7519#section-4.1.3
+.. _`exp`: https://tools.ietf.org/html/rfc7519#section-4.1.4
+.. _`nbf`: https://tools.ietf.org/html/rfc7519#section-4.1.5
+.. _`iat`: https://tools.ietf.org/html/rfc7519#section-4.1.6
+.. _`jti`: https://tools.ietf.org/html/rfc7519#section-4.1.7
+
+.. _`typ`: https://tools.ietf.org/html/rfc7519#section-5.1
+.. _`cty`: https://tools.ietf.org/html/rfc7519#section-5.2
+
