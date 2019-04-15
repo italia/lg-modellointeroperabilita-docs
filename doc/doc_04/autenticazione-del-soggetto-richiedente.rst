@@ -66,19 +66,23 @@ Flusso delle interazioni
 
 **A: Richiesta**
 
-Il fruitore invia la richiesta all’interfaccia di
+Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
 Il messaggio include o referenzia il certificato X.509 riconosciuto
 dall’erogatore.
 
 Al messaggio è aggiunta la firma di una porzione significativa dello
-stesso.
+stesso con almeno le seguenti claim:
+
+-  il riferimento dell’erogatore
+
+-  un riferimento temporale univoco per messaggio
 
 **B: Risposta**
 
-L’erogatore, ricevuto il messaggio, verifica il
-certificato X.509 e valida la firma.
+L’erogatore, ricevuto il messaggio, provvede alla verifica del
+certificato X.509, valida la firma e le claim ricevute.
 
 L’erogatore predispone il messaggio di risposta e lo inoltra al
 fruitore.
@@ -92,13 +96,17 @@ Regole di processamento
 
 1. Il fruitore costruisce un messaggio SOAP per il servizio.
 
-2. Il fruitore calcola la firma per gli elementi significativi del
-   messaggio usando l’XML Signature. Il digest è firmato usando la
-   chiave privata associata al certificato X.509 del fruitore.
-   L’elemento ``<Signature>`` è posizionato nell’header ``<Security>`` del
-   messaggio.
+2. Il fruitore aggiunge al messaggio l’header ``WS-Addressing`` e
+   l’elemento ``<wsu:Timestamp>`` composto dagli elementi ``<wsu:Created>`` e
+   ``<wsu:Expires>``
 
-3. Il fruitore referenzia il certificato X.509 usando in maniera
+3. Il fruitore calcola la firma per gli elementi significativi del
+   messaggio, in particolare ``<wsu:Timestamp>`` e ``<wsa:To>`` del blocco
+   ``WS-Addressing``. Il digest è firmato usando la chiave privata associata
+   al certificato X.509 del fruitore. L’elemento ``<Signature>`` è
+   posizionato nell’header ``<Security>`` del messaggio.
+
+4. Il fruitore referenzia il certificato X.509 usando in maniera
    alternativa, nell’header ``<Security>``, i seguenti elementi previsti
    nella specifica ws-security:
 
@@ -108,38 +116,48 @@ Regole di processamento
 
    c. ``<wsse:SecurityTokenReference>``
 
-4. Il fruitore spedisce il messaggio all’interfaccia di servizio
+5. Il fruitore spedisce il messaggio all’interfaccia di servizio
    dell’erogatore.
 
 **B: Risposta**
 
-5. L’erogatore recupera il certificato X.509 referenziato nell’header
-   ``<Security>``.
+6.  L’erogatore recupera il certificato X.509 referenziato nell’header
+    ``<Security>``.
 
-6. L’erogatore verifica il certificato secondo i criteri del trust.
+7.  L’erogatore verifica il certificato secondo i criteri del trust.
 
-7. L’erogatore valida la firma verificando l’elemento ``<Signature>``
-   nell’header ``<Security>``.
+8.  L’erogatore valida l’elemento <Signature> nell’header ``<Security>``.
 
-8. L’erogatore autentica il fruitore.
+    i.  L’erogatore verifica il contenuto dell’elemento ``<wsu:Timestamp>``
+        nell’header del messaggio al fine di verificare la validità
+        temporale del messaggio anche per mitigare il rischio di replay
+        attack.
 
-9. Se le azioni da 5 a 8 hanno avuto esito positivo, il messaggio viene
-   elaborato e viene restituito il risultato del servizio richiamato.
+    ii. L’erogatore verifica la corrispondenza tra se stesso e quanto
+        definito nell’elemento ``<wsa:To>`` del blocco WS-Addressing.
+
+9.  L’erogatore autentica il fruitore.
+
+10. Se le azioni da 6 a 9 hanno avuto esito positivo, il messaggio
+    viene elaborato e viene restituito il risultato del servizio
+    richiamato.
 
 Note:
 
--  Gli algoritmi da utilizzare nell’elemento
+-  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
    ``<Signature>`` rispettivamente ``<DigestMethod>``, ``<SignatureMethod>`` e
-   ``<CanonicalizationMethod>`` sono indicati alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
+   ``<CanonicalizationMethod>`` si fa riferimento agli algoritmi indicati
+   alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__,
 
 -  Un meccanismo simile può essere utilizzato per autenticare
-   l' erogatore.
+   l’erogatore.
 
 Tracciato
 ~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
-fruitore all’interfaccia di servizio dell’erogatore.
+fruitore all’interfaccia di servizio dell’erogatore relativo ad un
+servizio di ``echo``.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
@@ -154,68 +172,75 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
 
 .. code-block:: XML
 
-   <soap:Envelope>
-     <soap:Header>
-       <wsse:Security soap:mustUnderstand="1">
-         <wsse:BinarySecurityToken
-           EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"
-           ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"
-           wsu:Id="X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7">MIICyzCCAbOgAwIBAgIECxY+9TAhkiG9w...
-         </wsse:BinarySecurityToken>
-         <wsu:Timestamp wsu:Id="TS-cd361ace-ba99-424a-aa3c-8c38c3263ced">
-           <wsu:Created>2018-10-04T10:17:28.061Z</wsu:Created>
-           <wsu:Expires>2018-10-04T10:22:28.061Z</wsu:Expires>
-         </wsu:Timestamp>
-         <ds:Signature Id="SIG-f58c789e-e3d3-4ec3-9ca7-d1e9a4a90f90">
-           <ds:SignedInfo>
-             <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
-               <ec:InclusiveNamespaces PrefixList="soap" />
-             </ds:CanonicalizationMethod>
-             <ds:SignatureMethod
-                 Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
-             <ds:Reference URI="#TS-cd361ace-ba99-424a-aa3c-8c38c3263ced">
-               <ds:Transforms>
-                 <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
-                   <ec:InclusiveNamespaces PrefixList="soap wsse" />
-                 </ds:Transform>
-               </ds:Transforms>
-               <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
-               <ds:DigestValue>NWPKndUk42jwIJOpDGXACq7QbyBUg1UfJFSEylsCxQw=</ds:DigestValue>
-             </ds:Reference>
-           </ds:SignedInfo>
-           <ds:SignatureValue>AIrDa7ukDfFJD867goC+c7K3UampxpX/Nj/...</ds:SignatureValue>
-           <ds:KeyInfo Id="KI-cad9ee47-dec8-4340-8fa1-74805f7e26f8">
-             <wsse:SecurityTokenReference wsu:Id="STR-e193f25f-9727-4197-b7aa-25b01c9f2ba3">
-              <wsse:Reference
-                URI="#X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7"  ValueType="http://docs.oasis-open.org/   wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
-                </wsse:SecurityTokenReference>
-           </ds:KeyInfo>
-         </ds:Signature>
-       </wsse:Security>
-        </soap:Header>
-     <soap:Body>
-       <ns2:sayHi xmlns:ns2="http://example.profile.security.modi.agid.gov.it/">
-         <arg0>Hello World!</arg0>
-       </ns2:sayHi>
-     </soap:Body>
-   </soap:Envelope>
+   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" soap:mustUnderstand="1">
+      <wsse:BinarySecurityToken EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" wsu:Id="X509-39011475-65d5-446e-ba38-be84220fd720">MIICqDCCAZCgAwIBAgIEXLSSUTANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDDAttb2RpU2VjUHJvZjAeFw0xOTA0MTUxNDE2NDlaFw0yNDA0MTUxNDE2NDlaMBYxFDASBgNVBAMMC21vZGlTZWNQcm9mMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvBJNKBiLS+ZcmwGUku5l2FKeHogeSZejjOOrO2Ag6DGPXo1MtHt2XwgUXmgT+v0IjhZp5XH2XbwSWw2EMWSG3Zz0CJILqWGPg0M/LxaIZAxSdxJpVNWg/profO+xKz0B6QHK+I0yecHg7TtI4es9AuDyR4pKslpcXyMEqJQ7m5N8v2e4WldeHF2SRN/ereEOuewEi15c7akh4TdkGdiwOSif2AXIugHRgdpHjH86iJxFu24IJmBA7C5tytz7mfKollGhI9+2d0902ayVshCV4/pmnX0pDiGayV1C6SDPTbapXKXJrp1+fBHaUkDY+W/2Q9sC4o8pttmcpHeMRxFDkwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQALwKbIm8S2BpYpHaqMwJLeWBPCaDeT7J+KDj39Ac3YxDb8E/hGM+Hn1mq2ssYqu5JTvuAQ9o8v3UpcIct15RPgOKYfBzxnH1h2vCavpiFCFTc6UoQgPBZGyyNOOKNOxEnXtW7ff1gl2GRLIWXlXDf1fdX7VJVBqWfBvivhIbsDa5LRBCrNsXORx2azUb5QBgMm2UZJxYA3+dFRgYmLSY/RyRLf0o03lwCRhAyrU7ya9IMYgrxgjEos2fHB2IGJJ1Wh+gTQWMP+wJymlC0qyjTHx5pyZOzJGtH5HnaVU7EgtxdBRC9dTlWVpNgmD8nS6Yr/am5cZJZrkIHRyfxqkA2W</wsse:BinarySecurityToken>
+      <wsu:Timestamp wsu:Id="TS-819df7b7-379d-48f7-8d9c-28c5b5d252f0">
+        <wsu:Created>2019-04-15T14:53:34.649Z</wsu:Created>
+        <wsu:Expires>2019-04-15T14:58:34.649Z</wsu:Expires>
+      </wsu:Timestamp>
+      <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="SIG-6e09e972-cbe6-43fc-a10c-38e6dce56dbe">
+        <ds:SignedInfo>
+          <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+            <ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="soap"/>
+          </ds:CanonicalizationMethod>
+          <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+          <ds:Reference URI="#TS-819df7b7-379d-48f7-8d9c-28c5b5d252f0">
+            <ds:Transforms>
+              <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                <ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="soap wsse"/>
+              </ds:Transform>
+            </ds:Transforms>
+            <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+            <ds:DigestValue>K/3Fq1fYjG5PXv8UlKBuT4XBCWudGR5w2M10wPcZ/Yo=</ds:DigestValue>
+          </ds:Reference>
+          <ds:Reference URI="#id-96f9b013-17e5-489d-8068-52c3f1345c75">
+            <ds:Transforms>
+              <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                <ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="soap"/>
+              </ds:Transform>
+            </ds:Transforms>
+            <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+            <ds:DigestValue>eH3Vlc3l19NbBawDOuFDN11BfmbgGAnl6Z4LpJVM3UM=</ds:DigestValue>
+          </ds:Reference>
+        </ds:SignedInfo>
+        <ds:SignatureValue>jAtZqkfRcFJW+jx9YDv+r2Q8V4IWEWLAZckZlWsmo+NmCqW+mKhK9/5JkExrqexWl0lUbsYo0DtFKuq1k4PECdbWdrRfQPtLczAc33Brvb90WMCHrDVKCc0qnatk8MHtsTefeYwYOTQAm5VCXNDbAoDME3KW85OcVl4kGvv69ZUxAnnzl9oPGMXgVZYSgz/6Dn1EbWGtCucDYEmwcQM2zg+JYBHwTVvye94jP+/XbEBfdY3n1s0S9w6WyoxolatNgjcLnPzbcYCeU7u4pWyw3/bdXvHHHMODig6GvOKq+oNZgtY12uo/9LaPYgzxsLbSAgtxZVe7fPv2AxSjPN7D8w==</ds:SignatureValue>
+        <ds:KeyInfo Id="KI-32484d1e-867e-4465-a96f-52a8668d5a0c">
+          <wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="STR-3cf69cce-c56f-461a-905d-dfc20ab0742c">
+            <wsse:Reference URI="#X509-39011475-65d5-446e-ba38-be84220fd720" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+          </wsse:SecurityTokenReference>
+        </ds:KeyInfo>
+      </ds:Signature>
+    </wsse:Security>
+    <Action xmlns="http://www.w3.org/2005/08/addressing">http://profile.security.modi.agid.org/HelloWorld/sayHi</Action>
+    <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:55e6bc57-2286-4b7d-82a9-fdbcf57721b1</MessageID>
+    <To xmlns="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-96f9b013-17e5-489d-8068-52c3f1345c75">http://localhost:8080/security-profile/echo</To>
+    <ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+      <Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+    </ReplyTo>
+  </soap:Header>
+  <soap:Body>
+    <ns2:sayHi xmlns:ns2="http://profile.security.modi.agid.org/">
+      <arg0>OK !!!!</arg0>
+    </ns2:sayHi>
+  </soap:Body>
+</soap:Envelope>
 
-Il tracciato rispecchia alcune scelte implementative esemplificative:
+Il tracciato rispecchia le seguenti scelte implementative
+esemplificative:
 
 -  riferimento al security token (``BinarySecurityToken``)
 
 -  algoritmi di canonizzazione (``CanonicalizationMethod``)
 
--  algoritmi di firma (``SignatureMethod``)
+-  algoritmi di firma (``SignatureMethod``).
 
 -  algoritmo per il digest (``DigestMethod``)
 
--  l’inclusione dell’elemento ``Timestamp`` quale porzione significativa del
-   messaggio e la relativa firma.
-
-Le parti, in base alle proprie esigenze, utilizzano gli algoritmi indicati
-nella sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché la modalità di inclusione
-o referenziazione del certificato x509.
+Le parti, in base alle proprie esigenze, usano
+gli algoritmi indicati in   `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__
+, nonché la modalità di inclusione o referenziazione del certificato X.509.
 
 
 [M2MS02] Direct Trust con certificato X.509 su SOAP con con unicità del token/messaggio
@@ -234,8 +259,7 @@ messaggio:
 -  autenticazione del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitore, o entrambe le parti;
 
--  difesa dalle minacce derivanti dagli attacchi: Replay Attack e
-   Spoofing;
+-  difesa dalle minacce derivanti dagli attacchi: Replay Attack 
 
 .. _descrizione-3:
 
@@ -396,67 +420,69 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
 
 .. code-block:: XML
 
-   <soap:Envelope>
-     <soap:Header>
-       <wsse:Security soap:mustUnderstand="1">
-         <wsse:BinarySecurityToken
-               EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"
-               ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"
-               wsu:Id="X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7">MIICyzCCAbOgAwIBAgIECxY+9TAhkiG9w...
-         </wsse:BinarySecurityToken>
-         <wsu:Timestamp wsu:Id="TS-cd361ace-ba99-424a-aa3c-8c38c3263ced">
-           <wsu:Created>2018-10-04T10:17:28.061Z</wsu:Created>
-           <wsu:Expires>2018-10-04T10:22:28.061Z</wsu:Expires>
-         </wsu:Timestamp>
-         <ds:Signature Id="SIG-f58c789e-e3d3-4ec3-9ca7-d1e9a4a90f90">
-           <ds:SignedInfo>
-             <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
-               <ec:InclusiveNamespaces PrefixList="soap" />
-             </ds:CanonicalizationMethod>
-             <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
-             <ds:Reference URI="#TS-cd361ace-ba99-424a-aa3c-8c38c3263ced">
-               <ds:Transforms>
-                 <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
-                   <ec:InclusiveNamespaces PrefixList="soap wsse" />
-                 </ds:Transform>
-               </ds:Transforms>
-               <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
-               <ds:DigestValue>NWPKndUk42jwIJOpDGXACq7QbyBUg1UfJFSEylsCxQw=</ds:DigestValue>
-             </ds:Reference>
-             <ds:Reference URI="#id-4398e270-dae1-497e-97db-5fd1c5dbef1a">
-               <ds:Transforms>
-                 <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
-                   <ec:InclusiveNamespaces PrefixList="soap" />
-                 </ds:Transform>
-               </ds:Transforms>
-               <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
-               <ds:DigestValue>0cJNCJ1W8Agu66fGTXlPRyy0EUNUQ9OViFlm8qf8Ysw=</ds:DigestValue>
-             </ds:Reference>
-           </ds:SignedInfo>
-           <ds:SignatureValue>AIrDa7ukDfFJD867goC+c7K3UampxpX/Nj/...</ds:SignatureValue>
-           <ds:KeyInfo Id="KI-cad9ee47-dec8-4340-8fa1-74805f7e26f8">
-             <wsse:SecurityTokenReference wsu:Id="STR-e193f25f-9727-4197-b7aa-25b01c9f2ba3">
-              <wsse:Reference URI="#X509-44680ddc-e35a-4374-bcbf-2b6dcba722d7"
-                    ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
-              </wsse:SecurityTokenReference>
-           </ds:KeyInfo>
-         </ds:Signature>
-       </wsse:Security>
-       <Action xmlns="http://www.w3.org/2005/08/addressing">
-             http://profile.security.modi.agid.org/HelloWorld/sayHi </Action>
-       <MessageID xmlns="http://www.w3.org/2005/08/addressing">
-              urn:uuid:3edf013f-0e2e-4fec-8487-95ade733a288
-       </MessageID>
-       <To xmlns="http://www.w3.org/2005/08/addressing"
-           wsu:Id="id-4398e270-dae1-497e-97db-5fd1c5dbef1a">
-           http://example.profile.security.modi.agid.gov.it/security-profile/echo </To>
-     </soap:Header>
-     <soap:Body>
-       <ns2:sayHi xmlns:ns2="http://example.profile.security.modi.agid.gov.it/">
-         <arg0>Hello World!</arg0>
-       </ns2:sayHi>
-     </soap:Body>
-   </soap:Envelope>
+   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" soap:mustUnderstand="1">
+      <wsse:BinarySecurityToken EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" wsu:Id="X509-bf881daf-371a-4d18-9502-d9f92af9a949">MIICqDCCAZCgAwIBAgIEXLSSUTANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDDAttb2RpU2VjUHJvZjAeFw0xOTA0MTUxNDE2NDlaFw0yNDA0MTUxNDE2NDlaMBYxFDASBgNVBAMMC21vZGlTZWNQcm9mMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvBJNKBiLS+ZcmwGUku5l2FKeHogeSZejjOOrO2Ag6DGPXo1MtHt2XwgUXmgT+v0IjhZp5XH2XbwSWw2EMWSG3Zz0CJILqWGPg0M/LxaIZAxSdxJpVNWg/profO+xKz0B6QHK+I0yecHg7TtI4es9AuDyR4pKslpcXyMEqJQ7m5N8v2e4WldeHF2SRN/ereEOuewEi15c7akh4TdkGdiwOSif2AXIugHRgdpHjH86iJxFu24IJmBA7C5tytz7mfKollGhI9+2d0902ayVshCV4/pmnX0pDiGayV1C6SDPTbapXKXJrp1+fBHaUkDY+W/2Q9sC4o8pttmcpHeMRxFDkwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQALwKbIm8S2BpYpHaqMwJLeWBPCaDeT7J+KDj39Ac3YxDb8E/hGM+Hn1mq2ssYqu5JTvuAQ9o8v3UpcIct15RPgOKYfBzxnH1h2vCavpiFCFTc6UoQgPBZGyyNOOKNOxEnXtW7ff1gl2GRLIWXlXDf1fdX7VJVBqWfBvivhIbsDa5LRBCrNsXORx2azUb5QBgMm2UZJxYA3+dFRgYmLSY/RyRLf0o03lwCRhAyrU7ya9IMYgrxgjEos2fHB2IGJJ1Wh+gTQWMP+wJymlC0qyjTHx5pyZOzJGtH5HnaVU7EgtxdBRC9dTlWVpNgmD8nS6Yr/am5cZJZrkIHRyfxqkA2W</wsse:BinarySecurityToken>
+      <wsu:Timestamp wsu:Id="TS-09f1357c-beb4-4804-9410-76c5a06e2e48">
+        <wsu:Created>2019-04-15T15:02:15.515Z</wsu:Created>
+        <wsu:Expires>2019-04-15T15:07:15.515Z</wsu:Expires>
+      </wsu:Timestamp>
+      <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="SIG-4d949c5b-968b-4fd5-be67-4cd1d1a41ce3">
+        <ds:SignedInfo>
+          <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+            <ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="soap"/>
+          </ds:CanonicalizationMethod>
+          <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+          <ds:Reference URI="#TS-09f1357c-beb4-4804-9410-76c5a06e2e48">
+            <ds:Transforms>
+              <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                <ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="soap wsse"/>
+              </ds:Transform>
+            </ds:Transforms>
+            <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+            <ds:DigestValue>HPYjNXdxIuJIWk1EArE+8PIgyWt5nAD+upwcjOSDB20=</ds:DigestValue>
+          </ds:Reference>
+          <ds:Reference URI="#id-27c23bc8-0c4f-4d98-b046-6e590ea9661b">
+            <ds:Transforms>
+              <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                <ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="soap"/>
+              </ds:Transform>
+            </ds:Transforms>
+            <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+            <ds:DigestValue>MJzRD4ZRMsFOxskbnfNV9BnDTCLxuLSnmZ8I4IjaxHw=</ds:DigestValue>
+          </ds:Reference>
+          <ds:Reference URI="#id-fb4c1fa0-e804-4169-b70e-5b55c5f9d912">
+            <ds:Transforms>
+              <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                <ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="soap"/>
+              </ds:Transform>
+            </ds:Transforms>
+            <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+            <ds:DigestValue>MIi+ovLTqYu1HqxUtmUnuhVdMmNKOpOX8vn/fKjvQFU=</ds:DigestValue>
+          </ds:Reference>
+        </ds:SignedInfo>
+        <ds:SignatureValue>SBYs6aikHbfsHHV04ifV/ljVTysxNLRTPU6gsOGJamWGYLMPqOETjBf+NFJhPDVdolQSSHw0SD7uA/RlYkE9amRH1K+hoaUIa/PEhPgC1io/LqZdi3rt+b8uRlk+CXcUKOObgf/N960F/sM6s0ArKQxg/Yx6pqWamXBXo0PH/1FvHSgwdA62s0+Sli96qY0EnJPoyKIrqzskiscLXI1jCe8sesyA+xtJ0qBdFKAn2af48sVStPFv4gizC8+bsCRpQ36ihUIlI8DInJ13EgoKV9/rC4PheExO7HvSNTpBFdQt+Wr9wAb3oHq4urRBdugA6mX2xaJ8/XyZVajivvuVTw==</ds:SignatureValue>
+        <ds:KeyInfo Id="KI-dab2ce54-b000-439a-bcc2-9b8249626a1c">
+          <wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="STR-068909fe-1a64-4cf1-bd5a-355a20b0495f">
+            <wsse:Reference URI="#X509-bf881daf-371a-4d18-9502-d9f92af9a949" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+          </wsse:SecurityTokenReference>
+        </ds:KeyInfo>
+      </ds:Signature>
+    </wsse:Security>
+    <Action xmlns="http://www.w3.org/2005/08/addressing">http://profile.security.modi.agid.org/HelloWorld/sayHi</Action>
+    <MessageID xmlns="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-fb4c1fa0-e804-4169-b70e-5b55c5f9d912">urn:uuid:46da4ec1-f962-4f24-8524-48bb74b505d7</MessageID>
+    <To xmlns="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-27c23bc8-0c4f-4d98-b046-6e590ea9661b">http://localhost:8080/security-profile/echo</To>
+    <ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+      <Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+    </ReplyTo>
+  </soap:Header>
+  <soap:Body>
+    <ns2:sayHi xmlns:ns2="http://profile.security.modi.agid.org/">
+      <arg0>OK !!!!</arg0>
+    </ns2:sayHi>
+  </soap:Body>
+</soap:Envelope>
 
 
 Il tracciato rispecchia le seguenti scelte implementative
