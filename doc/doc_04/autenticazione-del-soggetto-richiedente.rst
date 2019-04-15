@@ -145,7 +145,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
    <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope/">
 	<soap:Header>
     <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" soap:mustUnderstand="1">
-      <wsse:BinarySecurityToken EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" wsu:Id="X509-39011475-65d5-446e-ba38-be84220fd720">MIICqDCCAZCgAwIBAgIEXLSSUTANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDDAttb2RpU2VjUHJvZjAeFw0xOTA0MTUxNDE2NDlaFw0yNDA0MTUxNDE2NDlaMBYxFDASBgNVBAMMC21vZGlTZWNQcm9mMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvBJNKBiLS+ZcmwGUku5l2FKeHogeSZejjOOrO2Ag6DGPXo1MtHt2XwgUXmgT+v0IjhZp5XH2XbwSWw2EMWSG3Zz0CJILqWGPg0M/LxaIZAxSdxJpVNWg/profO+xKz0B6QHK+I0yecHg7TtI4es9AuDyR4pKslpcXyMEqJQ7m5N8v2e4WldeHF2SRN/ereEOuewEi15c7akh4TdkGdiwOSif2AXIugHRgdpHjH86iJxFu24IJmBA7C5tytz7mfKollGhI9+2d0902ayVshCV4/pmnX0pDiGayV1C6SDPTbapXKXJrp1+fBHaUkDY+W/2Q9sC4o8pttmcpHeMRxFDkwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQALwKbIm8S2BpYpHaqMwJLeWBPCaDeT7J+KDj39Ac3YxDb8E/hGM+Hn1mq2ssYqu5JTvuAQ9o8v3UpcIct15RPgOKYfBzxnH1h2vCavpiFCFTc6UoQgPBZGyyNOOKNOxEnXtW7ff1gl2GRLIWXlXDf1fdX7VJVBqWfBvivhIbsDa5LRBCrNsXORx2azUb5QBgMm2UZJxYA3+dFRgYmLSY/RyRLf0o03lwCRhAyrU7ya9IMYgrxgjEos2fHB2IGJJ1Wh+gTQWMP+wJymlC0qyjTHx5pyZOzJGtH5HnaVU7EgtxdBRC9dTlWVpNgmD8nS6Yr/am5cZJZrkIHRyfxqkA2W</wsse:BinarySecurityToken>
+      <wsse:BinarySecurityToken EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" wsu:Id="X509-39011475-65d5-446e-ba38-be84220fd720">MIICqDCCAZCgAwIBAgIEXLSSUTANBg...</wsse:BinarySecurityToken>
       <wsu:Timestamp wsu:Id="TS-819df7b7-379d-48f7-8d9c-28c5b5d252f0">
         <wsu:Created>2019-04-15T14:53:34.649Z</wsu:Created>
         <wsu:Expires>2019-04-15T14:58:34.649Z</wsu:Expires>
@@ -175,7 +175,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
             <ds:DigestValue>eH3Vlc3l19NbBawDOuFDN11BfmbgGAnl6Z4LpJVM3UM=</ds:DigestValue>
           </ds:Reference>
         </ds:SignedInfo>
-        <ds:SignatureValue>jAtZqkfRcFJW+jx9YDv+r2Q8V4IWEWLAZckZlWsmo+NmCqW+mKhK9/5JkExrqexWl0lUbsYo0DtFKuq1k4PECdbWdrRfQPtLczAc33Brvb90WMCHrDVKCc0qnatk8MHtsTefeYwYOTQAm5VCXNDbAoDME3KW85OcVl4kGvv69ZUxAnnzl9oPGMXgVZYSgz/6Dn1EbWGtCucDYEmwcQM2zg+JYBHwTVvye94jP+/XbEBfdY3n1s0S9w6WyoxolatNgjcLnPzbcYCeU7u4pWyw3/bdXvHHHMODig6GvOKq+oNZgtY12uo/9LaPYgzxsLbSAgtxZVe7fPv2AxSjPN7D8w==</ds:SignatureValue>
+        <ds:SignatureValue>jAtZqkfRcFJW+jx9YDv+r2Q8V4IWEWLAZckZlWsmo+NmCqW+m...</ds:SignatureValue>
         <ds:KeyInfo Id="KI-32484d1e-867e-4465-a96f-52a8668d5a0c">
           <wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="STR-3cf69cce-c56f-461a-905d-dfc20ab0742c">
             <wsse:Reference URI="#X509-39011475-65d5-446e-ba38-be84220fd720" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
