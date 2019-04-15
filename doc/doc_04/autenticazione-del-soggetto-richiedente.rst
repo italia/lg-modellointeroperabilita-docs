@@ -320,7 +320,7 @@ Regole di processamento
 
 9.  L’erogatore verifica il certificato secondo i criteri del trust.
 
-10.  L’erogatore valida l’elemento <Signature> nell’header ``<Security>``.
+10.  L’erogatore valida l’elemento ``<Signature>`` nell’header ``<Security>``.
 
 11.  L’erogatore autentica il fruitore.
 
