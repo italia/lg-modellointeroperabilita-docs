@@ -218,8 +218,8 @@ nella sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__, nonché
 o referenziazione del certificato x509.
 
 
-[M2MS02] Direct Trust con certificato X.509 su SOAP con threat mitigation
--------------------------------------------------------------------------
+[M2MS02] Direct Trust con certificato X.509 su SOAP con con unicità del token/messaggio
+---------------------------------------------------------------------------------------
 
 .. _scenario-3:
 
