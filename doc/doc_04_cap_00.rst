@@ -1,11 +1,15 @@
 Sicurezza
 =========
 
-Il presente documento descrive i *profili* individuati da AgID che i
+Il presente documento descrive i *profili* di sicurezza individuati da AgID che i
 soggetti erogatori DOVREBBERO utilizzare per soddisfare le necessità
 espresse attraverso requisiti funzionali e non funzionali.
 
-**I profili**
+Data la varaibilità nel tempo delle esigenze delle amministrazioni e delle tecnologie abilitanti,
+nonché considerata la natura incremenmtale del ModI, l'elenco dei *profili* di sicurezza
+non è da intendersi esaustivo.
+
+**I profili di sicurezza**
 
 -  definiscono a livello di specifica tecnologica uno "strumento
    condiviso" utile a favorire l’interoperabilità tra le pubbliche
@@ -36,9 +40,6 @@ Ogni profilo è strutturato come segue:
    con relativi precondizioni e obiettivi.
 
 -  **Dettaglio:**
-
-   -  **Flusso delle interazioni:** descrizione delle interazioni tra le
-      2 parti alle interfacce.
 
    -  **Regole di processamento:** elenco dei passi da eseguire per
       implementare il profilo.
@@ -77,15 +78,25 @@ fiducia tra fruitore ed erogatore, stabilita in modalità diretta,
 attraverso accordi che si basano sulla condivisione del reciproco *modus
 operandi*.
 
+**Tipologia di profili di sicurezza**
+
+I profili di sicurezza del presente documento sono suddivisi in due tipologie:
+
+- **Autenticazione Intradominio [AID]**
+Il processo di identificazione avviene all'interno del dominio di una delle due parti (fruitore ed erogatore) del *direct trust*.
+
+- **Autenticazione Extradominio [AED]**
+Il processo di identificazione avviene mediante una terza parte esterna alle due parti (fruitore ed erogatore) interessate.
+
 **Modalità di combinazione dei profili**
 
 I profili sono rappresentati con una sequenza di 6 caratteri:
 
 -  i primi 3 caratteri indicano la tipologia dell’entità che comunicano:
 
-   -  M2M -> Machine To Machine
+   -  AID -> Autenticazione Intradominio
 
-   -  H2M -> Human To Machine
+   -  AED -> Autenticazione Extradominio
 
 -  il quarto carattere definisce l’ambito in cui viene gestita la
    problematica di sicurezza:
@@ -99,8 +110,8 @@ I profili sono rappresentati con una sequenza di 6 caratteri:
 -  Gli ultimi 2 caratteri identificano univocamente il profilo.
 
 Partendo dai requisiti di sicurezza emersi durante la fase di analisi è
-possibile individuare il **profilo** o una **combinazione di più
-profili** che ricoprano le esigenze.
+possibile individuare il **profilo** di sicurezza o una **combinazione di più
+profili** di sicurezza che ricoprano le esigenze.
 
 Di seguito viene mostrata una rappresentazione dei profili attualmente
 presenti nel documento in cui vengono evidenziate le relazioni.
