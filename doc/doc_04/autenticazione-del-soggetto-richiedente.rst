@@ -418,10 +418,10 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
   </soap:Header>
   <soap:Body>
     <ns2:sayHi xmlns:ns2="http://profile.security.modi.agid.org/">
-      <arg0>OK !!!!</arg0>
+      <arg0>OK</arg0>
     </ns2:sayHi>
   </soap:Body>
-</soap:Envelope>
+  </soap:Envelope>
 
 
 Il tracciato rispecchia le seguenti scelte implementative
