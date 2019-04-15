@@ -193,7 +193,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
 		</soap:Header>
 		<soap:Body>
 			<ns2:sayHi xmlns:ns2="http://profile.security.modi.agid.org/">
-				<arg0>OK !!!!</arg0>
+				<arg0>OK</arg0>
 			</ns2:sayHi>
 		</soap:Body>
 		</soap:Envelope>
@@ -289,8 +289,8 @@ Regole di processamento
    ``<wsu:Expires>``
 
 3. Il fruitore calcola la firma per gli elementi significativi del
-   messaggio, in particolare ``<wsu:Timestamp>`` e ``<wsa:To>`` del blocco
-   ``WS-Addressing``. Il digest è firmato usando la chiave privata associata
+   messaggio, in particolare ``<wsa:To>`` e ``<wsa:MessageID>`` del blocco
+   ``WS-Addressing`` e ``<wsu:Timestamp>``. Il digest è firmato usando la chiave privata associata
    al certificato X.509 del fruitore. L’elemento ``<Signature>`` è
    posizionato nell’header ``<Security>`` del messaggio.
 
@@ -311,20 +311,22 @@ Regole di processamento
 
 6. L’erogatore verifica il contenuto dell’elemento ``<wsu:Timestamp>``
    nell’header del messaggio al fine di verificare la validità
-   temporale del messaggio anche per mitigare il rischio di replay attack.
+   temporale del messaggio.
 
 7. L’erogatore verifica la corrispondenza tra se stesso e quanto definito
    nell’elemento ``<wsa:To>`` del blocco WS-Addressing.
+   
+8. L'erogatore verifica l'univocità del ``<wsa:MessageID>`` del blocco ``WS-Addressing``
 
-8.  L’erogatore recupera il certificato X.509 referenziato nell’header ``<Security>``.
+9.  L’erogatore recupera il certificato X.509 referenziato nell’header ``<Security>``.
 
-9.  L’erogatore verifica il certificato secondo i criteri del trust.
+10.  L’erogatore verifica il certificato secondo i criteri del trust.
 
-10.  L’erogatore valida l’elemento ``<Signature>`` nell’header ``<Security>``.
+11.  L’erogatore valida l’elemento ``<Signature>`` nell’header ``<Security>``.
 
-11.  L’erogatore garantisce l'accesso al fruitore.
+12.  L’erogatore garantisce l'accesso al fruitore.
 
-12. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
+13. Se le azioni da 6 a 12 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
     richiamato.
 
