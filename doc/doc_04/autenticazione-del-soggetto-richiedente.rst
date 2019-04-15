@@ -46,8 +46,8 @@ Dettaglio
 ^^^^^^^^^
 
 .. mermaid::
-   :caption: Autenticazione del Fruitore
-   :alt: Autenticazione del Fruitore
+   :caption: Accesso del Fruitore
+   :alt: accesso del fruitore
 
    sequenceDiagram
       participant F as Fruitore
@@ -107,7 +107,7 @@ Regole di processamento
 
 10. L’erogatore valida l’elemento <Signature> nell’header ``<Security>``.
 
-11. L’erogatore autentica il fruitore.
+11. L’erogatore garantisce l'accesso al fruitore.
 
 12. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
@@ -221,12 +221,12 @@ gli algoritmi indicati in   `Elenco degli algoritmi <elenco-degli-algoritmi.html
 Scenario
 ^^^^^^^^
 
-Il seguente profilo estende il profilo M2MS01.
+Il seguente profilo estende il profilo IDAS01.
 
 Comunicazione tra fruitore ed erogatore che assicuri a livello di
 messaggio:
 
--  autenticazione del soggetto fruitore, quale organizzazione o unità
+-  accesso del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitore, o entrambe le parti;
 
 -  difesa dalle minacce derivanti dagli attacchi: Replay Attack 
@@ -239,8 +239,8 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
-(server), che permette il riconoscimento da parte dell’erogatore del
+Si assume l’esistenza di un `trust`_ tra fruitore ed erogatore,
+che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
 Il meccanismo con cui è stabilito il `trust`_, inclusa la modalità
@@ -252,7 +252,7 @@ dell’erogatore includendo o referenziando il certificato X.509 e
 assicurando la firma dei claim del messaggio.
 
 L’erogatore, ricevuto il messaggio, verifica il certificato X.509,
-valida la firma dei claim ed autentica il fruitore. Se la verifica e la
+valida la firma dei claim ed garantisce l'accesso al fruitore. Se la verifica e la
 validazione sono superate, l’erogatore consuma la richiesta e produce la
 relativa risposta.
 
@@ -262,8 +262,8 @@ Dettaglio
 ^^^^^^^^^
 
 .. mermaid::
-   :caption: Autenticazione del Fruitore
-   :alt: Autenticazione del Fruitore
+   :caption: Accesso del Fruitore
+   :alt: accesso del fruitore
 
    sequenceDiagram
       participant F as Fruitore
@@ -322,7 +322,7 @@ Regole di processamento
 
 10.  L’erogatore valida l’elemento ``<Signature>`` nell’header ``<Security>``.
 
-11.  L’erogatore autentica il fruitore.
+11.  L’erogatore garantisce l'accesso al fruitore.
 
 12. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
@@ -335,8 +335,7 @@ Note:
    ``<CanonicalizationMethod>`` si fa riferimento agli algoritmi indicati
    alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__,
 
--  Un meccanismo simile può essere utilizzato per autenticare
-   l’erogatore.
+-  Un meccanismo simile può essere utilizzato specularmente per l'erogatore.
 
 .. _tracciato-3:
 
@@ -440,7 +439,7 @@ Le parti, in base alle proprie esigenze, usano
 gli algoritmi indicati in   `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__
 , nonché la modalità di inclusione o referenziazione del certificato X.509.
 
-[M2MR01] Direct Trust con certificato X.509 su REST
+[IDAR01] Direct Trust con certificato X.509 su REST
 ---------------------------------------------------
 
 .. _scenario-4:
@@ -451,7 +450,7 @@ Scenario
 Comunicazione tra fruitore ed erogatore che assicuri a livello di
 messaggio:
 
--  autenticazione del soggetto fruitore, quale organizzazione o unità
+-  accesso del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitore, o entrambe le parti.
 
 .. _descrizione-4:
@@ -490,8 +489,8 @@ Dettaglio
 ^^^^^^^^^
 
 .. mermaid::
-   :caption: Autenticazione del Fruitore
-   :alt: Autenticazione del Fruitore
+   :caption: Accesso del Fruitore
+   :alt: accesso del fruitore
 
    sequenceDiagram
       participant F as Fruitore
@@ -502,29 +501,6 @@ Dettaglio
       E-->>F: 2. Reply
       deactivate E
       deactivate F
-
-.. _flusso-delle-interazioni-4:
-
-Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-**A: Richiesta**
-
-Il fruitore genera un JWT signed contenente i riferimenti temporali
-ed il destinatario del messaggio.
-
-Il fruitore invia il messaggio di richiesta all’erogatore.
-
-Il JWT include o referenzia il certificato X.509 riconosciuto
-dall’erogatore.
-
-**B: Risposta**
-
-L’erogatore, ricevuto il messaggio, verifica il
-certificato X.509 e valida la firma del JWT e il contenuto dei claim standard.
-
-L’erogatore predispone il messaggio di risposta e lo inoltra al
-fruitore.
 
 .. _regole-di-processamento-4:
 
@@ -578,7 +554,7 @@ Regole di processamento
 
 9.  L’erogatore valida la firma verificando l’elemento Signature del ``JWT``
 
-10. L’erogatore autentica il fruitore
+10. L’erogatore garantisce l'accesso al fruitore
 
 11. Se le azioni da 6 a 10 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
@@ -588,7 +564,7 @@ Note:
 
 -  Gli algoritmi da utilizzare in `alg`_ sono indicati in  `Elenco degli algoritmi`_
 
--  Un meccanismo simile può essere utilizzato per autenticare l’erogatore.
+-  Un meccanismo simile può essere utilizzato specularmente per l’erogatore.
 
 .. _tracciato-2:
 
@@ -651,7 +627,7 @@ Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
 nonché la modalità di inclusione o referenziazione del certificato X.509.
 
-[M2MR02] Direct Trust con certificato X.509 su REST con unicità del token/messaggio
+[IDAR02] Direct Trust con certificato X.509 su REST con unicità del token/messaggio
 -----------------------------------------------------------------------------------
 
 .. _scenario-5:
@@ -659,12 +635,12 @@ nonché la modalità di inclusione o referenziazione del certificato X.509.
 Scenario
 ^^^^^^^^
 
-Il seguente profilo estende il profilo M2MR01.
+Il seguente profilo estende il profilo IDAR01.
 
 Comunicazione tra fruitore ed erogatore che assicuri a livello di
 messaggio:
 
--  autenticazione del soggetto fruitore, quale organizzazione o unità
+-  accesso del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitore, o entrambe le parti
 
 -  la difesa dalle minacce derivanti dagli attacchi: Replay Attack
@@ -709,8 +685,8 @@ Dettaglio
 ^^^^^^^^^
 
 .. mermaid::
-   :caption: Autenticazione del Fruitore
-   :alt: Autenticazione del Fruitore
+   :caption: Accesso del Fruitore
+   :alt: accesso del fruitore
 
    sequenceDiagram
       participant F as Fruitore
@@ -721,31 +697,6 @@ Dettaglio
       E-->>F: 2. Reply
       deactivate E
       deactivate F
-
-.. _flusso-delle-interazioni-5:
-
-Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-**A: Richiesta**
-
-Il fruitore genera un JWS contenente almeno:
-
-  - i riferimenti temporali ed il destinatario del messaggio;
-  - un identificativo univoco del token o del messaggio.
-
-Il JWT include o referenzia il certificato X.509 riconosciuto
-dall’erogatore.
-
-Il fruitore invia il messaggio di richiesta all’erogatore.
-
-**B: Risposta**
-
-L’erogatore, ricevuto il messaggio, provvede alla verifica del
-certificato X.509, valida la firma del JWT e le claim ricevute.
-
-L’erogatore predispone il messaggio di risposta e lo inoltra al
-fruitore.
 
 .. _regole-di-processamento-5:
 
@@ -801,7 +752,7 @@ Regole di processamento
 
 9.  L’erogatore valida la firma verificando l’elemento Signature del ``JWT``
 
-10. L’erogatore autentica il fruitore
+10. L’erogatore garantisce l'accesso al fruitore
 
 11. Se le azioni da 6 a 10 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
@@ -812,8 +763,7 @@ Note:
 -  Per quanto riguarda gli algoritmi da utilizzare si fa
    riferimento ad  `Elenco degli algoritmi`_.
 
--  Un meccanismo simile può essere utilizzato per autenticare
-   l’erogatore.
+-  Un meccanismo simile può essere utilizzato specularmente per l’erogatore.
 
 .. _tracciato-5:
 
