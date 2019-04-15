@@ -594,7 +594,7 @@ Regole di processamento
 
 3. il fruitore firma il token adottando la `JWS Compact Serialization`_
 
-4. il fruitore posiziona il ``JWT`` firmato nell’ :httpheader:`Authorization`
+4. il fruitore posiziona il ``JWT`` signed nell’ :httpheader:`Authorization`
 
 5. Il fruitore spedisce il messaggio all'erogatore
 
