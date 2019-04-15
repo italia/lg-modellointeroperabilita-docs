@@ -343,14 +343,15 @@ Regole di processamento
       - ``iat``: timestamp UNIX emissione del JWT
       - ``exp``: timestamp UNIX di scadenza del JWT
       - ``jti``: identificativo del JWT, per evitare replay attack
-      - ``sub``: soggetto del jwt e/o identificativo dello scambio
-
-.. rpolli TODO vediamo un attimo i nomi. Io userei un sistema simile al `Digest` header.
+      - ``sub``: oggetto (`principal` see :rfc:3744`#section-2`) dei claim contenuti nel jwt 
 
       - ``pda`` [1]_: contenente l’algoritmo di hashing utilizzato per il
           calcolo del digest della payload del messaggio
 
       - ``mpd`` [2]_: contenente il digest della payload del messaggio
+
+.. rpolli TODO vediamo un attimo i nomi. Io userei un sistema simile al `Digest` header.
+   va' inserito anche il discorso dei representation metadata
 
 3. il fruitore firma il token JWT secondo la specifica JWS adottando
    la JWS Compact Serialization
