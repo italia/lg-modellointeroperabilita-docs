@@ -1,7 +1,7 @@
-Sicurezza di canale e/o Autenticazione delle organizzazioni
-============================================================
+Sicurezza di canale e/o Accesso delle organizzazioni
+====================================================
 
-[M2MC01] Direct Trust Transport-Level Security
+[IDAC01] Direct Trust Transport-Level Security
 ----------------------------------------------
 
 Scenario
@@ -14,7 +14,7 @@ canale:
 
 -  integrità
 
--  autenticazione dell’erogatore, quale organizzazione
+-  accesso dell’erogatore, quale organizzazione
 
 -  difesa dalle minacce derivanti dagli attacchi: Replay Attack e
    Spoofing
@@ -22,14 +22,13 @@ canale:
 Descrizione
 ^^^^^^^^^^^
 
-Il presente profilo assume l’esistenza di un trust tra fruitore
+Il presente profilo assume l’esistenza di un `trust`_ tra fruitore
 (client) ed erogatore (server), che permette il riconoscimento del
 certificato X.509, o la CA emittente dell’erogatore, così come previsto
 dal protocollo Transport Layer Security `[5] <bibliografia.html>`__ `[6] <bibliografia.html>`__.
 
 La sequenza dei messaggi di richiesta/risposta avviene dopo 
-aver instaurato il canale di trasmissione sicuro in cui
-l’erogatore è autenticato.
+aver instaurato il canale di trasmissione sicuro.
 
 Dettaglio
 ^^^^^^^^^
@@ -47,23 +46,6 @@ Dettaglio
       E-->>F: 2. Reply()
       deactivate E
       deactivate F
-
-
-Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Tra erogatore e fruitore viene instaurato un canale di trasmissione
-sicuro; il flusso dei messaggi avviene secondo la sequenza:
-
-**A: Richiesta**
-
-Il fruitore invia il messaggio di richiesta all’interfaccia di
-servizio dell’erogatore.
-
-**B: Risposta**
-
-L’erogatore predispone il messaggio di risposta e lo inoltra al
-fruitore.
 
 
 Regole di processamento
@@ -99,7 +81,7 @@ L’impiego del protocollo TLS 1.2 o maggiore, mitiga il rischio di:
 -  Spoofing
 
 
-[M2MC02] Direct Trust mutual Transport-Level Security
+[IDAC02] Direct Trust mutual Transport-Level Security
 -----------------------------------------------------
 
 .. _sicurezza_canale_scenario-1:
@@ -114,7 +96,7 @@ canale:
 
 -  integrità
 
--  autenticazione dell’erogatore e del fruitore, quale organizzazioni
+-  accesso dell’erogatore e del fruitore, quale organizzazioni
 
 -  difesa dalle minacce derivanti dagli attacchi: Replay Attack e
    Spoofing
@@ -124,14 +106,13 @@ canale:
 Descrizione
 ^^^^^^^^^^^
 
-Il presente profilo assume l’esistenza di un trust tra fruitore
+Il presente profilo assume l’esistenza di un `trust`_ tra fruitore
 (client) ed erogatore (server), che permette il riconoscimento da
 entrambe le parti dei certificati X.509, o le CA emittenti, così come
 previsto dal protocollo Transport Layer Security `[5] <bibliografia.html>`__ `[6] <bibliografia.html>`__.
 
 La sequenza dei messaggi di richiesta/risposta avviene dopo 
-aver instaurato il canale di trasmissione sicuro in cui sono state
-autenticate entrambe le organizzazioni.
+aver instaurato il canale di trasmissione sicuro.
 
 .. _sicurezza_canale_dettaglio-1:
 
@@ -141,6 +122,7 @@ Dettaglio
 .. mermaid::
    :caption: Sicurezza di canale e/o Autenticazione delle organizzazioni
    :alt: Sicurezza di canale e/o Autenticazione delle organizzazioni
+   
    sequenceDiagram
       participant F as Fruitore
       participant E as Erogatore
@@ -150,24 +132,6 @@ Dettaglio
       E-->>F: 2. Reply()
       deactivate E
       deactivate F
-
-.. _sicurezza_canale_flusso-delle-interazioni-1:
-
-Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Tra erogatore e fruitore viene instaurato un canale di trasmissione
-sicuro; il flusso dei messaggi avviene secondo la sequenza:
-
-**A: Richiesta**
-
-Il fruitore invia il messaggio di richiesta all’interfaccia di
-servizio dell’erogatore.
-
-**B: Risposta**
-
-L’erogatore predispone il messaggio di risposta e lo inoltra al
-fruitore.
 
 .. _sicurezza_canale_regole-di-processamento-1:
 
@@ -203,6 +167,10 @@ L’impiego del protocollo TLS 1.2 o maggiore, mitiga il rischio di:
 -  Replay Attack
 
 -  Spoofing
+
+.. _`Elenco degli algoritmi`: elenco-degli-algoritmi.html
+
+.. _`trust`: ../doc_04_cap_00.html
 
 .. discourse::
    :topic_identifier: 8906
