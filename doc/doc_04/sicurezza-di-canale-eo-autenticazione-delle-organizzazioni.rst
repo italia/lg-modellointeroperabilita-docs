@@ -1,5 +1,5 @@
-Sicurezza di canale e/o Accesso delle organizzazioni
-====================================================
+Sicurezza di canale e/o identificazione delle organizzazioni
+============================================================
 
 [IDAC01] Direct Trust Transport-Level Security
 ----------------------------------------------
@@ -14,7 +14,7 @@ canale:
 
 -  integrità
 
--  accesso dell’erogatore, quale organizzazione
+-  identificazione dell’erogatore, quale organizzazione
 
 -  difesa dalle minacce derivanti dagli attacchi: Replay Attack e
    Spoofing
@@ -96,7 +96,7 @@ canale:
 
 -  integrità
 
--  accesso dell’erogatore e del fruitore, quale organizzazioni
+-  identificazione dell’erogatore e del fruitore, quale organizzazioni
 
 -  difesa dalle minacce derivanti dagli attacchi: Replay Attack e
    Spoofing
