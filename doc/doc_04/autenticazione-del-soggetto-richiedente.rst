@@ -1,7 +1,7 @@
-Autenticazione del soggetto fruitore
-====================================
+Accesso del soggetto fruitore
+=============================
 
-[M2MS01] Direct Trust con certificato X.509 su SOAP
+[IDAS01] Direct Trust con certificato X.509 su SOAP
 ---------------------------------------------------
 
 .. _scenario-2:
@@ -12,7 +12,7 @@ Scenario
 Comunicazione tra fruitore ed erogatore che assicuri a livello di
 messaggio:
 
--  autenticazione del soggetto fruitore, quale organizzazione o unità
+-  accesso del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitrice, o entrambe le parti;
 
 .. _descrizione-2:
@@ -23,8 +23,8 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
-(server), che permette il riconoscimento da parte dell’erogatore del
+Si assume l’esistenza di un `trust`_ tra fruitore ed erogatore,
+che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
 Il meccanismo con cui è stabilito il `trust`_, inclusa la modalità
@@ -58,34 +58,6 @@ Dettaglio
       E-->>F: 2. Reply
       deactivate E
       deactivate F
-
-.. _flusso-delle-interazioni-2:
-
-Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-**A: Richiesta**
-
-Il fruitore invia il messaggio di richiesta all’interfaccia di
-servizio dell’erogatore.
-
-Il messaggio include o referenzia il certificato X.509 riconosciuto
-dall’erogatore.
-
-Al messaggio è aggiunta la firma di una porzione significativa dello
-stesso con almeno le seguenti claim:
-
--  il riferimento dell’erogatore
-
--  un riferimento temporale univoco per messaggio
-
-**B: Risposta**
-
-L’erogatore, ricevuto il messaggio, provvede alla verifica del
-certificato X.509, valida la firma e le claim ricevute.
-
-L’erogatore predispone il messaggio di risposta e lo inoltra al
-fruitore.
 
 .. _regole-di-processamento-2:
 
@@ -121,24 +93,23 @@ Regole di processamento
 
 **B: Risposta**
 
-6.  L’erogatore recupera il certificato X.509 referenziato nell’header
+6. L’erogatore verifica il contenuto dell’elemento ``<wsu:Timestamp>``
+   nell’header del messaggio al fine di verificare la validità
+   temporale del messaggio.
+
+7. L’erogatore verifica la corrispondenza tra se stesso e quanto
+   definito nell’elemento ``<wsa:To>`` del blocco WS-Addressing.
+
+8.  L’erogatore recupera il certificato X.509 referenziato nell’header
     ``<Security>``.
 
-7.  L’erogatore verifica il certificato secondo i criteri del trust.
+9.  L’erogatore verifica il certificato secondo i criteri del trust.
 
-8.  L’erogatore valida l’elemento <Signature> nell’header ``<Security>``.
+10. L’erogatore valida l’elemento <Signature> nell’header ``<Security>``.
 
-    i.  L’erogatore verifica il contenuto dell’elemento ``<wsu:Timestamp>``
-        nell’header del messaggio al fine di verificare la validità
-        temporale del messaggio anche per mitigare il rischio di replay
-        attack.
+11. L’erogatore autentica il fruitore.
 
-    ii. L’erogatore verifica la corrispondenza tra se stesso e quanto
-        definito nell’elemento ``<wsa:To>`` del blocco WS-Addressing.
-
-9.  L’erogatore autentica il fruitore.
-
-10. Se le azioni da 6 a 9 hanno avuto esito positivo, il messaggio
+12. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
     richiamato.
 
@@ -149,21 +120,20 @@ Note:
    ``<CanonicalizationMethod>`` si fa riferimento agli algoritmi indicati
    alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__,
 
--  Un meccanismo simile può essere utilizzato per autenticare
-   l’erogatore.
+-  Un meccanismo simile può essere utilizzato specularmente per l’erogatore.
 
 Tracciato
 ~~~~~~~~~
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
-fruitore all’interfaccia di servizio dell’erogatore relativo ad un
+fruitore all’interfaccia di servizio dell’erogatoe relativo ad un
 servizio di ``echo``.
 
 I namespace utilizzati nel tracciato sono riportati di seguito:
 
 .. code-block:: python
 
-   soap="http://schemas.xmlsoap.org/soap/envelope/"
+   soap="http://www.w3.org/2003/05/soap-envelope"
    wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
    wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
    ds="http://www.w3.org/2000/09/xmldsig#"
@@ -172,7 +142,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
 
 .. code-block:: XML
 
-   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Envelope xmlns:soap=""http://www.w3.org/2003/05/soap-envelope/">
 	<soap:Header>
     <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" soap:mustUnderstand="1">
       <wsse:BinarySecurityToken EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" wsu:Id="X509-39011475-65d5-446e-ba38-be84220fd720">MIICqDCCAZCgAwIBAgIEXLSSUTANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDDAttb2RpU2VjUHJvZjAeFw0xOTA0MTUxNDE2NDlaFw0yNDA0MTUxNDE2NDlaMBYxFDASBgNVBAMMC21vZGlTZWNQcm9mMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvBJNKBiLS+ZcmwGUku5l2FKeHogeSZejjOOrO2Ag6DGPXo1MtHt2XwgUXmgT+v0IjhZp5XH2XbwSWw2EMWSG3Zz0CJILqWGPg0M/LxaIZAxSdxJpVNWg/profO+xKz0B6QHK+I0yecHg7TtI4es9AuDyR4pKslpcXyMEqJQ7m5N8v2e4WldeHF2SRN/ereEOuewEi15c7akh4TdkGdiwOSif2AXIugHRgdpHjH86iJxFu24IJmBA7C5tytz7mfKollGhI9+2d0902ayVshCV4/pmnX0pDiGayV1C6SDPTbapXKXJrp1+fBHaUkDY+W/2Q9sC4o8pttmcpHeMRxFDkwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQALwKbIm8S2BpYpHaqMwJLeWBPCaDeT7J+KDj39Ac3YxDb8E/hGM+Hn1mq2ssYqu5JTvuAQ9o8v3UpcIct15RPgOKYfBzxnH1h2vCavpiFCFTc6UoQgPBZGyyNOOKNOxEnXtW7ff1gl2GRLIWXlXDf1fdX7VJVBqWfBvivhIbsDa5LRBCrNsXORx2azUb5QBgMm2UZJxYA3+dFRgYmLSY/RyRLf0o03lwCRhAyrU7ya9IMYgrxgjEos2fHB2IGJJ1Wh+gTQWMP+wJymlC0qyjTHx5pyZOzJGtH5HnaVU7EgtxdBRC9dTlWVpNgmD8nS6Yr/am5cZJZrkIHRyfxqkA2W</wsse:BinarySecurityToken>
@@ -222,7 +192,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
   </soap:Header>
   <soap:Body>
     <ns2:sayHi xmlns:ns2="http://profile.security.modi.agid.org/">
-      <arg0>OK !!!!</arg0>
+      <arg0>OK</arg0>
     </ns2:sayHi>
   </soap:Body>
 </soap:Envelope>
@@ -242,8 +212,7 @@ Le parti, in base alle proprie esigenze, usano
 gli algoritmi indicati in   `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__
 , nonché la modalità di inclusione o referenziazione del certificato X.509.
 
-
-[M2MS02] Direct Trust con certificato X.509 su SOAP con con unicità del token/messaggio
+[IDA02] Direct Trust con certificato X.509 su SOAP con con unicità del token/messaggio
 ---------------------------------------------------------------------------------------
 
 .. _scenario-3:
