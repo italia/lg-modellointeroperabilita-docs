@@ -685,8 +685,8 @@ Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
 nonché la modalità di inclusione o referenziazione del certificato X.509.
 
-[M2MR02] Direct Trust con certificato X.509 su REST con unicità del token
--------------------------------------------------------------------------
+[M2MR02] Direct Trust con certificato X.509 su REST con unicità del token/messaggio
+-----------------------------------------------------------------------------------
 
 .. _scenario-5:
 
