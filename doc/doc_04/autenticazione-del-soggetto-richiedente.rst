@@ -275,34 +275,6 @@ Dettaglio
       deactivate E
       deactivate F
 
-.. _flusso-delle-interazioni-3:
-
-Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-**A: Richiesta**
-
-Il fruitore invia il messaggio di richiesta all’interfaccia di
-servizio dell’erogatore.
-
-Il messaggio include o referenzia il certificato X.509 riconosciuto
-dall’erogatore.
-
-Al messaggio è aggiunta la firma di una porzione significativa dello
-stesso con almeno le seguenti claim:
-
--  il riferimento dell’erogatore
-
--  un riferimento temporale univoco per messaggio
-
-**B: Risposta**
-
-L’erogatore, ricevuto il messaggio, provvede alla verifica del
-certificato X.509, valida la firma e le claim ricevute.
-
-L’erogatore predispone il messaggio di risposta e lo inoltra al
-fruitore.
-
 .. _regole-di-processamento-3:
 
 Regole di processamento
@@ -337,24 +309,22 @@ Regole di processamento
 
 **B: Risposta**
 
-6.  L’erogatore recupera il certificato X.509 referenziato nell’header
-    ``<Security>``.
+6. L’erogatore verifica il contenuto dell’elemento ``<wsu:Timestamp>``
+   nell’header del messaggio al fine di verificare la validità
+   temporale del messaggio anche per mitigare il rischio di replay attack.
 
-7.  L’erogatore verifica il certificato secondo i criteri del trust.
+7. L’erogatore verifica la corrispondenza tra se stesso e quanto definito
+   nell’elemento ``<wsa:To>`` del blocco WS-Addressing.
 
-8.  L’erogatore valida l’elemento <Signature> nell’header ``<Security>``.
+8.  L’erogatore recupera il certificato X.509 referenziato nell’header ``<Security>``.
 
-    i.  L’erogatore verifica il contenuto dell’elemento ``<wsu:Timestamp>``
-        nell’header del messaggio al fine di verificare la validità
-        temporale del messaggio anche per mitigare il rischio di replay
-        attack.
+9.  L’erogatore verifica il certificato secondo i criteri del trust.
 
-    ii. L’erogatore verifica la corrispondenza tra se stesso e quanto
-        definito nell’elemento ``<wsa:To>`` del blocco WS-Addressing.
+10.  L’erogatore valida l’elemento <Signature> nell’header ``<Security>``.
 
-9.  L’erogatore autentica il fruitore.
+11.  L’erogatore autentica il fruitore.
 
-10. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
+12. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
     richiamato.
 
