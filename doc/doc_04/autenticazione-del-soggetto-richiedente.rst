@@ -544,7 +544,7 @@ Flusso delle interazioni
 
 **A: Richiesta**
 
-Il fruitore genera un JWS contenente i riferimenti temporali
+Il fruitore genera un JWT signed contenente i riferimenti temporali
 ed il destinatario del messaggio.
 
 Il fruitore invia il messaggio di richiesta all’erogatore.
