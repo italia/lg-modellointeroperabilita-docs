@@ -23,11 +23,11 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
+Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
+Il meccanismo con cui è stabilito il `trust`_, inclusa la modalità
 di scambio dei certificati X.509) non condiziona il presente
 profilo.
 
@@ -245,11 +245,11 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
+Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
+Il meccanismo con cui è stabilito il `trust`_, inclusa la modalità
 di scambio dei certificati X.509, non condiziona il presente
 profilo.
 
@@ -499,11 +499,11 @@ Il presente profilo declina l’utilizzo di:
 
 -  JSON Web Signature (JWS) definita dall’ :RFC:`7515`
 
-Si assume l’esistenza di un trust tra fruitore ed erogatore,
+Si assume l’esistenza di un `trust`_ tra fruitore ed erogatore,
 che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
+Il meccanismo con cui è stabilito il `trust`_, inclusa la modalità
 di scambio dei certificati X.509, non condiziona il presente
 profilo.
 
@@ -531,7 +531,7 @@ Dettaglio
       participant F as Fruitore
       participant E as Erogatore
       activate F
-      F->>E: 1. Request(iat, exp, aud)
+      F->>E: 1. Request()
       activate E
       E-->>F: 2. Reply
       deactivate E
@@ -586,7 +586,10 @@ Regole di processamento
    b. la payload del JWT coi claim rappresentativi degli
       elementi chiave del messaggio, contenente almeno:
 
-      * i riferimenti temporali di validità: `iat`_ , `exp`_
+      * i riferimenti temporali di emissione e scadenza: `iat`_ , `exp`_.
+        Se il flusso richiede di verificare l'istante di prima validità del token, si può
+        usare il claim `nbf`_.
+
       * il riferimento dell'erogatore in `aud`_
 
 3. il fruitore firma il token adottando la `JWS Compact Serialization`_
@@ -648,7 +651,7 @@ Esempio porzione JWT
 
    # header
    {
-     "alg": "RS256",
+     "alg": "ES256",
      "typ": "JWT",
      "x5c": [
        "MIICyzCCAbOgAwIBAgIEC..."
@@ -657,6 +660,7 @@ Esempio porzione JWT
    # payload
    {
     "iat": 1554382877,
+    "nbf": 1554382877,
     "exp": 1554382879,
     "aud": "https://api.erogatore.org/ws-test/service/hello/echo"
    }
@@ -664,10 +668,14 @@ Esempio porzione JWT
 Gli elementi presenti nel tracciato rispettano le seguenti scelte implementative e includono:
 
 
--  l'intervallo temporale di validità, in modo che l'asserzione
-   possa essere utilizzata solo fino all'istante `exp`_;
+-  l'intervallo temporale di validità, in modo che il JWT
+   possa essere usato solo tra gli istanti `nbf`_ ed `exp`_;
 
--  il destinatario dell'asserzione, che deve sempre essere validato;
+-  indica l'istante `iat`_ di emissione del JWT. Se le parti possono accordarsi nel considerarlo
+   come l'istante iniziale di validità del token, :rfc:`7519` non assegna a questo claim
+   nessun ruolo specifico nella validazione, a differenza di `nbf`_;
+
+-  il destinatario del JWT, che deve sempre essere validato;
 
 -  contenuto della certificate chain X.509 (`x5c`_)
 
@@ -677,7 +685,7 @@ Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
 nonché la modalità di inclusione o referenziazione del certificato X.509.
 
-[M2MR02] Direct Trust con certificato X.509 su REST con threat mitigation
+[M2MR02] Direct Trust con certificato X.509 su REST con unicità del token
 -------------------------------------------------------------------------
 
 .. _scenario-5:
@@ -694,6 +702,7 @@ messaggio:
    organizzativa fruitore, o entrambe le parti
 
 -  la difesa dalle minacce derivanti dagli attacchi: Replay Attack
+   quando il JWT o il messaggio non devono essere riprocessati
 
 .. _descrizione-5:
 
@@ -706,11 +715,11 @@ Il presente profilo declina l’utilizzo di:
 
 -  JSON Web Signature (JWS) definita dall’:RFC:`7515`
 
-Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
+Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
-Il meccanismo con cui è stabilito il trust, inclusa la modalità
+Il meccanismo con cui è stabilito il `trust`_, inclusa la modalità
 di scambio dei certificati X.509) non condiziona il presente
 profilo.
 
@@ -798,7 +807,9 @@ Regole di processamento
    b. la payload del JWT coi claim rappresentativi degli
       elementi chiave del messaggio, contenente almeno:
 
-      * i riferimenti temporali di validità: `iat`_ , `exp`_;
+      * i riferimenti temporali di emissione e scadenza: `iat`_ , `exp`_.
+        Se il flusso richiede di verificare l'istante di prima validità del token, si può
+        usare il claim `nbf`_.
       * il riferimento dell'erogatore in `aud`_;
       * un identificativo univoco del token `jti`_. Se utile alla logica applicativa
         l'identificativo può essere anche collegato al messaggio.
@@ -859,20 +870,21 @@ Esempio porzione pacchetto HTTP
 
 Esempio porzione JWT
 
-.. code-block::
+.. code-block:: python
 
-   header
+   # header
    {
-     "alg": "RS256",
+     "alg": "ES256",
      "typ": "JWT",
      "x5c": [
        "MIICyzCCAbOgAwIBAgIEC..."
      ]
    }
-   payload
+   # payload
    {
      "aud": "http://localhost:8080/ws-test/service/hello/echo"
      "iat": 1516239022,
+     "nbf": 1516239022,
      "exp": 1516239024,
      "jti": "065259e8-8696-44d1-84c5-d3ce04c2f40d"
    }
@@ -881,10 +893,14 @@ Esempio porzione JWT
 Gli elementi presenti nel tracciato rispettano le seguenti scelte implementative e includono:
 
 
--  l'intervallo temporale di validità, in modo che l'asserzione
-   possa essere utilizzata solo fino all'istante `exp`_;
+-  l'intervallo temporale di validità, in modo che il JWT
+   possa essere usato solo tra gli istanti `nbf`_ ed `exp`_;
 
--  il destinatario dell'asserzione, che deve sempre essere validato;
+-  indica l'istante `iat`_ di emissione del JWT. Se le parti possono accordarsi nel considerarlo
+   come l'istante iniziale di validità del token, :rfc:`7519` non assegna a questo claim
+   nessun ruolo specifico nella validazione, a differenza di `nbf`_;
+
+-  il destinatario del JWT, che deve sempre essere validato;
 
 -  contenuto della certificate chain X.509 (`x5c`_)
 
@@ -897,6 +913,8 @@ nonché la modalità di inclusione o referenziazione del certificato X.509.
 
 
 .. _`Elenco degli algoritmi`: elenco-degli-algoritmi.html
+
+.. _`trust`: ../doc_04_cap_00.html
 
 .. _`JWS Compact Serialization`: https://tools.ietf.org/html/rfc7515#section-7.1
 .. _`Jose Header`: https://tools.ietf.org/html/rfc7515#section-4
