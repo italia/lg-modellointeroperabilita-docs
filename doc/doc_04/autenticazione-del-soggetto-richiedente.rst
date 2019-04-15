@@ -213,7 +213,7 @@ Le parti, in base alle proprie esigenze, usano
 gli algoritmi indicati in   `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__
 , nonché la modalità di inclusione o referenziazione del certificato X.509.
 
-[IDA02] Direct Trust con certificato X.509 su SOAP con con unicità del token/messaggio
+[IDAS02] Direct Trust con certificato X.509 su SOAP con con unicità del token/messaggio
 ---------------------------------------------------------------------------------------
 
 .. _scenario-3:
