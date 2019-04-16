@@ -538,7 +538,7 @@ Regole di processamento
 
 3. il fruitore firma il token adottando la `JWS Compact Serialization`_
 
-4. il fruitore posiziona il ``JWT`` signed nell’ :httpheader:`Authorization`
+4. il fruitore posiziona il ``JWT`` nell’ :httpheader:`Authorization`
 
 5. Il fruitore spedisce il messaggio all'erogatore
 
@@ -735,7 +735,7 @@ Regole di processamento
 
 3. il fruitore firma il token adottando la `JWS Compact Serialization`_
 
-4. il fruitore posiziona il ``JWS`` nell’ :httpheader:`Authorization`
+4. il fruitore posiziona il ``JWT`` nell’ :httpheader:`Authorization`
 
 5. Il fruitore spedisce il messaggio all'erogatore
 
@@ -779,7 +779,7 @@ Esempio porzione pacchetto HTTP
 
 .. code-block:: http
 
-   GET http://localhost:8080/ws-test/service/hello/echo/Ciao  HTTP/1.1
+   GET http://api.erogatore.org/ws-test/service/hello/echo/Ciao  HTTP/1.1
    Accept: application/json
    Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
 
@@ -800,7 +800,7 @@ Esempio porzione JWT
    }
    # payload
    {
-     "aud": "http://localhost:8080/ws-test/service/hello/echo"
+     "aud": "http://api.erogatore.org/ws-test/service/hello/echo"
      "iat": 1516239022,
      "nbf": 1516239022,
      "exp": 1516239024,
