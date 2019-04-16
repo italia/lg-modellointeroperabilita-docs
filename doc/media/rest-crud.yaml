@@ -46,10 +46,6 @@ paths:
       description: Aggiungi una prenotazione
       operationId: AddReservation_1
       parameters:
-      - name: X-Correlation-ID
-        in: header
-        schema:
-          type: string
       - $ref: '#/components/parameters/path_id_municipio'
       - $ref: '#/components/parameters/path_id_ufficio'
       requestBody:
@@ -59,7 +55,7 @@ paths:
               $ref: '#/components/schemas/Prenotazione'
       responses:
         '201':
-          description: Crea una prenotazione.
+          description: Prenotazione Creata.
           headers:
             Location:
               description: ID della prenotazione creata
@@ -117,10 +113,6 @@ paths:
       responses:
         '200':
           description: Prenotazione eliminata correttamente
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Prenotazione'
         '404':
           $ref: '#/components/responses/404NotFound'
         default:
@@ -233,8 +225,6 @@ components:
         data:
           type: string
           format: date-time
-        ora:
-          type: string
         motivazione:
           type: string
     ErrorMessage:

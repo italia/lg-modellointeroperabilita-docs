@@ -483,28 +483,34 @@ Interfaccia REST
    :alt: Interazione non bloccante tramite busy waiting
 
    sequenceDiagram
-        participant F as Fruitore
-        participant E as Erogatore
-        activate F
-        F ->> E: 1. Request()
-        activate E
-        E -->>F: 2. Location
-        deactivate F
-        deactivate E
-        loop check status
-        activate F
-        F ->>E: 3. RetrieveResource()
-        activate E
-        E-->> F : 4. Not Ready
-        deactivate F
-        deactivate E
-        end
-        activate F
-        F ->>E: 5. RetrieveResource()
-        activate E
-        E-->> F : 6. Resource
-        deactivate F
-        deactivate E
+       participant F as Fruitore
+       participant E as Erogatore
+       activate F
+       F ->> E: 1. Request()
+       activate E
+       E -->>F: 2. Location
+       deactivate F
+       deactivate E
+       loop status pending
+       activate F
+       F ->>E: 3. CheckStatus()
+       activate E
+       E-->> F : 4. Not Ready
+       deactivate F
+       deactivate E
+       end
+
+       F ->>E: 5. CheckStatus()
+       activate E
+       E-->> F : 6. Ready Location
+       deactivate E
+
+       activate F
+       F ->>E: 7. RetrieveResource()
+       activate E
+       E-->> F : 8. Resource
+       deactivate F
+       deactivate E
 
 
 Nel caso in cui il profilo venga implementato con tecnologia REST,
@@ -520,8 +526,8 @@ DEVONO essere rispettate le seguenti regole:
 -  Al passo (1), il fruitore DEVE utilizzare il verbo HTTP POST;
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
-   della richiesta nel body, un percorso di risorsa per interrogare lo
-   stato di processamento della richiesta utilizzando :httpheader:`Location`;
+   della richiesta, un percorso di risorsa per interrogare lo
+   stato di processamento utilizzando :httpheader:`Location`;
    Il codice HTTP di stato DEVE essere :httpstatus:`202` a meno che non si verifichino errori;
 
 -  Al passo (3), il fruitore DEVE utilizzare il percorso di cui al passo
@@ -531,9 +537,12 @@ DEVONO essere rispettate le seguenti regole:
 -  Al passo (4) l’erogatore indica che la risorsa non è ancora pronta,
    fornendo informazioni circa lo stato della lavorazione
    della richiesta; il codice HTTP restituito è :httpstatus:`200`;
+   
+-  Al passo (6) l’erogatore indica che la risorsa è pronta,
+   utilizzando :httpheader:`Location`; per indicare il percorso dove recuperare la risorsa,
+   il codice HTTP restituito è :httpstatus:`200`;
 
--  Se la risorsa è pronta (passo (5)), l’erogatore
-   risponde con la rappresentazione della risorsa;
+-  Al passo (8) l’erogatore risponde con la rappresentazione della risorsa,Il codice HTTP restituito è :httpstatus:`200`;
 
 
 .. _regole-di-processamento-nonbloccante-4:
