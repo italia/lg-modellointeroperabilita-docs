@@ -21,9 +21,9 @@ fruitore, ma comunque appartenere alla stessa.
 
 Questa soluzione utilizza i seguenti profili:
 
--  **M2MC01**
+-  **IDAC01**
 
--  **M2MS01** o in alternativa **M2MR01**
+-  **IDAS01** o in alternativa **IDAR01**
 
 Precondizioni
 ^^^^^^^^^^^^^
@@ -48,7 +48,7 @@ Flusso delle interazioni
 **A: Richiesta**
 
 Il messaggio di richiesta viene firmato utilizzando il profilo
-**M2MS01** nel caso di utilizzo di SOAP o **M2MR01** nel caso di
+**IDAS01** nel caso di utilizzo di SOAP o **IDAR01** nel caso di
 utilizzo di REST, per garantire:
 
 -  l’autenticazione dell’identità del soggetto fruitore
@@ -57,14 +57,14 @@ Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
 
 Il messaggio viene trasmesso su un canale sicuro utilizzando il profilo
-**M2MC01** per garantire:
+**IDAC01** per garantire:
 
 -  la confidenzialità a livello di canale.
 
 **B: Risposta**
 
-L’erogatore da seguito a quanto previsto nel profilo **M2MS01** nel caso
-di utilizzo di SOAP o **M2MR01** nel caso di utilizzo di REST
+L’erogatore da seguito a quanto previsto nel profilo **IDAS01** nel caso
+di utilizzo di SOAP o **IDAR01** nel caso di utilizzo di REST
 
 Soluzioni per la non ripudiabilità della trasmissione
 -----------------------------------------------------
@@ -94,9 +94,9 @@ con SOAP e REST.
 
 Questa soluzione utilizza i seguenti profili:
 
--  **M2MC01** o in alternativa **M2MC02**
+-  **IDAC01** o in alternativa **IDAC02**
 
--  **M2MS03** o in alternativa **M2MR03**
+-  **IDAS03** o in alternativa **IDAR03**
 
 .. _precondizioni-1:
 
@@ -214,7 +214,7 @@ univoco così come concordato tra le parti e l’istante di trasmissione
 -  **REST:** claim *iat* contenuta nella payload del token JWT
 
 Il payload e l’istante di trasmissione vengono firmati, utilizzando il
-profilo **M2MS03** nel caso di utilizzo di SOAP o **M2MR03** nel caso di
+profilo **IDAS03** nel caso di utilizzo di SOAP o **IDAR03** nel caso di
 utilizzo di REST, per garantire:
 
 -  l’integrità del contenuto,
@@ -228,7 +228,7 @@ servizio dell’erogatore.
 
 Il messaggio viene trasmesso su un canale sicuro per garantire:
 
--  la confidenzialità a livello di canale (almeno profilo **M2MC01**)
+-  la confidenzialità a livello di canale (almeno profilo **IDAC01**)
 
 **C: Persistenza Erogatore**
 
@@ -297,7 +297,7 @@ trasmissione
 -  **REST:** claim *iat* contenuta nella payload del token JWT
 
 Il payload e l’istante di trasmissione vengono firmati, utilizzando il
-profilo **M2MS03** nel caso di utilizzo di SOAP ed **M2MR03** nel caso
+profilo **IDAS03** nel caso di utilizzo di SOAP ed **IDAR03** nel caso
 di utilizzo di REST, per garantire:
 
 -  l’integrità del contenuto,
