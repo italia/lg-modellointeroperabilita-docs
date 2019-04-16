@@ -220,6 +220,16 @@ prenotazione per quanto riguarda i dettagli.
 .. code-block:: http
 
       HTTP/1.1 200 OK
+      
+      {
+        "nome": "string",
+        "cognome": "string",
+        "cf": "string",
+        "dettagli": {
+            "data": "2018-12-03T14:29:12.137Z",
+            "motivazione": "nuova motivazione"
+         }
+      }
 
 
 Di seguito un esempio in cui il fruitore richiede di eliminare una
