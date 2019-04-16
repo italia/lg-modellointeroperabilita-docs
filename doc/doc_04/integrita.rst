@@ -212,7 +212,7 @@ algoritmi secondo quanto indicato al sezione "\  `Elenco degli algoritmi <elenco
 referenziazione del certificato x509.
 
 [IDAMR03] Integrità della payload del messaggio REST
----------------------------------------------------
+----------------------------------------------------
 
 .. _scenario-7:
 
