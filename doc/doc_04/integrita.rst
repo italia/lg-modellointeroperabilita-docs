@@ -456,14 +456,12 @@ algoritmi secondo quanto presente nella sezione "\  `Elenco degli algoritmi <ele
 
 .. [1]
    Il presente documento ha individuato il claim con sigla "pda" al fine
-   di indicare in maniera univoca per la pubblica amministrazione
-   italiana il valore dell’algoritmo di hashing utilizzato per il
+   di indicare in maniera univoca il valore dell’algoritmo di hashing utilizzato per il
    calcolo del digest della payload del messaggio.
 
 .. [2]
-   Il presente documento ha individuato il claim con sigla "mpd" al fine
-   di gestire in maniera univoca per la pubblica amministrazione
-   italiana il valore del digest relativo della payload del messaggio.
+   Il presente documento ha individuato il claim con sigla "pdh" al fine
+   di gestire in maniera univoca il valore del digest relativo della payload del messaggio.
 
 .. discourse::
    :topic_identifier: 8908
