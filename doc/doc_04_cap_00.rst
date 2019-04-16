@@ -9,6 +9,8 @@ Data la variabilità nel tempo delle esigenze delle amministrazioni e delle tecn
 nonché considerata la natura incremenmtale del ModI, l'elenco dei *profili* di sicurezza
 non è da intendersi esaustivo.
 
+.. note:: I *profili* individuati, coprono gli aspetti di comunicazione 'sicura' tra i domini delle singole parti.
+
 **I profili di sicurezza**
 
 -  definiscono a livello di specifica tecnologica uno "strumento
