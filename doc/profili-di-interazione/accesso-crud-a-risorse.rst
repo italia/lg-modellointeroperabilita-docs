@@ -164,9 +164,9 @@ creazione di una prenotazione.
    POST /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni HTTP/1.1
 
    {
-     "nome": "string",
+     "nome_proprio": "string",
      "cognome": "string",
-     "cf": "string",
+     "codice_fiscale": "string",
      "dettagli": {
        "data": "2018-12-03T14:29:12.137Z",
        "motivazione": "string"
@@ -191,9 +191,9 @@ nell'header HTTP Location al passo precedente.
    GET /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
 
    {
-     "nome": "string",
+     "nome_proprio": "string",
      "cognome": "string",
-     "cf": "string",
+     "codice_fiscale": "string",
      "dettagli": {
        "data": "2018-12-03T14:29:12.137Z",
        "motivazione": "string"
@@ -220,11 +220,11 @@ prenotazione per quanto riguarda i dettagli.
 .. code-block:: http
 
       HTTP/1.1 200 OK
-      
+
       {
-        "nome": "string",
+        "nome_proprio": "string",
         "cognome": "string",
-        "cf": "string",
+        "codice_fiscale": "string",
         "dettagli": {
             "data": "2018-12-03T14:29:12.137Z",
             "motivazione": "nuova motivazione"
@@ -235,15 +235,14 @@ prenotazione per quanto riguarda i dettagli.
 Di seguito un esempio in cui il fruitore richiede di eliminare una
 specifica prenotazione.
 
- \(1) Request Header & Body
 
 .. code-block:: http
+   :caption: (1) Request Header & Body
 
    DELETE /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
 
 
-\(2) Response Body (HTTP Status Code 200)
-
 .. code-block:: http
+   :caption: (2) Response Body (HTTP Status Code 200)
 
       HTTP/1.1 200 OK
