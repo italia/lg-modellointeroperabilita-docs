@@ -1,7 +1,7 @@
 Integrità
 =========
 
-[M2MS03] Integrità della payload del messaggio SOAP
+[IDAS03] Integrità della payload del messaggio SOAP
 ---------------------------------------------------
 
 .. _scenario-6:
@@ -16,7 +16,7 @@ messaggio:
 
 Nel caso in cui il certificato per garantire l’integrità è valido anche
 per identificare il soggetto fruitore, il presente profilo estende
-**M2MS01** o **M2MS02**, e quindi viene assicurato:
+**IDAS01** o **IDAS02**, e quindi viene assicurato:
 
 -  autenticazione del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitore, o entrambe le parti.
@@ -211,7 +211,7 @@ Gli enti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato al sezione "\  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__\ ", nonché la modalità di inclusione o
 referenziazione del certificato x509.
 
-[M2MR03] Integrità della payload del messaggio REST
+[IDAMR03] Integrità della payload del messaggio REST
 ---------------------------------------------------
 
 .. _scenario-7:
@@ -226,7 +226,7 @@ messaggio:
 
 Nel caso in cui il certificato per garantire l’integrità è valido anche
 per identificare il soggetto fruitore, il presente profilo estende
-M2MR01 o M2MR02, e quindi viene assicurato:
+IDAR01 o IDAR02, e quindi viene assicurato:
 
 -  autenticazione del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitore, o entrambe le parti.
