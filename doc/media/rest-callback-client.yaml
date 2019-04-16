@@ -43,12 +43,6 @@ paths:
            application/json:
              schema:
                $ref: '#/components/schemas/ErrorMessage'
-       5XX:
-         description: Errore Interno
-         content:
-           application/json:
-             schema:
-               $ref: '#/components/schemas/ErrorMessage'
        default:
          description: |-
            Errore inatteso. Non ritornare informazioni
