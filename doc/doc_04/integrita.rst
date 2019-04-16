@@ -187,18 +187,19 @@ Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
 nonché la modalità di inclusione o referenziazione del certificato X.509.
 
-[IDAMR03] Integrità della payload del messaggio REST
-----------------------------------------------------
+[IDAMR03] Integrità della payload messaggio REST
+---------------------------------------------------
 
 .. _scenario-7:
 
 Scenario
 ^^^^^^^^
 
-Comunicazione tra fruitore ed erogatore che assicuri a livello di
+Questo profilo propone una strategia di
+comunicazione tra fruitore ed erogatore che assicuri a livello di
 messaggio:
 
--  Integrità della payload del messaggio
+-  Integrità della payload del messaggio.
 
 Se il certificato per garantire l’integrità è valido anche
 per identificare il soggetto fruitore, il presente profilo estende
@@ -207,16 +208,51 @@ IDAR01 o IDAR02, e quindi viene assicurato:
 -  autenticazione del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitore, o entrambe le parti.
 
+
+:rfc:`7231` indica che gli HTTP header possono
+alterare l'interpretazione del payload (vedi i concetti
+di `selected representation`_ e `representation metadata`_).
+Per garantire l'integrità del messaggio e una sua corretta
+interpretazione da parte dell'applicazione
+bisogna rimuovere tali ambiguità includendo nella firma:
+
+- i valori degli header che alterano i `representation data`_
+  (eg: :httpheader:`Content-Type`, :httpheader:`Content-Encoding`);
+- un hash del payload del messaggio (per le richieste) o della
+  `selected representation`_ (per le risposte);
+- ulteriori header di cui si vuole garantire dell'integrità.
+
+A questi vanno aggiunti dei riferimenti temporali e locali analoghi a quelli
+già utilizzati nei profili IDAR01 e IDAR02.
+
+Di seguito considereremo sempre richieste e risposte complete,
+questo scenario non copre quindi:
+
+- richieste con  :httpstatus:`206`;
+- `Range Requests` :rfc:`7233`.
+
+
 .. _descrizione-7:
 
 Descrizione
 ^^^^^^^^^^^
 
-Il presente profilo declina l’utilizzo di:
+Il presente profilo propone l’utilizzo di:
 
--  JSON Web Token (JWT) definita dall’ :RFC:`7519`
+- semantica HTTP :RFC:`7231`;
 
--  JSON Web Signature (JWS) definita dall’ :RFC:`7515`
+- ``Digest`` HTTP header :RFC:`3230` per l'integrità della rappresentazione della risorsa;
+
+- JSON Web Token (JWT) definita dall’ :RFC:`7519`;
+
+- JSON Web Signature (JWS) definita dall’ :RFC:`7515`.
+
+La strategia consiste nel:
+
+- aggiungere un hash della rappresentazione della risorsa in ``Digest``;
+- creare un oggetto da firmare che includa ``Digest`` e gli elementi salienti
+  del messaggio;
+- passare l'oggetto firmato in un ulteriore header.
 
 Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
@@ -225,14 +261,15 @@ certificato X.509, o la CA emittente.
 Il meccanismo con cui è stabilito il `trust`_ non condiziona il presente
 profilo.
 
-Il fruitore inoltra un messaggio all’interfaccia di servizio
-dell’erogatore includendo il certificato X.509 e la firma della payload
-del messaggio.
+Il fruitore, definito il payload del messaggio o della sua rappresentazione,
+inoltra un messaggio all’erogatore includendo
+il certificato X.509 e la firma della payload e degli elementi essenziali messaggio.
 
 L’erogatore, ricevuto il messaggio, verifica il certificato X.509 e
 valida l’integrità della payload del messaggio firmato. Se la verifica e
 la validazione sono superate, l’erogatore consuma la richiesta e produce
 la relativa risposta.
+
 
 .. _dettaglio-7:
 
@@ -240,16 +277,18 @@ Dettaglio
 ^^^^^^^^^
 
 .. mermaid::
-   :caption: Integrità della payload del messaggio
-   :alt: Integrità della payload del messaggio
+   :caption: Integrità del messaggio
+   :alt: Integrità del messaggio
 
    sequenceDiagram
       participant F as Fruitore
       participant E as Erogatore
       activate F
-      F->>E: 1. Request()
+      F->>F: Calcola il Digest del messaggio
+      F->>F: Crea la struttura da firmare
+      F->>E: Request()
       activate E
-      E-->>F: 2. Reply
+      E-->>F: Reply
       deactivate E
       deactivate F
 
@@ -263,7 +302,15 @@ Regole di processamento
 1. Il fruitore predispone il body del messaggio (ad esempio un
    oggetto JSON)
 
-2. Il fruitore costruisce il token JWT popolando:
+2. Il fruitore calcola il valore del ``Digest`` header dei `representation data`_ secondo
+   le indicazioni in :RFC:`3230`
+
+3. Il fruitore individua l'elenco degli HTTP Header da firmare, inclusi ``Digest``,
+   :httpheader:`Content-Type` e :httpheader:`Content-Encoding`
+
+4. Il fruitore crea la struttura o la stringa da firmare in modo che includa gli http header da proteggere,
+   i riferimenti temporali di validità della firma ed i riferimenti locali (eg. mittente e destinatario).
+   Nel caso di ``JWT`` questo vuol dire:
 
    a. il `Jose Header`_  con almeno i ``parameter``:
 
@@ -291,59 +338,52 @@ Regole di processamento
       - `aud`_: identificativo del destinatario
       - `jti`_: identificativo del JWT, per evitare replay attack
 
-   d. i seguenti claim custom utilizzati per la firma del messaggio:
+   d. un claim con gli header http da proteggere ed i rispettivi valori. Se si tollera
+      che eventuali `Intermediaries`_ possano modificare il case degli header http
 
-      - ``pda`` [1]_: contenente l’algoritmo di hashing utilizzato per il
-          calcolo del digest della payload del messaggio
+3. il fruitore firma il token adottando la `JWS Compact Serialization`_
 
-      - ``pdh`` [2]_: contenente il digest della payload del messaggio
+4. il fruitore posiziona il ``JWT`` nell’ :httpheader:`Authorization`
 
-.. rpolli TODO vediamo un attimo i nomi. Io userei un sistema simile al `Digest` header.
-   va' inserito anche il discorso dei representation metadata
-
-3. il fruitore firma il token JWT secondo la specifica JWS adottando
-   la JWS Compact Serialization
-
-4. il fruitore posiziona il token JWT firmato nell’header HTTP
-   Authorization
-
-5. Il fruitore spedisce il messaggio all’interfaccia di servizio
-   dell’erogatore.
+5. Il fruitore spedisce il messaggio all’erogatore.
 
 **B: Risultato**
 
-6.  L’erogatore decodifica il token JWT presente nell’header HTTP
-    Authorization
+6.  L’erogatore decodifica il  ``JWT`` presente in :httpheader:`Authorization` e valida
+    i claim contenuti nel `Jose Header`_, in particolare verifica:
 
-7.  L’erogatore recupera il certificato X.509 referenziato nell’header
-    JOSE.
+    - il contenuto dei claim `iat`_ ed `exp`_;
+    - la corrispondenza tra se stesso e il claim `aud`_;
+    - l'univocità del claim `jti`_
 
-8.  L’erogatore verifica il certificato secondo i criteri del trust.
+7.  L’erogatore recupera il certificato X.509 referenziato nel `Jose Header`_
 
-9.  L’erogatore valida la firma verificando l’elemento Signature del
-    token JWT
+8.  L’erogatore verifica il certificato secondo i criteri del trust
+
+9.  L’erogatore valida la firma verificando l’elemento Signature del ``JWT``
+
+10. L'erogatore verifica la corrispondenza tra i valori degli header
+    passati nel messaggio e quelli presenti nei due claim custom
+
+11. L'erogatore quindi verifica la corrispondenza tra ``Digest`` ed il payload ricevuto
 
 10. Se il certificato è valido anche per identificare il soggetto
     fruitore, l’erogatore autentica lo stesso
 
-11. L’erogatore calcola il digest della payload del messaggio
-    utilizzando l’algoritmo indicato nel claim pda.
-
-12. L’erogatore verifica la corrispondenza tra il digest presente nel
-    claim pdh contenuto nel payload del token JWT rispetto a quanto
-    calcolato al passo precedente.
-
-13. Se le azioni da 6 a 12 hanno avuto esito positivo, il messaggio
+12. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
     richiamato.
 
 Note:
 
--  Per gli algoritmi da utilizzare nelle claim `alg`_ e ``pda``
+-  Per gli algoritmi da utilizzare in `alg`_ e ``Digest``
    si veda `Elenco degli algoritmi`_
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    della risposta da parte dell’erogatore al fruitore.
+   In questo caso si ricorda che ``Digest`` fa' riferimento al checksum del
+   payload della `selected representation`_. Nel caso quindi di una :httpmethod:`HEAD`
+   il server deve ritornare il checksum dell'ipotetico payload ritornato da una :httpmethod:`GET`.
 
 .. _tracciato-5:
 
@@ -353,25 +393,37 @@ Tracciato
 Di seguito è riportato un tracciato del messaggio inoltrato dal
 fruitore all’interfaccia di servizio dell’erogatore.
 
-Esempio porzione pacchetto HTTP
+.. code-block:: python
+   :caption: Payload del messaggio
+
+   {
+     "testo": "Hello world!"
+   }
+
+
+
+.. eg. python encodestring(sha256(json.dumps({"ciao":"mondo"}).encode()).digest())
 
 .. code-block:: http
+   :caption: Richiesta HTTP con `Digest` e representation metadata
 
-   POST http://localhost:8080/ws-test/service/hello/echo/
+   POST https://api.erogatore.org/service/v1/hello/echo/ HTTP/1.1
    Accept: application/json
    Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
+   Digest: SHA-256=cFfTOCesrWTLVzxn8fmHl4AcrUs40Lv5D275FmAZ96E=
+   Content-Type: application/json
+   Content-Encoding: identity
 
-   .
-   .
-   .
 
-Esempio porzione token JWT
+   {"testo": "Ciao mondo"}
+
 
 .. code-block:: python
+   :caption: Porzione JWT con campi protetti dalla firma
 
    # header
    {
-     "alg": "RS256",
+     "alg": "ES256",
      "typ": "JWT",
      "x5c": [
        "MIICyzCCAbOgAwIBAgIEC..."
@@ -379,30 +431,27 @@ Esempio porzione token JWT
    }
    # payload
    {
-     "aud": "http://localhost:8080/ws-test/service/hello/echo"
+     "aud": "https://api.erogatore.org/service/v1/hello/echo"
      "iat": 1516239022,
      "nbf": 1516239022,
      "exp": 1516239024,
-     "pda": "S256",
-     "pdh": "B89AB4CA23D27F197AAE30F50843F0136900A1A154DCA00CDD8A5B8B4D071500"
-   }
-
-Esempio del body del messaggio
-
-.. code-block:: python
-
-   {
-     "testo": "Hello world!"
+     "signed_headers": [
+         {"digest": "SHA-256=cFfTOCesrWTLVzxn8fmHl4AcrUs40Lv5D275FmAZ96E="},
+         {"content-type": "application/json"},
+         {"content-encoding": "identity"},
+     ],
    }
 
 Il tracciato rispecchia alcune scelte implementative esemplificative in
 merito:
 
--  riferimento al certificato X.509 (`x5c`_)
+- include tutti gli elementi del ``JWT`` utilizzati in IDAR02
 
--  algoritmi di firma e digest (`alg`_).
+- mette in ``minuscolo`` i nomi degli header firmati per tollerare eventuali
+  rimaneggiamenti da parte di `Intermediaries`_
 
--  algoritmo di hashing per calcolare il digest del body (``pda``)
+- utilizza il claim custom ``signed_headers`` contenente una lista di objects
+  per supportare la firma di header ripetuti
 
 Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
@@ -424,6 +473,14 @@ nonché la modalità di inclusione o referenziazione del certificato X.509.
 .. _`Elenco degli algoritmi`: elenco-degli-algoritmi.html
 
 .. _`trust`: ../doc_04_cap_00.html
+
+
+.. _`Intermediaries`: https://tools.ietf.org/html/rfc7230#section-2.3
+.. _`HTTP/1.1 Semantics and Content`: https://tools.ietf.org/html/rfc7231
+.. _`selected representation`: https://tools.ietf.org/html/rfc7231#section-3
+.. _`representation metadata`: https://tools.ietf.org/html/rfc7231#section-3.1
+.. _`representation data`: https://tools.ietf.org/html/rfc7231#section-3.2
+
 
 .. _`JWS Compact Serialization`: https://tools.ietf.org/html/rfc7515#section-7.1
 .. _`Jose Header`: https://tools.ietf.org/html/rfc7515#section-4
