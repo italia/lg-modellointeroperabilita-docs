@@ -66,6 +66,7 @@ necessaria ove l’ente erogatore del servizio non disponga già di
 tecnologie che garantiscano i requisiti richiesti.
 
 **Trust**
+^^^^^^^^^
 
 Il Trust è uno dei mezzi più importanti per gestire le problematiche di
 sicurezza nello scambio di informazione in rete per consentire
@@ -79,13 +80,16 @@ attraverso accordi che si basano sulla condivisione del reciproco *modus
 operandi*.
 
 **Tipologia di profili di sicurezza**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I profili di sicurezza del presente documento sono suddivisi in due tipologie:
 
 - **Autenticazione Intradominio [IDA]**
+
 Il processo di identificazione avviene all'interno del dominio di una delle due parti (fruitore ed erogatore) del *direct trust*.
 
 - **Autenticazione Extradominio [EDA]**
+
 Il processo di identificazione avviene mediante una terza parte esterna alle due parti (fruitore ed erogatore) interessate.
 
 **Modalità di combinazione dei profili**
