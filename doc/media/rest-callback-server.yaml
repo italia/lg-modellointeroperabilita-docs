@@ -54,13 +54,6 @@ paths:
            application/json:
              schema:
                $ref: '#/components/schemas/ErrorMessage'
-       5XX:
-         description: Errore Interno
-         content:
-           application/json:
-             schema:
-               $ref: '#/components/schemas/ErrorMessage'
-
        default:
          $ref: '#/components/responses/default'
      callbacks:
@@ -79,12 +72,12 @@ paths:
                    application/json:
                      schema:
                        $ref: '#/components/schemas/ACKMessage'
-              
+
                default:
                  $ref: '#/components/responses/default'
 components:
  responses:
-  
+
    default:
      description: |-
        Errore inatteso. Non ritornare informazioni
