@@ -10,7 +10,7 @@ info:
    name: Apache 2.0 License
    url: http://www.apache.org/licenses/LICENSE-2.0.html
 paths:
-  /tasks:
+  /tasks/queue:
     post:
       description: Crea in maniera asincrona un task o una risorsa.
       operationId: PushMessage
@@ -21,34 +21,61 @@ paths:
               $ref: '#/components/schemas/MType'
       responses:
         202:
-          description: Preso carico correttamente di M
+          description: Preso carico correttamente
           headers:
             Location:
-              description: URL dove recuperare il risultato
+              description: URL dove verificare lo stato
               required: true
               schema:
                 type: string
                 format: uri
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MTaskRef'
         '400':
           $ref: '#/components/responses/400BadRequest'
+
         default:
           $ref: '#/components/responses/default'
-  /tasks/{id_task}:
+  /tasks/queue/{id_task}/:
     get:
-      description: M Result
-      operationId: PullResponseById
+      description: Verifica lo stato del task o risorsa
+      operationId: CheckStatus
       parameters:
       - $ref: '#/components/parameters/id_task'
       responses:
         200:
           description: |-
-            Lo stato della risorsa o del task. Se il task
-            è completato o la risorsa è disponibile, il valore
-            di `status` e' `processed`
+            Lo stato del task o della risorsa.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskStatus'
+        '303':
+          description: Task Completato
+          content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/TaskStatus'
+          headers:
+              Location:
+                description: URL dove prelevare il risultato
+                required: true
+                schema:
+                  type: string
+                  format: uri
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
+  /tasks/result/{id_task}/:
+    get:
+      description: Recupera il risultato del task o la risorsa
+      operationId: RetriveResource
+      parameters:
+      - $ref: '#/components/parameters/id_task'
+      responses:
+        200:
+          description:  Il risultato del task o la risorsa
           content:
             application/json:
               schema:
@@ -90,25 +117,15 @@ components:
           schema:
             $ref: '#/components/schemas/ErrorMessage'
   schemas:
-    Link:
-      properties:
-        href:
-          type: string
-          format: url
-          example: 'https://api.example.com/tasks/1234'
-        type:
-          type: string
-          example: self
-
-    MTaskRef:
+    TaskStatus:
+      type: object
       properties:
         status:
           type: string
-          example: processing
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/Link'
+          enum: [pending, completed]
+          example: pending
+        message:
+          type: string
     MType:
       type: object
       properties:
@@ -121,9 +138,7 @@ components:
       properties:
         c:
           type: string
-        status:
-          type: string
-          example: processed
+ 
     AComplexType:
       type: object
       properties:
