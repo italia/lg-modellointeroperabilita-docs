@@ -64,30 +64,6 @@ Dettaglio
       deactivate E
       deactivate F
 
-.. _flusso-delle-interazioni-6:
-
-Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-**A: Richiesta**
-
-Il fruitore invia il messaggio di richiesta all’interfaccia di
-servizio dell’erogatore.
-
-Il messaggio include o referenzia il certificato X.509 riconosciuto
-dall’erogatore.
-
-Al messaggio è aggiunta la firma della payload stesso.
-
-**B: Risultato**
-
-L’erogatore, ricevuto il messaggio, provvede alla verifica del
-certificato X.509 e valida la firma.
-
-L’erogatore predispone il messaggio di risposta e lo inoltra al
-fruitore.
-
-.. _regole-di-processamento-6:
 
 Regole di processamento
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -276,37 +252,6 @@ Dettaglio
       E-->>F: 2. Reply
       deactivate E
       deactivate F
-
-.. _flusso-delle-interazioni-7:
-
-Flusso delle interazioni
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-**A: Richiesta**
-
-Il fruitore invia il messaggio di richiesta all’erogatore.
-
-Il messaggio include il token JWT firmato.
-
-Il token JWT:
-
--  include o referenzia il certificato X.509 riconosciuto
-   dall’erogatore.
-
--  include almeno le claim per referenziare:
-
-   -  il digest della payload del messaggio;
-
-   -  l’algoritmo per il calcolo del digest della payload del messaggio.
-
-**B: Risultato**
-
-L’erogatore, ricevuto il messaggio, provvede alla verifica del
-certificato X.509, valida la firma del token JWT e verifica il digest
-della payload del messaggio.
-
-L’erogatore predispone il messaggio di risposta e lo inoltra al
-fruitore.
 
 .. _regole-di-processamento-7:
 
