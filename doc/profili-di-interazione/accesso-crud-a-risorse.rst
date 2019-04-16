@@ -143,7 +143,7 @@ Esempio
 
 Al fine di illustrare l'approccio RESTful al CRUD, si farà riferimento
 ad un esempio in cui si vogliano gestire le prenotazioni di un
-appuntamento presso un ufficio municipale. Il servente, verifica la
+appuntamento presso un ufficio municipale. L'erogatore, verifica la
 compatibilità con la disponibilità nello specifico orario ed accetta o
 nega la creazione o l'eventuale variazione. In particolare, come da
 specifica seguente i metodi implementati sono POST (creazione), DELETE
@@ -162,7 +162,6 @@ creazione di una prenotazione.
 .. code-block:: http
 
    POST /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni HTTP/1.1
-   X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d
 
    {
      "nome": "string",
