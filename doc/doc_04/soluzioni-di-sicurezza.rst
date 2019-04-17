@@ -38,7 +38,7 @@ stabilisce:
    CA emittente, relative al soggetto erogatore
 
 Il meccanismo con cui è stabilito il trust non condiziona quanto
-descritto nella sezione.
+descritto di seguito.
 
 .. _flusso-delle-interazioni-8:
 
