@@ -133,7 +133,7 @@ Regole di processamento
 Note:
 
 -  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
-   <Signature> rispettivamente ``<DigestMethod>``,``<SignatureMethod>`` e
+   <Signature> rispettivamente ``<DigestMethod>`` , ``<SignatureMethod>`` e
    ``<CanonicalizationMethod>`` si fa riferimento agli algoritmi indicati
    alla sezione  `Elenco degli algoritmi <elenco-degli-algoritmi.html>`__.
 
