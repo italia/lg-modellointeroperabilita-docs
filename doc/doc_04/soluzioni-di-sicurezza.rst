@@ -302,9 +302,9 @@ di utilizzo di REST, per garantire:
 
 -  l’integrità del contenuto,
 
--  l’autenticazione dell’identità del mittente
+-  l’identità del mittente
 
--  l’autenticità del momento di invio.
+-  il momento di invio.
 
 **E: Persistenza Richiedente**
 
