@@ -163,7 +163,7 @@ instaurati nei vari casi.
 
 **Impedance mismatch**
 
-Derivato dall'\ *impedance mismatch* dell'elettrotecnica, si
+Derivato dall'*impedance mismatch* dell'elettrotecnica, si
 riferisce alle difficoltà concettuali e tecniche che si incontrano
 spesso quando due paradigmi differenti, spesso implicati da
 altrettante tecnologie, devono coesistere e mapparsi uno sull'altro
