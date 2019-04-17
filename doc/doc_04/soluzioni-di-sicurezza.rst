@@ -51,7 +51,7 @@ Il messaggio di richiesta viene firmato utilizzando il profilo
 **IDAS01** nel caso di utilizzo di SOAP o **IDAR01** nel caso di
 utilizzo di REST, per garantire:
 
--  l’autenticazione dell’identità del soggetto fruitore
+-  l’identità del soggetto fruitore
 
 Il fruitore invia il messaggio di richiesta all’interfaccia di
 servizio dell’erogatore.
