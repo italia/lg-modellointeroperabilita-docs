@@ -10,7 +10,7 @@ non specifica anche la struttura dell’XML allegato). In generale, un
 allegato può essere passato o ricevuto nelle seguenti forme:
 
 -  Codificata in modo da essere rappresentabile con un set predefinito
-   di caratteri ASCII. Il caso più comune è quello della codifica
+   di caratteri. Il caso più comune è quello della codifica
    Base64.
 
 -  Come URL ad una risorsa esterna o in ogni caso come endpoint di
@@ -64,7 +64,7 @@ scenario applicativo. Le seguenti regole possono essere introdotte:
    è possibile utilizzare tecniche ad esempio di hashing). Quest’ultimo
    caso richiede quindi solitamente trust tra fruitore ed erogatore.
 
-Di seguito una tabella riepilogativa. In particolare si userò la scala
+Di seguito una tabella riepilogativa. In particolare si userà la scala
 decrescente ++, +, -, -- per indicare quanto una specifica tecnologia è
 adatta in determinate condizioni:
 
