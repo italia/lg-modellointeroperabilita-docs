@@ -140,39 +140,50 @@ paradigma a risorse. Si introducono le risorse Task e Result utilizzando
 le quali è possibile implementare le stesse funzionalità. La POST serve
 quindi a far partire il task.
 
-.. code-block:: JSON
+.. code-block:: http
+   :caption: Request
 
-      ⇒ POST /task
-      [Input data payload]
+    POST /tasks HTTP/1.1
+    Content-Type: application/json
 
-      ⇐ 202 Accepted
-      Location: /task/20181231
+    { .. request payload }
+
+.. code-block:: http
+   :caption: Response
+
+      HTTP/1.1 202 Accepted
+      Content-Type: application/json
+      Location: /tasks/20181231
 
       {
          "task": {
          "status": "accepted",
          "message": "Your task has been queued for processing",
-         "ping-time": "2018-12-31T19:43:37+0100"
+         "ping_time": "2018-12-31T19:43:37+0100"
          }
       }
 
-Il codice di stato **202 Accepted** indica che l'interfaccia di servizio ha verificato l'input della richiesta e lo ha accettato, ma non è fornita una risposta immediata.
+Il :httpstatus:`202` indica che l'interfaccia di servizio ha verificato l'input della richiesta e lo ha accettato, ma non è fornita una risposta immediata.
 
 Il client deve seguire il collegamento fornito nell'intestazione
 Location per informarsi (con GET) sullo stato della richiesta in
 sospeso.
 
-.. code-block:: JSON
+.. code-block:: http
+   :caption: Request
 
-   ⇒ GET /task/20181231
+   GET /task/20181231 HTTP/1.1
 
-   ⇐ 200 OK
+.. code-block:: http
+   :caption: Response
+
+   HTTP/1.1 200 OK
 
    {
       "task": {
       "status": "processing",
       "message": "Your task is being processed",
-      "ping-time": "2018-12-31T19:52:45+0100"
+      "ping_time": "2018-12-31T19:52:45+0100"
       }
    }
 
@@ -186,11 +197,15 @@ Una volta completato il lavoro, la risposta alla richiesta di polling
 reindirizza il client a un'altra risorsa da cui è possibile recuperare
 il risultato finale.
 
-.. code-block:: JSON
+.. code-block:: http
+   :caption: Request
 
-   ⇒ GET /task/20181231
+   GET /task/20181231 HTTP/1.1
 
-   ⇐ 303 See Other
+.. code-block:: http
+   :caption: Response
+
+   HTTP/1.1 303 See Other
    Location: /result/20181232
 
    {
@@ -205,11 +220,18 @@ Location per recuperare (con GET) il risultato della computazione
 completata. Il collegamento potrebbe anche essere condiviso tra diversi
 client interessati a leggere l'output della richiesta POST originale.
 
-.. code-block:: JSON
+.. code-block:: http
+   :caption: Request
 
-   ⇒ GET /result/20181232
+   GET /result/20181232 HTTP/1.1
 
-   ⇐ 200 OK
+
+.. code-block:: http
+   :caption: Response
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+
    [Output data payload]
 
 Questo secondo esempio mostra invece che se l'interfaccia di servizio è
