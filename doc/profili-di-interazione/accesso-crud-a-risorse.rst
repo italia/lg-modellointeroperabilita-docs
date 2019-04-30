@@ -126,47 +126,64 @@ seguente mappatura viene utilizzata:
 |                 |                 | collezione.     |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-Si noti in particolari l'uso distinto di PUT e PATCH per la sostituzione
+Si noti l'uso distinto di :httpmethod:`PUT` e :httpmethod:`PATCH` per la sostituzione
 e l'applicazione di modifiche ad una risorsa rispettivamente. E'
 possibile utilizzare anche altri verbi HTTP a patto che si rispettino i
 dettami dell'approccio RESTful.
 
-In alcuni casi il verbo PUT può essere utilizzato con funzionalità di
+In alcuni casi il verbo :httpmethod:`PUT` può essere utilizzato con funzionalità di
 UPSERT (Update o Insert). In particolare, questo è necessario nei casi
 in cui sia il fruitore a definire gli identificativi del sistema
 erogatore.
+
+Per usare il :httpmethod:`PATCH` bisogna usare alcuni accorgimenti, perché
+questo metodo non è definito nelle nuove specifiche di HTTP/1.1 del 2014
+ma nel precedente :rfc:`5789`.
+
+Come indicato in questa considerazione https://www.rfc-editor.org/errata/eid3169
+**NON SI DOVREBBE** associare un significato di patch a dei media-type che
+non lo prevedono (eg. ``application/json`` o ``application/xml``) ma utilizzare
+dei media-type adeguati.
+
+E' possibile ad esempio usare ``application/merge-patch+json`` definito
+in :rfc:`7386` facendo attenzione:
+
+  - che :httpmethod:`PATCH` rifiuti richieste con media-type non adeguato con :httpstatus:`415`;
+  - che il media-type di patching sia compatibile con gli schemi utilizzati;
+  - di verificare le considerazioni di sicurezza presenti in :rfc:`7396#section-5`
+    e :rfc:`5789#section-5`.
 
 .. _esempio-6:
 
 Esempio
 ~~~~~~~~~~~~~~~~
 
-Al fine di illustrare l'approccio RESTful al CRUD, si farà riferimento
-ad un esempio in cui si vogliano gestire le prenotazioni di un
+Per illustrare l'approccio RESTful al CRUD, esemplificheremo
+un API per gestire le prenotazioni di un
 appuntamento presso un ufficio municipale. L'erogatore, verifica la
 compatibilità con la disponibilità nello specifico orario ed accetta o
-nega la creazione o l'eventuale variazione. In particolare, come da
-specifica seguente i metodi implementati sono POST (creazione), DELETE
-(eliminazione), PATCH (modifica) e GET (lettura).
+nega la creazione o l'eventuale variazione. Come da
+specifica seguente i metodi implementati sono :httpmethod:`POST` (creazione), DELETE
+(eliminazione), :httpmethod:`PATCH` (modifica) e :httpmethod:`GET` (lettura).
 
 
- Specifica Servizio Server  https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml
+ Specifica Servizio Server  https://api.amministrazioneesempio.it/appuntamenti/v1/openapi.yaml
 
  .. literalinclude:: ../media/rest-crud.yaml
     :language: yaml
 
 
-Di seguito un esempio di chiamata in cui il fruitore richiede la
-creazione di una prenotazione.
+Di seguito un esempio di chiamata per creare una prenotazione.
 
 .. code-block:: http
+   :caption: Request
 
-   POST /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni HTTP/1.1
+   POST /appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni HTTP/1.1
 
    {
-     "nome_proprio": "string",
-     "cognome": "string",
-     "codice_fiscale": "string",
+     "nome_proprio": "Mario",
+     "cognome": "Rossi",
+     "codice_fiscale": "MRORSS77T05E472I",
      "dettagli": {
        "data": "2018-12-03T14:29:12.137Z",
        "motivazione": "string"
@@ -175,74 +192,122 @@ creazione di una prenotazione.
 
 
 .. code-block:: http
+   :caption: Response
 
    HTTP/1.1 201 Created
-   Location:
-   https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254
+   Location: https://api.amministrazioneesempio.it/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254
 
+   {
+     "id": 12323254,
+     "nome_proprio": "Mario",
+     "cognome": "Rossi",
+     "codice_fiscale": "MRORSS77T05E472I",
+     "dettagli": {
+       "data": "2018-12-03T14:29:12.137Z",
+       "motivazione": "string"
+     }
+   }
 
 
 Di seguito un esempio in cui il fruitore richiede l'estrazione di una
 specifica prenotazione. Si noti l'utilizzo dell'URL restituito
-nell'header HTTP Location al passo precedente.
+nell\' :httpheader:`Location` al passo precedente.
 
 .. code-block:: http
+   :caption: Request
 
-   GET /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+   GET /appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+
+
+.. code-block:: http
+   :caption: Response
+
+   HTTP/1.1 200 OK
 
    {
-     "nome_proprio": "string",
-     "cognome": "string",
-     "codice_fiscale": "string",
+     "id": 12323254,
+     "nome_proprio": "Mario",
+     "cognome": "Rossi",
+     "codice_fiscale": "MRORSS77T05E472I",
      "dettagli": {
        "data": "2018-12-03T14:29:12.137Z",
        "motivazione": "string"
      }
    }
 
-Di seguito un esempio in cui il fruitore richiede la modifica di una
-prenotazione per quanto riguarda i dettagli.
 
- \(1) Request Header & Body
+
+Di seguito una richiesta di modifica dei dettagli di una prenotazione.
+
 
 .. code-block:: http
+   :caption: Request
 
-   PATCH /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+
+   PATCH /appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+   Content-Type: application/merge-patch+json
 
    {
-     "data": "2018-12-03T14:29:12.137Z",
-     "motivazione": "nuova motivazione"
+      "dettagli": {
+        "data": "2018-12-03T14:29:12.137Z",
+        "motivazione": "nuova motivazione"
+      }
    }
 
 
-\(2) Response Body (HTTP Status Code 200)
-
 .. code-block:: http
+   :caption: Response
 
-      HTTP/1.1 200 OK
+   HTTP/1.1 200 OK
 
-      {
-        "nome_proprio": "string",
-        "cognome": "string",
-        "codice_fiscale": "string",
-        "dettagli": {
-            "data": "2018-12-03T14:29:12.137Z",
-            "motivazione": "nuova motivazione"
-         }
+   {
+     "nome_proprio": "Mario",
+     "cognome": "Rossi",
+     "codice_fiscale": "MRORSS77T05E472I",
+     "dettagli": {
+         "data": "2018-12-03T14:29:12.137Z",
+         "motivazione": "nuova motivazione"
       }
+   }
 
-
-Di seguito un esempio in cui il fruitore richiede di eliminare una
-specifica prenotazione.
-
-
-.. code-block:: http
-   :caption: (1) Request Header & Body
-
-   DELETE /rest/v1/nomeinterfacciaservizio/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+Di seguito una richiesta di modifica dei dettagli di una prenotazione
+con media-type ``application/json``, che non avendo una semantica
+di patching definita, dev'essere rifiutato seguendo le indicazioni
+presenti in :rfc:`5789#section-2.2`. La response ritorna
+il media-type suggerito dalla specifica tramite :httpheader:`Accept-Patch`
 
 
 .. code-block:: http
-   :caption: (2) Response Body (HTTP Status Code 200)
+   :caption: Request
 
-      HTTP/1.1 200 OK
+
+   PATCH /appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+   Content-Type: application/json
+
+   {
+      "dettagli": {
+        "data": "2018-12-03T14:29:12.137Z",
+        "motivazione": "nuova motivazione"
+      }
+   }
+
+.. code-block:: http
+   :caption: Response
+
+   HTTP/1.1 415 Unsupported Media Type
+   Accept-Patch: application/merge-patch+json
+
+
+Di seguito un esempio di cancellazione di una specifica prenotazione.
+
+
+.. code-block:: http
+   :caption: Request
+
+   DELETE /appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+
+
+.. code-block:: http
+   :caption: Response
+
+   HTTP/1.1 200 OK
