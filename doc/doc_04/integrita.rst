@@ -4,7 +4,7 @@ Integrità
 [IDAS03] Integrità della payload del messaggio SOAP
 ---------------------------------------------------
 
-.. _scenario-6:
+.. _integrita-scenario-6:
 
 Scenario
 ^^^^^^^^
@@ -21,7 +21,7 @@ per identificare il soggetto fruitore, il presente profilo estende
 -  autenticazione del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitore, o entrambe le parti.
 
-.. _descrizione-6:
+.. _integrita-descrizione-6:
 
 Descrizione
 ^^^^^^^^^^^
@@ -45,7 +45,7 @@ valida l'integrità della payload del messaggio firmato. Se la verifica e
 la validazione sono superate, l’erogatore consuma la richiesta e produce
 la relativa risposta.
 
-.. _dettaglio-6:
+.. _integrita-dettaglio-6:
 
 Dettaglio
 ^^^^^^^^^
@@ -117,7 +117,7 @@ Note:
    della payload del del messaggio risposta dell’erogatore al
    fruitore.
 
-.. _tracciato-4:
+.._integrita-tracciato-4:
 
 Tracciato
 ~~~~~~~~~
@@ -187,10 +187,10 @@ Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
 nonché la modalità di inclusione o referenziazione del certificato X.509.
 
-[IDAMR03] Integrità della payload messaggio REST
+[IDAR03] Integrità della payload messaggio REST
 ---------------------------------------------------
 
-.. _scenario-7:
+.. _integrita-scenario-7:
 
 Scenario
 ^^^^^^^^
@@ -212,6 +212,33 @@ IDAR01 o IDAR02, e quindi viene assicurato:
 :rfc:`7231` indica che gli HTTP header possono
 alterare l'interpretazione del payload body (vedi i concetti
 di `selected representation`_ e `representation metadata`_).
+
+
+.. gzip.compress(json.dumps(  {"a": "1"*100}  ).encode())
+
+
+.. code-block:: http
+   :caption: Questo è un file json compresso all'origine con gzip -
+             il payload body è in base64 per leggibilità.
+
+   POST /entries/1234 HTTP/1.1
+   Content-Type: application/json
+   Content-Encoding: gzip
+
+   H4sIAItWyFwC/6tWSlSyUlAypANQqgUAREcqfG0AAAA=
+
+
+.. code-block:: http
+   :caption: Se un proxy altera il Content-Encoding, il significato della richiesta cambia
+             restituendo - a parità di payload body - una sequenza apparentemente disordinata
+             di byte.
+
+   POST /entries/1234 HTTP/1.1
+   Content-Type: application/json
+
+   H4sIAItWyFwC/6tWSlSyUlAypANQqgUAREcqfG0AAAA=
+
+
 Per garantire l'integrità del messaggio e una sua corretta
 interpretazione da parte dell'applicazione
 bisogna rimuovere tali ambiguità includendo nella firma:
@@ -233,7 +260,7 @@ o  :httpmethod:`PATCH` che trasmette una rappresentazione
 parziale.
 
 
-.. _descrizione-7:
+.. _integrita-descrizione-7:
 
 Descrizione
 ^^^^^^^^^^^
@@ -274,7 +301,7 @@ la validazione sono superate, l’erogatore consuma la richiesta e produce
 la relativa risposta.
 
 
-.. _dettaglio-7:
+.. _integrita-dettaglio-7:
 
 Dettaglio
 ^^^^^^^^^
@@ -289,9 +316,14 @@ Dettaglio
       activate F
       F->>F: Calcola il Digest del messaggio
       F->>F: Crea la struttura da firmare
-      F->>E: Request()
+      F->>F: Firma la struttura
+      F->>E: Richiesta
       activate E
-      E-->>F: Reply
+      E->>E: Verifica claim JWT
+      E->>E: Verifica firma JWT
+      E->>E: Verifica header
+      E->>E: Verifica digest
+      E-->>F: Risposta
       deactivate E
       deactivate F
 
@@ -338,22 +370,21 @@ Regole di processamento
 
       - `sub`_: oggetto (`principal` see :rfc:`3744#section-2`) dei claim contenuti nel jwt
       - `iss`_: identificativo del mittente
-      - `aud`_: identificativo del destinatario
       - `jti`_: identificativo del JWT, per evitare replay attack
 
-   d. un claim con gli header http da proteggere ed i rispettivi valori. Se si tollera
-      che eventuali `Intermediaries`_ possano modificare il case degli header http, si possono
-      indicare i nomi degli header in minuscolo.
+   d. il claim ``signed_headers`` [#signed_headers_claim]_ con gli header http da proteggere ed i rispettivi valori. Se si tollera
+      l'eventuale modifica del case degli header da parte di `Intermediaries`_ (proxy, gateway, ..), normalizzarli
+      in minuscolo;
 
 3. il fruitore firma il token adottando la `JWS Compact Serialization`_
 
-4. il fruitore posiziona il ``JWT`` nell’ :httpheader:`Authorization`
+4. il fruitore posiziona il ``JWT`` nell’ ``Agid-JWT-Signature``
 
 5. Il fruitore spedisce il messaggio all’erogatore.
 
 **B: Risultato**
 
-6.  L’erogatore decodifica il  ``JWT`` presente in :httpheader:`Authorization` e valida
+6.  L’erogatore decodifica il  ``JWT`` presente in ``Agid-JWT-Signature`` e valida
     i claim contenuti nel `Jose Header`_, in particolare verifica:
 
     - il contenuto dei claim `iat`_ ed `exp`_;
@@ -371,10 +402,10 @@ Regole di processamento
 
 11. L'erogatore quindi verifica la corrispondenza tra ``Digest`` ed il payload body ricevuto
 
-10. Se il certificato è valido anche per identificare il soggetto
+12. Se il certificato è valido anche per identificare il soggetto
     fruitore, l’erogatore autentica lo stesso
 
-12. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
+13. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
     richiamato.
 
@@ -385,11 +416,12 @@ Note:
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    della risposta da parte dell’erogatore al fruitore.
-   In questo caso si ricorda che ``Digest`` fa' riferimento al checksum del
-   payload della `selected representation`_. Nel caso quindi di una :httpmethod:`HEAD`
-   il server deve ritornare il checksum dell'ipotetico payload ritornato da una :httpmethod:`GET`.
+   In questo caso si ricorda che ``Digest`` fa\' riferimento al checksum del
+   payload body della `selected representation`_. Per una richiesta con :httpmethod:`HEAD`
+   il server deve ritornare il checksum dell'ipotetico payload body ritornato dalla
+   corrispondente richiesta con :httpmethod:`GET` [#cite_selected_representation]_.
 
-.. _tracciato-5:
+.. _integrita-tracciato-5:
 
 Tracciato
 ~~~~~~~~~
@@ -413,7 +445,7 @@ fruitore all’interfaccia di servizio dell’erogatore.
 
    POST https://api.erogatore.org/service/v1/hello/echo/ HTTP/1.1
    Accept: application/json
-   Agid-JWT-Signature: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
+   Agid-JWT-Signature: eyJhbGciOiJSUzI1NiIsInR5c.vz8...
    Digest: SHA-256=cFfTOCesrWTLVzxn8fmHl4AcrUs40Lv5D275FmAZ96E=
    Content-Type: application/json
    Content-Encoding: identity
@@ -446,6 +478,7 @@ fruitore all’interfaccia di servizio dell’erogatore.
      ],
    }
 
+
 Il tracciato rispecchia alcune scelte implementative esemplificative in
 merito:
 
@@ -454,16 +487,22 @@ merito:
 - mette in ``minuscolo`` i nomi degli header firmati per tollerare eventuali
   rimaneggiamenti da parte di `Intermediaries`_
 
-- utilizza il claim custom ``signed_headers`` contenente una lista di objects
-  per supportare la firma di header ripetuti
+- utilizza il claim custom ``signed_headers`` contenente una lista di json objects
+  per supportare la firma di più header ed eventualmente verificare il loro ordinamento
 
 Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
 nonché la modalità di inclusione o referenziazione del certificato X.509.
 
-.. [1]
+
+.. [#signed_headers_claim]
    Il presente documento ha individuato il claim "signed_headers"
    per contenere l'elenco degli header firmati.
+
+.. [#cite_selected_representation] Per coerenza con :rfc:`7231#section-3.1` "In a response to a
+   HEAD request, the representation header fields describe the
+   representation data that would have been enclosed in the payload body
+   if the same request had been a GET."
 
 .. discourse::
    :topic_identifier: 8908
