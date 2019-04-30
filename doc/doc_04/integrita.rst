@@ -210,7 +210,7 @@ IDAR01 o IDAR02, e quindi viene assicurato:
 
 
 :rfc:`7231` indica che gli HTTP header possono
-alterare l'interpretazione del payload (vedi i concetti
+alterare l'interpretazione del payload body (vedi i concetti
 di `selected representation`_ e `representation metadata`_).
 Per garantire l'integrità del messaggio e una sua corretta
 interpretazione da parte dell'applicazione
@@ -218,18 +218,19 @@ bisogna rimuovere tali ambiguità includendo nella firma:
 
 - i valori degli header che alterano i `representation data`_
   (eg: :httpheader:`Content-Type`, :httpheader:`Content-Encoding`);
-- un hash del payload del messaggio (per le richieste) o della
+- un hash del payload body (per le richieste) o della
   `selected representation`_ (per le risposte);
 - ulteriori header di cui si vuole garantire dell'integrità.
 
-A questi vanno aggiunti dei riferimenti temporali e locali analoghi a quelli
-già utilizzati nei profili IDAR01 e IDAR02.
+A questi vanno aggiunti dei riferimenti temporali e degli estremi della comunicazione
+analoghi a quelli già utilizzati nei profili IDAR01 e IDAR02.
 
 Di seguito considereremo sempre richieste e risposte complete,
-questo scenario non copre quindi:
+con i metodi standard definiti in :rfc:`7231#section-4`.
 
-- richieste con  :httpstatus:`206`;
-- `Range Requests` :rfc:`7233`.
+Questo scenario non copre quindi `Range Requests` :rfc:`7233`
+o  :httpmethod:`PATCH` che trasmette una rappresentazione
+parziale.
 
 
 .. _descrizione-7:
@@ -252,7 +253,7 @@ La strategia consiste nel:
 - aggiungere un hash della rappresentazione della risorsa in ``Digest``;
 - creare un oggetto da firmare che includa ``Digest`` e gli elementi salienti
   del messaggio;
-- passare l'oggetto firmato in un ulteriore header.
+- passare l'oggetto firmato in un ulteriore header (eg. ``Agid-JWT-Signature``).
 
 Si assume l’esistenza di un `trust`_ tra fruitore ed erogatore,
 che permette il riconoscimento da parte dell’erogatore del
@@ -261,12 +262,14 @@ certificato X.509, o la CA emittente.
 Il meccanismo con cui è stabilito il `trust`_ non condiziona il presente
 profilo.
 
-Il fruitore, definito il payload del messaggio o della sua rappresentazione,
+Il fruitore, definita la rappresentazione della risorsa,
 inoltra un messaggio all’erogatore includendo
-il certificato X.509 e la firma della payload e degli elementi essenziali messaggio.
+il certificato X.509,  la firma degli header ``Digest``, ``Content-Type``,
+``Content-Encoding`` e di tutti gli elementi di cui si vuole garantire l'integrità,
+inclusi quelli indicati in **IDAR01** (o **IDAR02**).
 
 L’erogatore, ricevuto il messaggio, verifica il certificato X.509 e
-valida l’integrità della payload del messaggio firmato. Se la verifica e
+valida l’integrità degli elementi firmati. Se la verifica e
 la validazione sono superate, l’erogatore consuma la richiesta e produce
 la relativa risposta.
 
@@ -309,7 +312,7 @@ Regole di processamento
    :httpheader:`Content-Type` e :httpheader:`Content-Encoding`
 
 4. Il fruitore crea la struttura o la stringa da firmare in modo che includa gli http header da proteggere,
-   i riferimenti temporali di validità della firma ed i riferimenti locali (eg. mittente e destinatario).
+   i riferimenti temporali di validità della firma e degli estremi della comunicazione.
    Nel caso di ``JWT`` questo vuol dire:
 
    a. il `Jose Header`_  con almeno i ``parameter``:
@@ -339,7 +342,8 @@ Regole di processamento
       - `jti`_: identificativo del JWT, per evitare replay attack
 
    d. un claim con gli header http da proteggere ed i rispettivi valori. Se si tollera
-      che eventuali `Intermediaries`_ possano modificare il case degli header http
+      che eventuali `Intermediaries`_ possano modificare il case degli header http, si possono
+      indicare i nomi degli header in minuscolo.
 
 3. il fruitore firma il token adottando la `JWS Compact Serialization`_
 
@@ -363,9 +367,9 @@ Regole di processamento
 9.  L’erogatore valida la firma verificando l’elemento Signature del ``JWT``
 
 10. L'erogatore verifica la corrispondenza tra i valori degli header
-    passati nel messaggio e quelli presenti nei due claim custom
+    passati nel messaggio e quelli presenti nel claim custom
 
-11. L'erogatore quindi verifica la corrispondenza tra ``Digest`` ed il payload ricevuto
+11. L'erogatore quindi verifica la corrispondenza tra ``Digest`` ed il payload body ricevuto
 
 10. Se il certificato è valido anche per identificare il soggetto
     fruitore, l’erogatore autentica lo stesso
@@ -409,7 +413,7 @@ fruitore all’interfaccia di servizio dell’erogatore.
 
    POST https://api.erogatore.org/service/v1/hello/echo/ HTTP/1.1
    Accept: application/json
-   Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
+   Agid-JWT-Signature: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
    Digest: SHA-256=cFfTOCesrWTLVzxn8fmHl4AcrUs40Lv5D275FmAZ96E=
    Content-Type: application/json
    Content-Encoding: identity
@@ -445,7 +449,7 @@ fruitore all’interfaccia di servizio dell’erogatore.
 Il tracciato rispecchia alcune scelte implementative esemplificative in
 merito:
 
-- include tutti gli elementi del ``JWT`` utilizzati in IDAR02
+- include tutti gli elementi del ``JWT`` utilizzati in **IDAR02**
 
 - mette in ``minuscolo`` i nomi degli header firmati per tollerare eventuali
   rimaneggiamenti da parte di `Intermediaries`_
@@ -458,13 +462,8 @@ algoritmi secondo quanto indicato alla sezione  `Elenco degli algoritmi`_
 nonché la modalità di inclusione o referenziazione del certificato X.509.
 
 .. [1]
-   Il presente documento ha individuato il claim con sigla "pda" al fine
-   di indicare in maniera univoca il valore dell’algoritmo di hashing utilizzato per il
-   calcolo del digest della payload del messaggio.
-
-.. [2]
-   Il presente documento ha individuato il claim con sigla "pdh" al fine
-   di gestire in maniera univoca il valore del digest relativo della payload del messaggio.
+   Il presente documento ha individuato il claim "signed_headers"
+   per contenere l'elenco degli header firmati.
 
 .. discourse::
    :topic_identifier: 8908
