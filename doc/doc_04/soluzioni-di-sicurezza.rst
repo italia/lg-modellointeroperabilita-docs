@@ -96,7 +96,9 @@ Questa soluzione utilizza i seguenti profili:
 
 -  **IDAC01** o in alternativa **IDAC02**
 
--  **IDAS03** o in alternativa **IDAR03**
+- per SOAP **IDAS03** ed **IDAS02**  
+
+- per REST **IDAR03** ed **IDAR02**
 
 .. _precondizioni-1:
 
@@ -121,8 +123,9 @@ descritto nella sezione.
 Il fruitore ed erogatore devono concordare:
 
 -  un identificativo univoco del messaggio, necessario a garantire il
-   riscontro di ritrasmissioni, e le relative modalità di scambio;
-
+   riscontro di ritrasmissioni (vedi **IDAS02** ed **IDAR02**),
+   e le relative modalità di scambio;
+   
 -  l’arco temporale di persistenza dei messaggi che dipende dalle
    caratteristiche del contenuto dei dati scambiati e nel rispetto delle
    norme di legge.
@@ -205,16 +208,16 @@ comunicazione riscontrati non proseguendo con i passi successivi.
 
 **B: Richiesta**
 
-Il messaggio di richiesta viene costruito aggiungendo l’identificativo
-univoco così come concordato tra le parti e l’istante di trasmissione
+Il messaggio di richiesta viene costruito aggiungendo un identificativo
+univoco del messaggio (vedi **IDAS02** o **IDAR02**), 
+l’istante di trasmissione
 
 -  **SOAP**: <*wsu:Timestamp*> della ws-security
 
 -  **REST:** claim *iat* contenuta nella payload del token JWT
 
-Il payload e l’istante di trasmissione vengono firmati, utilizzando il
-profilo **IDAS03** nel caso di utilizzo di SOAP o **IDAR03** nel caso di
-utilizzo di REST, per garantire:
+Tutti gli elementi utili al non ripudio, inclusi quelli descritti in **IDAS02** o **IDAR02**,
+vengono firmati utilizzando il profilo desiderato **IDAS03** o **IDAR03** per garantire:
 
 -  l’integrità del contenuto,
 
