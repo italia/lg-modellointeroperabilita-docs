@@ -29,8 +29,8 @@ Descrizione
 Il presente profilo specializza lo standard OASIS Web Services Security
 X.509 Certificate Token Profile Versione 1.1.1 `[4] <bibliografia.html>`__.
 
-Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
-(server), che permette il riconoscimento da parte dell’erogatore del
+Si assume l’esistenza di un `trust`_ tra fruitore ed erogatore,
+che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
 Il meccanismo con cui è stabilito il `trust`_ non condiziona il presente
@@ -254,8 +254,8 @@ La strategia consiste nel:
   del messaggio;
 - passare l'oggetto firmato in un ulteriore header.
 
-Si assume l’esistenza di un `trust`_ tra fruitore (client) ed erogatore
-(server), che permette il riconoscimento da parte dell’erogatore del
+Si assume l’esistenza di un `trust`_ tra fruitore ed erogatore,
+che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
 
 Il meccanismo con cui è stabilito il `trust`_ non condiziona il presente
