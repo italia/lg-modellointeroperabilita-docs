@@ -105,12 +105,6 @@ Questa soluzione utilizza i seguenti profili:
 Precondizioni
 ^^^^^^^^^^^^^
 
-Si assume che il certificato che garantisce l’integrità del messaggio e
-l’autenticazione del Fruitore è lo stesso.
-
-Si assume che il certificato che garantisce l’integrità del messaggio di
-conferma e l’autenticazione dell’Erogatore è lo stesso.
-
 Si assume l’esistenza di un trust tra fruitore ed erogatore che
 stabilisce:
 
