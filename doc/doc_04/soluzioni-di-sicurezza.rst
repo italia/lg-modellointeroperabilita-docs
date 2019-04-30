@@ -139,8 +139,7 @@ Il fruitore ed erogatore devono concordare:
 -  il numero massimo di tentativi di rinvio da parte del fruitore
    accettati dall’erogatore;
 
--  eventuale utilizzo di canali alternativi (quali ad esempio PEC,
-   Contact Center, ...) per superare o evidenziare problemi di
+-  eventuale utilizzo di canali alternativi per superare o evidenziare problemi di
    comunicazione riscontrati;
 
 
@@ -201,8 +200,7 @@ a quanto indicato al passo B.
 
 **A.3 [Superamento numero di tentativi massimi pattuiti]**
 
-Il fruitore utilizza i canali alternativi (quali ad esempio PEC,
-Contact Center, ...) per superare o evidenziare problemi di
+Il fruitore utilizza i canali alternativi per superare o evidenziare problemi di
 comunicazione riscontrati non proseguendo con i passi successivi.
 
 **B: Richiesta**
@@ -279,8 +277,7 @@ messaggio già ricevuto, a causa di una mancata ricezione del messaggio
 di conferma da parte del fruitore.
 
 L’erogatore accerta di aver raggiunto il numero massimo di tentativi di
-richieste ricevute. L’erogatore utilizza i canali alternativi (quali ad
-esempio PEC, Contact Center, ...) per superare o evidenziare problemi di
+richieste ricevute. L’erogatore utilizza i canali alternativi per superare o evidenziare problemi di
 comunicazione riscontrati non proseguendo con i passi successivi.
 
 **D: Risposta**
