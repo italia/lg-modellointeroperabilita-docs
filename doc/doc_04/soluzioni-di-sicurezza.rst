@@ -120,6 +120,13 @@ descritto nella sezione.
 
 Il fruitore ed erogatore devono concordare:
 
+-  un identificativo univoco del messaggio, necessario a garantire il
+   riscontro di ritrasmissioni, e le relative modalità di scambio;
+
+-  l’arco temporale di persistenza dei messaggi che dipende dalle
+   caratteristiche del contenuto dei dati scambiati e nel rispetto delle
+   norme di legge.
+
 -  il tempo di validità della transazione che intercorre tra:
 
    -  l’istante di inoltro del fruitore
@@ -136,12 +143,6 @@ Il fruitore ed erogatore devono concordare:
    Contact Center, ...) per superare o evidenziare problemi di
    comunicazione riscontrati;
 
--  un identificativo univoco del messaggio, necessario a garantire il
-   riscontro di ritrasmissioni, e le relative modalità di scambio;
-
--  l’arco temporale di persistenza dei messaggi che dipende dalle
-   caratteristiche del contenuto dei dati scambiati e nel rispetto delle
-   norme di legge.
 
 Attraverso le tecnologie di criptazione sono garantite le seguenti
 proprietà:
