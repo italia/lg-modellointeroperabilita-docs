@@ -137,6 +137,12 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 if not on_rtd:  # only import and set the theme if we're building docs locally
     html_theme = 'docs_italia_theme'
     #html_theme_path = ["themes", ]
+
+    # local builds with singlehtml don't need sidebar
+    # nor docs_italia_theme
+    if 'singlehtml' in sys.argv:
+        html_theme = 'basic'
+        html_theme_options.update({'no_sidebar': True})
 else:
     # Override default css to get a larger width for ReadTheDoc build
     html_context = {
