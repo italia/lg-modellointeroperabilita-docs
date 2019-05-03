@@ -399,8 +399,7 @@ merito:
 
 - include tutti gli elementi del ``JWT`` utilizzati in **IDAR02**
 
-- mette in ``minuscolo`` i nomi degli header firmati per tollerare eventuali
-  rimaneggiamenti da parte di `Intermediaries`_
+- mette in ``minuscolo`` i nomi degli header firmati
 
 - utilizza il claim custom ``signed_headers`` contenente una lista di json objects
   per supportare la firma di più header ed eventualmente verificare il loro ordinamento
