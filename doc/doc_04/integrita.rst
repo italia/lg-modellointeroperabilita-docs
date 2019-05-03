@@ -229,12 +229,6 @@ certificato X.509, o la CA emittente.
 Il meccanismo con cui è stabilito il `trust`_ non condiziona il presente
 profilo.
 
-Il fruitore, definita la rappresentazione della risorsa,
-inoltra un messaggio all’erogatore includendo
-il certificato X.509,  la firma degli header ``Digest``, ``Content-Type``,
-``Content-Encoding`` e di tutti gli elementi di cui si vuole garantire l'integrità,
-inclusi quelli indicati in **IDAR01** (o **IDAR02**).
-
 L’erogatore, ricevuto il messaggio, verifica il certificato X.509 e
 valida l’integrità degli elementi firmati. Se la verifica e
 la validazione sono superate, l’erogatore consuma la richiesta e produce
