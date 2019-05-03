@@ -202,6 +202,9 @@ a livello di messaggio:
 
 Si adottano le indicazione riportate in :rfc:`7231`. 
 
+Considereremo sempre richieste e risposte complete,
+con i metodi standard definiti in :rfc:`7231#section-4`.
+
 Questo scenario non copre quindi `Range Requests` :rfc:`7233`
 o  :httpmethod:`PATCH` che trasmette una rappresentazione
 parziale.
