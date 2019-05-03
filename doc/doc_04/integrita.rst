@@ -9,17 +9,12 @@ Integrità
 Scenario
 ^^^^^^^^
 
-Comunicazione tra fruitore ed erogatore che assicuri a livello di
-messaggio:
+Il presente profilo estende **IDAS01** o **IDAS02**, aggiungendo alla comunicazione tra fruitore ed erogatore
+a livello di messaggio:
 
 -  Integrità della payload del messaggio.
 
-Nel caso in cui il certificato per garantire l’integrità è valido anche
-per identificare il soggetto fruitore, il presente profilo estende
-**IDAS01** o **IDAS02**, e quindi viene assicurato:
 
--  autenticazione del soggetto fruitore, quale organizzazione o unità
-   organizzativa fruitore, o entrambe le parti.
 
 .. _integrita-descrizione-6:
 
@@ -195,7 +190,7 @@ nonché la modalità di inclusione o referenziazione del certificato X.509.
 Scenario
 ^^^^^^^^
 
-Il presente profilo estende IDAR01 o IDAR02, aggiungendo alla comunicazione tra fruitore ed erogatore
+Il presente profilo estende **IDAR01** o **IDAR02**, aggiungendo alla comunicazione tra fruitore ed erogatore
 a livello di messaggio:
 
 -  Integrità della payload del messaggio.
