@@ -299,8 +299,13 @@ Regole di processamento
       - `iss`_: identificativo del mittente
       - `jti`_: identificativo del JWT, per evitare replay attack
 
-   d. il claim ``signed_headers`` [#signed_headers_claim]_ con gli header http da proteggere ed i rispettivi valori. Se si tollera
-      l'eventuale modifica del case degli header da parte di `Intermediaries`_ (proxy, gateway, ..), normalizzarli
+   d. il claim ``signed_headers`` [#signed_headers_claim]_ con gli header http da proteggere ed i rispettivi valori, ovvero:
+   
+      - ``digest``
+      - ``content-type``
+      - ``content-encoding``
+      
+      Se si tollera l'eventuale modifica del case degli header da parte di `Intermediaries`_ (proxy, gateway, ..), normalizzarli
       in minuscolo;
 
 3. il fruitore firma il token adottando la `JWS Compact Serialization`_
