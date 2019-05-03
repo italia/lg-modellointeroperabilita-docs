@@ -178,7 +178,7 @@ Di seguito un esempio di chiamata per creare una prenotazione.
 .. code-block:: http
    :caption: Request
 
-   POST /appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni HTTP/1.1
+   POST /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni HTTP/1.1
 
    {
      "nome_proprio": "Mario",
@@ -216,7 +216,7 @@ nell\' :httpheader:`Location` al passo precedente.
 .. code-block:: http
    :caption: Request
 
-   GET /appuntamenti/rest/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+   GET /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
 
 
 .. code-block:: http
