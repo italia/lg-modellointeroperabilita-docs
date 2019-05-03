@@ -229,12 +229,6 @@ certificato X.509, o la CA emittente.
 Il meccanismo con cui è stabilito il `trust`_ non condiziona il presente
 profilo.
 
-L’erogatore, ricevuto il messaggio, verifica il certificato X.509 e
-valida l’integrità degli elementi firmati. Se la verifica e
-la validazione sono superate, l’erogatore consuma la richiesta e produce
-la relativa risposta.
-
-
 .. _integrita-dettaglio-7:
 
 Dettaglio
