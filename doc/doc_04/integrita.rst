@@ -222,13 +222,6 @@ Il presente profilo propone l’utilizzo di:
 
 - JSON Web Signature (JWS) definita dall’ :RFC:`7515`.
 
-La strategia consiste nel:
-
-- aggiungere un hash della rappresentazione della risorsa in ``Digest``;
-- creare un oggetto da firmare che includa ``Digest`` e gli elementi salienti
-  del messaggio;
-- passare l'oggetto firmato in un ulteriore header (eg. ``Agid-JWT-Signature``).
-
 Si assume l’esistenza di un `trust`_ tra fruitore ed erogatore,
 che permette il riconoscimento da parte dell’erogatore del
 certificato X.509, o la CA emittente.
