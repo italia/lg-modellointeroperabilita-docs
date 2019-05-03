@@ -195,65 +195,12 @@ nonché la modalità di inclusione o referenziazione del certificato X.509.
 Scenario
 ^^^^^^^^
 
-Questo profilo propone una strategia di
-comunicazione tra fruitore ed erogatore che assicuri a livello di
-messaggio:
+Il presente profilo estende IDAR01 o IDAR02, aggiungendo alla comunicazione tra fruitore ed erogatore
+a livello di messaggio:
 
 -  Integrità della payload del messaggio.
 
-Se il certificato per garantire l’integrità è valido anche
-per identificare il soggetto fruitore, il presente profilo estende
-IDAR01 o IDAR02, e quindi viene assicurato:
-
--  autenticazione del soggetto fruitore, quale organizzazione o unità
-   organizzativa fruitore, o entrambe le parti.
-
-
-:rfc:`7231` indica che gli HTTP header possono
-alterare l'interpretazione del payload body (vedi i concetti
-di `selected representation`_ e `representation metadata`_).
-
-
-.. gzip.compress(json.dumps(  {"a": "1"*100}  ).encode())
-
-
-.. code-block:: http
-   :caption: Questo è un file json compresso all'origine con gzip -
-             il payload body è in base64 per leggibilità.
-
-   POST /entries/1234 HTTP/1.1
-   Content-Type: application/json
-   Content-Encoding: gzip
-
-   H4sIAItWyFwC/6tWSlSyUlAypANQqgUAREcqfG0AAAA=
-
-
-.. code-block:: http
-   :caption: Se un proxy altera il Content-Encoding, il significato della richiesta cambia
-             restituendo - a parità di payload body - una sequenza apparentemente disordinata
-             di byte.
-
-   POST /entries/1234 HTTP/1.1
-   Content-Type: application/json
-
-   H4sIAItWyFwC/6tWSlSyUlAypANQqgUAREcqfG0AAAA=
-
-
-Per garantire l'integrità del messaggio e una sua corretta
-interpretazione da parte dell'applicazione
-bisogna rimuovere tali ambiguità includendo nella firma:
-
-- i valori degli header che alterano i `representation data`_
-  (eg: :httpheader:`Content-Type`, :httpheader:`Content-Encoding`);
-- un hash del payload body (per le richieste) o della
-  `selected representation`_ (per le risposte);
-- ulteriori header di cui si vuole garantire dell'integrità.
-
-A questi vanno aggiunti dei riferimenti temporali e degli estremi della comunicazione
-analoghi a quelli già utilizzati nei profili IDAR01 e IDAR02.
-
-Di seguito considereremo sempre richieste e risposte complete,
-con i metodi standard definiti in :rfc:`7231#section-4`.
+Si adottano le indicazione riportate in :rfc:`7231`. 
 
 Questo scenario non copre quindi `Range Requests` :rfc:`7233`
 o  :httpmethod:`PATCH` che trasmette una rappresentazione
