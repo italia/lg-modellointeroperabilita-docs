@@ -272,8 +272,7 @@ Regole di processamento
    :httpheader:`Content-Type` e :httpheader:`Content-Encoding`
 
 4. Il fruitore crea la struttura o la stringa da firmare in modo che includa gli http header da proteggere,
-   i riferimenti temporali di validità della firma e degli estremi della comunicazione.
-   Nel caso di ``JWT`` questo vuol dire:
+   i riferimenti temporali di validità della firma e degli estremi della comunicazione, ovvero:
 
    a. il `Jose Header`_  con almeno i ``parameter``:
 
