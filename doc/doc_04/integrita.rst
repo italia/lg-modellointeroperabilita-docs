@@ -305,18 +305,15 @@ Regole di processamento
       - ``content-type``
       - ``content-encoding``
       
-      Se si tollera l'eventuale modifica del case degli header da parte di `Intermediaries`_ (proxy, gateway, ..), normalizzarli
-      in minuscolo;
-
 3. il fruitore firma il token adottando la `JWS Compact Serialization`_
 
-4. il fruitore posiziona il ``JWT`` nell’ ``Agid-JWT-Signature``
+4. il fruitore posiziona il ``JWT`` nell’ ``Authorization`` header
 
 5. Il fruitore spedisce il messaggio all’erogatore.
 
 **B: Risultato**
 
-6.  L’erogatore decodifica il  ``JWT`` presente in ``Agid-JWT-Signature`` e valida
+6.  L’erogatore decodifica il  ``JWT`` presente in ``Authorization`` header e valida
     i claim contenuti nel `Jose Header`_, in particolare verifica:
 
     - il contenuto dei claim `iat`_ ed `exp`_;
@@ -330,14 +327,11 @@ Regole di processamento
 9.  L’erogatore valida la firma verificando l’elemento Signature del ``JWT``
 
 10. L'erogatore verifica la corrispondenza tra i valori degli header
-    passati nel messaggio e quelli presenti nel claim custom
+    passati nel messaggio e quelli presenti nel claim ``signed-header``
 
 11. L'erogatore quindi verifica la corrispondenza tra ``Digest`` ed il payload body ricevuto
 
-12. Se il certificato è valido anche per identificare il soggetto
-    fruitore, l’erogatore autentica lo stesso
-
-13. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
+12. Se le azioni da 6 a 11 hanno avuto esito positivo, il messaggio
     viene elaborato e viene restituito il risultato del servizio
     richiamato.
 
@@ -360,17 +354,6 @@ Tracciato
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal
 fruitore all’interfaccia di servizio dell’erogatore.
-
-.. code-block:: python
-   :caption: Payload del messaggio
-
-   {
-     "testo": "Hello world!"
-   }
-
-
-
-.. eg. python encodestring(sha256(json.dumps({"ciao":"mondo"}).encode()).digest())
 
 .. code-block:: http
    :caption: Richiesta HTTP con `Digest` e representation metadata
