@@ -9,6 +9,8 @@ Data la variabilità nel tempo delle esigenze delle amministrazioni e delle tecn
 nonché considerata la natura incremenmtale del ModI, l'elenco dei *profili* di sicurezza
 non è da intendersi esaustivo.
 
+Nel caso in cui un'amministrazione decida di utilizzare soluzioni differenti da quelle prospettate nei seguenti profili, queste DEVONO garantire il medesimo o superiore livello di sicurezza.
+
 .. note:: I *profili* individuati, coprono gli aspetti di comunicazione 'sicura' tra i domini delle singole parti. Le parti mantengono la loro autonomia negli aspetti organizzativi e di sicurezza interni al proprio dominio.
 
 **I profili di sicurezza**
