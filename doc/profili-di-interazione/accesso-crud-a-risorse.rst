@@ -167,7 +167,7 @@ specifica seguente i metodi implementati sono :httpmethod:`POST` (creazione), DE
 (eliminazione), :httpmethod:`PATCH` (modifica) e :httpmethod:`GET` (lettura).
 
 
- Specifica Servizio Server  https://api.amministrazioneesempio.it/appuntamenti/v1/openapi.yaml
+ Specifica Servizio Server  https://api.amministrazioneesempio.it/rest/appuntamenti/v1/openapi.yaml
 
  .. literalinclude:: ../media/rest-crud.yaml
     :language: yaml
@@ -195,7 +195,7 @@ Di seguito un esempio di chiamata per creare una prenotazione.
    :caption: Response
 
    HTTP/1.1 201 Created
-   Location: https://api.amministrazioneesempio.it/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254
+   Location: https://api.amministrazioneesempio.it/rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254
 
    {
      "id": 12323254,
@@ -216,7 +216,7 @@ nell\' :httpheader:`Location` al passo precedente.
 .. code-block:: http
    :caption: Request
 
-   GET /appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+   GET /appuntamenti/rest/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
 
 
 .. code-block:: http
@@ -244,7 +244,7 @@ Di seguito una richiesta di modifica dei dettagli di una prenotazione.
    :caption: Request
 
 
-   PATCH /appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+   PATCH /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
    Content-Type: application/merge-patch+json
 
    {
@@ -281,7 +281,7 @@ il media-type suggerito dalla specifica tramite :httpheader:`Accept-Patch`
    :caption: Request
 
 
-   PATCH /appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+   PATCH /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
    Content-Type: application/json
 
    {
@@ -304,7 +304,7 @@ Di seguito un esempio di cancellazione di una specifica prenotazione.
 .. code-block:: http
    :caption: Request
 
-   DELETE /appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
+   DELETE /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254  HTTP/1.1
 
 
 .. code-block:: http
