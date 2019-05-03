@@ -427,7 +427,6 @@ nonché la modalità di inclusione o referenziazione del certificato X.509.
 .. _`trust`: ../doc_04_cap_00.html
 
 
-.. _`Intermediaries`: https://tools.ietf.org/html/rfc7230#section-2.3
 .. _`HTTP/1.1 Semantics and Content`: https://tools.ietf.org/html/rfc7231
 .. _`selected representation`: https://tools.ietf.org/html/rfc7231#section-3
 .. _`representation metadata`: https://tools.ietf.org/html/rfc7231#section-3.1
