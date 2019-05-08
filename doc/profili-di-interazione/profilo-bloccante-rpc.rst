@@ -180,8 +180,8 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
    DEVE restituire :httpstatus:`500` indicando tramite la SOAP fault
    quale degli ID è mancante;
 
--  In caso di errori non dipendenti dal fruitore, DEVE restituire il
-   codice HTTP 500, indicando il motivo dell’errore nella SOAP fault;
+-  In caso di errori non dipendenti dal fruitore, DEVE restituire
+   :httpstatus:`500`, indicando il motivo dell’errore nella SOAP fault;
 
 -  In caso di successo restituire :httpstatus:`200`, riempiendo il
    body di risposta con il risultato dell’operazione.
