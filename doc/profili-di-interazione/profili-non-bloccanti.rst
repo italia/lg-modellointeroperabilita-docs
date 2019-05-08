@@ -299,16 +299,17 @@ del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
 In particolare, al ricevimento della richiesta, fruitore ed erogatore:
 
 -  DEVONO verificare la validità sintattica dei dati in ingresso. In caso di
-   dati errati DEVONO restituire  :httpstatus:`400`   fornendo
-   nel body di risposta dettagli circa l’errore;
+   dati errati DEVONO restituire :httpstatus:`500` fornendo dettagli circa l'errore, utilizzando il meccanismo
+   della SOAP falut;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVONO restituire  :httpstatus:`404`  , indicando nel body di
+   DEVONO restituire  :httpstatus:`500`, indicando nel body di
    risposta quale degli ID è mancante;
 
--  In caso di errori non dipendenti dal richiedente (fruitore o erogatore), DEVONO restituire i
-   codici HTTP 5XX rispettando la semantica degli stessi ed indicando
-   nel body di risposta il motivo dell’errore;
+-  Se ipotizzano che la richiesta sia malevola POSSONO ritornare :httpstatus:`400` o :httpstatus:`404`
+
+-  In caso di errori non dipendenti dal fruitore, DEVE restituire i codici HTTP 5XX rispettando la
+   semantica degli stessi o  restituire il codice HTTP status 500 indicando il motivo dell’errore nella SOAP fault;
 
 -  Al momento della ricezione della richiesta, DEVONO restituire un codice 2XX, nel dettaglio:
 
