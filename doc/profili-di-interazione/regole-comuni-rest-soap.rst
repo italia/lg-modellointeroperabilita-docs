@@ -312,6 +312,13 @@ dev'essere implementata tramite i parametri:
 
 .. TODO completare l'elenco.
 
+Non passare credenziali o dati riservati nell'URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Eventuali dati riservati o credenziali e token di autenticazione 
+NON DEVONO essere passati nei query parameters o comunque
+nell'URL.
+
 
 Non usare l'header ``Link`` :RFC:`8288` se la response è in JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
