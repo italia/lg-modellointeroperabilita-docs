@@ -51,7 +51,7 @@ seguite almeno le seguenti indicazioni:
    richiesta insieme ad eventuali header HTTP richiesti;
 
 -  Al passo (1) il fruitore DEVE utilizzare come verbo HTTP per
-   l’esecuzione della chiamata a procedura il verbo HTTP POST su un URL
+   l’esecuzione della chiamata a procedura il verbo :httpmethod:`POST` su un URL
    contenente gli ID interessati ed il nome del metodo;
 
 -  Al passo (2) il fruitore DEVE utilizzare :httpstatus:`200` a meno che
@@ -66,18 +66,18 @@ particolare, al ricevimento della richiesta da parte del fruitore,
 l’erogatore:
 
 -  DEVE verificare la validità sintattica dei dati in ingresso. In caso di
-   dati errati DEVE restituire :httpstatus:`400` Bad Request fornendo
+   dati errati DEVE restituire :httpstatus:`400` fornendo
    nel body di risposta dettagli circa l’errore;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVE restituire :httpstatus:`404` Not Found, indicando nel body di
+   DEVE restituire :httpstatus:`404`, indicando nel body di
    risposta quale degli ID è mancante;
 
 -  In caso di errori non dipendenti dal fruitore, DEVE restituire i
    codici HTTP 5XX rispettando la semantica degli stessi ed indicando
    nel body di risposta il motivo dell’errore;
 
--  In caso di successo DEVE restituire :httpstatus:`200` OK, riempiendo il
+-  In caso di successo DEVE restituire :httpstatus:`200`, riempiendo il
    body di risposta con il risultato dell’operazione.
 
 Esempio
@@ -158,7 +158,7 @@ caso REST, il metodo invocato non è specificato nell’endpoint chiamato,
 poichè viene identificato all’interno del body. Inoltre tutti gli ID
 coinvolti DEVONO essere riportati all’interno del body. DEVE essere rispettata le seguente regola:
 
--  La specifica dell'interfacciad ell’erogatore DEVE
+-  La specifica dell'interfaccia dell’erogatore DEVE
    dichiarare tutti i metodi esposti con relativi schemi dei messaggi di
    richiesta e di ritorno. Inoltre le interfacce devono specificare
    eventuali header SOAP richiesti;
@@ -180,8 +180,8 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
    DEVE restituire :httpstatus:`500` indicando tramite la SOAP fault
    quale degli ID è mancante;
 
--  In caso di errori non dipendenti dal fruitore, DEVE restituire il
-   codice HTTP 500, indicando il motivo dell’errore nella SOAP fault;
+-  In caso di errori non dipendenti dal fruitore, DEVE restituire
+   :httpstatus:`500`, indicando il motivo dell’errore nella SOAP fault;
 
 -  In caso di successo restituire :httpstatus:`200`, riempiendo il
    body di risposta con il risultato dell’operazione.
