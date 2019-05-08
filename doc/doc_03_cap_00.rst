@@ -1,5 +1,5 @@
-Profili e linee Guida
-+++++++++++++++++++++
+Profili e Raccomandazioni
++++++++++++++++++++++++++
 
 La terza sezione del Modello di Interoperabilità, così come
 introdotto nella sezione relativa alla visione generale, fornisce
