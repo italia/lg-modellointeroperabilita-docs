@@ -299,9 +299,9 @@ Regole di processamento
 
    d. il claim ``signed_headers`` [#signed_headers_claim]_ con gli header http da proteggere ed i rispettivi valori, ovvero:
    
-      - ``digest``
-      - ``content-type``
-      - ``content-encoding``
+      - ``Digest``
+      - ``Content-Type``
+      - ``Content-Encoding``
       
 3. il fruitore firma il token adottando la `JWS Compact Serialization`_
 
