@@ -340,6 +340,17 @@ In caso di errori si deve ritornare:
 Quando si restituisce un errore è importante *non esporre dati interni*
 delle applicazioni.
 
+Per prevenire il rischio di user-enumeration, i messaggi di errore 
+di autenticazione non devono fornire informazioni sull'esistenza o meno dell'utenza.
+
+
+Dopo aver validato il contenuto delle richieste si DEVE ritornare:
+
+-  :httpstatus:`415`  se il Content-Type non è supportato;
+-  :httpstatus:`400` o :httpstatus:`404` se si ipotizza che la richiesta sia malevola;
+-  :httpstatus:`422`  se la representation della richiesta è sintatticamente corretta
+   ma semanticamente non processabile.
+
 
 Ottimizzare l'uso della banda e migliorare la responsività
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
