@@ -108,17 +108,16 @@ DEVONO essere rispettate le seguenti indicazioni:
    fruitore, e quindi nella rispettiva specifica;
 
 -  Al passo (1), il fruitore DEVE indicare l’endpoint della callback
-   utilizzando l’header HTTP custom X-ReplyTo; Il verbo HTTP utilizzato
-   deve essere POST;
+   utilizzando l’header HTTP custom ``X-ReplyTo`` ed usando :httpmethod:`POST`;
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, il correlation ID utilizzando l’header HTTP
-   custom X-Correlation-ID; Il codice HTTP di stato DEVE essere :httpstatus:`202`
+   custom ``X-Correlation-ID``; Il codice HTTP di stato DEVE essere :httpstatus:`202`
    a meno che non si verifichino errori;
 
 -  Al passo (3), l’erogatore DEVE riutilizzare lo stesso correlation ID
    fornito al passo (2) sempre utilizzando l’header HTTP custom
-   X-Correlation-ID; Il verbo HTTP utilizzato deve essere POST;
+   ``X-Correlation-ID``; Il verbo HTTP utilizzato deve essere POST;
 
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
    acknowledgement il ricevimento della risposta; Il codice HTTP di
@@ -134,25 +133,35 @@ DEVONO fare uso dei codici di stato HTTP rispettandone la
 semantica [2]_.
 Friutore ed erogatore:
 
--  DEVONO verificare la validità sintattica dei dati in ingresso. In caso di
-   dati errati DEVONO restituire :httpstatus:`400` fornendo
+-  DEVONO verificare la validità sintattica e semantica dei dati in ingresso; 
+
+-  In caso di dati errati DEVONO restituire :httpstatus:`400` fornendo
    nel body di risposta dettagli circa l’errore;
 
--  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
+-  In caso di representation semanticamente non corretta DEVONO
+   ritornare :httpstatus:`422`;
+
+-  Se qualcuno degli ID nel path o nel body non esiste,
    DEVONO restituire :httpstatus:`404`, indicando nel body di
    risposta quale degli ID è mancante;
 
+-  Se si ipotizza che la richiesta sia malevola, PUO\' ritornare
+   :httpstatus:`400` o :httpstatus:`404`
+
 -  In caso di errori non dipendenti dalla richiesta, DEVONO restituire
-   HTTP status 5XX rispettando la semantica degli stessi ed indicando
-   nel body di risposta il motivo dell’errore;
+   HTTP status 5XX rispettando la semantica degli stessi;
 
 -  Al momento della ricezione della richiesta, l’erogatore DEVE restituire
    :httpstatus:`202`. In caso di ricezione corretta della risposta,
-   il fruitore DEVE restituire :httpstatus:`200`, riempiendo il body di
-   risposta con un acknowledgement dell’avvenuta ricezione. Nel caso di
-   errore al momento di ricezione della risposta da parte del fruitore,
+   il fruitore DEVE restituire :httpstatus:`200`, ritornando nel body di
+   risposta un acknowledgement dell’avvenuta ricezione. In caso di
+   errore di ricezione della risposta da parte del fruitore,
    è possibile utilizzare meccanismi specifici per la ritrasmissione della
    risposta o della richiesta.
+
+**NB: I messaggi di errore devono essere utili al client ma NON DEVONO rivelare 
+dettagli tecnici e/o informazioni riservate.**
+
 
 .. _esempio-nonbloccante-2:
 
@@ -553,27 +562,38 @@ Regole di processamento
 Al termine del processamento delle richieste, l’erogatore deve fare uso
 dei codici di stato HTTP rispettandone la semantica [3]_. In
 particolare, al ricevimento della richiesta da parte del fruitore,
-l’erogatore DEVE almeno:
+l’erogatore:
 
--  Verificare la validità sintattica dei dati in ingresso. In caso di
-   dati errati deve restituire  :httpstatus:`400`   fornendo
+-  DEVE verificare la validità sintattica e semantica dei dati in ingresso;
+
+-  DEVE, in caso di dati errati, restituire :httpstatus:`400` fornendo
    nel body di risposta dettagli circa l’errore;
 
--  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVE restituire  :httpstatus:`404`  , indicando nel body di
+-  DEVE, in caso di representation semanticamente non corretta,
+   ritornare :httpstatus:`422`;
+
+-  DEVE, se qualcuno degli ID nel path o nel body non esiste,
+   restituire :httpstatus:`404`, indicando nel body di
    risposta quale degli ID è mancante;
 
--  In caso di errori non dipendenti dal fruitore, DEVE restituire i
-   codici HTTP 5XX rispettando la semantica degli stessi ed indicando
-   nel body di risposta il motivo dell’errore;
+-  PUO\', se ipotizza che la richiesta sia malevola, ritornare
+   :httpstatus:`400` o :httpstatus:`404`
 
--  Al momento della ricezione della richiesta, l’erogatore DEVE restituire
-   :httpstatus:`202`. In caso di ricezione corretta della risposta,
-   il fruitore DEVE restituire :httpstatus:`200`  , riempiendo il body di
-   risposta con il risultato dell’operazione. Nel caso di errore al
+-  DEVE, in caso di errori non dipendenti dalla richiesta, restituire
+   HTTP status 5XX rispettando la semantica degli stessi;
+
+-  DEVE, ricevuta la richiesta, restituire :httpstatus:`202`. 
+   
+   In caso di ricezione corretta della risposta,
+   il fruitore DEVE restituire :httpstatus:`200` , riempiendo il body di
+   risposta con il risultato dell’operazione. In caso di errore al
    momento di ricezione della risposta da parte del fruitore, è
    possibile definire meccanismi specifici per la ritrasmissione della
    risposta o della richiesta.
+
+**NB: I messaggi di errore devono essere utili al client ma NON DEVONO rivelare 
+dettagli tecnici e/o informazioni riservate.**
+
 
 
 .. _esempio-nonbloccante-4:

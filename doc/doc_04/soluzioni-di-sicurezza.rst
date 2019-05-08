@@ -291,9 +291,8 @@ trasmissione
 
 -  **REST:** claim *iat* contenuta nella payload del token JWT
 
-Il payload e l’istante di trasmissione vengono firmati, utilizzando il
-profilo **IDAS03** nel caso di utilizzo di SOAP ed **IDAR03** nel caso
-di utilizzo di REST, per garantire:
+Tutti gli elementi utili al non ripudio, inclusi quelli descritti in **IDAS02** o **IDAR02**,
+vengono firmati utilizzando il profilo desiderato **IDAS03** o **IDAR03** per garantire:
 
 -  l’integrità del contenuto,
 
