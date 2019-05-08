@@ -521,7 +521,7 @@ Libri​
 Raccomandazioni tecniche per SOAP
 ==================================
 
-Nell'ambito del protocollo SOAP hai fini dell'interoperabilità è definito in WS-I Basic Profile.
+Nell'ambito del protocollo SOAP ai fini dell'interoperabilità è definito in WS-I Basic Profile.
 
 ModI assume l'adozione della specifica `WS-I Basic Profile versione 2.0 <http://www.ws-i.org/Profiles/BasicProfile-2.0-2010-11-09.html>`__
 , in quanto i framework implementativi più diffusi sono conformi a questa specifica.
