@@ -764,13 +764,13 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 -  DEVE verificare la validità sintattica dei dati in ingresso. In caso
    di dati errati DEVE restituire :httpstatus:`500` fornendo dettagli
    circa l’errore utilizzando il meccanismo della SOAP fault;
+   
+-  Se l’erogatore ipotizza che la richiesta sia malevola PUO'
+   ritornare :httpstatus:`400` o :httpstatus:`404`
 
--  Nel caso in cui qualcuno degli ID nel messaggio non esista,
-   DEVE restituire :httpstatus:`500` indicando tramite la SOAP fault
-   quale degli ID è mancante;
-
--  In caso di errori non dipendenti dal fruitore, DEVE restituire il
-   codice :httpstatus:`500`, indicando il motivo dell’errore nella SOAP fault;
+-  In caso di errori non dipendenti dal fruitore, DEVE restituire i codici
+   HTTP 5XX rispettando la semantica degli stessi o  restituire il codice
+   HTTP status 500 indicando il motivo dell’errore nella SOAP fault;
 
 -  In caso di successo restituire :httpstatus:`200`, riempiendo il
    body di risposta con il risultato dell’operazione.
