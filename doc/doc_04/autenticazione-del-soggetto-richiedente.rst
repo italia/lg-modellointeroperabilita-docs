@@ -568,6 +568,9 @@ Note:
 
 -  Un meccanismo simile può essere utilizzato specularmente per l’erogatore.
 
+-  Per prevenire il rischio di user-enumeration, i messaggi di errore di autenticazione
+   non devono fornire informazioni sull'esistenza o meno dell'utenza.
+
 .. _tracciato-2:
 
 Tracciato
