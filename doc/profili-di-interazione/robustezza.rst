@@ -46,7 +46,7 @@ I fruitori devono:
 
 -  rispettare gli header di throttling
 
--  rispettare l'header ``​X-RateLimit-Reset`` sia quando restituisce il
+-  rispettare l'header ``X-RateLimit-Reset`` sia quando restituisce il
    numero di secondi che mancano al prossimo reset, sia quando ritorna
    il timestamp unix
 
