@@ -47,7 +47,7 @@ service* (servizi richiamabili sul Web).
    richiamabili da remoto da parte di un client. SOAP definisce una
    struttura dati per lo scambio di messaggi tra applicazioni,
    codificata in XML; di fatto SOAP utilizza HTTP come protocollo di
-   trasporto, ma non è limitato nè vincolato ad esso, dal momento che
+   trasporto, ma non è limitato né vincolato ad esso, dal momento che
    può benissimo usare altri protocolli di trasporto.
 
 -  Un Web service RESTful adotta il modello basato su risorse secondo le
@@ -308,7 +308,7 @@ offerta per interoperare:
 
 - verso altre amministrazioni o altri soggetti con cui è stabilità una relazione di fiducia
 
-- esternamente, da parte di moduli applicativi completamente esterni alle pubbliche amministrazioni, e per i quali non esiste a priori nessuna relazione, nè organizzativa nè di fiducia.
+- esternamente, da parte di moduli applicativi completamente esterni alle pubbliche amministrazioni, e per i quali non esiste a priori nessuna relazione, né organizzativa né di fiducia.
 
 .. figure:: media/image4.png
    :alt: perimetro in SPCoop
