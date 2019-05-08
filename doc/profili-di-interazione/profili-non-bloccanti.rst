@@ -133,7 +133,9 @@ DEVONO fare uso dei codici di stato HTTP rispettandone la
 semantica [2]_.
 Friutore ed erogatore:
 
--  DEVONO verificare la validità sintattica e semantica dei dati in ingresso; 
+-  DEVONO verificare la validità sintattica dei dati in ingresso.
+   In caso di dati errati DEVONO restituire HTTP status 500 Internal Server Error
+   fornendo dettagli circa l’errore utilizzando il meccanismo della SOAP fault;
 
 -  In caso di dati errati DEVONO restituire :httpstatus:`400` fornendo
    nel body di risposta dettagli circa l’errore;
