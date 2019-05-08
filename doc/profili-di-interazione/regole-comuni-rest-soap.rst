@@ -222,7 +222,6 @@ In generale gli header:
 -  DEVONO essere utilizzati solo per passare informazioni di contesto
 
 -  la semantica e gli intenti delle operazioni deve essere definita
-
    tramite URI, Status e Method e non dagli Header, che dovrebbero supportare
    funzionalità di protocollo come indicato ​in :RFC:`7231`.
 
