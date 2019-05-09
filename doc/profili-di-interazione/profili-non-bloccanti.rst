@@ -171,7 +171,7 @@ Esempio
 ^^^^^^^
 
  **Specifica Servizio Server**
- https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTCallbackServer.yaml
+ https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/RESTCallbackServer.yaml
 
  .. literalinclude:: ../media/rest-callback-server.yaml
     :language: yaml
@@ -179,7 +179,7 @@ Esempio
 ----
 
  **Specifica Servizio Client**
- https://api.indirizzoclient.it/rest/v1/nomeinterfacciaservizio/RESTCallbackClient.yaml
+ https://api.indirizzoclient.it/rest/nomeinterfacciaservizio/v1/RESTCallbackClient.yaml
 
  .. literalinclude:: ../media/rest-callback-client.yaml
     :language: yaml
@@ -193,13 +193,13 @@ POST
 
 
 **Endpoint**
-https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
+https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/1234/M
 
 1\) Request Header & Body
 
 .. code-block:: http
 
-        POST /rest/v1/nomeinterfacciaservizio/resources/1234/M HTTP/1.1
+        POST /rest/nomeinterfacciaservizio/v1/resources/1234/M HTTP/1.1
         Content-Type: application/json
         X-ReplyTo: https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
 
@@ -604,7 +604,7 @@ dettagli tecnici e/o informazioni riservate.**
 Esempio
 ^^^^^^^
 
-Specifica Servizio Server: https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml
+Specifica Servizio Server: https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/openapi.yaml
 
 .. literalinclude:: ../media/rest-nonblocking.yaml
    :language: yaml
@@ -617,11 +617,11 @@ essersi preso carico della richiesta.
 ----
 
 **Endpoint**
-https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
+https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/1234/M
 
 .. code-block:: http
 
-  POST /rest/v1/nomeinterfacciaservizio/resources/1234/M   HTTP/1.1
+  POST /rest/nomeinterfacciaservizio/v1/resources/1234/M   HTTP/1.1
 
   {
      "a": {
@@ -650,7 +650,7 @@ l’esecuzione di M nei casi di processamento ancora in atto (4) e di
 processamento avvenuto (5).
 
 **Endpoint**
-http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
+http://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
 
 .. code-block:: http
 
@@ -677,7 +677,7 @@ Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
 della sua richiesta.
 
 
-Endpoint http://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
+Endpoint http://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
 
 
 .. code-block:: http

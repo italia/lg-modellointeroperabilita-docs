@@ -82,7 +82,7 @@ limiting. L’utilizzo degli header HTTP in SOAP è fuori dagli obiettivi
 di WSDL come Interface Definition Language.
 
 Specifica Servizio
-https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/openapi.yaml
+https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/openapi.yaml
 
 .. literalinclude:: ../media/robustezza.yaml
    :language: yaml
@@ -94,7 +94,7 @@ invece il fruitore debba attendere per presentare nuove richieste.
 ----
 
 **Endpoint**
-https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
+https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/1234/M
 
 ----
 
@@ -102,7 +102,7 @@ https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/
 .. code-block:: http
    :caption: 1- Request
 
-    POST /rest/v1/nomeinterfacciaservizio/resources/1234/M   HTTP/1.1
+    POST /rest/nomeinterfacciaservizio/v1/resources/1234/M   HTTP/1.1
     Host: api.amministrazioneesempio.it
     Content-Type: application/json
 
