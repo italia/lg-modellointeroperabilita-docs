@@ -93,7 +93,7 @@ dettagli tecnici e/o informazioni riservate.**
 Esempio
 ~~~~~~~
 **Specifica Servizio**
-https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/RESTblocking.yaml
+https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/RESTblocking.yaml
 
 .. literalinclude:: ../media/rest-blocking.yaml
     :language: yaml
@@ -105,7 +105,7 @@ Di seguito un esempio di chiamata al metodo ``M``.
 POST
 
 **Endpoint**
-https://api.amministrazioneesempio.it/rest/v1/nomeinterfacciaservizio/resources/1234/M
+https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/1234/M
 
 (1) Request Body
 
