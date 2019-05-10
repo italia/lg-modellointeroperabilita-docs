@@ -188,8 +188,9 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 
 -  Se l’erogatore ipotizza che la richiesta sia malevola PUO' ritornare :httpstatus:`400` o :httpstatus:`404`
 
--  In caso di successo restituire :httpstatus:`200`, riempiendo il
-   body di risposta con il risultato dell’operazione.
+-  In caso di errori non dipendenti dal fruitore, DEVE restituire i codici HTTP 5XX rispettando la semantica degli stessi o  restituire il codice :httpstatus:`500` indicando il motivo dell’errore nella SOAP fault;
+
+- In caso di successo restituire :httpstatus:`200`, riempiendo il body di risposta con il risultato dell’operazione.
 
 .. _esempio-rpc-soap-1:
 
