@@ -650,7 +650,7 @@ l’esecuzione di M nei casi di processamento ancora in atto (4) e di
 processamento avvenuto (5).
 
 **Endpoint**
-http://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
+https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
 
 .. code-block:: http
 
@@ -677,7 +677,7 @@ Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
 della sua richiesta.
 
 
-Endpoint http://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
+Endpoint https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
 
 
 .. code-block:: http
