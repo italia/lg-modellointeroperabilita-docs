@@ -376,7 +376,7 @@ Esempio 1: Non filtrato
 .. code-block:: HTTP
     :caption: Request
 
-    GET http://api.example.org/resources/123 HTTP/1.1
+    GET https://api.example.org/resources/123 HTTP/1.1
 
 .. code-block:: HTTP
     :caption: Response
