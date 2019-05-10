@@ -552,7 +552,7 @@ DEVONO essere rispettate le seguenti regole:
    
 -  Al passo (6) l’erogatore indica che la risorsa è pronta,
    utilizzando :httpheader:`Location`; per indicare il percorso dove recuperare la risorsa,
-   il codice HTTP restituito è :httpstatus:`200`;
+   il codice HTTP restituito è :httpstatus:`303`;
 
 -  Al passo (8) l’erogatore risponde con la rappresentazione della risorsa,Il codice HTTP restituito è :httpstatus:`200`;
 
@@ -589,8 +589,9 @@ l’erogatore:
    
    In caso di ricezione corretta della risposta,
    il fruitore DEVE restituire :httpstatus:`200` , riempiendo il body di
-   risposta con il risultato dell’operazione. In caso di errore al
-   momento di ricezione della risposta da parte del fruitore, è
+   risposta con il risultato dell’operazione. 
+   
+   In caso di errore al momento di ricezione della risposta da parte del fruitore, è
    possibile definire meccanismi specifici per la ritrasmissione della
    risposta o della richiesta.
 
@@ -664,7 +665,7 @@ https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/
 
 .. code-block:: http
 
-    HTTP/1.1 303 Permanent
+    HTTP/1.1 303 See Other
 
     {
       "status": "done",

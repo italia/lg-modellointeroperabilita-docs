@@ -163,7 +163,7 @@ un API per gestire le prenotazioni di un
 appuntamento presso un ufficio municipale. L'erogatore, verifica la
 compatibilità con la disponibilità nello specifico orario ed accetta o
 nega la creazione o l'eventuale variazione. Come da
-specifica seguente i metodi implementati sono :httpmethod:`POST` (creazione), DELETE
+specifica seguente i metodi implementati sono :httpmethod:`POST` (creazione), :httpmethod:`DELETE`
 (eliminazione), :httpmethod:`PATCH` (modifica) e :httpmethod:`GET` (lettura).
 
 
