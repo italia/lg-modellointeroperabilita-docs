@@ -186,12 +186,7 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
    di dati errati DEVE restituire :httpstatus:`500` fornendo dettagli
    circa l’errore utilizzando il meccanismo della SOAP fault;
 
--  Nel caso in cui qualcuno degli ID nel body non esista,
-   DEVE restituire :httpstatus:`500` indicando tramite la SOAP fault
-   quale degli ID è mancante;
-
--  In caso di errori non dipendenti dal fruitore, DEVE restituire
-   :httpstatus:`500`, indicando il motivo dell’errore nella SOAP fault;
+-  Se l’erogatore ipotizza che la richiesta sia malevola PUO' ritornare :httpstatus:`400` o :httpstatus:`404`
 
 -  In caso di successo restituire :httpstatus:`200`, riempiendo il
    body di risposta con il risultato dell’operazione.
