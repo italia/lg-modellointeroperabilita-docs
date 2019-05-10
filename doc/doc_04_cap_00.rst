@@ -2,14 +2,15 @@ Sicurezza
 =========
 
 Il presente documento descrive i *profili* di sicurezza individuati da AgID che i
-soggetti erogatori DOVREBBERO utilizzare per soddisfare le necessità
+soggetti erogatori DEVONO utilizzare per soddisfare le necessità
 espresse attraverso requisiti funzionali e non funzionali.
 
 Data la variabilità nel tempo delle esigenze delle amministrazioni e delle tecnologie abilitanti,
 nonché considerata la natura incremenmtale del ModI, l'elenco dei *profili* di sicurezza
 non è da intendersi esaustivo.
 
-Nel caso in cui un'amministrazione decida di utilizzare soluzioni differenti da quelle prospettate nei seguenti profili, queste DEVONO garantire il medesimo o superiore livello di sicurezza.
+Nel caso in cui un'amministrazione abbia esigenze non ricoperte nei seguenti profili DEVE informare AGID e PUO'
+utilizzare soluzioni differenti da quelle prospettate, ma queste DEVONO garantire il medesimo o superiore livello di sicurezza.
 
 .. note:: I *profili* individuati, coprono gli aspetti di comunicazione 'sicura' tra i domini delle singole parti. Le parti mantengono la loro autonomia negli aspetti organizzativi e di sicurezza interni al proprio dominio.
 
