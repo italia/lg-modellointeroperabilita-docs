@@ -3,7 +3,7 @@ Modello di interoperabilità per la Pubblica Amministrazione
 
 .. admonition:: Consultazione pubblica
 
-   La consultazione pubblica per questo documento è attiva dal XX al XX.
+   La consultazione pubblica per questo documento è attiva dal 14/05/2019 al 12/06/2019.
 
 Questo documento raccoglie il testo delle linee guida del *Modello di interoperabilità per la Pubblica Amministrazione*, disponibile per la consultazione pubblica.
 
