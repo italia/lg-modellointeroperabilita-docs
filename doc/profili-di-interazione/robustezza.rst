@@ -141,7 +141,8 @@ https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/
 
 ----
 
-
+.. discourse::
+   :topic_identifier: 8904
 
 .. [1]
    :RFC:`7231` prevede che l'header :httpheader:`Retry-After` possa essere utilizzato sia
