@@ -658,9 +658,6 @@ Riferimenti
 
 .. _IANA_message_headers: https://www.iana.org/assignments/message-headers/message-headers.xhtml
 
-- Specifiche
-
-
 .. _application/xml: https://www.iana.org/assignments/media-types/application/xml
 
 SOAP 1.2 ​\ `Parte 1​ <https://www.w3.org/TR/soap12/>`__ e ​\ `Parte
