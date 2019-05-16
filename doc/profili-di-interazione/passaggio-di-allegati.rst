@@ -86,7 +86,7 @@ adatta in determinate condizioni:
 | URL         | \+          | ++          | --          | --          |
 +-------------+-------------+-------------+-------------+-------------+
 
-
+|
 
 .. discourse::
    :topic_identifier: 8904
