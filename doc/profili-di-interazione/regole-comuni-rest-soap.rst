@@ -673,7 +673,3 @@ SOAP 1.2 ​\ `Parte 1​ <https://www.w3.org/TR/soap12/>`__ e ​\ `Parte
 
 `Standard eHealth
 Ontario <https://www.ehealthontario.on.ca/architecture/education/courses/service-%20oriented-architecture/downloads/SOA-ServiceNamingConventions.pdf>`__
-
-- Libri
-
-.. _`UML Components`: https://www.pearson.com/us/higher-education/program/Cheesman-UML-Components-A-Simple-Process-for-Specifying-Component-Based-pro%20Software/PGM319361.html>
