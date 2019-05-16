@@ -27,7 +27,7 @@ Le linee guida sono redatte per l’attuazione del Codice dell’Amministrazione
 
 L’esigenza di aggiornare le precedenti linee guida nasce:
 
--  dalle novità introdotte, anche sotto l’aspetto strategico, dal `"Piano Triennale per l’informatica nella Pubblica amministrazione 2017- 2019" <http://pianotriennale-ict.readthedocs.io/it/latest/>`__;
+-  dalle novità introdotte, anche sotto l’aspetto strategico, dal `"Piano Triennale per l’informatica nella Pubblica amministrazione 2019-2021" <http://pianotriennale-ict.readthedocs.io/it/latest/>`__;
 
 -  dal tempo trascorso dall’ultima revisione del documento, in relazione alla rapidità con cui notoriamente evolve il settore dell’ICT e gli standard disponibili;
 
