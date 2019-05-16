@@ -644,6 +644,10 @@ seguente:
 ::
 
     http://<dominioOrganizzativo>/xmlns/<DominioApplicativo>
+    
+
+.. discourse::
+   :topic_identifier: 8904
 
 
 Riferimenti
