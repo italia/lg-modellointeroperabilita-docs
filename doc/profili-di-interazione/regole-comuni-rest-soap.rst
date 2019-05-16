@@ -14,8 +14,6 @@ Nella tecnologia REST, la comunicazione DOVREBBE avvenire tramite oggetti JSON :
 E' possibile eccepire in presenza di specifiche in cui gli oggetti di
 comunicazione sono formalizzati in forma diversa da JSON (es. INSPIRE, HL7).
 
-.. TODO: non è chiaro il fine del paragrafo, sembra in sovrapposizione con quanto scritto nel paragrafo precedente.
-
 Codificare dati strutturati con oggetti JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
