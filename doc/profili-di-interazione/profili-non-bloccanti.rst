@@ -456,9 +456,6 @@ stessa, il risultato.
 
 .. _descrizione-nonbloccante-2:
 
-.. TODO referenze per modello POST + Location -> GET
-    https://developer.openstack.org/api-ref/compute/?expanded=create-server-detail,delete-server-detail
-
 
 Descrizione
 ~~~~~~~~~~~
