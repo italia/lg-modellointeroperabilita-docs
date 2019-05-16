@@ -311,3 +311,6 @@ Di seguito un esempio di cancellazione di una specifica prenotazione.
    :caption: Response
 
    HTTP/1.1 200 OK
+   
+.. discourse::
+   :topic_identifier: 8904
