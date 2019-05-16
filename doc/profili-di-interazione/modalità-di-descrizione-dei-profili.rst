@@ -36,3 +36,6 @@ Per ognuno dei profili verrà introdotto:
 
 Le implementazioni degli esempi sono corredate dalla specifica
 dell’interfaccia e da uno scambio di messaggi esemplificativo.
+
+.. discourse::
+   :topic_identifier: 8904
