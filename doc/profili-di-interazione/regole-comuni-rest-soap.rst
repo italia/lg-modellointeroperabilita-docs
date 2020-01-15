@@ -27,7 +27,7 @@ Cioè:
 
 .. code-block:: JSON
 
-    { "given_name": "Paolo", "last_name": "Rossi", "id": 313 }
+    { "given_name": "Paolo", "family_name": "Rossi", "id": 313 }
 
 -  il payload di una response contenente più entry ​ritorna un oggetto
    contenente una lista​ e non direttamente una lista.
