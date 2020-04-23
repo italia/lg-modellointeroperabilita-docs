@@ -37,6 +37,9 @@ In caso di superamento delle quote, le API restituiscono anche l'header:
 -  :httpheader:`Retry-After`: il numero minimo di secondi dopo cui il client è
    invitato a riprovare [1]_
 
+Gli erogatori DOVREBBERO far rispettare le quote anche se il sistema non è in sovraccarico,
+incentivando i fruitori a rispettarle.
+
 Nel caso di interfacce di servizio SOAP non esistono regole guida
 standard per la gestione del rate limit e del throttling. Si suggerisce
 l'utilizzo degli stessi header e status code HTTP visti nel caso REST.
@@ -147,3 +150,35 @@ https://api.amministrazioneesempio.it/rest/nomeinterfacciaservizio/v1/resources/
 .. [1]
    :RFC:`7231` prevede che l'header :httpheader:`Retry-After` possa essere utilizzato sia
    in forma di data che di secondi
+
+
+Esporre Indicatori ed Obiettivi di Servizio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Gli Erogatori DEVONO calcolare, raccogliere e pubblicare anche tramite API apposite
+degli indicatori e gli obiettivi di servizio.
+
+Gli SLI pubblicati DEVONO:
+
+- utilizzare unità di misure referenziate dal Sistema Internazionale (ad es., secondi, bytes);
+- indicare nel nome identificativo l’eventuale periodo di aggregazione con i soli suffissi
+  s (secondi), m (minuti), d (giorni) e y (anni), utilizzando al posto dei mesi il numero di giorni.
+
+Gli SLI calcolati devono includere la latenza aggiuntiva dovuta ad eventuali componenti infrastrutturali
+e di rete (ad es., proxy, gateway).
+
+Gli SLO e gli SLA DOVREBBERO essere in relazione diretta con i valori associati
+(ad es., indicare success rate anziché l’error rate), in modo che a valori più alti corrispondano risultati positivi.
+
+Alcuni esempi di Indicatori a cui è possibile associare degli Obiettivi o degli Accordi:
+
+- dimensione massima di ogni richiesta accettata. Le richieste più grandi possono essere rifiutate;
+- latenza al 90º percentile. Utilizzata per calcolare la responsività;
+- percentuale di minuti negli ultimi 30 giorni in cui l’interfaccia di servizio è stata disponibile;
+- valori a 1 giorno e a 30 giorni del success rate, ovvero il numero di chiamate terminate con successo
+  rispetto al numero totale di chiamate;
+- percentuale di minuti negli ultimi 30 giorni in cui l’interfaccia di servizio è stata responsiva (
+  ad es., il numero di chiamate con latenza inferiore ad un certo limite);
+- tempo di risposta medio delle richieste totali (includendo le richieste rifiutate causa throttling) nell’ultimo
+  giorno e negli ultimi 30 giorni;
+- throughput misurato in bytes/s.

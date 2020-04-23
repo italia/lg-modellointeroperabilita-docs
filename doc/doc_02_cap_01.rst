@@ -248,36 +248,6 @@ L'integrazione può coinvolgere numerose organizzazioni e erogatori esterni di i
 
 Gli SLA possono essere statici o dinamici. Negli SLA dinamici, gli SLO (con associati SLI) variano nel tempo ed i periodi di validità definiscono gli intervalli di validità di questi ultimi (ad es., in orario lavorativo gli SLO possono essere differenti di quelli imposti durante la notte). La misurazione dei livelli di QoS all'interno di uno SLA richiedono il tracciamento delle operazioni effettuate in un contesto infrastrutturale multi-dominio (geografico, tecnologico e applicativo). In uno scenario tipico, ogni interfaccia di servizio può interagire con molteplici altre interfacce di servizio, cambiando il suo ruolo da erogatore a fruitore in alcune interazioni, ognuna governata da un differente SLA.
 
-Recentemente, gli SLA hanno iniziato ad includere non soltanto vincoli relativi all'erogatore, ma anche vincoli che impongono ai singoli fruitori delle interfacce di servizio dei limiti relativi al ritmo ed alla quantità delle richieste.
-A tal fine gli erogatori devono definire ed esporre ai fruitori politiche di throttling [10]_ (anche noto come rate limiting) segnalando eventuali limiti raggiunti.
-Gli erogatori dovrebbero far rispettare le quote anche se se il sistema non è in sovraccarico, incentivando i fruitori a rispettarle.
-
-Esempi di SLI sono i seguenti:
-
--   dimensione massima di ogni richiesta accettata. Le richieste più grandi possono essere rifiutate;
-
--   latenza al 90º percentile. Utilizzata per calcolare la responsività;
-
--   percentuale di minuti negli ultimi 30 gg in cui l'interfaccia di servizio è stata disponibile;
-
--   valori a 1 giorno e 30 giorni del success rate (ad es., il numero di chiamate terminate con successo rispetto al numero totale di chiamate);
-
--   percentuale di minuti negli ultimi 30 gg in cui l'interfaccia di servizio è stata responsiva (ad es., il numero di chiamate con latenza inferiore ad un certo limite);
-
--   tempo di risposta medio delle richieste totali (includendo le richieste rifiutate causa throttling) nell'ultimo giorno e negli ultimi 30 giorni;
-
--   throughput misurato in bytes/s.
-
-Gli SLI calcolati devono includere la latenza aggiuntiva dovuta ad eventuali componenti infrastrutturali e di rete (ad es., proxy-gateway).
-
-Essi inoltre devono:
-
--   utilizzare unità di misura referenziate dal Sistema Internazionale (ad es., secondi, bytes);
-
--   indicare nel nome identificativo l'eventuale periodo di aggregazione coi soli suffissi s (secondi), m (minuti), d (giorni) e y (anni) utilizzando al posto dei mesi il numero di giorni.
-
-Ove possibile, gli SLO e gli SLA dovrebbero essere in relazione diretta con i valori associati (ad es., indicare success rate anziché l'error rate), in modo che a valori più alti corrispondano risultati positivi.
-
 Middleware
 ----------
 
@@ -316,9 +286,9 @@ L\'erogatore deve documentare il dettaglio del formato della tracciatura e le mo
 
 L'erogatore deve inoltre tracciare un evento per ogni richiesta, contenente almeno i seguenti parametri minimi:
 
--   data e ora della richiesta in formato `RFC3339 <https://tools.ietf.org/html/rfc3339#section-5.6>`_ [11]_ in UTC e con i separatori Z e T maiuscolo. Questa specifica è fondamentale per l\'interoperabilità dei sistemi di logging ed auditing, evitando i problemi di transizione all\'ora legale e la complessità nella gestione delle timezone nell\'ottica dell\'interoperabilità con altre PA europee;
+-   istante della richiesta;
 
--   URI che identifica erogatore ed operazione richiesta;
+-   identificativo dell’erogatore e dell’operazione richiesta;
 
 -   tipologia di chiamata (ad es., HTTP method per i protocolli basati su HTTP, basic.publish per AMQP);
 
