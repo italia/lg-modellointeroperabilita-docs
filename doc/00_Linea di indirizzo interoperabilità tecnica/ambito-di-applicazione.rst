@@ -14,13 +14,26 @@ pubblici e quelli dell'Unione europea”.
 La Linea di indirizzo, e successivi aggiornamenti, viene emessa
 attraverso Circolare AgID, nel rispetto della normativa vigente.
 
-.. toctree::
-  :maxdepth: 3
-  :caption: Indice dei contenuti
+Soggetti destinatari
+--------------------
 
-  ambito-di-applicazione/soggetti-destinatari.rst
-  ambito-di-applicazione/termini-e-definizioni.rst
-  ambito-di-applicazione/qualità-dei-servizi.rst
-  ambito-di-applicazione/service-level-agreement-sla.rst
-  ambito-di-applicazione/dominio-di-interoperabilità.rst
-  ambito-di-applicazione/catalogo-delle-api.rst
+La Linea di indirizzo è destinata ai soggetti di cui all'articolo 2,
+comma 2 del CAD, così come indicato dall’articolo 75 dello stesso. I
+destinatari la attuano nella realizzazione dei propri sistemi
+informatici che fruiscono o erogano dati e/o servizi digitali ad altri
+soggetti.
+
+Per i e-service implementati dalle Pubbliche Amministrazioni prima
+dell’emanazione della Linea di indirizzo, al fine di assicurare la
+convergenza al ModI, si richiede di:
+
+-  assicurare per i nuovi fruitori l’applicazione di modalità di
+   fruizione conformi al presente documento;
+
+-  prevedere, a valle di una valutazione di impatto che consideri la
+   sicurezza dei servizi e l’effetto sui fruitori, la dismissione delle
+   modalità difformi alla presente Linea di indirizzo.
+
+La Linea di indirizzo è rivolta ai soggetti privati che devono
+interoperare con la Pubblica Amministrazione per fruire di dati e/o
+servizi tramite sistemi informatici.

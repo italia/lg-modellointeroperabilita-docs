@@ -1,5 +1,100 @@
+Riferimenti e sigle
+===================
+
+Note di lettura del documento
+-----------------------------
+
+Conformemente alle norme ISO/IEC Directives, Part 3 per la stesura dei
+documenti tecnici la presente Linea di indirizzo utilizzerà le parole
+chiave «DEVE», «DEVONO», «NON DEVE», «NON DEVONO», «DOVREBBE», «NON
+DOVREBBE», «PUÒ» e «OPZIONALE», la cui interpretazione è descritta di
+seguito.
+
+-  **DEVE** o **DEVONO**, indicano un requisito obbligatorio per
+   rispettare la Linea di indirizzo;
+
+-  **NON DEVE** o **NON DEVONO**, indicano un assoluto divieto delle
+   specifiche;
+
+-  **DOVREBBE** o **NON DOVREBBE**, indicano che le implicazioni devono
+   essere comprese e attentamente pesate prima di scegliere approcci
+   alternativi;
+
+-  **PUÓ** o **POSSONO** o l'aggettivo **OPZIONALE**, indica che il
+   lettore può scegliere di applicare o meno senza alcun tipo di
+   implicazione o restrizione la specifica.
+
+Struttura
+---------
+
+La Linea di indirizzo include i seguenti Documenti operativi, che
+individuano gli standard tecnologici e le loro modalità di utilizzo al
+fine di fruire e/o erogare dati e/o servizi digitali per il tramite dei
+propri sistemi informatici.
+
+L’aggiornamento dei Documenti operativi è realizzato attraverso
+Circolari emanate dall’AgID.
+
+Documenti operativi
+
+-  Documento operativo - Pattern di interazione
+
+-  Documento operativo - Pattern di sicurezza
+
+-  Documento operativo - Profili di interoperabilità
+
+-  Documento operativo - Raccomandazioni di implementazione
+
+Riferimenti Normativi
+---------------------
+
+Sono riportati di seguito gli atti normativi di riferimento del presente
+documento.
+
++-----------------------------------+-----------------------------------+
+| **[D.lgs. 82/2005]**              | Decreto legislativo 7 marzo 2005, |
+|                                   | n. 82 recante “Codice             |
+|                                   | dell’amministrazione digitale”;   |
+|                                   | NOTA – Il D. Lgs. 82/2010 è noto  |
+|                                   | anche con l’abbreviazione “CAD”   |
++-----------------------------------+-----------------------------------+
+| **[EIF]**                         | European Interoperability         |
+|                                   | Framework (EIF)                   |
++-----------------------------------+-----------------------------------+
+| **[CE 2008/1205]**                | Regolamento (CE) n. 1205/2008     |
+|                                   | della Commissione del 3 dicembre  |
+|                                   | 2008 recante attuazione della     |
+|                                   | direttiva 2007/2/CE del           |
+|                                   | Parlamento europeo e del          |
+|                                   | Consiglio per quanto riguarda i   |
+|                                   | metadati                          |
++-----------------------------------+-----------------------------------+
+| **[D.lgs. 196/2003]**             | Codice in materia di protezione   |
+|                                   | dei dati personali                |
++-----------------------------------+-----------------------------------+
+| **[UE 679/2016]**                 | Regolamento (UE) 2016/679 del 27  |
+|                                   | aprile 2016 relativo alla         |
+|                                   | protezione delle persone fisiche  |
+|                                   | con riguardo al trattamento dei   |
+|                                   | dati personali (in breve GDPR)    |
++-----------------------------------+-----------------------------------+
+| **[UE 910/2014]**                 | Regolamento (UE) n. 910/2014 del  |
+|                                   | 23 luglio 2014 in materia di      |
+|                                   | identificazione elettronica e     |
+|                                   | servizi fiduciari per le          |
+|                                   | transazioni elettroniche nel      |
+|                                   | mercato interno (in breve eIDAS)  |
++-----------------------------------+-----------------------------------+
+| **[DUE 910/2014]**                | Direttiva (UE) 2019/1024 del      |
+|                                   | Parlamento Europeo e del          |
+|                                   | Consiglio del 20 giugno 2019      |
+|                                   | relativa all'apertura dei dati e  |
+|                                   | al riutilizzo dell'informazione   |
+|                                   | del settore pubblico              |
++-----------------------------------+-----------------------------------+
+
 Termini e definizioni
-=====================
+---------------------
 
 +-----------------------------------+-----------------------------------+
 | **[AgID]**                        | Agenzia per l’Italia Digitale     |
@@ -108,83 +203,3 @@ Termini e definizioni
 |                                   | veci di altre Pubbliche           |
 |                                   | Amministrazioni                   |
 +-----------------------------------+-----------------------------------+
-
-4. .. rubric:: 
-      Principi generali
-      :name: principi-generali
-
-   6. .. rubric:: Interazioni
-         :name: interazioni
-
-L’ambito di applicazione della Linea di indirizzo, in coerenza con il
-ModI, comprende i tre tipi di interazioni previste nell’EIF che vedono
-coinvolte Pubbliche Amministrazioni, cittadini e imprese.
-
-Le interazioni prevedono che i soggetti coinvolti possano svolgere la
-funzione di erogatore di servizi, quando il soggetto mette a
-disposizione servizi digitali utilizzati da altri soggetti, e la
-funzione di fruitore, quando il soggetto utilizza i servizi digitali
-messi a disposizione da un altro soggetto.
-
-|image0|
-
-*Figura 1 - Ambito di applicazione del modello di interoperabilità*
-
-I soggetti fruitori possono utilizzare i servizi digitali in maniera
-trasparente all’erogatore, attraverso:
-
--  una soluzione software attivata da un attore umano (user
-   agent/human);
-
--  un sistema applicativo automatico (server/machine), anche allo scopo
-   di definire nuovi servizi a valore aggiunto.
-
-   7. .. rubric:: Application Programming Interface (API)
-         :name: application-programming-interface-api
-
-Con Application Programming Interface (API) si indica ogni insieme di
-procedure/funzionalità/operazioni disponibili al programmatore, di
-solito raggruppate a formare un insieme di strumenti specifici per
-l’espletamento di un determinato compito. Spesso, con tale termine si
-intendono le librerie software disponibili in un certo linguaggio di
-programmazione. Una buona API fornisce una “scatola nera”, cioè un
-livello di astrazione che evita al programmatore di conoscere i dettagli
-implementativi dell’API stessa. Questo permette di ri-progettare o
-migliorare le funzioni all’interno dell’API, senza cambiare il codice
-che si affida ad essa. La finalità di un’API è di ottenere un’astrazione
-a più alto livello, di solito tra lo strato sottostante l’API e i suoi
-consumatori (client).
-
-Con Web API si indicano le API rese disponibili al client attraverso
-Internet (prevalentemente sul Web, che si basa sul protocollo HTTP).
-
-Per il World Wide Web Consortium (W3C), un web service è qualsiasi
-software disponibile su Internet che standardizza la sua interfaccia
-tramite la codifica eXtensible Markup Language (XML). Un client
-interroga un servizio web inviando una richiesta in formato XML; il
-servizio web ritorna una risposta utilizzando l’analogo formato. Client
-e web service comunicano attraverso una rete che li connette e sfruttano
-generalmente il protocollo applicativo HTTP. I web service si basano
-principalmente su standard come XML-Remote Procedure Call (XML-RPC) e
-Simple Object Access Protocol (SOAP). Quindi, un web service è un
-possibile modo di realizzare una Web API. A partire dalla seconda metà
-degli anni 2000, creando possibili confusioni, il termine Web API è
-stato utilizzato come alternativa a web service per indicare altri
-approcci/protocolli/tecnologie, come le API REpresentational State
-Transfer (REST) per realizzare API senza utilizzare XML-RPC e SOAP.
-
-Nell’ambito della Linea di indirizzo, accettando la nomenclatura in uso
-a livello europeo e più in generale nel contesto internazionale, si
-utilizza il termine generico API per indicare indifferentemente le Web
-API, i web service e le API REST, lasciando al contesto in cui lo stesso
-è utilizzato la declinazione del significato esplicito.
-
-La Linea di indirizzo individua le modalità con cui le Pubbliche
-Amministrazioni implementano le proprie API quale elemento tecnologico
-di base del ModI attraverso cui le Pubbliche Amministrazioni rendono
-disponibile gli e-service utilizzati dai sistemi informatici di altre
-Pubbliche Amministrazioni, cittadini e imprese.
-
-.. |image0| image:: ./media/image1.png
-   :width: 4.125in
-   :height: 2.90278in
