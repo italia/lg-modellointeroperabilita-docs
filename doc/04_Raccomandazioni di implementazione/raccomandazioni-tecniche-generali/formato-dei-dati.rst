@@ -92,7 +92,7 @@ inclusi:
 
 -  ISO 639-1 language code
 
--  :BCP:`47\` [ISO 639-1] per le varianti dei linguaggi.
+-  :BCP:`47` [ISO 639-1] per le varianti dei linguaggi.
 
 -  ISO 4217 alpha-3 currency codes
 

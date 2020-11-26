@@ -18,7 +18,7 @@ La versione ufficiale è sul sito AgID.
    :numbered:
    :maxdepth: 4
 
-   00_Linea di indirizzo interoperabilità tecnica/index.rst
+   doc/00_Linea di indirizzo interoperabilità tecnica/index.rst
 
 Allegato 1 - Pattern d'interazione
 ::::::::::::::::::::::::::::::::::
@@ -27,7 +27,7 @@ Allegato 1 - Pattern d'interazione
    :numbered:
    :maxdepth: 4
 
-   01_Pattern interazione/index.rst
+   doc/01_Pattern interazione/index.rst
 
 Allegato 2 - Pattern di sicurezza
 :::::::::::::::::::::::::::::::::
@@ -36,7 +36,7 @@ Allegato 2 - Pattern di sicurezza
    :numbered:
    :maxdepth: 4
 
-   02_Pattern sicurezza/index.rst
+   doc/02_Pattern sicurezza/index.rst
 
 Allegato 3 - Profili d'interoperabilità
 :::::::::::::::::::::::::::::::::
@@ -45,7 +45,7 @@ Allegato 3 - Profili d'interoperabilità
    :numbered:
    :maxdepth: 4
 
-... 03_Profili di interoperabilità/index.rst
+   doc/03_Profili di interoperabilità/index.rst
 
 Allegato 4 - Raccomandazioni di implementazione
 :::::::::::::::::::::::::::::::::
@@ -54,4 +54,4 @@ Allegato 4 - Raccomandazioni di implementazione
    :numbered:
    :maxdepth: 4
 
-   04_Raccomandazioni di implementazione/index.rst
+   doc/04_Raccomandazioni di implementazione/index.rst

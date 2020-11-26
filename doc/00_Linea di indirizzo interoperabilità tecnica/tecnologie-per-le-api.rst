@@ -69,7 +69,7 @@ Le API possono essere progettate secondo due paradigmi:
    appunto le modifiche a tali risorse.
 
 Parallelamente, esistono delle tecnologie con cui poter naturalmente
-realizzare API, che sono (i) SOAP e il cosiddetto stack WS-*, e (ii) lo
+realizzare API, che sono (i) SOAP e il cosiddetto stack WS\-\*, e (ii) lo
 stile architetturale REST, basato su HTTP.
 
 -  Un Web service SOAP espone un insieme di metodi richiamabili da

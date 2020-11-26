@@ -84,6 +84,6 @@ e-service e della sottoscrizione degli accordi di interoperabilità.
 *Figura 3 - Relazione tra interfaccia di servizio - e-service –
 servizio*
 
-.. |image0| image:: ./media/image3.png
+.. |image0| image:: ../media/image3.png
    :width: 4.125in
    :height: 4.19444in

@@ -22,8 +22,8 @@ Le ciphersuite da utilizzare DEVONO supportare perfect forward secrecy
 
 +-----------+-----------+-----------+-----------+-----------+-----------+
 |           | **Key     |           | **Cifratu | **Mode of | **Hash**  |
-|           | agreement |           | ra**      | operation |           |
-|           | and       |           |           | **        |           |
+|           | agreement |           | ra**      | operati   |           |
+|           | and       |           |           | on**      |           |
 |           | authentic |           |           |           |           |
 |           | ation     |           |           |           |           |
 |           | mechanism |           |           |           |           |
