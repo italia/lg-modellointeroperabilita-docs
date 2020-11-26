@@ -1316,7 +1316,17 @@ MRequestResponse
 | **</soap:Envelope>**                                     |
 +----------------------------------------------------------+
 
-... |{"theme":"default","source":"sequenceDiagram\n\n activate Fruitore\n \\n activate Erogatore\n Fruitore->>+Erogatore: 1. Request(callback endpoint)\n Erogatore-->>Fruitore: 2. CorrelationID\n Erogatore->>Fruitore: 3. Reply(CorrelationID)\n Fruitore-->>Erogatore: 4. Ack\n deactivate Erogatore\n \\n deactivate Fruitore"}|
+... mermaid::
+     sequenceDiagram
+     
+      activate Fruitore
+       activate Erogatore
+      Fruitore->>+Erogatore: 1. Request(callback endpoint)
+      Erogatore-->>Fruitore: 2. CorrelationID
+      Erogatore->>Fruitore: 3. Reply(CorrelationID)
+      Fruitore-->>Erogatore: 4. Ack
+      deactivate Erogatore
+       deactivate Fruitore
 .. image:: ./media/image2.png
 
 ...   :width: 4.68056in

@@ -40,10 +40,16 @@ nel JWT.
 Se la verifica e la validazione sono superate, l’erogatore consuma la
 richiesta e produce la relativa risposta.
 
-|{"theme":"default","source":"sequenceDiagram\n\n activate Fruitore\n
-\\n activate Erogatore\n Fruitore->>+Erogatore: 1. Request()\n
-Erogatore-->>Fruitore: 2. Response\n deactivate Erogatore\n \\n
-deactivate Fruitore"}|
+.. mermaid::
+
+     sequenceDiagram
+     
+      activate Fruitore
+       activate Erogatore
+      Fruitore->>+Erogatore: 1. Request()
+      Erogatore-->>Fruitore: 2. Response
+      deactivate Erogatore
+       deactivate Fruitore
 
 *Figura 6 - Accesso del Fruitore*
 
@@ -237,10 +243,16 @@ valida l’integrità del payload del messaggio firmato. Se la verifica e
 la validazione sono superate, l’erogatore consuma la richiesta e produce
 la relativa risposta.
 
-|{"theme":"default","source":"sequenceDiagram\n\n activate Fruitore\n
-\\n activate Erogatore\n Fruitore->>+Erogatore: 1. Request()\n
-Erogatore-->>Fruitore: 2. Response\n deactivate Erogatore\n \\n
-deactivate Fruitore"}|
+.. mermaid::
+
+     sequenceDiagram
+     
+      activate Fruitore
+       activate Erogatore
+      Fruitore->>+Erogatore: 1. Request()
+      Erogatore-->>Fruitore: 2. Response
+      deactivate Erogatore
+       deactivate Fruitore
 
 *Figura 7 - Integrità del payload del messaggio*
 

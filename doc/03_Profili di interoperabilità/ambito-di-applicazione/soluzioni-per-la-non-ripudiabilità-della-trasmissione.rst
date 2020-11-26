@@ -79,12 +79,21 @@ proprietà:
    2. .. rubric:: Flusso delle interazioni
          :name: flusso-delle-interazioni-1
 
-|{"theme":"default","source":"sequenceDiagram\n\n\n activate Fruitore\n
-Fruitore->>Fruitore: A. Verifica numero tentativi di inoltro\n\n
-activate Erogatore\n Fruitore->>+Erogatore: B. Richiesta\n
-Erogatore->>Erogatore: C. Persistenza erogatore\n Erogatore->>Fruitore:
-D. Risposta\n deactivate Erogatore\n\n Fruitore->>Fruitore: E.
-Persistenza fruitore \\n deactivate Fruitore"}|
+.. mermaid::
+
+     sequenceDiagram
+     
+     
+      activate Fruitore
+      Fruitore->>Fruitore: A. Verifica numero tentativi di inoltro
+     
+      activate Erogatore
+      Fruitore->>+Erogatore: B. Richiesta
+      Erogatore->>Erogatore: C. Persistenza erogatore
+      Erogatore->>Fruitore: D. Risposta
+      deactivate Erogatore
+     
+      Fruitore->>Fruitore: E. Persistenza fruitore  deactivate Fruitore
 
 *Figura 1 - Non ripudiabilità della trasmissione*
 
