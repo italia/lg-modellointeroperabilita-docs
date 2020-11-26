@@ -39,7 +39,7 @@ Allegato 2 - Pattern di sicurezza
    doc/02_Pattern sicurezza/index.rst
 
 Allegato 3 - Profili d'interoperabilità
-:::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :numbered:
@@ -48,7 +48,7 @@ Allegato 3 - Profili d'interoperabilità
    doc/03_Profili di interoperabilità/index.rst
 
 Allegato 4 - Raccomandazioni di implementazione
-:::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :numbered:

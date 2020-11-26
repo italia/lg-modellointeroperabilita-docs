@@ -1268,9 +1268,39 @@ Method MProcessingStatus
 | **</soap:Envelope>**                                     |
 +----------------------------------------------------------+
 
-.. |{"theme":"default","source":"sequenceDiagram\n\n activate Erogatore\n \\n activate Fruitore\n Fruitore->>Erogatore: 1. Request()\n Erogatore-->>Fruitore: 2. Location\n loop status pending\n Fruitore->>Erogatore: 3. CheckStatus()\n Erogatore-->>Fruitore: 4. Not Ready OR Ready Location\n end\n Fruitore->>Erogatore: 5. RetriveResult()\n Erogatore-->>Fruitore: 6. Result\n deactivate Fruitore\n \\n deactivate Erogatore"}| image:: ./media/image3.png
-   :width: 4.08338in
-   :height: 3.82076in
-.. |{"theme":"default","source":"sequenceDiagram\n\n activate Erogatore\n \\n activate Fruitore\n Fruitore->>Erogatore: 1. Request()\n Erogatore-->>Fruitore: 2. CorrelationID\n loop status pending\n Fruitore->>Erogatore: 3. CheckStatus(CorrelationID)\n Erogatore-->>Fruitore: 4. CurrentStatus\n end\n Fruitore->>Erogatore: 5. RetriveResult(CorrelationID)\n Erogatore-->>Fruitore: 6. Result\n deactivate Fruitore\n \\n deactivate Erogatore"}| image:: ./media/image4.png
-   :width: 4.01768in
-   :height: 3.77485in
+.. mermaid::
+   sequenceDiagram
+    activate Erogatore
+    activate Fruitore
+    Fruitore->>Erogatore: 1. Request()
+    Erogatore-->>Fruitore: 2. Location
+    loop status pending
+    Fruitore->>Erogatore: 3. CheckStatus()
+    Erogatore-->>Fruitore: 4. Not Ready OR Ready Location
+    end
+    Fruitore->>Erogatore: 5. RetriveResult()
+    Erogatore-->>Fruitore: 6. Result
+    deactivate Fruitore
+    deactivate Erogatore
+
+.. image:: ../media/image3.png
+  :width: 4.08338in
+  :height: 3.82076in
+
+.. mermaid::
+   activate Erogatore
+   activate Fruitore
+   Fruitore->>Erogatore: 1. Request()
+   Erogatore-->>Fruitore: 2. CorrelationID
+   loop status pending
+   Fruitore->>Erogatore: 3. CheckStatus(CorrelationID)
+   Erogatore-->>Fruitore: 4. CurrentStatus
+   end
+   Fruitore->>Erogatore: 5. RetriveResult(CorrelationID)
+   Erogatore-->>Fruitore: 6. Result
+   deactivate Fruitore
+   deactivate Erogatore
+
+.. image:: ../media/image4.png
+  :width: 4.01768in
+  :height: 3.77485in

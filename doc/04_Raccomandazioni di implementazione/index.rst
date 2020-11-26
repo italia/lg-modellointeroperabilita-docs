@@ -20,6 +20,7 @@ Versione 1.0 del 04/09/2020
 
   introduzione.rst
   ambito-di-applicazione.rst
+  riferimenti-sigle.rst
   raccomandazioni-tecniche-generali.rst
   raccomandazioni-tecniche-per-rest.rst
   raccomandazioni-tecniche-per-soap.rst
