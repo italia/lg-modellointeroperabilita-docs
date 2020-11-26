@@ -15,12 +15,11 @@ nei casi in cui:
 .. mermaid::
 
      sequenceDiagram
-     
-      activate Fruitore
+       activate Fruitore
        activate Erogatore
-      Fruitore->>+Erogatore: 1. Request()
-      Erogatore-->>Fruitore: 2. Response
-      deactivate Erogatore
+       Fruitore->>+Erogatore: 1. Request()
+       Erogatore-->>Fruitore: 2. Response
+       deactivate Erogatore
        deactivate Fruitore
 
 *Figura 1 - Interazione bloccante RPC*
@@ -53,6 +52,16 @@ dell’interfaccia e da uno scambio di messaggi esemplificativo.
   pattern-bloccanti/block_rest-blocking-rest.rst
   pattern-bloccanti/block_soap-blocking-soap.rst
 
-.. |{"theme":"default","source":"sequenceDiagram\n\n activate Fruitore\n \\n activate Erogatore\n Fruitore->>+Erogatore: 1. Request()\n Erogatore-->>Fruitore: 2. Response\n deactivate Erogatore\n \\n deactivate Fruitore"}| image:: ./media/image1.png
+.. mermaid::
+
+   sequenceDiagram
+      activate Fruitore
+      activate Erogatore
+      Fruitore->>+Erogatore: 1. Request()
+      Erogatore-->>Fruitore: 2. Response
+      deactivate Erogatore
+      deactivate Fruitore
+
+.. image:: ./media/image1.png
    :width: 4.68056in
    :height: 2.40278in

@@ -492,29 +492,30 @@ capitolo 7 Elementi di sicurezza, nonché la modalità di inclusione o
 referenziazione del certificato X.509.
 
 .. mermaid::
+
      sequenceDiagram
-     
-      activate Fruitore
+       activate Fruitore
        activate Erogatore
-      Fruitore->>+Erogatore: 1. Request()
-      Erogatore-->>Fruitore: 2. Response
-      deactivate Erogatore
+       Fruitore->>+Erogatore: 1. Request()
+       Erogatore-->>Fruitore: 2. Response
+       deactivate Erogatore
        deactivate Fruitore
 
 .. image:: ./media/image1.png
-...   :width: 4.68056in
-...   :height: 2.40278in
+  :width: 4.68056in
+  :height: 2.40278in
 
 .. mermaid::
+
      sequenceDiagram
-     
-      activate Fruitore
+       activate Fruitore
        activate Erogatore
-      Fruitore->>+Erogatore: 1. Request()
-      Erogatore-->>Fruitore: 2. Response
-      deactivate Erogatore
+       Fruitore->>+Erogatore: 1. Request()
+       Erogatore-->>Fruitore: 2. Response
+       deactivate Erogatore
        deactivate Fruitore
 
 .. image:: ./media/image2.png
+
 ...   :width: 4.68056in
 ...   :height: 2.40278in

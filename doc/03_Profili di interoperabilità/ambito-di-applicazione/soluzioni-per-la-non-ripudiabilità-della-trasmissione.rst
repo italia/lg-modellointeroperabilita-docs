@@ -254,6 +254,20 @@ conclusa, in quanto può presentarsi uno dei seguenti casi:
 
 In queste situazioni il fruitore riesegue il passo A.
 
-.. |{"theme":"default","source":"sequenceDiagram\n\n\n activate Fruitore\n Fruitore->>Fruitore: A. Verifica numero tentativi di inoltro\n\n activate Erogatore\n Fruitore->>+Erogatore: B. Richiesta\n Erogatore->>Erogatore: C. Persistenza erogatore\n Erogatore->>Fruitore: D. Risposta\n deactivate Erogatore\n\n Fruitore->>Fruitore: E. Persistenza fruitore \\n deactivate Fruitore"}| image:: ./media/image1.png
+.. mermaid::
+
+     sequenceDiagram
+      activate Fruitore
+      Fruitore->>Fruitore: A. Verifica numero tentativi di inoltro
+
+      activate Erogatore
+      Fruitore->>+Erogatore: B. Richiesta
+      Erogatore->>Erogatore: C. Persistenza erogatore
+      Erogatore->>Fruitore: D. Risposta
+      deactivate Erogatore
+
+      Fruitore->>Fruitore: E. Persistenza fruitore  deactivate Fruitore
+
+.. image:: ./media/image1.png
    :width: 5.36111in
    :height: 4.43056in

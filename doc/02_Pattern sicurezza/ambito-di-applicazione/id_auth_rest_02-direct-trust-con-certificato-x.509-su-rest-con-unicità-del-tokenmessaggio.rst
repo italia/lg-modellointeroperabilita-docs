@@ -437,6 +437,17 @@ algoritmi secondo quanto indicato al capitolo 7 Elementi di sicurezza
 nonché la modalità di inclusione o referenziazione del certificato
 X.509.
 
-.. |{"theme":"default","source":"sequenceDiagram\n\n activate Fruitore\n \\n activate Erogatore\n Fruitore->>+Erogatore: 1. Request()\n Erogatore-->>Fruitore: 2. Response\n deactivate Erogatore\n \\n deactivate Fruitore"}| image:: ./media/image2.png
+.. mermaid::
+
+     sequenceDiagram
+     
+      activate Fruitore
+       activate Erogatore
+      Fruitore->>+Erogatore: 1. Request()
+      Erogatore-->>Fruitore: 2. Response
+      deactivate Erogatore
+       deactivate Fruitore
+
+.. image:: ./media/image2.png
    :width: 4.68056in
    :height: 2.40278in

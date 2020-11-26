@@ -6,15 +6,16 @@ cui il fruitore abbia a sua volta la possibilità di esporre una
 interfaccia di servizio per la ricezione delle risposte.
 
 .. mermaid::
+
    sequenceDiagram
-   activate Fruitore
-   activate Erogatore
-   Fruitore->>+Erogatore: 1. Request(callback endpoint)
-   Erogatore-->>Fruitore: 2. CorrelationID
-   Erogatore->>Fruitore: 3. Reply(CorrelationID)
-   Fruitore-->>Erogatore: 4. Ack
-   deactivate Erogatore
-   deactivate Fruitore
+     activate Fruitore
+     activate Erogatore
+     Fruitore->>+Erogatore: 1. Request(callback endpoint)
+     Erogatore-->>Fruitore: 2. CorrelationID
+     Erogatore->>Fruitore: 3. Reply(CorrelationID)
+     Fruitore-->>Erogatore: 4. Ack
+     deactivate Erogatore
+     deactivate Fruitore
 
 *Figura 2 - Interazione non bloccante tramite callback*
 
@@ -1316,17 +1317,19 @@ MRequestResponse
 | **</soap:Envelope>**                                     |
 +----------------------------------------------------------+
 
-... mermaid::
+.. mermaid::
+
      sequenceDiagram
      
       activate Fruitore
-       activate Erogatore
+      activate Erogatore
       Fruitore->>+Erogatore: 1. Request(callback endpoint)
       Erogatore-->>Fruitore: 2. CorrelationID
       Erogatore->>Fruitore: 3. Reply(CorrelationID)
       Fruitore-->>Erogatore: 4. Ack
       deactivate Erogatore
-       deactivate Fruitore
+      deactivate Fruitore
+
 .. image:: ./media/image2.png
 
 ...   :width: 4.68056in

@@ -240,14 +240,14 @@ nonché la modalità di inclusione o referenziazione del certificato
 X.509.
 
 
-... mermaid::
+.. mermaid::
+
      sequenceDiagram
-     
-      activate Fruitore
+       activate Fruitore
        activate Erogatore
-      Fruitore->>+Erogatore: 1. Request()
-      Erogatore-->>Fruitore: 2. Response
-      deactivate Erogatore
+       Fruitore->>+Erogatore: 1. Request()
+       Erogatore-->>Fruitore: 2. Response
+       deactivate Erogatore
        deactivate Fruitore
 
 .. image:: ./media/image2.png
