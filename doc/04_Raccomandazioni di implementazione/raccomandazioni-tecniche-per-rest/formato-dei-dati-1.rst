@@ -34,31 +34,18 @@ Cioè:
 .. code-block:: python
 
    {
-   
    "items":[
-   
-   {
-   
-   "given_name":"Carlo",
-   
-   "family_name":"Bianchi",
-   
-   "id":314
-   
-   },
-   
-   {
-   
-   "given_name":"Giuseppe",
-   
-   "family_name":"Verdi",
-   
-   "id":315
-   
-   }
-   
-   ]
-   
+	   {
+	   "given_name":"Carlo",
+	   "family_name":"Bianchi",
+	   "id":314
+	   },
+	   {
+	   "given_name":"Giuseppe",
+	   "family_name":"Verdi",
+	   "id":315
+	   }
+	   ]
    }
 
 [RAC_REST_FORMAT_003] Convenzioni di rappresentazione

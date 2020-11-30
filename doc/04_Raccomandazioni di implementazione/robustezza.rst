@@ -104,17 +104,11 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    Content-Type: application/json
    
    {
-   
    "a": {
-   
-   "a1": [1,...,2],
-   
-   "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
-   
-   },
-   
+	   "a1": [1,...,2],
+	   "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
+	   },
    "b": "Stringa di esempio"
-   
    }
 
 2. Response 200 con rate limiting
@@ -122,17 +116,12 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
 .. code-block:: http
 
    HTTP/1.1 200 Success
-   
    X-RateLimit-Limit: 30
-   
    X-RateLimit-Remaining: 11
-   
    X-RateLimit-Reset: 44
    
    {
-   
    "c" : "risultato"
-   
    }
 
 2. Response 429 Too Many Requests
@@ -140,17 +129,12 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
 .. code-block:: http
 
    HTTP/1.1 429 Too Many Requests
-   
    Content-Type: application/problem+json
-   
    Retry-After: 60
    
    {
-   
    "status": 429,
-   
    "title": "Hai superato la quota di richieste."
-   
    }
 
 2. Response 503 Service Unavailable
@@ -158,17 +142,12 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
 .. code-block:: http
 
    HTTP/1.1 503 Service Unavailable
-   
    Content-Type: application/problem+json
-   
    Retry-After: 3600
    
    {
-   
    "status": 503,
-   
    "title": "Servizio in manutenzione."
-   
    }
 
 [RAC_ROBUSTEZZA_003] Uniformità di Indicatori ed Obiettivi di Servizio

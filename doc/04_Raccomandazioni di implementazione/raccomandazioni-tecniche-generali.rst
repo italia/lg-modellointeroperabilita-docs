@@ -27,8 +27,7 @@ Esempio:
 
 .. code-block:: python
 
-   http://<dominioOrganizzativo>/[rest|soap]/<DominioApplicativo>/v<majo
-   r>[.<minor>[.<patch>]]/<NomeAPI>
+   http://<dominioOrganizzativo>/[rest|soap]/<DominioApplicativo>/v<major>[.<minor>[.<patch>]]/<NomeAPI>
 
 dove:
 

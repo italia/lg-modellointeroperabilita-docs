@@ -57,13 +57,9 @@ Esempio 1: ricerca di documenti per data in una collezione
    GET /​documenti​?data=2018-05-01
    
    {
-   
    "items": [ .. ]
-   
    "limit": 10
-   
    "next_cursor": 21314123
-   
    }
 
 Esempio 2: recupera un singolo documento
@@ -73,13 +69,9 @@ Esempio 2: recupera un singolo documento
    GET /​documento​/21314123
    
    {
-   
    "id": 21314123
-   
    "title: "Atto di nascita ...",
-   
    ..
-   
    }
 
 [RAC_REST_NAME_005] Utilizzare Query String standardizzate
@@ -173,31 +165,20 @@ Response
 .. code-block:: http
 
    HTTP/1.1 200 OK
-   
    Content-Type: application/json
    
    {
    
-   "id":"cddd5e44-dae0-11e5-8c01-63ed66ab2da5",
-   
-   "name":"Mario Rossi",
-   
-   "address":"via del Corso, Roma, Lazio, Italia",
-   
-   "birthday":"1984-09-13",
-   
-   "partner":{
-   
-   "id":"1fb43648-dae1-11e5-aa01-1fbc3abb1cd0",
-   
-   "name":"Maria Rossi",
-   
-   "address":"via del Corso, Roma, Lazio, Italia",
-   
-   "birthday":"1988-04-07"
-   
-   }
-   
+   "id": "cddd5e44-dae0-11e5-8c01-63ed66ab2da5",
+   "name": "Mario Rossi",
+   "address": "via del Corso, Roma, Lazio, Italia",
+   "birthday": "1984-09-13",
+   "partner": {
+	   "id": "1fb43648-dae1-11e5-aa01-1fbc3abb1cd0",
+	   "name": "Maria Rossi",
+	   "address": "via del Corso, Roma, Lazio, Italia",
+	   "birthday": "1988-04-07"
+	   }
    }
 
 Esempio 2: Filtrato
@@ -213,19 +194,13 @@ Response
 .. code-block:: http
 
    HTTP/1.1 200 OK
-   
    Content-Type: application/json
    
    {
-   
    "name": "Mario Rossi",
-   
    "partner": {
-   
-   "name": "Maria Rossi"
-   
-   }
-   
+	   "name": "Maria Rossi"
+	   }
    }
 
 Si DOVREBBE effettuare la Resource Expansion per ritornare risorse
@@ -246,7 +221,6 @@ Request
 .. code-block:: http
 
    GET /tax_code/MRORSS12T05E472W?embed=(person) HTTP/1.1
-   
    Accept: application/json
 
 Response
@@ -254,27 +228,17 @@ Response
 .. code-block:: python
 
    HTTP/1.1 200 OK
-   
    Content-Type: application/json
    
    {
-   
    "tax_code":"MRORSS12T05E472W",
-   
-   "_embedded":{
-   
-   "person":{
-   
-   "given_name":"Mario",
-   
-   "family_name":"Rossi",
-   
-   "id":"1234-ABCD-7890"
-   
-   }
-   
-   }
-   
+   "_embedded": {
+	  "person":{
+		 "given_name":"Mario",
+		  "family_name":"Rossi",
+		  "id":"1234-ABCD-7890"
+	  }
+   	 }
    }
 
 [RAC_REST_NAME_009] Il caching http deve essere disabilitato
