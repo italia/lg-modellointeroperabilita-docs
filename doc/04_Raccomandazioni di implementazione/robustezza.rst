@@ -193,27 +193,27 @@ in modo che a valori più alti corrispondano risultati positivi.
 Alcuni esempi di indicatori a cui è possibile associare degli obiettivi
 o degli accordi:
 
-+-----------------------------------------------------------------------+
-| -  dimensione massima di ogni richiesta accettata. Le richieste più   |
-|    grandi possono essere rifiutate                                    |
-|                                                                       |
-| -  latenza al 90º percentile. Utilizzata per calcolare la             |
-|    responsività                                                       |
-|                                                                       |
-| -  percentuale di minuti negli ultimi 30 giorni in cui l’interfaccia  |
-|    di servizio è stata disponibile                                    |
-|                                                                       |
-| -  valori a 30 giorni del success rate, ovvero il numero di chiamate  |
-|    terminate con successo rispetto al numero totale di chiamate       |
-|                                                                       |
-| -  Application Performance inDEX [4]_, indice su scala percentuale di |
-|    qualità del servizio misurato a 30 giorni                          |
-|                                                                       |
-| -  tempo di risposta medio delle richieste totali (includendo le      |
-|    richieste rifiutate a causa del throttling) negli ultimi 30 giorni |
-|                                                                       |
-| -  throughput misurato in byte/s                                      |
-+-----------------------------------------------------------------------+
+.. code-block:: python
+
+   -  dimensione massima di ogni richiesta accettata. Le richieste più
+   grandi possono essere rifiutate
+   
+   -  latenza al 90º percentile. Utilizzata per calcolare la
+   responsività
+   
+   -  percentuale di minuti negli ultimi 30 giorni in cui l’interfaccia
+   di servizio è stata disponibile
+   
+   -  valori a 30 giorni del success rate, ovvero il numero di chiamate
+   terminate con successo rispetto al numero totale di chiamate
+   
+   -  Application Performance inDEX [4]_, indice su scala percentuale di
+   qualità del servizio misurato a 30 giorni
+   
+   -  tempo di risposta medio delle richieste totali (includendo le
+   richieste rifiutate a causa del throttling) negli ultimi 30 giorni
+   
+   -  throughput misurato in byte/s
 
 .. [1]
    È stato avviato il processo di standardizzazione dell’utilizzo degli

@@ -18,9 +18,6 @@ def parse_grid_table(text):
 def process_line(line):
     line = line.strip()
     line = line.replace("**", "")
-    # if line.strip("*") == line[2:-2]:
-    #    line = line[2:-2]
-
     return "   " + line
 
 

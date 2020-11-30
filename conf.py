@@ -5,15 +5,16 @@
 settings_project_name = u"Linee Guida Modello di Interoperabilità"
 settings_copyright_copyleft = "Agenzia per l'Italia Digitale"
 settings_editor_name = "Agenzia per l'Italia Digitale"
-settings_doc_version = 'Bozza in consultazione'
-settings_doc_release = 'Bozza in consultazione'
-settings_basename = 'lg-modellointeroperabilita-docs'
-settings_file_name = 'lg-modellointeroperabilita-docs'
-settings_discourse_url = 'https://forum.italia.it/'
+settings_doc_version = "Bozza in consultazione"
+settings_doc_release = "Bozza in consultazione"
+settings_basename = "lg-modellointeroperabilita-docs"
+settings_file_name = "lg-modellointeroperabilita-docs"
+settings_discourse_url = "https://forum.italia.it/"
 
 # -- No need to change below here
 
 import sys, os
+
 docs_italia_theme = __import__("docs-italia-theme")
 from recommonmark.transform import AutoStructify
 from recommonmark.parser import CommonMarkParser

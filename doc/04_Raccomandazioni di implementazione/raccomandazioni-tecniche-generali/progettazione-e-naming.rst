@@ -95,19 +95,19 @@ universalmente riconosciuti anche al di fuori del dominio applicativo.
 
 Esempio in un’architettura orientata alle risorse:
 
-+-----------------------------------------------------------------------+
-| In un servizio per la gestione delle istanze dei cittadini, il nome   |
-| dell'attributo                                                        |
-|                                                                       |
-| **gestioneIstanzeCittadinoAbilitatoBoolean**                          |
-|                                                                       |
-| può essere semplificato in                                            |
-|                                                                       |
-| **cittadinoAbilitato**                                                |
-|                                                                       |
-| se il servizio è limitato alla gestione delle istanze e l'output del  |
-| campo è desumibile dal contesto.                                      |
-+-----------------------------------------------------------------------+
+.. code-block:: python
+
+   In un servizio per la gestione delle istanze dei cittadini, il nome
+   dell'attributo
+   
+   gestioneIstanzeCittadinoAbilitatoBoolean
+   
+   può essere semplificato in
+   
+   cittadinoAbilitato
+   
+   se il servizio è limitato alla gestione delle istanze e l'output del
+   campo è desumibile dal contesto.
 
 .. [1]
    Cfr.

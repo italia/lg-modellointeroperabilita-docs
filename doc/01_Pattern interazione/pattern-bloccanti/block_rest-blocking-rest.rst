@@ -57,239 +57,239 @@ Specifica Servizio
 
 https://api.ente.example/rest/nome-api/v1/RESTblocking.yaml
 
-+-------------------------------------------------------------------------+
-| **openapi**: 3.0.1                                                      |
-|                                                                         |
-| **info**:                                                               |
-|                                                                         |
-| **title**: RESTblocking                                                 |
-|                                                                         |
-| **version**: "1.0"                                                      |
-|                                                                         |
-| **description**: \|-                                                    |
-|                                                                         |
-| Questo file descrive semplicemente i metodi di un'API                   |
-|                                                                         |
-| e non indica tutte le informazioni di metadatazione che                 |
-|                                                                         |
-| normalmente vanno inserite.                                             |
-|                                                                         |
-| **license**:                                                            |
-|                                                                         |
-| **name**: Apache 2.0 License                                            |
-|                                                                         |
-| **url**: http://www.apache.org/licenses/LICENSE-2.0.html                |
-|                                                                         |
-| **paths**:                                                              |
-|                                                                         |
-| /resources/{id_resource}/M:                                             |
-|                                                                         |
-| **post**:                                                               |
-|                                                                         |
-| **description**: Esegue M                                               |
-|                                                                         |
-| **operationId**: M                                                      |
-|                                                                         |
-| **parameters**:                                                         |
-|                                                                         |
-| - **name**: id_resource                                                 |
-|                                                                         |
-| **in**: path                                                            |
-|                                                                         |
-| **required**: true                                                      |
-|                                                                         |
-| **schema**:                                                             |
-|                                                                         |
-| **type**: integer                                                       |
-|                                                                         |
-| **format**: int32                                                       |
-|                                                                         |
-| **requestBody**:                                                        |
-|                                                                         |
-| **content**:                                                            |
-|                                                                         |
-| **application/json**:                                                   |
-|                                                                         |
-| **schema**:                                                             |
-|                                                                         |
-| **$ref**: '#/components/schemas/MType'                                  |
-|                                                                         |
-| **responses**:                                                          |
-|                                                                         |
-| **200**:                                                                |
-|                                                                         |
-| **description**: Esecuzione di M avvenuta con successo                  |
-|                                                                         |
-| **content**:                                                            |
-|                                                                         |
-| **application/json**:                                                   |
-|                                                                         |
-| **schema**:                                                             |
-|                                                                         |
-| **$ref**: '#/components/schemas/MResponseType'                          |
-|                                                                         |
-| **400**:                                                                |
-|                                                                         |
-| **description**: Richiesta non valida                                   |
-|                                                                         |
-| **content**:                                                            |
-|                                                                         |
-| **application/json**:                                                   |
-|                                                                         |
-| **schema**:                                                             |
-|                                                                         |
-| **$ref**: '#/components/schemas/ErrorMessage'                           |
-|                                                                         |
-| **404**:                                                                |
-|                                                                         |
-| **description**: Identificativo non trovato                             |
-|                                                                         |
-| **content**:                                                            |
-|                                                                         |
-| **application/json**:                                                   |
-|                                                                         |
-| **schema**:                                                             |
-|                                                                         |
-| **$ref**: '#/components/schemas/ErrorMessage'                           |
-|                                                                         |
-| **default**:                                                            |
-|                                                                         |
-| **description**: \|-                                                    |
-|                                                                         |
-| Errore inatteso. Non ritornare informazioni                             |
-|                                                                         |
-| sulla logica interna e/o non pertinenti all'interfaccia.                |
-|                                                                         |
-| **content**:                                                            |
-|                                                                         |
-| **application/json**:                                                   |
-|                                                                         |
-| **schema**:                                                             |
-|                                                                         |
-| **$ref**: '#/components/schemas/ErrorMessage'                           |
-|                                                                         |
-| **components**:                                                         |
-|                                                                         |
-| **schemas**:                                                            |
-|                                                                         |
-| **MType**:                                                              |
-|                                                                         |
-| **type**: object                                                        |
-|                                                                         |
-| **properties**:                                                         |
-|                                                                         |
-| **a**:                                                                  |
-|                                                                         |
-| **$ref**: '#/components/schemas/AComplexType'                           |
-|                                                                         |
-| **b**:                                                                  |
-|                                                                         |
-| **type**: string                                                        |
-|                                                                         |
-| **MResponseType**:                                                      |
-|                                                                         |
-| **type**: object                                                        |
-|                                                                         |
-| **properties**:                                                         |
-|                                                                         |
-| **c**:                                                                  |
-|                                                                         |
-| **type**: string                                                        |
-|                                                                         |
-| **AComplexType**:                                                       |
-|                                                                         |
-| **type**: object                                                        |
-|                                                                         |
-| **properties**:                                                         |
-|                                                                         |
-| **a1s**:                                                                |
-|                                                                         |
-| **type**: array                                                         |
-|                                                                         |
-| **items**:                                                              |
-|                                                                         |
-| **type**: integer                                                       |
-|                                                                         |
-| **format**: int32                                                       |
-|                                                                         |
-| **a2**:                                                                 |
-|                                                                         |
-| **type**: string                                                        |
-|                                                                         |
-| **ErrorMessage**:                                                       |
-|                                                                         |
-| **type**: object                                                        |
-|                                                                         |
-| **properties**:                                                         |
-|                                                                         |
-| **detail**:                                                             |
-|                                                                         |
-| **description**: \|                                                     |
-|                                                                         |
-| A human readable explanation specific to this occurrence of the         |
-|                                                                         |
-| problem.                                                                |
-|                                                                         |
-| **type**: string                                                        |
-|                                                                         |
-| **instance**:                                                           |
-|                                                                         |
-| **description**: \|                                                     |
-|                                                                         |
-| An absolute URI that identifies the specific occurrence of the problem. |
-|                                                                         |
-| It may or may not yield further information if dereferenced.            |
-|                                                                         |
-| **format**: uri                                                         |
-|                                                                         |
-| **type**: string                                                        |
-|                                                                         |
-| **status**:                                                             |
-|                                                                         |
-| **description**: \|                                                     |
-|                                                                         |
-| The HTTP status code generated by the origin server for this occurrence |
-|                                                                         |
-| of the problem.                                                         |
-|                                                                         |
-| **exclusiveMaximum**: true                                              |
-|                                                                         |
-| **format**: int32                                                       |
-|                                                                         |
-| **maximum**: 600                                                        |
-|                                                                         |
-| **minimum**: 100                                                        |
-|                                                                         |
-| **type**: integer                                                       |
-|                                                                         |
-| **title**:                                                              |
-|                                                                         |
-| **description**: \|                                                     |
-|                                                                         |
-| A short, summary of the problem type. Written in english and readable   |
-|                                                                         |
-| for engineers (usually not suited for non technical stakeholders and    |
-|                                                                         |
-| not localized); example: Service Unavailable                            |
-|                                                                         |
-| **type**: string                                                        |
-|                                                                         |
-| **type**:                                                               |
-|                                                                         |
-| **default**: about:blank                                                |
-|                                                                         |
-| **description**: \|                                                     |
-|                                                                         |
-| An absolute URI that identifies the problem type. When dereferenced,    |
-|                                                                         |
-| it SHOULD provide human-readable documentation for the problem type     |
-|                                                                         |
-| (e.g., using HTML).                                                     |
-|                                                                         |
-| **format**: uri                                                         |
-|                                                                         |
-| **type**: string                                                        |
-+-------------------------------------------------------------------------+
+.. code-block:: python
+
+   openapi: 3.0.1
+   
+   info:
+   
+   title: RESTblocking
+   
+   version: "1.0"
+   
+   description: \|-
+   
+   Questo file descrive semplicemente i metodi di un'API
+   
+   e non indica tutte le informazioni di metadatazione che
+   
+   normalmente vanno inserite.
+   
+   license:
+   
+   name: Apache 2.0 License
+   
+   url: http://www.apache.org/licenses/LICENSE-2.0.html
+   
+   paths:
+   
+   /resources/{id_resource}/M:
+   
+   post:
+   
+   description: Esegue M
+   
+   operationId: M
+   
+   parameters:
+   
+   - name: id_resource
+   
+   in: path
+   
+   required: true
+   
+   schema:
+   
+   type: integer
+   
+   format: int32
+   
+   requestBody:
+   
+   content:
+   
+   application/json:
+   
+   schema:
+   
+   $ref: '#/components/schemas/MType'
+   
+   responses:
+   
+   200:
+   
+   description: Esecuzione di M avvenuta con successo
+   
+   content:
+   
+   application/json:
+   
+   schema:
+   
+   $ref: '#/components/schemas/MResponseType'
+   
+   400:
+   
+   description: Richiesta non valida
+   
+   content:
+   
+   application/json:
+   
+   schema:
+   
+   $ref: '#/components/schemas/ErrorMessage'
+   
+   404:
+   
+   description: Identificativo non trovato
+   
+   content:
+   
+   application/json:
+   
+   schema:
+   
+   $ref: '#/components/schemas/ErrorMessage'
+   
+   default:
+   
+   description: \|-
+   
+   Errore inatteso. Non ritornare informazioni
+   
+   sulla logica interna e/o non pertinenti all'interfaccia.
+   
+   content:
+   
+   application/json:
+   
+   schema:
+   
+   $ref: '#/components/schemas/ErrorMessage'
+   
+   components:
+   
+   schemas:
+   
+   MType:
+   
+   type: object
+   
+   properties:
+   
+   a:
+   
+   $ref: '#/components/schemas/AComplexType'
+   
+   b:
+   
+   type: string
+   
+   MResponseType:
+   
+   type: object
+   
+   properties:
+   
+   c:
+   
+   type: string
+   
+   AComplexType:
+   
+   type: object
+   
+   properties:
+   
+   a1s:
+   
+   type: array
+   
+   items:
+   
+   type: integer
+   
+   format: int32
+   
+   a2:
+   
+   type: string
+   
+   ErrorMessage:
+   
+   type: object
+   
+   properties:
+   
+   detail:
+   
+   description: \|
+   
+   A human readable explanation specific to this occurrence of the
+   
+   problem.
+   
+   type: string
+   
+   instance:
+   
+   description: \|
+   
+   An absolute URI that identifies the specific occurrence of the problem.
+   
+   It may or may not yield further information if dereferenced.
+   
+   format: uri
+   
+   type: string
+   
+   status:
+   
+   description: \|
+   
+   The HTTP status code generated by the origin server for this occurrence
+   
+   of the problem.
+   
+   exclusiveMaximum: true
+   
+   format: int32
+   
+   maximum: 600
+   
+   minimum: 100
+   
+   type: integer
+   
+   title:
+   
+   description: \|
+   
+   A short, summary of the problem type. Written in english and readable
+   
+   for engineers (usually not suited for non technical stakeholders and
+   
+   not localized); example: Service Unavailable
+   
+   type: string
+   
+   type:
+   
+   default: about:blank
+   
+   description: \|
+   
+   An absolute URI that identifies the problem type. When dereferenced,
+   
+   it SHOULD provide human-readable documentation for the problem type
+   
+   (e.g., using HTML).
+   
+   format: uri
+   
+   type: string
 
 Di seguito un esempio di chiamata al metodo **M**.
 
@@ -301,74 +301,74 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
 
 1. Request Body
 
-+------------------------------------------+
-| {                                        |
-|                                          |
-| **"a"**: {                               |
-|                                          |
-| **"a1s"**: [1,2],                        |
-|                                          |
-| **"a2"**: "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh" |
-|                                          |
-| },                                       |
-|                                          |
-| **"b"**: "Stringa di esempio"            |
-|                                          |
-| }                                        |
-+------------------------------------------+
+.. code-block:: python
+
+   {
+   
+   "a": {
+   
+   "a1s": [1,2],
+   
+   "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
+   
+   },
+   
+   "b": "Stringa di esempio"
+   
+   }
 
 2. Response Body (HTTP Status Code 200 OK)
 
-+-----------------------+
-| {                     |
-|                       |
-| **"c"** : "risultato" |
-|                       |
-| }                     |
-+-----------------------+
+.. code-block:: python
+
+   {
+   
+   "c" : "risultato"
+   
+   }
 
 2. Response Body (HTTP Status Code 500 Internal Server Error)
 
-+-----------------------------------------------------------------------+
-| {                                                                     |
-|                                                                       |
-| **"type"**: "https://apidoc.example.com/probs/operation-too-long",    |
-|                                                                       |
-| **"status"**: 500,                                                    |
-|                                                                       |
-| **"title"**: "L'operazione dura troppo.",                             |
-|                                                                       |
-| **"detail"**: "Il sistema non e' riuscito a completare in tempo       |
-| l'operazione prevista.",                                              |
-|                                                                       |
-| }                                                                     |
-+-----------------------------------------------------------------------+
+.. code-block:: python
+
+   {
+   
+   "type": "https://apidoc.example.com/probs/operation-too-long",
+   
+   "status": 500,
+   
+   "title": "L'operazione dura troppo.",
+   
+   "detail": "Il sistema non e' riuscito a completare in tempo
+   l'operazione prevista.",
+   
+   }
 
 2. Response Body (HTTP Status Code 400 Bad Request)
 
-+-----------------------------------------------------------------------+
-| {                                                                     |
-|                                                                       |
-| **"type"**: "https://apidoc.example.com/probs/invalid-a",             |
-|                                                                       |
-| **"status"**: 400,                                                    |
-|                                                                       |
-| **"title"**: "L'attributo \`b\` ha un valore non valido.",            |
-|                                                                       |
-| **"detail"**: "L'attributo \`b\` dev'essere una stringa di lunghezza  |
-| inferiore a 32 caratteri.",                                           |
-|                                                                       |
-| }                                                                     |
-+-----------------------------------------------------------------------+
+.. code-block:: python
+
+   {
+   
+   "type": "https://apidoc.example.com/probs/invalid-a",
+   
+   "status": 400,
+   
+   "title": "L'attributo \`b\` ha un valore non valido.",
+   
+   "detail": "L'attributo \`b\` dev'essere una stringa di lunghezza
+   inferiore a 32 caratteri.",
+   
+   }
 
 2. Response Body (HTTP Status Code 404 Not Found)
 
-+--------------------------------------+
-| {                                    |
-|                                      |
-| **"status"**: 404,                   |
-|                                      |
-| **"title"**: "Risorsa non trovata.", |
-|                                      |
-| }                                    |
-+--------------------------------------+
+.. code-block:: python
+
+   {
+   
+   "status": 404,
+   
+   "title": "Risorsa non trovata.",
+   
+   }
