@@ -1,24 +1,57 @@
 Modello di interoperabilità per la Pubblica Amministrazione
 ############################################################
 
-.. admonition:: Consultazione pubblica
+.. admonition:: Linee d'indirizzo sull'Interoperabilità tecnica
 
-   La consultazione pubblica per questo documento è attiva dal 16/05/2019 al 14/06/2019.
-   
-Questo documento raccoglie il testo delle linee guida del *Modello di interoperabilità per la Pubblica Amministrazione*, disponibile per la consultazione pubblica.
 
-`Leggi le istruzioni per la consultazione <doc/istruzioni_consultazione.html>`_
+Di seguito la versione accessibile delle Linee d'indirizzo sull'interoperabilità tecnica.
+La versione ufficiale è sul sito AgID.
 
-Vai al testo delle linee guida:
+* `Linee d'indirizzo sull'interoperabilità tecnica <http://www.agid.gov.it/sites/default/files/repository_files/00_linea_di_indirizzo_interoperabilita_tecnica.pdf>`_
+* `Pattern d'interazione <https://www.agid.gov.it/sites/default/files/repository_files/01_pattern_interazione_0.pdf>`_
+* `Pattern di sicurezza <https://www.agid.gov.it/sites/default/files/repository_files/02_pattern_sicurezza.pdf>`_
+* `Profili di interoperabilità <https://www.agid.gov.it/sites/default/files/repository_files/03_profili_di_interoperabilita.pdf>`_
+* `Raccomandazioni di implementazione <https://www.agid.gov.it/sites/default/files/repository_files/04_raccomandazioni_di_implementazione.pdf>`_
 
-.. toctree::
-   doc/istruzioni_consultazione
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
+   :maxdepth: 4
 
-   doc/doc_01_cap_00
-   doc/doc_02_cap_00
-   doc/doc_03_cap_00
-   doc/doc_04_cap_00
+   doc/00_Linea di indirizzo interoperabilità tecnica/index.rst
+
+Allegato 1 - Pattern d'interazione
+::::::::::::::::::::::::::::::::::
+
+.. toctree::
+   :numbered:
+   :maxdepth: 4
+
+   doc/01_Pattern interazione/index.rst
+
+Allegato 2 - Pattern di sicurezza
+:::::::::::::::::::::::::::::::::
+
+.. toctree::
+   :numbered:
+   :maxdepth: 4
+
+   doc/02_Pattern sicurezza/index.rst
+
+Allegato 3 - Profili d'interoperabilità
+:::::::::::::::::::::::::::::::::::::::
+
+.. toctree::
+   :numbered:
+   :maxdepth: 4
+
+   doc/03_Profili di interoperabilità/index.rst
+
+Allegato 4 - Raccomandazioni di implementazione
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+.. toctree::
+   :numbered:
+   :maxdepth: 4
+
+   doc/04_Raccomandazioni di implementazione/index.rst
