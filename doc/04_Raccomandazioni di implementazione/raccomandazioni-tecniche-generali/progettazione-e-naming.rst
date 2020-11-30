@@ -25,63 +25,63 @@ Ad esempio:
 
 SI
 
-+---------------------------+
-| {                         |
-|                           |
-| **"givenName"**: "Mario", |
-|                           |
-| **"familyName"**: "Rossi" |
-|                           |
-| }                         |
-+---------------------------+
+.. code-block:: python
+
+   {
+   
+   "givenName": "Mario",
+   
+   "familyName": "Rossi"
+   
+   }
 
 SI
 
-+----------------------------+
-| {                          |
-|                            |
-| **"given_name"**: "Mario", |
-|                            |
-| **"family_name"**: "Rossi" |
-|                            |
-| }                          |
-+----------------------------+
+.. code-block:: python
+
+   {
+   
+   "given_name": "Mario",
+   
+   "family_name": "Rossi"
+   
+   }
 
 NO
 
-+----------------------------+
-| {                          |
-|                            |
-| **"given_name"**: "Mario", |
-|                            |
-| **"familyName"**: "Rossi"  |
-|                            |
-| }                          |
-+----------------------------+
+.. code-block:: python
+
+   {
+   
+   "given_name": "Mario",
+   
+   "familyName": "Rossi"
+   
+   }
 
 SI
 
-+--------------------------------------------+
-| **<givenName>**\ Mario\ **</givenName>**   |
-|                                            |
-| **<familyName>**\ Rossi\ **</familyName>** |
-+--------------------------------------------+
+.. code-block:: python
+
+   <givenName>\ Mario\ </givenName>
+   
+   <familyName>\ Rossi\ </familyName>
 
 SI
 
-+----------------------------------------------+
-| **<given_name>**\ Mario\ **</given_name>**   |
-|                                              |
-| **<family_name>**\ Rossi\ **</family_name>** |
-+----------------------------------------------+
+.. code-block:: python
+
+   <given_name>\ Mario\ </given_name>
+   
+   <family_name>\ Rossi\ </family_name>
 
 NO
 
-+--------------------------------------------+
-| **<given_name>**\ Mario\ **</given_name>** |
-|                                            |
-| **<familyName>**\ Rossi\ **</familyName>** |
-+--------------------------------------------+
+.. code-block:: python
+
+   <given_name>\ Mario\ </given_name>
+   
+   <familyName>\ Rossi\ </familyName>
 
 [RAC_GEN_NAME_003] Descrittività dei nomi utilizzati
 ----------------------------------------------------

@@ -25,10 +25,10 @@ delle API.
 
 Esempio:
 
-+-----------------------------------------------------------------------+
-| http://<dominioOrganizzativo>/[rest|soap]/<DominioApplicativo>/v<majo |
-| r>[.<minor>[.<patch>]]/<NomeAPI>                                      |
-+-----------------------------------------------------------------------+
+.. code-block:: python
+
+   http://<dominioOrganizzativo>/[rest|soap]/<DominioApplicativo>/v<majo
+   r>[.<minor>[.<patch>]]/<NomeAPI>
 
 dove:
 

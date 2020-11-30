@@ -20,9 +20,9 @@ Nella definizione dei path si DEVE utilizzare il separatore «-»
 
 Esempio:
 
-+---------------------------+
-| /​tax-code​/{tax_code_id} |
-+---------------------------+
+.. code-block:: python
+
+   /​tax-code​/{tax_code_id}
 
 Il path DOVREBBE essere semplice, intuitivo e coerente.
 
@@ -33,15 +33,15 @@ DOVREBBE preferirsi Hyphenated-Pascal-Case per gli header HTTP.
 
 Esempio:
 
-+----------------------------------+
-| Accept-Encoding                  |
-|                                  |
-| Apply-To-Redirect-Ref            |
-|                                  |
-| Disposition-Notification-Options |
-|                                  |
-| Message-ID                       |
-+----------------------------------+
+.. code-block:: python
+
+   Accept-Encoding
+   
+   Apply-To-Redirect-Ref
+   
+   Disposition-Notification-Options
+   
+   Message-ID
 
 [RAC_REST_NAME_004] Le collezioni di risorse possono usare nomi al plurale
 --------------------------------------------------------------------------
@@ -52,51 +52,51 @@ parte funzionalmente differenti.
 
 Esempio 1: ricerca di documenti per data in una collezione
 
-+----------------------------------+
-| GET /​documenti​?data=2018-05-01 |
-|                                  |
-| {                                |
-|                                  |
-| "items": [ .. ]                  |
-|                                  |
-| "limit": 10                      |
-|                                  |
-| "next_cursor": 21314123          |
-|                                  |
-| }                                |
-+----------------------------------+
+.. code-block:: python
+
+   GET /​documenti​?data=2018-05-01
+   
+   {
+   
+   "items": [ .. ]
+   
+   "limit": 10
+   
+   "next_cursor": 21314123
+   
+   }
 
 Esempio 2: recupera un singolo documento
 
-+--------------------------------+
-| GET /​documento​/21314123      |
-|                                |
-| {                              |
-|                                |
-| "id": 21314123                 |
-|                                |
-| "title: "Atto di nascita ...", |
-|                                |
-| ..                             |
-|                                |
-| }                              |
-+--------------------------------+
+.. code-block:: python
+
+   GET /​documento​/21314123
+   
+   {
+   
+   "id": 21314123
+   
+   "title: "Atto di nascita ...",
+   
+   ..
+   
+   }
 
 [RAC_REST_NAME_005] Utilizzare Query String standardizzate
 ----------------------------------------------------------
 
 Esempio 1: La paginazione DEVE essere implementata tramite i parametri:
 
-+-----------------------------+
-| cursor, limit, offset, sort |
-+-----------------------------+
+.. code-block:: python
+
+   cursor, limit, offset, sort
 
 Esempio 2: La ricerca, il filtering e l’embedding dei parametri DEVE
 essere implementata tramite i parametri:
 
-+------------------+
-| q, fields, embed |
-+------------------+
+.. code-block:: python
+
+   q, fields, embed
 
 [RAC_REST_NAME_005] Non usare l’header Link RFC 8288 se la response è in JSON
 -----------------------------------------------------------------------------
@@ -164,69 +164,69 @@ Esempio 1: Non filtrato
 
 Request
 
-+------------------------------------------------------------+
-| GET **https://api.example.org/resources/123** **HTTP**/1.1 |
-+------------------------------------------------------------+
+.. code-block:: http
+
+   GET https://api.example.org/resources/123 HTTP/1.1
 
 Response
 
-+-----------------------------------------------------+
-| **HTTP**/1.1 200 OK                                 |
-|                                                     |
-| Content-Type: application/json                      |
-|                                                     |
-| {                                                   |
-|                                                     |
-| **"id"**:"cddd5e44-dae0-11e5-8c01-63ed66ab2da5",    |
-|                                                     |
-| **"name"**:"Mario Rossi",                           |
-|                                                     |
-| **"address"**:"via del Corso, Roma, Lazio, Italia", |
-|                                                     |
-| **"birthday"**:"1984-09-13",                        |
-|                                                     |
-| **"partner"**:{                                     |
-|                                                     |
-| **"id"**:"1fb43648-dae1-11e5-aa01-1fbc3abb1cd0",    |
-|                                                     |
-| **"name"**:"Maria Rossi",                           |
-|                                                     |
-| **"address"**:"via del Corso, Roma, Lazio, Italia", |
-|                                                     |
-| **"birthday"**:"1988-04-07"                         |
-|                                                     |
-| }                                                   |
-|                                                     |
-| }                                                   |
-+-----------------------------------------------------+
+.. code-block:: http
+
+   HTTP/1.1 200 OK
+   
+   Content-Type: application/json
+   
+   {
+   
+   "id":"cddd5e44-dae0-11e5-8c01-63ed66ab2da5",
+   
+   "name":"Mario Rossi",
+   
+   "address":"via del Corso, Roma, Lazio, Italia",
+   
+   "birthday":"1984-09-13",
+   
+   "partner":{
+   
+   "id":"1fb43648-dae1-11e5-aa01-1fbc3abb1cd0",
+   
+   "name":"Maria Rossi",
+   
+   "address":"via del Corso, Roma, Lazio, Italia",
+   
+   "birthday":"1988-04-07"
+   
+   }
+   
+   }
 
 Esempio 2: Filtrato
 
 Request
 
-+-----------------------------------------------------------------+
-| GET **/resources/123?fields=(name,partner(name))** **HTTP**/1.1 |
-+-----------------------------------------------------------------+
+.. code-block:: http
+
+   GET /resources/123?fields=(name,partner(name)) HTTP/1.1
 
 Response
 
-+--------------------------------+
-| **HTTP**/1.1 200 OK            |
-|                                |
-| Content-Type: application/json |
-|                                |
-| {                              |
-|                                |
-| **"name"**: "Mario Rossi",     |
-|                                |
-| **"partner"**: {               |
-|                                |
-| **"name"**: "Maria Rossi"      |
-|                                |
-| }                              |
-|                                |
-| }                              |
-+--------------------------------+
+.. code-block:: http
+
+   HTTP/1.1 200 OK
+   
+   Content-Type: application/json
+   
+   {
+   
+   "name": "Mario Rossi",
+   
+   "partner": {
+   
+   "name": "Maria Rossi"
+   
+   }
+   
+   }
 
 Si DOVREBBE effettuare la Resource Expansion per ritornare risorse
 correlate tra loro, in modo da ridurre il numero di richieste.
@@ -243,39 +243,39 @@ associati ad un codice fiscale.
 
 Request
 
-+----------------------------------------------------------------+
-| GET **/tax_code/MRORSS12T05E472W?embed=(person)** **HTTP**/1.1 |
-|                                                                |
-| Accept: application/json                                       |
-+----------------------------------------------------------------+
+.. code-block:: http
+
+   GET /tax_code/MRORSS12T05E472W?embed=(person) HTTP/1.1
+   
+   Accept: application/json
 
 Response
 
-+------------------------------------+
-| **HTTP/1.1 200 OK**                |
-|                                    |
-| **Content-Type: application/json** |
-|                                    |
-| **{**                              |
-|                                    |
-| **"tax_code":"MRORSS12T05E472W",** |
-|                                    |
-| **"_embedded":{**                  |
-|                                    |
-| **"person":{**                     |
-|                                    |
-| **"given_name":"Mario",**          |
-|                                    |
-| **"family_name":"Rossi",**         |
-|                                    |
-| **"id":"1234-ABCD-7890"**          |
-|                                    |
-| **}**                              |
-|                                    |
-| **}**                              |
-|                                    |
-| **}**                              |
-+------------------------------------+
+.. code-block:: python
+
+   HTTP/1.1 200 OK
+   
+   Content-Type: application/json
+   
+   {
+   
+   "tax_code":"MRORSS12T05E472W",
+   
+   "_embedded":{
+   
+   "person":{
+   
+   "given_name":"Mario",
+   
+   "family_name":"Rossi",
+   
+   "id":"1234-ABCD-7890"
+   
+   }
+   
+   }
+   
+   }
 
 [RAC_REST_NAME_009] Il caching http deve essere disabilitato
 ------------------------------------------------------------
@@ -315,56 +315,5 @@ Segue un esempio di specifica del path in formato OpenAPI 3.
 
 ESEMPIO: Esposizione stato del servizio
 
-+------------------------------------------------------------+
-| openapi: 3.0.2                                             |
-|                                                            |
-| ...                                                        |
-|                                                            |
-| paths:                                                     |
-|                                                            |
-| ...                                                        |
-|                                                            |
-| /status:                                                   |
-|                                                            |
-| get:                                                       |
-|                                                            |
-| summary: Ritorna lo stato dell'applicazione.               |
-|                                                            |
-| tags:                                                      |
-|                                                            |
-| - public                                                   |
-|                                                            |
-| description: \|                                            |
-|                                                            |
-| Ritorna lo stato dell'applicazione in formato problem+json |
-|                                                            |
-| responses:                                                 |
-|                                                            |
-| '200':                                                     |
-|                                                            |
-| content:                                                   |
-|                                                            |
-| application/problem+json:                                  |
-|                                                            |
-| schema:                                                    |
-|                                                            |
-| $ref: '#/components/schemas/Problem'                       |
-|                                                            |
-| description: \|                                            |
-|                                                            |
-| Il servizio funziona correttamente.                        |
-|                                                            |
-| default:                                                   |
-|                                                            |
-| content:                                                   |
-|                                                            |
-| application/problem+json:                                  |
-|                                                            |
-| schema:                                                    |
-|                                                            |
-| $ref: '#/components/schemas/Problem'                       |
-|                                                            |
-| description: \|                                            |
-|                                                            |
-| Il server ha riscontrato un problema.                      |
-+------------------------------------------------------------+
+.. literalinclude:: file-470c9c7d9f2d0c6947f8fe7dd6e4410f6fd1c951043908bf504dd15c7d8a2868.yaml
+   :language: yaml

@@ -1,0 +1,65 @@
+   <?xml version="1.0" encoding="UTF-8"?>
+   
+   <wsdl:definitions targetNamespace="http://www.example.com/webservice"
+   
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   
+   xmlns:ws="http://www.example.com/webservice">
+   
+   <wsdl:types>
+   
+   <xs:schema>
+   
+   <xs:complexType name="userDefinedFault">
+   
+   <xs:sequence>
+   
+   <xs:element name="errorCode" type="xs:int"/>
+   
+   <xs:element name="detail" type="xs:string"/>
+   
+   <xs:element name="message" type="xs:string"/>
+   
+   </xs:sequence>
+   
+   </xs:complexType>
+   
+   </xs:schema>
+   
+   </wsdl:types>
+   
+   <wsdl:message name="requestEcho">
+   
+   <wsdl:part name="msg" type="xs:string"/>
+   
+   </wsdl:message>
+   
+   <wsdl:message name="responseEcho">
+   
+   <wsdl:part name="msg" type="xs:string"/>
+   
+   </wsdl:message>
+   
+   <wsdl:message name="UserDefinedException">
+   
+   <wsdl:part name="fault" type="userDefinedFault"/>
+   
+   </wsdl:message>
+   
+   <wsdl:portType name="portType">
+   
+   <wsdl:operation name="echo">
+   
+   <wsdl:input message="ws:requestEcho"/>
+   
+   <wsdl:output message="ws:responseEcho"/>
+   
+   <wsdl:fault name="fault" message="ws:UserDefinedException"/>
+   
+   </wsdl:operation>
+   
+   </wsdl:portType>
+   
+   </wsdl:definitions>
