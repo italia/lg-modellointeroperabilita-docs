@@ -106,37 +106,37 @@ European Standards e contenente i campi:
 
 Esempio:
 
-+---------------------------+
-| {                         |
-|                           |
-| "**tax_id**": "imu-e472", |
-|                           |
-| "**value**": {            |
-|                           |
-| "**amount**": "100.23",   |
-|                           |
-| "**currency**": "EUR"     |
-|                           |
-| }                         |
-|                           |
-| }                         |
-+---------------------------+
+.. code-block:: python
 
-+--------------------------------------+
-| **<payment>**                        |
-|                                      |
-| **<taxId>**\ imu-e472\ **</taxId>**  |
-|                                      |
-| **<value>**                          |
-|                                      |
-| **<currency>**\ EUR\ **</currency>** |
-|                                      |
-| **<amount>**\ 100.23\ **</amount>**  |
-|                                      |
-| **</value>**                         |
-|                                      |
-| **</payment>**                       |
-+--------------------------------------+
+   {
+   
+   "tax_id": "imu-e472",
+   
+   "value": {
+   
+   "amount": "100.23",
+   
+   "currency": "EUR"
+   
+   }
+   
+   }
+
+.. code-block:: python
+
+   <payment>
+   
+   <taxId>\ imu-e472\ </taxId>
+   
+   <value>
+   
+   <currency>\ EUR\ </currency>
+   
+   <amount>\ 100.23\ </amount>
+   
+   </value>
+   
+   </payment>
 
 .. [1]
    Cfr.

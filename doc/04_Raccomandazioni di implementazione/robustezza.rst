@@ -82,324 +82,8 @@ SOAP è fuori dagli obiettivi di WSDL come Interface Definition Language.
 Esempio di specifica API REST per applicazione del throttling e
 segnalazione del sovraccarico o dell’indisponibilità:
 
-+-----------------------------------------------------------------------+
-| **openapi: 3.0.1**                                                    |
-|                                                                       |
-| **info:**                                                             |
-|                                                                       |
-| **title: RESTrobustezza**                                             |
-|                                                                       |
-| **license:**                                                          |
-|                                                                       |
-| **name: Apache 2.0 License**                                          |
-|                                                                       |
-| **url: http://www.apache.org/licenses/LICENSE-2.0.html**              |
-|                                                                       |
-| **version: "1.0"**                                                    |
-|                                                                       |
-| **paths:**                                                            |
-|                                                                       |
-| **/resources/{id_resource}/M:**                                       |
-|                                                                       |
-| **post:**                                                             |
-|                                                                       |
-| **description: M**                                                    |
-|                                                                       |
-| **operationId: PushMessage_1**                                        |
-|                                                                       |
-| **parameters:**                                                       |
-|                                                                       |
-| **- name: id_resource**                                               |
-|                                                                       |
-| **in: path**                                                          |
-|                                                                       |
-| **required: true**                                                    |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **type: integer**                                                     |
-|                                                                       |
-| **format: int32**                                                     |
-|                                                                       |
-| **requestBody:**                                                      |
-|                                                                       |
-| **content:**                                                          |
-|                                                                       |
-| **application/json:**                                                 |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **$ref: '#/components/schemas/MType'**                                |
-|                                                                       |
-| **responses:**                                                        |
-|                                                                       |
-| **200:**                                                              |
-|                                                                       |
-| **description: Esecuzione di M avvenuta con successo**                |
-|                                                                       |
-| **headers: &ratelimit_headers**                                       |
-|                                                                       |
-| **X-RateLimit-Limit:**                                                |
-|                                                                       |
-| **$ref: '#/components/headers/X-RateLimit-Limit'**                    |
-|                                                                       |
-| **X-RateLimit-Remaining:**                                            |
-|                                                                       |
-| **$ref: '#/components/headers/X-RateLimit-Remaining'**                |
-|                                                                       |
-| **X-RateLimit-Reset:**                                                |
-|                                                                       |
-| **$ref: '#/components/headers/X-RateLimit-Reset'**                    |
-|                                                                       |
-| **content:**                                                          |
-|                                                                       |
-| **application/json:**                                                 |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **$ref: '#/components/schemas/MResponseType'**                        |
-|                                                                       |
-| **404:**                                                              |
-|                                                                       |
-| **description: Identificativo non trovato**                           |
-|                                                                       |
-| **headers:**                                                          |
-|                                                                       |
-| **<<: \*ratelimit_headers**                                           |
-|                                                                       |
-| **content:**                                                          |
-|                                                                       |
-| **application/json:**                                                 |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **$ref: '#/components/schemas/ErrorMessage'**                         |
-|                                                                       |
-| **400:**                                                              |
-|                                                                       |
-| **description: Richiesta malformata**                                 |
-|                                                                       |
-| **headers:**                                                          |
-|                                                                       |
-| **<<: \*ratelimit_headers**                                           |
-|                                                                       |
-| **content:**                                                          |
-|                                                                       |
-| **application/json:**                                                 |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **$ref: '#/components/schemas/ErrorMessage'**                         |
-|                                                                       |
-| **429:**                                                              |
-|                                                                       |
-| **description: Limite di richieste raggiunto**                        |
-|                                                                       |
-| **headers:**                                                          |
-|                                                                       |
-| **Retry-After:**                                                      |
-|                                                                       |
-| **description: Limite massimo richieste**                             |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **type: string**                                                      |
-|                                                                       |
-| **content:**                                                          |
-|                                                                       |
-| **application/json:**                                                 |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **$ref: '#/components/schemas/ErrorMessage'**                         |
-|                                                                       |
-| **500:**                                                              |
-|                                                                       |
-| **description: Errore interno avvenuto**                              |
-|                                                                       |
-| **content:**                                                          |
-|                                                                       |
-| **application/json:**                                                 |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **$ref: '#/components/schemas/ErrorMessage'**                         |
-|                                                                       |
-| **components:**                                                       |
-|                                                                       |
-| **headers:**                                                          |
-|                                                                       |
-| **Retry-After:**                                                      |
-|                                                                       |
-| **description: \|-**                                                  |
-|                                                                       |
-| **Retry contacting the endpoint \*at least\* after seconds.**         |
-|                                                                       |
-| **See https://tools.ietf.org/html/rfc7231#section-7.1.3**             |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **format: int32**                                                     |
-|                                                                       |
-| **type: integer**                                                     |
-|                                                                       |
-| **X-RateLimit-Limit:**                                                |
-|                                                                       |
-| **description: The number of allowed requests in the current period** |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **format: int32**                                                     |
-|                                                                       |
-| **type: integer**                                                     |
-|                                                                       |
-| **X-RateLimit-Remaining:**                                            |
-|                                                                       |
-| **description: The number of remaining requests in the current        |
-| period**                                                              |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **format: int32**                                                     |
-|                                                                       |
-| **type: integer**                                                     |
-|                                                                       |
-| **X-RateLimit-Reset:**                                                |
-|                                                                       |
-| **description: The number of seconds left in the current period**     |
-|                                                                       |
-| **schema:**                                                           |
-|                                                                       |
-| **format: int32**                                                     |
-|                                                                       |
-| **type: integer**                                                     |
-|                                                                       |
-| **schemas:**                                                          |
-|                                                                       |
-| **MType:**                                                            |
-|                                                                       |
-| **type: object**                                                      |
-|                                                                       |
-| **properties:**                                                       |
-|                                                                       |
-| **a:**                                                                |
-|                                                                       |
-| **$ref: '#/components/schemas/AComplexType'**                         |
-|                                                                       |
-| **b:**                                                                |
-|                                                                       |
-| **type: string**                                                      |
-|                                                                       |
-| **MResponseType:**                                                    |
-|                                                                       |
-| **type: object**                                                      |
-|                                                                       |
-| **properties:**                                                       |
-|                                                                       |
-| **c:**                                                                |
-|                                                                       |
-| **type: string**                                                      |
-|                                                                       |
-| **AComplexType:**                                                     |
-|                                                                       |
-| **type: object**                                                      |
-|                                                                       |
-| **properties:**                                                       |
-|                                                                       |
-| **a1s:**                                                              |
-|                                                                       |
-| **type: array**                                                       |
-|                                                                       |
-| **items:**                                                            |
-|                                                                       |
-| **type: integer**                                                     |
-|                                                                       |
-| **format: int32**                                                     |
-|                                                                       |
-| **a2:**                                                               |
-|                                                                       |
-| **type: string**                                                      |
-|                                                                       |
-| **ErrorMessage:**                                                     |
-|                                                                       |
-| **type: object**                                                      |
-|                                                                       |
-| **properties:**                                                       |
-|                                                                       |
-| **detail:**                                                           |
-|                                                                       |
-| **description: \|**                                                   |
-|                                                                       |
-| **A human readable explanation specific to this occurrence of the**   |
-|                                                                       |
-| **problem.**                                                          |
-|                                                                       |
-| **type: string**                                                      |
-|                                                                       |
-| **instance:**                                                         |
-|                                                                       |
-| **description: \|**                                                   |
-|                                                                       |
-| **An absolute URI that identifies the specific occurrence of the      |
-| problem.**                                                            |
-|                                                                       |
-| **It may or may not yield further information if dereferenced.**      |
-|                                                                       |
-| **format: uri**                                                       |
-|                                                                       |
-| **type: string**                                                      |
-|                                                                       |
-| **status:**                                                           |
-|                                                                       |
-| **description: \|**                                                   |
-|                                                                       |
-| **The HTTP status code generated by the origin server for this        |
-| occurrence**                                                          |
-|                                                                       |
-| **of the problem.**                                                   |
-|                                                                       |
-| **exclusiveMaximum: true**                                            |
-|                                                                       |
-| **format: int32**                                                     |
-|                                                                       |
-| **maximum: 600**                                                      |
-|                                                                       |
-| **minimum: 100**                                                      |
-|                                                                       |
-| **type: integer**                                                     |
-|                                                                       |
-| **title:**                                                            |
-|                                                                       |
-| **description: \|**                                                   |
-|                                                                       |
-| **A short, summary of the problem type. Written in english and        |
-| readable**                                                            |
-|                                                                       |
-| **for engineers (usually not suited for non technical stakeholders    |
-| and**                                                                 |
-|                                                                       |
-| **not localized); example: Service Unavailable**                      |
-|                                                                       |
-| **type: string**                                                      |
-|                                                                       |
-| **type:**                                                             |
-|                                                                       |
-| **default: about:blank**                                              |
-|                                                                       |
-| **description: \|**                                                   |
-|                                                                       |
-| **An absolute URI that identifies the problem type. When              |
-| dereferenced,**                                                       |
-|                                                                       |
-| **it SHOULD provide human-readable documentation for the problem      |
-| type**                                                                |
-|                                                                       |
-| **(e.g., using HTML).**                                               |
-|                                                                       |
-| **format: uri**                                                       |
-|                                                                       |
-| **type: string**                                                      |
-+-----------------------------------------------------------------------+
+.. literalinclude:: file-bba2ec3fb16890ea6e8abe4949de0e7e3ba577d5aece9bee1c0bc1796742ad9a.yaml
+   :language: yaml
 
 Di seguito, un esempio di chiamata alle API, con risposta nel caso in
 cui i limiti non siano ancora stati raggiunti e nel caso in cui invece
@@ -411,81 +95,60 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
 
 1. Request
 
-+----------------------------------------------------------+
-| POST **/rest/nome-api/v1/resources/1234/M** **HTTP**/1.1 |
-|                                                          |
-| Host: api.ente.example                                   |
-|                                                          |
-| Content-Type: application/json                           |
-|                                                          |
-| {                                                        |
-|                                                          |
-| **"a"**: {                                               |
-|                                                          |
-| **"a1"**: [1,...,2],                                     |
-|                                                          |
-| **"a2"**: "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"                 |
-|                                                          |
-| },                                                       |
-|                                                          |
-| **"b"**: "Stringa di esempio"                            |
-|                                                          |
-| }                                                        |
-+----------------------------------------------------------+
+.. code-block:: http
+
+   POST /rest/nome-api/v1/resources/1234/M HTTP/1.1
+   
+   Host: api.ente.example
+   
+   Content-Type: application/json
+   
+   {
+   "a": {
+	   "a1": [1,...,2],
+	   "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
+	   },
+   "b": "Stringa di esempio"
+   }
 
 2. Response 200 con rate limiting
 
-+---------------------------+
-| **HTTP**/1.1 200 Success  |
-|                           |
-| X-RateLimit-Limit: 30     |
-|                           |
-| X-RateLimit-Remaining: 11 |
-|                           |
-| X-RateLimit-Reset: 44     |
-|                           |
-| {                         |
-|                           |
-| "c" : "risultato"         |
-|                           |
-| }                         |
-+---------------------------+
+.. code-block:: http
+
+   HTTP/1.1 200 Success
+   X-RateLimit-Limit: 30
+   X-RateLimit-Remaining: 11
+   X-RateLimit-Reset: 44
+   
+   {
+   "c" : "risultato"
+   }
 
 2. Response 429 Too Many Requests
 
-+----------------------------------------------------+
-| **HTTP**/1.1 429 Too Many Requests                 |
-|                                                    |
-| Content-Type: application/problem+json             |
-|                                                    |
-| Retry-After: 60                                    |
-|                                                    |
-| {                                                  |
-|                                                    |
-| **"status"**: 429,                                 |
-|                                                    |
-| **"title"**: "Hai superato la quota di richieste." |
-|                                                    |
-| }                                                  |
-+----------------------------------------------------+
+.. code-block:: http
+
+   HTTP/1.1 429 Too Many Requests
+   Content-Type: application/problem+json
+   Retry-After: 60
+   
+   {
+   "status": 429,
+   "title": "Hai superato la quota di richieste."
+   }
 
 2. Response 503 Service Unavailable
 
-+------------------------------------------+
-| **HTTP**/1.1 503 Service Unavailable     |
-|                                          |
-| Content-Type: application/problem+json   |
-|                                          |
-| Retry-After: 3600                        |
-|                                          |
-| {                                        |
-|                                          |
-| **"status"**: 503,                       |
-|                                          |
-| **"title"**: "Servizio in manutenzione." |
-|                                          |
-| }                                        |
-+------------------------------------------+
+.. code-block:: http
+
+   HTTP/1.1 503 Service Unavailable
+   Content-Type: application/problem+json
+   Retry-After: 3600
+   
+   {
+   "status": 503,
+   "title": "Servizio in manutenzione."
+   }
 
 [RAC_ROBUSTEZZA_003] Uniformità di Indicatori ed Obiettivi di Servizio
 ----------------------------------------------------------------------
@@ -509,27 +172,27 @@ in modo che a valori più alti corrispondano risultati positivi.
 Alcuni esempi di indicatori a cui è possibile associare degli obiettivi
 o degli accordi:
 
-+-----------------------------------------------------------------------+
-| -  dimensione massima di ogni richiesta accettata. Le richieste più   |
-|    grandi possono essere rifiutate                                    |
-|                                                                       |
-| -  latenza al 90º percentile. Utilizzata per calcolare la             |
-|    responsività                                                       |
-|                                                                       |
-| -  percentuale di minuti negli ultimi 30 giorni in cui l’interfaccia  |
-|    di servizio è stata disponibile                                    |
-|                                                                       |
-| -  valori a 30 giorni del success rate, ovvero il numero di chiamate  |
-|    terminate con successo rispetto al numero totale di chiamate       |
-|                                                                       |
-| -  Application Performance inDEX [4]_, indice su scala percentuale di |
-|    qualità del servizio misurato a 30 giorni                          |
-|                                                                       |
-| -  tempo di risposta medio delle richieste totali (includendo le      |
-|    richieste rifiutate a causa del throttling) negli ultimi 30 giorni |
-|                                                                       |
-| -  throughput misurato in byte/s                                      |
-+-----------------------------------------------------------------------+
+.. code-block:: python
+
+   -  dimensione massima di ogni richiesta accettata. Le richieste più
+   grandi possono essere rifiutate
+   
+   -  latenza al 90º percentile. Utilizzata per calcolare la
+   responsività
+   
+   -  percentuale di minuti negli ultimi 30 giorni in cui l’interfaccia
+   di servizio è stata disponibile
+   
+   -  valori a 30 giorni del success rate, ovvero il numero di chiamate
+   terminate con successo rispetto al numero totale di chiamate
+   
+   -  Application Performance inDEX [4]_, indice su scala percentuale di
+   qualità del servizio misurato a 30 giorni
+   
+   -  tempo di risposta medio delle richieste totali (includendo le
+   richieste rifiutate a causa del throttling) negli ultimi 30 giorni
+   
+   -  throughput misurato in byte/s
 
 .. [1]
    È stato avviato il processo di standardizzazione dell’utilizzo degli

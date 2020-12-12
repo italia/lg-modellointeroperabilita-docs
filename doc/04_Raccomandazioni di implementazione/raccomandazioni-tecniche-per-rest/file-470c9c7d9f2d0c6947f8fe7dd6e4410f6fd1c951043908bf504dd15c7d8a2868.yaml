@@ -1,0 +1,51 @@
+   openapi: 3.0.2
+   
+   ...
+   
+   paths:
+   
+   ...
+   
+   /status:
+   
+   get:
+   
+   summary: Ritorna lo stato dell'applicazione.
+   
+   tags:
+   
+   - public
+   
+   description: \|
+   
+   Ritorna lo stato dell'applicazione in formato problem+json
+   
+   responses:
+   
+   '200':
+   
+   content:
+   
+   application/problem+json:
+   
+   schema:
+   
+   $ref: '#/components/schemas/Problem'
+   
+   description: \|
+   
+   Il servizio funziona correttamente.
+   
+   default:
+   
+   content:
+   
+   application/problem+json:
+   
+   schema:
+   
+   $ref: '#/components/schemas/Problem'
+   
+   description: \|
+   
+   Il server ha riscontrato un problema.
