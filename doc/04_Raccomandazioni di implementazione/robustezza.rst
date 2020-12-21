@@ -195,9 +195,9 @@ o degli accordi:
    -  throughput misurato in byte/s
 
 .. [1]
-   È stato avviato il processo di standardizzazione dell’utilizzo degli
+   È in corso il processo di standardizzazione dell’utilizzo degli
    header indicati
-   https://datatracker.ietf.org/doc/draft-polli-ratelimit-headers/
+   https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers/
 
 .. [2]
    Cfr. RFC 7231 prevede che l’header HTTP header Retry-After possa
