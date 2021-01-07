@@ -12,8 +12,8 @@ rispettata le seguente regola:
    ritorno. Inoltre le interfacce devono specificare eventuali header
    SOAP richiesti.
 
-   3. .. rubric:: Regole di processamento
-         :name: regole-di-processamento-1
+Regole di processamento
+------------------------------------------------------------
 
 Nel caso di errore il WS-I Basic Profile Version 2.0 richiede l’utilizzo
 del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
@@ -35,8 +35,8 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 -  In caso di successo restituire HTTP status 200 OK, riempiendo il body
    di risposta con il risultato dell’operazione.
 
-   4. .. rubric:: Esempio
-         :name: esempio-1
+Esempio
+------------------------------------------------------------
 
 Specifica Servizio
 

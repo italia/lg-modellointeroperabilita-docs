@@ -18,8 +18,8 @@ seguite almeno le seguenti indicazioni:
 -  Al passo (2) l'erogatore DEVE utilizzare HTTP status 2xx a meno che
    non si verifichino errori.
 
-   1. .. rubric:: Regole di processamento
-         :name: regole-di-processamento
+Regole di processamento
+------------------------------------------------------------
 
 Al termine del processamento della richiesta, l’erogatore DEVE fare uso
 dei codici di stato HTTP rispettando la semantica. In particolare, al

@@ -19,7 +19,8 @@ Versione 1.0 del 04/09/2020
   :caption: Indice dei contenuti
 
   introduzione.rst
-  ambito-di-applicazione.rst
+  ambito-di-applicazione-riferimenti-sigle.rst
+  principi-generali.rst
   pattern-bloccanti.rst
   pattern-non-bloccanti.rst
   accesso-crud-a-risorse.rst

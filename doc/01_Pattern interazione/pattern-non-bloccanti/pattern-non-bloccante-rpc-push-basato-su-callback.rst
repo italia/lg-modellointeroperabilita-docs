@@ -71,8 +71,8 @@ DEVONO essere rispettate le seguenti indicazioni:
    stato DEVE essere HTTP status 200 OK a meno che non si verifichino
    errori.
 
-   1. .. rubric:: Regole di processamento
-         :name: regole-di-processamento-2
+Regole di processamento
+------------------------------------------------------------
 
 Al termine del processamento delle richieste, l’erogatore ed il fruitore
 DEVONO fare uso dei codici di stato HTTP rispettando la semantica.
@@ -750,8 +750,8 @@ seguenti regole:
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
    acknowledgement il ricevimento della risposta.
 
-   3. .. rubric:: Regole di processamento
-         :name: regole-di-processamento-3
+Regole di processamento
+------------------------------------------------------------
 
 Nel caso di errore il WS-I Basic Profile Version 2.0 richiede l’utilizzo
 del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
@@ -788,8 +788,8 @@ In particolare, al ricevimento della richiesta, fruitore ed erogatore:
    del richiedente (fruitore o erogatore), è possibile definire
    meccanismi specifici per la ri-trasmettere le richieste.
 
-   4. .. rubric:: Esempio
-         :name: esempio-3
+Esempio
+------------------------------------------------------------
 
 Specifica Servizio Server
 
