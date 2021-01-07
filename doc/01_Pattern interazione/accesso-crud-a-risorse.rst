@@ -61,7 +61,7 @@ seguente mappatura viene utilizzata:
 +-----------------+-----------------+-----------------+-----------------+
 | Create          | POST            | 201 (Created),  | 404 (Not        |
 |                 |                 | l’header        | Found), 409     |
-|                 |                 | “Location”      | (Conflict) se   |
+|                 |                 | "Location"      | (Conflict) se   |
 |                 |                 | nella risposta  | la risorsa è    |
 |                 |                 | può contenere   | già esistente.  |
 |                 |                 | un link a       |                 |
@@ -751,7 +751,7 @@ Di seguito un esempio di chiamata per creare una prenotazione.
    }
 
 Di seguito un esempio in cui il fruitore richiede l’estrazione di una
-specifica prenotazione. Si noti l’utilizzo dell’URL restituito nell”
+specifica prenotazione. Si noti l’utilizzo dell’URL restituito nell"
 HTTP header Location al passo precedente.
 
 1. Request

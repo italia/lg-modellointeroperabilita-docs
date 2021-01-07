@@ -76,7 +76,7 @@ Gli erogatori DOVREBBERO:
 +-----------------------------------+-----------------------------------+
 
 La fase tecnica si conclude con l’attuazione di quanto disposto in
-“Governance dei servizi” relativamente alla pubblicazione degli
+"Governance dei servizi" relativamente alla pubblicazione degli
 e-service e della sottoscrizione degli accordi di interoperabilità.
 
 |image0|

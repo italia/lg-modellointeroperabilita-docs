@@ -5,11 +5,11 @@ La Linea di indirizzo sull’interoperabilità tecnica delle Pubbliche
 Amministrazioni viene redatta in ottemperanza alla lettera a comma 2
 dell’Art. 14-bis del DECRETO LEGISLATIVO 7 marzo 2005, n. 82 (Codice
 dell'amministrazione digitale.), che individua le funzioni di AgID tra
-cui: “emanazione di Linee [...] di indirizzo [...] sull'attuazione e sul
+cui: "emanazione di Linee [...] di indirizzo [...] sull'attuazione e sul
 rispetto delle norme di cui al presente Codice, anche attraverso
 l'adozione di atti amministrativi generali, in materia di [...]
 interoperabilità e cooperazione applicativa tra sistemi informatici
-pubblici e quelli dell'Unione europea”.
+pubblici e quelli dell'Unione europea".
 
 La Linea di indirizzo, e successivi aggiornamenti, viene emessa
 attraverso Circolare AgID, nel rispetto della normativa vigente.

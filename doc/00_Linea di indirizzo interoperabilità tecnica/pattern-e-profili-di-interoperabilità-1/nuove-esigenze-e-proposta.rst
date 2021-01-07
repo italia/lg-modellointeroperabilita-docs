@@ -10,15 +10,15 @@ Nel caso in cui il richiedente non riesca a definire un profilo
 applicativo per la mancanza di uno o più *pattern di interoperabilità* o
 *profili di interoperabilità*, DEVE dichiarare la necessità di
 introdurre un nuovo *pattern di interoperabilità* e *profili di
-interoperabilità* avviando una “nuova esigenza” e inviando una
+interoperabilità* avviando una "nuova esigenza" e inviando una
 comunicazione attraverso gli strumenti messi a disposizione da AgID.
 
 Un richiedente, secondo le proprie disponibilità e necessità, PUÒ
 definire un *pattern di interoperabilità* o *profili di
-interoperabilità* quale proposta che risolva la “nuova esigenza” e la
+interoperabilità* quale proposta che risolva la "nuova esigenza" e la
 trasmetterla ad AgiD come prima ipotesi risolutiva.
 
-AgID, entro 15 giorni dall’invio della richiesta di una “nuova esigenza”
+AgID, entro 15 giorni dall’invio della richiesta di una "nuova esigenza"
 valuta se sussistono le condizioni per avviare la fase di concertazione.
 In caso contrario DEVE comunicare al richiedente le motivazioni del
 rifiuto.

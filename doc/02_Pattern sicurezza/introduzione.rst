@@ -26,7 +26,7 @@ nel capitolo 7 Pattern e profili di interoperabilità delle Linea di
 indirizzo sull’interoperabilità tecnica delle Pubbliche Amministrazioni.
 
 I pattern di sicurezza individuati, coprono gli aspetti di comunicazione
-“sicura” tra i domini delle singole parti. Le parti mantengono la loro
+"sicura" tra i domini delle singole parti. Le parti mantengono la loro
 autonomia negli aspetti organizzativi e di sicurezza interni al proprio
 dominio.
 
