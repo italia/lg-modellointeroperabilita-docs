@@ -43,8 +43,8 @@ adottato dalle PA.
 
 La Linea di indirizzo, e più in generale il ModI, completa il processo
 di aggiornamento del SPCoop avviato con la determinazione AgID 219/2017
-- “Linee guida per transitare al nuovo modello di
-interoperabilità” [2]_.
+- "Linee guida per transitare al nuovo modello di
+interoperabilità" [2]_.
 
 **La Linea di indirizzo considera i soli servizi digitali (di seguito
 e-service) realizzati da una Pubblica Amministrazione per assicurare
@@ -65,7 +65,7 @@ provvedendo a:
    innovative che semplifichino e abilitino l’utilizzo dei dati e dei
    servizi digitali;
 
--  promuovere l’adozione dell’approccio “API first” per favorire la
+-  promuovere l’adozione dell’approccio "API first" per favorire la
    separazione dei livelli di backend e frontend, con logiche aperte e
    standard pubblici che garantiscano ad altri attori, pubblici e
    privati, accessibilità e massima interoperabilità di dati e servizi

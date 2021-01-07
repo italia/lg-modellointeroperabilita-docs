@@ -1,5 +1,12 @@
+Ambito di applicazione
+======================
+
+Il presente Documento operativo è redatto quale documento operativo
+relativo alla Linea di indirizzo sull’interoperabilità tecnica delle
+Pubbliche Amministrazioni.
+
 Soggetti destinatari
-====================
+---------------------
 
 Il Documento Operativo è destinata ai soggetti di cui all'articolo 2,
 comma 2 del CAD, così come indicato dall’articolo 75 dello stesso. I
@@ -22,12 +29,12 @@ Il Documento Operativo è rivolta ai soggetti privati che devono
 interoperare interfacciarsi con la Pubblica Amministrazione per erogare
 o fruire di dati e servizi tramite sistemi informatici.
 
-3. .. rubric:: 
-      Riferimenti e sigle
-      :name: riferimenti-e-sigle
+Riferimenti e sigle
+=========================
 
-   2. .. rubric:: Note di lettura del documento
-         :name: note-di-lettura-del-documento
+
+Note di lettura del documento
+------------------------------
 
 Conformemente alle norme ISO/IEC Directives, Part 3 per la stesura dei
 documenti tecnici la presente Linea di indirizzo utilizzerà le parole
@@ -49,8 +56,8 @@ seguito.
    lettore può scegliere di applicare o meno senza alcun tipo di
    implicazione o restrizione la specifica.
 
-   3. .. rubric:: Riferimenti Normativi
-         :name: riferimenti-normativi
+Riferimenti Normativi
+----------------------
 
 Sono riportati di seguito gli atti normativi di riferimento del presente
 documento.
@@ -60,10 +67,10 @@ documento.
 
 +-----------------------------------+-----------------------------------+
 | **[D.lgs. 82/2005]**              | Decreto legislativo 7 marzo 2005, |
-|                                   | n. 82 recante “Codice             |
-|                                   | dell’amministrazione digitale”;   |
+|                                   | n. 82 recante "Codice             |
+|                                   | dell’amministrazione digitale";   |
 |                                   | NOTA – Il D. Lgs. 82/2010 è noto  |
-|                                   | anche con l’abbreviazione “CAD”   |
+|                                   | anche con l’abbreviazione "CAD"   |
 +-----------------------------------+-----------------------------------+
 | **[EIF]**                         | European Interoperability         |
 |                                   | Framework (EIF)                   |
@@ -99,3 +106,41 @@ documento.
 |                                   | al riutilizzo dell'informazione   |
 |                                   | del settore pubblico              |
 +-----------------------------------+-----------------------------------+
+
+Standard di riferimento
+------------------------
+
+Sono riportati di seguito gli standard tecnici indispensabili per
+l’applicazione del presente documento.
+
++-----------------------------------+-----------------------------------+
+| **[RFC 7396]**                    | JSON Merge Patch                  |
++-----------------------------------+-----------------------------------+
+| **[RFC 7389]**                    | Separazione di controllo e piano  |
+|                                   | utente per Proxy Mobile IPv6      |
++-----------------------------------+-----------------------------------+
+| **[RFC 5789]**                    | Metodo PATCH per HTTP             |
++-----------------------------------+-----------------------------------+
+
+Termini e definizioni
+-------------------------
+
++-----------------------------------+-----------------------------------+
+| **[AgID]**                        | Agenzia per l’Italia Digitale     |
++-----------------------------------+-----------------------------------+
+| **[CAD]**                         | Codice Amministrazione Digitale,  |
+|                                   | D.lgs. 7 marzo 2005, n. 82        |
++-----------------------------------+-----------------------------------+
+| **[PA]**                          | Pubblica Amministrazione          |
++-----------------------------------+-----------------------------------+
+| **[UML]**                         | Linguaggio di modellazione        |
+|                                   | unificato (Unified Modeling       |
+|                                   | Language)                         |
++-----------------------------------+-----------------------------------+
+| **[RPC]**                         | Remote procedure call             |
++-----------------------------------+-----------------------------------+
+| **[SOAP]**                        | Simple Object Access Protocol     |
++-----------------------------------+-----------------------------------+
+| **[REST]**                        | Representational State Transfer   |
++-----------------------------------+-----------------------------------+
+

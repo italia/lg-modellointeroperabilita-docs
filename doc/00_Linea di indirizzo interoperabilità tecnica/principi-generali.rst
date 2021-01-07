@@ -35,7 +35,7 @@ procedure/funzionalità/operazioni disponibili al programmatore, di
 solito raggruppate a formare un insieme di strumenti specifici per
 l’espletamento di un determinato compito. Spesso, con tale termine si
 intendono le librerie software disponibili in un certo linguaggio di
-programmazione. Una buona API fornisce una “scatola nera”, cioè un
+programmazione. Una buona API fornisce una "scatola nera", cioè un
 livello di astrazione che evita al programmatore di conoscere i dettagli
 implementativi dell’API stessa. Questo permette di ri-progettare o
 migliorare le funzioni all’interno dell’API, senza cambiare il codice

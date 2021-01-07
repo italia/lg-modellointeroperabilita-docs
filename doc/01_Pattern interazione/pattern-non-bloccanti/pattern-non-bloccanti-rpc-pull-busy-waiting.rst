@@ -108,8 +108,8 @@ DEVONO essere rispettate le seguenti regole:
 -  Al passo (6) l’erogatore risponde con la rappresentazione della
    risorsa, il codice HTTP restituito è HTTP status 200 OK.
 
-   5. .. rubric:: Regole di processamento
-         :name: regole-di-processamento-4
+Regole di processamento
+------------------------------------------------------------
 
 Al termine del processamento delle richieste, l’erogatore deve fare uso
 dei codici di stato HTTP rispettando la semantica. In particolare, al
@@ -173,17 +173,11 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    POST /rest/nome-api/v1/resources/1234/M HTTP/1.1
    
    {
-   
    "a": {
-   
-   "a1": [1,…,2],
-   
-   "a2": "Stringa di esempio"
-   
+	   "a1": [1,…,2],
+	   "a2": "Stringa di esempio"
    },
-   
    "b": "Stringa di esempio"
-   
    }
 
 2. Response Header & Body (HTTP status 202 Accepted)
@@ -191,19 +185,13 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
 .. code-block:: python
 
    HTTP/1.1 202 Accepted
-   
    Content-Type: application/json
-   
    Location: resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
    
    {
-   
-   "status": "\ accepted\ ",
-   
+   "status": "accepted",
    "message": "Preso carico della richiesta",
-   
    "id": "8131edc0-29ed-4d6e-ba43-cce978c7ea8d"
-   
    }
 
 Di seguito un esempio di chiamata con cui il fruitore verifica
@@ -221,11 +209,8 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
    HTTP/1.1 200 Success
    
    {
-   
    "status": "processing",
-   
    "message": "Richiesta in fase di processamento"
-   
    }
 
 4. Response Header & Body (HTTP status 303 See Other)
@@ -235,11 +220,8 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
    HTTP/1.1 303 See Other
    
    {
-   
    "status": "done",
-   
    "message": "Processamento completo"
-   
    }
 
 Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
@@ -256,9 +238,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
    HTTP/1.1 200 Success
    
    {
-   
    "c": "OK"
-   
    }
 
 [NONBLOCK_PULL_SOAP] Not Blocking Pull SOAP
@@ -292,8 +272,8 @@ DEVONO essere rispettate le seguenti regole:
 
 -  Al passo (6), l’erogatore fornisce il risultato del processamento.
 
-   7. .. rubric:: Regole di processamento
-         :name: regole-di-processamento-5
+Regole di processamento
+------------------------------------------------------------
 
 Nel caso di errore il WS-I Basic Profile Version 2.0 richiede l’utilizzo
 del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
@@ -315,8 +295,8 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 -  In caso di successo restituire HTTP status 200 OK, riempiendo il body
    di risposta con il risultato dell’operazione.
 
-   8. .. rubric:: Esempio
-         :name: esempio-5
+Esempio
+------------------------------------------------------------
 
 Specifica Servizio Server
 
@@ -336,74 +316,44 @@ Method MRequest
 
 1. Request Body
 
-.. code-block:: python
+.. code-block:: xml
 
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api"\ >
-   
-   <soap:Body>
-   
-   <m:MRequest
-   
-   <M>
-   
-   <o_id>1234</o_id>
-   
-   <a>
-   
-   <a1s>1</a1s>
-   
-   <a2>prova</a2>
-   
-   </a>
-   
-   <b>prova</b>
-   
-   </M>
-   
-   </m:MRequest>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
+	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
+	  <soap:Body>
+		<m:MRequest>
+		  <M>
+			<o_id>1234</o_id>
+			<a>
+			  <a1s>1</a1s>
+			  <a2>prova</a2>
+			</a>
+			<b>prova</b>
+		  </M>
+		</m:MRequest>
+	  </soap:Body>
+	</soap:Envelope>
+
 
 2. Response Body (HTTP status code 200 OK)
 
-.. code-block:: python
+.. code-block:: xml
 
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api"\ >
-   
-   <soap:Header>
-   
-   <m:X-Correlation-ID>\ c8e191a8-f34f-41ed-82ea-68e096466707\ </m
-   :X-Correlation-ID>
-   
-   </soap:Header>
-   
-   <soap:Body>
-   
-   <m:MRequestResponse>
-   
-   <return>
-   
-   <status>\ accepted\ </status>
-   
-   <message>\ Preso carico della richiesta\ </message>
-   
-   </return>
-   
-   </m:MRequestResponse>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
+	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
+	  <soap:Header>
+		<m:X-Correlation-ID>
+	c8e191a8-f34f-41ed-82ea-68e096466707
+	</m:X-Correlation-ID>
+	  </soap:Header>
+	  <soap:Body>
+		<m:MRequestResponse>
+		  <return>
+			<status> accepted </status>
+			<message> Preso carico della richiesta </message>
+		  </return>
+		</m:MRequestResponse>
+	  </soap:Body>
+	</soap:Envelope>
+
 
 Di seguito un esempio di chiamata con cui il fruitore verifica
 l’esecuzione di M nei casi di processamento ancora in atto e di
@@ -417,84 +367,47 @@ Method MProcessingStatus
 
 3. Request Body status
 
-.. code-block:: python
+.. code-block:: xml
 
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api"\ >
-   
-   <soap:Header>
-   
-   <m:X-Correlation-ID>\ c8e191a8-f34f-41ed-82ea-68e096466707\ </m
-   :X-Correlation-ID>
-   
-   </soap:Header>
-   
-   <soap:Body>
-   
-   <m:MProcessingStatus/>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
+	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
+	  <soap:Header>
+		<m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
+	  </soap:Header>
+	  <soap:Body>
+		<m:MProcessingStatus/>
+	  </soap:Body>
+	</soap:Envelope>
 
 4. Response Body (HTTP status code 200 OK) status in attesa
 
-.. code-block:: python
+.. code-block:: xml
 
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api"\ >
-   
-   <soap:Body>
-   
-   <m:MProcessingStatusResponse>
-   
-   <return>
-   
-   <status>\ processing\ </status>
-   
-   <message>\ Richiesta in fase di processamento\ </message>
-   
-   </return>
-   
-   </m:MProcessingStatusResponse>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
+	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
+	  <soap:Body>
+		<m:MProcessingStatusResponse>
+		  <return>
+			<status>processing</status>
+			<message>Richiesta in fase di processamento</message>
+		  </return>
+		</m:MProcessingStatusResponse>
+	  </soap:Body>
+	</soap:Envelope>
+
 
 4. Response Body (HTTP status code 200 OK) status completata
 
-.. code-block:: python
+.. code-block:: xml
 
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api"\ >
-   
-   <soap:Body>
-   
-   <m:MProcessingStatusResponse>
-   
-   <return>
-   
-   <status>\ done\ </status>
-   
-   <message>\ Richiesta completata\ </message>
-   
-   </return>
-   
-   </m:MProcessingStatusResponse>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
+	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
+	  <soap:Body>
+		<m:MProcessingStatusResponse>
+		  <return>
+			<status>done</status>
+			<message> Richiesta completata </message>
+		  </return>
+		</m:MProcessingStatusResponse>
+	  </soap:Body>
+	</soap:Envelope>
 
 Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
 della sua richiesta.
@@ -507,54 +420,30 @@ Method MProcessingStatus
 
 5. Request Body result
 
-.. code-block:: python
+.. code-block:: xml
 
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api">
-   
-   <soap:Header>
-   
-   <m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Corre
-   lation-ID>
-   
-   </soap:Header>
-   
-   <soap:Body>
-   
-   <m:MResponse/>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
+	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
+	  <soap:Header>
+		<m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
+	  </soap:Header>
+	  <soap:Body>
+		<m:MResponse/>
+	  </soap:Body>
+	</soap:Envelope>
 
 4. Response Body (HTTP status code 200 OK) result
 
-.. code-block:: python
+.. code-block:: xml
 
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api">
-   
-   <soap:Body>
-   
-   <m:MResponseResponse">
-   
-   <return>
-   
-   <c>OK</c>
-   
-   </return>
-   
-   </m:MResponseResponse>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
+	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
+	  <soap:Body>
+		<m:MResponseResponse>
+		  <return>
+			<c>OK</c>
+		  </return>
+		</m:MResponseResponse>
+	  </soap:Body>
+	</soap:Envelope>
 
 .. mermaid::
 
