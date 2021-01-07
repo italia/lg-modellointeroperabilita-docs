@@ -318,7 +318,6 @@ Method MRequest
 
 .. code-block:: xml
 
-	<?xml version="1.0"?>
 	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
 	  <soap:Body>
 		<m:MRequest>
@@ -339,7 +338,6 @@ Method MRequest
 
 .. code-block:: xml
 
-	<?xml version="1.0"?>
 	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
 	  <soap:Header>
 		<m:X-Correlation-ID>
@@ -371,7 +369,6 @@ Method MProcessingStatus
 
 .. code-block:: xml
 
-	<?xml version="1.0"?>
 	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
 	  <soap:Header>
 		<m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
@@ -385,7 +382,6 @@ Method MProcessingStatus
 
 .. code-block:: xml
 
-	<?xml version="1.0"?>
 	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
 	  <soap:Body>
 		<m:MProcessingStatusResponse>
@@ -402,7 +398,6 @@ Method MProcessingStatus
 
 .. code-block:: xml
 
-	<?xml version="1.0"?>
 	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
 	  <soap:Body>
 		<m:MProcessingStatusResponse>
@@ -427,7 +422,6 @@ Method MProcessingStatus
 
 .. code-block:: xml
 
-	<?xml version="1.0"?>
 	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
 	  <soap:Header>
 		<m:X-Correlation-ID>c8e191a8-f34f-41ed-82ea-68e096466707</m:X-Correlation-ID>
@@ -441,7 +435,6 @@ Method MProcessingStatus
 
 .. code-block:: xml
 
-	<?xml version="1.0"?>
 	<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:m="http://ente.example/nome-api">
 	  <soap:Body>
 		<m:MResponseResponse>
