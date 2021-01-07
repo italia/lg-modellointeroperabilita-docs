@@ -286,77 +286,16 @@ Method M
 
 1. Request Body
 
-.. code-block:: python
+.. literalinclude:: SOAPCallbackRequestResponses.xml
+   :language: xml
+   :lines: 2-18
 
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api">
-   
-   <soap:Header>
-   
-   <m:X-ReplyTo>https://api.indirizzoclient.it/soap/nome-api/v1</m:X-ReplyTo>
-   
-   </soap:Header>
-   
-   <soap:Body>
-   
-   <m:MRequest>
-   
-   <M>
-   
-   <o_id>\ 1234\ </o_id>
-   
-   <a>
-   
-   <a1s>\ 1\ </a1s>
-   
-   <a2>\ prova\ </a2>
-   
-   </a>
-   
-   <b>\ prova\ </b>
-   
-   </M>
-   
-   </m:MRequest>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
 
 2. Response Body
 
-.. code-block:: python
-
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api">>
-   
-   <soap:Header>
-   
-   <m:X-Correlation-ID>b8268033-de67-4fa0-bf06-caebbfa5117a</m:X-Correlation-ID>
-   
-   </soap:Header>
-   
-   <soap:Body>
-   
-   <m:MRequestResponse>
-   
-   <return>
-   
-   <outcome>ACCEPTED</outcome>
-   
-   </return>
-   
-   </m:MRequestResponse>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
+.. literalinclude:: SOAPCallbackRequestResponses.xml
+   :language: xml
+   :lines: 21-32
 
 Di seguito un esempio di risposta da parte dell’erogatore verso il
 fruitore.
@@ -369,62 +308,15 @@ MRequestResponse
 
 3. Response Body
 
-.. code-block:: python
-
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api">
-   
-   <soap:Header>
-   
-   <m:X-Correlation-ID>b8268033-de67-4fa0-bf06-caebbfa5117a</m:X-Corre
-   lation-ID>
-   
-   </soap:Header>
-   
-   <soap:Body>
-   
-   <m:MRequestResponse>
-   
-   <return>
-   
-   <c>OK</c>
-   
-   </return>
-   
-   </m:MRequestResponse>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
+.. literalinclude:: SOAPCallbackRequestResponses.xml
+   :language: xml
+   :lines: 35-46
 
 4. Response Body
 
-.. code-block:: python
-
-   <soap:Envelope
-   
-   xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-   
-   xmlns:m="http://ente.example/nome-api">
-   
-   <soap:Body>
-   
-   <m:MRequestResponseResponse>
-   
-   <return>
-   
-   <outcome>OK</outcome>
-   
-   </return>
-   
-   </m:MRequestResponseResponse>
-   
-   </soap:Body>
-   
-   </soap:Envelope>
+.. literalinclude:: SOAPCallbackRequestResponses.xml
+   :language: xml
+   :lines: 49-57
 
 .. mermaid::
 
