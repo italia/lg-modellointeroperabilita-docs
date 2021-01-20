@@ -40,6 +40,7 @@ Il meccanismo con cui è stabilito il trust non condiziona il presente
 profilo.
 
 .. mermaid::
+
   sequenceDiagram
 
     activate Fruitore

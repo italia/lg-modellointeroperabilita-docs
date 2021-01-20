@@ -168,21 +168,20 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
 
 1. Request Header & Body
 
-.. code-block:: python
+.. code-block:: http
 
    POST /rest/nome-api/v1/resources/1234/M HTTP/1.1
-   
+   Content-Type: application/json
+
    {
-   "a": {
-	   "a1": [1,…,2],
-	   "a2": "Stringa di esempio"
-   },
+   "a": { "a1": [1,…,2], "a2": "Stringa di esempio" },
    "b": "Stringa di esempio"
    }
 
+
 2. Response Header & Body (HTTP status 202 Accepted)
 
-.. code-block:: python
+.. code-block:: http
 
    HTTP/1.1 202 Accepted
    Content-Type: application/json
@@ -204,10 +203,11 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
 
 4. Response Header & Body (HTTP status 200 Success)
 
-.. code-block:: python
+.. code-block:: http
 
    HTTP/1.1 200 Success
-   
+   Content-Type: application/json
+
    {
    "status": "processing",
    "message": "Richiesta in fase di processamento"
@@ -215,7 +215,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
 
 4. Response Header & Body (HTTP status 303 See Other)
 
-.. code-block:: python
+.. code-block:: http
 
    HTTP/1.1 303 See Other
    
@@ -233,13 +233,12 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
 
 6. Response Header & Body (HTTP status 200 Success)
 
-.. code-block:: python
+.. code-block:: http
 
    HTTP/1.1 200 Success
-   
-   {
-   "c": "OK"
-   }
+   Content-Type: application/json
+
+   { "c": "OK" }
 
 [NONBLOCK_PULL_SOAP] Not Blocking Pull SOAP
 -------------------------------------------
@@ -466,8 +465,8 @@ Method MProcessingStatus
   :height: 3.82076in
 
 .. mermaid::
-   sequenceDiagram
 
+   sequenceDiagram
      activate Erogatore
      activate Fruitore
      Fruitore->>Erogatore: 1. Request()

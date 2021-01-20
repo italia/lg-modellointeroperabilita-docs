@@ -31,6 +31,7 @@ La sequenza dei messaggi di richiesta/risposta avviene dopo aver
 instaurato il canale di trasmissione sicuro.
 
 .. mermaid::
+
    sequenceDiagram
    activate Fruitore
    activate Erogatore
@@ -107,14 +108,14 @@ instaurato il canale di trasmissione sicuro.
 
 .. mermaid::
 
-     sequenceDiagram
+    sequenceDiagram
      
-      activate Fruitore
-       activate Erogatore
-      Fruitore->>+Erogatore: 1. Request()
-      Erogatore-->>Fruitore: 2. Response
-      deactivate Erogatore
-       deactivate Fruitore
+    activate Fruitore
+	activate Erogatore
+    Fruitore->>+Erogatore: 1. Request()
+    Erogatore-->>Fruitore: 2. Response
+    deactivate Erogatore
+     deactivate Fruitore
 
 *Figura 2 - Sicurezza di canale e/o Autenticazione delle organizzazioni*
 
