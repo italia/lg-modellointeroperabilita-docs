@@ -1,0 +1,68 @@
+<soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:m="http://ente.example/nome-api">
+    <soap:Header>
+        *<!--Autenticazione-->*
+    </soap:Header>
+    <soap:Body>
+        <m:MRequest>
+            <M>
+                <oId>1234</oId>
+                <a>
+                    <a1s><a1>1</a1>...
+                        <a1>2</a1>
+                    </a1s>
+                    <a2>RGFuJ3MgVG9vbHMgYXJlIGNvb2wh</a2>
+                </a>
+                <b>Stringa di esempio</b>
+            </M>
+        </m:MRequest>
+    </soap:Body>
+</soap:Envelope>
+
+
+
+        <!--
+        2. Response Body (HTTP status code 200 OK)
+        
+        .. code-block:: python
+        -->
+<soap:Envelope
+xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+xmlns:m="http://ente.example/nome-api">
+<soap:Body>
+    <m:MRequestResponse>
+        <return>
+            <m:c>OK</m:c>
+        </return>
+    </m:MRequestResponse>
+</soap:Body>
+</soap:Envelope>
+
+
+
+
+
+
+
+
+<!-- Response body 500 -->
+<soap:Envelope
+xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+xmlns:m="http://ente.example/nome-api">
+<soap:Body>
+    <soap:Fault>
+        <soap:Code>
+            <soap:Value>soap:Receiver</soap:Value>
+        </soap:Code>
+        <soap:Reason>
+            <soap:Text xml:lang="en">Error</soap:Text>
+        </soap:Reason>
+        <soap:Detail>
+            <m:ErrorMessageFault>
+                <customFaultCode>1234</customFaultCode>
+            </m:ErrorMessageFault>
+        </soap:Detail>
+    </soap:Fault>
+</soap:Body>
+</soap:Envelope>

@@ -697,27 +697,16 @@ Di seguito un esempio di chiamata per creare una prenotazione.
 
 .. code-block:: http
 
-   POST
-   /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}
-   /prenotazioni
-   HTTP/1.1
+   POST /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni HTTP/1.1
    
    {
-   
    "nome_proprio": "Mario",
-   
    "cognome": "Rossi",
-   
-   "codice_fiscale": "\ MRORSS77T05E472I",
-   
+   "codice_fiscale": "MRORSS77T05E472I",
    "dettagli": {
-   
    "data": "2018-12-03T14:29:12.137Z",
-   
    "motivazione": "string"
-   
    }
-   
    }
 
 2. Response
@@ -725,29 +714,18 @@ Di seguito un esempio di chiamata per creare una prenotazione.
 .. code-block:: http
 
    HTTP/1.1 201 Created
-   
-   Location:
-   https://api.ente.example/rest/appuntamenti/v1/municipio/{id_municipio
-   }/ufficio/{id_ufficio}/prenotazioni/12323254
+   Location: https://api.ente.example/rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254
    
    {
    
    "id": 12323254,
-   
    "nome_proprio": "Mario",
-   
    "cognome": "Rossi",
-   
    "codice_fiscale": "\ MRORSS77T05E472I",
-   
    "dettagli": {
-   
    "data": "2018-12-03T14:29:12.137Z",
-   
    "motivazione": "string"
-   
    }
-   
    }
 
 Di seguito un esempio in cui il fruitore richiede l’estrazione di una
@@ -758,10 +736,7 @@ HTTP header Location al passo precedente.
 
 .. code-block:: http
 
-   GET
-   /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}
-   /prenotazioni/12323254
-   HTTP/1.1
+   GET /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 HTTP/1.1
 
 2. Response
 
@@ -770,23 +745,14 @@ HTTP header Location al passo precedente.
    HTTP/1.1 200 OK
    
    {
-   
    "id": 12323254,
-   
    "nome_proprio": "Mario",
-   
    "cognome": "Rossi",
-   
    "codice_fiscale": "\ MRORSS77T05E472I",
-   
    "dettagli": {
-   
    "data": "2018-12-03T14:29:12.137Z",
-   
    "motivazione": "string"
-   
    }
-   
    }
 
 Di seguito una richiesta di modifica dei dettagli di una prenotazione.
@@ -795,11 +761,7 @@ Di seguito una richiesta di modifica dei dettagli di una prenotazione.
 
 .. code-block:: http
 
-   PATCH
-   /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}
-   /prenotazioni/12323254
-   HTTP/1.1
-   
+   PATCH /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 HTTP/1.1
    Content-Type: application/merge-patch+json
    
    {
@@ -821,21 +783,13 @@ Di seguito una richiesta di modifica dei dettagli di una prenotazione.
    HTTP/1.1 200 OK
    
    {
-   
-   "nome_proprio": "Mario",
-   
-   "cognome": "Rossi",
-   
-   "codice_fiscale": "MRORSS77T05E472I",
-   
-   "dettagli": {
-   
-   "data": "2018-12-03T14:29:12.137Z",
-   
-   "motivazione": "nuova motivazione"
-   
-   }
-   
+    "nome_proprio": "Mario",
+    "cognome": "Rossi",
+    "codice_fiscale": "MRORSS77T05E472I",
+    "dettagli": {
+    "data": "2018-12-03T14:29:12.137Z",
+    "motivazione": "nuova motivazione"
+    }
    }
 
 Di seguito una richiesta di modifica dei dettagli di una prenotazione
@@ -848,23 +802,14 @@ dalla specifica tramite HTTP header Accept-Patch
 
 .. code-block:: http
 
-   PATCH
-   /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}
-   /prenotazioni/12323254
-   HTTP/1.1
-   
+   PATCH /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 HTTP/1.1
    Content-Type: application/json
    
    {
-   
    "dettagli": {
-   
    "data": "2018-12-03T14:29:12.137Z",
-   
    "motivazione": "nuova motivazione"
-   
    }
-   
    }
 
 2. Response
@@ -872,8 +817,8 @@ dalla specifica tramite HTTP header Accept-Patch
 .. code-block:: http
 
    HTTP/1.1 415 Unsupported Media Type
-   
    Accept-Patch: application/merge-patch+json
+
 
 Di seguito un esempio di cancellazione di una specifica prenotazione.
 
@@ -881,10 +826,7 @@ Di seguito un esempio di cancellazione di una specifica prenotazione.
 
 .. code-block:: http
 
-   DELETE
-   /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}
-   /prenotazioni/12323254
-   HTTP/1.1
+   DELETE /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 HTTP/1.1
 
 2. Response
 
@@ -892,10 +834,12 @@ Di seguito un esempio di cancellazione di una specifica prenotazione.
 
    HTTP/1.1 200 OK
 
+
 .. [1]
    Cf. https://www.rfc-editor.org/errata/eid3169
 
 .. mermaid::
+
      sequenceDiagram
      
       activate Fruitore

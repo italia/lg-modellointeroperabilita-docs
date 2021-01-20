@@ -1,32 +1,4 @@
-Termini e definizioni
-=====================
 
-+-----------------------------------+-----------------------------------+
-| **[AgID]**                        | Agenzia per l’Italia Digitale     |
-+-----------------------------------+-----------------------------------+
-| **[CAD]**                         | Codice Amministrazione Digitale,  |
-|                                   | D.lgs. 7 marzo 2005, n. 82        |
-+-----------------------------------+-----------------------------------+
-| **[PA]**                          | Pubblica Amministrazione          |
-+-----------------------------------+-----------------------------------+
-| **[UML]**                         | Linguaggio di modellazione        |
-|                                   | unificato (Unified Modeling       |
-|                                   | Language)                         |
-+-----------------------------------+-----------------------------------+
-| **[RPC]**                         | Remote procedure call             |
-+-----------------------------------+-----------------------------------+
-| **[SOAP]**                        | Simple Object Access Protocol     |
-+-----------------------------------+-----------------------------------+
-| **[REST]**                        | Representational State Transfer   |
-+-----------------------------------+-----------------------------------+
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
-|                                   |                                   |
-+-----------------------------------+-----------------------------------+
 
 4. .. rubric:: 
       Sicurezza di canale e/o identificazione delle organizzazioni
@@ -60,6 +32,7 @@ La sequenza dei messaggi di richiesta/risposta avviene dopo aver
 instaurato il canale di trasmissione sicuro.
 
 .. mermaid::
+
    sequenceDiagram
    activate Fruitore
    activate Erogatore
