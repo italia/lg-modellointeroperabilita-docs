@@ -14,10 +14,16 @@ natura della risorse e dalla relazione costruita con i fruitori, sono
 possibili relazione in cui l’erogatore rende disponibile ai fruitori la
 solo operazione di lettura (Read).
 
-|{"theme":"default","source":"sequenceDiagram\n\n activate Fruitore\n
-\\n activate Erogatore\n Fruitore->>Erogatore: 1. Request()\n
-Erogatore-->>Fruitore: 2. Reply\n deactivate Erogatore\n \\n deactivate
-Fruitore"}|
+.. mermaid::
+
+    sequenceDiagram
+	activate Fruitore
+	activate Erogatore
+	Fruitore->>Erogatore: 1. Request()
+	Erogatore-->>Fruitore: 2. Reply
+	deactivate Erogatore
+	deactivate Fruitore
+
 
 *Figura 5 - Interazione CRUD*
 
