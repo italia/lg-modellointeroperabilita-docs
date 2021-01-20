@@ -39,11 +39,11 @@ Per quanto sia possibile sviluppare funzionalità CRUD anche sviluppando
 una interfaccia di servizio SOAP, il ModI prevede lo sviluppo di una
 interfaccia REST.
 
-13. .. rubric:: [CRUD_REST] CRUD REST
-       :name: crud_rest-crud-rest
+[CRUD_REST] CRUD REST
+=====================
 
-    9. .. rubric:: Regole di processamento
-          :name: regole-di-processamento-6
+Regole di processamento
+-------------------------
 
 L’approccio RESTful trova la sua applicazione naturale in operazioni
 CRUD - Create, Read, Update, Delete su risorse ed a tal fine sfrutta i
@@ -139,8 +139,8 @@ RFC 7396 facendo attenzione:
 -  di verificare le considerazioni di sicurezza presenti in RFC
    7396#section-5 e RFC 5789#section-5.
 
-   10. .. rubric:: Esempio
-          :name: esempio-6
+Esempio
+------------
 
 Per illustrare l’approccio RESTful al CRUD, semplificheremo un API per
 gestire le prenotazioni di un appuntamento presso un ufficio municipale.
@@ -843,10 +843,12 @@ Di seguito un esempio di cancellazione di una specifica prenotazione.
      sequenceDiagram
      
       activate Fruitore
-       activate Erogatore
+      activate Erogatore
       Fruitore->>Erogatore: 1. Request()
       Erogatore-->>Fruitore: 2. Reply
       deactivate Erogatore
-       deactivate Fruitore image:: ./media/image5.png
+      deactivate Fruitore
+
+.. image:: ./media/image5.png
    :width: 4.68056in
    :height: 2.40278in

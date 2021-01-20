@@ -243,15 +243,12 @@ X.509.
 
 .. mermaid::
 
-     sequenceDiagram
-       activate Fruitore
-       activate Erogatore
-       Fruitore->>+Erogatore: 1. Request()
-       Erogatore-->>Fruitore: 2. Response
-       deactivate Erogatore
-       deactivate Fruitore
+   sequenceDiagram
+   activate Fruitore
+   activate Erogatore
+   Fruitore->>+Erogatore: 1. Request()
+   Erogatore-->>Fruitore: 2. Response
+   deactivate Erogatore
+   deactivate Fruitore
 
-.. image:: ./media/image2.png
 
-...   :width: 4.68056in
-...   :height: 2.40278in
