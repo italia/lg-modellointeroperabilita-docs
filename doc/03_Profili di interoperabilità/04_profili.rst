@@ -1,5 +1,68 @@
+
+
+Profili di interoperabilità
+=============================
+
+.. _confidenzialita_autenticazione_fruitore:
+
+Profilo per confidenzialità ed autenticazione del fruitore
+-----------------------------------------------------------
+
+Dare seguito ad uno scambio tra fruitore ed erogatore che garantisca:
+
+-  la confidenzialità a livello di canale
+
+-  l’autenticazione del fruitore
+
+Il fruitore potrebbe non coincidere con l’unità organizzativa fruitore,
+ma comunque appartenere alla stessa.
+
+Questa profilo è indipendente dal pattern di interazione implementato ed
+utilizza i seguenti pattern di sicurezza:
+
+-  ID_AUTH_CHANNEL_01
+
+-  ID_AUTH_SOAP_01 o ID_AUTH_REST_01
+
+Si assume l’esistenza di un trust tra fruitore ed erogatore che
+stabilisce:
+
+-  riconoscimento da parte dell’erogatore dei certificati X.509, o la CA
+   emittente, relative al fruitore
+
+-  riconoscimento da parte del fruitore del certificato X.509, o la CA
+   emittente, relative al soggetto erogatore
+
+Il meccanismo con cui è stabilito il trust non condiziona quanto
+descritto di seguito.
+
+Flusso delle interazioni
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**A: Richiesta**
+
+Il messaggio di richiesta viene predisposto utilizzando il pattern
+[ID_AUTH_SOAP_01] nel caso di utilizzo di SOAP o [ID_AUTH_REST_01] nel
+caso di utilizzo di REST, per garantire:
+
+-  l’identità del fruitore.
+
+Il fruitore invia il messaggio di richiesta all’interfaccia di servizio
+dell’erogatore.
+
+Il messaggio viene trasmesso su un canale sicuro utilizzando il profilo
+ID_AUTH_CHANNEL_01 per garantire:
+
+-  la confidenzialità a livello di canale.
+
+**B: Risposta**
+
+L’erogatore da seguito a quanto previsto nel pattern ID_AUTH_SOAP_01 nel
+caso di utilizzo di SOAP o ID_AUTH_REST_01 nel caso di utilizzo di REST.
+
+
 Soluzioni per la non ripudiabilità della trasmissione
-=====================================================
+------------------------------------------------------
 
 Dare seguito ad uno scambio tra fruitore ed erogatore che garantisca la
 non ripudiabilità assicurando a livello di messaggio:
@@ -76,23 +139,23 @@ proprietà:
 -  validazione temporale che certifichi l’istante in cui il messaggio è
    stato ricevuto.
 
-   2. .. rubric:: Flusso delle interazioni
-         :name: flusso-delle-interazioni-1
+Flusso delle interazioni
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. mermaid::
 
      sequenceDiagram
-     
-     
+
+
       activate Fruitore
       Fruitore->>Fruitore: A. Verifica numero tentativi di inoltro
-     
+
       activate Erogatore
       Fruitore->>+Erogatore: B. Richiesta
       Erogatore->>Erogatore: C. Persistenza erogatore
       Erogatore->>Fruitore: D. Risposta
       deactivate Erogatore
-     
+
       Fruitore->>Fruitore: E. Persistenza fruitore  deactivate Fruitore
 
 *Figura 1 - Non ripudiabilità della trasmissione*
@@ -254,20 +317,4 @@ conclusa, in quanto può presentarsi uno dei seguenti casi:
 
 In queste situazioni il fruitore riesegue il passo A.
 
-.. mermaid::
 
-     sequenceDiagram
-      activate Fruitore
-      Fruitore->>Fruitore: A. Verifica numero tentativi di inoltro
-
-      activate Erogatore
-      Fruitore->>+Erogatore: B. Richiesta
-      Erogatore->>Erogatore: C. Persistenza erogatore
-      Erogatore->>Fruitore: D. Risposta
-      deactivate Erogatore
-
-      Fruitore->>Fruitore: E. Persistenza fruitore  deactivate Fruitore
-
-.. image:: ./media/image1.png
-   :width: 5.36111in
-   :height: 4.43056in
