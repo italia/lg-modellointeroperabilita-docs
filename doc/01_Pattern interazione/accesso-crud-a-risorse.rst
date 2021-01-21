@@ -161,6 +161,7 @@ Specifica Servizio Server
 https://api.ente.example/rest/appuntamenti/v1/openapi.yaml
 
 .. literalinclude:: ../media/rest-crud.yaml
+   :language: yaml
 
 
 Di seguito un esempio di chiamata per creare una prenotazione.
