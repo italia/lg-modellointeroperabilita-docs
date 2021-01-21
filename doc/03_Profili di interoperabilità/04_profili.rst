@@ -1,5 +1,3 @@
-
-
 Profili di interoperabilità
 =============================
 
@@ -60,6 +58,8 @@ ID_AUTH_CHANNEL_01 per garantire:
 L’erogatore da seguito a quanto previsto nel pattern ID_AUTH_SOAP_01 nel
 caso di utilizzo di SOAP o ID_AUTH_REST_01 nel caso di utilizzo di REST.
 
+
+.. _non_ripudio:
 
 Soluzioni per la non ripudiabilità della trasmissione
 ------------------------------------------------------

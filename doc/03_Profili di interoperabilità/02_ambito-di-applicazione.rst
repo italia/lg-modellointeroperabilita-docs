@@ -94,9 +94,3 @@ Termini e definizioni
 | **[REST]**                        | Representational State Transfer   |
 +-----------------------------------+-----------------------------------+
 
-
-.. toctree::
-  :maxdepth: 3
-  :caption: Indice dei contenuti
-
-  ambito-di-applicazione/soluzioni-per-la-non-ripudiabilità-della-trasmissione.rst
