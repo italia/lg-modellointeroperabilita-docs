@@ -19,8 +19,8 @@ SOAP riportati nelle seguenti figure.
     Fruitore->>Erogatore: 1. Request()
     Erogatore-->>Fruitore: 2. Location
     loop status pending
-    Fruitore->>Erogatore: 3. CheckStatus()
-    Erogatore-->>Fruitore: 4. Not Ready OR Ready Location
+		Fruitore->>Erogatore: 3. CheckStatus()
+		Erogatore-->>Fruitore: 4. Not Ready OR Ready Location
     end
     Fruitore->>Erogatore: 5. RetriveResult()
     Erogatore-->>Fruitore: 6. Result
@@ -59,8 +59,8 @@ al risultato del processamento
      Fruitore->>Erogatore: 1. Request()
      Erogatore-->>Fruitore: 2. CorrelationID
      loop status pending
-     Fruitore->>Erogatore: 3. CheckStatus(CorrelationID)
-     Erogatore-->>Fruitore: 4. CurrentStatus
+		 Fruitore->>Erogatore: 3. CheckStatus(CorrelationID)
+		 Erogatore-->>Fruitore: 4. CurrentStatus
      end
      Fruitore->>Erogatore: 5. RetriveResult(CorrelationID)
      Erogatore-->>Fruitore: 6. Result
@@ -444,42 +444,3 @@ Method MProcessingStatus
 	  </soap:Body>
 	</soap:Envelope>
 
-.. mermaid::
-
-   sequenceDiagram
-     activate Erogatore
-     activate Fruitore
-     Fruitore->>Erogatore: 1. Request()
-     Erogatore-->>Fruitore: 2. Location
-     loop status pending
-       Fruitore->>Erogatore: 3. CheckStatus()
-       Erogatore-->>Fruitore: 4. Not Ready OR Ready Location
-     end
-     Fruitore->>Erogatore: 5. RetriveResult()
-     Erogatore-->>Fruitore: 6. Result
-     deactivate Fruitore
-     deactivate Erogatore
-
-.. image:: ../media/image3.png
-  :width: 4.08338in
-  :height: 3.82076in
-
-.. mermaid::
-
-   sequenceDiagram
-     activate Erogatore
-     activate Fruitore
-     Fruitore->>Erogatore: 1. Request()
-     Erogatore-->>Fruitore: 2. CorrelationID
-     loop status pending
-       Fruitore->>Erogatore: 3. CheckStatus(CorrelationID)
-       Erogatore-->>Fruitore: 4. CurrentStatus
-     end
-     Fruitore->>Erogatore: 5. RetriveResult(CorrelationID)
-     Erogatore-->>Fruitore: 6. Result
-     deactivate Fruitore
-     deactivate Erogatore
-
-.. image:: ../media/image4.png
-  :width: 4.01768in
-  :height: 3.77485in
