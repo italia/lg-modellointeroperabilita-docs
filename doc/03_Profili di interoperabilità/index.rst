@@ -18,5 +18,7 @@ Versione 1.0 del 04/09/2020
   :maxdepth: 3
   :caption: Indice dei contenuti
 
-  introduzione.rst
-  ambito-di-applicazione.rst
+  01_introduzione.rst
+  02_ambito-di-applicazione.rst
+  04_profili.rst
+
