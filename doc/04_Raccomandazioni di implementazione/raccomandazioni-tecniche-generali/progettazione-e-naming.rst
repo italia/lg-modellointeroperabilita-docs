@@ -28,11 +28,8 @@ SI
 .. code-block:: python
 
    {
-   
-   "givenName": "Mario",
-   
-   "familyName": "Rossi"
-   
+     "givenName": "Mario",
+     "familyName": "Rossi"
    }
 
 SI
@@ -40,11 +37,8 @@ SI
 .. code-block:: python
 
    {
-   
-   "given_name": "Mario",
-   
-   "family_name": "Rossi"
-   
+     "given_name": "Mario",
+     "family_name": "Rossi"
    }
 
 NO
@@ -52,36 +46,30 @@ NO
 .. code-block:: python
 
    {
-   
-   "given_name": "Mario",
-   
-   "familyName": "Rossi"
-   
+     "given_name": "Mario",
+     "familyName": "Rossi"
    }
 
 SI
 
-.. code-block:: python
+.. code-block:: xml
 
-   <givenName>\ Mario\ </givenName>
-   
-   <familyName>\ Rossi\ </familyName>
+   <givenName>Mario</givenName>
+   <familyName>Rossi</familyName>
 
 SI
 
-.. code-block:: python
+.. code-block:: xml
 
-   <given_name>\ Mario\ </given_name>
-   
-   <family_name>\ Rossi\ </family_name>
+   <given_name>Mario</given_name>
+   <family_name>Rossi</family_name>
 
 NO
 
-.. code-block:: python
+.. code-block:: xml
 
-   <given_name>\ Mario\ </given_name>
-   
-   <familyName>\ Rossi\ </familyName>
+   <given_name>Mario</given_name>
+   <familyName>Rossi</familyName>
 
 [RAC_GEN_NAME_003] Descrittività dei nomi utilizzati
 ----------------------------------------------------
@@ -95,16 +83,16 @@ universalmente riconosciuti anche al di fuori del dominio applicativo.
 
 Esempio in un’architettura orientata alle risorse:
 
-.. code-block:: python
+
 
    In un servizio per la gestione delle istanze dei cittadini, il nome
    dell'attributo
    
-   gestioneIstanzeCittadinoAbilitatoBoolean
+   :code:`gestioneIstanzeCittadinoAbilitatoBoolean`
    
    può essere semplificato in
    
-   cittadinoAbilitato
+   :code:`cittadinoAbilitato`
    
    se il servizio è limitato alla gestione delle istanze e l'output del
    campo è desumibile dal contesto.

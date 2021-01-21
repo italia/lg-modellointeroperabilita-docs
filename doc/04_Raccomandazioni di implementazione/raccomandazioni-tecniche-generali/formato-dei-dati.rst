@@ -55,8 +55,7 @@ essere conformi:
 
 -  o al formato UNIX Timestamp;
 
--  o alla sintassi HTTP-date definito in :rfc:`7231`, eg. "Sun, 06 Nov 1994
-   08:49:37 GMT".
+-  o alla sintassi HTTP-date definito in :rfc:`7231`, eg. "Sun, 06 Nov 1994 08:49:37 GMT".
 
 [RAC_GEN_FORMAT_004] Tempi di durata e intervalli
 -------------------------------------------------
@@ -108,34 +107,23 @@ Esempio:
 
 .. code-block:: python
 
-   {
-   
-   "tax_id": "imu-e472",
-   
-   "value": {
-   
-   "amount": "100.23",
-   
-   "currency": "EUR"
-   
-   }
-   
-   }
+	{
+		"tax_id": "imu-e472",
+		"value": {
+			"amount": "100.23",
+			"currency": "EUR"
+		}
+	}
 
-.. code-block:: python
+
+.. code-block:: xml
 
    <payment>
-   
-   <taxId>\ imu-e472\ </taxId>
-   
-   <value>
-   
-   <currency>\ EUR\ </currency>
-   
-   <amount>\ 100.23\ </amount>
-   
-   </value>
-   
+	   <taxId>imu-e472</taxId>
+	   <value>
+		   <currency>EUR</currency>
+		   <amount>100.23</amount>
+	   </value>
    </payment>
 
 .. [1]

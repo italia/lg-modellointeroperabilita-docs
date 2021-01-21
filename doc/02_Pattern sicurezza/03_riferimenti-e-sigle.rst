@@ -36,26 +36,26 @@ l’applicazione del presente documento.
 |                                   | Informazioni geografiche –        |
 |                                   | Metadati                          |
 +-----------------------------------+-----------------------------------+
-| **[RFC 3230]**                    | Instance Digests in http          |
+|     [RFC3230]                     | Instance Digests in http          |
 +-----------------------------------+-----------------------------------+
-| **[RFC 3744]**                    | Web Distributed Authoring and     |
+|     [RFC3744]                     | Web Distributed Authoring and     |
 |                                   | Versioning (WebDAV) Access        |
 |                                   | Control Protocol                  |
 +-----------------------------------+-----------------------------------+
-| **[RFC 5246]**                    | The Transport Layer Security      |
+|     [RFC5246]                     | The Transport Layer Security      |
 |                                   | (TLS) Protocol Version 1.2        |
 +-----------------------------------+-----------------------------------+
-| **[RFC 7231]**                    | Hypertext Transfer Protocol       |
+|     [RFC7231]                     | Hypertext Transfer Protocol       |
 |                                   | (HTTP/1.1): Semantics and Content |
 +-----------------------------------+-----------------------------------+
-| **[RFC 7233]**                    | Hypertext Transfer Protocol       |
+|     [RFC7233]                     | Hypertext Transfer Protocol       |
 |                                   | (HTTP/1.1): Range Requests        |
 +-----------------------------------+-----------------------------------+
-| **[RFC 7515]**                    | JSON Web Signature (JWS)          |
+|     [RFC7515]                     | JSON Web Signature (JWS)          |
 +-----------------------------------+-----------------------------------+
-| **[RFC 7519]**                    | JSON Web Token (JWT)              |
+|     [RFC7519]                     | JSON Web Token (JWT)              |
 +-----------------------------------+-----------------------------------+
-| **[RFC 8725]**                    | JSON Web Token Best Current       |
+|     [RFC8725]                     | JSON Web Token Best Current       |
 |                                   | Practice                          |
 +-----------------------------------+-----------------------------------+
 

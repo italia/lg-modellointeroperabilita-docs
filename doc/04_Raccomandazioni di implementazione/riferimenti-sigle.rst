@@ -52,26 +52,26 @@ l’applicazione del presente documento.
 | **[ISO 60559]**                   | Standard per la aritmetica a      |
 |                                   | virgola mobile                    |
 +-----------------------------------+-----------------------------------+
-| **[RFC 3339]**                    | Date and Time on the Internet     |
+|     [RFC3339]                     | Date and Time on the Internet     |
 +-----------------------------------+-----------------------------------+
-| **[RFC 6838]**                    | Media Type Specifications and     |
+|     [RFC6838]                     | Media Type Specifications and     |
 |                                   | Registration Procedures           |
 +-----------------------------------+-----------------------------------+
-| **[RFC 7159]**                    | JavaScript Object Notation (JSON) |
+|     [RFC7159]                     | JavaScript Object Notation (JSON) |
 |                                   | Data Interchange Format           |
 +-----------------------------------+-----------------------------------+
-| **[RFC 7231]**                    | Hypertext Transfer Protocol       |
+|     [RFC7231]                     | Hypertext Transfer Protocol       |
 |                                   | (HTTP/1.1): Semantics and Content |
 +-----------------------------------+-----------------------------------+
-| **[RFC 7232]**                    | Hypertext Transfer Protocol       |
+|     [RFC7232]                     | Hypertext Transfer Protocol       |
 |                                   | (HTTP/1.1): Conditional Requests  |
 +-----------------------------------+-----------------------------------+
-| **[RFC 7234]**                    | Hypertext Transfer Protocol       |
+|     [RFC7234]                     | Hypertext Transfer Protocol       |
 |                                   | (HTTP/1.1): Caching               |
 +-----------------------------------+-----------------------------------+
-| **[RFC 7807]**                    | REST Problem Details              |
+|     [RFC7807]                     | REST Problem Details              |
 +-----------------------------------+-----------------------------------+
-| **[RFC 8288]**                    | Web Linking                       |
+|     [RFC8288]                     | Web Linking                       |
 +-----------------------------------+-----------------------------------+
 
 Termini e definizioni
