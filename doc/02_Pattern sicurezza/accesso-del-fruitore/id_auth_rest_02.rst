@@ -17,9 +17,9 @@ Descrizione
 
 Il presente profilo declina l’utilizzo di:
 
--  JSON Web Token (JWT) definita dall’RFC 7519
+-  JSON Web Token (JWT) definita dall’:rfc:`7519`
 
--  JSON Web Signature (JWS) definita dall’RFC 7515
+-  JSON Web Signature (JWS) definita dall’:rfc:`7515`
 
 Si assume l’esistenza di un trust tra fruitore (client) ed erogatore
 (server), che permette il riconoscimento da parte dell’erogatore del
@@ -69,7 +69,7 @@ Regole di processamento
 
    a. il Jose Header con almeno i parameter:
 
-      i.   alg con l’algoritmo di firma, vedi RFC 8725
+      i.   alg con l’algoritmo di firma, vedi :rfc:`8725`
 
       ii.  typ uguale a JWT
 
@@ -178,7 +178,7 @@ implementative e includono:
 
 -  indica l’istante iat di emissione del JWT. Se le parti possono
    accordarsi nel considerarlo come l’istante iniziale di validità del
-   token, RFC 7519 non assegna a questo claim nessun ruolo specifico
+   token, :rfc:`7519` non assegna a questo claim nessun ruolo specifico
    nella validazione, a differenza di nbf;
 
 -  il destinatario del JWT, che DEVE sempre essere validato;

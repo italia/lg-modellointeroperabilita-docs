@@ -29,16 +29,16 @@ application/x.custom.name+json) ed utilizzare nomi standard come:
 
 Le date DEVONO essere conformi:
 
--  alla sintassi "full-date" indicata in RFC 3339, ad esempio 2015-05-28
+-  alla sintassi "full-date" indicata in :rfc:`3339`, ad esempio 2015-05-28
    se si indica una data;
 
--  alla sintassi "date-time" indicata in RFC 3339, ad esempio
+-  alla sintassi "date-time" indicata in :rfc:`3339`, ad esempio
    2015-05-28T14:07:17Z o nel formato UNIX Timestamp definito in "The
    Open Group Base Specifications Issue 7, Rationale: Base Definitions,
    section A.4 General Concepts" se si indica un momento esatto nel
    tempo.
 
-RFC 3339 permette di indicare una timezone prefissando la data con la
+:rfc:`3339` permette di indicare una timezone prefissando la data con la
 distanza da UTC:
 
 -  2015-05-28T14:07:17+01:00
@@ -55,7 +55,7 @@ essere conformi:
 
 -  o al formato UNIX Timestamp;
 
--  o alla sintassi HTTP-date definito in RFC 7231, eg. "Sun, 06 Nov 1994
+-  o alla sintassi HTTP-date definito in :rfc:`7231`, eg. "Sun, 06 Nov 1994
    08:49:37 GMT".
 
 [RAC_GEN_FORMAT_004] Tempi di durata e intervalli

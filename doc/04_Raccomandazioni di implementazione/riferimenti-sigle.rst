@@ -25,8 +25,9 @@ seguito.
    lettore può scegliere di applicare o meno senza alcun tipo di
    implicazione o restrizione la specifica.
 
-   3. .. rubric:: Standard di riferimento
-         :name: standard-di-riferimento
+
+Standard di riferimento
+-------------------------
 
 Sono riportati di seguito gli standard tecnici indispensabili per
 l’applicazione del presente documento.

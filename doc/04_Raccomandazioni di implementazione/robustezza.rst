@@ -195,7 +195,7 @@ o degli accordi:
    https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers/
 
 .. [2]
-   Cfr. RFC 7231 prevede che l’header HTTP header Retry-After possa
+   Cfr. :rfc:`7231` prevede che l’header HTTP header Retry-After possa
    essere utilizzato sia in forma di data che di secondi
 
 .. [3]

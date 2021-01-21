@@ -6,7 +6,7 @@ Logging
 
 I log file DEVONO contenere:
 
--  l’istante della comunicazione in formato UTC (RFC 3339) e con i
+-  l’istante della comunicazione in formato UTC (:rfc:`3339`) e con i
    separatori Z e T in maiuscolo. La specifica è fondamentale per
    l’interoperabilità dei sistemi di logging e auditing, evitando
    problemi di transizione all’ora legale e la complessità nella
