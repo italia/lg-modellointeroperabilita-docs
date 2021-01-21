@@ -17,11 +17,10 @@ Versione 1.0 del 04/09/2020
   :maxdepth: 3
   :caption: Indice dei contenuti
 
-  introduzione.rst
-  ambito-di-applicazione.rst
-  riferimenti-sigle.rst
-  raccomandazioni-tecniche-generali.rst
-  raccomandazioni-tecniche-per-rest.rst
-  raccomandazioni-tecniche-per-soap.rst
-  gestione-degli-allegati.rst
-  robustezza.rst
+  01_introduzione.rst
+  02_ambito-di-applicazione.rst
+  03_raccomandazioni-tecniche-generali.rst
+  04_raccomandazioni-tecniche-per-rest.rst
+  05_raccomandazioni-tecniche-per-soap.rst
+  06_gestione-degli-allegati.rst
+  07_robustezza.rst
