@@ -6,7 +6,7 @@ Modello di interoperabilità per la Pubblica Amministrazione
 
 Di seguito la versione accessibile delle Linee d'indirizzo sull'interoperabilità tecnica.
 
-Il repository è su _`Github`<https://github.com/italia/lg-modellointeroperabilita-docs>: inviate
+Il repository è su `Github<https://github.com/italia/lg-modellointeroperabilita-docs>`_: inviate
 commenti tramite pull request e issue.
 
 La versione ufficiale è sul sito AgID.

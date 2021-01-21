@@ -20,7 +20,7 @@ Nella definizione dei path si DEVE utilizzare il separatore «-»
 
 Esempio:
 
-.. code-block:: python
+.. code-block:: http
 
    /​tax-code​/{tax_code_id}
 
@@ -33,14 +33,11 @@ DOVREBBE preferirsi Hyphenated-Pascal-Case per gli header HTTP.
 
 Esempio:
 
-.. code-block:: python
+.. code-block:: http
 
    Accept-Encoding
-   
    Apply-To-Redirect-Ref
-   
    Disposition-Notification-Options
-   
    Message-ID
 
 [RAC_REST_NAME_004] Le collezioni di risorse possono usare nomi al plurale
@@ -52,10 +49,17 @@ parte funzionalmente differenti.
 
 Esempio 1: ricerca di documenti per data in una collezione
 
-.. code-block:: python
+Request:
 
-   GET /​documenti​?data=2018-05-01
-   
+.. code-block:: http
+
+   GET /​documenti​?data=2018-05-01 HTTP/1.1
+
+
+Response:
+
+.. code-block:: http
+
    {
    "items": [ .. ]
    "limit": 10
@@ -64,10 +68,16 @@ Esempio 1: ricerca di documenti per data in una collezione
 
 Esempio 2: recupera un singolo documento
 
-.. code-block:: python
+Request:
+
+.. code-block:: http
 
    GET /​documento​/21314123
-   
+
+Response:
+
+.. code-block:: http
+
    {
    "id": 21314123
    "title: "Atto di nascita ...",

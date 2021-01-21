@@ -1,0 +1,9 @@
+/*
+ * Qui viene dichiarato il `type`.
+ */
+{
+    "type": "https://apidoc.example.com/probs/operation-too-long",
+    "status": 500,
+    "title": "L'operazione dura troppo.",
+    "detail": "Il sistema non e' riuscito a completare in tempo l'operazione prevista.",
+}

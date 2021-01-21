@@ -1,0 +1,266 @@
+openapi: 3.0.1
+info:
+  title: RESTCRUD
+  version: "1.0"
+  description: |-
+    Questo file descrive semplicemente i metodi di un'API
+    e non indica tutte le informazioni di metadatazione che
+    normalmente vanno inserite.
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+paths:
+  /municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni:
+    get:
+      description: Mostra prenotazioni
+      operationId: listReservations
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/cursor'
+      - $ref: '#/components/parameters/path_id_municipio'
+      - $ref: '#/components/parameters/path_id_ufficio'
+      responses:
+        '200':
+          description: Una lista di prenotazioni.
+          content:
+            application/json:
+              schema:
+                properties:
+                  prenotazioni:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Prenotazione'
+                  count:
+                    type: integer
+                    format: int32
+                  next:
+                    type: string
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
+
+    post:
+      description: Aggiungi una prenotazione
+      operationId: AddReservation_1
+      parameters:
+      - $ref: '#/components/parameters/path_id_municipio'
+      - $ref: '#/components/parameters/path_id_ufficio'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Prenotazione'
+      responses:
+        '201':
+          description: Prenotazione Creata.
+          headers:
+            Location:
+              description: ID della prenotazione creata
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Prenotazione'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
+
+  /municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/{id_prenotazione}:
+    get:
+      description: LeggiPrenotazione
+      operationId: GetReservation_1
+      parameters:
+      - $ref: '#/components/parameters/path_id_municipio'
+      - $ref: '#/components/parameters/path_id_ufficio'
+      - name: id_prenotazione
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Prenotazione estratta correttamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Prenotazione'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
+    delete:
+      description: EliminaPrenotazione
+      operationId: DeleteReservation
+      parameters:
+      - $ref: '#/components/parameters/path_id_municipio'
+      - $ref: '#/components/parameters/path_id_ufficio'
+      - name: id_prenotazione
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Prenotazione eliminata correttamente
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
+
+    patch:
+      description: ModificaPrenotazione
+      operationId: PatchReservation
+      parameters:
+      - $ref: '#/components/parameters/path_id_municipio'
+      - $ref: '#/components/parameters/path_id_ufficio'
+      - name: id_prenotazione
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/PatchPrenotazione'
+      responses:
+        '200':
+          description: Prenotazione modificata correttamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Prenotazione'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        default:
+          $ref: '#/components/responses/default'
+components:
+  parameters:
+    path_id_municipio:
+      name: id_municipio
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+    path_id_ufficio:
+      name: id_ufficio
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+    limit:
+        description: How many items to return at one time (max 100)
+        in: query
+        name: limit
+        schema:
+          format: int32
+          type: integer
+    cursor:
+        description: An opaque identifier that points to the next item in the collection.
+        example: 01BX9NSMKVXXS5PSP2FATZM123
+        in: query
+        name: cursor
+        schema:
+          type: string
+  responses:
+    400BadRequest:
+      description: Richiesta non accoglibile
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    404NotFound:
+      description: Identificativo non trovato
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+    default:
+      description: |-
+        Errore inatteso. Questo viene ritornato nel caso ci sia
+        un errore inatteso. Non vanno mai esposti i dati interni
+        del server.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+  schemas:
+    TaxCode:
+        description: Il codice fiscale.
+        example: RSSMRA75L01H501A
+        externalDocs:
+          url: https://w3id.org/italia/onto/CPV/taxCode
+        pattern: /^(?:(?:[B-DF-HJ-NP-TV-Z]|[AEIOU])[AEIOU][AEIOUX]|[B-DF-HJ-NP-TV-Z]{2}[A-Z]){2}[\dLMNP-V]{2}(?:[A-EHLMPR-T](?:[04LQ][1-9MNP-V]|[1256LMRS][\dLMNP-V])|[DHPS][37PT][0L]|[ACELMRT][37PT][01LM])(?:[A-MZ][1-9MNP-V][\dLMNP-V]{2}|[A-M][0L](?:[1-9MNP-V][\dLMNP-V]|[0L][1-9MNP-V]))[A-Z]$/i
+        type: string
+    Prenotazione:
+      type: object
+      properties:
+        nome:
+          type: string
+        cognome:
+          type: string
+        codice_fiscale:
+          $ref: '#/components/schemas/TaxCode'
+        dettagli:
+          $ref: '#/components/schemas/PatchPrenotazione'
+    PatchPrenotazione:
+      type: object
+      properties:
+        data:
+          type: string
+          format: date-time
+        motivazione:
+          type: string
+    ErrorMessage:
+      type: object
+      properties:
+        detail:
+          description: |
+            A human readable explanation specific to this occurrence of the
+            problem.
+          type: string
+        instance:
+          description: |
+            An absolute URI that identifies the specific occurrence of the problem.
+            It may or may not yield further information if dereferenced.
+          format: uri
+          type: string
+        status:
+          description: |
+            The HTTP status code generated by the origin server for this occurrence
+            of the problem.
+          exclusiveMaximum: true
+          format: int32
+          maximum: 600
+          minimum: 100
+          type: integer
+        title:
+          description: |
+            A short, summary of the problem type. Written in english and readable
+            for engineers (usually not suited for non technical stakeholders and
+            not localized); example: Service Unavailable
+          type: string
+        type:
+          default: about:blank
+          description: |
+            An absolute URI that identifies the problem type.  When dereferenced,
+            it SHOULD provide human-readable documentation for the problem type
+            (e.g., using HTML).
+          format: uri
+          type: string

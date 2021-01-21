@@ -49,5 +49,5 @@ dell’interfaccia e da uno scambio di messaggi esemplificativo.
   :maxdepth: 3
   :caption: Indice dei contenuti
 
-  pattern-non-bloccanti/pattern-non-bloccante-rpc-push-basato-su-callback.rst
-  pattern-non-bloccanti/pattern-non-bloccanti-rpc-pull-busy-waiting.rst
+  pattern-non-bloccanti/nonblock_push.rst
+  pattern-non-bloccanti/nonblock_pull.rst

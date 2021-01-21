@@ -183,7 +183,7 @@ https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
 
 .. code-block:: http
 
-   HTTP/1.1 200 Success
+   HTTP/1.1 200 Ok
    Content-Type: application/json
    
    { "result" : "ACK" }
@@ -331,7 +331,3 @@ MRequestResponse
       deactivate Erogatore
       deactivate Fruitore
 
-.. image:: ./media/image2.png
-
-...   :width: 4.68056in
-...   :height: 3.125in
