@@ -27,11 +27,11 @@ Esempio:
 
 .. code-block:: python
 
-   http://<dominioOrganizzativo>/[rest|soap]/<DominioApplicativo>/v<major>[.<minor>[.<patch>]]/<NomeAPI>
+   https://<dominioOrganizzativo>/[rest|soap]/<DominioApplicativo>/v<major>[.<minor>[.<patch>]]/<NomeAPI>
 
 dove:
 
--  ​<dominioOrganizzativo> indica l’organizzazione che espone il
+-  ​<dominioOrganizzativo> indica l'organizzazione che espone il
    servizio;
 
 -  [rest|soap] indica la tecnologia della API;
