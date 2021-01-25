@@ -9,11 +9,11 @@ messaggio:
 
 -  integrità del payload del messaggio
 
-Si adottano le indicazione riportate in RFC 7231. Considereremo sempre
+Si adottano le indicazione riportate in :rfc:`7231`. Considereremo sempre
 richieste e risposte complete, con i metodi standard definiti in RFC
 7231#section-4.
 
-Questo scenario non copre quindi Range Requests RFC 7233 o HTTP method
+Questo scenario non copre quindi Range Requests :rfc:`7233` o HTTP method
 PATCH che trasmette una rappresentazione parziale.
 
 .. _descrizione-7:
@@ -23,14 +23,14 @@ Descrizione
 
 Il presente profilo propone l’utilizzo di:
 
--  semantica HTTP RFC 7231;
+-  semantica HTTP :rfc:`7231`;
 
--  Digest HTTP header RFC 3230 per l’integrità della rappresentazione
+-  Digest HTTP header :rfc:`3230` per l’integrità della rappresentazione
    della risorsa;
 
--  JSON Web Token (JWT) definita dall’ RFC 7519;
+-  JSON Web Token (JWT) definita dall’ :rfc:`7519`;
 
--  JSON Web Signature (JWS) definita dall’ RFC 7515.
+-  JSON Web Signature (JWS) definita dall’ :rfc:`7515`.
 
 Si assume l’esistenza di un trust tra fruitore ed erogatore, che
 permette il riconoscimento da parte dell’erogatore del certificato
@@ -64,7 +64,7 @@ Regole di processamento
    JSON)
 
 2. Il fruitore calcola il valore del Digest header dei representation
-   data secondo le indicazioni in RFC 3230
+   data secondo le indicazioni in :rfc:`3230`
 
 3. Il fruitore individua l’elenco degli HTTP Header da firmare, incluso
    Digest e se presenti HTTP header Content-Type e HTTP header
@@ -76,7 +76,7 @@ Regole di processamento
 
    a. il Jose Header con almeno i parameter:
 
-      i.   alg con l’algoritmo di firma, vedi RFC 8725
+      i.   alg con l’algoritmo di firma, vedi :rfc:`8725`
 
       ii.  typ uguale a JWT
 
@@ -99,7 +99,7 @@ Regole di processamento
 
    c. i seguenti claim, secondo la logica del servizio:
 
-      vi.   sub: oggetto (principal see RFC 3744#section-2) dei claim
+      vi.   sub: oggetto (principal see :rfc:`3744#section-2`) dei claim
             contenuti nel jwt
 
       vii.  iss: identificativo del mittente

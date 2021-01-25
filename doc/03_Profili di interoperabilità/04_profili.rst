@@ -146,7 +146,6 @@ Flusso delle interazioni
 
      sequenceDiagram
 
-
       activate Fruitore
       Fruitore->>Fruitore: A. Verifica numero tentativi di inoltro
 
@@ -157,6 +156,7 @@ Flusso delle interazioni
       deactivate Erogatore
 
       Fruitore->>Fruitore: E. Persistenza fruitore  deactivate Fruitore
+
 
 *Figura 1 - Non ripudiabilità della trasmissione*
 

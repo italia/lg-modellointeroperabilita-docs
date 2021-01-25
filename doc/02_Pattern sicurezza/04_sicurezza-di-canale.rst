@@ -62,7 +62,7 @@ Elementi di sicurezza.
 
 3. L’erogatore elabora il messaggio e restituisce il risultato.
 
-Come indicato in RFC 5246 l’impiego del protocollo TLS garantisce a
+Come indicato in :rfc:`5246` l’impiego del protocollo TLS garantisce a
 livello di canale:
 
 -  l’autenticazione dell’erogatore identificato mediante il certificato
@@ -139,7 +139,7 @@ specificate al capitolo 7 Elementi di sicurezza.
 
 3. L’erogatore elabora il messaggio e restituisce il risultato.
 
-Come indicato in RFC 5246 l’impiego del protocollo TLS garantisce a
+Come indicato in :rfc:`5246` l’impiego del protocollo TLS garantisce a
 livello di canale:
 
 -  l’autenticazione di erogatore e fruitore identificati mediante

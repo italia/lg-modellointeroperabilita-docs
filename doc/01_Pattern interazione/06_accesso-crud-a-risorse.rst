@@ -127,14 +127,14 @@ erogatore.
 
 Per usare il HTTP method PATCH bisogna usare alcuni accorgimenti, perché
 questo metodo non è definito nelle nuove specifiche di HTTP/1.1 del 2014
-ma nel precedente RFC 5789.
+ma nel precedente :rfc:`5789`.
 
 NON SI DOVREBBE associare un significato di patch a dei media-type che
 non lo prevedono (eg. application/json o application/xml) ma utilizzare
 dei media-type adeguati [1]_.
 
 E’ possibile ad esempio usare application/merge-patch+json definito in
-RFC 7396 facendo attenzione:
+:rfc:`7396` facendo attenzione:
 
 -  che HTTP method PATCH rifiuti richieste con media-type non adeguato
    con HTTP status 415 Unsupported Media Type;
@@ -142,8 +142,8 @@ RFC 7396 facendo attenzione:
 -  che il media-type di patching sia compatibile con gli schemi
    utilizzati;
 
--  di verificare le considerazioni di sicurezza presenti in RFC
-   7396#section-5 e RFC 5789#section-5.
+-  di verificare le considerazioni di sicurezza presenti in
+   :rfc:`7396#section-5` e :rfc:`5789#section-5`.
 
 Esempio
 ------------
@@ -203,7 +203,7 @@ Di seguito un esempio di chiamata per creare una prenotazione.
 
 Di seguito un esempio in cui il fruitore richiede l’estrazione di una
 specifica prenotazione. Si noti l’utilizzo dell’URL restituito nell"
-HTTP header Location al passo precedente.
+:httpheader:`Location` al passo precedente.
 
 1. Request
 
@@ -268,22 +268,22 @@ Di seguito una richiesta di modifica dei dettagli di una prenotazione.
 Di seguito una richiesta di modifica dei dettagli di una prenotazione
 con media-type application/json, che non avendo una semantica di
 patching definita, dev’essere rifiutato seguendo le indicazioni presenti
-in RFC 5789#section-2.2. La response ritorna il media-type suggerito
-dalla specifica tramite HTTP header Accept-Patch
+in :rfc:`5789#section-2.2`. La response ritorna il media-type suggerito
+dalla specifica tramite :httpheader:`Accept-Patch`
 
 1. Request
 
 .. code-block:: http
 
-   PATCH /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 HTTP/1.1
-   Content-Type: application/json
+    PATCH /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 HTTP/1.1
+    Content-Type: application/json
    
-   {
-   "dettagli": {
-   "data": "2018-12-03T14:29:12.137Z",
-   "motivazione": "nuova motivazione"
-   }
-   }
+	{
+	  "dettagli": {
+		"data": "2018-12-03T14:29:12.137Z",
+		"motivazione": "nuova motivazione"
+	  }
+	}
 
 2. Response
 

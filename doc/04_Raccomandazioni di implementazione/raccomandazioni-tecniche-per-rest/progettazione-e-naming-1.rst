@@ -10,7 +10,7 @@ DOVREBBERO essere adottate le seguenti regole.
 ------------------------------------------------
 
 I metodi HTTP DEVONO essere utilizzati rispettando la semantica indicata
-in RFC 7231 section-4.3.
+in :rfc:`7231` section-4.3.
 
 [RAC_REST_NAME_002] Usare parole separate da trattino «-» per i path (kebab-case)
 ---------------------------------------------------------------------------------
@@ -60,6 +60,9 @@ Response:
 
 .. code-block:: http
 
+   HTTP/1.1 200 Ok
+   Content-Type: application/json
+
    {
    "items": [ .. ]
    "limit": 10
@@ -77,6 +80,9 @@ Request:
 Response:
 
 .. code-block:: http
+
+   HTTP/1.1 200 Ok
+   Content-Type: application/json
 
    {
    "id": 21314123
@@ -100,11 +106,11 @@ essere implementata tramite i parametri:
 
    q, fields, embed
 
-[RAC_REST_NAME_005] Non usare l’header Link RFC 8288 se la response è in JSON
------------------------------------------------------------------------------
+[RAC_REST_NAME_005] Non usare l’header Link :rfc:`8288` se la response è in JSON
+---------------------------------------------------------------------------------
 
 Eventuali link a risorse utili al flusso applicativo DEVONO essere
-restituiti nel payload e non nell’header Link definito in RFC 8288.
+restituiti nel payload e non nell’header Link definito in :rfc:`8288`.
 Questo semplifica l'implementazione dei client. È comunque possibile
 usare l'header Link per passare informazioni di tipo diverso.
 
@@ -120,7 +126,7 @@ obbligare i client a fare «inferenza» dal contesto.
 
 In caso di errori si DEVONO ritornare:
 
--  un payload di tipo Problem definito in RFC 7807
+-  un payload di tipo Problem definito in :rfc:`7807`
 
 -  il media type application/problem+json
 
@@ -157,7 +163,7 @@ Si DOVREBBERO utilizzare:
 -  un filtro sugli attributi necessari;
 
 -  le specifiche di optimistic locking (HTTP header ETag,
-   if-(none-)match) RFC 7232.
+   if-(none-)match) :rfc:`7232`.
 
 È possibile ridurre l’uso della banda e velocizzare le richieste
 filtrando i campi delle risorse restituite.
@@ -174,7 +180,7 @@ Response
 
 .. code-block:: http
 
-   HTTP/1.1 200 OK
+   HTTP/1.1 200 Ok
    Content-Type: application/json
    
    {
@@ -203,7 +209,7 @@ Response
 
 .. code-block:: http
 
-   HTTP/1.1 200 OK
+   HTTP/1.1 200 Ok
    Content-Type: application/json
    
    {
@@ -260,11 +266,11 @@ messe in cache. Il mancato rispetto di questa raccomandazione può
 portare all'esposizione accidentale di dati personali.
 
 Le API che supportano il caching DEVONO documentare le varie limitazioni
-e modalità di utilizzo tramite gli header definiti in RFC 7234:
+e modalità di utilizzo tramite gli header definiti in :rfc:`7234`:
 
--  HTTP header Cache-Control;
+-  :httpheader:`Cache-Control`
 
--  HTTP header Vary.
+-  :httpheader:`Vary`.
 
 Eventuali conflitti nella creazione di risorse DEVONO essere gestiti
 tramite gli header:
@@ -282,7 +288,7 @@ modificato della entry o un numero di versione.
 -------------------------------------------------
 
 L'API DEVE esporre lo stato del servizio al path \`/status\` e ritornare
-un oggetto con media-type problem+json (RFC 7807). Se il servizio
+un oggetto con media-type problem+json (:rfc:`7807`). Se il servizio
 funziona correttamente l'HTTP status è 200.
 
 Segue un esempio di specifica del path in formato OpenAPI 3.
