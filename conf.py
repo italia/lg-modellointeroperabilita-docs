@@ -239,6 +239,28 @@ htmlhelp_basename = settings_basename + "doc"
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     "papersize": "a4paper",
+    # DocsItalia uses Sphinx==1.7 which uses a static latex mapping for characters.
+    #  here we extend the list of chars to support further stuff
+    #  https://github.com/sphinx-doc/sphinx/blob/1.7/sphinx/writers/latex.py#L119
+    'utf8extra': ('\\ifdefined\\DeclareUnicodeCharacter\n'
+                  ' \\ifdefined\\DeclareUnicodeCharacterAsOptional\n'
+                  '  \\DeclareUnicodeCharacter{"00A0}{\\nobreakspace}\n'
+                  '  \\DeclareUnicodeCharacter{"2500}{\\sphinxunichar{2500}}\n'
+                  '  \\DeclareUnicodeCharacter{"2502}{\\sphinxunichar{2502}}\n'
+                  '  \\DeclareUnicodeCharacter{"2514}{\\sphinxunichar{2514}}\n'
+                  '  \\DeclareUnicodeCharacter{"251C}{\\sphinxunichar{251C}}\n'
+                  '  \\DeclareUnicodeCharacter{"2572}{\\textbackslash}\n'
+                  ' \\else\n'
+                  '  \\DeclareUnicodeCharacter{00A0}{\\nobreakspace}\n'
+                  '  \\DeclareUnicodeCharacter{2500}{\\sphinxunichar{2500}}\n'
+                  '  \\DeclareUnicodeCharacter{2502}{\\sphinxunichar{2502}}\n'
+                  '  \\DeclareUnicodeCharacter{2514}{\\sphinxunichar{2514}}\n'
+                  '  \\DeclareUnicodeCharacter{251C}{\\sphinxunichar{251C}}\n'
+                  '  \\DeclareUnicodeCharacter{0301}{\\sphinxunichar{0301}}\n'
+                  '  \\DeclareUnicodeCharacter{200B}{\\sphinxunichar{200B}}\n'
+                  '  \\DeclareUnicodeCharacter{2572}{\\textbackslash}\n'
+                  ' \\fi\n'
+                  '\\fi'),
     # The font size ('10pt', '11pt' or '12pt').
     #'pointsize': '10pt',
     # Additional stuff for the LaTeX preamble.
