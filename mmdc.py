@@ -11,7 +11,7 @@ from subprocess import check_output
 def jpg_to_pdf(jpg_data, dpath):
     with NamedTemporaryFile() as fh:
         fh.write(jpg_data)
-        check_output(["convert", fh.name, dpath])
+        check_output(["./magick", "convert", fh.name, dpath])
 
 
 def get_mermaid_jpg(mermaid_txt):

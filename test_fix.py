@@ -21,6 +21,42 @@ def process_line(line):
     return "   " + line
 
 
+def unbox_as_list_table(txt):
+    colspecs, header, body = parse_grid_table(txt)
+    ret = ""
+    for y in body:
+        for i, x in enumerate(y):
+            try:
+                _, _, _, content = x
+                ret += "\n  " if bool(i) else "\n* "
+                ret += "- "
+                ret += "\n".join(process_line(x) for x in content)
+            except Exception as e:
+                raise ValueError("Error parsing %r" % x)
+    return ret
+
+
+def test_unbox_as_list_table():
+
+    txt = """
++-----------------------------------+-----------------------------------+
+| **Sigla**                         | **URI**                           |
++-----------------------------------+-----------------------------------+
+| Canonical XML 1.0                 | http://www.w3.org/TR/2001/REC-xml |
+|                                   | -c14n-20010315                    |
++-----------------------------------+-----------------------------------+
+| Canonical XML 1.1                 | http://www.w3.org/2006/12/xml-c14 |
+|                                   | n11                               |
++-----------------------------------+-----------------------------------+
+| Exclusive XML Canonicalization    | Exclusive XML Canonicalization    |
+| 1.0                               | 1.0                               |
++-----------------------------------+-----------------------------------+
+"""
+    ret = unbox_as_list_table(txt)
+    print(ret)
+    raise NotImplementedError
+
+
 def unbox(txt):
     ph_table = "\n\+-+\+\n"
     re_1 = f"({ph_table}.*?{ph_table})"
