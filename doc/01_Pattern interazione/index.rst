@@ -1,5 +1,4 @@
 Pattern di interazione - Documento operativo
-============================================
 
 Linea di indirizzo sull’interoperabilità tecnica delle Pubbliche
 Amministrazioni
