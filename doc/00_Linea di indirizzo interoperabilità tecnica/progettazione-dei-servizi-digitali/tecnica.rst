@@ -59,11 +59,7 @@ Gli erogatori DEVONO:
 
 Gli erogatori POSSONO:
 
-+-----------------------------------+-----------------------------------+
-| (RAC_TECNICA_001)                 | Erogare contemporaneamente gli    |
-|                                   | e-service con API in tecnologia   |
-|                                   | SOAP e REST.                      |
-+-----------------------------------+-----------------------------------+
+- RAC_TECNICA_001: Erogare contemporaneamente gli e-service con API in tecnologia SOAP e REST.                      
 
 Gli erogatori DOVREBBERO:
 
