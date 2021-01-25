@@ -28,7 +28,7 @@ def unbox_as_list_table(txt):
         for i, x in enumerate(y):
             try:
                 _, _, _, content = x
-                ret += "\n  " if bool(i) else "\n* "
+                ret += "   \n  " if bool(i) else "   \n* "
                 ret += "- "
                 ret += "\n".join(process_line(x) for x in content)
             except Exception as e:
