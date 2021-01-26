@@ -60,62 +60,85 @@ Termini e definizioni
 .. list-table:: Termini e definizioni
    :widths: 15 40
    :header-rows: 1
-   
-   * -    [AgID]
-     -    Agenzia per l’Italia Digitale
-   * -    [API]
-     -    Application Programming Interface
-   * -    [API-First]
-     -    L'API-first è un approccio in cui le PA considerano le API come mezzo principale per perseguire i propri obiettivi, interagendo con i propri stakeholder sin dalla fase di progettazione
-   * -    [BP]
-     -    WS-I Basic Profile - (Web Services Interoperability Specification)
-   * -    [CAD]
-     -    Codice Amministrazione Digitale, D.lgs. 7 marzo 2005, n. 82
-   * -    [Contract-First]
-     -    Contract-first è un approccio che prevede di dare seguito all'interazione di più sistemi informatici definendo le API condivise attraverso un Interface Description Language (IDL)
-   * -    [EIF]
-     -    European Interoperability Framework
-   * -    [Enti Capofila]
-     -    Gli enti capofila sono pubbliche amministrazioni che si propongono nel ModI quali soggetti responsabili delle attività di gestione sul Catalogo degli e-service, delle API e degli accordi di interoperabilità nelle veci di altre Pubbliche Amministrazioni
-   * -    [Erogatore]
-     -    Uno dei soggetti di cui all'articolo 2, comma 2 del CAD che rende disponibile e-service ad altre organizzazioni, per la fruizione di dati in suo possesso o l’integrazione dei processi da esso realizzati
-   * -    [e-service]
-     -    I servizi digitali, realizzati da un erogatore per assicurare l’accesso ai propri dati e/o l’integrazione dei propri processi attraverso l'interazione dei suoi sistemi informatici con quelli dei fruitori, trovano attuazione nell’implementazione di API
-   * -    [Fruitore]
-     -    Un’organizzazione che utilizza gli e-service messi a disposizione da un dei soggetti di cui all'articolo 2, comma 2 del CAD
-   * -    [HTTP]
-     -    Hypertext Transfer Protocol
-   * -    [IDPS]
-     -    Interoperable Digital Public Services
-   * -    [JWT]
-     -    JSON Web Tokens
-   * -    [ModI]
-     -    Modello di Interoperabilità delle Pubbliche Amministrazioni Italiane
-   * -    [PA]
-     -    Pubblica Amministrazione Italiana
-   * -    [QoS]
-     -    Quality of Service
-   * -    [REST]
-     -    Representational State Transfer
-   * -    [RPC]
-     -    Remote Procedure Call
-   * -    [SLA]
-     -    Service Level Agreement
-   * -    [SLI]
-     -    Service Level Indicator
-   * -    [SLO]
-     -    Service Level Objective
-   * -    [SOAP]
-     -    Simple Object Access Protocol
-   * -    [UML]
-     -    Linguaggio di modellazione unificato (Unified Modeling Language)
-   * -    [W3C]
-     -    World Wide Web Consortium
-   * -    [WS-\*]
-     -    Lo stack degli standard emanati relativi alle tecnologie SOAP, tra cui SOAP, WSDL, WS-Security, WS-Addressing e WS-I
-   * -    [WSDL]
-     -    Web Services Description Language
-   * -    [XML]
-     -    eXtensible Markup Language
-   * -    [XML-RPC]
-     -    XML-Remote Procedure Call
+
+   * -    [AgID]
+     -    Agenzia per l’Italia Digitale
+   * -    [PA]
+     -    Pubblica Amministrazione Italiana
+   * -    [UML]
+     -    Linguaggio di modellazione unificato (Unified Modeling Language)
+   * -    [API]
+     -    Application Programming Interface
+   * -    [EIF]
+     -    European Interoperability Framework
+   * -    [HTTP]
+     -    Hypertext Transfer Protocol
+   * -    [W3C]
+     -    World Wide Web Consortium
+   * -    [XML]
+     -    eXtensible Markup Language
+   * -    [RPC]
+     -    Remote Procedure Call
+   * -    [SOAP]
+     -    Simple Object Access Protocol
+   * -    [REST]
+     -    Representational State Transfer
+   * -    [BP]
+     -    WS-I Basic Profile - (Web Services Interoperability Specification)
+   * -    [WSDL]
+     -    Web Services Description Language
+   * -    [JWT]
+     -    JSON Web Tokens
+   * -    [IDPS]
+     -    Interoperable Digital Public Services
+   * -    [Erogatore]
+     -    Uno dei soggetti di cui
+          all'articolo 2, comma 2 del CAD
+          che rende disponibile e-service
+          ad altre organizzazioni, per la
+          fruizione di dati in suo possesso
+          o l’integrazione dei processi da
+          esso realizzati
+   * -    [Fruitore]
+     -    Un’organizzazione che utilizza
+          gli e-service messi a
+          disposizione da un dei soggetti
+          di cui all'articolo 2, comma 2
+          del CAD
+   * -    [e-service]
+     -    I servizi digitali, realizzati da
+          un erogatore per assicurare
+          l’accesso ai propri dati e/o
+          l’integrazione dei propri
+          processi attraverso l'interazione
+          dei suoi sistemi informatici con
+          quelli dei fruitori, trovano
+          attuazione nell’implementazione
+          di API
+   * -    [ModI]
+     -    Modello di Interoperabilità delle Pubbliche Amministrazioni Italiane
+   * -    [XML-RPC]
+     -    XML-Remote Procedure Call
+   * -    [QoS]
+     -    Quality of Service
+   * -    [SLI]
+     -    Service Level Indicator
+   * -    [SLO]
+     -    Service Level Objective
+   * -    [SLA]
+     -    Service Level Agreement
+   * -    [API-First]
+     -    L'API-first è un approccio in cui le PA considerano le API come
+          mezzo principale per perseguire i propri obiettivi, interagendo con
+          i propri stakeholder sin dalla fase di progettazione
+   * -    [Contract-First]
+     -    Contract-first è un approccio che prevede di dare seguito
+          all'interazione di più sistemi informatici definendo le API
+          condivise attraverso un Interface Description Language (IDL)
+   * -    [WS-\*]
+     -    Lo stack degli standard emanati relativi alle tecnologie SOAP,
+          tra cui SOAP, WSDL, WS-Security, WS-Addressing e WS-I
+   * -    [Enti Capofila]
+     -    Gli enti capofila sono pubbliche amministrazioni che si propongono nel ModI quali soggetti
+          responsabili delle attività di gestione sul Catalogo degli e-service, delle API e degli
+          accordi di interoperabilità nelle veci di altre Pubbliche Amministrazioni
