@@ -2,7 +2,7 @@ Ambito di applicazione
 ======================
 
 Il presente Documento operativo è redatto quale documento operativo
-relativo alla Linea di indirizzo sull’interoperabilità tecnica.
+relativo alla Linee Guida sull’interoperabilità tecnica.
 
 Soggetti destinatari
 --------------------

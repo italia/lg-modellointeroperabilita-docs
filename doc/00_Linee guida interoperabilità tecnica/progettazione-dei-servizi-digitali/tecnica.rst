@@ -7,7 +7,7 @@ organizzativa, assicurando:
 -  l’attuazione del modello dati definito nella fase semantica;
 
 -  la conformità ai pattern e/o profili di interoperabilità individuati
-   dalla presente Linea di indirizzo.
+   dalla presente Linee Guida.
 
 L’obiettivo della fase tecnica è:
 

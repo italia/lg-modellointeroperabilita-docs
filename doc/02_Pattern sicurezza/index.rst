@@ -1,6 +1,6 @@
 Pattern sicurezza - Documento operativo
 
-Linea di indirizzo sull’interoperabilità tecnica delle Pubbliche
+Linee Guida sull’interoperabilità tecnica delle Pubbliche
 Amministrazioni
 
 

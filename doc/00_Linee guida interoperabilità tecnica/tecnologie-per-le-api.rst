@@ -33,7 +33,7 @@ significativo distinguere se gli stessi sono offerti per interoperare:
 
 L’autonomia organizzativa delle Pubbliche Amministrazioni all’interno
 del loro dominio lascia alle stesse la facoltà di adottare le tecnologie
-e le modalità di loro utilizzo indicate nella Linea di indirizzo.
+e le modalità di loro utilizzo indicate nella Linee Guida.
 
 Una trattazione completa dei paradigmi per la progettazione e
 realizzazione delle API esula dagli scopi del presente documento. La
@@ -122,10 +122,10 @@ i casi seguenti:
    presenza di controlli ipermediali nella rappresentazione delle
    risorse.
 
-La Linea di indirizzo accoglie l’implementazione di API REST
+La Linee Guida accoglie l’implementazione di API REST
 classificabili al livello 1 del Richardson Maturity Model.
 
-**La Linea di indirizzo accoglie indifferentemente SOAP e REST quali
+**La Linee Guida accoglie indifferentemente SOAP e REST quali
 tecnologie per l’implementazione delle API. La scelta della tecnologia
 da utilizzare è lasciata alle Pubbliche Amministrazioni che
 costituiscono un dominio di interoperabilità sulla base delle specifiche

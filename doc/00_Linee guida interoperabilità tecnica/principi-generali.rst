@@ -4,7 +4,7 @@ Principi generali
 Interazioni
 -----------
 
-L’ambito di applicazione della Linea di indirizzo, in coerenza con il
+L’ambito di applicazione della Linee Guida, in coerenza con il
 ModI, comprende i tre tipi di interazioni previste nell’EIF che vedono
 coinvolte Pubbliche Amministrazioni, cittadini e imprese.
 
@@ -61,13 +61,13 @@ stato utilizzato come alternativa a web service per indicare altri
 approcci/protocolli/tecnologie, come le API REpresentational State
 Transfer (REST) per realizzare API senza utilizzare XML-RPC e SOAP.
 
-Nell’ambito della Linea di indirizzo, accettando la nomenclatura in uso
+Nell’ambito della Linee Guida, accettando la nomenclatura in uso
 a livello europeo e più in generale nel contesto internazionale, si
 utilizza il termine generico API per indicare indifferentemente le Web
 API, i web service e le API REST, lasciando al contesto in cui lo stesso
 è utilizzato la declinazione del significato esplicito.
 
-La Linea di indirizzo individua le modalità con cui le Pubbliche
+La Linee Guida individua le modalità con cui le Pubbliche
 Amministrazioni implementano le proprie API quale elemento tecnologico
 di base del ModI attraverso cui le Pubbliche Amministrazioni rendono
 disponibile gli e-service utilizzati dai sistemi informatici di altre
@@ -189,7 +189,7 @@ differente SLA.
 Dominio di interoperabilità
 ---------------------------
 
-Nell’ambito della presente Linea di indirizzo, per dominio di
+Nell’ambito della presente Linee Guida, per dominio di
 interoperabilità si indica uno specifico contesto in cui più Pubbliche
 Amministrazioni e/o soggetti privati hanno l’esigenza di scambiare dati
 e/o integrare i propri processi per dare seguito al disposto normativo.
@@ -249,7 +249,7 @@ parametri minimi:
 Pattern e profili di interoperabilità
 -------------------------------------
 
-La Linea di indirizzo individua:
+La Linee Guida individua:
 
 -  pattern di interoperabilità, ovvero la definizione di una soluzione a
    una esigenza di scambio di messaggi e informazioni, declinata in una
@@ -272,7 +272,7 @@ La Linea di indirizzo individua:
    scambiati.
 
 I pattern e profili di interoperabilità individuati nei Documenti
-operativi della Linea di indirizzo sono utilizzati dalle PA
+operativi della Linee Guida sono utilizzati dalle PA
 nell’implementazione delle proprie API. Le PA selezionano i pattern e/o
 i profili di interoperabilità sulla base delle specifiche esigenze del
 dominio di interoperabilità a cui partecipano.
@@ -283,7 +283,7 @@ dominio di interoperabilità a cui partecipano.
 Catalogo delle API
 ------------------
 
-La Linea di indirizzo individua il Catalogo delle API (in breve,
+La Linee Guida individua il Catalogo delle API (in breve,
 Catalogo) quale componente, unica e centralizzata, che assicura alle
 parti coinvolte nel rapporto di erogazione e fruizione la consapevolezza
 sulle API disponibili, e per esse, i livelli di servizio dichiarati.

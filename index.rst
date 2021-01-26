@@ -1,30 +1,23 @@
-Modello di interoperabilità per la Pubblica Amministrazione
-############################################################
+Linee Guida sull'interoperabilità tecnica delle Pubbliche Amministrazioni
+#########################################################################
 
-.. admonition:: Linee d'indirizzo sull'Interoperabilità tecnica
+.. admonition:: Consultazione pubblica
 
+   La consultazione pubblica per questo documento è attiva dal <START_CONSULTAZIONE> al <END_CONSULTAZIONE> 2021.
 
-Di seguito la versione accessibile delle Linee d'indirizzo sull'interoperabilità tecnica.
+Questo documento raccoglie il testo delle *linee guida sull'interoperabilità tecnica delle Pubbliche Amministrazioni*, disponibile per la consultazione pubblica.
 
-Il repository è su `Github<https://github.com/italia/lg-modellointeroperabilita-docs>`_: inviate
-commenti tramite pull request e issue.
+`Leggi le istruzioni per la consultazione <istruzioni_consultazione.html>`_
 
-La versione ufficiale è sul sito AgID.
-
-* `Linee d'indirizzo sull'interoperabilità tecnica <http://www.agid.gov.it/sites/default/files/repository_files/00_linea_di_indirizzo_interoperabilita_tecnica.pdf>`_
-* `Pattern d'interazione <https://www.agid.gov.it/sites/default/files/repository_files/01_pattern_interazione_0.pdf>`_
-* `Pattern di sicurezza <https://www.agid.gov.it/sites/default/files/repository_files/02_pattern_sicurezza.pdf>`_
-* `Profili di interoperabilità <https://www.agid.gov.it/sites/default/files/repository_files/03_profili_di_interoperabilita.pdf>`_
-* `Raccomandazioni di implementazione <https://www.agid.gov.it/sites/default/files/repository_files/04_raccomandazioni_di_implementazione.pdf>`_
-
+Vai al testo delle linee guida:
 
 .. toctree::
    :numbered:
    :maxdepth: 4
 
-   doc/00_Linea di indirizzo interoperabilità tecnica/index.rst
+   doc/00_Linee guida interoperabilità tecnica/index.rst
 
-Allegato 1 - Pattern d'interazione
+Documento operativo - Pattern d'interazione
 ::::::::::::::::::::::::::::::::::
 
 .. toctree::
@@ -33,7 +26,7 @@ Allegato 1 - Pattern d'interazione
 
    doc/01_Pattern interazione/index.rst
 
-Allegato 2 - Pattern di sicurezza
+Documento operativo - Pattern di sicurezza
 :::::::::::::::::::::::::::::::::
 
 .. toctree::
@@ -42,7 +35,7 @@ Allegato 2 - Pattern di sicurezza
 
    doc/02_Pattern sicurezza/index.rst
 
-Allegato 3 - Profili d'interoperabilità
+Documento operativo - Profili d'interoperabilità
 :::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
@@ -51,7 +44,7 @@ Allegato 3 - Profili d'interoperabilità
 
    doc/03_Profili di interoperabilità/index.rst
 
-Allegato 4 - Raccomandazioni di implementazione
+Documento operativo - Raccomandazioni di implementazione
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
