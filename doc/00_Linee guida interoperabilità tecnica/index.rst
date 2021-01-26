@@ -8,7 +8,7 @@ Amministrazioni
 
   introduzione.rst
   ambito-di-applicazione.rst
- TODO: riferimenti-sigle.rst
+  riferimenti-sigle.rst
   principi-generali.rst
   progettazione-dei-servizi-digitali.rst
   tecnologie-per-le-api.rst
