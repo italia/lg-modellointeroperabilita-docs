@@ -2,10 +2,11 @@ Pattern non bloccanti RPC PULL (busy waiting)
 =============================================
 
 Questo pattern è simile al precedente, di cui eredita le motivazioni, ma
-in questo caso il fruitore non fornisce un indirizzo di callback, mentre
-l’erogatore fornisce un indirizzo interrogabile per verificare lo stato
-di processamento di una richiesta e, al fine dell’elaborazione della
-stessa, il risultato.
+in questo caso:
+
+- l’erogatore fornisce un URL dove verificare lo stato
+  di processamento di una richiesta;
+- il fruitore non fornisce un indirizzo di callback.
 
 Questo scenario prevede due possibili workflow, uno per REST ed uno per
 SOAP riportati nelle seguenti figure.
@@ -29,17 +30,17 @@ SOAP riportati nelle seguenti figure.
 
 *Figura 3 - Interazione non bloccante tramite busy waiting REST*
 
-Il fruitore invia una richiesta (passo (1)) e riceve immediatamente un
-acknowledge (passo (2)) insieme ad:
+Il fruitore invia una richiesta (passo 1.) e riceve immediatamente un
+acknowledge (passo 2.) insieme ad:
 
 -  un indirizzo dove verificare lo stato del processamento (REST);
 
 -  oppure un CorrelationID (SOAP).
 
-D’ora in poi il fruitore, periodicamente, verifica (passo (3)) lo stato
+D’ora in poi il fruitore, periodicamente, verifica (passo 3.) lo stato
 della richiesta utilizzando:
 
--  l’url indicato (REST)
+-  l’URL indicato (REST)
 
 -  oppure il CorrelationID (SOAP)
 
@@ -47,7 +48,7 @@ fin quando la risposta alla richiesta sarà pronta (passo (4)).
 
 Gli intervalli di polling possono essere definiti tra le parti.
 
-Quando la risposta è pronta il fruitore può accedere (passi (5) e (6))
+Quando la risposta è pronta il fruitore può accedere (passi 5. e 6.)
 al risultato del processamento
 
 .. mermaid::
@@ -72,7 +73,7 @@ al risultato del processamento
 [NONBLOCK_PULL_REST] Not Blocking Pull REST
 -------------------------------------------
 
-Nel caso in cui il profilo venga implementato con tecnologia REST,
+Quando il profilo viene implementato con tecnologia REST,
 DEVONO essere rispettate le seguenti regole:
 
 -  La specifica dell’interfaccia dell’erogatore DEVE dichiarare tutti i
@@ -85,8 +86,8 @@ DEVONO essere rispettate le seguenti regole:
 -  Al passo (1), il fruitore DEVE utilizzare il verbo HTTP POST;
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
-   della richiesta, un percorso per interrogare lo stato di
-   processamento utilizzando HTTP header Location, il codice HTTP di
+   della richiesta, un URL per interrogare lo stato di
+   processamento utilizzando :httpheader:`Location`, il codice HTTP di
    stato DEVE essere HTTP status 202 Accepted a meno che non si
    verifichino errori;
 
@@ -97,7 +98,7 @@ DEVONO essere rispettate le seguenti regole:
 -  Al passo (4) l’erogatore indica, sulla base dello stato del
    processamento, che la risorsa non è ancora pronta (il codice HTTP
    restituito è HTTP status 200 OK) o indica che la risorsa è pronta,
-   utilizzando HTTP header Location, per indicare il percorso dove
+   utilizzando :httpheader:`Location`, per indicare il percorso dove
    recuperare la risorsa (il codice HTTP restituito è HTTP status 303
    See Other);
 
@@ -201,11 +202,11 @@ Endpoint
 
 https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
 
-4. Response Header & Body (HTTP status 200 Success)
+4. Response Header & Body (HTTP status 200 Ok)
 
 .. code-block:: http
 
-   HTTP/1.1 200 Success
+   HTTP/1.1 200 Ok
    Content-Type: application/json
 
    {
@@ -231,11 +232,11 @@ Endpoint
 
 https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
 
-6. Response Header & Body (HTTP status 200 Success)
+6. Response Header & Body (HTTP status 200 Ok)
 
 .. code-block:: http
 
-   HTTP/1.1 200 Success
+   HTTP/1.1 200 Ok
    Content-Type: application/json
 
    { "c": "OK" }

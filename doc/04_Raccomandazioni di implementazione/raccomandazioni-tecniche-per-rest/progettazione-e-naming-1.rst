@@ -162,7 +162,7 @@ Si DOVREBBERO utilizzare:
 
 -  un filtro sugli attributi necessari;
 
--  le specifiche di optimistic locking (HTTP header ETag,
+-  le specifiche di optimistic locking (:httpheader:`ETag`,
    if-(none-)match) :rfc:`7232`.
 
 È possibile ridurre l’uso della banda e velocizzare le richieste
