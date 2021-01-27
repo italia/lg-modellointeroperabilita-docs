@@ -20,19 +20,19 @@ del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
 Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 
 -  DEVE verificare la validità sintattica dei dati in ingresso. In caso
-   di dati errati DEVE restituire HTTP status 500 Internal Server Error
+   di dati errati DEVE restituire :httpstatus:`500`
    fornendo dettagli circa l’errore utilizzando il meccanismo della SOAP
    fault;
 
 -  Se l’erogatore ipotizza che la richiesta sia malevola PUÒ ritornare
-   HTTP status 400 Bad Request o HTTP status 404 Not Found
+   :httpstatus:`400` o :httpstatus:`404`
 
 -  In caso di errori non dipendenti dal fruitore, DEVE restituire i
    codici HTTP 5XX rispettando la semantica degli stessi o restituire il
-   codice HTTP status 500 Internal Server Error indicando il motivo
+   codice :httpstatus:`500` indicando il motivo
    dell’errore nella SOAP fault;
 
--  In caso di successo restituire HTTP status 200 OK, riempiendo il body
+-  In caso di successo restituire :httpstatus:`200`, riempiendo il body
    di risposta con il risultato dell’operazione.
 
 Esempio

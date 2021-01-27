@@ -67,7 +67,7 @@ Regole di processamento
    data secondo le indicazioni in :rfc:`3230`
 
 3. Il fruitore individua l’elenco degli HTTP Header da firmare, incluso
-   Digest e se presenti HTTP header Content-Type e HTTP header
+   Digest e se presenti :httpheader:`Content-Type` e HTTP header
    Content-Encoding
 
 4. Il fruitore crea la struttura o la stringa da firmare in modo che
@@ -159,9 +159,9 @@ Note:
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    della risposta da parte dell’erogatore al fruitore. In questo caso si
    ricorda che Digest fa riferimento al checksum del payload body della
-   selected representation. Per una richiesta con HTTP method HEAD il
+   selected representation. Per una richiesta con :httpmethod:`HEAD` il
    server DEVE ritornare il checksum dell’ipotetico payload body
-   ritornato dalla corrispondente richiesta con HTTP method GET.
+   ritornato dalla corrispondente richiesta con :httpmethod:`GET`.
 
 Esempio:
 

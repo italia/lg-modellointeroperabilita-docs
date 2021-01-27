@@ -86,13 +86,13 @@ Regole di processamento
 
 3. il fruitore firma il token adottando la JWS Compact Serialization
 
-4. il fruitore posiziona il JWT nell’ HTTP header Authorization
+4. il fruitore posiziona il JWT nell’ :httpheader:`Authorization`
 
 5. Il fruitore spedisce il messaggio all’erogatore
 
 **B: Risposta**
 
-6.  L’erogatore decodifica il JWT presente in HTTP header Authorization
+6.  L’erogatore decodifica il JWT presente in :httpheader:`Authorization`
     e valida i claim contenuti nel Jose Header, in particolare verifica:
 
 7.  il contenuto dei claim iat ed exp;

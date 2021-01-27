@@ -20,7 +20,7 @@ Nella definizione dei path si DEVE utilizzare il separatore «-»
 
 Esempio:
 
-.. code-block:: http
+.. code-block:: python
 
    /​tax-code​/{tax_code_id}
 
@@ -33,7 +33,7 @@ DOVREBBE preferirsi Hyphenated-Pascal-Case per gli header HTTP.
 
 Esempio:
 
-.. code-block:: http
+.. code-block:: python
 
    Accept-Encoding
    Apply-To-Redirect-Ref
@@ -54,19 +54,20 @@ Request:
 .. code-block:: http
 
    GET /​documenti​?data=2018-05-01 HTTP/1.1
+   Accept: application/json
 
 
 Response:
 
 .. code-block:: http
 
-   HTTP/1.1 200 Ok
+   HTTP/1.1 200 OK
    Content-Type: application/json
 
    {
-   "items": [ .. ]
-   "limit": 10
-   "next_cursor": 21314123
+     "items": [ .. ]
+     "limit": 10
+     "next_cursor": 21314123
    }
 
 Esempio 2: recupera un singolo documento
@@ -76,19 +77,22 @@ Request:
 .. code-block:: http
 
    GET /​documento​/21314123
+   Accept: application/json
+
 
 Response:
 
 .. code-block:: http
 
-   HTTP/1.1 200 Ok
+   HTTP/1.1 200 OK
    Content-Type: application/json
 
    {
-   "id": 21314123
-   "title: "Atto di nascita ...",
-   ..
+     "id": 21314123
+     "title: "Atto di nascita ...",
+     ..
    }
+
 
 [RAC_REST_NAME_005] Utilizzare Query String standardizzate
 ----------------------------------------------------------
@@ -110,9 +114,9 @@ essere implementata tramite i parametri:
 ---------------------------------------------------------------------------------
 
 Eventuali link a risorse utili al flusso applicativo DEVONO essere
-restituiti nel payload e non nell’header Link definito in :rfc:`8288`.
+restituiti nel payload e non nell’ :httpheader:`Link` definito in :rfc:`8288`.
 Questo semplifica l'implementazione dei client. È comunque possibile
-usare l'header Link per passare informazioni di tipo diverso.
+usare l':httpheader:`Link` per passare informazioni di tipo diverso.
 
 [RAC_REST_NAME_006] Usare URI assoluti nei risultati
 ----------------------------------------------------
@@ -141,13 +145,13 @@ sull’esistenza o meno dell’utenza.
 
 Dopo aver validato il contenuto delle richieste si DEVE ritornare:
 
--  HTTP status 415 Unsupported Media Type se il Content-Type non è
+-  :httpstatus:`415` se il Content-Type non è
    supportato;
 
--  HTTP status 400 Bad Request o HTTP status 404 Not Found se si
+-  :httpstatus:`400` o :httpstatus:`404` se si
    ipotizza che la richiesta sia malevola;
 
--  HTTP status 422 Unprocessable Entity se la representation contenuta
+-  :httpstatus:`422` se la representation contenuta
    nella richiesta è sintatticamente corretta ma semanticamente non
    processabile.
 
@@ -162,7 +166,7 @@ Si DOVREBBERO utilizzare:
 
 -  un filtro sugli attributi necessari;
 
--  le specifiche di optimistic locking (HTTP header ETag,
+-  le specifiche di optimistic locking (:httpheader:`ETag`,
    if-(none-)match) :rfc:`7232`.
 
 È possibile ridurre l’uso della banda e velocizzare le richieste
@@ -180,7 +184,7 @@ Response
 
 .. code-block:: http
 
-   HTTP/1.1 200 Ok
+   HTTP/1.1 200 OK
    Content-Type: application/json
    
    {
@@ -209,7 +213,7 @@ Response
 
 .. code-block:: http
 
-   HTTP/1.1 200 Ok
+   HTTP/1.1 200 OK
    Content-Type: application/json
    
    {

@@ -16,7 +16,6 @@ Le proprietà DOVREBBERO avere una nomenclatura consistente.
 Scegliere uno dei due stili di seguito e modificarlo in ASCII:
 
 -  snake_case
-
 -  camelCase
 
 Non usare contemporaneamente snake_case e camelCase nella stessa API.
