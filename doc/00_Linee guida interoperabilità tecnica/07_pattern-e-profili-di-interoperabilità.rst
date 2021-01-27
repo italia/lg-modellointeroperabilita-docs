@@ -90,12 +90,13 @@ successivo
 
 *Figura 4 - Rappresentazione del processo di gestione dei pattern*
 
+Si rimanda ai seguenti paragragi per dettagli.
+
 .. toctree::
   :maxdepth: 3
-  :caption: Partecipazione all'evoluzione del ModI
 
-  pattern-e-profili-di-interoperabilità-1/nuove-esigenze-e-proposta.rst
-  pattern-e-profili-di-interoperabilità-1/concertazione-ed-adozione.rst
+  07_pattern-e-profili-di-interoperabilità/01_nuove-esigenze-e-proposta.rst
+  07_pattern-e-profili-di-interoperabilità/02_concertazione-ed-adozione.rst
 
 .. |image0| image:: ./media/image4.png
    :width: 6.15887in

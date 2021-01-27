@@ -151,14 +151,15 @@ e responsabilità delle parti (erogatore e fruitore), per assicurare che
 le Pubbliche Amministrazioni interessate possano usufruire di un e-service 
 fornito da un’altra PA attraverso un’API.
 
+Si rimanda ai seguenti paragrafi per dettagli.
+
 .. toctree::
   :maxdepth: 3
-  :caption: Regole e raccomandazioni per gli erogatori
 
-  progettazione-dei-servizi-digitali/individuazione-delle-esigenze.rst
-  progettazione-dei-servizi-digitali/organizzativa.rst
-  progettazione-dei-servizi-digitali/semantica.rst
-  progettazione-dei-servizi-digitali/tecnica.rst
+  05_progettazione-dei-servizi-digitali/01_individuazione-delle-esigenze.rst
+  05_progettazione-dei-servizi-digitali/02_organizzativa.rst
+  05_progettazione-dei-servizi-digitali/03_semantica.rst
+  05_progettazione-dei-servizi-digitali/04_tecnica.rst
 
 .. [1]
    Il principio digital-by-default prevede che sia data priorità

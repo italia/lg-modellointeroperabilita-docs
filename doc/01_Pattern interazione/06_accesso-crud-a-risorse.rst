@@ -311,17 +311,4 @@ Di seguito un esempio di cancellazione di una specifica prenotazione.
 .. [1]
    Cf. https://www.rfc-editor.org/errata/eid3169
 
-.. mermaid::
 
-     sequenceDiagram
-     
-      activate Fruitore
-      activate Erogatore
-      Fruitore->>Erogatore: 1. Request()
-      Erogatore-->>Fruitore: 2. Reply
-      deactivate Erogatore
-      deactivate Fruitore
-
-.. image:: ./media/image5.png
-   :width: 4.68056in
-   :height: 2.40278in

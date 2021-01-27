@@ -22,6 +22,7 @@ Data la variabilità nel tempo delle esigenze delle amministrazioni e
 delle tecnologie abilitanti, nonché considerata la natura incrementale
 del ModI, l’elenco dei pattern di interazione non è da intendersi
 esaustivo. Nel caso in cui un’amministrazione abbia esigenze non
-ricoperte nei seguenti profili DEVE informare AGID, nei modi indicati
-nel capitolo 7 Pattern e profili di interoperabilità delle Linea di
-indirizzo sull’interoperabilità tecnica delle Pubbliche Amministrazioni.
+ricoperte nei seguenti profili DEVE informare l'Agenzia per l'Italia 
+Digitale, nei modi indicati nel capitolo 7 Pattern e profili di 
+interoperabilità delle Linee Guida sull’interoperabilità 
+tecnica delle Pubbliche Amministrazioni.
