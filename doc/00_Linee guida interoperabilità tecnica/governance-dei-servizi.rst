@@ -11,7 +11,7 @@ assicurando la specifica delle API che essi implementano.
 
 Gli e-service registrati nel Catalogo, per normalizzare l’integrazione
 tra i sistemi informatici, utilizzano le tecnologie, i pattern e i
-profili individuati nella Linee Guida.
+profili individuati nelle Linee Guida.
 
 Relativamente a un’e-service, indichiamo con:
 
