@@ -1,16 +1,15 @@
-Linee Guida sull’interoperabilità tecnica delle Pubbliche
-Amministrazioni
-
-
+Linee Guida sull’interoperabilità tecnica delle Pubbliche Amministrazioni
+#########################################################################
 .. toctree::
+  :numbered:
   :maxdepth: 3
   :caption: Indice dei contenuti
 
-  introduzione.rst
-  ambito-di-applicazione.rst
-  riferimenti-sigle.rst
-  principi-generali.rst
-  progettazione-dei-servizi-digitali.rst
-  tecnologie-per-le-api.rst
-  pattern-e-profili-di-interoperabilità-1.rst
-  governance-dei-servizi.rst
+  01_introduzione.rst
+  02_ambito-di-applicazione.rst
+  03_riferimenti-sigle.rst
+  04_principi-generali.rst
+  05_progettazione-dei-servizi-digitali.rst
+  06_tecnologie-per-le-api.rst
+  07_pattern-e-profili-di-interoperabilità.rst
+  08_governance-dei-servizi.rst

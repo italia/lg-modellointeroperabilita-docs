@@ -10,7 +10,7 @@ determinano l’opportunità di definire un insieme di soluzioni
 tecnologiche comuni che permettano, anche attraverso la loro
 combinazione, di definire un quadro condiviso di regole applicate.
 
-La Linee Guida individua i pattern e i profili di
+Le Linee Guida individuano i pattern e i profili di
 interoperabilità quali le modalità tecniche condivise secondo le quali
 un fruitore e un erogatore realizzano l’interoperabilità dei propri
 sistemi informatici, e nel dettaglio:
@@ -90,12 +90,13 @@ successivo
 
 *Figura 4 - Rappresentazione del processo di gestione dei pattern*
 
+Si rimanda ai seguenti paragragi per dettagli.
+
 .. toctree::
   :maxdepth: 3
-  :caption: Indice dei contenuti
 
-  pattern-e-profili-di-interoperabilità-1/nuove-esigenze-e-proposta.rst
-  pattern-e-profili-di-interoperabilità-1/concertazione-ed-adozione.rst
+  07_pattern-e-profili-di-interoperabilità/01_nuove-esigenze-e-proposta.rst
+  07_pattern-e-profili-di-interoperabilità/02_concertazione-ed-adozione.rst
 
 .. |image0| image:: ./media/image4.png
    :width: 6.15887in
