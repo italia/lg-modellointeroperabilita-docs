@@ -1,14 +1,14 @@
 Introduzione
 ============
 
-La Linee Guida individua le tecnologie e gli standard che le Pubbliche 
+Le Linee Guida individuano le tecnologie e gli standard che le Pubbliche 
 Amministrazioni devono tenere in considerazione durante la realizzazione 
 dei propri sistemi informatici, al fine di permettere il coordinamento 
 informativo e informatico dei dati tra le amministrazioni centrali, 
 regionali e locali, nonché tra queste e i sistemi dell'Unione Europea, 
 con i gestori di servizi pubblici e dei soggetti privati.
 
-La Linee Guida assicura l'aggiornamento rispetto alla:
+Le Linee Guida assicurano l'aggiornamento rispetto alla:
 
 -  evoluzione della tecnologia;
 
@@ -21,7 +21,7 @@ La Linee Guida assicura l'aggiornamento rispetto alla:
 
 -  adeguatezza dei necessari livelli di sicurezza.
 
-La Linee Guida contribuisce alla definizione del Modello di Interoperabilità 
+Le Linee Guida contribuiscono alla definizione del Modello di Interoperabilità 
 della PA (in breve ModI), focalizzandosi sulle tecnologie e le loro modalità 
 di utilizzo, per assicurare lo scambio di dati tra le PA, e tra queste 
 e i soggetti privati; in esse sono definenti i contesti di interazione 
@@ -40,16 +40,16 @@ il quadro tecnico-implementativo del Sistema pubblico di cooperazione
 (SPCoop), il framework di interoperabilità a livello applicativo 
 adottato dalle PA.
 
-La Linee Guida, e più in generale il ModI, completa il processo di 
+Le Linee Guida, e più in generale il ModI, completano il processo di 
 aggiornamento del SPCoop avviato con la determinazione AgID 219/2017 
 - "Linee guida per transitare al nuovo modello di interoperabilità" [2]_.
 
-**La Linee Guida considera i soli servizi digitali (di seguito e-service) 
+**Le Linee Guida consideramo i soli servizi digitali (di seguito e-service) 
 realizzati da una Pubblica Amministrazione per assicurare l’accesso ai 
 propri dati e/o l’integrazione dei propri processi attraverso l'interazione 
 dei suoi sistemi informatici con quelli dei fruitori.**
 
-La Linee Guida contribuisce alla definizione del Modello di Interoperabilità 
+Le Linee Guida contribuiscono alla definizione del Modello di Interoperabilità 
 della PA (in breve ModI) relativamente agli e-service provvedendo a:
 
 -  definire le modalità di integrazione tra le PA, e tra queste cittadini 
@@ -81,7 +81,7 @@ razionalizzare i processi volti a sostenere i servizi digitali e assicurare
 che le norme esistenti e quelle nuove non pregiudichino gli sforzi di 
 interoperabilità [3]_.
 
-**La Linee Guida affronta il livello di interoperabilità tecnica prevista 
+**Le Linee Guida affrontano il livello di interoperabilità tecnica prevista 
 nell’EIF**\  [4]_ **relativamente agli Interoperable Digital Public Services.**
 
 Il ModI assicura l’adozione degli standard di interoperabilità mandatori 

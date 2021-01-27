@@ -4,7 +4,7 @@ Principi generali
 Interazioni
 -----------
 
-L’ambito di applicazione della Linee Guida, in coerenza con il ModI, 
+L’ambito di applicazione delle Linee Guida, in coerenza con il ModI, 
 comprende i tre tipi di interazioni previste nell’EIF che vedono 
 coinvolte Pubbliche Amministrazioni, cittadini e imprese.
 
@@ -65,7 +65,7 @@ il termine generico API per indicare indifferentemente le Web API, i web
 service e le API REST, lasciando al contesto in cui lo stesso è utilizzato 
 la declinazione del significato esplicito.**
 
-La Linee Guida individua le modalità con cui le Pubbliche Amministrazioni 
+Le Linee Guida individuano le modalità con cui le Pubbliche Amministrazioni 
 implementano le proprie API, quale elemento tecnologico di base del ModI, 
 attraverso cui le Pubbliche Amministrazioni rendono disponibile gli 
 e-service utilizzati dai sistemi informatici di altre Pubbliche 
@@ -183,7 +183,7 @@ Gli SLA possono essere statici o dinamici. Negli SLA dinamici, i SLO
 Dominio di interoperabilità
 ---------------------------
 
-Nell’ambito della presente Linee Guida, per dominio di interoperabilità 
+Nell’ambito delle presenti Linee Guida, per dominio di interoperabilità 
 si indica uno specifico contesto in cui più Pubbliche Amministrazioni 
 e/o soggetti privati hanno l’esigenza di scambiare dati e/o integrare 
 i propri processi per dare seguito al disposto normativo.
@@ -241,7 +241,7 @@ parametri minimi:
 Pattern e profili di interoperabilità
 -------------------------------------
 
-La Linee Guida individua:
+Le Linee Guida individuano:
 
 -  pattern di interoperabilità, ovvero la definizione di una soluzione 
    a una esigenza di scambio di messaggi e informazioni, declinata in 
@@ -264,7 +264,7 @@ La Linee Guida individua:
    scambiati.
 
 **I pattern e profili di interoperabilità individuati nei Documenti 
-operativi della Linee Guida sono utilizzati dalle Pubbliche 
+operativi delle Linee Guida sono utilizzati dalle Pubbliche 
 Amministrazioni nell’implementazione delle proprie API**. 
 
 **Le Pubbliche Amministrazioni selezionano i pattern e/o i profili di 
@@ -274,7 +274,7 @@ interoperabilità a cui partecipano**.
 Catalogo delle API
 ------------------
 
-La Linee Guida individua il Catalogo delle API (in breve, Catalogo) 
+Le Linee Guida individuano il Catalogo delle API (in breve, Catalogo) 
 quale componente, unica e centralizzata, che assicura alle parti 
 coinvolte nel rapporto di erogazione e fruizione la consapevolezza 
 sulle API disponibili, e per esse, i livelli di servizio dichiarati.

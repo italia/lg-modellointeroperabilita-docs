@@ -20,7 +20,7 @@ Un e-service è un servizio erogato via Internet o attraverso una rete
 privata tramite un processo digitale in cui sono coinvolti erogatori e 
 fruitori.
 
-Gli e-service di interesse della Linee Guida sono caratterizzati da:
+Gli e-service di interesse delle Linee Guida sono caratterizzati da:
 
 -  il descrittore dell’e-service, un’entità che descrive l’obiettivo e 
    le modalità per usufruire del servizio;

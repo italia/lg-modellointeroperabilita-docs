@@ -9,7 +9,7 @@ Note di lettura del documento
 Struttura
 ---------
 
-La Linee Guida include i seguenti Documenti operativi, che individuano 
+Le Linee Guida includono i seguenti Documenti operativi, che individuano 
 gli standard tecnologici e le loro modalità di utilizzo al fine di fruire 
 e/o erogare dati e/o servizi digitali per il tramite dei propri sistemi 
 informatici.

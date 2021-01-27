@@ -6,7 +6,7 @@ Linee Guida sull'interoperabilità tecnica delle Pubbliche Amministrazioni
    La consultazione pubblica per questo documento è attiva dal 
    <START_CONSULTAZIONE> al <END_CONSULTAZIONE> 2021.
 
-Questo documento raccoglie il testo della *Linee Guida 
+Questo documento raccoglie il testo delle *Linee Guida 
 sull'interoperabilità tecnica delle Pubbliche Amministrazioni*, e dei 
 Documenti Operativi ad essa allegati, disponibile per la consultazione 
 pubblica.
