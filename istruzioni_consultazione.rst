@@ -11,23 +11,37 @@ Informazioni sulla consultazione
 Esiti della consultazione
 =========================
 
-I risultati della consultazione pubblica on line saranno presi in considerazione dalla `Agenzia per l'Italia Digitale <http://www.agid.gov.it/>`__ per la redazione del testo definitivo delle Linee Guida.
+I risultati della consultazione pubblica on line saranno presi in 
+considerazione dalla `Agenzia per l'Italia Digitale <http://www.agid.gov.it/>`__ 
+per la redazione del testo definitivo delle Linee Guida.
 
 Destinatari
 ===========
 
-La Linea Guida è destinata ai soggetti di cui all'articolo 2, comma 2 del CAD, così come indicato dall’articolo 75 dello stesso. I destinatari la attuano nella realizzazione dei propri sistemi informatici che fruiscono o erogano dati e/o servizi digitali ad altri soggetti.
+La Linea Guida è destinata ai soggetti di cui all'articolo 2, comma 2 
+del CAD, così come indicato dall’articolo 75 dello stesso. 
+I destinatari la attuano nella realizzazione dei propri sistemi 
+informatici che fruiscono o erogano dati e/o servizi digitali ad altri 
+soggetti.
 
-La Linea Guida è rivolta ai soggetti privati che devono interoperare con la Pubblica Amministrazione per fruire di dati e/o servizi tramite sistemi informatici.
+La Linea Guida è rivolta ai soggetti privati che devono interoperare 
+con la Pubblica Amministrazione per fruire di dati e/o servizi tramite 
+sistemi informatici.
 
 Obiettivo della consultazione
 =============================
 
-La Linee Guida sull'interoperabilità tecnica delle Pubbliche Amministrazioni è redatte per l’attuazione del Codice dell’Amministrazione Digitale (DECRETO LEGISLATIVO 7 marzo 2005, n. 82) ai sensi dell’`articolo 14-bis <https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82!vig=2021-01-26~art14bis>`_ e dell`articolo 73 <https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82!vig=2021-01-26~art73>`_ dello stesso Codice.
+La Linee Guida sull'interoperabilità tecnica delle Pubbliche 
+Amministrazioni è redatte per l’attuazione del Codice 
+dell’Amministrazione Digitale (DECRETO LEGISLATIVO 7 marzo 2005, n. 82) 
+ai sensi dell’`articolo 14-bis <https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82!vig=2021-01-26~art14bis>`__ 
+e dell’`articolo 73 <https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82!vig=2021-01-26~art73>`__ 
+dello stesso Codice.
 
 Come partecipare
 ================
 
-La Linee Guida sono pubblicate su `Docs Italia <https://docs.italia.it/xxxxxxx>`_ ed è possibile commentarle su `Forum Italia <https://forum.italia.it/xxxxxx>`_.
+La Linee Guida sono pubblicate su `Docs Italia <https://docs.italia.it/xxxxxxx>`_ 
+ed è possibile commentarle su `Forum Italia <https://forum.italia.it/xxxxxx>`_.
 
 È possibile inviare i propri commenti fino a <END_CONSULTAZIONE> 2021.

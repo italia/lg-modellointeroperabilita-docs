@@ -1,19 +1,7 @@
-Pattern di interazione - Documento operativo
-
-Linee Guida sull’interoperabilità tecnica delle Pubbliche
-Amministrazioni
-
-Versione 1.0 del 04/09/2020
-
-**Storia del documento**
-
-+--------------+------------+------------------------+
-| **Versione** | **Data**   | **Tipologia modifica** |
-+--------------+------------+------------------------+
-| 1.0          | 04/09/2020 | Prima emanazione       |
-+--------------+------------+------------------------+
-
+Documento operativo - Pattern di interazione
+############################################
 .. toctree::
+  :numbered:
   :maxdepth: 3
   :caption: Indice dei contenuti
 

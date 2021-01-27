@@ -1,8 +1,7 @@
-Linee Guida sull’interoperabilità tecnica delle Pubbliche
-Amministrazioni
-
-
+Linee Guida sull’interoperabilità tecnica delle Pubbliche Amministrazioni
+#########################################################################
 .. toctree::
+  :numbered:
   :maxdepth: 3
   :caption: Indice dei contenuti
 
