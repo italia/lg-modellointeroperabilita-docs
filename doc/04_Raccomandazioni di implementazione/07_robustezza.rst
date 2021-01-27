@@ -37,7 +37,7 @@ tramite i seguenti header [1]_:
 In caso di superamento delle quote, le API DEVONO restituire anche
 l’header:
 
--  HTTP header Retry-After : numero minimo di secondi dopo cui il client
+-  :httpheader:`Retry-After` : numero minimo di secondi dopo cui il client
    è invitato a riprovare [2]_.
 
 Nel caso di SOAP non esistono regole guida standard per la gestione del
@@ -52,7 +52,7 @@ I fruitori DEVONO:
    secondi che mancano al prossimo reset, ed eventualmente gestire
    l’indicazione in timestamp unix;
 
--  rispettare l’header HTTP header Retry-After sia nella variante che
+-  rispettare l’header :httpheader:`Retry-After` sia nella variante che
    espone il numero di secondi dopo cui riprovare, sia nella variante
    che espone la data in cui riprovare.
 
@@ -66,12 +66,12 @@ servizio con HTTP status 503 Service Unavailable.
 In caso di sovraccarico o indisponibilità, l’erogatore DEVE ritornare
 anche:
 
--  HTTP header Retry-After con il numero minimo di secondi dopo cui il
+-  :httpheader:`Retry-After` con il numero minimo di secondi dopo cui il
    client è invitato a riprovare.
 
 I fruitori DEVONO:
 
--  rispettare HTTP header Retry-After sia nella variante che espone il
+-  rispettare :httpheader:`Retry-After` sia nella variante che espone il
    numero di secondi dopo cui riprovare, sia nella variante che espone
    la data in cui riprovare.
 
@@ -195,7 +195,7 @@ o degli accordi:
    https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers/
 
 .. [2]
-   Cfr. :rfc:`7231` prevede che l’header HTTP header Retry-After possa
+   Cfr. :rfc:`7231` prevede che l’header :httpheader:`Retry-After` possa
    essere utilizzato sia in forma di data che di secondi
 
 .. [3]

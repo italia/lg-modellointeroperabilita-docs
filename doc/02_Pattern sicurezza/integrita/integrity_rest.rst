@@ -67,7 +67,7 @@ Regole di processamento
    data secondo le indicazioni in :rfc:`3230`
 
 3. Il fruitore individua l’elenco degli HTTP Header da firmare, incluso
-   Digest e se presenti HTTP header Content-Type e HTTP header
+   Digest e se presenti :httpheader:`Content-Type` e HTTP header
    Content-Encoding
 
 4. Il fruitore crea la struttura o la stringa da firmare in modo che
