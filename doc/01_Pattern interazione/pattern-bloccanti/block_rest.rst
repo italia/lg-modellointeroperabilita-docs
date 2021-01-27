@@ -28,18 +28,18 @@ ricevimento della richiesta da parte del fruitore, l’erogatore:
 -  DEVE verificare la validità sintattica e semantica dei dati in
    ingresso;
 
--  DEVE, in caso di dati errati, restituire :httpstatus:`400` Bad Request
+-  DEVE, in caso di dati errati, restituire :httpstatus:`400`
    fornendo nel body di risposta dettagli circa l’errore;
 
 -  DOVREBBE, in caso di rappresentazione semanticamente non corretta,
-   ritornare :httpstatus:`422` Unprocessable Entity;
+   ritornare :httpstatus:`422`;
 
 -  DOVREBBE, se qualcuno degli ID nel path o nel body non esiste,
-   restituire :httpstatus:`404` Not Found, indicando nel body di risposta
+   restituire :httpstatus:`404`, indicando nel body di risposta
    quale degli ID è mancante;
 
 -  PUÒ, se ipotizza che la richiesta sia malevola, ritornare HTTP status
-   400 Bad Request o :httpstatus:`404` Not Found
+   400 Bad Request o :httpstatus:`404`
 
 -  DEVE, in caso di errori non dipendenti dalla richiesta, restituire
    HTTP status 5xx rispettando la semantica degli stessi;

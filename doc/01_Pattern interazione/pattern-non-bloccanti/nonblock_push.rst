@@ -54,21 +54,21 @@ DEVONO essere rispettate le seguenti indicazioni:
    quindi nella rispettiva specifica;
 
 -  Al passo (1), il fruitore DEVE indicare l’endpoint della callback
-   utilizzando l’header HTTP custom *X-ReplyTo* ed usando HTTP method
-   POST ;
+   utilizzando l’header HTTP custom *X-ReplyTo* ed usando :httpmethod:`POST`;
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, il CorrelationID utilizzando l’header HTTP
-   custom *X-Correlation-ID*; Il codice HTTP di stato DEVE essere HTTP
-   status 202 Accepted a meno che non si verifichino errori;
+   custom *X-Correlation-ID*;
+   il codice HTTP di stato DEVE essere :httpstatus:`202`
+   a meno che non si verifichino errori;
 
 -  Al passo (3), l’erogatore DEVE utilizzare lo stesso CorrelationID
    fornito al passo (2) sempre utilizzando l’header HTTP custom
    *X-Correlation-ID*; Il verbo HTTP utilizzato deve essere POST;
 
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
-   acknowledgement il ricevimento della risposta; Il codice HTTP di
-   stato DEVE essere :httpstatus:`200` OK a meno che non si verifichino
+   acknowledgement la ricezione della risposta; Il codice HTTP di
+   stato DEVE essere :httpstatus:`200` a meno che non si verifichino
    errori.
 
 Regole di processamento
@@ -78,29 +78,29 @@ Al termine del processamento delle richieste, l’erogatore ed il fruitore
 DEVONO fare uso dei codici di stato HTTP rispettando la semantica.
 Fruitore ed erogatore:
 
--  DEVONO verificare la validità sintattica dei dati in ingresso. In
-   caso di dati errati DEVONO restituire :httpstatus:`500` Internal Server
-   Error fornendo dettagli circa l’errore;
+-  DEVONO verificare la validità sintattica dei dati in ingresso.
+   In caso di dati errati DEVONO restituire :httpstatus:`500`
+   fornendo dettagli circa l’errore;
 
--  In caso di dati errati DEVONO restituire :httpstatus:`400` Bad Request
+-  In caso di dati errati DEVONO restituire :httpstatus:`400`
    fornendo nel body di risposta dettagli circa l’errore;
 
 -  In caso di representation semanticamente non corretta DEVONO
-   ritornare :httpstatus:`422` Unprocessable Entity;
+   ritornare :httpstatus:`422`;
 
 -  Se qualcuno degli ID nel path o nel body non esiste, DEVONO
-   restituire :httpstatus:`404` Not Found, indicando nel body di risposta
+   restituire :httpstatus:`404`, indicando nel body di risposta
    quale degli ID è mancante;
 
--  Se si ipotizza che la richiesta sia malevola, PUÒ ritornare HTTP
-   status 400 Bad Request o :httpstatus:`404` Not Found
+-  Se si ipotizza che la richiesta sia malevola, PUÒ ritornare
+   :httpstatus:`400` o :httpstatus:`404`
 
 -  In caso di errori non dipendenti dalla richiesta, DEVONO restituire
    HTTP status 5xx rispettando la semantica degli stessi;
 
 -  Al momento della ricezione della richiesta, l’erogatore DEVE
-   restituire :httpstatus:`202` Accepted. In caso di ricezione corretta
-   della risposta, il fruitore DEVE restituire :httpstatus:`200` OK,
+   restituire :httpstatus:`202`. In caso di ricezione corretta
+   della risposta, il fruitore DEVE restituire :httpstatus:`200`,
    ritornando nel body di risposta un acknowledgement dell’avvenuta
    ricezione. In caso di errore di ricezione della risposta da parte del
    fruitore, è possibile utilizzare meccanismi specifici per la
@@ -146,14 +146,15 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    X-ReplyTo: https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
    
    {
-   "a": {
-	   "a1": [1,...,2],
-	   "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
-	   },
-   "b": "Stringa di esempio"
+     "a": {
+       "a1": [ 1, "..", 2 ],
+       "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
+     },
+     "b": "Stringa di esempio"
    }
 
-2. Response Header & Body (:httpstatus:`202` Accepted)
+
+2. Response Header & Body (:httpstatus:`202`)
 
 .. code-block:: http
 
@@ -161,7 +162,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    Content-Type: application/json
    X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d
    
-   { "result" : "ACK" }
+   {"result": "ACK"}
 
 Di seguito un esempio di risposta da parte dell’erogatore verso il
 fruitore.
@@ -175,18 +176,20 @@ https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
 .. code-block:: http
 
    POST /rest/v1/nomeinterfacciaclient/Mresponse HTTP/1.1
+   Content-Type: application/json
    X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d
    
-   { "c": "OK" }
+   {"c": "OK"}
 
-4. Response Header & Body (:httpstatus:`200` OK)
+4. Response Header & Body (:httpstatus:`200`)
 
 .. code-block:: http
 
    HTTP/1.1 200 Ok
    Content-Type: application/json
    
-   { "result" : "ACK" }
+   {"result": "ACK"}
+
 
 [NONBLOCK_PUSH_SOAP] Not Blocking Push SOAP
 -------------------------------------------
@@ -218,26 +221,26 @@ seguenti regole:
    X-Correlation-ID;
 
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
-   acknowledgement il ricevimento della risposta.
+   acknowledgement la ricezione della risposta.
 
 Regole di processamento
 ------------------------------------------------------------
 
 Nel caso di errore il WS-I Basic Profile Version 2.0 richiede l’utilizzo
 del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
-In particolare, al ricevimento della richiesta, fruitore ed erogatore:
+In particolare, alla ricezione della richiesta, fruitore ed erogatore:
 
 -  DEVONO verificare la validità sintattica dei dati in ingresso. In
-   caso di dati errati DEVONO restituire :httpstatus:`500` Internal Server
-   Error fornendo dettagli circa l’errore, utilizzando il meccanismo
+   caso di dati errati DEVONO restituire :httpstatus:`500`
+   fornendo dettagli circa l’errore, utilizzando il meccanismo
    della SOAP fault;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVONO restituire :httpstatus:`500` Internal Server Error, indicando
+   DEVONO restituire :httpstatus:`500`, indicando
    nel body di risposta quale degli ID è mancante;
 
 -  Se ipotizzano che la richiesta sia malevola POSSONO ritornare HTTP
-   status 400 Bad Request o :httpstatus:`404` Not Found
+   status 400 Bad Request o :httpstatus:`404`
 
 -  In caso di errori non dipendenti dal fruitore, DEVE restituire i
    codici HTTP 5XX rispettando la semantica degli stessi o restituire il
@@ -247,11 +250,11 @@ In particolare, al ricevimento della richiesta, fruitore ed erogatore:
 -  Al momento della ricezione della richiesta, DEVONO restituire un
    codice 2XX, nel dettaglio:
 
-   -  :httpstatus:`200` OK in caso di presenza della payload SOAP,
+   -  :httpstatus:`200` in caso di presenza della payload SOAP,
       riempiendo il body di risposta con il risultato relativo alla
       richiesta.
 
-   -  :httpstatus:`200` OK o :httpstatus:`202` Accepted in caso di assenza
+   -  :httpstatus:`200` o :httpstatus:`202` in caso di assenza
       della payload SOAP
 
 -  Nel caso di errore al momento di ricezione della risposta da parte

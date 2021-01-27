@@ -137,7 +137,7 @@ E’ possibile ad esempio usare application/merge-patch+json definito in
 :rfc:`7396` facendo attenzione:
 
 -  che :httpmethod:`PATCH` rifiuti richieste con media-type non adeguato
-   con :httpstatus:`415` Unsupported Media Type;
+   con :httpstatus:`415`;
 
 -  che il media-type di patching sia compatibile con gli schemi
    utilizzati;

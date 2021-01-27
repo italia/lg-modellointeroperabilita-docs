@@ -22,7 +22,7 @@ dall’erogatore.
 -----------------------------------------------------------
 
 Gli erogatori di interfacce di servizio REST DEVONO segnalare eventuali
-limiti raggiunti con :httpstatus:`429` Too Many Requests.
+limiti raggiunti con :httpstatus:`429`.
 
 Le API restituiscono in ogni risposta i valori globali di throttling
 tramite i seguenti header [1]_:
