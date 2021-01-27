@@ -88,7 +88,7 @@ DEVONO essere rispettate le seguenti regole:
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta, un URL per interrogare lo stato di
    processamento utilizzando :httpheader:`Location`, il codice HTTP di
-   stato DEVE essere HTTP status 202 Accepted a meno che non si
+   stato DEVE essere :httpstatus:`202` Accepted a meno che non si
    verifichino errori;
 
 -  Al passo (3), il fruitore DEVE utilizzare il percorso di cui al passo
@@ -97,9 +97,9 @@ DEVONO essere rispettate le seguenti regole:
 
 -  Al passo (4) l’erogatore indica, sulla base dello stato del
    processamento, che la risorsa non è ancora pronta (il codice HTTP
-   restituito è HTTP status 200 OK) o indica che la risorsa è pronta,
+   restituito è :httpstatus:`200` OK) o indica che la risorsa è pronta,
    utilizzando :httpheader:`Location`, per indicare il percorso dove
-   recuperare la risorsa (il codice HTTP restituito è HTTP status 303
+   recuperare la risorsa (il codice HTTP restituito è :httpstatus:`303`
    See Other);
 
 -  Al passo (5), il fruitore DEVE utilizzare il percorso di cui al passo
@@ -107,7 +107,7 @@ DEVONO essere rispettate le seguenti regole:
    HTTP utilizzato deve essere GET;
 
 -  Al passo (6) l’erogatore risponde con la rappresentazione della
-   risorsa, il codice HTTP restituito è HTTP status 200 OK.
+   risorsa, il codice HTTP restituito è :httpstatus:`200` OK.
 
 Regole di processamento
 ------------------------------------------------------------
@@ -119,26 +119,26 @@ ricevimento della richiesta da parte del fruitore, l’erogatore:
 -  DEVE verificare la validità sintattica e semantica dei dati in
    ingresso
 
--  DEVE, in caso di dati errati, restituire HTTP status 400 Bad Request
+-  DEVE, in caso di dati errati, restituire :httpstatus:`400` Bad Request
    fornendo nel body di risposta dettagli circa l’errore;
 
 -  DOVREBBE, in caso di representation semanticamente non corretta,
-   ritornare HTTP status 422 Unprocessable Entity;
+   ritornare :httpstatus:`422` Unprocessable Entity;
 
 -  DEVE, se qualcuno degli ID nel path o nel body non esiste, restituire
-   HTTP status 404 Not Found, indicando nel body di risposta quale degli
+   :httpstatus:`404` Not Found, indicando nel body di risposta quale degli
    ID è mancante;
 
 -  PUÒ, se ipotizza che la richiesta sia malevola, ritornare HTTP status
-   400 Bad Request o HTTP status 404 Not Found;
+   400 Bad Request o :httpstatus:`404` Not Found;
 
 -  DEVE, in caso di errori non dipendenti dalla richiesta, restituire
-   HTTP status 5XX rispettando la semantica degli stessi;
+   HTTP status 5xx rispettando la semantica degli stessi;
 
--  DEVE, ricevuta la richiesta, restituire HTTP status 202 Accepted.
+-  DEVE, ricevuta la richiesta, restituire :httpstatus:`202` Accepted.
 
 -  In caso di ricezione corretta della risposta, il fruitore DEVE
-   restituire HTTP status 200 OK , riempiendo il body di risposta con il
+   restituire :httpstatus:`200` OK , riempiendo il body di risposta con il
    risultato dell’operazione.
 
 -  In caso di errore al momento di ricezione della risposta da parte del
@@ -180,7 +180,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    }
 
 
-2. Response Header & Body (HTTP status 202 Accepted)
+2. Response Header & Body (:httpstatus:`202` Accepted)
 
 .. code-block:: http
 
@@ -202,7 +202,7 @@ Endpoint
 
 https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
 
-4. Response Header & Body (HTTP status 200 Ok)
+4. Response Header & Body (:httpstatus:`200` Ok)
 
 .. code-block:: http
 
@@ -214,7 +214,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
    "message": "Richiesta in fase di processamento"
    }
 
-4. Response Header & Body (HTTP status 303 See Other)
+4. Response Header & Body (:httpstatus:`303` See Other)
 
 .. code-block:: http
 
@@ -232,7 +232,7 @@ Endpoint
 
 https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
 
-6. Response Header & Body (HTTP status 200 Ok)
+6. Response Header & Body (:httpstatus:`200` Ok)
 
 .. code-block:: http
 
@@ -280,19 +280,19 @@ del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
 Al ricevimento della richiesta da parte del fruitore, l’erogatore:
 
 -  DEVE verificare la validità sintattica dei dati in ingresso. In caso
-   di dati errati DEVE restituire HTTP status 500 Internal Server Error
+   di dati errati DEVE restituire :httpstatus:`500` Internal Server Error
    fornendo dettagli circa l’errore utilizzando il meccanismo della SOAP
    fault;
 
 -  Se l’erogatore ipotizza che la richiesta sia malevola PUÒ ritornare
-   HTTP status 400 Bad Request o HTTP status 404 Not Found;
+   :httpstatus:`400` Bad Request o :httpstatus:`404` Not Found;
 
 -  In caso di errori non dipendenti dal fruitore, DEVE restituire i
    codici HTTP 5XX rispettando la semantica degli stessi o restituire il
-   codice HTTP status 500 indicando il motivo dell’errore nella SOAP
+   codice :httpstatus:`500` indicando il motivo dell’errore nella SOAP
    fault;
 
--  In caso di successo restituire HTTP status 200 OK, riempiendo il body
+-  In caso di successo restituire :httpstatus:`200` OK, riempiendo il body
    di risposta con il risultato dell’operazione.
 
 Esempio

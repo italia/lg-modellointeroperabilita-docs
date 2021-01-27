@@ -159,9 +159,9 @@ Note:
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    della risposta da parte dell’erogatore al fruitore. In questo caso si
    ricorda che Digest fa riferimento al checksum del payload body della
-   selected representation. Per una richiesta con HTTP method HEAD il
+   selected representation. Per una richiesta con :httpmethod:`HEAD` il
    server DEVE ritornare il checksum dell’ipotetico payload body
-   ritornato dalla corrispondente richiesta con HTTP method GET.
+   ritornato dalla corrispondente richiesta con :httpmethod:`GET`.
 
 Esempio:
 

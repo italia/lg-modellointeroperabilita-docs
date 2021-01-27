@@ -22,7 +22,7 @@ dall’erogatore.
 -----------------------------------------------------------
 
 Gli erogatori di interfacce di servizio REST DEVONO segnalare eventuali
-limiti raggiunti con HTTP status 429 Too Many Requests.
+limiti raggiunti con :httpstatus:`429` Too Many Requests.
 
 Le API restituiscono in ogni risposta i valori globali di throttling
 tramite i seguenti header [1]_:
@@ -61,7 +61,7 @@ I fruitori DEVONO:
 
 Gli erogatori DEVONO definire ed esporre un piano di continuità
 operativa segnalando il sovraccarico del sistema o l’indisponibilità del
-servizio con HTTP status 503 Service Unavailable.
+servizio con :httpstatus:`503` Service Unavailable.
 
 In caso di sovraccarico o indisponibilità, l’erogatore DEVE ritornare
 anche:

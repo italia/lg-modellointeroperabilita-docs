@@ -12,7 +12,7 @@ seguite almeno le seguenti indicazioni:
    richiesta insieme ad eventuali header HTTP richiesti;
 
 -  Al passo (1) il fruitore DEVE utilizzare come verbo HTTP per
-   l’esecuzione della chiamata a procedura il verbo HTTP method POST su
+   l’esecuzione della chiamata a procedura il verbo :httpmethod:`POST` su
    un URL contenente gli ID interessati ed il nome del metodo;
 
 -  Al passo (2) l'erogatore DEVE utilizzare HTTP status 2xx a meno che
@@ -28,21 +28,21 @@ ricevimento della richiesta da parte del fruitore, l’erogatore:
 -  DEVE verificare la validità sintattica e semantica dei dati in
    ingresso;
 
--  DEVE, in caso di dati errati, restituire HTTP status 400 Bad Request
+-  DEVE, in caso di dati errati, restituire :httpstatus:`400` Bad Request
    fornendo nel body di risposta dettagli circa l’errore;
 
 -  DOVREBBE, in caso di rappresentazione semanticamente non corretta,
-   ritornare HTTP status 422 Unprocessable Entity;
+   ritornare :httpstatus:`422` Unprocessable Entity;
 
 -  DOVREBBE, se qualcuno degli ID nel path o nel body non esiste,
-   restituire HTTP status 404 Not Found, indicando nel body di risposta
+   restituire :httpstatus:`404` Not Found, indicando nel body di risposta
    quale degli ID è mancante;
 
 -  PUÒ, se ipotizza che la richiesta sia malevola, ritornare HTTP status
-   400 Bad Request o HTTP status 404 Not Found
+   400 Bad Request o :httpstatus:`404` Not Found
 
 -  DEVE, in caso di errori non dipendenti dalla richiesta, restituire
-   HTTP status 5XX rispettando la semantica degli stessi;
+   HTTP status 5xx rispettando la semantica degli stessi;
 
 -  DEVE, in caso di successo, restituire HTTP status 2xx inviando il
    risultato dell’operazione nel payload body.

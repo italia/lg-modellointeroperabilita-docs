@@ -115,17 +115,17 @@ seguente mappatura viene utilizzata:
 |                 |                 | collezione.     |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-Si noti l’uso distinto di HTTP method PUT e HTTP method PATCH per la
+Si noti l’uso distinto di :httpmethod:`PUT` e :httpmethod:`PATCH` per la
 sostituzione e l’applicazione di modifiche ad una risorsa
-rispettivamente. E’ possibile utilizzare anche altri HTTP method a patto
+rispettivamente. E’ possibile utilizzare anche altri :httpmethod:`a` patto
 che si rispettino i dettami dell’approccio RESTful.
 
-In alcuni casi l' HTTP method PUT può essere utilizzato con funzionalità
+In alcuni casi l' :httpmethod:`PUT` può essere utilizzato con funzionalità
 di UPSERT (Update o Insert). In particolare, questo è necessario nei
 casi in cui sia il fruitore a definire gli identificativi del sistema
 erogatore.
 
-Per usare il HTTP method PATCH bisogna usare alcuni accorgimenti, perché
+Per usare il :httpmethod:`PATCH` bisogna usare alcuni accorgimenti, perché
 questo metodo non è definito nelle nuove specifiche di HTTP/1.1 del 2014
 ma nel precedente :rfc:`5789`.
 
@@ -136,8 +136,8 @@ dei media-type adeguati [1]_.
 E’ possibile ad esempio usare application/merge-patch+json definito in
 :rfc:`7396` facendo attenzione:
 
--  che HTTP method PATCH rifiuti richieste con media-type non adeguato
-   con HTTP status 415 Unsupported Media Type;
+-  che :httpmethod:`PATCH` rifiuti richieste con media-type non adeguato
+   con :httpstatus:`415` Unsupported Media Type;
 
 -  che il media-type di patching sia compatibile con gli schemi
    utilizzati;
@@ -153,8 +153,8 @@ gestire le prenotazioni di un appuntamento presso un ufficio municipale.
 L’erogatore, verifica la compatibilità con la disponibilità nello
 specifico orario ed accetta o nega la creazione o l’eventuale
 variazione. Come da specifica seguente i metodi implementati sono HTTP
-method POST (creazione), HTTP method DELETE (eliminazione), HTTP method
-PATCH (modifica) e HTTP method GET (lettura).
+method POST (creazione), :httpmethod:`DELETE` (eliminazione), HTTP method
+PATCH (modifica) e :httpmethod:`GET` (lettura).
 
 Specifica Servizio Server
 

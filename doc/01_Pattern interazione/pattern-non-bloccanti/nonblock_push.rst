@@ -68,7 +68,7 @@ DEVONO essere rispettate le seguenti indicazioni:
 
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
    acknowledgement il ricevimento della risposta; Il codice HTTP di
-   stato DEVE essere HTTP status 200 OK a meno che non si verifichino
+   stato DEVE essere :httpstatus:`200` OK a meno che non si verifichino
    errori.
 
 Regole di processamento
@@ -79,28 +79,28 @@ DEVONO fare uso dei codici di stato HTTP rispettando la semantica.
 Fruitore ed erogatore:
 
 -  DEVONO verificare la validità sintattica dei dati in ingresso. In
-   caso di dati errati DEVONO restituire HTTP status 500 Internal Server
+   caso di dati errati DEVONO restituire :httpstatus:`500` Internal Server
    Error fornendo dettagli circa l’errore;
 
--  In caso di dati errati DEVONO restituire HTTP status 400 Bad Request
+-  In caso di dati errati DEVONO restituire :httpstatus:`400` Bad Request
    fornendo nel body di risposta dettagli circa l’errore;
 
 -  In caso di representation semanticamente non corretta DEVONO
-   ritornare HTTP status 422 Unprocessable Entity;
+   ritornare :httpstatus:`422` Unprocessable Entity;
 
 -  Se qualcuno degli ID nel path o nel body non esiste, DEVONO
-   restituire HTTP status 404 Not Found, indicando nel body di risposta
+   restituire :httpstatus:`404` Not Found, indicando nel body di risposta
    quale degli ID è mancante;
 
 -  Se si ipotizza che la richiesta sia malevola, PUÒ ritornare HTTP
-   status 400 Bad Request o HTTP status 404 Not Found
+   status 400 Bad Request o :httpstatus:`404` Not Found
 
 -  In caso di errori non dipendenti dalla richiesta, DEVONO restituire
-   HTTP status 5XX rispettando la semantica degli stessi;
+   HTTP status 5xx rispettando la semantica degli stessi;
 
 -  Al momento della ricezione della richiesta, l’erogatore DEVE
-   restituire HTTP status 202 Accepted. In caso di ricezione corretta
-   della risposta, il fruitore DEVE restituire HTTP status 200 OK,
+   restituire :httpstatus:`202` Accepted. In caso di ricezione corretta
+   della risposta, il fruitore DEVE restituire :httpstatus:`200` OK,
    ritornando nel body di risposta un acknowledgement dell’avvenuta
    ricezione. In caso di errore di ricezione della risposta da parte del
    fruitore, è possibile utilizzare meccanismi specifici per la
@@ -153,7 +153,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    "b": "Stringa di esempio"
    }
 
-2. Response Header & Body (HTTP status 202 Accepted)
+2. Response Header & Body (:httpstatus:`202` Accepted)
 
 .. code-block:: http
 
@@ -179,7 +179,7 @@ https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
    
    { "c": "OK" }
 
-4. Response Header & Body (HTTP status 200 OK)
+4. Response Header & Body (:httpstatus:`200` OK)
 
 .. code-block:: http
 
@@ -228,30 +228,30 @@ del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
 In particolare, al ricevimento della richiesta, fruitore ed erogatore:
 
 -  DEVONO verificare la validità sintattica dei dati in ingresso. In
-   caso di dati errati DEVONO restituire HTTP status 500 Internal Server
+   caso di dati errati DEVONO restituire :httpstatus:`500` Internal Server
    Error fornendo dettagli circa l’errore, utilizzando il meccanismo
    della SOAP fault;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVONO restituire HTTP status 500 Internal Server Error, indicando
+   DEVONO restituire :httpstatus:`500` Internal Server Error, indicando
    nel body di risposta quale degli ID è mancante;
 
 -  Se ipotizzano che la richiesta sia malevola POSSONO ritornare HTTP
-   status 400 Bad Request o HTTP status 404 Not Found
+   status 400 Bad Request o :httpstatus:`404` Not Found
 
 -  In caso di errori non dipendenti dal fruitore, DEVE restituire i
    codici HTTP 5XX rispettando la semantica degli stessi o restituire il
-   codice HTTP status 500 indicando il motivo dell’errore nella SOAP
+   codice :httpstatus:`500` indicando il motivo dell’errore nella SOAP
    fault;
 
 -  Al momento della ricezione della richiesta, DEVONO restituire un
    codice 2XX, nel dettaglio:
 
-   -  HTTP status 200 OK in caso di presenza della payload SOAP,
+   -  :httpstatus:`200` OK in caso di presenza della payload SOAP,
       riempiendo il body di risposta con il risultato relativo alla
       richiesta.
 
-   -  HTTP status 200 OK o HTTP status 202 Accepted in caso di assenza
+   -  :httpstatus:`200` OK o :httpstatus:`202` Accepted in caso di assenza
       della payload SOAP
 
 -  Nel caso di errore al momento di ricezione della risposta da parte

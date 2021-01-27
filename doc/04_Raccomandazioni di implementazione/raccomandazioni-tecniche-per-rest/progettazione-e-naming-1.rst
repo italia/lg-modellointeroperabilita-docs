@@ -145,13 +145,13 @@ sull’esistenza o meno dell’utenza.
 
 Dopo aver validato il contenuto delle richieste si DEVE ritornare:
 
--  HTTP status 415 Unsupported Media Type se il Content-Type non è
+-  :httpstatus:`415` Unsupported Media Type se il Content-Type non è
    supportato;
 
--  HTTP status 400 Bad Request o HTTP status 404 Not Found se si
+-  :httpstatus:`400` Bad Request o :httpstatus:`404` Not Found se si
    ipotizza che la richiesta sia malevola;
 
--  HTTP status 422 Unprocessable Entity se la representation contenuta
+-  :httpstatus:`422` Unprocessable Entity se la representation contenuta
    nella richiesta è sintatticamente corretta ma semanticamente non
    processabile.
 
