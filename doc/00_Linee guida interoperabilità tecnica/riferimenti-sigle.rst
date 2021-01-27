@@ -21,7 +21,7 @@ Documenti operativi
 
 -  Documento operativo - Raccomandazioni di implementazione
 
-Al fine di assicurare l’allineamento costante delle Linee guida alle continue evoluzione tecnologica, l’aggiornamento dei Documenti operativi è realizzato attraverso Circolari emanate dall’AgID.
+Al fine di assicurare l’allineamento costante delle Linee Guida alle continue evoluzione tecnologica, l’aggiornamento dei Documenti operativi è realizzato attraverso Circolari emanate dall’AgID.
 
 
 Riferimenti Normativi
@@ -31,7 +31,7 @@ Sono riportati di seguito gli atti normativi di riferimento del presente documen
 
 .. list-table:: Riferimenti Normativi
    :widths: 15 40
-   :header-rows: 1
+   :header-rows: 0
 
    * -    [D.lgs. 82/2005]
      -    Decreto legislativo 7 marzo 2005, n. 82 recante "Codice dell’amministrazione digitale";
@@ -39,19 +39,15 @@ Sono riportati di seguito gli atti normativi di riferimento del presente documen
    * -    [EIF]
      -    European Interoperability Framework (EIF)
    * -    [CE 2008/1205]
-     -    Regolamento (CE) n. 1205/2008 della Commissione del 3 dicembre 2008 recante attuazione della direttiva
-          2007/2/CE del Parlamento europeo e del Consiglio per quanto riguarda i metadati
+     -    Regolamento (CE) n. 1205/2008 della Commissione del 3 dicembre 2008 recante attuazione della direttiva 2007/2/CE del Parlamento europeo e del Consiglio per quanto riguarda i metadati
    * -    [D.lgs. 196/2003]
      -    Codice in materia di protezione dei dati personali
    * -    [UE 679/2016]
-     -    Regolamento (UE) 2016/679 del 27 aprile 2016 relativo alla protezione delle persone fisiche
-          con riguardo al trattamento dei dati personali (in breve GDPR)
+     -    Regolamento (UE) 2016/679 del 27 aprile 2016 relativo alla protezione delle persone fisiche con riguardo al trattamento dei dati personali (in breve GDPR)
    * -    [UE 910/2014]
-     -    Regolamento (UE) n. 910/2014 del 23 luglio 2014 in materia di identificazione elettronica e
-          servizi fiduciari per le transazioni elettroniche nel mercato interno (in breve eIDAS)
+     -    Regolamento (UE) n. 910/2014 del 23 luglio 2014 in materia di identificazione elettronica e servizi fiduciari per le transazioni elettroniche nel mercato interno (in breve eIDAS)
    * -    [DUE 910/2014]
-     -    Direttiva (UE) 2019/1024 del Parlamento Europeo e del Consiglio del 20 giugno 2019 relativa all'apertura
-          dei dati e al riutilizzo dell'informazione del settore pubblico
+     -    Direttiva (UE) 2019/1024 del Parlamento Europeo e del Consiglio del 20 giugno 2019 relativa all'apertura dei dati e al riutilizzo dell'informazione del settore pubblico
 
 
 Termini e definizioni
@@ -59,86 +55,64 @@ Termini e definizioni
 
 .. list-table:: Termini e definizioni
    :widths: 15 40
-   :header-rows: 1
+   :header-rows: 0
 
    * -    [AgID]
      -    Agenzia per l’Italia Digitale
-   * -    [PA]
-     -    Pubblica Amministrazione Italiana
-   * -    [UML]
-     -    Linguaggio di modellazione unificato (Unified Modeling Language)
    * -    [API]
      -    Application Programming Interface
-   * -    [EIF]
-     -    European Interoperability Framework
-   * -    [HTTP]
-     -    Hypertext Transfer Protocol
-   * -    [W3C]
-     -    World Wide Web Consortium
-   * -    [XML]
-     -    eXtensible Markup Language
-   * -    [RPC]
-     -    Remote Procedure Call
-   * -    [SOAP]
-     -    Simple Object Access Protocol
-   * -    [REST]
-     -    Representational State Transfer
+   * -    [API-First]
+     -    L'API-first è un approccio in cui le PA considerano le API come mezzo principale per perseguire i propri obiettivi, interagendo con i propri stakeholder sin dalla fase di progettazione
    * -    [BP]
      -    WS-I Basic Profile - (Web Services Interoperability Specification)
-   * -    [WSDL]
-     -    Web Services Description Language
-   * -    [JWT]
-     -    JSON Web Tokens
+   * -    [CAD]
+     -    Codice Amministrazione Digitale, D.lgs. 7 marzo 2005, n. 82
+   * -    [Contract-First]
+     -    Contract-first è un approccio che prevede di dare seguito all'interazione di più sistemi informatici definendo le API condivise attraverso un Interface Description Language (IDL)
+   * -    [EIF]
+     -    European Interoperability Framework
+   * -    [Enti Capofila]
+     -    Gli enti capofila sono pubbliche amministrazioni che si propongono nel ModI quali soggetti responsabili delle attività di gestione sul Catalogo degli e-service, delle API e degli accordi di interoperabilità nelle veci di altre Pubbliche Amministrazioni
+   * -    [Erogatore]
+     -    Uno dei soggetti di cui all'articolo 2, comma 2 del CAD che rende disponibile e-service ad altre organizzazioni, per la fruizione di dati in suo possesso o l’integrazione dei processi da esso realizzati
+   * -    [e-service]
+     -    I servizi digitali, realizzati da un erogatore per assicurare l’accesso ai propri dati e/o l’integrazione dei propri processi attraverso l'interazione dei suoi sistemi informatici con quelli dei fruitori, trovano attuazione nell’implementazione di API
+   * -    [Fruitore]
+     -    Un’organizzazione che utilizza gli e-service messi a disposizione da un dei soggetti di cui all'articolo 2, comma 2 del CAD
+   * -    [HTTP]
+     -    Hypertext Transfer Protocol
    * -    [IDPS]
      -    Interoperable Digital Public Services
-   * -    [Erogatore]
-     -    Uno dei soggetti di cui
-          all'articolo 2, comma 2 del CAD
-          che rende disponibile e-service
-          ad altre organizzazioni, per la
-          fruizione di dati in suo possesso
-          o l’integrazione dei processi da
-          esso realizzati
-   * -    [Fruitore]
-     -    Un’organizzazione che utilizza
-          gli e-service messi a
-          disposizione da un dei soggetti
-          di cui all'articolo 2, comma 2
-          del CAD
-   * -    [e-service]
-     -    I servizi digitali, realizzati da
-          un erogatore per assicurare
-          l’accesso ai propri dati e/o
-          l’integrazione dei propri
-          processi attraverso l'interazione
-          dei suoi sistemi informatici con
-          quelli dei fruitori, trovano
-          attuazione nell’implementazione
-          di API
+   * -    [JWT]
+     -    JSON Web Tokens
    * -    [ModI]
      -    Modello di Interoperabilità delle Pubbliche Amministrazioni Italiane
-   * -    [XML-RPC]
-     -    XML-Remote Procedure Call
+   * -    [PA]
+     -    Pubblica Amministrazione Italiana
    * -    [QoS]
      -    Quality of Service
+   * -    [REST]
+     -    Representational State Transfer
+   * -    [RPC]
+     -    Remote Procedure Call
+   * -    [SLA]
+     -    Service Level Agreement
    * -    [SLI]
      -    Service Level Indicator
    * -    [SLO]
      -    Service Level Objective
-   * -    [SLA]
-     -    Service Level Agreement
-   * -    [API-First]
-     -    L'API-first è un approccio in cui le PA considerano le API come
-          mezzo principale per perseguire i propri obiettivi, interagendo con
-          i propri stakeholder sin dalla fase di progettazione
-   * -    [Contract-First]
-     -    Contract-first è un approccio che prevede di dare seguito
-          all'interazione di più sistemi informatici definendo le API
-          condivise attraverso un Interface Description Language (IDL)
+   * -    [SOAP]
+     -    Simple Object Access Protocol
+   * -    [UML]
+     -    Linguaggio di modellazione unificato (Unified Modeling Language)
+   * -    [W3C]
+     -    World Wide Web Consortium
    * -    [WS-\*]
-     -    Lo stack degli standard emanati relativi alle tecnologie SOAP,
-          tra cui SOAP, WSDL, WS-Security, WS-Addressing e WS-I
-   * -    [Enti Capofila]
-     -    Gli enti capofila sono pubbliche amministrazioni che si propongono nel ModI quali soggetti
-          responsabili delle attività di gestione sul Catalogo degli e-service, delle API e degli
-          accordi di interoperabilità nelle veci di altre Pubbliche Amministrazioni
+     -    Lo stack degli standard emanati relativi alle tecnologie SOAP, tra cui SOAP, WSDL, WS-Security, WS-Addressing e WS-I
+   * -    [WSDL]
+     -    Web Services Description Language
+   * -    [XML]
+     -    eXtensible Markup Language
+   * -    [XML-RPC]
+     -    XML-Remote Procedure Call
+
