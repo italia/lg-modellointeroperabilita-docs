@@ -1,6 +1,6 @@
 Raccomandazioni di implementazione - Documento operativo
 
-Linea di indirizzo sull’interoperabilità tecnica delle Pubbliche
+Linee Guida sull’interoperabilità tecnica delle Pubbliche
 Amministrazioni
 
 Versione 1.0 del 04/09/2020

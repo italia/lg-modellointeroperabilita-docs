@@ -1,11 +1,11 @@
 Conformemente alle norme ISO/IEC Directives, Part 3 per la stesura dei
-documenti tecnici la presente Linea di indirizzo utilizzerà le parole
+documenti tecnici le presenti Linee Guida utilizzano le parole
 chiave «DEVE», «DEVONO», «NON DEVE», «NON DEVONO», «DOVREBBE», «NON
 DOVREBBE», «PUÒ» e «OPZIONALE», la cui interpretazione è descritta di
 seguito.
 
 -  **DEVE** o **DEVONO**, indicano un requisito obbligatorio per
-   rispettare la Linea di indirizzo;
+   rispettare la Linee Guida;
 
 -  **NON DEVE** o **NON DEVONO**, indicano un assoluto divieto delle
    specifiche;

@@ -10,7 +10,7 @@ determinano l’opportunità di definire un insieme di soluzioni
 tecnologiche comuni che permettano, anche attraverso la loro
 combinazione, di definire un quadro condiviso di regole applicate.
 
-La Linea di indirizzo individua i pattern e i profili di
+La Linee Guida individua i pattern e i profili di
 interoperabilità quali le modalità tecniche condivise secondo le quali
 un fruitore e un erogatore realizzano l’interoperabilità dei propri
 sistemi informatici, e nel dettaglio:

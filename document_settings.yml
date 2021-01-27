@@ -1,7 +1,9 @@
 document:
-  name: Linee d'Indirizzo del Modello Interoperabilità
-  description: Linee d'Indirizzo del Modello Interoperabilità
+  name: Linee Guida sull'interoperabilità tecnica
+
+  description:
+      Linee Guida sull'interoperabilità tecnica delle Pubbliche Amministrazioni
   tags:
-    - modello interoperabilita
+    - interoperabilità
+    - API
     - linee guida
-    - regole tecniche
