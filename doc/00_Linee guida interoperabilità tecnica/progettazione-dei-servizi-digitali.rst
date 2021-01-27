@@ -112,7 +112,7 @@ organizzazioni:
    progettandoli in modo da favorirne il riuso.
 
 * se sono state individuate altre organizzazioni si realizza un processo 
-digitale collettivo dove:
+  digitale collettivo dove:
 
    #. l'erogatore individua le organizzazioni da coinvolgere in quanto 
       fonti autoritative dei dati o soggetti preposti all’esecuzione di 
