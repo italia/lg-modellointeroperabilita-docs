@@ -23,6 +23,7 @@ I soggetti erogatori di e-service, nell’individuazione delle entità da condiv
      - Verificare la presenza delle entità per dominio tra quelli definiti a livello nazionale da AgID [3]_.
 
 |
+
 Si precisa che successivamente all’attuazione della REG_SEMANTICA_002 l'erogatore può trovarsi in uno dei seguenti casi:
 
 1. tutte le entità e le relative proprietà trovano copertura;

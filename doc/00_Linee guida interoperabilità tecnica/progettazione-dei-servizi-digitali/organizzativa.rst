@@ -38,6 +38,7 @@ Nello specifico del processo digitale, gli erogatori DEVONO:
      - Utilizzare un linguaggio formale per rappresentare il processo digitale. 
 
 |
+
 Nello specifico del processo digitale collettivo, oltre a quanto indicato in precedenza, gli erogatori e fruitori DEVONO:
 
 .. list-table:: 
@@ -54,6 +55,7 @@ Nello specifico del processo digitale collettivo, oltre a quanto indicato in pre
      - Utilizzare un linguaggio formale condiviso per rappresentare il processo digitale collettivo. 
 
 |
+
 In generale le pubbliche amministrazioni DOVREBBERO:
 
 .. list-table:: 

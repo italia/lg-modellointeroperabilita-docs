@@ -40,6 +40,7 @@ Gli erogatori DEVONO:
      - Esporre ai fruitori una funzione utile a verificare lo stato di funzionamento delle API.
  
 |
+
 Gli erogatori POSSONO:
 
 .. list-table:: 
@@ -50,6 +51,7 @@ Gli erogatori POSSONO:
      - Erogare contemporaneamente gli e-service con API in tecnologia SOAP e REST.
 
 |
+
 Gli erogatori DOVREBBERO:
 
 .. list-table:: 
@@ -60,6 +62,7 @@ Gli erogatori DOVREBBERO:
      - Adottare architetture capaci di  adeguare l’offerta di e-service all'aumento dei fruitori, in modo da rispondere agli SLA concordati.
 
 |
+
 La fase tecnica si conclude con l’attuazione di quanto disposto in "Governance dei servizi" relativamente alla pubblicazione degli e-service e della sottoscrizione degli accordi di interoperabilità.
 
 |image0|
