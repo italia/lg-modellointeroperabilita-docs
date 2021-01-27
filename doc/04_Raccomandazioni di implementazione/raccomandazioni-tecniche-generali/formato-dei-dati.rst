@@ -1,28 +1,28 @@
 Formato dei dati
 ================
 
-[RAC_GEN_FORMAT_001] Utilizzare Content-Type semanticamente coerenti
+[RAC_GEN_FORMAT_001] Utilizzare media-type semanticamente coerenti
 --------------------------------------------------------------------
 
 Quando si ritornano dati binari, immagini o documenti (eg. pdf, png, …)
-si DEVONO utilizzare i rispettivi content- type.
+si DEVONO utilizzare i rispettivi media-type.
+Nel protocollo HTTP, il media-type di una risorsa è indicato nell’:httpheader:`Content-Type`.
 
-[RAC_GEN_FORMAT_002] Evitare Content-Type personalizzati
+[RAC_GEN_FORMAT_002] Evitare media-type personalizzati
 --------------------------------------------------------
 
-Si DOVREBBERO evitare l’uso di media-type personalizzati come da RFC
-6838 section-3.4 (eg. application/x.custom.name+xml,
+Si DOVREBBERO evitare l’uso di media-type personalizzati come da
+:rfc:`6838#section-3.4` (eg. application/x.custom.name+xml,
 application/x.custom.name+json) ed utilizzare nomi standard come:
 
 -  application/xml
-
 -  application/soap+xml
-
 -  application/json​
-
 -  application/problem+json​
-
 -  application/jose+json
+
+L'elenco dei media-type è reperibile sul `sito IANA <https://www.iana.org/assignments/media-types/media-types.xhtml>`_.
+
 
 [RAC_GEN_FORMAT_003] Formati standard per Data ed Ora
 -----------------------------------------------------
