@@ -206,7 +206,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
 
 .. code-block:: http
 
-   HTTP/1.1 200 Ok
+   HTTP/1.1 200 OK
    Content-Type: application/json
 
    {
@@ -236,7 +236,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
 
 .. code-block:: http
 
-   HTTP/1.1 200 Ok
+   HTTP/1.1 200 OK
    Content-Type: application/json
 
    { "c": "OK" }
