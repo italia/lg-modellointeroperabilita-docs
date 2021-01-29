@@ -70,7 +70,7 @@ l’applicazione del presente documento.
 |     [RFC6838]                     | Media Type Specifications and     |
 |                                   | Registration Procedures           |
 +-----------------------------------+-----------------------------------+
-|     [RFC7159]                     | JavaScript Object Notation (JSON) |
+|     [RFC8259]                     | JavaScript Object Notation (JSON) |
 |                                   | Data Interchange Format           |
 +-----------------------------------+-----------------------------------+
 |     [RFC7231]                     | Hypertext Transfer Protocol       |

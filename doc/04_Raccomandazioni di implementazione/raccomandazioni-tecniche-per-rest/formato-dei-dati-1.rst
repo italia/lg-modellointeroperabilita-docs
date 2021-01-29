@@ -7,7 +7,7 @@ Formato dei dati
 -------------------------------------------
 
 Nella tecnologia REST la comunicazione DOVREBBE avvenire tramite oggetti
-JSON :rfc:`7159` con il relativo media-type application/json.
+JSON :rfc:`8259` con il relativo media-type application/json.
 
 È possibile eccepire in presenza di specifiche in cui gli oggetti di
 comunicazione sono formalizzati in forma diversa da JSON (es. INSPIRE,
@@ -16,7 +16,7 @@ HL7).
 [RAC_REST_FORMAT_002] Codificare dati strutturati con oggetti JSON
 ------------------------------------------------------------------
 
-I dati strutturati in formato JSON :rfc:`7159` DOVREBBERO essere trasferiti
+I dati strutturati in formato JSON :rfc:`8259` DOVREBBERO essere trasferiti
 tramite oggetti, in modo da permettere l’estensione retrocompatibile
 della response con ulteriori attributi, ad esempio paginazione.
 
