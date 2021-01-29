@@ -103,11 +103,12 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    
    {
    "a": {
-	   "a1": [1,...,2],
+	   "a1": [1, "...", 2],
 	   "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
 	   },
    "b": "Stringa di esempio"
    }
+
 
 2. Response 200 con rate limiting
 
@@ -118,7 +119,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    X-RateLimit-Remaining: 11
    X-RateLimit-Reset: 44
    
-   { "c" : "risultato" }
+   {"c" :"risultato"}
 
 
 2. Response 429 Too Many Requests
@@ -181,7 +182,7 @@ o degli accordi:
    -  valori a 30 giorni del success rate, ovvero il numero di chiamate
       terminate con successo rispetto al numero totale di chiamate
    
-   -  Application Performance inDEX [4]_, indice su scala percentuale di
+   -  Application Performance inDEX [3]_, indice su scala percentuale di
       qualità del servizio misurato a 30 giorni
    
    -  tempo di risposta medio delle richieste totali (includendo le
@@ -199,7 +200,4 @@ o degli accordi:
    essere utilizzato sia in forma di data che di secondi
 
 .. [3]
-   Cf. https://en.wikipedia.org/wiki/Apdex
-
-.. [4]
    Cf. https://en.wikipedia.org/wiki/Apdex

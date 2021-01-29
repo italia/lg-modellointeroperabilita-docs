@@ -10,7 +10,7 @@ DOVREBBERO essere adottate le seguenti regole.
 ------------------------------------------------
 
 I metodi HTTP DEVONO essere utilizzati rispettando la semantica indicata
-in :rfc:`7231` section-4.3.
+in :rfc:`7231#section-4.3`.
 
 [RAC_REST_NAME_002] Usare parole separate da trattino «-» per i path (kebab-case)
 ---------------------------------------------------------------------------------
@@ -18,11 +18,7 @@ in :rfc:`7231` section-4.3.
 Nella definizione dei path si DEVE utilizzare il separatore «-»
 (kebab-case).
 
-Esempio:
-
-.. code-block:: python
-
-   /​tax-code​/{tax_code_id}
+Esempio: :code:`/​tax-code​/{tax_code_id}`
 
 Il path DOVREBBE essere semplice, intuitivo e coerente.
 
@@ -54,6 +50,7 @@ Request:
 .. code-block:: http
 
    GET /​documenti​?data=2018-05-01 HTTP/1.1
+   Host: api.example
    Accept: application/json
 
 
@@ -65,8 +62,8 @@ Response:
    Content-Type: application/json
 
    {
-     "items": [ .. ]
-     "limit": 10
+     "items": [ ".." ],
+     "limit": 10,
      "next_cursor": 21314123
    }
 
@@ -76,9 +73,9 @@ Request:
 
 .. code-block:: http
 
-   GET /​documento​/21314123
+   GET /​documento​/21314123 HTTP/1.1
+   Host: api.example
    Accept: application/json
-
 
 Response:
 
@@ -88,11 +85,9 @@ Response:
    Content-Type: application/json
 
    {
-     "id": 21314123
-     "title: "Atto di nascita ...",
-     ..
+     "id": 21314123,
+     "title": "Atto di nascita ..."
    }
-
 
 [RAC_REST_NAME_005] Utilizzare Query String standardizzate
 ----------------------------------------------------------
@@ -174,14 +169,14 @@ filtrando i campi delle risorse restituite.
 
 Esempio 1: Non filtrato
 
-Request
+Request:
 
 .. code-block:: http
 
    GET /resources/123 HTTP/1.1
    Host: api.example
 
-Response
+Response:
 
 .. code-block:: http
 
@@ -204,7 +199,7 @@ Response
 
 Esempio 2: Filtrato
 
-Request
+Request:
 
 .. code-block:: http
 
@@ -212,7 +207,7 @@ Request
    Host: api.example
 
 
-Response
+Response:
 
 .. code-block:: http
 
@@ -240,14 +235,14 @@ In tal caso va usato:
 Esempio 3: Resource Expansion, utile a ritornare i dati di una persona
 associati ad un codice fiscale.
 
-Request
+Request:
 
 .. code-block:: http
 
    GET /tax_code/MRORSS12T05E472W?embed=(person) HTTP/1.1
    Accept: application/json
 
-Response
+Response:
 
 .. code-block:: http
 
