@@ -1,14 +1,14 @@
 Formato dei dati
 ================
 
-[RAC_GEN_FORMAT_001] Utilizzare media-type semanticamente coerenti
+[RAC_GEN_FORMAT_001] Utilizzare Content-Type semanticamente coerenti
 --------------------------------------------------------------------
 
 Quando si ritornano dati binari, immagini o documenti (eg. pdf, png, …)
-si DEVONO utilizzare i rispettivi media-type.
-Nel protocollo HTTP, il media-type di una risorsa è indicato nell’:httpheader:`Content-Type`.
+si DEVONO utilizzare i rispettivi Content-Type.
+Nel protocollo HTTP, l’:httpheader:`Content-Type` indica il media-type di una risorsa.
 
-[RAC_GEN_FORMAT_002] Evitare media-type personalizzati
+[RAC_GEN_FORMAT_002] Evitare Content-Type personalizzati
 --------------------------------------------------------
 
 Si DOVREBBERO evitare l’uso di media-type personalizzati come da
