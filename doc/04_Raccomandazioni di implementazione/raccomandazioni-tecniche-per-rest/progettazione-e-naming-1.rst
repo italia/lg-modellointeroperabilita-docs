@@ -145,7 +145,7 @@ sull’esistenza o meno dell’utenza.
 
 Dopo aver validato il contenuto delle richieste si DEVE ritornare:
 
--  :httpstatus:`415` se il Content-Type non è
+-  :httpstatus:`415` se il valore in :httpheader:`Content-Type` non è
    supportato;
 
 -  :httpstatus:`400` o :httpstatus:`404` se si
@@ -178,7 +178,8 @@ Request
 
 .. code-block:: http
 
-   GET https://api.example.org/resources/123 HTTP/1.1
+   GET /resources/123 HTTP/1.1
+   Host: api.example
 
 Response
 
@@ -208,6 +209,8 @@ Request
 .. code-block:: http
 
    GET /resources/123?fields=(name,partner(name)) HTTP/1.1
+   Host: api.example
+
 
 Response
 
@@ -222,6 +225,7 @@ Response
 	   "name": "Maria Rossi"
 	   }
    }
+
 
 Si DOVREBBE effettuare la Resource Expansion per ritornare risorse
 correlate tra loro, in modo da ridurre il numero di richieste.
@@ -245,27 +249,27 @@ Request
 
 Response
 
-.. code-block:: python
+.. code-block:: http
 
    HTTP/1.1 200 OK
    Content-Type: application/json
    
    {
-   "tax_code":"MRORSS12T05E472W",
-   "_embedded": {
-	  "person":{
-		 "given_name":"Mario",
+     "tax_code":"MRORSS12T05E472W",
+     "_embedded": {
+	    "person":{
+		  "given_name":"Mario",
 		  "family_name":"Rossi",
 		  "id":"1234-ABCD-7890"
-	  }
-   	 }
+        }
+     }
    }
 
 [RAC_REST_NAME_009] Il caching http deve essere disabilitato
 ------------------------------------------------------------
 
-Il caching DOVREBBE essere disabilitato tramite HTTP header
-Cache-Control per evitare che delle richieste vengano inopportunamente
+Il caching DOVREBBE essere disabilitato tramite
+:httpheader:`Cache-Control` per evitare che delle richieste vengano inopportunamente
 messe in cache. Il mancato rispetto di questa raccomandazione può
 portare all'esposizione accidentale di dati personali.
 
@@ -273,27 +277,26 @@ Le API che supportano il caching DEVONO documentare le varie limitazioni
 e modalità di utilizzo tramite gli header definiti in :rfc:`7234`:
 
 -  :httpheader:`Cache-Control`
-
 -  :httpheader:`Vary`.
 
 Eventuali conflitti nella creazione di risorse DEVONO essere gestiti
 tramite gli header:
 
--  ETag;
+-  :httpheader:`ETag`;
+-  :httpheader:`If-Match`;
+-  :httpheader:`If-None-Match`;
 
--  If-Match;
-
--  If-None-Match;
-
-contenenti un hash del response body, un hash dell’ultimo campo
-modificato della entry o un numero di versione.
+che contengono un identificatore opaco che il server è in grado di associare
+univocamente alla versione della risorsa erogata.
+Si veda :rfc:`7232#section-2.3` per ulteriori informazioni su come
+implementare questi header.
 
 [RAC_REST_NAME_010] Esporre lo stato del servizio
 -------------------------------------------------
 
 L'API DEVE esporre lo stato del servizio al path \`/status\` e ritornare
-un oggetto con media-type problem+json (:rfc:`7807`). Se il servizio
-funziona correttamente l'HTTP status è 200.
+un oggetto con media-type application/problem+json (:rfc:`7807`).
+Se il servizio funziona correttamente, l'API ritorna :httpstatus:`200`.
 
 Segue un esempio di specifica del path in formato OpenAPI 3.
 
