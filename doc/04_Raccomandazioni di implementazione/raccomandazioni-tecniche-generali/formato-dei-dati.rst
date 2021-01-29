@@ -11,7 +11,7 @@ Nel protocollo HTTP, l’:httpheader:`Content-Type` indica il media-type di una 
 [RAC_GEN_FORMAT_002] Evitare Content-Type personalizzati
 --------------------------------------------------------
 
-Si DOVREBBERO evitare l’uso di media-type personalizzati come da
+Si DOVREBBE evitare l’uso di media-type personalizzati come da
 :rfc:`6838#section-3.4` (eg. application/x.custom.name+xml,
 application/x.custom.name+json) ed utilizzare nomi standard come:
 
