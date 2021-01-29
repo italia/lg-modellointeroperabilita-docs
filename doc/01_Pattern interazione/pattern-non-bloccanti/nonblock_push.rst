@@ -128,20 +128,20 @@ https://api.indirizzoclient.it/rest/nome-api/v1/RESTCallbackClient.yaml
 .. literalinclude:: RESTCallbackClient.yaml
    :language: yaml
 
-Di seguito un esempio di chiamata al metodo **M** con la presa in carico
-da parte dell’erogatore.
 
-HTTP Operation POST
+Di seguito il fruitore effettua una richiesta al metodo **M**;
+l'erogatore conferma la presa in carico della richiesta ritornando
+:httpstatus:`202`.
 
-Endpoint
 
-https://api.ente.example/rest/nome-api/v1/resources/1234/M
+Endpoint: https://api.ente.example/rest/nome-api/v1/resources/1234/M
 
-1. Request Header & Body
+1. Request
 
 .. code-block:: http
 
    POST /rest/nome-api/v1/resources/1234/M HTTP/1.1
+   Host: api.ente.example
    Content-Type: application/json
    X-ReplyTo: https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
    
@@ -154,7 +154,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    }
 
 
-2. Response Header & Body (:httpstatus:`202`)
+2. Response
 
 .. code-block:: http
 
@@ -164,28 +164,32 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    
    {"result": "ACK"}
 
-Di seguito un esempio di risposta da parte dell’erogatore verso il
-fruitore.
+
+Quindi l'erogatore notifica al fruitore l'avvenuto processamento
+delle informazioni tramite una :httpmethod:`POST` all'URL concordato.
+Il fruitore conferma con :httpstatus:`200` l'avvenuta ricezione
+della notifica.
 
 Endpoint
 
 https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
 
-3. Request Header & Body
+3. Request
 
 .. code-block:: http
 
    POST /rest/v1/nomeinterfacciaclient/Mresponse HTTP/1.1
+   Host: api.indirizzoclient.it
    Content-Type: application/json
    X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d
    
    {"c": "OK"}
 
-4. Response Header & Body (:httpstatus:`200`)
+4. Response
 
 .. code-block:: http
 
-   HTTP/1.1 200 Ok
+   HTTP/1.1 200 OK
    Content-Type: application/json
    
    {"result": "ACK"}

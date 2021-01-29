@@ -113,7 +113,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
 
 .. code-block:: http
 
-   HTTP/1.1 200 Ok
+   HTTP/1.1 200 OK
    X-RateLimit-Limit: 30
    X-RateLimit-Remaining: 11
    X-RateLimit-Reset: 44
