@@ -14,37 +14,45 @@ SOAP riportati nelle seguenti figure.
 .. mermaid::
 
    sequenceDiagram
+    participant E as Erogatore
+    participant F as Fruitore
+    activate E
+    activate F
 
-    activate Erogatore
-    activate Fruitore
-    Fruitore->>Erogatore: 1. Request()
-    Erogatore-->>Fruitore: 2. Location
+    F->>E: 1. Request()
+    E-->>F: 2. Status URL (Location)
+
     loop status pending
-		Fruitore->>Erogatore: 3. CheckStatus()
-		Erogatore-->>Fruitore: 4. Not Ready OR Ready Location
+		F->>E: 3. Check status URL
+
+        alt pending
+		 E-->>F: 4a. Status pending
+        else Ready
+		 E-->>F: 4b. Result URL (Location)
+        end
     end
-    Fruitore->>Erogatore: 5. RetriveResult()
-    Erogatore-->>Fruitore: 6. Result
-    deactivate Fruitore
-    deactivate Erogatore
+
+    F->>E: 5. Retrieve Result URL
+    E-->>F: 6. Result
+
+    deactivate F
+    deactivate E
 
 *Figura 3 - Interazione non bloccante tramite busy waiting REST*
 
 Il fruitore invia una richiesta (passo 1.) e riceve immediatamente un
 acknowledge (passo 2.) insieme ad:
 
--  un indirizzo dove verificare lo stato del processamento (REST);
-
+-  un URL dove verificare lo stato del processamento (REST);
 -  oppure un CorrelationID (SOAP).
 
 D’ora in poi il fruitore, periodicamente, verifica (passo 3.) lo stato
-della richiesta utilizzando:
+dell'operazione utilizzando:
 
 -  l’URL indicato (REST)
-
 -  oppure il CorrelationID (SOAP)
 
-fin quando la risposta alla richiesta sarà pronta (passo (4)).
+fin quando il risultato dell'operazione sarà pronto (passo 4b.).
 
 Gli intervalli di polling possono essere definiti tra le parti.
 
@@ -63,7 +71,7 @@ al risultato del processamento
 		 Fruitore->>Erogatore: 3. CheckStatus(CorrelationID)
 		 Erogatore-->>Fruitore: 4. CurrentStatus
      end
-     Fruitore->>Erogatore: 5. RetriveResult(CorrelationID)
+     Fruitore->>Erogatore: 5. RetrieveResult(CorrelationID)
      Erogatore-->>Fruitore: 6. Result
      deactivate Fruitore
      deactivate Erogatore
@@ -96,18 +104,16 @@ DEVONO essere rispettate le seguenti regole:
    deve essere GET;
 
 -  Al passo (4) l’erogatore indica, sulla base dello stato del
-   processamento, che la risorsa non è ancora pronta (il codice HTTP
-   restituito è :httpstatus:`200`) o indica che la risorsa è pronta,
-   utilizzando :httpheader:`Location`, per indicare il percorso dove
-   recuperare la risorsa (il codice HTTP restituito è :httpstatus:`303`
-   See Other);
+   processamento, che l'operazione:
+   * 4a. non è completata (:httpstatus:`200`)
+   * 4b. che la risorsa finale è pronta (:httpstatus:`303`) all’URL indicato nell’ :httpheader:`Location`;
 
--  Al passo (5), il fruitore DEVE utilizzare il percorso di cui al passo
-   (4) in caso di risorsa pronta per richiedere la risorsa, il verbo
-   HTTP utilizzato deve essere GET;
+-  Al passo (5), il fruitore DEVE recuperare la risorsa con una richiesta :httpmethod:`GET`
+   all'URL indicato in (4b.);
 
 -  Al passo (6) l’erogatore risponde con la rappresentazione della
    risorsa, il codice HTTP restituito è :httpstatus:`200`.
+
 
 Regole di processamento
 ------------------------------------------------------------
@@ -138,7 +144,7 @@ ricevimento della richiesta da parte del fruitore, l’erogatore:
 -  DEVE, ricevuta la richiesta, restituire :httpstatus:`202`.
 
 -  In caso di ricezione corretta della risposta, il fruitore DEVE
-   restituire :httpstatus:`200` , riempiendo il body di risposta con il
+   restituire :httpstatus:`200`, riempiendo il body di risposta con il
    risultato dell’operazione.
 
 -  In caso di errore al momento di ricezione della risposta da parte del
@@ -160,69 +166,86 @@ https://api.ente.example/rest/nome-api/v1/openapi.yaml
 .. literalinclude:: file-d0f6ac6f34fbe9304da62adbeaeb90f398f5ce55818391790b6141dea87bd75a.yaml
    :language: yaml
 
-Di seguito un esempio di chiamata ad **M** in cui l’erogatore dichiara
-di essersi preso carico della richiesta.
+Il fruitore richiede la risorsa **M**,
+e l’erogatore risponde dichiarando di aver preso in carico la richiesta.
 
-Endpoint
+Endpoint https://api.ente.example/rest/nome-api/v1/resources/1234/M
 
-https://api.ente.example/rest/nome-api/v1/resources/1234/M
-
-1. Request Header & Body
+1. Request:
 
 .. code-block:: http
 
    POST /rest/nome-api/v1/resources/1234/M HTTP/1.1
+   Host: api.ente.example
    Content-Type: application/json
 
    {
-   "a": { "a1": [1,…,2], "a2": "Stringa di esempio" },
-   "b": "Stringa di esempio"
+     "a": {
+        "a1": [1, "…", 2],
+        "a2": "Stringa di esempio"
+     },
+     "b": "Stringa di esempio"
    }
 
 
-2. Response Header & Body (:httpstatus:`202`)
+2. Response
 
 .. code-block:: http
+   :emphasize-lines: 1
 
    HTTP/1.1 202 Accepted
    Content-Type: application/json
-   Location: resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
+   Location: /rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
    
    {
-   "status": "accepted",
-   "message": "Preso carico della richiesta",
-   "id": "8131edc0-29ed-4d6e-ba43-cce978c7ea8d"
+     "status": "accepted",
+     "message": "Preso carico della richiesta",
+     "id": "8131edc0-29ed-4d6e-ba43-cce978c7ea8d"
    }
 
-Di seguito un esempio di chiamata con cui il fruitore verifica
-l’esecuzione di M nei casi di processamento ancora in atto e di
-processamento avvenuto (4).
+Quindi il fruitore verifica lo stato dell’esecuzione di **M** (3).
+L’erogatore ritorna un payload diverso a seconda dei casi:
+- processamento ancora in atto (4a)
+- e di processamento avvenuto (4b).
 
 Endpoint
 
 https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
 
-4. Response Header & Body (:httpstatus:`200`)
+3. Request
 
 .. code-block:: http
 
+   GET /rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d HTTP/1.1
+   Host: api.ente.example
+
+
+4a. Response (:httpstatus:`200`)
+
+.. code-block:: http
+   :emphasize-lines: 1
+
    HTTP/1.1 200 OK
+   Host: api.ente.example
    Content-Type: application/json
 
    {
-   "status": "processing",
-   "message": "Richiesta in fase di processamento"
+     "status": "processing",
+     "message": "Richiesta in fase di processamento"
    }
 
-4. Response Header & Body (:httpstatus:`303`)
+4b. Response (:httpstatus:`303`)
 
 .. code-block:: http
+   :emphasize-lines: 1
 
    HTTP/1.1 303 See Other
+   Content-Type: application/json
+   Location: /rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
    
    {
-   "status": "done",
-   "message": "Processamento completo"
+     "status": "done",
+     "message": "Processamento completo"
    }
 
 Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
@@ -232,14 +255,24 @@ Endpoint
 
 https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
 
-6. Response Header & Body (:httpstatus:`200`)
+5. Request:
+
+.. code-block:: http
+
+   GET /rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result HTTP/1.1
+   Host: api.ente.example
+
+
+6. Response:
 
 .. code-block:: http
 
    HTTP/1.1 200 OK
+   Host: api.ente.example
    Content-Type: application/json
 
-   { "c": "OK" }
+   {"c": "OK"}
+
 
 [NONBLOCK_PULL_SOAP] Not Blocking Pull SOAP
 -------------------------------------------
@@ -252,11 +285,11 @@ DEVONO essere rispettate le seguenti regole:
    ed ottenerne il risultato;
 
 -  La specifica dell’interfaccia dell’erogatore DEVE indicare l’header
-   SOAP X-Correlation-ID;
+   SOAP :code:`X-Correlation-ID`;
 
 -  Al passo (2), l’erogatore DEVE fornire insieme all’acknowledgement
    della richiesta nel body, un CorrelationID riportato nel header
-   custom SOAP X-Correlation-ID;
+   custom SOAP :code:`X-Correlation-ID`;
 
 -  Al passo (3), il fruitore DEVE utilizzare il CorrelationID ottenuto
    al passo (2) per richiedere lo stato di processamento di una

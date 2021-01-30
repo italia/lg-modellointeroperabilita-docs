@@ -53,67 +53,36 @@ Regole di processamento
 
 L’approccio RESTful trova la sua applicazione naturale in operazioni
 CRUD - Create, Read, Update, Delete su risorse ed a tal fine sfrutta i
-verbi standard dell’HTTP per indicare tali operazioni. In particolare la
-seguente mappatura viene utilizzata:
+metodi standard dell’HTTP per indicare tali operazioni.
+In particolare la seguente mappatura viene utilizzata:
 
-+-----------------+-----------------+-----------------+-----------------+
-| **CRUD**        | **Verbo HTTP**  | **Esito (stato  | **Esito (stato  |
-|                 |                 | HTTP) Se        | HTTP) Se        |
-|                 |                 | applicato a     | applicato a     |
-|                 |                 | intera          | risorsa         |
-|                 |                 | collezione (es. | specifica (es.  |
-|                 |                 | /clienti)**     | /clienti/{id}   |
-|                 |                 |                 | )**             |
-+-----------------+-----------------+-----------------+-----------------+
-| Create          | POST            | 201 (Created),  | 404 (Not        |
-|                 |                 | l’header        | Found), 409     |
-|                 |                 | "Location"      | (Conflict) se   |
-|                 |                 | nella risposta  | la risorsa è    |
-|                 |                 | può contenere   | già esistente.  |
-|                 |                 | un link a       |                 |
-|                 |                 | /clienti/{id}   |                 |
-|                 |                 | che indica l’ID |                 |
-|                 |                 | creato.         |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| Read            | GET             | 200 (OK), lista | 200 (OK), 404   |
-|                 |                 | dei clienti.    | (Not Found), se |
-|                 |                 | Implementare    | l’ID non è      |
-|                 |                 | meccanismi di   | stato trovato o |
-|                 |                 | paginazione,    | è non valido.   |
-|                 |                 | ordinamento e   |                 |
-|                 |                 | filtraggio per  |                 |
-|                 |                 | navigare grandi |                 |
-|                 |                 | liste.          |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| Update:         | PUT             | 405 (Method Not | 200 (OK) o 204  |
-| Replace/ Create |                 | Allowed), a     | (No Content).   |
-|                 |                 | meno che non si | 404 (Not        |
-|                 |                 | voglia          | Found), se l’ID |
-|                 |                 | sostituire ogni | non è stato     |
-|                 |                 | risorsa nella   | trovato o è non |
-|                 |                 | collezione.     | valido. 201     |
-|                 |                 |                 | (Created), nel  |
-|                 |                 |                 | caso di UPSERT. |
-+-----------------+-----------------+-----------------+-----------------+
-| Update: Modify  | PATCH           | 405 (Method Not | 200 (OK) o 204  |
-|                 |                 | Allowed), a     | (No Content).   |
-|                 |                 | meno che non si | 404 (Not        |
-|                 |                 | voglia          | Found), se l’ID |
-|                 |                 | applicare una   | non è stato     |
-|                 |                 | modifica ad     | trovato o è non |
-|                 |                 | ogni risorsa    | valido.         |
-|                 |                 | nella           |                 |
-|                 |                 | collezione.     |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| Delete          | DELETE          | 405 (Method Not | 200 (OK). 404   |
-|                 |                 | Allowed), a     | (Not Found), se |
-|                 |                 | meno che non si | l’ID non è      |
-|                 |                 | voglia          | stato trovato o |
-|                 |                 | permettere di   | è non valido.   |
-|                 |                 | eliminare       |                 |
-|                 |                 | l’intera        |                 |
-|                 |                 | collezione.     |                 |
-+-----------------+-----------------+-----------------+-----------------+
+.. list-table::
+    :header-rows: 1
+
+    * -    CRUD
+      -    Metodo HTTP
+      -    Esito (stato HTTP) Se applicato a intera collezione (es. :code:`/clienti`)
+      -    Esito (stato HTTP) Se applicato a risorsa specifica (es. :code:`/clienti/{id}` )
+    * -    Create
+      -    POST
+      -    :httpstatus:`201`, l’header "Location" nella risposta può contenere un link a /clienti/{id} che indica l’ID creato.
+      -    404 (Not Found), 409 (Conflict) se la risorsa è già esistente.
+    * -    Read
+      -    GET
+      -    200 (OK), lista dei clienti. Implementare meccanismi di paginazione, ordinamento e filtraggio per navigare grandi liste.
+      -    200 (OK), 404 (Not Found), se l’ID non è stato trovato o è non valido.
+    * -    Update: Replace/ Create
+      -    PUT
+      -    405 (Method Not Allowed), a meno che non si voglia sostituire ogni risorsa nella collezione.
+      -    200 (OK) o 204 (No Content). 404 (Not Found), se l’ID non è stato trovato o è non valido. 201 (Created), nel caso di UPSERT.
+    * -    Update: Modify
+      -    PATCH
+      -    405 (Method Not Allowed), a meno che non si voglia applicare una modifica ad ogni risorsa nella collezione.
+      -    200 (OK) o 204 (No Content). 404 (Not Found), se l’ID non è stato trovato o è non valido.
+    * -    Delete
+      -    DELETE
+      -    405 (Method Not Allowed), a meno che non si voglia permettere di eliminare l’intera collezione.
+      -    200 (OK). 404 (Not Found), se l’ID non è stato trovato o è non valido.
 
 Si noti l’uso distinto di :httpmethod:`PUT` e :httpmethod:`PATCH` per la
 sostituzione e l’applicazione di modifiche ad una risorsa
@@ -171,15 +140,17 @@ Di seguito un esempio di chiamata per creare una prenotazione.
 .. code-block:: http
 
    POST /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni HTTP/1.1
-   
+   Host: api.ente.example
+   Content-Type: application/json
+
    {
-   "nome_proprio": "Mario",
-   "cognome": "Rossi",
-   "codice_fiscale": "MRORSS77T05E472I",
-   "dettagli": {
-   "data": "2018-12-03T14:29:12.137Z",
-   "motivazione": "string"
-   }
+       "nome_proprio": "Mario",
+       "cognome": "Rossi",
+       "codice_fiscale": "MRORSS77T05E472I",
+       "dettagli": {
+           "data": "2018-12-03T14:29:12.137Z",
+           "motivazione": "string"
+       }
    }
 
 2. Response
@@ -187,22 +158,22 @@ Di seguito un esempio di chiamata per creare una prenotazione.
 .. code-block:: http
 
    HTTP/1.1 201 Created
+   Content-Type: application/json
    Location: https://api.ente.example/rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254
-   
+
    {
-   
-   "id": 12323254,
-   "nome_proprio": "Mario",
-   "cognome": "Rossi",
-   "codice_fiscale": "\ MRORSS77T05E472I",
-   "dettagli": {
-   "data": "2018-12-03T14:29:12.137Z",
-   "motivazione": "string"
-   }
+       "id": 12323254,
+       "nome_proprio": "Mario",
+       "cognome": "Rossi",
+       "codice_fiscale": "MRORSS77T05E472I",
+       "dettagli": {
+           "data": "2018-12-03T14:29:12.137Z",
+           "motivazione": "string"
+       }
    }
 
-Di seguito un esempio in cui il fruitore richiede l’estrazione di una
-specifica prenotazione. Si noti l’utilizzo dell’URL restituito nell"
+Di seguito, un esempio in cui il fruitore richiede l’estrazione di una
+specifica prenotazione. Si noti l’utilizzo dell’URL restituito nell’
 :httpheader:`Location` al passo precedente.
 
 1. Request
@@ -210,22 +181,25 @@ specifica prenotazione. Si noti l’utilizzo dell’URL restituito nell"
 .. code-block:: http
 
    GET /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 HTTP/1.1
+   Host: api.ente.example
+
 
 2. Response
 
 .. code-block:: http
 
    HTTP/1.1 200 OK
-   
+   Content-Type: application/json
+
    {
-   "id": 12323254,
-   "nome_proprio": "Mario",
-   "cognome": "Rossi",
-   "codice_fiscale": "\ MRORSS77T05E472I",
-   "dettagli": {
-   "data": "2018-12-03T14:29:12.137Z",
-   "motivazione": "string"
-   }
+       "id": 12323254,
+       "nome_proprio": "Mario",
+       "cognome": "Rossi",
+       "codice_fiscale": "MRORSS77T05E472I",
+       "dettagli": {
+           "data": "2018-12-03T14:29:12.137Z",
+           "motivazione": "string"
+       }
    }
 
 Di seguito una richiesta di modifica dei dettagli di una prenotazione.
@@ -235,18 +209,14 @@ Di seguito una richiesta di modifica dei dettagli di una prenotazione.
 .. code-block:: http
 
    PATCH /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 HTTP/1.1
+   Host: api.ente.example
    Content-Type: application/merge-patch+json
    
    {
-   
-   "dettagli": {
-   
-   "data": "2018-12-03T14:29:12.137Z",
-   
-   "motivazione": "nuova motivazione"
-   
-   }
-   
+       "dettagli": {
+           "data": "2018-12-03T14:29:12.137Z",
+           "motivazione": "nuova motivazione"
+       }
    }
 
 2. Response
@@ -254,14 +224,15 @@ Di seguito una richiesta di modifica dei dettagli di una prenotazione.
 .. code-block:: http
 
    HTTP/1.1 200 OK
-   
+   Content-Type: application/json
+
    {
     "nome_proprio": "Mario",
     "cognome": "Rossi",
     "codice_fiscale": "MRORSS77T05E472I",
     "dettagli": {
-    "data": "2018-12-03T14:29:12.137Z",
-    "motivazione": "nuova motivazione"
+        "data": "2018-12-03T14:29:12.137Z",
+        "motivazione": "nuova motivazione"
     }
    }
 
@@ -276,6 +247,7 @@ dalla specifica tramite :httpheader:`Accept-Patch`
 .. code-block:: http
 
     PATCH /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 HTTP/1.1
+    Host: api.ente.example
     Content-Type: application/json
    
 	{
@@ -300,6 +272,8 @@ Di seguito un esempio di cancellazione di una specifica prenotazione.
 .. code-block:: http
 
    DELETE /rest/appuntamenti/v1/municipio/{id_municipio}/ufficio/{id_ufficio}/prenotazioni/12323254 HTTP/1.1
+   Host: api.ente.example
+
 
 2. Response
 
