@@ -1,0 +1,18 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:m="http://ente.example/nome-api">
+    <soap:Body>
+        <soap:Fault>
+            <soap:Code>
+                <soap:Value>soap:Receiver</soap:Value>
+            </soap:Code>
+            <soap:Reason>
+                <soap:Text xml:lang="en">Error</soap:Text>
+            </soap:Reason>
+            <soap:Detail>
+                <m:ErrorMessageFault>
+                    <customFaultCode>1234</customFaultCode>
+                </m:ErrorMessageFault>
+            </soap:Detail>
+        </soap:Fault>
+    </soap:Body>
+</soap:Envelope>

@@ -45,11 +45,12 @@ e restituisce una stringa **c** come output.
 Le implementazioni degli esempi sono corredate dalla specifica
 dell’interfaccia e da uno scambio di messaggi esemplificativo.
 
+Di seguito le indicazioni per le tecnologie accolte dal ModI.
+
 .. toctree::
   :maxdepth: 3
-  :caption: Indice dei contenuti
 
-  pattern-bloccanti/block_rest.rst
-  pattern-bloccanti/block_soap.rst
+  05_pattern-bloccanti/01_block_rest.rst
+  05_pattern-bloccanti/02_block_soap.rst
 
 
