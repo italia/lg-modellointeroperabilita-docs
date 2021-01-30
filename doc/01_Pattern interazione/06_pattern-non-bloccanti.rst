@@ -49,5 +49,5 @@ dell’interfaccia e da uno scambio di messaggi esemplificativo.
   :maxdepth: 3
   :caption: Indice dei contenuti
 
-  pattern-non-bloccanti/nonblock_push.rst
-  pattern-non-bloccanti/nonblock_pull.rst
+  06_pattern-non-bloccanti/01_nonblock_push.rst
+  06_pattern-non-bloccanti/02_nonblock_pull.rst
