@@ -46,10 +46,10 @@ una interfaccia di servizio SOAP, il ModI prevede lo sviluppo di una
 interfaccia REST.
 
 [CRUD_REST] CRUD REST
-=====================
+---------------------
 
 Regole di processamento
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 L’approccio RESTful trova la sua applicazione naturale in operazioni
 CRUD - Create, Read, Update, Delete su risorse ed a tal fine sfrutta i
@@ -146,7 +146,7 @@ E’ possibile ad esempio usare application/merge-patch+json definito in
    :rfc:`7396#section-5` e :rfc:`5789#section-5`.
 
 Esempio
-------------
+^^^^^^^
 
 Per illustrare l’approccio RESTful al CRUD, semplificheremo un API per
 gestire le prenotazioni di un appuntamento presso un ufficio municipale.

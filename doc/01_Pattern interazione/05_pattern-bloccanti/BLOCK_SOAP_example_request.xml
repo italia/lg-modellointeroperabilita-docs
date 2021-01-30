@@ -1,0 +1,22 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:m="http://ente.example/nome-api">
+    <soap:Header>
+        <!--Autenticazione-->
+    </soap:Header>
+    <soap:Body>
+        <m:MRequest>
+            <M>
+                <oId>1234</oId>
+                <a>
+                    <a1s>
+                        <a1>1</a1>
+                        ...                       
+                        <a1>2</a1>
+                    </a1s>
+                    <a2>RGFuJ3MgVG9vbHMgYXJlIGNvb2wh</a2>
+                </a>
+                <b>Stringa di esempio</b>
+            </M>
+        </m:MRequest>
+    </soap:Body>
+</soap:Envelope>

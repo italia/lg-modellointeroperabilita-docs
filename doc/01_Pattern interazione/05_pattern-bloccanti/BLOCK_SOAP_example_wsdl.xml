@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ente.example/nome-api" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" name="SOAPBlockingImplService" targetNamespace="http://ente.example/nome-api">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:tns="http://ente.example/nome-api"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" name="SOAPBlockingImplService" targetNamespace="http://ente.example/nome-api">
   <wsdl:types>
-    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ente.example/nome-api" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ente.example/nome-api">
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:tns="http://ente.example/nome-api" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ente.example/nome-api">
       <xs:element name="MRequest" type="tns:MRequest"/>
       <xs:element name="MRequestResponse" type="tns:MRequestResponse"/>
       <xs:complexType name="MRequest">
