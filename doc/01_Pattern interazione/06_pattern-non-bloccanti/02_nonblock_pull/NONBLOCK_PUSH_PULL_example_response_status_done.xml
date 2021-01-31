@@ -1,0 +1,11 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:m="http://ente.example/nome-api">
+    <soap:Body>
+        <m:MProcessingStatusResponse>
+            <return>
+                <status>done</status>
+                <message>Richiesta completata</message>
+            </return>
+        </m:MProcessingStatusResponse>
+    </soap:Body>
+</soap:Envelope>

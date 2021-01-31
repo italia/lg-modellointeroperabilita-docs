@@ -2,7 +2,7 @@ Documento operativo - Pattern di interazione
 ############################################
 .. toctree::
   :numbered:
-  :maxdepth: 3
+  :maxdepth: 5
   :caption: Indice dei contenuti
 
   01_introduzione.rst
