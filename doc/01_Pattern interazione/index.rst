@@ -6,8 +6,9 @@ Documento operativo - Pattern di interazione
   :caption: Indice dei contenuti
 
   01_introduzione.rst
-  02_ambito-di-applicazione-riferimenti-sigle.rst
-  03_principi-generali.rst
-  04_pattern-bloccanti.rst
-  05_pattern-non-bloccanti.rst
-  06_accesso-crud-a-risorse.rst
+  02_ambito-di-applicazione.rst
+  03_riferimenti-sigle.rst
+  04_principi-generali.rst
+  05_pattern-bloccanti.rst
+  06_pattern-non-bloccanti.rst
+  07_accesso-crud-a-risorse.rst

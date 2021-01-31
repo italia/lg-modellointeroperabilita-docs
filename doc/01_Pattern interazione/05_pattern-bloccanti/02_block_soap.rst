@@ -42,7 +42,7 @@ Specifica Servizio
 
 https://api.ente.example/soap/nome-api/v1?wsdl
 
-.. literalinclude:: file-474638784088431f8ebe114acc2c79def211df3757d1a83547f73e7716455a3c.xml
+.. literalinclude:: BLOCK_SOAP_example_wsdl.xml
    :language: xml
 
 A seguire un esempio di chiamata al metodo **M**.
@@ -55,19 +55,16 @@ Method M
 
 1. Request Body
 
-.. literalinclude:: BLOCK_SOAP.xml
+.. literalinclude:: BLOCK_SOAP_example_request.xml
    :language: xml
-   :lines: 1-21
 
 2. Response Body (HTTP status code 200 OK)
 
-.. literalinclude:: BLOCK_SOAP.xml
+.. literalinclude:: BLOCK_SOAP_example_response200.xml
    :language: xml
-   :lines: 30-40
 
 2. Response Body (HTTP status code 500 Internal Server Error)
 
-.. literalinclude:: BLOCK_SOAP.xml
+.. literalinclude:: BLOCK_SOAP_example_response500.xml
    :language: xml
-   :lines: 50-68
 
