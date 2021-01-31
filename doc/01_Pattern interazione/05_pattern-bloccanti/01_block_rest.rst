@@ -64,59 +64,72 @@ https://api.ente.example/rest/nome-api/v1/RESTblocking.yaml
 
 Di seguito un esempio di chiamata al metodo **M**.
 
-Http Operation POST
-
 Endpoint
 
 https://api.ente.example/rest/nome-api/v1/resources/1234/M
 
-1. Request Body
+1. Request
 
-.. code-block:: python
+.. code-block:: http
+
+    POST /rest/nome-api/v1/resources/1234/M HTTP/1.1
+    Host: api.ente.example
+    Content-Type: application/json
+
+    {
+      "a": {
+        "a1s": [ 1, 2 ],
+        "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
+      },
+      "b": "Stringa di esempio"
+    }
+
+
+2. Response :httpstatus:`200`
+
+.. code-block:: http
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+
+   {"c": "risultato"}
+
+2. Response :httpstatus:`500`
+
+.. code-block:: http
+
+   HTTP/1.1 500 Internal Server Error
+   Content-Type: application/problem+json
 
    {
-   "a": {
-   "a1s": [1,2],
-   "a2": "RGFuJ3MgVG9vbHMgYXJlIGNvb2wh"
-   },
-   "b": "Stringa di esempio"
+       "type": "https://apidoc.ente.example/probs/operation-too-long",
+       "status": 500,
+       "title": "L'operazione è durata troppo.",
+       "detail": "Il sistema non e' riuscito a completare in tempo l'operazione prevista."
    }
 
-2. Response Body (HTTP Status Code 200 OK)
+2. Response :httpstatus:`400`
 
-.. code-block:: python
+.. code-block:: http
+
+   HTTP/1.1 400 Bad Request
+   Content-Type: application/problem+json
 
    {
-   "c" : "risultato"
+       "type": "https://apidoc.ente.example/probs/invalid-a",
+       "status": 400,
+       "title": "L'attributo \`b\` ha un valore non valido.",
+       "detail": "L'attributo \`b\` dev'essere una stringa di lunghezza   inferiore a 32 caratteri."
    }
 
-2. Response Body (HTTP Status Code 500 Internal Server Error)
+2. Response  :httpstatus:`404`
 
-.. code-block:: python
+.. code-block:: http
 
-   {
-   "type": "https://apidoc.example.com/probs/operation-too-long",
-   "status": 500,
-   "title": "L'operazione dura troppo.",
-   "detail": "Il sistema non e' riuscito a completare in tempo l'operazione prevista.",
-   }
-
-2. Response Body (HTTP Status Code 400 Bad Request)
-
-.. code-block:: python
+   HTTP/1.1 400 Not Found
+   Content-Type: application/problem+json
 
    {
-   "type": "https://apidoc.example.com/probs/invalid-a",
-   "status": 400,
-   "title": "L'attributo \`b\` ha un valore non valido.",
-   "detail": "L'attributo \`b\` dev'essere una stringa di lunghezza   inferiore a 32 caratteri.",
-   }
-
-2. Response Body (HTTP Status Code 404 Not Found)
-
-.. code-block:: python
-
-   {
-   "status": 404,
-   "title": "Risorsa non trovata.",
+       "status": 404,
+       "title": "Risorsa non trovata."
    }
