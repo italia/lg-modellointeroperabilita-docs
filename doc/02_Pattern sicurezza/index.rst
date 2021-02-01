@@ -1,5 +1,6 @@
 Documento operativo - Pattern sicurezza
 #######################################
+
 .. toctree::
   :numbered:
   :maxdepth: 3
@@ -11,4 +12,5 @@ Documento operativo - Pattern sicurezza
   04_sicurezza-di-canale.rst
   05_accesso-del-fruitore.rst
   06_integrita.rst
+
   
