@@ -333,3 +333,4 @@ texinfo_documents = [
 numfig = True
 
 mermaid_cmd = "./mmdc.py"
+mermaid_output_format = "jpg"
