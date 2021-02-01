@@ -1,6 +1,14 @@
 Sicurezza di canale e/o identificazione delle organizzazioni
 ============================================================
 
+.. toctree::
+  :maxdepth: 2
+  :caption: Indice dei contenuti
+
+  04_sicurezza-di-canale/id_auth_channel_01.rst
+  04_sicurezza-di-canale/id_auth_channel_02.rst
+   
+
 
 [ID_AUTH_CHANNEL_01] Direct Trust Transport-Level Security
 ----------------------------------------------------------

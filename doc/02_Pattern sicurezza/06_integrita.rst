@@ -5,5 +5,5 @@ Integrità
   :maxdepth: 0
   :caption: Indice dei contenuti
 
-  integrita/integrity_soap.rst
-  integrita/integrity_rest.rst
+  06_integrita/integrity_soap.rst
+  06_integrita/integrity_rest.rst
