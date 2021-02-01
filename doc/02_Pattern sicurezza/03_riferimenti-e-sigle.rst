@@ -15,7 +15,7 @@ l’applicazione del presente documento.
 
 .. list-table:: Riferimenti Normativi
    :widths: 15 40
-   :header-rows: 
+   :header-rows: 0 
 
    * -    [ISO 19115]
      -    UNI EN ISO 19115:2005, Informazioni geografiche – Metadati 
