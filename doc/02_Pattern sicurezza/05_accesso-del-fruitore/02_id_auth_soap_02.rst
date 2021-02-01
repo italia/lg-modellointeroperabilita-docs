@@ -1,7 +1,7 @@
 .. _id_auth_soap_02:
 
 [ID_AUTH_SOAP_02] Direct Trust con certificato X.509 su SOAP con con unicità del token/messaggio
-================================================================================================
+=================================================================================================
 
 Il seguente profilo estende il profilo ID_AUTH_SOAP_01. Comunicazione
 tra fruitore ed erogatore che assicuri a livello di messaggio:
@@ -129,9 +129,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
    ds="http://www.w3.org/2000/09/xmldsig#"
    ec="http://www.w3.org/2001/10/xml-exc-c14n#"
 
-
-
-.. literalinclude:: media/id-auth-soap-02-response.xml
+.. literalinclude:: media/ID_AUTH_SOAP_02_example_request.xml
    :language: xml
 
 Il tracciato rispecchia le seguenti scelte implementative

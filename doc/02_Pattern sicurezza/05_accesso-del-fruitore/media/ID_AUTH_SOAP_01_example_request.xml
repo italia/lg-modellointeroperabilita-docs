@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
   <soap:Header>
-    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" soap:mustUnderstand="1">
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" soap:mustUnderstand="1">
       <wsse:BinarySecurityToken EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" wsu:Id="X509-39011475-65d5-446e-ba38-be84220fd720">MIICqDCCAZCgAwIBAgIEXLSSUTANBgkqhkiG9w0BAQsFADAW...</wsse:BinarySecurityToken>
       <wsu:Timestamp wsu:Id="TS-819df7b7-379d-48f7-8d9c-28c5b5d252f0">
         <wsu:Created>2019-04-15T14:53:34.649Z</wsu:Created>
@@ -34,7 +35,8 @@
         </ds:SignedInfo>
         <ds:SignatureValue>jAtZqkfRcFJW+jx9YDv+r2Q8V4IWEWLAZckZlWsmo...</ds:SignatureValue>
         <ds:KeyInfo Id="KI-32484d1e-867e-4465-a96f-52a8668d5a0c">
-          <wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="STR-3cf69cce-c56f-461a-905d-dfc20ab0742c">
+          <wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+            xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="STR-3cf69cce-c56f-461a-905d-dfc20ab0742c">
             <wsse:Reference URI="#X509-39011475-65d5-446e-ba38-be84220fd720" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
           </wsse:SecurityTokenReference>
         </ds:KeyInfo>
@@ -42,7 +44,8 @@
     </wsse:Security>
     <Action xmlns="http://www.w3.org/2005/08/addressing">http://profile.security.modi.agid.org/HelloWorld/sayHi</Action>
     <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:55e6bc57-2286-4b7d-82a9-fdbcf57721b1</MessageID>
-    <To xmlns="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-96f9b013-17e5-489d-8068-52c3f1345c75">https://api.amministrazioneesempio.it/soap/echo/v1</To>
+    <To xmlns="http://www.w3.org/2005/08/addressing"
+      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-96f9b013-17e5-489d-8068-52c3f1345c75">https://api.amministrazioneesempio.it/soap/echo/v1</To>
     <ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
       <Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
     </ReplyTo>
