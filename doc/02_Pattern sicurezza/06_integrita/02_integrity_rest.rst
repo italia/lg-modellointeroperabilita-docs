@@ -163,7 +163,8 @@ Note:
    server DEVE ritornare il checksum dell’ipotetico payload body
    ritornato dalla corrispondente richiesta con :httpmethod:`GET`.
 
-Esempio:
+Esempio
+-------
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal fruitore
 all’interfaccia di servizio dell’erogatore.
