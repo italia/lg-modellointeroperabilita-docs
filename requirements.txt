@@ -7,6 +7,6 @@ doc8
 sphinx<=1.7
 
 # Render mermaid diagrams
-sphinxcontrib-mermaid==0.5.0
+git+https://github.com/teamdigitale/sphinxcontrib-mermaid@docsitalia-0.5
 requests
 

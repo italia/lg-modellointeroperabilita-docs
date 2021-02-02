@@ -6,12 +6,15 @@ import json
 from requests import get
 from tempfile import NamedTemporaryFile
 from subprocess import check_output
+import logging
+logging.basicConfig(level=logging.DEBUG)
+log = logging.getLogger()
 
 
 def jpg_to_pdf(jpg_data, dpath):
     with NamedTemporaryFile() as fh:
         fh.write(jpg_data)
-        check_output(["./magick", "convert", fh.name, dpath])
+        check_output(["convert", fh.name, dpath])
 
 
 def get_mermaid_jpg(mermaid_txt):
@@ -34,6 +37,11 @@ if __name__ == "__main__":
     # Rely on mermaid website for renderings.
     mermaid_jpg = get_mermaid_jpg(mermaid_txt)
 
-    # Latex expects a pdf image.
-    jpg_to_pdf(mermaid_jpg, args.dpath)
+    if args.dpath.endswith("pdf"):
+        jpg_to_pdf(mermaid_jpg, args.dpath)
+    elif args.dpath.endswith("jpg"):
+        Path(args.dpath).write_bytes(mermaid_jpg)
+    else:
+        raise NotImplementedError("Format not supported. %r" % args.dpath)
+
     exit(0)
