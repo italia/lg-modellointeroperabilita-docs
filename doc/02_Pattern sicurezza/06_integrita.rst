@@ -1,5 +1,5 @@
 Integrità
-=========
+===========
 
 Di seguito le indicazioni per le tecnologie accolte dal ModI.
 
