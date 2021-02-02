@@ -7,6 +7,6 @@ doc8
 sphinx<=1.7
 
 # Render mermaid diagrams
-sphinxcontrib-mermaid
+sphinxcontrib-mermaid==0.5.0
 requests
 
