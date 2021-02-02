@@ -98,7 +98,7 @@ Note:
    del payload del messaggio risposta dell’erogatore al fruitore.
 
 Esempio
------------
+-------
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal fruitore
 all’interfaccia di servizio dell’erogatore.
@@ -112,8 +112,8 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
    ds="http://www.w3.org/2000/09/xmldsig#"
    ec="http://www.w3.org/2001/10/xml-exc-c14n#"
 
-.. literalinclude:: integrity-soap-01.xml
-
+.. literalinclude:: media/INTEGRITY_SOAP_01_example_request.xml
+   :language: xm
 
 Il codice rispecchia alcune scelte implementative esemplificative in
 merito:

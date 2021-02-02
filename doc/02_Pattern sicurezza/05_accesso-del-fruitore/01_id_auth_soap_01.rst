@@ -124,10 +124,8 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
    ds="http://www.w3.org/2000/09/xmldsig#"
    ec="http://www.w3.org/2001/10/xml-exc-c14n#"
 
-
-.. literalinclude:: media/id-auth-soap-01-response.xml
+.. literalinclude:: media/ID_AUTH_SOAP_01_example_request.xml
    :language: xml
-
 
 Il tracciato rispecchia le seguenti scelte implementative
 esemplificative:

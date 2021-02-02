@@ -47,6 +47,9 @@ dell’interfaccia e da uno scambio di messaggi esemplificativo.
 
 Di seguito le indicazioni per le tecnologie accolte dal ModI.
 
+L'AgID assicura l'aggiornamento degli stessi per soddisfare le esigenze 
+espresse dalle PA.
+
 .. toctree::
   :maxdepth: 3
 
