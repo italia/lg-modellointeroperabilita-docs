@@ -33,7 +33,7 @@ DEVONO essere rispettate le seguenti indicazioni:
 
 -  Al passo (4), il fruitore DEVE riconoscere tramite un messaggio di
    acknowledgement il ricevimento della risposta; Il codice HTTP di
-   stato DEVE essere HTTP status 200 OK a meno che non si verifichino
+   stato DEVE essere :httpstatus:`200` a meno che non si verifichino
    errori.
 
 Regole di processamento
@@ -54,18 +54,18 @@ Fruitore ed erogatore:
    ritornare HTTP status 422 Unprocessable Entity;
 
 -  Se qualcuno degli ID nel path o nel body non esiste, DEVONO
-   restituire HTTP status 404 Not Found, indicando nel body di risposta
+   restituire :httpstatus:`404`, indicando nel body di risposta
    quale degli ID è mancante;
 
 -  Se si ipotizza che la richiesta sia malevola, PUÒ ritornare HTTP
-   status 400 Bad Request o HTTP status 404 Not Found
+   status 400 Bad Request o :httpstatus:`404`
 
 -  In caso di errori non dipendenti dalla richiesta, DEVONO restituire
    HTTP status 5XX rispettando la semantica degli stessi;
 
 -  Al momento della ricezione della richiesta, l’erogatore DEVE
    restituire HTTP status 202 Accepted. In caso di ricezione corretta
-   della risposta, il fruitore DEVE restituire HTTP status 200 OK,
+   della risposta, il fruitore DEVE restituire :httpstatus:`200`,
    ritornando nel body di risposta un acknowledgement dell’avvenuta
    ricezione. In caso di errore di ricezione della risposta da parte del
    fruitore, è possibile utilizzare meccanismi specifici per la

@@ -43,11 +43,11 @@ In particolare, al ricevimento della richiesta, fruitore ed erogatore:
    della SOAP fault;
 
 -  Nel caso in cui qualcuno degli ID nel path o nel body non esista,
-   DEVONO restituire HTTP status 500 Internal Server Error, indicando
+   DEVONO restituire :httpstatus:`500`, indicando
    nel body di risposta quale degli ID è mancante;
 
 -  Se ipotizzano che la richiesta sia malevola POSSONO ritornare HTTP
-   status 400 Bad Request o HTTP status 404 Not Found
+   status 400 Bad Request o :httpstatus:`404`
 
 -  In caso di errori non dipendenti dal fruitore, DEVE restituire i
    codici HTTP 5XX rispettando la semantica degli stessi o restituire il
@@ -57,11 +57,11 @@ In particolare, al ricevimento della richiesta, fruitore ed erogatore:
 -  Al momento della ricezione della richiesta, DEVONO restituire un
    codice 2XX, nel dettaglio:
 
-   -  HTTP status 200 OK in caso di presenza della payload SOAP,
+   -  :httpstatus:`200` in caso di presenza della payload SOAP,
       riempiendo il body di risposta con il risultato relativo alla
       richiesta.
 
-   -  HTTP status 200 OK o HTTP status 202 Accepted in caso di assenza
+   -  :httpstatus:`200` o HTTP status 202 Accepted in caso di assenza
       della payload SOAP
 
 -  Nel caso di errore al momento di ricezione della risposta da parte
