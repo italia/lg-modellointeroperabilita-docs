@@ -1,11 +1,8 @@
-Raccomandazioni tecniche generali
-=================================
-
-In quanto segue sono riportate le raccomandazione tecniche che gli
-erogatori considerano nell’implementazione delle proprie API.
+Raccomandazioni globali
+-----------------------
 
 [RAC_GEN_001] Descrizione delle API
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le API DEVONO essere rappresentate mediante un Interface Description
 Language standard (IDL). Nello specifico:
@@ -15,7 +12,7 @@ Language standard (IDL). Nello specifico:
 -  per SOAP, WSDL 1.1 e successive.
 
 [RAC_GEN_002] Endpoint delle API
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Il numero di versione NON DEVE essere presente all’interno del nome
 della API.
@@ -45,23 +42,22 @@ dove:
 -  <NomeAPI> è il nome della specifica API.
 
 [RAC_GEN_003] Codifica di default
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Si DOVREBBE utilizzare UTF-8 come codifica di default per i dati.
 
 [RAC_GEN_004] Non passare credenziali o dati riservati nell’URL
----------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Eventuali dati riservati o credenziali e token di autenticazione NON
 DEVONO essere passati nei query parameters o comunque nell’URL.
 
 .. toctree::
   :maxdepth: 3
-  :caption: Indice dei contenuti
-
-  raccomandazioni-tecniche-generali/formato-dei-dati.rst
-  raccomandazioni-tecniche-generali/progettazione-e-naming.rst
-  raccomandazioni-tecniche-generali/logging.rst
+  
+  04_raccomandazioni-tecniche-generali/01_formato-dei-dati.rst
+  04_raccomandazioni-tecniche-generali/02_progettazione-e-naming.rst
+  04_raccomandazioni-tecniche-generali/03_logging.rst
 
 .. [1]
    Cfr. https://semver.org/

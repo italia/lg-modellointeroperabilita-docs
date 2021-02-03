@@ -1,8 +1,8 @@
-Logging
-=======
+Roccomandazioni sul logging
+---------------------------
 
 [RAC_GEN_LOG_01] Informazioni di Logging
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I log file DEVONO contenere:
 

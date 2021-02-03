@@ -6,4 +6,4 @@ considerano nell’implementazione delle API al fine di favorire
 l’interoperabilità con i fruitori.
 
 Le raccomandazioni sono applicate dagli erogatori in funzione alle
-specifiche esigenze applicative in relazione alla natura dei fruitori.
+specifiche esigenze applicative ed in relazione alla natura dei fruitori.

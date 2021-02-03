@@ -1,10 +1,8 @@
-.. _formato-dei-dati-1:
-
-Formato dei dati
-================
+Raccomandazioni sul formato dei dati
+------------------------------------
 
 [RAC_REST_FORMAT_001] Utilizzo oggetti JSON
--------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Nella tecnologia REST la comunicazione DOVREBBE avvenire tramite oggetti
 JSON :rfc:`8259` con il relativo media-type application/json.
@@ -14,7 +12,7 @@ comunicazione sono formalizzati in forma diversa da JSON (es. INSPIRE,
 HL7).
 
 [RAC_REST_FORMAT_002] Codificare dati strutturati con oggetti JSON
-------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I dati strutturati in formato JSON :rfc:`8259` DOVREBBERO essere trasferiti
 tramite oggetti, in modo da permettere l’estensione retrocompatibile
@@ -53,7 +51,7 @@ Cioè:
 	}
 
 [RAC_REST_FORMAT_003] Convenzioni di rappresentazione
------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 DEVONO usarsi le seguenti convenzioni di rappresentazione:
 
@@ -64,7 +62,7 @@ DEVONO usarsi le seguenti convenzioni di rappresentazione:
 -  Le enumeration DEVONO essere rappresentate da stringhe non nulle.
 
 [RAC_REST_FORMAT_004] Definire format quando si usano i tipi Number ed Integer
-------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I numeri e gli interi DEVONO indicare la dimensione utilizzando il
 parametro format.
@@ -96,7 +94,7 @@ La seguente tabella - non esaustiva - elenca un set minimo di formati.
 Le implementazioni DEVONO utilizzare il tipo più adatto.
 
 [RAC_REST_FORMAT_005] Usare link relations registrate
------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 DEVONO usarsi le specifiche indicate in IANA registered link
 relations [1]_ per rappresentare link e riferimenti a risorse HTTP

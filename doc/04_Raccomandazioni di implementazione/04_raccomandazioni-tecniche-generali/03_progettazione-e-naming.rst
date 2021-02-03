@@ -1,15 +1,15 @@
-Progettazione e Naming
-======================
+Roccomandazioni sulla progettazione e naming
+--------------------------------------------
 
 [RAC_GEN_NAME_001] Utilizzare i nomi delle proprietà secondo nomenclature standard
-----------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le proprietà DEVONO utilizzare, ove possibile, la nomenclatura indicata
 nelle Linee Guida per la valorizzazione del Patrimonio [1]_ informativo
 pubblico e le relative ontologie [2]_.
 
 [RAC_GEN_NAME_002] Nomenclatura delle proprietà
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le proprietà DOVREBBERO avere una nomenclatura consistente.
 
@@ -71,7 +71,7 @@ NO
    <familyName>Rossi</familyName>
 
 [RAC_GEN_NAME_003] Descrittività dei nomi utilizzati
-----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I nomi utilizzati per servizi, path, operation o schemi DEVONO essere
 auto-descrittivi e fornire quanta più informazione utile riguardo al
