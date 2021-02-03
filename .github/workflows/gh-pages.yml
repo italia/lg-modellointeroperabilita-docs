@@ -32,7 +32,7 @@ jobs:
       - name: Run a script
         run: |-
           pip install tox
-          tox -e build
+          tox -re build
           touch _build/.nojekyll
 
       - name: Deploy to GitHub Pages
