@@ -5,24 +5,24 @@ Formato dei dati
 --------------------------------------------------------------------
 
 Quando si ritornano dati binari, immagini o documenti (eg. pdf, png, …)
-si DEVONO utilizzare i rispettivi content- type.
+si DEVONO utilizzare i rispettivi Content-Type.
+Nel protocollo HTTP, l’:httpheader:`Content-Type` indica il media-type di una risorsa.
 
 [RAC_GEN_FORMAT_002] Evitare Content-Type personalizzati
 --------------------------------------------------------
 
-Si DOVREBBERO evitare l’uso di media-type personalizzati come da RFC
-6838 section-3.4 (eg. application/x.custom.name+xml,
+Si DOVREBBE evitare l’uso di media-type personalizzati come da
+:rfc:`6838#section-3.4` (eg. application/x.custom.name+xml,
 application/x.custom.name+json) ed utilizzare nomi standard come:
 
 -  application/xml
-
 -  application/soap+xml
-
 -  application/json​
-
 -  application/problem+json​
-
 -  application/jose+json
+
+L'elenco dei media-type è reperibile sul `sito IANA <https://www.iana.org/assignments/media-types/media-types.xhtml>`_.
+
 
 [RAC_GEN_FORMAT_003] Formati standard per Data ed Ora
 -----------------------------------------------------
