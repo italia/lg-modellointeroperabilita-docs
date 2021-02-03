@@ -7,5 +7,6 @@ Documento operativo - Profili di interoperabilità
 
   01_introduzione.rst
   02_ambito-di-applicazione.rst
+  03_riferimenti-e-sigle.rst
   04_profili.rst
 
