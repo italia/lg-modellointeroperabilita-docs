@@ -1,5 +1,5 @@
-Robustezza
-==========
+Raccomandazioni sulla robustezza 
+--------------------------------
 
 Ai fini di garantire la responsività di una API è necessario impedire a
 singoli fruitori di esaurire la capacità di calcolo e di banda
@@ -19,7 +19,7 @@ implementatori previa un’analisi di carico massimo sopportabile
 dall’erogatore.
 
 [RAC_ROBUSTEZZA_001] Segnalare raggiunti limiti di utilizzo
------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Gli erogatori di interfacce di servizio REST DEVONO segnalare eventuali
 limiti raggiunti con :httpstatus:`429`.
@@ -57,7 +57,7 @@ I fruitori DEVONO:
    che espone la data in cui riprovare.
 
 [RAC_ROBUSTEZZA_002] Segnalare il sovraccarico del sistema o l’indisponibilità del servizio
--------------------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Gli erogatori DEVONO definire ed esporre un piano di continuità
 operativa segnalando il sovraccarico del sistema o l’indisponibilità del
@@ -82,7 +82,7 @@ SOAP è fuori dagli obiettivi di WSDL come Interface Definition Language.
 Esempio di specifica API REST per applicazione del throttling e
 segnalazione del sovraccarico o dell’indisponibilità:
 
-.. literalinclude:: file-bba2ec3fb16890ea6e8abe4949de0e7e3ba577d5aece9bee1c0bc1796742ad9a.yaml
+.. literalinclude:: media/RAC_ROBUSTEZZA_001_RAC_ROBUSTEZZA_002_example.yaml
    :language: yaml
 
 Di seguito, un esempio di chiamata alle API, con risposta nel caso in
@@ -149,7 +149,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    }
 
 [RAC_ROBUSTEZZA_003] Uniformità di Indicatori ed Obiettivi di Servizio
-----------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Gli SLI pubblicati DEVONO:
 

@@ -6,7 +6,6 @@ tecnologia REST, al fine di favorire l’interoperabilità.
 
 .. toctree::
   :maxdepth: 3
-  :caption: Indice dei contenuti
-
-  raccomandazioni-tecniche-per-rest/formato-dei-dati-1.rst
-  raccomandazioni-tecniche-per-rest/progettazione-e-naming-1.rst
+  
+  05_raccomandazioni-tecniche-per-rest/01_formato-dei-dati.rst
+  05_raccomandazioni-tecniche-per-rest/02_progettazione-e-naming.rst

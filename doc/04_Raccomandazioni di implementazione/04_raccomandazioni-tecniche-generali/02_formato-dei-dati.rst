@@ -1,15 +1,15 @@
-Formato dei dati
-================
+Roccomandazioni sul formato dei dati
+------------------------------------
 
 [RAC_GEN_FORMAT_001] Utilizzare Content-Type semanticamente coerenti
---------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Quando si ritornano dati binari, immagini o documenti (eg. pdf, png, …)
 si DEVONO utilizzare i rispettivi Content-Type.
 Nel protocollo HTTP, l’:httpheader:`Content-Type` indica il media-type di una risorsa.
 
 [RAC_GEN_FORMAT_002] Evitare Content-Type personalizzati
---------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Si DOVREBBE evitare l’uso di media-type personalizzati come da
 :rfc:`6838#section-3.4` (eg. application/x.custom.name+xml,
@@ -25,7 +25,7 @@ L'elenco dei media-type è reperibile sul `sito IANA <https://www.iana.org/assig
 
 
 [RAC_GEN_FORMAT_003] Formati standard per Data ed Ora
------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le date DEVONO essere conformi:
 
@@ -58,7 +58,7 @@ essere conformi:
 -  o alla sintassi HTTP-date definito in :rfc:`7231`, eg. "Sun, 06 Nov 1994 08:49:37 GMT".
 
 [RAC_GEN_FORMAT_004] Tempi di durata e intervalli
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I tempi di durata e gli intervalli DEVONO essere espresse in secondi o
 usare lo standard ISO 8601.
@@ -81,7 +81,7 @@ Esempi:
 -  P1Y2M10DT2H30M - 1 anno, 2 mesi, 10 giorni 2 ore e 30 minuti
 
 [RAC_GEN_FORMAT_005] Lingue e monete
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Si DEVONO utilizzare per le codifiche standard indicate nelle Linee
 Guida per la Valorizzazione del Patrimonio Informativo Nazionale [1]_,

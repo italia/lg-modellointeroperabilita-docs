@@ -1,19 +1,17 @@
-.. _progettazione-e-naming-1:
-
-Progettazione e Naming
-======================
+Raccomandazioni sulla progettazione e naming
+--------------------------------------------
 
 In assenza di specifiche regole per l’API Naming (es. HL7, INSPIRE, ..)
 DOVREBBERO essere adottate le seguenti regole.
 
 [RAC_REST_NAME_001] Uso corretto dei metodi HTTP
-------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I metodi HTTP DEVONO essere utilizzati rispettando la semantica indicata
 in :rfc:`7231#section-4.3`.
 
 [RAC_REST_NAME_002] Usare parole separate da trattino «-» per i path (kebab-case)
----------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Nella definizione dei path si DEVE utilizzare il separatore «-»
 (kebab-case).
@@ -23,7 +21,7 @@ Esempio: :code:`/​tax-code​/{tax_code_id}`
 Il path DOVREBBE essere semplice, intuitivo e coerente.
 
 [RAC_REST_NAME_003] Preferire Hyphenated-Pascal-Case per gli header HTTP
-------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 DOVREBBE preferirsi Hyphenated-Pascal-Case per gli header HTTP.
 
@@ -37,7 +35,7 @@ Esempio:
    Message-ID
 
 [RAC_REST_NAME_004] Le collezioni di risorse possono usare nomi al plurale
---------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Si consiglia di differenziare il nome delle collezioni e delle risorse.
 Questo permette di separare a livello di URI, endpoint che sono in larga
@@ -90,7 +88,7 @@ Response:
    }
 
 [RAC_REST_NAME_005] Utilizzare Query String standardizzate
-----------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Esempio 1: La paginazione DEVE essere implementata tramite i parametri:
 
@@ -106,7 +104,7 @@ essere implementata tramite i parametri:
    q, fields, embed
 
 [RAC_REST_NAME_005] Non usare l’header Link :rfc:`8288` se la response è in JSON
----------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Eventuali link a risorse utili al flusso applicativo DEVONO essere
 restituiti nel payload e non nell’ :httpheader:`Link` definito in :rfc:`8288`.
@@ -114,14 +112,14 @@ Questo semplifica l'implementazione dei client. È comunque possibile
 usare l':httpheader:`Link` per passare informazioni di tipo diverso.
 
 [RAC_REST_NAME_006] Usare URI assoluti nei risultati
-----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le response DOVREBBERO restituire URI assoluti, al fine di indicare
 chiaramente al client l’indirizzo delle risorse di destinazione e non
 obbligare i client a fare «inferenza» dal contesto.
 
 [RAC_REST_NAME_007] Usare lo schema Problem JSON per le risposte di errore
---------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In caso di errori si DEVONO ritornare:
 
@@ -151,7 +149,7 @@ Dopo aver validato il contenuto delle richieste si DEVE ritornare:
    processabile.
 
 [RAC_REST_NAME_008] Ottimizzare l’uso della banda e migliorare la responsività
-------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Si DOVREBBERO utilizzare:
 
@@ -261,7 +259,7 @@ Response:
    }
 
 [RAC_REST_NAME_009] Il caching http deve essere disabilitato
-------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Il caching DOVREBBE essere disabilitato tramite
 :httpheader:`Cache-Control` per evitare che delle richieste vengano inopportunamente
@@ -287,7 +285,7 @@ Si veda :rfc:`7232#section-2.3` per ulteriori informazioni su come
 implementare questi header.
 
 [RAC_REST_NAME_010] Esporre lo stato del servizio
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 L'API DEVE esporre lo stato del servizio al path \`/status\` e ritornare
 un oggetto con media-type application/problem+json (:rfc:`7807`).
