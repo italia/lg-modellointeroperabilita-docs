@@ -9,5 +9,5 @@ espresse dalle PA.
 .. toctree::
   :maxdepth: 2
 
-  04_profili/01_pro_conf_id_auth_01.rst
-  04_profili/02_non_repodiation_01.rst
+  04_profili/01_profile_conf_id_auth_01.rst
+  04_profili/02_profile_non_repudiation_01.rst

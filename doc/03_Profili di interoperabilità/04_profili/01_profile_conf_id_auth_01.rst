@@ -1,5 +1,5 @@
-[PRO_CONF_ID_AUTH_01] Profilo per confidenzialità ed autenticazione del fruitore
----------------------------------------------------------------------------------
+[PROFILE_CONF_ID_AUTH_01] Profilo per confidenzialità ed autenticazione del fruitore
+-------------------------------------------------------------------------------------
 
 Dare seguito ad uno scambio tra fruitore ed erogatore che garantisca:
 

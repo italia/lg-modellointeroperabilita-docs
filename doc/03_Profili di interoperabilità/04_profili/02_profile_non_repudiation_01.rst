@@ -1,5 +1,5 @@
-[PRO_NON_REPUDIATION_01] Profilo per la non ripudiabilità della trasmissione
------------------------------------------------------------------------------
+[PROFILE_NON_REPUDIATION_01] Profilo per la non ripudiabilità della trasmissione
+---------------------------------------------------------------------------------
 
 Dare seguito ad uno scambio tra fruitore ed erogatore che garantisca la
 non ripudiabilità assicurando a livello di messaggio:
