@@ -103,7 +103,7 @@ essere implementata tramite i parametri:
 
    q, fields, embed
 
-[RAC_REST_NAME_005] Non usare l’header Link :rfc:`8288` se la response è in JSON
+[RAC_REST_NAME_006] Non usare l’header Link :rfc:`8288` se la response è in JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Eventuali link a risorse utili al flusso applicativo DEVONO essere
@@ -111,14 +111,14 @@ restituiti nel payload e non nell’ :httpheader:`Link` definito in :rfc:`8288`.
 Questo semplifica l'implementazione dei client. È comunque possibile
 usare l':httpheader:`Link` per passare informazioni di tipo diverso.
 
-[RAC_REST_NAME_006] Usare URI assoluti nei risultati
+[RAC_REST_NAME_007] Usare URI assoluti nei risultati
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le response DOVREBBERO restituire URI assoluti, al fine di indicare
 chiaramente al client l’indirizzo delle risorse di destinazione e non
 obbligare i client a fare «inferenza» dal contesto.
 
-[RAC_REST_NAME_007] Usare lo schema Problem JSON per le risposte di errore
+[RAC_REST_NAME_008] Usare lo schema Problem JSON per le risposte di errore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In caso di errori si DEVONO ritornare:
@@ -148,7 +148,7 @@ Dopo aver validato il contenuto delle richieste si DEVE ritornare:
    nella richiesta è sintatticamente corretta ma semanticamente non
    processabile.
 
-[RAC_REST_NAME_008] Ottimizzare l’uso della banda e migliorare la responsività
+[RAC_REST_NAME_009] Ottimizzare l’uso della banda e migliorare la responsività
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Si DOVREBBERO utilizzare:
@@ -258,7 +258,7 @@ Response:
      }
    }
 
-[RAC_REST_NAME_009] Il caching http deve essere disabilitato
+[RAC_REST_NAME_010] Il caching http deve essere disabilitato
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Il caching DOVREBBE essere disabilitato tramite
@@ -284,7 +284,7 @@ univocamente alla versione della risorsa erogata.
 Si veda :rfc:`7232#section-2.3` per ulteriori informazioni su come
 implementare questi header.
 
-[RAC_REST_NAME_010] Esporre lo stato del servizio
+[RAC_REST_NAME_011] Esporre lo stato del servizio
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 L'API DEVE esporre lo stato del servizio al path \`/status\` e ritornare
