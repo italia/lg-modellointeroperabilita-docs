@@ -51,3 +51,6 @@ Si DOVREBBE utilizzare UTF-8 come codifica di default per i dati.
 
 Eventuali dati riservati o credenziali e token di autenticazione NON
 DEVONO essere passati nei query parameters o comunque nell’URL.
+
+.. [1]
+   Cfr. https://semver.org/
