@@ -52,7 +52,7 @@ dei suoi sistemi informatici con quelli dei fruitori.**
 Le Linee Guida contribuiscono alla definizione del Modello di Interoperabilità 
 della PA (in breve ModI) relativamente agli e-service provvedendo a:
 
--  definire le modalità di integrazione tra le PA, e tra queste cittadini 
+-  definire le modalità di integrazione tra le PA, e tra queste, cittadini 
    e imprese, armonizzando le scelte architetturali di interoperabilità 
    delle PA;
 
@@ -67,10 +67,10 @@ della PA (in breve ModI) relativamente agli e-service provvedendo a:
    accessibilità e massima interoperabilità di dati e servizi digitali;
 
 -  privilegiare standard tecnologici, de iure e de facto, che soddisfino 
-   l’esigenza di rendere sicure le interazioni tra le PA, e tra queste 
+   l’esigenza di rendere sicure le interazioni tra le PA, e tra queste, 
    cittadini e imprese;
 
--  favorire l’interazione tra PA, e tra queste cittadini e imprese, 
+-  favorire l’interazione tra PA, e tra queste, cittadini e imprese, 
    attraverso un approccio Contract-First.
 
 Il ModI è coerente con European Interoperability Framework (EIF) che 
