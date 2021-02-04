@@ -51,13 +51,3 @@ Si DOVREBBE utilizzare UTF-8 come codifica di default per i dati.
 
 Eventuali dati riservati o credenziali e token di autenticazione NON
 DEVONO essere passati nei query parameters o comunque nell’URL.
-
-.. toctree::
-  :maxdepth: 3
-  
-  04_raccomandazioni-tecniche-generali/01_formato-dei-dati.rst
-  04_raccomandazioni-tecniche-generali/02_progettazione-e-naming.rst
-  04_raccomandazioni-tecniche-generali/03_logging.rst
-
-.. [1]
-   Cfr. https://semver.org/
