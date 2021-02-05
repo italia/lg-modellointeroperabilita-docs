@@ -4,7 +4,7 @@ Ambito di applicazione
 Le Linee Guida sull’interoperabilità tecnica delle Pubbliche 
 Amministrazioni sono redatte in ottemperanza:
 
--  alla lettera a comma 2 dell’articolo 14-bis del Decreto Legislativo 
+-  alla lettera a comma 2 dell’articolo 14-bis del decreto legislativo 
    7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale, CAD), che 
    individua le funzioni dell'Agenzia per l'Italia Digitale (AgID) tra cui: "emanazione di Linee [...] 
    di indirizzo [...] sull'attuazione e sul rispetto delle norme di cui 
