@@ -52,3 +52,7 @@ ID_AUTH_CHANNEL_01 per garantire:
 
 L’erogatore da seguito a quanto previsto nel pattern ID_AUTH_SOAP_01 nel
 caso di utilizzo di SOAP o ID_AUTH_REST_01 nel caso di utilizzo di REST.
+
+.. forum_italia::
+   :topic_id: <21481>
+   :scope: document

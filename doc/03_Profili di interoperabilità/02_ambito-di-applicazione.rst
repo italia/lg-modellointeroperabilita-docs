@@ -17,3 +17,7 @@ soggetti.
 Il Documento Operativo è rivolto ai soggetti privati che devono
 interoperare interfacciarsi con la Pubblica Amministrazione per erogare
 o fruire di dati e servizi tramite sistemi informatici
+
+.. forum_italia::
+   :topic_id: <21478>
+   :scope: document

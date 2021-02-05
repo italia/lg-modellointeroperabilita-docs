@@ -253,3 +253,7 @@ conclusa, in quanto può presentarsi uno dei seguenti casi:
    il messaggio di risposta.
 
 In queste situazioni il fruitore riesegue il passo A.
+
+.. forum_italia::
+   :topic_id: <21482>
+   :scope: document
