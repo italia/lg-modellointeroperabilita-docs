@@ -24,7 +24,7 @@ Le Linee Guida assicurano l'aggiornamento rispetto alla:
 Le Linee Guida contribuiscono alla definizione del Modello di Interoperabilità 
 della PA (in breve ModI), focalizzandosi sulle tecnologie e le loro modalità 
 di utilizzo, per assicurare lo scambio di dati tra le PA, e tra queste 
-e i soggetti privati; in esse sono definenti i contesti di interazione 
+e i soggetti privati; in esse sono definiti i contesti di interazione 
 e integrazione tra le PA, i cittadini e le imprese.
 
 La definizione del ModI è coerente con il nuovo European Interoperability 
@@ -44,7 +44,7 @@ Le Linee Guida, e più in generale il ModI, completano il processo di
 aggiornamento del SPCoop avviato con la determinazione AgID 219/2017 
 - "Linee guida per transitare al nuovo modello di interoperabilità" [2]_.
 
-**Le Linee Guida consideramo i soli servizi digitali (di seguito e-service) 
+**Le Linee Guida considerano i soli servizi digitali (di seguito e-service) 
 realizzati da una Pubblica Amministrazione per assicurare l’accesso ai 
 propri dati e/o l’integrazione dei propri processi attraverso l'interazione 
 dei suoi sistemi informatici con quelli dei fruitori.**
@@ -52,7 +52,7 @@ dei suoi sistemi informatici con quelli dei fruitori.**
 Le Linee Guida contribuiscono alla definizione del Modello di Interoperabilità 
 della PA (in breve ModI) relativamente agli e-service provvedendo a:
 
--  definire le modalità di integrazione tra le PA, e tra queste cittadini 
+-  definire le modalità di integrazione tra le PA, e tra queste, cittadini 
    e imprese, armonizzando le scelte architetturali di interoperabilità 
    delle PA;
 
@@ -67,10 +67,10 @@ della PA (in breve ModI) relativamente agli e-service provvedendo a:
    accessibilità e massima interoperabilità di dati e servizi digitali;
 
 -  privilegiare standard tecnologici, de iure e de facto, che soddisfino 
-   l’esigenza di rendere sicure le interazioni tra le PA, e tra queste 
+   l’esigenza di rendere sicure le interazioni tra le PA, e tra queste, 
    cittadini e imprese;
 
--  favorire l’interazione tra PA, e tra queste cittadini e imprese, 
+-  favorire l’interazione tra PA, e tra queste, cittadini e imprese, 
    attraverso un approccio Contract-First.
 
 Il ModI è coerente con European Interoperability Framework (EIF) che 
