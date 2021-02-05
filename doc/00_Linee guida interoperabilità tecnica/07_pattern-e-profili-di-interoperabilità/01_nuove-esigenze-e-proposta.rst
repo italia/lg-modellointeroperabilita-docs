@@ -29,3 +29,7 @@ di concertazione e adozione, se AgID non rileva problemi in merito
 all’utilizzo del *pattern di interoperabilità* o *profili di
 interoperabilità* proposto, il richiedente NON DEVE uniformare quanto
 implementato.
+
+.. forum_italia::
+   :topic_id: <21444>
+   :scope: document

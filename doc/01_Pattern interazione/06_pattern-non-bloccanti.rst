@@ -56,3 +56,7 @@ espresse dalle PA.
 
   06_pattern-non-bloccanti/01_nonblock_push.rst
   06_pattern-non-bloccanti/02_nonblock_pull.rst
+
+.. forum_italia::
+   :topic_id: <21454>
+   :scope: document

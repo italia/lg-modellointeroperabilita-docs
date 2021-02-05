@@ -178,3 +178,7 @@ Si rimanda ai seguenti paragrafi per dettagli.
 .. |image0| image:: ./media/image2.png
    :width: 4.33333in
    :height: 6.83333in
+
+.. forum_italia::
+   :topic_id: <21437>
+   :scope: document

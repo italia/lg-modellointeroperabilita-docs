@@ -17,3 +17,7 @@ interoperabilità* o *profili di interoperabilità* che faranno parte
 integrante del ModI attraverso le Circolari emanate dall’AgID per
 l’aggiornamento dei Documenti Operativi: Pattern di integrazione,
 Pattern di sicurezza e Profili di interoperabilità.
+
+.. forum_italia::
+   :topic_id: <21445>
+   :scope: document

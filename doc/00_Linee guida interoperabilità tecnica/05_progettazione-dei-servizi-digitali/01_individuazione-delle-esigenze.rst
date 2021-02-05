@@ -32,3 +32,7 @@ Amministrazioni POSSONO seguire per ottemperare a quanto richiesto.
      - DDeterminare tra le informazioni di input quelle già a disposizione 
        di altre organizzazioni, quali fonti autoritative da coinvolgere, 
        in attuazione del principio del once-only.
+
+.. forum_italia::
+   :topic_id: <21438>
+   :scope: document

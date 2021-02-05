@@ -68,3 +68,6 @@ Method M
 .. literalinclude:: BLOCK_SOAP_example_response500.xml
    :language: xml
 
+.. forum_italia::
+   :topic_id: <21453>
+   :scope: document

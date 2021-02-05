@@ -133,3 +133,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
        "status": 404,
        "title": "Risorsa non trovata."
    }
+
+.. forum_italia::
+   :topic_id: <21452>
+   :scope: document
