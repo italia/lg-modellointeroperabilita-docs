@@ -13,7 +13,7 @@ rispettata le seguente regola:
    SOAP richiesti.
 
 Regole di processamento
-------------------------------------------------------------
+-----------------------
 
 Nel caso di errore il WS-I Basic Profile Version 2.0 richiede l’utilizzo
 del meccanismo della SOAP fault per descrivere i dettagli dell’errore.
@@ -36,7 +36,7 @@ Al ricevimento della richiesta da parte del fruitore, l’erogatore:
    di risposta con il risultato dell’operazione.
 
 Esempio
-------------------------------------------------------------
+-------
 
 Specifica Servizio
 

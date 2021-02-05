@@ -1,5 +1,3 @@
-.. _id_auth_rest_01:
-
 [ID_AUTH_REST_01] Direct Trust con certificato X.509 su REST
 ============================================================
 
@@ -47,8 +45,6 @@ relativa risposta.
       deactivate Fruitore
 
 *Figura 5 - Accesso del Fruitore*
-
-.. _regole-di-processamento-4:
 
 Regole di processamento
 -----------------------
@@ -181,3 +177,6 @@ Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato al capitolo 7 Elementi di sicurezza
 nonché la modalità di inclusione o referenziazione del certificato X.509
 
+.. forum_italia::
+   :topic_id: <21471>
+   :scope: document

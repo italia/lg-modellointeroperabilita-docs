@@ -11,3 +11,7 @@ espresse dalle PA.
 
   04_sicurezza-di-canale/01_id_auth_channel_01.rst
   04_sicurezza-di-canale/02_id_auth_channel_02.rst
+
+.. forum_italia::
+   :topic_id: <21465>
+   :scope: document

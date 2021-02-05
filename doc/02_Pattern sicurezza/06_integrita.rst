@@ -13,3 +13,7 @@ espresse dalle PA.
 
   06_integrita/01_integrity_soap.rst
   06_integrita/02_integrity_rest.rst
+
+.. forum_italia::
+   :topic_id: <21473>
+   :scope: document

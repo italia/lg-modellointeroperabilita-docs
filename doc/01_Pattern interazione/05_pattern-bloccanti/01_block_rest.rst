@@ -19,7 +19,7 @@ seguite almeno le seguenti indicazioni:
    non si verifichino errori.
 
 Regole di processamento
-------------------------------------------------------------
+-----------------------
 
 Al termine del processamento della richiesta, l’erogatore DEVE fare uso
 dei codici di stato HTTP rispettando la semantica. In particolare, al

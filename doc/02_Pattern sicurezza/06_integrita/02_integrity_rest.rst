@@ -1,5 +1,3 @@
-.. _integrity_rest_01:
-
 [INTEGRITY_REST_01] Integrità del payload messaggio REST
 ========================================================
 
@@ -15,8 +13,6 @@ richieste e risposte complete, con i metodi standard definiti in RFC
 
 Questo scenario non copre quindi Range Requests :rfc:`7233` o HTTP method
 PATCH che trasmette una rappresentazione parziale.
-
-.. _descrizione-7:
 
 Descrizione
 -----------
@@ -52,8 +48,6 @@ profilo.
 
 
 *Figura 8 - Integrità del payload del messaggio*
-
-.. _regole-di-processamento-7:
 
 Regole di processamento
 -----------------------
@@ -222,4 +216,6 @@ algoritmi secondo quanto indicato al capitolo 7 Elementi di sicurezza
 nonché la modalità di inclusione o referenziazione del certificato
 X.509.
 
-
+.. forum_italia::
+   :topic_id: <21475>
+   :scope: document

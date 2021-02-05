@@ -95,3 +95,7 @@ Si rimanda alle Linee Guida sulla sicurezza, emanate dall'Agenzia per
 l'Italia Digitale ai sensi dell'articolo 71 del decreto legislativo del 
 7 marzo 2005, n. 82, in merito agli algoritmi utilizzabili per la corretta 
 implementazione dei pattern di sicurezza.
+
+.. forum_italia::
+   :topic_id: <21462>
+   :scope: document

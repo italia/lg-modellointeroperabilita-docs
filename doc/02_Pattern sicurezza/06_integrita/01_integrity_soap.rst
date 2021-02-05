@@ -1,5 +1,3 @@
-.. _integrity_soap_01:
-
 [INTEGRITY_SOAP_01] Integrità del payload del messaggio SOAP
 ==============================================================
 
@@ -43,8 +41,6 @@ la relativa risposta.
    deactivate Fruitore
 
 *Figura 7 - Integrità del payload del messaggio*
-
-.. _regole-di-processamento-6:
 
 Regole di processamento
 -----------------------
@@ -130,3 +126,7 @@ Le parti, in base alle proprie esigenze, individuano gli specifici
 algoritmi secondo quanto indicato al capitolo 7 Elementi di sicurezza
 nonché la modalità di inclusione o referenziazione del certificato
 X.509.
+
+.. forum_italia::
+   :topic_id: <21474>
+   :scope: document
