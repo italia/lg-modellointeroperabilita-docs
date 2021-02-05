@@ -1,4 +1,4 @@
-Roccomandazioni sulla progettazione e Naming
+Roccomandazioni sulla progettazione e naming
 --------------------------------------------
 
 [RAC_GEN_NAME_001] Utilizzare i nomi delle proprietà secondo nomenclature standard
@@ -102,3 +102,7 @@ Esempio in un’architettura orientata alle risorse:
 
 .. [2]
    Cfr. https://github.com/italia/daf-ontologie-vocabolari-controllati
+
+.. forum_italia::
+   :topic_id: <21489>
+   :scope: document

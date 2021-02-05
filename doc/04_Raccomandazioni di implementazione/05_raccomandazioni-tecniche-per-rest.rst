@@ -9,3 +9,7 @@ tecnologia REST, al fine di favorire l’interoperabilità.
   
   05_raccomandazioni-tecniche-per-rest/01_formato-dei-dati.rst
   05_raccomandazioni-tecniche-per-rest/02_progettazione-e-naming.rst
+
+.. forum_italia::
+   :topic_id: <21492>
+   :scope: document

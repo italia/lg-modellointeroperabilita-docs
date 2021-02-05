@@ -129,3 +129,7 @@ Esempio:
 .. [1]
    Cfr.
    https://docs.italia.it/italia/daf/lg-patrimonio-pubblico/it/bozza/index.html
+
+.. forum_italia::
+   :topic_id: <21488>
+   :scope: document

@@ -297,3 +297,7 @@ ESEMPIO: Esposizione stato del servizio
 
 .. literalinclude:: file-470c9c7d9f2d0c6947f8fe7dd6e4410f6fd1c951043908bf504dd15c7d8a2868.yaml
    :language: yaml
+
+.. forum_italia::
+   :topic_id: <21494>
+   :scope: document

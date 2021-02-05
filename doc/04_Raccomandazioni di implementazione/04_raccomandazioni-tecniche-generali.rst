@@ -12,3 +12,7 @@ erogatori considerano nell’implementazione delle proprie API.
   04_raccomandazioni-tecniche-generali/03_progettazione-e-naming.rst
   04_raccomandazioni-tecniche-generali/04_logging.rst
   04_raccomandazioni-tecniche-generali/05_robustezza.rst
+
+.. forum_italia::
+   :topic_id: <21486>
+   :scope: document
