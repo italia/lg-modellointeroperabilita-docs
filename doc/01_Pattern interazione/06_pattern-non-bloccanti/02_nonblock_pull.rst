@@ -83,3 +83,7 @@ al risultato del processamento
 
   02_nonblock_pull/01_nonblock_pull_rest.rst
   02_nonblock_pull/02_nonblock_pull_soap.rst
+
+.. forum_italia::
+   :topic_id: 21458
+   :scope: document

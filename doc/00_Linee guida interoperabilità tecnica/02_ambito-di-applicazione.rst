@@ -14,9 +14,9 @@ Amministrazioni sono redatte in ottemperanza:
    europea";
 
 - alla lettera b comma 3-ter dell'articolo 73 del DECRETO LEGISLATIVO 
-   7 marzo 2005, n. 82 (Codice dell'amministrazione digitale), in cui 
-   è indicaco che il Sistema pubblico di connettività è costituito da 
-   "linee guida e regole per la cooperazione e l'interoperabilita".
+  7 marzo 2005, n. 82 (Codice dell'amministrazione digitale), in cui 
+  è indicato che il Sistema pubblico di connettività è costituito da 
+  "linee guida e regole per la cooperazione e l'interoperabilità".
 
 Le Linee Guida sono emanata ai sensi dell'articolo 71 del DECRETO 
 LEGISLATIVO 7 marzo 2005, n. 82 (Codice dell'amministrazione digitale).
@@ -44,3 +44,7 @@ convergenza al ModI, si richiede di:
 Le Linee Guida sono rivolte ai soggetti privati che devono
 interoperare con la Pubblica Amministrazione per fruire di dati e/o
 servizi tramite sistemi informatici.
+
+.. forum_italia::
+   :topic_id: 21430
+   :scope: document

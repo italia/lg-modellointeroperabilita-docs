@@ -26,3 +26,7 @@ ricoperte nei seguenti profili DEVE informare l'Agenzia per l'Italia
 Digitale, nei modi indicati nel capitolo 7 Pattern e profili di 
 interoperabilità delle Linee Guida sull’interoperabilità 
 tecnica delle Pubbliche Amministrazioni.
+
+.. forum_italia::
+   :topic_id: 21447
+   :scope: document

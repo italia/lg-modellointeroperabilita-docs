@@ -86,3 +86,7 @@ servizio*
 .. |image0| image:: ../media/image3.png
    :width: 4.125in
    :height: 4.19444in
+
+.. forum_italia::
+   :topic_id: 21441
+   :scope: document

@@ -158,3 +158,7 @@ https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
    Content-Type: application/json
 
    {"result": "ACK"}
+
+.. forum_italia::
+   :topic_id: 21456
+   :scope: document

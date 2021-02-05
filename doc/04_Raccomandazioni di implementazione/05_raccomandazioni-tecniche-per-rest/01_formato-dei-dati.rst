@@ -69,27 +69,34 @@ parametro format.
 
 La seguente tabella - non esaustiva - elenca un set minimo di formati.
 
-+-----------------------+-----------------------+-----------------------+
-| **TYPE**              | **FORMAT**            | **VALORI AMMESSI**    |
-+-----------------------+-----------------------+-----------------------+
-| integer               | int32                 | interi tra -2^31 e    |
-|                       |                       | 2^31-1                |
-+-----------------------+-----------------------+-----------------------+
-| integer               | int64                 | interi tra -2^63 e    |
-|                       |                       | 2^63-1                |
-+-----------------------+-----------------------+-----------------------+
-| number                | decimal32 / float     | IEEE 754-2008/ISO     |
-|                       |                       | 60559:2011 decimale a |
-|                       |                       | 32 bit                |
-+-----------------------+-----------------------+-----------------------+
-| number                | decimal64 / double    | IEEE 754-2008/ISO     |
-|                       |                       | 60559:2011 decimale a |
-|                       |                       | 64 bit                |
-+-----------------------+-----------------------+-----------------------+
-| number                | decimal128            | IEEE 754-2008/ISO     |
-|                       |                       | 60559:2011 decimale a |
-|                       |                       | 128 bit               |
-+-----------------------+-----------------------+-----------------------+
+.. list-table:: Set minimo dei formati
+   :widths: 15 20 20  
+   :header-rows: 1
+
+   * -    TYPE
+     -    FORMAT
+     -    VALORI AMMESSI
+
+   * -    integer
+     -    int32
+     -    interi tra -2^31 e 2^31-1
+
+   * -    integer
+     -    int64
+     -    interi tra -2^63 e 2^63-1
+
+   * -    number
+     -    decimal32 / float 
+     -    IEEE 754-2008/IS 60559:2011 decimale a 32 bit 
+
+   * -    number
+     -    decimal64 / double 
+     -    IEEE 754-2008/IS 60559:2011 decimale a 64 bit
+
+   * -    number
+     -    decimal128
+     -    IEEE 754-2008/IS 60559:2011 decimale a 128 bit 
+
 
 Le implementazioni DEVONO utilizzare il tipo più adatto.
 
@@ -103,3 +110,7 @@ esterne.
 .. [1]
    Cfr.
    https://www.iana.org/assignments/link-relations/link-relations.xhtml
+
+.. forum_italia::
+   :topic_id: 21493
+   :scope: document

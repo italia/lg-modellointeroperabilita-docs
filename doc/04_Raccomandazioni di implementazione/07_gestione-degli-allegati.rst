@@ -61,3 +61,7 @@ scenario applicativo. Le seguenti regole possono essere introdotte:
    (in termini temporali) e che questa non venga modificata (a tal fine
    è possibile utilizzare tecniche ad esempio di hashing). Quest’ultimo
    caso richiede quindi solitamente trust tra fruitore ed erogatore.
+
+.. forum_italia::
+   :topic_id: 21497
+   :scope: document

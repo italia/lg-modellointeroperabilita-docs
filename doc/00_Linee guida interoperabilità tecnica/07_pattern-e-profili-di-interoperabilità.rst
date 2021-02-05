@@ -1,5 +1,3 @@
-.. _pattern-e-profili-di-interoperabilità-1:
-
 Pattern e profili di interoperabilità
 =====================================
 
@@ -16,7 +14,7 @@ un fruitore e un erogatore realizzano l’interoperabilità dei propri
 sistemi informatici, e nel dettaglio:
 
 -  i *pattern di interoperabilità*, che risolvono singoli requisiti che
-   la PA deve soddisfare, sono;
+   la PA deve soddisfare, sono:
 
    -  pattern di interazione descrivono il modello di comunicazione tra
       fruitore ed erogatore;
@@ -101,3 +99,7 @@ Si rimanda ai seguenti paragragi per dettagli.
 .. |image0| image:: ./media/image4.png
    :width: 6.15887in
    :height: 1.66414in
+
+.. forum_italia::
+   :topic_id: 21443
+   :scope: document

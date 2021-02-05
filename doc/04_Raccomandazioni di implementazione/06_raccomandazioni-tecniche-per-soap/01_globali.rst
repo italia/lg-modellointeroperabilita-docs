@@ -1,4 +1,3 @@
-
 Raccomandazioni globali
 -----------------------
 
@@ -32,3 +31,7 @@ ESEMPIO: Esposizione stato del servizio
 
 .. literalinclude:: media/RAC_SOAP_002_example.xml
    :language: xml
+
+.. forum_italia::
+   :topic_id: 21496
+   :scope: document

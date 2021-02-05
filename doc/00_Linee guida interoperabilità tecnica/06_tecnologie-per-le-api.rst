@@ -130,3 +130,7 @@ tecnologie per l’implementazione delle API. La scelta della tecnologia
 da utilizzare è lasciata alle Pubbliche Amministrazioni che
 costituiscono un dominio di interoperabilità sulla base delle specifiche
 esigenze.**
+
+.. forum_italia::
+   :topic_id: 21442
+   :scope: document

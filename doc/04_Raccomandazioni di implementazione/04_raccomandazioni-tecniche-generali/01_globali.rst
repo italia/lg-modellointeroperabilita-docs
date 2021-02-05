@@ -54,3 +54,7 @@ DEVONO essere passati nei query parameters o comunque nell’URL.
 
 .. [1]
    Cfr. https://semver.org/
+
+.. forum_italia::
+   :topic_id: 21487
+   :scope: document

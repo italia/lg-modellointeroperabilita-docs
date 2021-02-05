@@ -122,3 +122,7 @@ MRequestResponse
 
 .. literalinclude:: NONBLOCK_PUSH_SOAP_example_response_from_fruitore.xml
    :language: xml
+
+.. forum_italia::
+   :topic_id: 21457
+   :scope: document

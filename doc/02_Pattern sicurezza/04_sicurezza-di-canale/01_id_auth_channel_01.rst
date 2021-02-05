@@ -69,3 +69,7 @@ L’impiego del protocollo TLS, mitiga il rischio di:
 -  Replay Attack;
 
 -  Spoofing.
+
+.. forum_italia::
+   :topic_id: 21466
+   :scope: document

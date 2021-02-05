@@ -73,3 +73,7 @@ Termini e definizioni
      
    * -    [REST]
      -    Representational State Transfer
+
+.. forum_italia::
+   :topic_id: 21464
+   :scope: document

@@ -130,3 +130,7 @@ Method MResponse
 
 .. literalinclude:: NONBLOCK_PUSH_PULL_example_response_result.xml
    :language: xml
+
+.. forum_italia::
+   :topic_id: 21460
+   :scope: document

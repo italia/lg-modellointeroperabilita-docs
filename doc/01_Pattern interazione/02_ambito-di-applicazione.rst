@@ -2,7 +2,7 @@ Ambito di applicazione
 ======================
 
 Il presente Documento operativo, allegato delle Linee Guida 
-sull’interoperabilità tecnica delle Pubbliche Amministrazioni, definisce 
+sull’interoperabilità tecnica delle Pubbliche Amministrazioni, riporta 
 i pattern di interazione definiti nel ModI.
 
 Soggetti destinatari
@@ -17,3 +17,8 @@ soggetti.
 Il Documento Operativo è rivolto ai soggetti privati che devono
 interoperare interfacciarsi con la Pubblica Amministrazione per erogare
 o fruire di dati e servizi tramite sistemi informatici.
+
+.. forum_italia::
+   :topic_id: 21448
+   :scope: document
+

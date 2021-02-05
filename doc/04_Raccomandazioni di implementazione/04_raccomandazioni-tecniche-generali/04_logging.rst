@@ -29,3 +29,7 @@ I log file DEVONO contenere:
 
 -  ove applicabile, un identificativo univoco della richiesta, utile a
    eventuali correlazioni.
+
+.. forum_italia::
+   :topic_id: 21490
+   :scope: document

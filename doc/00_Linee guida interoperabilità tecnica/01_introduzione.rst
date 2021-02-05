@@ -119,3 +119,7 @@ Template for eDelivery [8]_).
 
 .. [8]
    Cf. https://joinup.ec.europa.eu/solution/sat-edelivery
+
+.. forum_italia::
+   :topic_id: 21428
+   :scope: document

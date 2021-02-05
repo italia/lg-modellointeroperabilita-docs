@@ -10,3 +10,7 @@ fruitore ed erogatore.
 I profili di interoperabilità sono scelti dall'erogatore in funzione
 alle specifiche esigenze applicative ed in relazione alla natura dei
 fruitori.
+
+.. forum_italia::
+   :topic_id: 21477
+   :scope: document

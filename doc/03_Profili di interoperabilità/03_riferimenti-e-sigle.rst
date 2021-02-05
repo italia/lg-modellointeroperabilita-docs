@@ -50,3 +50,7 @@ Termini e definizioni
      
    * -    [REST]
      -    Representational State Transfer
+
+.. forum_italia::
+   :topic_id: 21479
+   :scope: document

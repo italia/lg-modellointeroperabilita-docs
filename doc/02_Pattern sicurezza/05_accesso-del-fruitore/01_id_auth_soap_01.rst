@@ -1,5 +1,3 @@
-.. _id_auth_soap_01:
-
 [ID_AUTH_SOAP_01] Direct Trust con certificato X.509 su SOAP
 ============================================================
 
@@ -43,8 +41,6 @@ relativa risposta.
     deactivate Fruitore
 
 *Figura 3 - Accesso del Fruitore*
-
-.. _regole-di-processamento-2:
 
 Regole di processamento
 -----------------------
@@ -141,3 +137,7 @@ esemplificative:
 Le parti, in base alle proprie esigenze, usano gli algoritmi indicati al
 capitolo 7 Elementi di sicurezza, nonché la modalità di inclusione o
 referenziazione del certificato X.509.
+
+.. forum_italia::
+   :topic_id: 21469
+   :scope: document
