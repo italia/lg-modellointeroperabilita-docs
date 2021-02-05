@@ -33,7 +33,7 @@ Obiettivo della consultazione
 
 Le Linee Guida sull'interoperabilità tecnica delle Pubbliche 
 Amministrazioni sono redatte per l’attuazione del decreto legislativo
-7 marzo 2005, n. 82 (Codice dell'amministrazione digitale)
+7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale)
 ai sensi dell’`articolo 14-bis <https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82!vig=2021-01-26~art14bis>`__ 
 e dell’`articolo 73 <https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82!vig=2021-01-26~art73>`__ 
 dello stesso Codice.
