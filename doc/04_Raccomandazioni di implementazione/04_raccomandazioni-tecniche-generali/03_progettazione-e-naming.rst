@@ -104,5 +104,5 @@ Esempio in un’architettura orientata alle risorse:
    Cfr. https://github.com/italia/daf-ontologie-vocabolari-controllati
 
 .. forum_italia::
-   :topic_id: <21489>
+   :topic_id: 21489
    :scope: document

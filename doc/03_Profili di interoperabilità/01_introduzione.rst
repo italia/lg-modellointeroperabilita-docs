@@ -12,5 +12,5 @@ alle specifiche esigenze applicative ed in relazione alla natura dei
 fruitori.
 
 .. forum_italia::
-   :topic_id: <21477>
+   :topic_id: 21477
    :scope: document

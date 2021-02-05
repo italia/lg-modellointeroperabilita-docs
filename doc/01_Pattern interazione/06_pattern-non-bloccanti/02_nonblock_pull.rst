@@ -85,5 +85,5 @@ al risultato del processamento
   02_nonblock_pull/02_nonblock_pull_soap.rst
 
 .. forum_italia::
-   :topic_id: <21458>
+   :topic_id: 21458
    :scope: document

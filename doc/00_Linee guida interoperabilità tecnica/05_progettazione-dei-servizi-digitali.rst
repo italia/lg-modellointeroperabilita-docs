@@ -180,5 +180,5 @@ Si rimanda ai seguenti paragrafi per dettagli.
    :height: 6.83333in
 
 .. forum_italia::
-   :topic_id: <21437>
+   :topic_id: 21437
    :scope: document

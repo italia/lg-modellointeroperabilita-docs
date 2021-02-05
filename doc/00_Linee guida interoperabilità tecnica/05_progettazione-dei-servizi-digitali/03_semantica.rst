@@ -64,5 +64,5 @@ definire/aggiornare delle entità e/o proprietà a livello nazionale.
    Cf. https://github.com/italia/daf-ontologie-vocabolari-controllati
 
 .. forum_italia::
-   :topic_id: <21440>
+   :topic_id: 21440
    :scope: document

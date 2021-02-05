@@ -139,5 +139,5 @@ capitolo 7 Elementi di sicurezza, nonché la modalità di inclusione o
 referenziazione del certificato X.509.
 
 .. forum_italia::
-   :topic_id: <21469>
+   :topic_id: 21469
    :scope: document

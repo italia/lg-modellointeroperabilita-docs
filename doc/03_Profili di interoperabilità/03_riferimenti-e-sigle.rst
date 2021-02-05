@@ -52,5 +52,5 @@ Termini e definizioni
      -    Representational State Transfer
 
 .. forum_italia::
-   :topic_id: <21479>
+   :topic_id: 21479
    :scope: document

@@ -88,5 +88,5 @@ servizio*
    :height: 4.19444in
 
 .. forum_italia::
-   :topic_id: <21441>
+   :topic_id: 21441
    :scope: document

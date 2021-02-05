@@ -128,5 +128,5 @@ nonché la modalità di inclusione o referenziazione del certificato
 X.509.
 
 .. forum_italia::
-   :topic_id: <21474>
+   :topic_id: 21474
    :scope: document

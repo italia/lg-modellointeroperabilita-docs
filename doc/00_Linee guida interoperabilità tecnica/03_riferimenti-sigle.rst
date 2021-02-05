@@ -187,5 +187,5 @@ Termini e definizioni
      -    XML-Remote Procedure Call
 
 .. forum_italia::
-   :topic_id: <21431>
+   :topic_id: 21431
    :scope: document

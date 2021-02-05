@@ -71,5 +71,5 @@ L’impiego del protocollo TLS, mitiga il rischio di:
 -  Spoofing.
 
 .. forum_italia::
-   :topic_id: <21466>
+   :topic_id: 21466
    :scope: document

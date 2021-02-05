@@ -15,5 +15,5 @@ espresse dalle PA.
   05_accesso-del-fruitore/04_id_auth_rest_02.rst
 
 .. forum_italia::
-   :topic_id: <21468>
+   :topic_id: 21468
    :scope: document

@@ -31,5 +31,5 @@ interoperabilità* proposto, il richiedente NON DEVE uniformare quanto
 implementato.
 
 .. forum_italia::
-   :topic_id: <21444>
+   :topic_id: 21444
    :scope: document

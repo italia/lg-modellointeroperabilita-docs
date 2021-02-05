@@ -14,5 +14,5 @@ erogatori considerano nell’implementazione delle proprie API.
   04_raccomandazioni-tecniche-generali/05_robustezza.rst
 
 .. forum_italia::
-   :topic_id: <21486>
+   :topic_id: 21486
    :scope: document

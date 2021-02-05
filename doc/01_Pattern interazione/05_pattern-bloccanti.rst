@@ -57,5 +57,5 @@ espresse dalle PA.
   05_pattern-bloccanti/02_block_soap.rst
 
 .. forum_italia::
-   :topic_id: <21451>
+   :topic_id: 21451
    :scope: document

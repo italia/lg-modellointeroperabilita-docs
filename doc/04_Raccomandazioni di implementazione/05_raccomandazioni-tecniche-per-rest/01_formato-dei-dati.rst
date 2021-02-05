@@ -112,5 +112,5 @@ esterne.
    https://www.iana.org/assignments/link-relations/link-relations.xhtml
 
 .. forum_italia::
-   :topic_id: <21493>
+   :topic_id: 21493
    :scope: document

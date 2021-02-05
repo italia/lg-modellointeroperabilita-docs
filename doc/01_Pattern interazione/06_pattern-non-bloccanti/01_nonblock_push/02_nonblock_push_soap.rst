@@ -124,5 +124,5 @@ MRequestResponse
    :language: xml
 
 .. forum_italia::
-   :topic_id: <21457>
+   :topic_id: 21457
    :scope: document

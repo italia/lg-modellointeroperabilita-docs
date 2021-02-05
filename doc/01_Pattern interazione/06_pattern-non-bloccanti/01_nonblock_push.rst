@@ -40,5 +40,5 @@ riportando l’esito ed indicando il CorrelationID. Il fruitore riconosce
   01_nonblock_push/02_nonblock_push_soap.rst
 
 .. forum_italia::
-   :topic_id: <21455>
+   :topic_id: 21455
    :scope: document

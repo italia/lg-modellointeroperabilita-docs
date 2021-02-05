@@ -160,5 +160,5 @@ https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
    {"result": "ACK"}
 
 .. forum_italia::
-   :topic_id: <21456>
+   :topic_id: 21456
    :scope: document

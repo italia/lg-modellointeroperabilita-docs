@@ -93,5 +93,5 @@ scopo.
    :height: 2.47571in
 
 .. forum_italia::
-   :topic_id: <21446>
+   :topic_id: 21446
    :scope: document

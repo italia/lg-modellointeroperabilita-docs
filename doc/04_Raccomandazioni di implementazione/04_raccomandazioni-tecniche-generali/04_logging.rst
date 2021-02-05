@@ -31,5 +31,5 @@ I log file DEVONO contenere:
    eventuali correlazioni.
 
 .. forum_italia::
-   :topic_id: <21490>
+   :topic_id: 21490
    :scope: document

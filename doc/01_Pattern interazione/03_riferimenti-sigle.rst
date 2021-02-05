@@ -101,5 +101,5 @@ Termini e definizioni
      -    Representational State Transfer
 
 .. forum_italia::
-   :topic_id: <21449>
+   :topic_id: 21449
    :scope: document

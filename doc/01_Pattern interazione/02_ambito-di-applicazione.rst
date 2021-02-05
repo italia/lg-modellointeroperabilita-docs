@@ -19,6 +19,6 @@ interoperare interfacciarsi con la Pubblica Amministrazione per erogare
 o fruire di dati e servizi tramite sistemi informatici.
 
 .. forum_italia::
-   :topic_id: <21448>
+   :topic_id: 21448
    :scope: document
 

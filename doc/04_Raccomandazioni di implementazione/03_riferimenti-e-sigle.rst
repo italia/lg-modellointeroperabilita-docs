@@ -125,5 +125,5 @@ Termini e definizioni
      -    Web service Basic Profile versione 2
 
 .. forum_italia::
-   :topic_id: <21485>
+   :topic_id: 21485
    :scope: document

@@ -33,5 +33,5 @@ ESEMPIO: Esposizione stato del servizio
    :language: xml
 
 .. forum_italia::
-   :topic_id: <21496>
+   :topic_id: 21496
    :scope: document

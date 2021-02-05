@@ -71,5 +71,5 @@ l’utilizzo di CorrelationID oppure tramite il confronto dati basato su
 dati che fungono da chiave.
 
 .. forum_italia::
-   :topic_id: <21450>
+   :topic_id: 21450
    :scope: document

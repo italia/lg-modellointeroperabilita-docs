@@ -132,5 +132,5 @@ costituiscono un dominio di interoperabilità sulla base delle specifiche
 esigenze.**
 
 .. forum_italia::
-   :topic_id: <21442>
+   :topic_id: 21442
    :scope: document

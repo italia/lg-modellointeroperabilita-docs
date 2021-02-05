@@ -15,5 +15,5 @@ espresse dalle PA.
   06_integrita/02_integrity_rest.rst
 
 .. forum_italia::
-   :topic_id: <21473>
+   :topic_id: 21473
    :scope: document

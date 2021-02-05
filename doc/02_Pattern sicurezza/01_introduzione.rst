@@ -97,5 +97,5 @@ l'Italia Digitale ai sensi dell'articolo 71 del decreto legislativo del
 implementazione dei pattern di sicurezza.
 
 .. forum_italia::
-   :topic_id: <21462>
+   :topic_id: 21462
    :scope: document

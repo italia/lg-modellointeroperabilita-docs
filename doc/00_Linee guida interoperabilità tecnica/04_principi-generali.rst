@@ -380,5 +380,5 @@ L’Agenzia per l’Italia Digitale ha il ruolo di:
    Cf. https://en.wikipedia.org/wiki/Messaging_pattern
 
 .. forum_italia::
-   :topic_id: <21436>
+   :topic_id: 21436
    :scope: document

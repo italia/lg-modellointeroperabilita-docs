@@ -28,5 +28,5 @@ interoperabilità delle Linee Guida sull’interoperabilità
 tecnica delle Pubbliche Amministrazioni.
 
 .. forum_italia::
-   :topic_id: <21447>
+   :topic_id: 21447
    :scope: document

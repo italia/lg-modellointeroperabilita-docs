@@ -101,5 +101,5 @@ Si rimanda ai seguenti paragragi per dettagli.
    :height: 1.66414in
 
 .. forum_italia::
-   :topic_id: <21443>
+   :topic_id: 21443
    :scope: document

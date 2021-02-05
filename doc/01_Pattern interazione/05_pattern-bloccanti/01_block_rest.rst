@@ -135,5 +135,5 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
    }
 
 .. forum_italia::
-   :topic_id: <21452>
+   :topic_id: 21452
    :scope: document

@@ -34,5 +34,5 @@ Amministrazioni POSSONO seguire per ottemperare a quanto richiesto.
        in attuazione del principio del once-only.
 
 .. forum_italia::
-   :topic_id: <21438>
+   :topic_id: 21438
    :scope: document

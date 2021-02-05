@@ -10,5 +10,5 @@ SOAP, al fine di favorire l’interoperabilità.
   06_raccomandazioni-tecniche-per-soap/01_globali.rst
 
 .. forum_italia::
-   :topic_id: <21495>
+   :topic_id: 21495
    :scope: document

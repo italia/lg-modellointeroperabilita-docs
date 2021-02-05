@@ -69,5 +69,5 @@ Method M
    :language: xml
 
 .. forum_italia::
-   :topic_id: <21453>
+   :topic_id: 21453
    :scope: document

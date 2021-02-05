@@ -193,5 +193,5 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
    {"c": "OK"}
 
 .. forum_italia::
-   :topic_id: <21459>
+   :topic_id: 21459
    :scope: document

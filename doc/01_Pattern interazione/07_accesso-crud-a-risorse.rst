@@ -286,5 +286,5 @@ Di seguito un esempio di cancellazione di una specifica prenotazione.
    Cf. https://www.rfc-editor.org/errata/eid3169
 
 .. forum_italia::
-   :topic_id: <21461>
+   :topic_id: 21461
    :scope: document

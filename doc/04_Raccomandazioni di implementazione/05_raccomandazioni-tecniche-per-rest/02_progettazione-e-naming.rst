@@ -103,8 +103,8 @@ essere implementata tramite i parametri:
 
    q, fields, embed
 
-[RAC_REST_NAME_006] Non usare l’header Link :rfc:`8288` se la response è in JSON
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[RAC_REST_NAME_006] Non usare l’header Link se la response è in JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Eventuali link a risorse utili al flusso applicativo DEVONO essere
 restituiti nel payload e non nell’ :httpheader:`Link` definito in :rfc:`8288`.
@@ -299,5 +299,5 @@ ESEMPIO: Esposizione stato del servizio
    :language: yaml
 
 .. forum_italia::
-   :topic_id: <21494>
+   :topic_id: 21494
    :scope: document

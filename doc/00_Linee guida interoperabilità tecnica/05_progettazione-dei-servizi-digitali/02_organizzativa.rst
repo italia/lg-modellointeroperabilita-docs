@@ -108,5 +108,5 @@ In generale le pubbliche amministrazioni DOVREBBERO:
        G_OR008 e REG_OR010. 
 
 .. forum_italia::
-   :topic_id: <21439>
+   :topic_id: 21439
    :scope: document

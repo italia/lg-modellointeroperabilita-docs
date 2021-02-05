@@ -63,5 +63,5 @@ scenario applicativo. Le seguenti regole possono essere introdotte:
    caso richiede quindi solitamente trust tra fruitore ed erogatore.
 
 .. forum_italia::
-   :topic_id: <21497>
+   :topic_id: 21497
    :scope: document

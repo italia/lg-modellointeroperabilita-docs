@@ -132,5 +132,5 @@ Method MResponse
    :language: xml
 
 .. forum_italia::
-   :topic_id: <21460>
+   :topic_id: 21460
    :scope: document
