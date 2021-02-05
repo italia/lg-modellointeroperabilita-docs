@@ -46,5 +46,5 @@ interoperare con la Pubblica Amministrazione per fruire di dati e/o
 servizi tramite sistemi informatici.
 
 .. forum_italia::
-   :topic_id: 21430
+   :topic_id: 21431
    :scope: document
