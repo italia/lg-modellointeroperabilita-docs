@@ -7,16 +7,16 @@ come questo confine abbia impatti sugli e-service in termini di
 funzionalità e sicurezza.
 
 Nel precedente modello di interoperabilità (il cosiddetto SPCoop del
-2005) era stato definito il concetto di dominio di un’amministrazione, a
+2005) era stato definito il concetto di *dominio* di un’amministrazione, a
 indicare l’insieme delle risorse (dati e servizi) e delle politiche che
-un’Amministrazione assicurava per dare seguito alla cooperazione con
-altre. Il confine tra i domini delle Amministrazioni era istanziato
+un’amministrazione assicurava per dare seguito alla cooperazione con
+altre. Il confine tra i domini delle amministrazioni era istanziato
 fisicamente da uno specifico elemento architetturale, la Porta di
 Dominio (PdD).
 
 Nel nuovo framework di interoperabilità, l’istanziazione della PdD come
 punto unico di accesso a un’interfaccia viene meno. Tuttavia,
-concettualmente il confine del dominio dell’Amministrazione continua a
+concettualmente il confine del dominio dell’amministrazione continua a
 esistere ed è importante considerarlo nella progettazione degli
 e-service. Gli e-service sono offerti da qualsiasi server applicativo,
 senza essere vincolati a essere raggiungibili attraverso un unico
@@ -26,7 +26,7 @@ Quindi, ogni server applicativo offre e-service, tuttavia è comunque
 significativo distinguere se gli stessi sono offerti per interoperare:
 
 1. all’interno del dominio (da parte di client applicativi offerti dalla
-   stessa Amministrazione (ad es., un’applicazione Web o una mobile);
+   stessa amministrazione (ad es., un’applicazione Web o una mobile);
 
 2. verso altre amministrazioni o altri soggetti con cui è stabilita una
    relazione di fiducia.
