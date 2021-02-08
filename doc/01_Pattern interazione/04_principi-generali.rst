@@ -4,20 +4,20 @@ Principi generali
 Interazione bloccante e non bloccante
 -------------------------------------
 
-Nell’interazione bloccante un fruitore effettua una chiamata al servente
+Nell’*interazione bloccante* un fruitore effettua una chiamata al servente
 ed attende una risposta prima di continuare l’esecuzione. La chiamata
 codifica in modo opportuno la richiesta di servizio, anche attraverso il
 passaggio di dati (sia in input alla chiamata che in output nella
 risposta).
 
-Nell’interazione non bloccante, invece, il fruitore invia un messaggio
+Nell’*interazione non bloccante*, invece, il fruitore invia un messaggio,
 ma non si blocca in attesa di alcuna risposta (se non una notifica di
 presa in carico). Il messaggio contiene in modo opportuno la richiesta
 ed eventuali dati di input. Talvolta il messaggio, proprio ad indicare
 il fatto che codifica la richiesta e le informazioni necessarie a
 soddisfarla, viene indicato come documento. La risposta da parte del
 servente, nei casi in cui ci sia, può apparire significativamente più
-tardi, ove significativamente va interpretato rispetto al tempo di
+tardi, ove "significativamente" va interpretato rispetto al tempo di
 computazione proprio dell’interazione. Anche la risposta del servente
 viene inviata tramite un messaggio.
 
@@ -35,15 +35,17 @@ Remote Procedure Call
 
 Una Remote Procedure Call (chiamata a procedura remota, RPC) consiste
 nell’attivazione, da parte di un programma, di una procedura o
-subroutine attivata su un elaboratore diverso da quello sul quale il
+subroutine attivata su un elaboratore potenzialmente diverso da quello sul quale il
 programma viene eseguito. Quindi l’RPC consente a un programma di
 eseguire subroutine «a distanza» su elaboratori remoti, accessibili
 attraverso una rete. Essenziale al concetto di RPC è l’idea di
 trasparenza: la chiamata di procedura remota deve essere infatti
 eseguita in modo il più possibile analogo a quello della chiamata di
 procedura locale; i dettagli della comunicazione su rete devono essere
-«nascosti» (resi trasparenti) all’utilizzatore del meccanismo. Se il
-linguaggio è orientato agli oggetti, l’invocazione della procedura
+«nascosti» (resi trasparenti) all’utilizzatore del meccanismo.
+I problemi di comunicazione possono essere gestiti anch'essi in modo trasparente,
+oppure generare errori o eccezioni.
+Se il linguaggio è orientato agli oggetti, l’invocazione della procedura
 remote è in realtà l’invocazione di un metodo su un oggetto remoto, e si
 parla di Remote Method Invocation - RMI.
 
