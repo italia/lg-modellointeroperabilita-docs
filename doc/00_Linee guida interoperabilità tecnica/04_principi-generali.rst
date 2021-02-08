@@ -103,7 +103,7 @@ segue:
    e a basso impatto (quindi a elevata disponibilità);
 
 -  Accessibilità. Misura la capacità di una API di essere contattabile 
-   da un elevato numero di richieste;
+   in un qualunque istante di tempo;
 
 -  Prestazioni. Le prestazioni vengono misurate solitamente rispetto a 
    due valori: il throughput e la latenza. Il throughput rappresenta il 
