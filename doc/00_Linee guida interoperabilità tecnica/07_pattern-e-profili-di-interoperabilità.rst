@@ -8,23 +8,26 @@ determinano l’opportunità di definire un insieme di soluzioni
 tecnologiche comuni che permettano, anche attraverso la loro
 combinazione, di definire un quadro condiviso di regole applicate.
 
-Le Linee Guida individuano i pattern e i profili di
-interoperabilità quali le modalità tecniche condivise secondo le quali
+Le Linee Guida individuano i *pattern* e i *profili di
+interoperabilità* come modalità tecniche condivise secondo le quali
 un fruitore e un erogatore realizzano l’interoperabilità dei propri
-sistemi informatici, e nel dettaglio:
+sistemi informatici, Nel dettaglio:
 
--  i *pattern di interoperabilità*, che risolvono singoli requisiti che
-   la PA deve soddisfare, sono:
+* i *pattern di interoperabilità* risolvono singoli requisiti che
+  la PA deve soddisfare, e si dividono in:
+   
+  * pattern di *interazione*
+    che descrivono il modello di comunicazione tra
+    fruitore ed erogatore;
 
-   -  pattern di interazione descrivono il modello di comunicazione tra
-      fruitore ed erogatore;
+  * pattern di *sicurezza*
+    che descrivono le modalità per assicurare
+    specifiche caratteristiche di sicurezza della comunicazione;
 
-   -  pattern di sicurezza, che descrivono le modalità per assicurare
-      specifiche caratteristiche di sicurezza della comunicazione;
-
--  i *profili di interoperabilità*, quali combinazioni dei pattern di
-   interoperabilità per risolvere i casi d’uso che una PA deve
-   soddisfare.
+* i *profili di interoperabilità*
+  sono combinazioni dei pattern di
+  interoperabilità per risolvere i casi d’uso che una PA deve
+  soddisfare.
 
 I pattern e i profili di interoperabilità che le PA DOVREBBERO
 utilizzare sono indicati nei Documenti Operativi: Pattern di
@@ -50,14 +53,14 @@ interoperabilità.
 
 Il processo di mantenimento dei pattern prevede le seguenti fasi:
 
-*[NUOVA ESIGENZA E PROPOSTA]* Le PA o AgID individuano nuove esigenze di
+1. *[NUOVA ESIGENZA E PROPOSTA]* Le PA o AgID individuano nuove esigenze di
 interoperabilità e POSSONO proporre nuovi pattern come soluzione;
 
-*[CONCERTAZIONE]* AgID apre il tavolo pubblico, in modo da acquisire
+2. *[CONCERTAZIONE]* AgID apre il tavolo pubblico, in modo da acquisire
 eventuali proposte alternative per soddisfare le nuove esigenze
 evidenziate;
 
-*[ADOZIONE]* AgID, valutando le proposte pervenute, individua i nuovi
+3. *[ADOZIONE]* AgID, valutando le proposte pervenute, individua i nuovi
 pattern che rispondono alle esigenze e aggiorna i Documenti Operativi.
 
 Il processo di mantenimento dei pattern è realizzato da cicli successivi
@@ -67,22 +70,15 @@ dicembre di ogni anno.
 
 -  (i)° ciclo [1 gennaio anno corrente - 31 ottobre anno corrente ]
 
-[NUOVA ESIGENZA E PROPOSTA] da 1° gennaio anno corrente - 30 giugno anno
-corrente
-
-[CONCERTAZIONE] dal 1 maggio anno corrente - 31 agosto anno corrente
-
-[ADOZIONE] dal 1° settembre anno corrente - 31 ottobre anno corrente
+   #. [NUOVA ESIGENZA E PROPOSTA] da 1° gennaio anno corrente - 30 giugno anno corrente
+   #. [CONCERTAZIONE] dal 1 maggio anno corrente - 31 agosto anno corrente
+   #. [ADOZIONE] dal 1° settembre anno corrente - 31 ottobre anno corrente
 
 -  (i+1)° ciclo [1 luglio anno corrente - 30 aprile anno successivo]
 
-[NUOVA ESIGENZA E PROPOSTA] da 1° luglio anno corrente - 31 dicembre
-anno corrente
-
-[CONCERTAZIONE] dal 1 novembre anno corrente - 31 febbraio anno
-successivo
-
-[ADOZIONE] dal 1° marzo anno successivo - 30 aprile anno successivo
+   #. [NUOVA ESIGENZA E PROPOSTA] da 1° luglio anno corrente - 31 dicembre anno corrente
+   #. [CONCERTAZIONE] dal 1 novembre anno corrente - 31 febbraio anno successivo
+   #. [ADOZIONE] dal 1° marzo anno successivo - 30 aprile anno successivo
 
 |image0|
 
