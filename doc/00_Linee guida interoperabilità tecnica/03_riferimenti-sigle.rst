@@ -39,9 +39,9 @@ documento.
    :widths: 15 40
    :header-rows: 0
 
-   * -    [D.lgs. 82/2005]
-     -    Decreto legislativo 7 marzo 2005, n. 82 recante "Codice 
-          dell’amministrazione digitale";
+   * -    [CAD]
+     -    decreto legislativo 7 marzo 2005, n. 82 recante "Codice 
+          dell’Amministrazione Digitale";
           NOTA – Il D. Lgs. 82/2010 è noto anche con l’abbreviazione "CAD"
 
    * -    [EIF]
@@ -187,5 +187,5 @@ Termini e definizioni
      -    XML-Remote Procedure Call
 
 .. forum_italia::
-   :topic_id: 21431
+   :topic_id: 21433
    :scope: document

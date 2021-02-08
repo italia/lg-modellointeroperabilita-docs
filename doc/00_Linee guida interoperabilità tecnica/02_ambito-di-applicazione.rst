@@ -4,22 +4,22 @@ Ambito di applicazione
 Le Linee Guida sull’interoperabilità tecnica delle Pubbliche 
 Amministrazioni sono redatte in ottemperanza:
 
--  alla lettera a comma 2 dell’articolo 14-bis del DECRETO LEGISLATIVO 
-   7 marzo 2005, n. 82 (Codice dell'amministrazione digitale), che 
-   individua le funzioni di AgID tra cui: "emanazione di Linee [...] 
-   di indirizzo [...] sull'attuazione e sul rispetto delle norme di cui 
-   al presente Codice, anche attraverso l'adozione di atti amministrativi 
-   generali, in materia di [...] interoperabilità e cooperazione 
-   applicativa tra sistemi informatici pubblici e quelli dell'Unione 
-   europea";
+-  alla lettera a comma 2 dell’articolo 14-bis del decreto legislativo
+   7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale), che 
+   individua le funzioni dell'Agenzia per l'Italia Digitale (AgID) tra 
+   cui: "emanazione di Linee [...] di indirizzo [...] sull'attuazione e 
+   sul rispetto delle norme di cui al presente Codice, anche attraverso 
+   l'adozione di atti amministrativi generali, in materia di [...] 
+   interoperabilità e cooperazione applicativa tra sistemi informatici 
+   pubblici e quelli dell'Unione europea";
 
-- alla lettera b comma 3-ter dell'articolo 73 del DECRETO LEGISLATIVO 
-  7 marzo 2005, n. 82 (Codice dell'amministrazione digitale), in cui 
+- alla lettera b comma 3-ter dell'articolo 73 del decreto legislativo 
+  7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale), in cui 
   è indicato che il Sistema pubblico di connettività è costituito da 
   "linee guida e regole per la cooperazione e l'interoperabilità".
 
-Le Linee Guida sono emanata ai sensi dell'articolo 71 del DECRETO 
-LEGISLATIVO 7 marzo 2005, n. 82 (Codice dell'amministrazione digitale).
+Le Linee Guida sono emanata ai sensi dell'articolo 71 del decreto legislativo 
+7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 Soggetti destinatari
 --------------------
@@ -46,5 +46,5 @@ interoperare con la Pubblica Amministrazione per fruire di dati e/o
 servizi tramite sistemi informatici.
 
 .. forum_italia::
-   :topic_id: 21430
+   :topic_id: 21431
    :scope: document

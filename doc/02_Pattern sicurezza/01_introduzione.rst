@@ -92,9 +92,10 @@ diretta, attraverso accordi che si basano sulla condivisione del
 reciproco modus operandi.
 
 Si rimanda alle Linee Guida sulla sicurezza, emanate dall'Agenzia per 
-l'Italia Digitale ai sensi dell'articolo 71 del decreto legislativo del 
-7 marzo 2005, n. 82, in merito agli algoritmi utilizzabili per la corretta 
-implementazione dei pattern di sicurezza.
+l'Italia Digitale ai sensi dell'articolo 71 del decreto legislativo 7 
+marzo 2005, n. 82 (Codice dell'Amministrazione Digitale), in merito 
+agli algoritmi utilizzabili per la corretta implementazione dei pattern 
+di sicurezza.
 
 .. forum_italia::
    :topic_id: 21462
