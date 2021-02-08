@@ -87,17 +87,17 @@ Amministrazione ed è composta dalle fasi indicati di seguito.
 
 Fase in cui vengono determinate le esigenze, attraverso cui l'erogatore:
 
-   #. analizza la norma per determinare le funzioni di competenza e 
-      gli obiettivi da raggiungere. Sulla base di questi, evidenzia le 
-      caratteristiche del servizio da offrire, e individua i dati in 
-      ingresso e quelli restituiti.
+#. analizza la norma per determinare le funzioni di competenza e 
+   gli obiettivi da raggiungere. Sulla base di questi, evidenzia le 
+   caratteristiche del servizio da offrire, e individua i dati in 
+   ingresso e quelli restituiti.
 
-   #. determina se coinvolgere altre organizzazioni quali fonti 
-      autoritative dei dati necessari o soggetti preposti all’esecuzione 
-      di endoprocedimenti specifici.
+#. determina se coinvolgere altre organizzazioni quali fonti 
+   autoritative dei dati necessari o soggetti preposti all’esecuzione 
+   di endoprocedimenti specifici.
 
-   #. determinare le attività necessarie ad implementare ed assicurare 
-      l’implementazione del servizio da offrire.
+#. determinare le attività necessarie ad implementare ed assicurare 
+   l’implementazione del servizio da offrire.
 
 **2) Organizzativa**.
 
@@ -105,26 +105,23 @@ Fase in cui l'erogatore in base al punto 1.b coinvolge o meno altre
 organizzazioni:
 
 * se non sono state individuate altre organizzazioni:
-
-   #. l'erogatore realizza un processo digitale semplice in cui valuta 
-   la possibilità soddisfare le esigenze riusando e/o reingegnerizzando 
-   uno o più e-service già erogati, altrimenti implementa nuovi e-service 
-   progettandoli in modo da favorirne il riuso.
-
+  
+  #. l'erogatore realizza un processo digitale semplice in cui valuta 
+     la possibilità soddisfare le esigenze riusando e/o reingegnerizzando 
+     uno o più e-service già erogati, altrimenti implementa nuovi e-service 
+     progettandoli in modo da favorirne il riuso.
 * se sono state individuate altre organizzazioni si realizza un processo 
   digitale collettivo dove:
-
-   #. l'erogatore individua le organizzazioni da coinvolgere in quanto 
-      fonti autoritative dei dati o soggetti preposti all’esecuzione di 
-      endoprocedimenti, evitando la duplicazione non necessaria dei dati;
-
-   #. l'erogatore si confronta con esse per determinare ruoli e responsabilità;
-
-   #. ogni organizzazione, per dare seguito alle responsabilità individuate 
-      valuta la possibilità soddisfare le esigenze riusando e/o 
-      reingegnerizzando uno o più e-service già erogati, altrimenti 
-      implementa nuovi e-service progettandoli in modo da favorirne il 
-      riuso.
+  
+  #. l'erogatore individua le organizzazioni da coinvolgere in quanto 
+     fonti autoritative dei dati o soggetti preposti all’esecuzione di 
+     endoprocedimenti, evitando la duplicazione non necessaria dei dati; 
+  #. l'erogatore si confronta con esse per determinare ruoli e responsabilità;
+  #. ogni organizzazione, per dare seguito alle responsabilità individuate 
+     valuta la possibilità soddisfare le esigenze riusando e/o 
+     reingegnerizzando uno o più e-service già erogati, altrimenti 
+     implementa nuovi e-service progettandoli in modo da favorirne il 
+     riuso.
 
 **3) Semantica**.
 
@@ -149,7 +146,7 @@ in modo da incentivare l'utilizzo ed il riuso.
 Stipula degli accordi di interoperabilità, dove sono formalizzati ruoli 
 e responsabilità delle parti (erogatore e fruitore), per assicurare che
 le Pubbliche Amministrazioni interessate possano usufruire di un e-service 
-fornito da un’altra PA attraverso un’API.
+fornito da un’altra PA attraverso una o più API.
 
 Si rimanda ai seguenti paragrafi per dettagli.
 
