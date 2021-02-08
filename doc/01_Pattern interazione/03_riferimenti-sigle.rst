@@ -14,9 +14,6 @@ Riferimenti Normativi
 Sono riportati di seguito gli atti normativi di riferimento del presente
 documento.
 
-Sono riportati di seguito gli atti normativi di riferimento del presente
-documento.
-
 .. list-table:: Riferimenti Normativi
    :widths: 15 40
    :header-rows: 0
@@ -24,12 +21,12 @@ documento.
    * -    [CAD]
      -    decreto legislativo 7 marzo 2005, n. 82 recante "Codice 
           dell’Amministrazione Digitale";
-          NOTA – Il D. Lgs. 82/2010 è noto anche con l’abbreviazione "CAD"
+          NOTA – Il D. Lgs. 82/2005 è noto anche con l’abbreviazione "CAD"
 
    * -    [EIF]
      -    European Interoperability Framework (EIF)
 
-   * -    [CE 2008/1205]
+   * -    [CE 1205/2008]
      -    Regolamento (CE) n. 1205/2008 della Commissione del 3 
           dicembre 2008 recante attuazione della direttiva 2007/2/CE 
           del Parlamento europeo e del Consiglio per quanto riguarda i 
@@ -39,7 +36,7 @@ documento.
      -    Codice in materia di protezione dei dati personali
 
    * -    [UE 679/2016]
-     -    Regolamento (UE) 2016/679 del 27 aprile 2016 relativo alla 
+     -    Regolamento (UE) n. 679/2016 del 27 aprile 2016 relativo alla 
           protezione delle persone fisiche con riguardo al trattamento 
           dei dati personali (in breve GDPR)
 
