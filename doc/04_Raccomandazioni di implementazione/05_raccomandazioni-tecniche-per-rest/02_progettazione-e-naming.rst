@@ -1,4 +1,4 @@
-Raccomandazioni sulla progettazione e naming
+Raccomandazioni su progettazione e naming
 --------------------------------------------
 
 In assenza di specifiche regole per l’API Naming (es. HL7, INSPIRE, ..)
