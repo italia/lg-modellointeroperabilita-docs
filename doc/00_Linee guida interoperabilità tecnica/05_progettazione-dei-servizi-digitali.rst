@@ -106,25 +106,25 @@ organizzazioni:
 
 * se non sono state individuate altre organizzazioni:
 
-   #. l'erogatore realizza un processo digitale semplice in cui valuta 
-   la possibilità soddisfare le esigenze riusando e/o reingegnerizzando 
-   uno o più e-service già erogati, altrimenti implementa nuovi e-service 
-   progettandoli in modo da favorirne il riuso.
+  #. l'erogatore realizza un processo digitale semplice in cui valuta 
+     la possibilità soddisfare le esigenze riusando e/o reingegnerizzando 
+     uno o più e-service già erogati, altrimenti implementa nuovi e-service 
+     progettandoli in modo da favorirne il riuso.
 
 * se sono state individuate altre organizzazioni si realizza un processo 
   digitale collettivo dove:
 
-   #. l'erogatore individua le organizzazioni da coinvolgere in quanto 
-      fonti autoritative dei dati o soggetti preposti all’esecuzione di 
-      endoprocedimenti, evitando la duplicazione non necessaria dei dati;
+  #. l'erogatore individua le organizzazioni da coinvolgere in quanto 
+     fonti autoritative dei dati o soggetti preposti all’esecuzione di 
+     endoprocedimenti, evitando la duplicazione non necessaria dei dati;
 
-   #. l'erogatore si confronta con esse per determinare ruoli e responsabilità;
+  #. l'erogatore si confronta con esse per determinare ruoli e responsabilità;
 
-   #. ogni organizzazione, per dare seguito alle responsabilità individuate 
-      valuta la possibilità soddisfare le esigenze riusando e/o 
-      reingegnerizzando uno o più e-service già erogati, altrimenti 
-      implementa nuovi e-service progettandoli in modo da favorirne il 
-      riuso.
+  #. ogni organizzazione, per dare seguito alle responsabilità individuate 
+     valuta la possibilità soddisfare le esigenze riusando e/o 
+     reingegnerizzando uno o più e-service già erogati, altrimenti 
+     implementa nuovi e-service progettandoli in modo da favorirne il 
+     riuso.
 
 **3) Semantica**.
 
