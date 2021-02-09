@@ -4,10 +4,9 @@ Introduzione
 I pattern di sicurezza definiscono le modalità per assicurare che le
 interazioni tra fruitore ed erogatore siano realizzate nel rispetto
 delle specifiche esigenze di sicurezza determinate dalla natura delle
-transazioni realizzate e dalle prescrizioni normative che hanno
-determinato le stesse.
+transazioni realizzate e dalle prescrizioni normative che riguardano le stesse.
 
-I pattern di sicurezza si applicano ai pattern di interazione indicate
+I pattern di sicurezza si applicano ai pattern di interazione indicati
 nel Documento Operativo - Pattern di interazione, e sono scelti
 dall'erogatore in funzione alle specifiche esigenze applicative in
 relazione alla natura dei fruitori.
@@ -22,10 +21,10 @@ delle tecnologie abilitanti, nonché considerata la natura incrementale
 del ModI, l’elenco dei pattern di sicurezza non è da intendersi
 esaustivo. Nel caso in cui un’amministrazione abbia esigenze non
 ricoperte nei seguenti profili DEVE informare AGID, nei modi indicati
-nel capitolo 7 Pattern e profili di interoperabilità delle Linea di
+nel capitolo 7 "Pattern e profili di interoperabilità" delle Linee di
 indirizzo sull’interoperabilità tecnica delle Pubbliche Amministrazioni.
 
-I pattern di sicurezza individuati, coprono gli aspetti di comunicazione
+I pattern di sicurezza individuati coprono gli aspetti di comunicazione
 "sicura" tra i domini delle singole parti. Le parti mantengono la loro
 autonomia negli aspetti organizzativi e di sicurezza interni al proprio
 dominio.
@@ -80,13 +79,13 @@ esigenze funzionali e non funzionali, DOVREBBERO:
 L’individuazione dei pattern di sicurezza DEVE ricoprire solamente i
 requisiti necessari.
 
-Il Trust è uno dei mezzi più importanti per gestire le problematiche di
+Il *Trust* è uno dei mezzi più importanti per gestire le problematiche di
 sicurezza nello scambio di informazione in rete per consentire
 l’interoperabilità tra i sistemi. Esso si basa sul reciproco
 riconoscimento delle entità interagenti e sulla fiducia nei rispettivi
 comportamenti.
 
-Nel presente Documento operativo, per direct trust, si intende la
+Nel presente Documento operativo, per *direct trust* si intende la
 relazione di fiducia tra fruitore ed erogatore, stabilita in modalità
 diretta, attraverso accordi che si basano sulla condivisione del
 reciproco modus operandi.
