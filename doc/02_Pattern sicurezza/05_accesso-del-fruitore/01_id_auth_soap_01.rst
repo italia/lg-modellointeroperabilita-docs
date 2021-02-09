@@ -135,7 +135,7 @@ esemplificative:
 -  algoritmo per il digest (DigestMethod)
 
 Le parti, in base alle proprie esigenze, usano gli algoritmi indicati al
-capitolo 7 Elementi di sicurezza, nonché la modalità di inclusione o
+capitolo 7 "Elementi di sicurezza", nonché la modalità di inclusione o
 referenziazione del certificato X.509.
 
 .. forum_italia::
