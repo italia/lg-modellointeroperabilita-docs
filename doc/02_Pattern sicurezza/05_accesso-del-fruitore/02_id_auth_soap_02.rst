@@ -28,7 +28,7 @@ assicurando la firma dei claim del messaggio.
 
 L’erogatore, ricevuto il messaggio, verifica il certificato X.509,
 valida la firma dei claim ed garantisce l’accesso al fruitore. Se la
-verifica e la validazione sono superate, l’erogatore consuma la
+verifica e la validazione sono superate, l’erogatore elabora la
 richiesta e produce la relativa risposta.
 
 .. mermaid::
@@ -140,7 +140,7 @@ esemplificative:
 -  algoritmo per il digest (DigestMethod)
 
 Le parti, in base alle proprie esigenze, usano gli algoritmi indicati al
-capitolo 7 Elementi di sicurezza, nonché la modalità di inclusione o
+capitolo 7 "Elementi di sicurezza", nonché la modalità di inclusione o
 referenziazione del certificato X.509.
 
 .. forum_italia::
