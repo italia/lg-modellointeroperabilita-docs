@@ -14,6 +14,6 @@ seguito.
    essere comprese e attentamente pesate prima di scegliere approcci
    alternativi;
 
--  **PUÓ** o **POSSONO** o l'aggettivo **OPZIONALE**, indica che il
+-  **PUÒ** o **POSSONO** o l'aggettivo **OPZIONALE**, indica che il
    lettore può scegliere di applicare o meno senza alcun tipo di
    implicazione o restrizione la specifica.
