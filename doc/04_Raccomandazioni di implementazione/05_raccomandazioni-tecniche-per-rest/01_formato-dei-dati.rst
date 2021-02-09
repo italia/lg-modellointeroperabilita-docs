@@ -7,7 +7,7 @@ Raccomandazioni sul formato dei dati
 Nella tecnologia REST la comunicazione DOVREBBE avvenire tramite oggetti
 JSON :rfc:`8259` con il relativo media-type application/json.
 
-È possibile eccepire in presenza di specifiche in cui gli oggetti di
+È possibile fare eccezione in presenza di specifiche in cui gli oggetti di
 comunicazione sono formalizzati in forma diversa da JSON (es. INSPIRE,
 HL7).
 
