@@ -17,7 +17,7 @@ non ripudiabilità assicurando a livello di messaggio:
 
 Il presente profilo utilizza come modello di comunicazione il Pattern di
 interazione BLOCK_SOAP nel caso di utilizzo di SOAP o BLOCK_REST nel
-caso di utilizzo di REST. Questa profilo utilizza i seguenti pattern di
+caso di utilizzo di REST. Questo profilo utilizza i seguenti pattern di
 sicurezza:
 
 -  ID_AUTH_CHANNEL_01 o in alternativa ID_AUTH_CHANNEL_02
@@ -39,8 +39,8 @@ stabilisce:
       riscontro di ritrasmissioni (vedi ID_AUTH_SOAP_02 e
       ID_AUTH_REST_02), e le relative modalità di scambio;
 
-   -  l’arco temporale di persistenza dei messaggi che dipende dalle
-      caratteristiche del contenuto dei dati scambiati e nel rispetto
+   -  l’arco temporale di persistenza dei messaggi, che dipende dalle
+      caratteristiche del contenuto dei dati scambiati e dal rispetto
       delle norme di legge.
 
    -  il tempo di validità della transazione che intercorre tra:
@@ -152,8 +152,8 @@ così come previsto dai profili utilizzati:
 
 -  L’erogatore provvede all’autenticazione del fruitore;
 
--  L’erogatore verifica l’integrità del messaggio firmato, inoltre la
-   presenza dell’istante di trasmissione nel messaggio, ne garantisce
+-  L’erogatore verifica l’integrità del messaggio firmato. Inoltre la
+   presenza dell’istante di trasmissione nel messaggio ne garantisce
    validità a lungo termine.
 
 Per assicurare l’opponibilità a terzi:
@@ -178,18 +178,18 @@ L’erogatore inizializza il numero di tentativi di richieste ricevute ad
 
 *C.2 [Duplicato con numero di tentativi inferiore al massimo pattuito]*
 
-L’erogatore accerta la presenza di un identificativo univoco del
+L’erogatore rileva la presenza di un identificativo univoco del
 messaggio già ricevuto, a causa di una mancata ricezione del messaggio
-di conferma da parte del fruitore.Incrementa il numero di tentativi di
+di conferma da parte del fruitore. Incrementa il numero di tentativi di
 richieste ricevute e prosegue al passo D.
 
 *C.3 [Superamento numero massimo di tentativi pattuiti]*
 
-L’erogatore accerta la presenza di un identificativo univoco del
+L’erogatore rileva la presenza di un identificativo univoco del
 messaggio già ricevuto, a causa di una mancata ricezione del messaggio
 di conferma da parte del fruitore.
 
-L’erogatore accerta di aver raggiunto il numero massimo di tentativi di
+L’erogatore rileva di aver raggiunto il numero massimo di tentativi di
 richieste ricevute. L’erogatore utilizza i canali alternativi per
 superare o evidenziare problemi di comunicazione riscontrati non
 proseguendo con i passi successivi.
@@ -226,7 +226,7 @@ Per garantire la non ripudiabilità del messaggio inviato all’erogatore:
    messaggio di risposta.
 
 -  Il fruitore verifica l’integrità del messaggio di risposta firmato in
-   cui, la presenza del timestamp sul protocollo di messaggio ne
+   cui la presenza del timestamp sul protocollo di messaggio ne
    garantisce validazione a lungo termine e il tempo di ricezione.
 
 Per assicurare l’opponibilità a terzi:
@@ -249,7 +249,7 @@ conclusa, in quanto può presentarsi uno dei seguenti casi:
 
 -  il messaggio di richiesta non ha raggiunto l’erogatore
 
--  il messaggio di richiesta ha raggiunto l’erogatore ma non ha ricevuto
+-  il messaggio di richiesta ha raggiunto l’erogatore ma il fruitore non ha ricevuto
    il messaggio di risposta.
 
 In queste situazioni il fruitore riesegue il passo A.
