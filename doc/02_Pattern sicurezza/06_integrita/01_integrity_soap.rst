@@ -27,7 +27,7 @@ firma del payload del messaggio.
 
 L’erogatore, ricevuto il messaggio, verifica il certificato X.509 e
 valida l’integrità del payload del messaggio firmato. Se la verifica e
-la validazione sono superate, l’erogatore consuma la richiesta e produce
+la validazione sono superate, l’erogatore elabora la richiesta e produce
 la relativa risposta.
 
 .. mermaid::
@@ -88,7 +88,7 @@ Note:
 -  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
    <Signature> rispettivamente <DigestMethod> , <SignatureMethod> e
    <CanonicalizationMethod> si fa riferimento agli algoritmi indicati al
-   capitolo 7 Elementi di sicurezza.
+   capitolo 7 "Elementi di sicurezza".
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    del payload del messaggio risposta dell’erogatore al fruitore.
@@ -123,7 +123,7 @@ merito:
 -  algoritmo per il digest (DigestMethod)
 
 Le parti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato al capitolo 7 Elementi di sicurezza
+algoritmi secondo quanto indicato al capitolo 7 "Elementi di sicurezza"
 nonché la modalità di inclusione o referenziazione del certificato
 X.509.
 
