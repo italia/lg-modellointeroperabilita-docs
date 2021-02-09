@@ -1,8 +1,8 @@
 Pattern non bloccanti
 =====================
 
-I pattern di interazione non bloccanti di tipo RPC-like, in cui un
-fruitore sottomette una richiesta e questa viene solo presa in carico
+I pattern di interazione non bloccanti di tipo RPC-like sono quelli in cui un
+fruitore invia una richiesta e questa viene solo presa in carico
 immediatamente, mentre il suo soddisfacimento può avvenire in maniera
 differita. Gli approcci non bloccanti vengono utilizzati nei casi in cui
 i tempi per l’erogazione di una risposta da parte del fruitore sono
@@ -15,7 +15,7 @@ lunghi perché
 
 Al fine di collegare le richieste con le risposte si farà uso, sia nelle
 implementazioni SOAP che in quelle REST, di meta-informazioni specifiche
-(quali il CorrelationID ed l’endpoint per le callback). Queste sono
+(quali il CorrelationID e l’endpoint per le callback). Queste sono
 estranee solitamente alla business logic del servizio, ma è necessario
 definirle a livello di API ai fini dell’interoperabilità. A tal fine
 verranno definiti header (HTTP nel caso REST ed envelope nel caso SOAP)
