@@ -23,9 +23,9 @@ delle tecnologie abilitanti, nonché considerata la natura incrementale
 del ModI, l’elenco dei pattern di interazione non è da intendersi
 esaustivo. Nel caso in cui un’amministrazione abbia esigenze non
 ricoperte nei seguenti profili DEVE informare l'Agenzia per l'Italia 
-Digitale, nei modi indicati nel capitolo 7 Pattern e profili di 
+Digitale, nei modi indicati nel capitolo 7 "Pattern e profili di 
 interoperabilità delle Linee Guida sull’interoperabilità 
-tecnica delle Pubbliche Amministrazioni.
+tecnica delle Pubbliche Amministrazioni".
 
 .. forum_italia::
    :topic_id: 21447
