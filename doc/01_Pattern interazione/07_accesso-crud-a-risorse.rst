@@ -7,7 +7,7 @@ che per eseguire compiti complessi, per eseguire operazioni di tipo CRUD
 esempio, una prenotazione è una risorsa che può essere creata (quando
 viene fissata), letta, modificata ed eliminata.
 
-In questo scenario si assume che le API siano utilizzare per la gestione
+In questo scenario si assume che le API siano utilizzate per la gestione
 da parte del fruitore delle risorse messe a disposizione dall’erogatore.
 L’insieme di operazioni CRUD offerte dall’erogatore dipende dalla
 natura della risorse e dalla relazione costruita con i fruitori: sono
