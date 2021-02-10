@@ -18,7 +18,7 @@ permette il riconoscimento da parte dell’erogatore del certificato
 X.509, o la CA emittente.
 
 Il meccanismo con cui è stabilito il trust, inclusa la modalità di
-scambio dei certificati X.509) non condiziona il presente profilo.
+scambio dei certificati X.509, non condiziona il presente profilo.
 
 Il fruitore inoltra un messaggio all’interfaccia di servizio
 dell’erogatore includendo o referenziando il certificato X.509 e una
@@ -26,7 +26,7 @@ porzione significativa del messaggio firmata.
 
 L’erogatore, ricevuto il messaggio, verifica il certificato X.509 e
 valida la porzione firmata del messaggio. Se la verifica e la
-validazione sono superate, l’erogatore consuma la richiesta e produce la
+validazione sono superate, l’erogatore elabora la richiesta e produce la
 relativa risposta.
 
 .. mermaid::
