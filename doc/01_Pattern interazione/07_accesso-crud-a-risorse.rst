@@ -99,10 +99,10 @@ questo metodo non è definito nelle nuove specifiche di HTTP/1.1 del 2014
 ma nel precedente :rfc:`5789`.
 
 NON SI DOVREBBE associare un significato di patch a dei media-type che
-non lo prevedano (eg. application/json o application/xml) ma utilizzare
+non lo prevedano (eg. :code:`application/json` o :code:`application/xml`) ma utilizzare
 dei media-type adeguati [1]_.
 
-È possibile ad esempio usare application/merge-patch+json definito in
+È possibile ad esempio usare :code:`application/merge-patch+json` definito in
 :rfc:`7396` facendo attenzione:
 
 -  che :httpmethod:`PATCH` rifiuti richieste con media-type non adeguato
@@ -121,8 +121,8 @@ Per illustrare l’approccio RESTful al CRUD, faremo l'esempio di un API per
 gestire le prenotazioni di un appuntamento presso un ufficio municipale.
 L’erogatore verifica la compatibilità con la disponibilità nello
 specifico orario ed accetta o nega la creazione o l’eventuale
-variazione. Come da specifica seguente i metodi implementati sono HTTP
-method POST (creazione), :httpmethod:`DELETE` (eliminazione), 
+variazione. Come da specifica seguente i metodi implementati sono
+:httpmethod:`POST` (creazione), :httpmethod:`DELETE` (eliminazione), 
 :httpmethod:`PATCH` (modifica) e :httpmethod:`GET` (lettura).
 
 Specifica Servizio Server
