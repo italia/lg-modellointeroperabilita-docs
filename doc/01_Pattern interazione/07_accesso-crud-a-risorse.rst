@@ -3,16 +3,16 @@ Accesso CRUD a risorse
 
 In un’architettura orientata alle risorse le API vengono utilizzate, più
 che per eseguire compiti complessi, per eseguire operazioni di tipo CRUD
-- Create, Read, Update, Delete su risorse del dominio di interesse. Ad
+- Create, Read, Update, Delete - su risorse del dominio di interesse. Ad
 esempio, una prenotazione è una risorsa che può essere creata (quando
 viene fissata), letta, modificata ed eliminata.
 
-In questo scenario si assume che le API sono utilizzare per la gestione
-da parte del fruitore delle risorse messe a disposizione dell’erogatore.
-L’insieme di operazione CRUD garantire dall’erogatore dipende dalla
-natura della risorse e dalla relazione costruita con i fruitori, sono
-possibili relazione in cui l’erogatore rende disponibile ai fruitori la
-solo operazione di lettura (Read).
+In questo scenario si assume che le API siano utilizzate per la gestione
+da parte del fruitore delle risorse messe a disposizione dall’erogatore.
+L’insieme di operazioni CRUD offerte dall’erogatore dipende dalla
+natura della risorse e dalla relazione costruita con i fruitori: sono
+possibili relazioni in cui l’erogatore rende disponibile ai fruitori la
+sola operazione di lettura (Read).
 
 .. mermaid::
 
@@ -86,7 +86,7 @@ In particolare la seguente mappatura viene utilizzata:
 
 Si noti l’uso distinto di :httpmethod:`PUT` e :httpmethod:`PATCH` per la
 sostituzione e l’applicazione di modifiche ad una risorsa
-rispettivamente. E’ possibile utilizzare anche altri :httpmethod:`a` patto
+rispettivamente. È possibile utilizzare anche altri :httpmethod:`a` patto
 che si rispettino i dettami dell’approccio RESTful.
 
 In alcuni casi l' :httpmethod:`PUT` può essere utilizzato con funzionalità
@@ -99,10 +99,10 @@ questo metodo non è definito nelle nuove specifiche di HTTP/1.1 del 2014
 ma nel precedente :rfc:`5789`.
 
 NON SI DOVREBBE associare un significato di patch a dei media-type che
-non lo prevedono (eg. application/json o application/xml) ma utilizzare
+non lo prevedano (eg. :code:`application/json` o :code:`application/xml`) ma utilizzare
 dei media-type adeguati [1]_.
 
-E’ possibile ad esempio usare application/merge-patch+json definito in
+È possibile ad esempio usare :code:`application/merge-patch+json` definito in
 :rfc:`7396` facendo attenzione:
 
 -  che :httpmethod:`PATCH` rifiuti richieste con media-type non adeguato
@@ -117,13 +117,13 @@ E’ possibile ad esempio usare application/merge-patch+json definito in
 Esempio
 ^^^^^^^
 
-Per illustrare l’approccio RESTful al CRUD, semplificheremo un API per
+Per illustrare l’approccio RESTful al CRUD, faremo l'esempio di un API per
 gestire le prenotazioni di un appuntamento presso un ufficio municipale.
-L’erogatore, verifica la compatibilità con la disponibilità nello
+L’erogatore verifica la compatibilità con la disponibilità nello
 specifico orario ed accetta o nega la creazione o l’eventuale
-variazione. Come da specifica seguente i metodi implementati sono HTTP
-method POST (creazione), :httpmethod:`DELETE` (eliminazione), HTTP method
-PATCH (modifica) e :httpmethod:`GET` (lettura).
+variazione. Come da specifica seguente i metodi implementati sono
+:httpmethod:`POST` (creazione), :httpmethod:`DELETE` (eliminazione), 
+:httpmethod:`PATCH` (modifica) e :httpmethod:`GET` (lettura).
 
 Specifica Servizio Server
 
