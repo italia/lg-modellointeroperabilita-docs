@@ -86,10 +86,7 @@ Termini e definizioni
      -    Application Programming Interface
 
    * -    [API-First]
-     -    L'API-first è un approccio in cui le PA considerano le API 
-          come mezzo principale per perseguire i propri obiettivi, 
-          interagendo con i propri stakeholder sin dalla fase di 
-          progettazione
+     -    Strategia di sviluppo e realizzazione di servizi e applicazioni che prevede lo sviluppo di una interfaccia applicativa (API) prima di realizzare un’applicazione o una pagina web o un’applicazione per il mobile. In altri termini, la definizione dei canali di erogazione del servizio è logicamente e cronologicamente successiva allo sviluppo dell’API. Take obbligo è previsto dal CAD all'articolo 64-bis, comma 1-bis.
 
    * -    [BP]
      -    WS-I Basic Profile - (Web Services Interoperability 
@@ -120,15 +117,16 @@ Termini e definizioni
           da esso realizzati
 
    * -    [e-service]
-     -    I servizi digitali, realizzati da un erogatore per assicurare 
+     -    I servizi realizzati da un erogatore per assicurare 
           l’accesso ai propri dati e/o l’integrazione dei propri processi 
           attraverso l'interazione dei suoi sistemi informatici con 
           quelli dei fruitori, trovano attuazione nell’implementazione 
-          di API
+          di API. E' una categoria particolare dei servizi in rete di cui all'articolo 1, comma 1, lettera n-quater) del CAD
 
    * -    [Fruitore]
      -    Un’organizzazione che utilizza gli e-service messi a disposizione 
           da un dei soggetti di cui all'articolo 2, comma 2 del CAD
+          
    * -    [HTTP]
      -    Hypertext Transfer Protocol
 
