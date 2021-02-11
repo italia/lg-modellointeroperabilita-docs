@@ -35,8 +35,8 @@ documento.
    * -    [D.lgs. 196/2003]
      -    Codice in materia di protezione dei dati personali
 
-   * -    [UE 679/2016]
-     -    Regolamento (UE) n. 679/2016 del 27 aprile 2016 relativo alla 
+   * -    [UE 2016/679]
+     -    Regolamento (UE) n. 2016/679 del 27 aprile 2016 relativo alla 
           protezione delle persone fisiche con riguardo al trattamento 
           dei dati personali (in breve GDPR)
 
@@ -45,7 +45,7 @@ documento.
           identificazione elettronica e servizi fiduciari per le 
           transazioni elettroniche nel mercato interno (in breve eIDAS)
 
-   * -    [DUE 910/2014]
+   * -    [DUE 2019/1024]
      -    Direttiva (UE) 2019/1024 del Parlamento Europeo e del Consiglio 
           del 20 giugno 2019 relativa all'apertura dei dati e al riutilizzo 
           dell'informazione del settore pubblico
