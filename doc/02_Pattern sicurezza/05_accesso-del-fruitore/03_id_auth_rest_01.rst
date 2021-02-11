@@ -173,8 +173,9 @@ implementative e includono:
 
 -  algoritmi di firma e digest (alg).
 
-Le parti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato al capitolo 7 "Elementi di sicurezza"
+Le parti, in base alle proprie esigenze, individuano gli specifici algoritmi 
+secondo quanto indicato nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale),
 nonché la modalità di inclusione o referenziazione del certificato X.509
 
 .. forum_italia::
