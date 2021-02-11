@@ -5,7 +5,7 @@ DOVREBBE», «PUÒ» e «OPZIONALE», la cui interpretazione è descritta di
 seguito.
 
 -  **DEVE** o **DEVONO**, indicano un requisito obbligatorio per
-   rispettare la Linee Guida;
+   rispettare le Linee Guida;
 
 -  **NON DEVE** o **NON DEVONO**, indicano un assoluto divieto delle
    specifiche;
