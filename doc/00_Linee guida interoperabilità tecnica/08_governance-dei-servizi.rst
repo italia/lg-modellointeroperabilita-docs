@@ -9,6 +9,8 @@ Nel ModI, il Catalogo delle API è la componente che gestisce il ciclo di
 vita della pubblicazione, consultazione e fruizione degli e-service,
 assicurando la specifica delle API che essi implementano.
 
+Il Catalogo delle API implementa quanto previsto dal CAD all'art.73, comma 3-ter, lettera c).
+
 Gli e-service registrati nel Catalogo, per normalizzare l’integrazione
 tra i sistemi informatici, utilizzano le tecnologie, i pattern e i
 profili individuati nelle Linee Guida.
