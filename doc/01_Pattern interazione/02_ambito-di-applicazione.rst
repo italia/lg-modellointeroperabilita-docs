@@ -15,7 +15,7 @@ informatici che fruiscono o erogano dati e/o servizi digitali di/ad altri
 soggetti.
 
 Il Documento Operativo è rivolto ai soggetti privati che devono
-interoperare e interfacciarsi con la Pubblica Amministrazione per erogare
+interoperare con la Pubblica Amministrazione per erogare
 o fruire di dati e servizi tramite sistemi informatici.
 
 .. forum_italia::
