@@ -48,7 +48,7 @@ Elementi di sicurezza.
 1. Il fruitore costruisce un messaggio di richiesta;
 
 2. Il fruitore spedisce sul canale sicuro stabilito il messaggio di
-   richiesta; all’interfaccia di servizio dell’erogatore.
+   richiesta all’interfaccia di servizio dell’erogatore.
 
 **B: Risposta**
 

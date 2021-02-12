@@ -1,0 +1,12 @@
+#
+# Docker for testing the pdf build of the doc.
+#
+# $ docker-compose up --build latex
+version: "3.0"
+services:
+  latex:
+    build: .
+    volumes:
+    - .:/code
+    working_dir: /code
+    command: tox -e latex-full

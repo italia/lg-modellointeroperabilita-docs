@@ -28,7 +28,7 @@ come anche nel caso di XML l’utilizzo di formati binari all’interno dei
 campi CDATA sia sconsigliato poiché esiste il rischio che il contenuto
 binario possa talvolta chiudere il campo CDATA stesso. D’altro canto,
 l’utilizzo di codifiche comporta un incremento nella banda richiesta
-poiché l’occupazione dei dati non è ottimale. L’utilizzo di URL comporta
+poiché l’occupazione dei dati non è, in generale, ottimale. L’utilizzo di URL comporta
 invece un potenziale rischio potenziale poiché la risorsa collegata può
 essere successivamente modificata o rimossa.
 
@@ -44,8 +44,8 @@ maggiori framework per lo sviluppo di interfacce di servizio SOAP, ma
 meccanismi similari, sempre basati su XOP, sono supportati anche dai
 maggiori framework per lo sviluppo di interfacce di servizio REST.
 
-L’utilizzo di un approccio o di un altro è fortemente dipendente dallo
-scenario applicativo. Le seguenti regole possono essere introdotte:
+L’utilizzo di un approccio o di un altro dipende fortemente dallo
+scenario applicativo. Possono essere utilizzate seguenti regole:
 
 -  L’invio di allegati binari corrispondenti a file fa preferire
    solitamente l’invio di dati in formato binario, quindi mediante

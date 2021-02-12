@@ -48,7 +48,7 @@ specificate al capitolo 7 Elementi di sicurezza.
 
 1. Il fruitore costruisce un messaggio di richiesta.
 
-2. Il fruitore spedisce utilizzando canale sicuro stabilito con il il
+2. Il fruitore spedisce utilizzando il canale sicuro stabilito con il
    messaggio di richiesta all’interfaccia di servizio dell’erogatore.
 
 **B: Risposta**

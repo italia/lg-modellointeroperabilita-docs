@@ -10,7 +10,7 @@ Dare seguito ad uno scambio tra fruitore ed erogatore che garantisca:
 Il fruitore potrebbe non coincidere con l’unità organizzativa fruitore,
 ma comunque appartenere alla stessa.
 
-Questa profilo è indipendente dal pattern di interazione implementato ed
+Questo profilo è indipendente dal pattern di interazione implementato ed
 utilizza i seguenti pattern di sicurezza:
 
 -  ID_AUTH_CHANNEL_01
