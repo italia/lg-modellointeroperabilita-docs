@@ -59,7 +59,7 @@ come alternativa a web service per indicare altri
 approcci/protocolli/tecnologie, come le API REpresentational State 
 Transfer (REST) per realizzare API senza utilizzare XML-RPC e SOAP.
 
-**Nell’ambito della Linee Guida, accettando la nomenclatura in uso a 
+**Nell’ambito delle Linee Guida, accettando la nomenclatura in uso a 
 livello europeo e più in generale nel contesto internazionale, si utilizza 
 il termine generico API per indicare indifferentemente le Web API, i web 
 service e le API REST, lasciando al contesto in cui lo stesso è utilizzato 
