@@ -66,7 +66,7 @@ documento.
           identificazione elettronica e servizi fiduciari per le 
           transazioni elettroniche nel mercato interno (in breve eIDAS)
 
-   * -    [DUE 910/2014]
+   * -    [DUE 2019/1024]
      -    Direttiva (UE) 2019/1024 del Parlamento Europeo e del Consiglio 
           del 20 giugno 2019 relativa all'apertura dei dati e al riutilizzo 
           dell'informazione del settore pubblico
