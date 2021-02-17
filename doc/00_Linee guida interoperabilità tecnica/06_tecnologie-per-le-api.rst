@@ -26,14 +26,17 @@ Quindi, ogni server applicativo offre e-service, tuttavia è comunque
 significativo distinguere se gli stessi sono offerti per interoperare:
 
 1. all’interno del dominio (da parte di client applicativi offerti dalla
-   stessa amministrazione (ad es., un’applicazione Web o una mobile);
+   stessa amministrazione (ad es., un’applicazione Web o una mobile verso il back-end,
+   integrazione tra banche dati nel back-end, ecc);
 
 2. verso altre amministrazioni o altri soggetti con cui è stabilita una
    relazione di fiducia.
 
 L’autonomia organizzativa delle Pubbliche Amministrazioni all’interno
-del loro dominio lascia alle stesse la facoltà di adottare le tecnologie
-e le modalità di loro utilizzo indicate nelle Linee Guida.
+del loro dominio lascia alle stesse la facoltà di adottare gli standard delle presenti Linee Guida
+anche per le interfacce API ad uso interno al dominio, fermo restando che in ogni caso
+è obbligatorio realizzare interfacce applicative API anche all'interno del dominio in ossequio al CAD e al principio API-first,
+sia per il colloquio tra front-end applicativo e back-end gestionale, sia per il colloquio tra diversi back-end interni.
 
 Una trattazione completa dei paradigmi per la progettazione e
 realizzazione delle API esula dagli scopi del presente documento. La
