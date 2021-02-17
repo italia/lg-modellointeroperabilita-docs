@@ -134,6 +134,9 @@ da utilizzare (entità, proprietà e relativa metadatazione).
 La definizione del modello dati è realizzata in coerenza con i vocabolari 
 controllati e modelli di dati definiti a livello nazionale e internazionale.
 
+In particolare si può fare riferimento ad OntoPiA, un insieme di ontologie
+e vocabolari controllati per la Pubblica Amministrazione sviluppato da AgID.
+
 **4) Tecnica**.
 
 Fase in cui le organizzazioni interessate provvedono, ove necessario, 
