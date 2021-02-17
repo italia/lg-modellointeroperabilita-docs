@@ -142,6 +142,10 @@ Termini e definizioni
      -    Modello di Interoperabilità delle Pubbliche Amministrazioni 
           Italiane
 
+   * -    [OntoPiA]
+     -    Insieme di ontologie e vocabolari controllati della Pubblica Amministrazione
+          https://github.com/italia/daf-ontologie-vocabolari-controllati/wiki
+
    * -    [PA]
      -    Pubblica Amministrazione Italiana
 
