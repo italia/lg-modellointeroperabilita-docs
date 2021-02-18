@@ -8,7 +8,7 @@ tra fruitore ed erogatore che assicuri a livello di messaggio:
    organizzativa fruitore, o entrambe le parti
 
 -  la difesa dalle minacce derivanti dagli attacchi: Replay Attack
-   quando il JWT o il messaggio non DEVONO essere riprocessati.
+   quando il JWT o il messaggio NON DEVONO essere riprocessati.
 
 Descrizione
 -------------
