@@ -81,7 +81,7 @@ Regole di processamento
    b. il payload del JWT coi claim rappresentativi degli elementi chiave
       del messaggio, contenente almeno:
 
-      iv.  i riferimenti temporali di emissione e scadenza: iat , exp.
+      iv.  i riferimenti temporali di emissione e scadenza: :code:`iat` , :code:`exp`.
            Se il flusso richiede di verificare l’istante di prima
            validità del token, si può usare il claim nbf.
 
