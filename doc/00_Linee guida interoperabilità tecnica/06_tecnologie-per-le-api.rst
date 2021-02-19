@@ -34,9 +34,13 @@ significativo distinguere se gli stessi sono offerti per interoperare:
 
 L’autonomia organizzativa delle Pubbliche Amministrazioni all’interno
 del loro dominio lascia alle stesse la facoltà di adottare gli standard delle presenti Linee Guida
-anche per le interfacce API ad uso interno al dominio, fermo restando che in ogni caso
-è obbligatorio realizzare interfacce applicative API anche all'interno del dominio in ossequio al CAD e al principio API-first,
-sia per il colloquio tra front-end applicativo e back-end gestionale, sia per il colloquio tra diversi back-end interni.
+anche per le interfacce API ad uso interno al dominio. Sebbene le presenti Linee Guida
+riguardino l'integrazione di sistemi informatici e servizi di soggetti differenti (entra-dominio)
+resta fermo che l'obbligo del CAD e il principio API-first riguardanoanche  la realizzazione di interfacce applicative
+intra-dominio, come nel caso del colloquio tra front-end applicativo e back-end gestionale
+che sarà implementato secondo standard scelti autonomamente dalla singola amministrazione
+(cfr. art.64-bis comma 1-bis le PA "(..) progettano e sviluppano i propri sistemi e servizi
+in modo da garantire l'integrazione e l'interoperabilità tra i diversi sistemi e servizi (..)".
 
 Una trattazione completa dei paradigmi per la progettazione e
 realizzazione delle API esula dagli scopi del presente documento. La
