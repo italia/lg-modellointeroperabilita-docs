@@ -1,5 +1,5 @@
-Progettazione dei servizi digitali
-==================================
+Progettazione dei servizi digitali e degli e-service
+==========================================================
 
 Nella realizzazione delle proprie funzioni istituzionali le Pubbliche 
 Amministrazioni implementano procedimenti amministrativi, definendo 
@@ -9,9 +9,11 @@ efficienti ed efficaci.
 Un servizio consiste in un’attività o in una serie di attività svolte 
 in uno scambio tra un fornitore e un cliente.
 
-Se l’efficacia è determinata dal soddisfacimento della norma, l’efficienza 
+Il CAD all'art.64-bis comma 1-bis prevede che le PA, i fornitori di identità digitali e i prestatori dei servizi fiduciari qualificati, "in sede di evoluzione, progettano e sviluppano i propri sistemi e servizi in modo da garantire l'integrazione e l'interoperabilità tra i diversi sistemi e servizi (..) espongono per ogni servizio le relative interfacce applicative" (API). Lo stesso art.64-bis al comma 1-quater prevede che le PA "rendono fruibili tutti i loro servizi anche in modalità digitale". 
+
+Se l’efficacia di un servizio pubblico è determinata dal soddisfacimento della norma, l’efficienza 
 può essere incrementata utilizzando gli strumenti propri della Information 
-and Communication Technology (ICT).
+and Communication Technology (ICT) in coerenza col principio "digital first".
 
 I processi che utilizzano gli strumenti ICT sono qui detti processi 
 digitali.
@@ -19,6 +21,7 @@ digitali.
 Un e-service è un servizio erogato via Internet o attraverso una rete 
 privata tramite un processo digitale in cui sono coinvolti erogatori e 
 fruitori.
+Gli e-service sono una particolare categoria di servizi in rete basati su interfacce applicative (API).
 
 Gli e-service di interesse delle Linee Guida sono caratterizzati da:
 
