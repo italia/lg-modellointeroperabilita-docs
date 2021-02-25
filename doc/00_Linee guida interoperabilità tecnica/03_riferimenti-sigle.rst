@@ -117,11 +117,13 @@ Termini e definizioni
           da esso realizzati
 
    * -    [e-service]
-     -    I servizi realizzati da un erogatore per assicurare 
+     -    I servizi digitali realizzati
+          ai sensi del CAD art. 1, comma 1, lettera n-quater)
+          da un erogatore per assicurare 
           l’accesso ai propri dati e/o l’integrazione dei propri processi 
           attraverso l'interazione dei suoi sistemi informatici con 
           quelli dei fruitori, trovano attuazione nell’implementazione 
-          di API. E' una categoria particolare dei servizi in rete di cui all'articolo 1, comma 1, lettera n-quater) del CAD
+          di API.
 
    * -    [Fruitore]
      -    Un’organizzazione che utilizza gli e-service messi a disposizione 
