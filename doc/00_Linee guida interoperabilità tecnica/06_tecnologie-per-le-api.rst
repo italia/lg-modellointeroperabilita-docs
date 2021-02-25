@@ -26,14 +26,22 @@ Quindi, ogni server applicativo offre e-service, tuttavia è comunque
 significativo distinguere se gli stessi sono offerti per interoperare:
 
 1. all’interno del dominio (da parte di client applicativi offerti dalla
-   stessa amministrazione (ad es., un’applicazione Web o una mobile);
+   stessa amministrazione (ad es., un’applicazione Web o una mobile verso il back-end,
+   integrazione tra banche dati nel back-end, ecc);
 
 2. verso altre amministrazioni o altri soggetti con cui è stabilita una
    relazione di fiducia.
 
-L’autonomia organizzativa delle Pubbliche Amministrazioni all’interno
-del loro dominio lascia alle stesse la facoltà di adottare le tecnologie
-e le modalità di loro utilizzo indicate nelle Linee Guida.
+Le Pubbliche Amministrazioni, nella loro autonomia organizzativa
+possono adottare queste Linee Guida
+anche per i servizi sviluppati all’interno del proprio dominio.
+Adottare il principio API-first per i servizi interni
+permette di riutilizzare le componenti e di integrarle più
+facilmente con quelle delle altre organizzazioni in caso di necessità.
+Le regole tecniche inoltre permettono di applicare criteri di qualità
+uniformi per tutti i servizi ICT, consolidando le prassi di sicurezza,
+migliorando la qualità della spesa e
+mitigando i rischi anche interni legati alla protezione dei dati personali.
 
 Una trattazione completa dei paradigmi per la progettazione e
 realizzazione delle API esula dagli scopi del presente documento. La
