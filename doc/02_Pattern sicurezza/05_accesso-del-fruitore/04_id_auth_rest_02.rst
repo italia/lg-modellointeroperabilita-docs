@@ -8,7 +8,7 @@ tra fruitore ed erogatore che assicuri a livello di messaggio:
    organizzativa fruitore, o entrambe le parti
 
 -  la difesa dalle minacce derivanti dagli attacchi: Replay Attack
-   quando il JWT o il messaggio non DEVONO DEVONO essere riprocessati.
+   quando il JWT o il messaggio NON DEVONO essere riprocessati.
 
 Descrizione
 -------------
@@ -37,7 +37,7 @@ destinatario e l’intervallo di validità della firma.
 L’erogatore verifica inoltre l’univocità dell’identificativo ricevuto
 nel JWT.
 
-Se la verifica e la validazione sono superate, l’erogatore consuma la
+Se la verifica e la validazione sono superate, l’erogatore elabora la
 richiesta e produce la relativa risposta.
 
 .. mermaid::
@@ -81,14 +81,13 @@ Regole di processamento
    b. il payload del JWT coi claim rappresentativi degli elementi chiave
       del messaggio, contenente almeno:
 
-      iv.  
-      v.   i riferimenti temporali di emissione e scadenza: iat , exp.
+      iv.  i riferimenti temporali di emissione e scadenza: :code:`iat` , :code:`exp`.
            Se il flusso richiede di verificare l’istante di prima
            validità del token, si può usare il claim nbf.
 
-      vi.  il riferimento dell’erogatore in aud;
+      v.   il riferimento dell’erogatore in aud;
 
-      vii. un identificativo univoco del token jti. Se utile alla logica
+      vi.  un identificativo univoco del token jti. Se utile alla logica
            applicativa l’identificativo può essere anche collegato al
            messaggio.
 
@@ -101,7 +100,7 @@ Regole di processamento
 **B: Risposta**
 
 6.  L’erogatore decodifica il JWT presente in :httpheader:`Authorization`
-    e valida i claim contenuti nel Jose Header, in particolare verifica:
+    e valida i claim contenuti nel JOSE Header, in particolare verifica:
 
     c. il contenuto dei claim iat ed exp;
 
@@ -109,7 +108,7 @@ Regole di processamento
 
     e. l’univocità del claim jti
 
-7.  L’erogatore recupera il certificato X.509 referenziato nel Jose
+7.  L’erogatore recupera il certificato X.509 referenziato nel JOSE
     Header
 
 8.  L’erogatore verifica il certificato secondo i criteri del trust
@@ -125,7 +124,7 @@ Regole di processamento
 Note:
 
 -  In merito agli algoritmi da utilizzare si fa riferimento al capitolo
-   7 Elementi di sicurezza.
+   7 "Elementi di sicurezza".
 
 -  Un meccanismo simile può essere utilizzato specularmente per
    l’erogatore.
@@ -183,10 +182,9 @@ implementative e includono:
 
 -  algoritmi di firma e digest (alg).
 
-Le parti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato al capitolo 7 Elementi di sicurezza
-nonché la modalità di inclusione o referenziazione del certificato
-X.509.
+Le parti, in base alle proprie esigenze, individuano gli specifici algoritmi 
+secondo quanto indicato nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 .. forum_italia::
    :topic_id: 21472
