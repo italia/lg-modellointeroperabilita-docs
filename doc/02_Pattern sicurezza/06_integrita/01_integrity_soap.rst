@@ -87,8 +87,9 @@ Note:
 
 -  Per quanto riguarda gli algoritmi da utilizzare nell’elemento
    <Signature> rispettivamente <DigestMethod> , <SignatureMethod> e
-   <CanonicalizationMethod> si fa riferimento agli algoritmi indicati al
-   capitolo 7 "Elementi di sicurezza".
+   <CanonicalizationMethod> si fa riferimento agli algoritmi indicati 
+   nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+   ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    del payload del messaggio risposta dell’erogatore al fruitore.
