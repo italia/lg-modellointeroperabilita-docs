@@ -95,7 +95,7 @@ Termini e definizioni
        e/o evolute in maniera interoperabile,
        a prescindere dai canali di erogazione del servizio 
        che sono individuati logicamente e cronologicamente 
-       dopo la progettazione dell’API.
+       dopo la progettazione dell’API
 
    * -    [BP]
      -    WS-I Basic Profile - (Web Services Interoperability 
@@ -132,7 +132,7 @@ Termini e definizioni
           l’accesso ai propri dati e/o l’integrazione dei propri processi 
           attraverso l'interazione dei suoi sistemi informatici con 
           quelli dei fruitori, trovano attuazione nell’implementazione 
-          di API.
+          di API
 
    * -    [Fruitore]
      -    Un’organizzazione che utilizza gli e-service messi a disposizione 
