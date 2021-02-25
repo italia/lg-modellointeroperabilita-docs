@@ -97,8 +97,9 @@ Note:
 
 -  In merito agli algoritmi da utilizzare nell’elemento <Signature>
    rispettivamente <DigestMethod>, <SignatureMethod> e
-   <CanonicalizationMethod> si fa riferimento agli algoritmi indicati al
-   capitolo 7 Elementi di sicurezza,
+   <CanonicalizationMethod> si fa riferimento agli algoritmi indicati 
+   nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+   ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 -  Un meccanismo simile può essere utilizzato specularmente per
    l’erogatore.
@@ -134,9 +135,9 @@ esemplificative:
 
 -  algoritmo per il digest (DigestMethod)
 
-Le parti, in base alle proprie esigenze, usano gli algoritmi indicati al
-capitolo 7 "Elementi di sicurezza", nonché la modalità di inclusione o
-referenziazione del certificato X.509.
+Le parti, in base alle proprie esigenze, individuano gli specifici algoritmi 
+secondo quanto indicato nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 .. forum_italia::
    :topic_id: 21469
