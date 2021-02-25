@@ -30,7 +30,7 @@ messaggio firmata.
 L’erogatore, ricevuto il messaggio, verifica il certificato X.509 e
 valida la porzione firmata del messaggio, inclusa la corrispondenza del
 destinatario e l’intervallo di validità della firma. Se la verifica e la
-validazione sono superate, l’erogatore consuma la richiesta e produce la
+validazione sono superate, l’erogatore elabora la richiesta e produce la
 relativa risposta.
 
 .. mermaid::
@@ -56,7 +56,7 @@ Regole di processamento
 
 2. Il fruitore costruisce il JWT popolando:
 
-   a. il Jose Header con almeno i parameter:
+   a. il JOSE Header con almeno i parameter:
 
       i.   alg con l’algoritmo di firma, vedi :rfc:`8725`
 
@@ -89,13 +89,13 @@ Regole di processamento
 **B: Risposta**
 
 6.  L’erogatore decodifica il JWT presente in :httpheader:`Authorization`
-    e valida i claim contenuti nel Jose Header, in particolare verifica:
+    e valida i claim contenuti nel JOSE Header, in particolare verifica:
 
 7.  il contenuto dei claim iat ed exp;
 
 8.  la corrispondenza tra se stesso e il claim aud;
 
-9.  L’erogatore recupera il certificato X.509 referenziato nel Jose
+9.  L’erogatore recupera il certificato X.509 referenziato nel JOSE
     Header
 
 10. L’erogatore verifica il certificato secondo i criteri del trust
@@ -111,7 +111,7 @@ Regole di processamento
 Note:
 
 -  Gli algoritmi da utilizzare in alg sono indicati al capitolo 7
-   Elementi di sicurezza.
+   "Elementi di sicurezza".
 
 -  Un meccanismo simile può essere utilizzato specularmente per
    l’erogatore.
@@ -173,9 +173,9 @@ implementative e includono:
 
 -  algoritmi di firma e digest (alg).
 
-Le parti, in base alle proprie esigenze, individuano gli specifici
-algoritmi secondo quanto indicato al capitolo 7 Elementi di sicurezza
-nonché la modalità di inclusione o referenziazione del certificato X.509
+Le parti, in base alle proprie esigenze, individuano gli specifici algoritmi 
+secondo quanto indicato nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 .. forum_italia::
    :topic_id: 21471
