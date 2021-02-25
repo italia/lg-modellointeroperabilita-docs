@@ -110,8 +110,9 @@ Regole di processamento
 
 Note:
 
--  Gli algoritmi da utilizzare in alg sono indicati al capitolo 7
-   "Elementi di sicurezza".
+-  Gli algoritmi da utilizzare in alg sono indicati
+   nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+   ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 -  Un meccanismo simile può essere utilizzato specularmente per
    l’erogatore.
