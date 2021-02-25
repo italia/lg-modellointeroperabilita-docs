@@ -4,7 +4,7 @@ Istruzioni per la consultazione pubblica
 Informazioni sulla consultazione
 ================================
 
--  **Durata della consultazione:** dal <START_CONSULTAZIONE> al <END_CONSULTAZIONE> 2021
+-  **Durata della consultazione:** dal 26/02/2021 al 31/03/2021
 
 -  **Settore:** ICT
 
