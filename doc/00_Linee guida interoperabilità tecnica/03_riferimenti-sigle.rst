@@ -86,7 +86,16 @@ Termini e definizioni
      -    Application Programming Interface
 
    * -    [API-First]
-     -    Strategia di sviluppo e realizzazione di servizi e applicazioni che prevede lo sviluppo di una interfaccia applicativa (API) prima di realizzare un’applicazione o una pagina web o un’applicazione per il mobile. In altri termini, la definizione dei canali di erogazione del servizio è logicamente e cronologicamente successiva allo sviluppo dell’API. Take obbligo è previsto dal CAD all'articolo 64-bis, comma 1-bis.
+     - L'API-first è un approccio in cui le PA considerano le API 
+       come mezzo principale per perseguire i propri obiettivi, 
+       interagendo con i propri stakeholder sin dalla fase di 
+       progettazione.   
+       Come indica il CAD art. 64-bis, comma 1-bis quindi,
+       le interfacce applicative (API appunto) devono essere progettate
+       e/o evolute in maniera interoperabile,
+       a prescindere dai canali di erogazione del servizio 
+       che sono individuati logicamente e cronologicamente 
+       dopo la progettazione dell’API.
 
    * -    [BP]
      -    WS-I Basic Profile - (Web Services Interoperability 
