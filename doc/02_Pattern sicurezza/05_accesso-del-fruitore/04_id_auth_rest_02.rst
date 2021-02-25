@@ -123,8 +123,9 @@ Regole di processamento
 
 Note:
 
--  In merito agli algoritmi da utilizzare si fa riferimento al capitolo
-   7 "Elementi di sicurezza".
+-  In merito agli algoritmi da utilizzare si fa riferimento alle 
+   Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale
+   ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 -  Un meccanismo simile può essere utilizzato specularmente per
    l’erogatore.
