@@ -147,8 +147,9 @@ Regole di processamento
 
 Note:
 
--  Per gli algoritmi da utilizzare in alg e Digest si veda al capitolo 7
-   "Elementi di sicurezza".
+-  Per gli algoritmi da utilizzare in alg e Digest si vedano
+   le Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+   ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
    della risposta da parte dell’erogatore al fruitore. In questo caso si
