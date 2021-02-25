@@ -40,8 +40,8 @@ Regole di processamento
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Il canale sicuro tra erogatore e fruitore viene instaurato utilizzando
-il protocollo TLS, secondo le modalità specificate al capitolo 7
-Elementi di sicurezza.
+il protocollo TLS, secondo quanto indicato nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 **A: Richiesta**
 
