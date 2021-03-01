@@ -41,7 +41,7 @@ dello stesso Codice.
 Come partecipare
 ================
 
-Le Linee Guida sono pubblicate su `Docs Italia <https://docs.italia.it/xxxxxxx>`_ 
-ed è possibile commentarle su `Forum Italia <https://forum.italia.it/xxxxxx>`_.
+Le Linee Guida sono pubblicate su `Docs Italia <https://docs.italia.it/italia/piano-triennale-ict/lg-modellointeroperabilita-docs/it/bozza/index.html>`_ 
+ed è possibile commentarle su `Forum Italia <https://forum.italia.it/c/documenti-in-consultazione/lg-interoperabilita-tecnica-delle-pa/79>`_.
 
 È possibile inviare i propri commenti fino a <END_CONSULTAZIONE> 2021.
