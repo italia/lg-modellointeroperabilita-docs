@@ -1,4 +1,4 @@
-Roccomandazioni sul formato dei dati
+Raccomandazioni sul formato dei dati
 ------------------------------------
 
 [RAC_GEN_FORMAT_001] Utilizzare Content-Type semanticamente coerenti

@@ -1,4 +1,4 @@
-Roccomandazioni sul logging
+Raccomandazioni sul logging
 ---------------------------
 
 [RAC_GEN_LOG_01] Informazioni di Logging
