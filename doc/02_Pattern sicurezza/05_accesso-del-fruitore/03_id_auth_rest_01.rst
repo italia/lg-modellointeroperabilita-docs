@@ -58,27 +58,27 @@ Regole di processamento
 
    a. il JOSE Header con almeno i parameter:
 
-      i.   alg con l’algoritmo di firma, vedi :rfc:`8725`
+      i.   :code:`alg` con l’algoritmo di firma, vedi :rfc:`8725`
 
-      ii.  typ uguale a JWT
+      ii.  :code:`typ` uguale a JWT
 
       iii. una o più delle seguenti opzioni per referenziare il
            certificato X.509:
 
--  x5u (X.509 URL)
+-  :code:`x5u` (X.509 URL)
 
--  x5c (X.509 Certificate Chain)
+-  :code:`x5c` (X.509 Certificate Chain)
 
--  x5t#S256 (X.509 Certificate SHA-256 Thumbprint)
+-  :code:`x5t#S256` (X.509 Certificate SHA-256 Thumbprint)
 
    b. il payload del JWT coi claim rappresentativi degli elementi chiave
       del messaggio, contenente almeno:
 
-      iv. i riferimenti temporali di emissione e scadenza: iat , exp. Se
+      iv. i riferimenti temporali di emissione e scadenza: :code:`iat` , :code:`exp`. Se
           il flusso richiede di verificare l’istante di prima validità
-          del token, si può usare il claim nbf.
+          del token, si può usare il claim :code:`nbf`.
 
-      v.  il riferimento dell’erogatore in aud
+      v.  il riferimento dell’erogatore in :code:`aud`
 
 3. il fruitore firma il token adottando la JWS Compact Serialization
 
@@ -91,9 +91,9 @@ Regole di processamento
 6.  L’erogatore decodifica il JWT presente in :httpheader:`Authorization`
     e valida i claim contenuti nel JOSE Header, in particolare verifica:
 
-7.  il contenuto dei claim iat ed exp;
+7.  il contenuto dei claim :code:`iat` ed :code:`exp`;
 
-8.  la corrispondenza tra se stesso e il claim aud;
+8.  la corrispondenza tra se stesso e il claim :code:`aud`;
 
 9.  L’erogatore recupera il certificato X.509 referenziato nel JOSE
     Header
@@ -110,7 +110,7 @@ Regole di processamento
 
 Note:
 
--  Gli algoritmi da utilizzare in alg sono indicati
+-  Gli :code:`alg`oritmi da utilizzare in :code:`alg` sono indicati
    nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
    ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
