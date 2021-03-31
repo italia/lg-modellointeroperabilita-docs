@@ -89,8 +89,7 @@ individuati dalla Comunità Europea (ad esempio INfrastructure for
 SPatial InfoRmation in Europe [5]_) e sostiene le iniziative di 
 standardizzazione promosse dalla Commissione Europea (ad esempio 
 Solution Architecture Template for e-Procurement [6]_, Solution 
-Architecture Template for Open Data [7]_, Solution Architecture 
-Template for eDelivery [8]_).
+Architecture Template for Open Data [7]_).
 
 .. [1]
    Cf.
@@ -116,9 +115,6 @@ Template for eDelivery [8]_).
 
 .. [7]
    Cf. https://joinup.ec.europa.eu/solution/sat-open-data
-
-.. [8]
-   Cf. https://joinup.ec.europa.eu/solution/sat-edelivery
 
 .. forum_italia::
    :topic_id: 21428
