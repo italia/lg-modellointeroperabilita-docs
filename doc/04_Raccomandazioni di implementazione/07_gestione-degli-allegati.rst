@@ -18,7 +18,7 @@ allegato può essere passato o ricevuto nelle seguenti forme:
 -  Nel suo formato binario originale.
 
 Nei primi due casi, l’allegato fa parte del contenuto XML o JSON del
-messaggio, mentre nel secondo caso si ricorre a risposte di tipo
+messaggio, mentre nell'ultimo caso si ricorre a risposte di tipo
 multipart.
 
 Ognuna di queste modalità presenta vantaggi e svantaggi. L’utilizzo di
