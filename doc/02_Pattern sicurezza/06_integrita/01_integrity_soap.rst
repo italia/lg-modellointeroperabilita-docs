@@ -110,7 +110,7 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
    ec="http://www.w3.org/2001/10/xml-exc-c14n#"
 
 .. literalinclude:: media/INTEGRITY_SOAP_01_example_request.xml
-   :language: xm
+   :language: xml
 
 Il codice rispecchia alcune scelte implementative esemplificative in
 merito:
