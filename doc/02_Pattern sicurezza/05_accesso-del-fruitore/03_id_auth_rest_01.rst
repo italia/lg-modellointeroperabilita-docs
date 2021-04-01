@@ -110,7 +110,7 @@ Regole di processamento
 
 Note:
 
--  Gli :code:`alg`oritmi da utilizzare in :code:`alg` sono indicati
+-  Gli algoritmi da utilizzare in :code:`alg` sono indicati
    nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
    ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
@@ -161,18 +161,18 @@ Gli elementi presenti nel tracciato rispettano le seguenti scelte
 implementative e includono:
 
 -  l’intervallo temporale di validità, in modo che il JWT possa essere
-   usato solo tra gli istanti nbf ed exp;
+   usato solo tra gli istanti :code:`nbf` ed :code:`exp`;
 
--  indica l’istante iat di emissione del JWT. Se le parti possono
+-  indica l’istante :code:`iat` di emissione del JWT. Se le parti possono
    accordarsi nel considerarlo come l’istante iniziale di validità del
    token, :rfc:`7519` non assegna a questo claim nessun ruolo specifico
-   nella validazione, a differenza di nbf;
+   nella validazione, a differenza di :code:`nbf`;
 
 -  il destinatario del JWT, che DEVE sempre essere validato;
 
--  contenuto della certificate chain X.509 (x5c)
+-  contenuto della certificate chain X.509 (:code:`x5c`)
 
--  algoritmi di firma e digest (alg).
+-  algoritmi di firma e digest (:code:`alg`).
 
 Le parti, in base alle proprie esigenze, individuano gli specifici algoritmi 
 secondo quanto indicato nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
