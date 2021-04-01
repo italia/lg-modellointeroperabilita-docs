@@ -103,13 +103,53 @@ essere implementata tramite i parametri:
 
    q, fields, embed
 
-[RAC_REST_NAME_006] Non usare l’header Link se la response è in JSON
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[RAC_REST_NAME_006] Non passare tramite l’header Link informazioni fornite nella response JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Eventuali link a risorse utili al flusso applicativo DEVONO essere
-restituiti nel payload e non nell’ :httpheader:`Link` definito in :rfc:`8288`.
-Questo semplifica l'implementazione dei client. È comunque possibile
+Eventuali link a risorse utili al flusso applicativo
+DEVONO essere
+restituiti nel payload JSON e non nell’ :httpheader:`Link` definito in :rfc:`8288`.
+Questo semplifica l'implementazione dei client.
+È comunque possibile
 usare l':httpheader:`Link` per passare informazioni di tipo diverso.
+
+Nell'esempio seguente i riferimenti alla paginazione sono riportati nel payload.
+
+.. code-block:: http
+   :caption: Link applicativo nel payload JSON
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+
+   {
+      "items": [ ".." ],
+      "_links": {
+        "next": "https://api.example/rest/library/v1/books?cursor=432123"
+      }
+   }
+
+
+E' corretto ad esempio estendere la risposta precedente
+referenziando nell’:httpheader:`Link` l'OAS3 del servizio
+usando il link relation :code:`service-desc` definito in :rfc:`8631`.
+In questo caso il link ad openapi.yaml non serve al flusso applicativo
+e non è utile comunicarlo nel payload JSON.
+
+.. code-block:: http
+   :caption: Link applicativo nel payload JSON
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Link: <https://api.example/rest/users/v1/openapi.yaml>; rel="service-desc"; title="Books API specifications"
+
+   {
+      "items": [ ".." ],
+      "_links": {
+        "next": "https://api.example/rest/library/v1/books?cursor=432123"
+      }
+   }
+
+
 
 [RAC_REST_NAME_007] Usare URI assoluti nei risultati
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
