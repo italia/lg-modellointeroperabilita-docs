@@ -88,7 +88,7 @@ https://api.ente.example/rest/nome-api/v1/RESTCallbackServer.yaml
 
 Specifica Servizio Client
 
-https://api.indirizzoclient.it/rest/nome-api/v1/RESTCallbackClient.yaml
+https://api.client.example/rest/nome-api/v1/RESTCallbackClient.yaml
 
 .. literalinclude:: RESTCallbackClient.yaml
    :language: yaml
@@ -108,7 +108,7 @@ Endpoint: https://api.ente.example/rest/nome-api/v1/resources/1234/M
    POST /rest/nome-api/v1/resources/1234/M HTTP/1.1
    Host: api.ente.example
    Content-Type: application/json
-   X-ReplyTo: https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
+   X-ReplyTo: https://api.client.example/rest/v1/nomeinterfacciaclient/Mresponse
 
    {
      "a": {
@@ -137,14 +137,14 @@ della notifica.
 
 Endpoint
 
-https://api.indirizzoclient.it/rest/v1/nomeinterfacciaclient/Mresponse
+https://api.client.example/rest/v1/nomeinterfacciaclient/Mresponse
 
 3. Request
 
 .. code-block:: http
 
    POST /rest/v1/nomeinterfacciaclient/Mresponse HTTP/1.1
-   Host: api.indirizzoclient.it
+   Host: api.client.example
    Content-Type: application/json
    X-Correlation-ID: 69a445fb-6a9f-44fe-b1c3-59c0f7fb568d
 

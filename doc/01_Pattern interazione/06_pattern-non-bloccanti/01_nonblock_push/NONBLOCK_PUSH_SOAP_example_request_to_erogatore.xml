@@ -1,7 +1,7 @@
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
     xmlns:m="http://ente.example/nome-api">
     <soap:Header>
-        <m:X-ReplyTo>https://api.indirizzoclient.it/soap/nome-api/v1</m:X-ReplyTo>
+        <m:X-ReplyTo>https://api.client.example/soap/nome-api/v1</m:X-ReplyTo>
     </soap:Header>
     <soap:Body>
         <m:MRequest>

@@ -168,7 +168,7 @@ Richiesta HTTP con Digest e representation metadata
 
 .. code-block:: http
 
-   POST https://api.erogatore.org/rest/service/v1/hello/echo/ HTTP/1.1
+   POST https://api.erogatore.example/rest/service/v1/hello/echo/ HTTP/1.1
    Accept: application/json
    Agid-JWT-Signature: eyJhbGciOiJSUzI1NiIsInR5c.vz8...
    Digest: SHA-256=cFfTOCesrWTLVzxn8fmHl4AcrUs40Lv5D275FmAZ96E=
@@ -191,7 +191,7 @@ Porzione JWS con campi protetti dalla firma
    # *payload*
    
    {
-     "aud": "https://api.erogatore.org/rest/service/v1/hello/echo"
+     "aud": "https://api.erogatore.example/rest/service/v1/hello/echo"
      "iat": 1516239022,
      "nbf": 1516239022,
      "exp": 1516239024,
