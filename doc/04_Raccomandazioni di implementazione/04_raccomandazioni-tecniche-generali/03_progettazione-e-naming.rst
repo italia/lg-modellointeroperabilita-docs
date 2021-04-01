@@ -1,4 +1,4 @@
-Roccomandazioni sulla progettazione e naming
+Raccomandazioni sulla progettazione e naming
 --------------------------------------------
 
 [RAC_GEN_NAME_001] Utilizzare i nomi delle proprietà secondo nomenclature standard

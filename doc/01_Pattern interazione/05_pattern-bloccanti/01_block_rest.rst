@@ -126,7 +126,7 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M
 
 .. code-block:: http
 
-   HTTP/1.1 400 Not Found
+   HTTP/1.1 404 Not Found
    Content-Type: application/problem+json
 
    {
