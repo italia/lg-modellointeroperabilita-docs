@@ -155,16 +155,24 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
 
 4b. Response (:httpstatus:`303`)
 
+Poiché al termine del processamento il client viene rediretto
+verso la risorsa finale, il payload deve contenere solamente le informazioni
+utili al redirect.
+Questo anche perché alcuni client potrebbero seguire direttamente l':httpheader:`Location`
+ignorando il payload  :httpstatus:`303` e ritornando invece quello indicato nel punto 5.
+
 .. code-block:: http
    :emphasize-lines: 1
 
    HTTP/1.1 303 See Other
    Content-Type: application/json
+   Content-Location: /rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
    Location: /rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
 
    {
      "status": "done",
-     "message": "Processamento completo"
+     "message": "Processamento completo",
+     "href": "https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result"
    }
 
 Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
