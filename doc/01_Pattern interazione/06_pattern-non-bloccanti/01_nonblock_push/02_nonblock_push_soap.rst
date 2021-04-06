@@ -80,7 +80,7 @@ https://api.ente.example/soap/nome-api/v1?wsdl
 
 Specifica Servizio Fruitore (callback)
 
-https://api.indirizzoclient.it/soap/nome-api/v1?wsdl
+https://api.client.example/soap/nome-api/v1?wsdl
 
 .. literalinclude:: NONBLOCK_PUSH_SOAP_example_wsdl_fruitore.xml
    :language: xml
@@ -109,7 +109,7 @@ fruitore.
 
 Endpoint
 
-https://api.indirizzoclient.it/soap/nomeinterfacciaclient/v1Method
+https://api.client.example/soap/nomeinterfacciaclient/v1Method
 
 MRequestResponse
 

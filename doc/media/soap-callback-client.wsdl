@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions 
 	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
-	xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio" 
+	xmlns:tns="http://ente.example/nomeinterfacciaservizio" 
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" 
 	name="SOAPCallbackClientInterfaceService" 
-	targetNamespace="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+	targetNamespace="http://ente.example/nomeinterfacciaservizio">
 	<wsdl:types>
 		<xs:schema 
 			xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-			xmlns:tns="http://amministrazioneesempio.it/nomeinterfacciaservizio" 
+			xmlns:tns="http://ente.example/nomeinterfacciaservizio" 
 			attributeFormDefault="unqualified" elementFormDefault="unqualified" 
-			targetNamespace="http://amministrazioneesempio.it/nomeinterfacciaservizio">
+			targetNamespace="http://ente.example/nomeinterfacciaservizio">
 			
 			<xs:element name="MRequestResponse" type="tns:MRequestResponse"/>
 			<xs:element name="MRequestResponseResponse" type="tns:MRequestResponseResponse"/>
@@ -74,7 +74,7 @@
 	</wsdl:binding>
 	<wsdl:service name="SOAPCallbackClientService">
 		<wsdl:port binding="tns:SOAPCallbackClientServiceSoapBinding" name="SOAPCallbackClientPort">
-			<soap:address location="https://api.indirizzoclient.it/soap/nomeinterfacciaservizio/v1"/>
+			<soap:address location="https://api.client.example/soap/nomeinterfacciaservizio/v1"/>
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>

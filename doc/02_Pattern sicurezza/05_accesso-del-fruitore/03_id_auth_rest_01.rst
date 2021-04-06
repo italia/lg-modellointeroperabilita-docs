@@ -131,7 +131,7 @@ Esempio porzione messaggio HTTP.
 
 .. code-block:: http
 
-   GET https://api.erogatore.org/rest/service/v1/hello/echo/Ciao HTTP/1.1
+   GET https://api.erogatore.example/rest/service/v1/hello/echo/Ciao HTTP/1.1
    Accept: application/json
    Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
 
@@ -154,7 +154,7 @@ Esempio porzione JWT
    "iat": 1554382877,
    "nbf": 1554382877,
    "exp": 1554382879,
-   "aud": "https://api.erogatore.org/rest/service/v1/hello/echo"
+   "aud": "https://api.erogatore.example/rest/service/v1/hello/echo"
    }
 
 Gli elementi presenti nel tracciato rispettano le seguenti scelte
