@@ -12,4 +12,3 @@ Documento operativo - Raccomandazioni di implementazione
   05_raccomandazioni-tecniche-per-rest.rst
   06_raccomandazioni-tecniche-per-soap.rst
   07_gestione-degli-allegati.rst
-  08_robustezza.rst
