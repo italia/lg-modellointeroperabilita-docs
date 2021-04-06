@@ -114,12 +114,12 @@ Endpoint https://api.ente.example/rest/nome-api/v1/resources/1234/M
 
    HTTP/1.1 202 Accepted
    Content-Type: application/json
-   Location: /rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
+   Location: /rest/nome-api/v1/resources/1234/M/8131edc0
 
    {
      "status": "accepted",
      "message": "Preso carico della richiesta",
-     "id": "8131edc0-29ed-4d6e-ba43-cce978c7ea8d"
+     "id": "8131edc0"
    }
 
 Quindi il fruitore verifica lo stato dell’esecuzione di **M** (3).
@@ -129,13 +129,13 @@ L’erogatore ritorna un payload diverso a seconda dei casi:
 
 Endpoint
 
-https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d
+https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0
 
 3. Request
 
 .. code-block:: http
 
-   GET /rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d HTTP/1.1
+   GET /rest/nome-api/v1/resources/1234/M/8131edc0 HTTP/1.1
    Host: api.ente.example
 
 
@@ -155,16 +155,24 @@ https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba
 
 4b. Response (:httpstatus:`303`)
 
+Poiché al termine del processamento il client viene rediretto
+verso la risorsa finale, il payload deve contenere solamente le informazioni
+utili al redirect.
+Questo anche perché alcuni client potrebbero seguire direttamente l':httpheader:`Location`
+ignorando il payload  :httpstatus:`303` e ritornando invece quello indicato nel punto 5.
+
 .. code-block:: http
    :emphasize-lines: 1
 
    HTTP/1.1 303 See Other
    Content-Type: application/json
-   Location: /rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
+   Content-Location: /rest/nome-api/v1/resources/1234/M/8131edc0
+   Location: /rest/nome-api/v1/resources/1234/M/8131edc0/result
 
    {
      "status": "done",
-     "message": "Processamento completo"
+     "message": "Processamento completo",
+     "href": "https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0/result"
    }
 
 Di seguito un esempio di chiamata con cui il fruitore richiede l’esito
@@ -172,13 +180,13 @@ della sua richiesta.
 
 Endpoint
 
-https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result
+https://api.ente.example/rest/nome-api/v1/resources/1234/M/8131edc0/result
 
 5. Request:
 
 .. code-block:: http
 
-   GET /rest/nome-api/v1/resources/1234/M/8131edc0-29ed-4d6e-ba43-cce978c7ea8d/result HTTP/1.1
+   GET /rest/nome-api/v1/resources/1234/M/8131edc0/result HTTP/1.1
    Host: api.ente.example
 
 
