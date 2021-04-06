@@ -52,6 +52,9 @@ profilo.
 Regole di processamento
 -----------------------
 
+La creazione ed il processamento dei JWT DEVE rispettare
+le buone prassi di sicurezza indicate in :rfc:`8725`.
+
 **A: Richiesta**
 
 1. Il fruitore predispone il body del messaggio (ad esempio un oggetto
@@ -118,6 +121,8 @@ Regole di processamento
 **B: Risultato**
 
 8.  L’erogatore decodifica il JWS presente in Agid-JWT-Signature header
+    secondo le indicazioni contenute in :rfc:`7515#section-5.2`,
+    le buone prassi indicate in :rfc:`8725`
     e valida i claim contenuti nel Jose Header, in particolare verifica:
 
     e. il contenuto dei claim :code:`iat` , :code:`exp`;
@@ -128,6 +133,7 @@ Regole di processamento
 
 9.  L’erogatore recupera il certificato X.509 referenziato nel JOSE
     Header
+    facendo attenzione alle indicazioni contenute in :rfc:`8725#section-3.10`
 
 10. L’erogatore verifica il certificato secondo i criteri del trust
 
