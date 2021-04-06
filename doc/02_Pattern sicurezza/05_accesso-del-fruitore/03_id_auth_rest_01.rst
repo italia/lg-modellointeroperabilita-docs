@@ -58,27 +58,27 @@ Regole di processamento
 
    a. il JOSE Header con almeno i parameter:
 
-      i.   alg con l’algoritmo di firma, vedi :rfc:`8725`
+      i.   :code:`alg` con l’algoritmo di firma, vedi :rfc:`8725`
 
-      ii.  typ uguale a JWT
+      ii.  :code:`typ` uguale a JWT
 
       iii. una o più delle seguenti opzioni per referenziare il
            certificato X.509:
 
--  x5u (X.509 URL)
+-  :code:`x5u` (X.509 URL)
 
--  x5c (X.509 Certificate Chain)
+-  :code:`x5c` (X.509 Certificate Chain)
 
--  x5t#S256 (X.509 Certificate SHA-256 Thumbprint)
+-  :code:`x5t#S256` (X.509 Certificate SHA-256 Thumbprint)
 
    b. il payload del JWT coi claim rappresentativi degli elementi chiave
       del messaggio, contenente almeno:
 
-      iv. i riferimenti temporali di emissione e scadenza: iat , exp. Se
+      iv. i riferimenti temporali di emissione e scadenza: :code:`iat` , :code:`exp`. Se
           il flusso richiede di verificare l’istante di prima validità
-          del token, si può usare il claim nbf.
+          del token, si può usare il claim :code:`nbf`.
 
-      v.  il riferimento dell’erogatore in aud
+      v.  il riferimento dell’erogatore in :code:`aud`
 
 3. il fruitore firma il token adottando la JWS Compact Serialization
 
@@ -91,9 +91,9 @@ Regole di processamento
 6.  L’erogatore decodifica il JWT presente in :httpheader:`Authorization`
     e valida i claim contenuti nel JOSE Header, in particolare verifica:
 
-7.  il contenuto dei claim iat ed exp;
+7.  il contenuto dei claim :code:`iat` ed :code:`exp`;
 
-8.  la corrispondenza tra se stesso e il claim aud;
+8.  la corrispondenza tra se stesso e il claim :code:`aud`;
 
 9.  L’erogatore recupera il certificato X.509 referenziato nel JOSE
     Header
@@ -110,7 +110,7 @@ Regole di processamento
 
 Note:
 
--  Gli algoritmi da utilizzare in alg sono indicati
+-  Gli algoritmi da utilizzare in :code:`alg` sono indicati
    nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
    ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
@@ -161,18 +161,18 @@ Gli elementi presenti nel tracciato rispettano le seguenti scelte
 implementative e includono:
 
 -  l’intervallo temporale di validità, in modo che il JWT possa essere
-   usato solo tra gli istanti nbf ed exp;
+   usato solo tra gli istanti :code:`nbf` ed :code:`exp`;
 
--  indica l’istante iat di emissione del JWT. Se le parti possono
+-  indica l’istante :code:`iat` di emissione del JWT. Se le parti possono
    accordarsi nel considerarlo come l’istante iniziale di validità del
    token, :rfc:`7519` non assegna a questo claim nessun ruolo specifico
-   nella validazione, a differenza di nbf;
+   nella validazione, a differenza di :code:`nbf`;
 
 -  il destinatario del JWT, che DEVE sempre essere validato;
 
--  contenuto della certificate chain X.509 (x5c)
+-  contenuto della certificate chain X.509 (:code:`x5c`)
 
--  algoritmi di firma e digest (alg).
+-  algoritmi di firma e digest (:code:`alg`).
 
 Le parti, in base alle proprie esigenze, individuano gli specifici algoritmi 
 secondo quanto indicato nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 

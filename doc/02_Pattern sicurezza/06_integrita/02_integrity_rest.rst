@@ -77,37 +77,37 @@ Regole di processamento
       iii. una o più delle seguenti opzioni per referenziare il
            certificato X.509:
 
-           -  x5u (X.509 URL)
+           -  :code:`x5u` (X.509 URL)
 
-           -  x5c (X.509 Certificate Chain)
+           -  :code:`x5c` (X.509 Certificate Chain)
 
-           -  x5t#S256 (X.509 Certificate SHA-256 Thumbprint)
+           -  :code:`x5t#S256` (X.509 Certificate SHA-256 Thumbprint)
 
    b. i seguenti claim obbligatori:
 
-      iv. i riferimenti temporali di emissione e scadenza: iat , exp. Se
+      iv. i riferimenti temporali di emissione e scadenza: :code:`iat` , :code:`exp`. Se
           il flusso richiede di verificare l’istante di prima validità
-          del token, si può usare il claim nbf.
+          del token, si può usare il claim :code:`nbf`.
 
-      v.  il riferimento dell’erogatore in aud;
+      v.  il riferimento dell’erogatore in :code:`aud`;
 
    c. i seguenti claim, secondo la logica del servizio:
 
-      vi.   sub: oggetto (principal see :rfc:`3744#section-2`) dei claim
+      vi.   :code:`sub`: oggetto (principal see :rfc:`3744#section-2`) dei claim
             contenuti nel jwt
 
-      vii.  iss: identificativo del mittente
+      vii.  :code:`iss`: identificativo del mittente
 
-      viii. jti: identificativo del JWT, per evitare replay attack
+      viii. :code:`jti`: identificativo del JWT, per evitare replay attack
 
    d. il claim signed_headers con gli header http da proteggere ed i
       rispettivi valori, ovvero:
 
-      ix. Digest
+      ix. :httpheader:`Digest`
 
-      x.  Content-Type
+      x.  :httpheader:`Content-Type`
 
-      xi. Content-Encoding
+      xi. :httpheader:`Content-Encoding`
 
 5. il fruitore firma il token adottando la JWS Compact Serialization
 
@@ -120,11 +120,11 @@ Regole di processamento
 8.  L’erogatore decodifica il JWS presente in Agid-JWT-Signature header
     e valida i claim contenuti nel Jose Header, in particolare verifica:
 
-    e. il contenuto dei claim iat ed exp;
+    e. il contenuto dei claim :code:`iat` , :code:`exp`;
 
-    f. la corrispondenza tra se stesso e il claim aud;
+    f. la corrispondenza tra se stesso e il claim :code:`aud`;
 
-    g. l’univocità del claim jti se presente.
+    g. l’univocità del claim :code:`jti` se presente.
 
 9.  L’erogatore recupera il certificato X.509 referenziato nel JOSE
     Header
