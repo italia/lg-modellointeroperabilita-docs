@@ -5,12 +5,12 @@ I pattern di interazione non bloccanti di tipo RPC-like sono quelli in cui un
 fruitore invia una richiesta e questa viene solo presa in carico
 immediatamente, mentre il suo soddisfacimento può avvenire in maniera
 differita. Gli approcci non bloccanti vengono utilizzati nei casi in cui
-i tempi per l’erogazione di una risposta da parte del fruitore sono
+i tempi per l’erogazione di una risposta da parte dell'erogatore sono
 lunghi perché
 
 -  la richiesta è onerosa in termini temporali;
 
--  il fruitore non può farsi immediatamente carico dell’erogazione del
+-  l'erogatore non può farsi immediatamente carico dell’erogazione del
    servizio.
 
 Al fine di collegare le richieste con le risposte si farà uso, sia nelle
