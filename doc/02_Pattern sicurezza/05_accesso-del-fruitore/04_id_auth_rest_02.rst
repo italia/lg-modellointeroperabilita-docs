@@ -56,6 +56,9 @@ richiesta e produce la relativa risposta.
 Regole di processamento
 -----------------------
 
+La creazione ed il processamento dei JWT DEVE rispettare
+le buone prassi di sicurezza indicate in :rfc:`8725`.
+
 **A: Richiesta**
 
 1. Il fruitore predispone il payload del messaggio (ad esempio un
@@ -100,6 +103,8 @@ Regole di processamento
 **B: Risposta**
 
 6.  L’erogatore decodifica il JWT presente in :httpheader:`Authorization`
+    secondo le indicazioni contenute in :rfc:`7515#section-5.2`,
+    le buone prassi indicate in :rfc:`8725`
     e valida i claim contenuti nel JOSE Header, in particolare verifica:
 
     c. il contenuto dei claim iat ed exp;
@@ -110,6 +115,7 @@ Regole di processamento
 
 7.  L’erogatore recupera il certificato X.509 referenziato nel JOSE
     Header
+    facendo attenzione alle indicazioni contenute in :rfc:`8725#section-3.10`
 
 8.  L’erogatore verifica il certificato secondo i criteri del trust
 
