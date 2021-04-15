@@ -64,7 +64,8 @@ le buone prassi di sicurezza indicate in :rfc:`8725`.
 1. Il fruitore predispone il payload del messaggio (ad esempio un
    oggetto JSON)
 
-2. Il fruitore costruisce il JWT popolando:
+2. Il fruitore, o il soggetto individuato dal trust definito tra erogatore 
+   e fruitore, costruisce il JWT popolando:
 
    a. il Jose Header con almeno i parameter:
 
@@ -94,7 +95,8 @@ le buone prassi di sicurezza indicate in :rfc:`8725`.
            applicativa l’identificativo può essere anche collegato al
            messaggio.
 
-3. il fruitore firma il token adottando la JWS Compact Serialization
+3. il fruitore, o il soggetto individuato dal trust definito tra erogatore 
+   e fruitore firma il token adottando la JWS Compact Serialization
 
 4. il fruitore posiziona il JWT nell’ :httpheader:`Authorization`
 
