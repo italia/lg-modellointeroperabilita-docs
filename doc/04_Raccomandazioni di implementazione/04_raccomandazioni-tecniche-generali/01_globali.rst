@@ -28,7 +28,7 @@ Esempio:
 
 dove:
 
--  ​<dominioOrganizzativo> indica l'organizzazione che espone il
+-  <dominioOrganizzativo> indica l'organizzazione che espone il
    servizio;
 
 -  [rest|soap] indica la tecnologia della API;
@@ -40,6 +40,15 @@ dove:
    con Semantic Versioning 2.0.0 [1]_;
 
 -  <NomeAPI> è il nome della specifica API.
+
+Il documento di specifica dell'API DEVE indicare la versione, includendo :code:`<major>.<minor>.<patch>`.
+
+.. code-block:: python
+   :caption: Un esempio di versioning in formato OAS3
+   
+   openapi: 3.0.3
+   info:
+     version: 1.3.4
 
 [RAC_GEN_003] Codifica di default
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
