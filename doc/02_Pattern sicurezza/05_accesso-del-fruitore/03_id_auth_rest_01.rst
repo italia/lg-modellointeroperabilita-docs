@@ -75,9 +75,9 @@ le buone prassi di sicurezza indicate in :rfc:`8725`.
 -  :code:`x5t#S256` (X.509 Certificate SHA-256 Thumbprint)
 
    b. il payload del JWT coi claim rappresentativi degli elementi chiave
-      del messaggio, contenente almeno:
+      del messaggio, **contenente almeno**:
 
-      iv. i riferimenti temporali di emissione e scadenza: :code:`iat` , :code:`exp`. Se
+      iv. i riferimenti temporali di emissione e scadenza: :code:`iat`, :code:`exp`. Se
           il flusso richiede di verificare l’istante di prima validità
           del token, si può usare il claim :code:`nbf`.
 
@@ -160,6 +160,8 @@ Esempio porzione JWT
    "iat": 1554382877,
    "nbf": 1554382877,
    "exp": 1554382879,
+   "iss": "https://api.fruitore.example",
+   "sub": "https://api.fruitore.example",
    "aud": "https://api.erogatore.example/rest/service/v1/hello/echo"
    }
 
@@ -173,6 +175,11 @@ implementative e includono:
    accordarsi nel considerarlo come l’istante iniziale di validità del
    token, :rfc:`7519` non assegna a questo claim nessun ruolo specifico
    nella validazione, a differenza di :code:`nbf`;
+
+-  il riferimento al firmatario del token  nel claim aggiuntivo :code:`iss`, che deve essere
+   raccordato con il contenuto del certificato;
+
+-  il riferimento al fruitore nel claim aggiuntivo :code:`sub`;
 
 -  il destinatario del JWT, che DEVE sempre essere validato;
 
