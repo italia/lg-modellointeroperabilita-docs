@@ -49,6 +49,7 @@ Il documento di specifica dell'API DEVE indicare la versione, includendo :code:`
    openapi: 3.0.3
    info:
      version: 1.3.4
+   ...
 
 [RAC_GEN_003] Codifica di default
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
