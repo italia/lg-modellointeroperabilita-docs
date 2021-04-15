@@ -176,10 +176,10 @@ implementative e includono:
    token, :rfc:`7519` non assegna a questo claim nessun ruolo specifico
    nella validazione, a differenza di :code:`nbf`;
 
--  il riferimento al firmatario del token in :code:`iss`, che deve essere
+-  il riferimento al firmatario del token  nel claim aggiuntivo :code:`iss`, che deve essere
    raccordato con il contenuto del certificato;
 
--  il riferimento al fruitore nel claim :code:`sub`;
+-  il riferimento al fruitore nel claim aggiuntivo :code:`sub`;
 
 -  il destinatario del JWT, che DEVE sempre essere validato;
 
