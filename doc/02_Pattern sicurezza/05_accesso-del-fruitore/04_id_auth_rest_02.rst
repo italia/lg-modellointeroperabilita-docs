@@ -82,13 +82,13 @@ le buone prassi di sicurezza indicate in :rfc:`8725`.
 -  x5t#S256 (X.509 Certificate SHA-256 Thumbprint)
 
    b. il payload del JWT coi claim rappresentativi degli elementi chiave
-      del messaggio, contenente almeno:
+      del messaggio, **contenente almeno**:
 
-      iv.  i riferimenti temporali di emissione e scadenza: :code:`iat` , :code:`exp`.
+      iv.  i riferimenti temporali di emissione e scadenza: :code:`iat`, :code:`exp`.
            Se il flusso richiede di verificare l’istante di prima
-           validità del token, si può usare il claim nbf.
+           validità del token, si può usare il claim :code:`nbf`.
 
-      v.   il riferimento dell’erogatore in aud;
+      v.   il riferimento dell’erogatore in :code:`aud`;
 
       vi.  un identificativo univoco del token jti. Se utile alla logica
            applicativa l’identificativo può essere anche collegato al
@@ -169,6 +169,8 @@ Esempio porzione JWT
 	   "iat": 1516239022,
 	   "nbf": 1516239022,
 	   "exp": 1516239024,
+           "iss": "https://api.fruitore.example",
+           "sub": "https://api.fruitore.example",
 	   "jti": "065259e8-8696-44d1-84c5-d3ce04c2f40d"
    }
 
@@ -176,18 +178,23 @@ Gli elementi presenti nel tracciato rispettano le seguenti scelte
 implementative e includono:
 
 -  l’intervallo temporale di validità, in modo che il JWT possa essere
-   usato solo tra gli istanti nbf ed exp;
+   usato solo tra gli istanti :code:`nbf` ed :code:`exp`;
 
 -  indica l’istante iat di emissione del JWT. Se le parti possono
    accordarsi nel considerarlo come l’istante iniziale di validità del
    token, :rfc:`7519` non assegna a questo claim nessun ruolo specifico
-   nella validazione, a differenza di nbf;
+   nella validazione, a differenza di :code:`nbf`;
+
+-  il riferimento al firmatario del token nel claim aggiuntivo :code:`iss`, che deve essere
+   raccordato con il contenuto del certificato;
+
+-  il riferimento al fruitore nel claim aggiuntivo :code:`sub`;
 
 -  il destinatario del JWT, che DEVE sempre essere validato;
 
--  contenuto della certificate chain X.509 (x5c)
+-  contenuto della certificate chain X.509 (:code:`x5c`)
 
--  algoritmi di firma e digest (alg).
+-  algoritmi di firma e digest (:code:`alg`).
 
 Le parti, in base alle proprie esigenze, individuano gli specifici algoritmi 
 secondo quanto indicato nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
