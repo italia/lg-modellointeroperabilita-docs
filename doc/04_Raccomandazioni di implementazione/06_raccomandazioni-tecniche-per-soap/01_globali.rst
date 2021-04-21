@@ -29,7 +29,7 @@ stessa.
 
 ESEMPIO: Esposizione stato del servizio
 
-.. literalinclude:: media/RAC_SOAP_002_example.xml
+.. literalinclude:: RAC_SOAP_002_example.xml
    :language: xml
 
 .. forum_italia::
