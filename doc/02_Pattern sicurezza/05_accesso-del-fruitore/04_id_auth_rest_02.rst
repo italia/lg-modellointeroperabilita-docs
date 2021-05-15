@@ -43,7 +43,7 @@ richiesta e produce la relativa risposta.
 .. mermaid::
 
      sequenceDiagram
-     
+
       activate Fruitore
       activate Erogatore
       Fruitore->>+Erogatore: 1. Request()
@@ -64,7 +64,7 @@ le buone prassi di sicurezza indicate in :rfc:`8725`.
 1. Il fruitore predispone il payload del messaggio (ad esempio un
    oggetto JSON)
 
-2. Il fruitore, o il soggetto individuato dal trust definito tra erogatore 
+2. Il fruitore, o il soggetto individuato dal trust definito tra erogatore
    e fruitore, costruisce il JWT popolando:
 
    a. il Jose Header con almeno i parameter:
@@ -95,7 +95,7 @@ le buone prassi di sicurezza indicate in :rfc:`8725`.
            applicativa l’identificativo può essere anche collegato al
            messaggio.
 
-3. il fruitore, o il soggetto individuato dal trust definito tra erogatore 
+3. il fruitore, o il soggetto individuato dal trust definito tra erogatore
    e fruitore firma il token adottando la JWS Compact Serialization
 
 4. il fruitore posiziona il JWT nell’ :httpheader:`Authorization`
@@ -131,7 +131,7 @@ le buone prassi di sicurezza indicate in :rfc:`8725`.
 
 Note:
 
--  In merito agli algoritmi da utilizzare si fa riferimento alle 
+-  In merito agli algoritmi da utilizzare si fa riferimento alle
    Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale
    ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
@@ -164,15 +164,15 @@ Esempio porzione JWT
 		   "MIICyzCCAbOgAwIBAgIEC..."
 		   ]
    }
-   
+
    # *payload*
    {
 	   "aud": "https://api.erogatore.example/rest/service/v1/hello/echo"
 	   "iat": 1516239022,
 	   "nbf": 1516239022,
 	   "exp": 1516239024,
-           "iss": "https://api.fruitore.example",
-           "sub": "https://api.fruitore.example",
+     "iss": "https://api.fruitore.example",
+     "sub": "https://api.fruitore.example",
 	   "jti": "065259e8-8696-44d1-84c5-d3ce04c2f40d"
    }
 
@@ -198,8 +198,8 @@ implementative e includono:
 
 -  algoritmi di firma e digest (:code:`alg`).
 
-Le parti, in base alle proprie esigenze, individuano gli specifici algoritmi 
-secondo quanto indicato nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+Le parti, in base alle proprie esigenze, individuano gli specifici algoritmi
+secondo quanto indicato nelle Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale
 ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 .. forum_italia::
