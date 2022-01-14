@@ -1,17 +1,11 @@
 Linee Guida sull'interoperabilità tecnica delle Pubbliche Amministrazioni
 #########################################################################
 
-.. admonition:: Consultazione pubblica
-
-   La consultazione pubblica per questo documento è attiva dal 
-   26/02/2021 al 31/03/2021.
-
 Questo documento raccoglie il testo delle *Linee Guida 
 sull'interoperabilità tecnica delle Pubbliche Amministrazioni*, e dei 
-Documenti Operativi ad essa allegati, disponibile per la consultazione 
-pubblica.
-
-`Leggi le istruzioni per la consultazione <istruzioni_consultazione.html>`_
+Documenti Operativi ad essa allegati, pubblicato in forma ufficiale
+il 27-04-2021
+sul `sito AgID <https://www.agid.gov.it/sites/default/files/repository_files/linee_guida_interoperabilit_tecnica_pa.pdf>`_
 
 .. toctree::
    :maxdepth: 4
