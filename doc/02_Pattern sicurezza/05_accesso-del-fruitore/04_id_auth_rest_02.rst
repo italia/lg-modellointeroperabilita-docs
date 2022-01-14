@@ -171,8 +171,8 @@ Esempio porzione JWT
 	   "iat": 1516239022,
 	   "nbf": 1516239022,
 	   "exp": 1516239024,
-     "iss": "https://api.fruitore.example",
-     "sub": "https://api.fruitore.example",
+         "iss": "https://api.fruitore.example",
+         "sub": "https://api.fruitore.example",
 	   "jti": "065259e8-8696-44d1-84c5-d3ce04c2f40d"
    }
 
