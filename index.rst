@@ -3,8 +3,7 @@ Linee Guida sull'interoperabilità tecnica delle Pubbliche Amministrazioni
 
 Questo documento raccoglie il testo delle *Linee Guida 
 sull'interoperabilità tecnica delle Pubbliche Amministrazioni*, e dei 
-Documenti Operativi ad essa allegati, pubblicato in forma ufficiale
-il 27-04-2021
+Documenti Operativi ad essa allegati, adottate con Determinazione AgID n. 547 del 1 ottobre 2021 e disponibili 
 sul `sito AgID <https://www.agid.gov.it/sites/default/files/repository_files/linee_guida_interoperabilit_tecnica_pa.pdf>`_
 
 .. toctree::
