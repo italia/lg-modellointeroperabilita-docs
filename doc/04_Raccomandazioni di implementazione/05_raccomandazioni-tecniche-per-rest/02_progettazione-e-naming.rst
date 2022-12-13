@@ -321,8 +321,14 @@ tramite gli header:
 
 che contengono un identificatore opaco che il server è in grado di associare
 univocamente alla versione della risorsa erogata.
+
+La direttiva :code:`no-transform` dell’:httpheader:`Cache-Control` 
+indica ad eventuali componenti infrastrutturali (cache, gateway, proxy)
+di non modificare il payload di una response (e.g. comprimendolo).
+
 Si veda :rfc:`7232#section-2.3` per ulteriori informazioni su come
 implementare questi header.
+
 
 [RAC_REST_NAME_011] Esporre lo stato del servizio
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
