@@ -58,10 +58,10 @@ definire/aggiornare delle entità e/o proprietà a livello nazionale.
    Cf. https://en.wikipedia.org/wiki/Data_model
 
 .. [2]
-   Cf. https://github.com/italia/daf-ontologie-vocabolari-controllati
+   Cf. https://github.com/italia/dati-semantic-assets
 
 .. [3]
-   Cf. https://github.com/italia/daf-ontologie-vocabolari-controllati
+   Cf. https://github.com/italia/dati-semantic-assets
 
 .. forum_italia::
    :topic_id: 21440
