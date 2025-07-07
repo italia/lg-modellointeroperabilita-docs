@@ -101,7 +101,7 @@ Esempio in un’architettura orientata alle risorse:
    https://docs.italia.it/italia/daf/lg-patrimonio-pubblico/it/bozza/index.html
 
 .. [2]
-   Cfr. https://github.com/italia/daf-ontologie-vocabolari-controllati
+   Cfr. https://github.com/italia/dati-semantic-assets
 
 .. forum_italia::
    :topic_id: 21489
