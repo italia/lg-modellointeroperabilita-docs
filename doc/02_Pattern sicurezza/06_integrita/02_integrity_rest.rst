@@ -154,7 +154,7 @@ le buone prassi di sicurezza indicate in :rfc:`8725`.
 Note:
 
 -  Per gli algoritmi da utilizzare in alg e Digest si vedano
-   le Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale 
+   le Linee Guida sulla sicurezza, emanate dall'Agenzia per l'Italia Digitale
    ai sensi dell'articolo 71 del decreto legislativo 7 marzo 2005, n. 82 (Codice dell'Amministrazione Digitale).
 
 -  Un meccanismo simile può essere utilizzato per garantire l’integrità
@@ -179,7 +179,7 @@ Richiesta HTTP con Digest e representation metadata
    Agid-JWT-Signature: eyJhbGciOiJSUzI1NiIsInR5c.vz8...
    Digest: SHA-256=cFfTOCesrWTLVzxn8fmHl4AcrUs40Lv5D275FmAZ96E=
    Content-Type: application/json
-   
+
    {"testo": "Ciao mondo"}
 
 Porzione JWS con campi protetti dalla firma
@@ -195,8 +195,11 @@ Porzione JWS con campi protetti dalla firma
      ]
    }
    # *payload*
-   
+
    {
+     "sub": "https://fruitore.example.it",
+     "iss": "https://fruitore.example.it",
+     "jti": "065259e8-8696-44d1-84c5-d3ce04c2f40d",
      "aud": "https://api.erogatore.example/rest/service/v1/hello/echo"
      "iat": 1516239022,
      "nbf": 1516239022,
